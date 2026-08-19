@@ -120,11 +120,21 @@ export async function fetchServerPosition(
   }
 }
 
-let lastPushAt = 0
+/**
+ * Last server write per slug.
+ *
+ * Keyed by slug, not module-global. A single shared timestamp meant the
+ * throttle leaked across readings: finish one devotional and open another
+ * inside 30s, and the new one's first write was swallowed by the previous
+ * one's window — so the position a reader most expects to be kept, the one
+ * they just moved to, was the one most likely to be dropped. Queues make this
+ * worse rather than better, because they move between slugs constantly.
+ */
+const lastPushAt = new Map<string, number>()
 
 /** Reset between tests. Not used in the app. */
 export function __resetThrottle(): void {
-  lastPushAt = 0
+  lastPushAt.clear()
 }
 
 /**
@@ -143,8 +153,9 @@ export function pushPosition(params: {
   writeLocalPosition(params.slug, params.seconds)
 
   const now = Date.now()
-  if (!params.flush && now - lastPushAt < THROTTLE_MS) return
-  lastPushAt = now
+  const since = now - (lastPushAt.get(params.slug) ?? 0)
+  if (!params.flush && since < THROTTLE_MS) return
+  lastPushAt.set(params.slug, now)
 
   const payload = JSON.stringify({
     devotionalSlug: params.slug,

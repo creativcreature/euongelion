@@ -5,6 +5,57 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Audio-forward, approved — and the position now survives leaving (SA-096, F-142)
+
+**2026-08-19**
+
+Founder approved the audio plan, and overruled its posture first: _"its ok that a
+person binge a series, it means the material is really working for them."_
+**Auto-advance is on everywhere**, series included. The draft's
+stops-at-end-of-day rule is withdrawn.
+
+Second critique, also accepted: the first plan was a player bolted to a reading
+site. **The thesis that replaced it** — reading is organised by _need_ (the Soul
+Audit question, pathway, series); listening is organised by _occasion_ (how long
+have I got, what am I doing). Orthogonal axes over the same content, which is why
+audio needs its own front door rather than a mirror of the reading IA. The
+catalogue already says so: `bible-365` is 365 of 550 tracks and 69.5 of 98.6
+hours, and it is the only occasion-shaped thing in there.
+
+**The breadth gap, measured.** Median track 11.1 min; nothing over 28 min; only
+23 tracks under 5. Every piece assumes one occasion. Nine formats proposed, of
+which the Edition and the deep dives need voicing only — no new writing.
+
+**Shipped here: Stage 1a, continuity.** Each claimed defect was checked against
+the code first, and one was refuted.
+
+- **Position was never written on client-side navigation.** `pagehide` does not
+  fire when Next swaps routes, and the cleanup removed its listeners without
+  saving — so tapping to another reading lost up to thirty seconds.
+- **The 30s server-write throttle was module-global**, so one reading could
+  swallow another reading's first write. Now keyed per slug.
+- **Refuted:** the `ended` flush writing `seconds: 0` is deliberate, and
+  `completed_at` is set and kept. Nothing is lost; the obligation moves to the
+  future continue-listening query, which must filter on `completed_at`.
+
+Fixing the first exposed a third, caught by the test rather than by review:
+**React detaches refs before passive cleanups**, so the unmount flush read a
+null audio element and saved nothing. Position now comes from a `lastKnown`
+snapshot rather than from React's teardown ordering.
+
+**Retracted — and it removes a gate from the strategy.**
+`he-cannot-deny-himself-day-4` is **not damaged.** Re-transcribed in nine slices
+cut at silence boundaries, every segment is present and in order and the closing
+line lands cleanly on the last frame. The "restarts a sentence and cuts
+mid-phrase" report came from one 71-second slice on which Whisper hallucinated a
+repeated tail — the second false defect report of this kind here. The real defect
+found is systemic: **headings are spoken twice across ~464 devotionals.**
+
+Still open: R2 (Stage 1b — the only fix for seeking, and for 2.9 GiB of audio
+living on one machine), and the disclosure ruling on synthesised narration.
+
+---
+
 ## main did not build: an incomplete label map (SA-092, F-138)
 
 **2026-08-19**

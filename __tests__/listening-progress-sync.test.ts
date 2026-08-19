@@ -12,6 +12,8 @@
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
+  __resetThrottle,
+  pushPosition,
   readLocalPosition,
   resolvePosition,
   writeLocalPosition,
@@ -89,5 +91,60 @@ describe('the local cache', () => {
     expect(row?.seconds).toBe(321)
     expect(row?.at).toBe(0)
     expect(resolvePosition(row, { seconds: 10, at: 1 })).toBe(10)
+  })
+})
+
+/**
+ * The throttle is per reading, not per session.
+ *
+ * A single module-global timestamp leaked the 30s window across slugs: finish
+ * one devotional, open another within half a minute, and the new reading's
+ * first server write was swallowed by the previous reading's window. The
+ * position most likely to be dropped was the one the reader had just moved to.
+ * A queue moves between slugs constantly, so this gets worse, not better.
+ */
+describe('the server-write throttle', () => {
+  beforeEach(() => {
+    __resetThrottle()
+    localStorage.clear()
+  })
+
+  const push = (slug: string) =>
+    pushPosition({ slug, seconds: 42, duration: 600, listenedDelta: 5 })
+
+  it('does not let one reading suppress another reading’s first write', () => {
+    const beacon = vi.fn(() => true)
+    vi.stubGlobal('navigator', { sendBeacon: beacon })
+    const fetchMock = vi.fn(() => Promise.resolve({ ok: true }))
+    vi.stubGlobal('fetch', fetchMock)
+
+    push('series-a-day-1')
+    expect(fetchMock).toHaveBeenCalledTimes(1)
+
+    // Immediately after, a DIFFERENT reading must still reach the server.
+    push('series-b-day-1')
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+  })
+
+  it('still throttles repeat writes within the same reading', () => {
+    const fetchMock = vi.fn(() => Promise.resolve({ ok: true }))
+    vi.stubGlobal('fetch', fetchMock)
+    vi.stubGlobal('navigator', {})
+
+    push('series-a-day-1')
+    push('series-a-day-1')
+    push('series-a-day-1')
+    expect(fetchMock).toHaveBeenCalledTimes(1)
+  })
+
+  it('always writes the local cache, throttled or not', () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => Promise.resolve({ ok: true })),
+    )
+    vi.stubGlobal('navigator', {})
+    push('series-a-day-1')
+    push('series-a-day-1')
+    expect(readLocalPosition('series-a-day-1')?.seconds).toBe(42)
   })
 })

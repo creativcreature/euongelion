@@ -260,3 +260,58 @@ describe('formatTime', () => {
     expect(formatTime(-5)).toBe('0:00')
   })
 })
+
+/**
+ * Leaving a reading by tapping through to another one must save the position.
+ *
+ * `pagehide` covers leaving the site, and it does NOT fire when Next swaps
+ * routes — which is how a reader actually leaves a devotional most of the
+ * time. Before this, everything since the last throttled write was lost, so
+ * returning dropped you up to thirty seconds back.
+ */
+describe('NarrationPlayer — soft navigation', () => {
+  it('flushes the position when the reader navigates away in-app', () => {
+    const beacon = vi.fn((_url: string, _body?: BodyInit) => true)
+    vi.stubGlobal('navigator', { ...navigator, sendBeacon: beacon })
+
+    const { container, unmount } = render(
+      <AudioPlayer
+        title="The Fruit of Lies"
+        segments={SEGMENTS}
+        slug="has-track-day-1"
+      />,
+    )
+    const audio = container.querySelector('audio') as HTMLAudioElement
+    act(() => {
+      audio.dispatchEvent(new Event('play'))
+    })
+
+    expect(beacon).not.toHaveBeenCalled()
+    // A client-side route change unmounts the reader without any page event.
+    unmount()
+    expect(beacon).toHaveBeenCalledTimes(1)
+    expect(beacon.mock.calls[0][0]).toBe('/api/listening-progress')
+
+    vi.unstubAllGlobals()
+  })
+
+  it('does not record anything when a reading was merely opened', () => {
+    const beacon = vi.fn((_url: string, _body?: BodyInit) => true)
+    vi.stubGlobal('navigator', { ...navigator, sendBeacon: beacon })
+
+    const { unmount } = render(
+      <AudioPlayer
+        title="The Fruit of Lies"
+        segments={SEGMENTS}
+        slug="has-track-day-1"
+      />,
+    )
+    // Never played. Opening a devotional must not count as listening — four
+    // such rows reached production once and would have made opens look like
+    // listens.
+    unmount()
+    expect(beacon).not.toHaveBeenCalled()
+
+    vi.unstubAllGlobals()
+  })
+})

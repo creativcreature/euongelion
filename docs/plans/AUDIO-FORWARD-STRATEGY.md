@@ -557,6 +557,27 @@ withdrawn.
 
 What is actually wrong with those tracks is narrower and still real: no
 per-segment pause grammar, no round-trip verification, and at least one shipped
+
+> **RETRACTED 2026-08-19, verified by direct measurement.** `he-cannot-deny-himself-day-4`
+> is **not damaged.** The tail from 1420s to the 1541.2s end was re-transcribed in nine
+> tight slices cut at silence boundaries, and every segment is present, correct and in
+> order — including the Cranmer biography ("Imprisoned under Mary I, degraded from office
+> at Christ Church, Oxford, on 14 February 1556...") and the closing line, which lands
+> cleanly on the last frame with no repetition after it.
+>
+> The "restarts a sentence and cuts mid-phrase" report came from transcribing a 71-second
+> slice in ONE request. Whisper hallucinated a repeated tail on it — it emitted
+> "Cranmer is not in this reading as a hero of the six that did not" twice after the real
+> ending. Cut the same audio at its pauses and the duplication disappears. This is the
+> same class of error as the false "115 missing words" report on `rekindled-day-1`, and it
+> is exactly what `strip_hallucination()` in `render_chatterbox.py` exists to defend
+> against. **Never accept a defect report drawn from a single long-slice transcript.**
+>
+> One real defect did surface, and it is systemic rather than specific to this track: the
+> heading "The Voice Behind Today" is **spoken twice** (once as its own segment, once
+> inside the text). That is the double-say affecting 464 devotionals, which
+> `dedup_headings()` addresses on the new engine.
+
 truncation (`he-cannot-deny-himself-day-4`). In a queue they play unattended,
 with nobody watching. So:
 

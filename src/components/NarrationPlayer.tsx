@@ -225,11 +225,24 @@ export default function NarrationPlayer({
    */
   const listenedSince = useRef(0)
   const lastTick = useRef<number | null>(null)
+  /**
+   * Last position seen, kept so a flush does not need the audio element.
+   *
+   * React detaches refs before it runs passive effect cleanups, so on unmount
+   * `audioRef.current` is already null — which is precisely when a client-side
+   * navigation needs the position written. Reading the element there silently
+   * saved nothing.
+   */
+  const lastKnown = useRef({ seconds: 0, duration: 0 })
 
   const flushProgress = useCallback(
     (options: { flush?: boolean; ended?: boolean } = {}) => {
       const audio = audioRef.current
-      if (!audio) return
+      const seconds = audio ? audio.currentTime : lastKnown.current.seconds
+      const duration =
+        (audio ? audio.duration : 0) ||
+        track.duration ||
+        lastKnown.current.duration
 
       // Nothing to record. The audio element exists on every reading whether or
       // not anyone presses play, and this fires on pagehide — so without this
@@ -240,8 +253,8 @@ export default function NarrationPlayer({
       if (!hasStarted && listenedSince.current <= 0) return
       pushPosition({
         slug,
-        seconds: options.ended ? 0 : audio.currentTime,
-        duration: audio.duration || track.duration,
+        seconds: options.ended ? 0 : seconds,
+        duration,
         listenedDelta: listenedSince.current,
         ended: options.ended,
         flush: options.flush,
@@ -284,6 +297,31 @@ export default function NarrationPlayer({
       document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [flushProgress])
+
+  /**
+   * Save on the way out of a CLIENT-SIDE navigation.
+   *
+   * `pagehide` above covers leaving the site; it does not fire when Next swaps
+   * routes, which is how a reader actually leaves a devotional most of the
+   * time — tapping through to another reading. Without this the whole window
+   * since the last throttled write is lost, and the reader returns to wherever
+   * they were up to thirty seconds earlier.
+   *
+   * The newest `flushProgress` is held in a ref so this effect can keep empty
+   * deps and fire exactly once, on unmount. Depending on `flushProgress`
+   * directly would run the cleanup on every dependency change and write on
+   * each one. The `hasStarted` guard inside it still prevents a bare open from
+   * recording anything.
+   */
+  const flushRef = useRef(flushProgress)
+  useEffect(() => {
+    flushRef.current = flushProgress
+  }, [flushProgress])
+  useEffect(() => {
+    return () => {
+      flushRef.current({ flush: true })
+    }
+  }, [])
 
   // Track whether the Audio Edition panel is on screen. The two surfaces hand
   // off to each other: when the panel is readable, the bar retires.
@@ -483,6 +521,10 @@ export default function NarrationPlayer({
       // a suspended tab cannot be counted as time spent. `timeupdate` fires
       // roughly 4x/second, so a gap larger than a couple of seconds means the
       // reader jumped or the tab slept — neither is listening.
+      lastKnown.current = {
+        seconds,
+        duration: audioRef.current?.duration || track.duration,
+      }
       const previous = lastTick.current
       if (previous !== null) {
         const delta = seconds - previous
@@ -499,7 +541,7 @@ export default function NarrationPlayer({
         sleepChapterEnd.current = null
       }
     },
-    [sleepMode, fadeOutAndPause],
+    [sleepMode, fadeOutAndPause, track.duration],
   )
 
   // Media Session: lock-screen metadata and OS transport handlers. This is the
