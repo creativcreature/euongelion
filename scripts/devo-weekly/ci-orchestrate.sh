@@ -11,10 +11,23 @@ THEMATIC_FILE="/tmp/thematic-$STAMP.md"
 
 # ── 1. Thematic: founder override (committed to the repo from any device),
 #      or derived from research + last week's thread ──────────────────────
+# The EASY override: the box on /admin/edition writes to Supabase Storage
+# (bucket pipeline/next-series-thematic.md) — checked FIRST. The repo file
+# stays as the git-native second path. Storage value is consumed one-shot:
+# archived to consumed/ so the following week derives fresh.
+STORAGE_URL="$NEXT_PUBLIC_SUPABASE_URL/storage/v1/object/pipeline/next-series-thematic.md"
+STORAGE_BODY="$(curl -s -f -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" "$STORAGE_URL" || true)"
 OVERRIDE_BODY="$(sed '/^<!--/,/^-->/d' content/next-series-thematic.md | sed '/^[[:space:]]*$/d' || true)"
 
-if [ -n "$OVERRIDE_BODY" ]; then
-  echo "[thematic] founder override present"
+if [ -n "$STORAGE_BODY" ]; then
+  echo "[thematic] founder override present (admin box)"
+  printf '%s\n' "$STORAGE_BODY" > "$THEMATIC_FILE"
+  curl -s -X POST -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{\"bucketId\":\"pipeline\",\"sourceKey\":\"next-series-thematic.md\",\"destinationKey\":\"consumed/next-series-thematic-$STAMP.md\"}" \
+    "$NEXT_PUBLIC_SUPABASE_URL/storage/v1/object/move" >/dev/null || true
+elif [ -n "$OVERRIDE_BODY" ]; then
+  echo "[thematic] founder override present (repo file)"
   printf '%s\n' "$OVERRIDE_BODY" > "$THEMATIC_FILE"
 else
   echo "[thematic] deriving (research + last week's thread)"
