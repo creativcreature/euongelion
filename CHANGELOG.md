@@ -46,6 +46,9 @@ requests from its own cached copy. Measured false — Workers static assets do n
 implement partial content, so every seek refetches the whole track while
 `_headers` advertises range support anyway.
 
+Covered by test: the dismiss clears the queue, the bar retires on its own
+reading, and a reorder never changes what is sounding.
+
 Still open: the reader panel still owns its own element rather than adopting the
 global one; R2; and the new audio-native formats.
 
