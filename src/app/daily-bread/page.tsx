@@ -36,7 +36,6 @@ import {
   QuestionBox,
   RedLetterColumn,
   ScreeningRoom,
-  SeasonBox,
   StripPanel,
   VerseBox,
   VoicesColumn,
@@ -47,6 +46,10 @@ import { pageArchive, pageB365, pageProverb } from '@/lib/edition/page-modules'
 import { generateRedLetter } from '@/lib/edition/generators/redletter'
 import { generateVerse } from '@/lib/edition/generators/verse'
 import { generateQuestion } from '@/lib/edition/generators/question'
+import { pickVoiceForDay } from '@/data/voices-bank'
+import { getSeasonEssay } from '@/data/season-essays'
+import { buildWordSearch } from '@/lib/edition/wordsearch'
+import WordSearchClient from '@/components/edition/puzzles/WordSearchClient'
 import CrosswordClient from '@/components/edition/puzzles/CrosswordClient'
 import UnscrambleClient from '@/components/edition/puzzles/UnscrambleClient'
 import QuizClient from '@/components/edition/puzzles/QuizClient'
@@ -379,7 +382,6 @@ export default async function DailyBreadPage() {
   const authoredLead = edLead?.mode === 'authored' ? edLead : undefined
 
   const edPractice = edition?.practice?.[0]?.payload
-  const edSeason = edition?.season?.[0]?.payload
   const edWord = edition?.word?.[0]?.payload
   const edStrip = edition?.strip?.[0]?.payload
   const edGalleryPlates = (edition?.gallery ?? []).map((g) => g.payload)
@@ -402,9 +404,9 @@ export default async function DailyBreadPage() {
   const edRedletter = (await generateRedLetter(now))[0]?.payload
   const edVerse = (await generateVerse(now))[0]?.payload
   const edQuestion = (await generateQuestion(now))[0]?.payload
-  // Voices wires to the committed bank once built (round-3 lane); until the
-  // integration lands this render, the section is absent — not faked.
-  const edVoices = edition?.voices?.[0]?.payload
+  const edVoices = pickVoiceForDay(now)
+  const seasonEssay = getSeasonEssay(liturgical)
+  const wordSearch = buildWordSearch(now)
 
   // The lead plate — a feature article leads with art (founder: "very image
   // and text as art forward"). Riso series hero; absent for an authored lead
@@ -789,12 +791,24 @@ export default async function DailyBreadPage() {
               </div>
             )}
           </section>
-          {/* SLOT:SEASON — the elaborate season section replaces this box. */}
-          {edSeason && (
-            <div className="paper-box paper-box--season" data-reveal>
-              <SeasonBox season={edSeason} />
-            </div>
-          )}
+          {/* The season, elaborate — founder: "no one will know what it is."
+              Color band, plain name, span, a real essay, and the week
+              explained through the season's own pattern. */}
+          <div className="paper-box paper-box--season" data-reveal>
+            <section className="edition-season" aria-label="The season">
+              <div
+                className="edition-season-band"
+                style={{ ['--season-color' as string]: seasonEssay.colorHex }}
+                aria-hidden="true"
+              />
+              <p className="edition-kicker">The season</p>
+              <p className="edition-season-plain">{seasonEssay.plainName}</p>
+              <p className="edition-season-span">{seasonEssay.span}</p>
+              <p className="edition-season-essay">{seasonEssay.essay}</p>
+              <p className="edition-season-week">{seasonEssay.weekLine}</p>
+              <p className="edition-season-colorline">{seasonEssay.color}</p>
+            </section>
+          </div>
 
           {/* Row 5 — the gallery spread. */}
           {edGalleryPlates.length > 0 && (
@@ -884,9 +898,20 @@ export default async function DailyBreadPage() {
             </section>
           )}
 
-          {/* SLOT:WORDSEARCH — lands here (2col) beside quiz 2. */}
+          {/* The word search — founder ask, 2026-08-19. */}
+          <section
+            className="edition-section paper-box paper-box--panel"
+            data-reveal
+            aria-label="The word search"
+          >
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">The word search</h2>
+              <p className="edition-section-note">{wordSearch.theme}</p>
+            </div>
+            <WordSearchClient puzzle={wordSearch} />
+          </section>
           {edQuiz[1] && (
-            <div className="paper-box paper-box--panel" data-reveal>
+            <div className="paper-box paper-box--wordgames" data-reveal>
               <section aria-label="Where is this from? Question two">
                 <div className="edition-section-bar">
                   <h2 className="edition-section-head">Where is this from?</h2>
