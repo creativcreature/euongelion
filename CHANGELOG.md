@@ -50,6 +50,11 @@ Also pinned by the same run: `docs/audio/AUDIO-ENGINE-RESEARCH-2026-08-19.md`
 `euangelion-voice-prototype/spec/render_chatterbox.py` (four independent
 verifiers, fail-fast, no partial writes).
 
+**Service worker bumped v119 -> v120.** Reading routes are cache-first with
+background revalidation, so a returning reader would otherwise keep the old
+shell and never see the second skip control — the documented cause of the
+earlier "I don't see the audio reader update".
+
 **Open for the founder:** whether to disclose that the narration is synthesised.
 
 ---
