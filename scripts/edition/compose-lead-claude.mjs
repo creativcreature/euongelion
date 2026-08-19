@@ -41,34 +41,38 @@ const start = fromArg
   : new Date(Date.now() + DAY_MS)
 
 // ── Resolve the week's brief through the SAME calendar the API path uses ──
+// tsx -e cannot host top-level await (CJS transform), so helpers run as
+// temp .mts files.
+import os from 'node:os'
+
+function runTsx(source) {
+  const file = path.join(os.tmpdir(), `lead-helper-${Date.now()}.mts`)
+  fs.writeFileSync(file, source)
+  try {
+    const out = execFileSync('npx', ['tsx', file], {
+      cwd: REPO,
+      encoding: 'utf8',
+    })
+    return JSON.parse(out.trim().split('\n').pop())
+  } finally {
+    fs.unlinkSync(file)
+  }
+}
+
 function briefFor(dateIso) {
-  const out = execFileSync(
-    'npx',
-    [
-      'tsx',
-      '-e',
-      `import { SUNDAY_BRIEFS, isoWeekUTC } from '${REPO}/src/lib/edition/generators/lead'
+  return runTsx(
+    `import { SUNDAY_BRIEFS, isoWeekUTC } from '${REPO}/src/lib/edition/generators/lead'
 const d = new Date('${dateIso}T00:00:00Z')
 console.log(JSON.stringify(SUNDAY_BRIEFS[(isoWeekUTC(d) - 1) % SUNDAY_BRIEFS.length]))`,
-    ],
-    { cwd: REPO, encoding: 'utf8' },
   )
-  return JSON.parse(out.trim().split('\n').pop())
 }
 
 function scriptureFor(reference) {
-  const out = execFileSync(
-    'npx',
-    [
-      'tsx',
-      '-e',
-      `import { getVerse } from '${REPO}/src/lib/bible/getVerse'
+  return runTsx(
+    `import { getVerse } from '${REPO}/src/lib/bible/getVerse'
 const r = await getVerse('${reference.replace(/'/g, "\\'")}', 'BSB')
 console.log(JSON.stringify({ canonical: r.canonical, text: r.text }))`,
-    ],
-    { cwd: REPO, encoding: 'utf8' },
   )
-  return JSON.parse(out.trim().split('\n').pop())
 }
 
 async function insertDraft(dateIso, payload) {
