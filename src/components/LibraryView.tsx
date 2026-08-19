@@ -19,7 +19,81 @@ import {
   activeDayHref,
   activeDayLabel,
   daySlugFor,
+  nextUnreadDay,
 } from '@/lib/reading/active-day'
+import { useProgress } from '@/hooks/useProgress'
+
+/**
+ * How far a reader is through a series, and what they would open next.
+ *
+ * Every series card used to read the same whether you had finished six days or
+ * never opened it — a saved series said "Whole series · 7 days" and stopped.
+ * That is the difference between a shelf and a library: a shelf lists what you
+ * own, a library knows where you are in it.
+ *
+ * Read state comes from the local completion log, so this is a pure derivation
+ * with no new plumbing. It re-derives on every render, which is what makes it
+ * correct the moment a day is marked read — `useProgress` re-renders the tab on
+ * `progressUpdated`.
+ */
+function seriesStanding(
+  seriesSlug: string | null | undefined,
+  isRead: (slug: string) => boolean,
+) {
+  const series = seriesSlug ? SERIES_DATA[seriesSlug] : null
+  if (!series || series.days.length === 0) return null
+  const done = new Set(
+    series.days.filter((d) => isRead(d.slug)).map((d) => d.slug),
+  )
+  return {
+    completed: done.size,
+    total: series.days.length,
+    percentage: Math.round((done.size / series.days.length) * 100),
+    /** The first unread day — what CONTINUE should open. Null when finished. */
+    next: nextUnreadDay(seriesSlug!, done),
+  }
+}
+
+/**
+ * "3 of 7 read" over a thin rule.
+ *
+ * Rendered with inline tokens rather than a new class because globals.css is
+ * being actively worked in another session; the tokens are the same ones the
+ * surrounding cards already use.
+ */
+function SeriesProgress({
+  completed,
+  total,
+  percentage,
+}: {
+  completed: number
+  total: number
+  percentage: number
+}) {
+  return (
+    <div className="mt-2" aria-label={`${completed} of ${total} days read`}>
+      <p className="vw-small text-secondary mb-1">
+        {completed} of {total} read
+      </p>
+      <div
+        style={{
+          height: '2px',
+          background: 'var(--color-border)',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            height: '100%',
+            width: `${percentage}%`,
+            background: 'var(--color-gold, currentColor)',
+            transition: 'width 200ms ease-out',
+          }}
+        />
+      </div>
+    </div>
+  )
+}
 
 /** The title of the day the reader is on, for the ACTIVE card's second line. */
 function activeDayTitle(
@@ -47,6 +121,7 @@ function seriesSlugFromDevotionalSlug(slug: string): string | null {
 
 export default function LibraryView() {
   const router = useRouter()
+  const { isRead } = useProgress()
   const hydrate = useDevotionalLibraryStore((s) => s.hydrate)
   const refresh = useDevotionalLibraryStore((s) => s.refresh)
   const hydrated = useDevotionalLibraryStore((s) => s.hydrated)
@@ -79,6 +154,24 @@ export default function LibraryView() {
       setSignInOpen(true)
     })
   }, [])
+
+  /**
+   * Saved series the reader has started come first.
+   *
+   * Moonly leads its library with In Progress and files everything else below,
+   * because a shelf sorted by when you saved things answers a question nobody
+   * asks. Within each group the incoming order is preserved — this reorders the
+   * list once, by whether it is live, and never shuffles beneath the reader.
+   */
+  const savedOrdered = useMemo(() => {
+    const started = (slug: string) => {
+      const st = seriesStanding(seriesSlugFromDevotionalSlug(slug), isRead)
+      return st && st.completed > 0 ? 0 : 1
+    }
+    return [...saved].sort(
+      (a, b) => started(a.devotionalSlug) - started(b.devotionalSlug),
+    )
+  }, [saved, isRead])
 
   const paused = useMemo(
     () => archived.filter((row) => row.state === 'paused'),
@@ -202,6 +295,15 @@ export default function LibraryView() {
         </h2>
         {active ? (
           <div className="library-card">
+            {/* Speak badges the course you are actually on. With four sections
+                of series cards, the one that is live should not have to be
+                inferred from which heading it sits under. */}
+            <p
+              className="text-label vw-small mb-1"
+              style={{ color: 'var(--color-gold, currentColor)' }}
+            >
+              CURRENT
+            </p>
             <p className="vw-body">
               <strong>{active.seriesTitle ?? active.seriesSlug}</strong>
               {activeDayLabel(active.seriesSlug, active.currentDay)
@@ -212,6 +314,10 @@ export default function LibraryView() {
               {activeDayTitle(active.seriesSlug, active.currentDay) ??
                 `Source: ${active.source.replace(/_/g, ' ')}`}
             </p>
+            {(() => {
+              const st = seriesStanding(active.seriesSlug, isRead)
+              return st ? <SeriesProgress {...st} /> : null
+            })()}
             <div className="library-card-actions">
               {/* Founder 2026-08-14: the card said "Day 3" and then sent the
                   reader to a bare /daily-bread. It now opens the day it names.
@@ -260,7 +366,7 @@ export default function LibraryView() {
           </p>
         ) : (
           <div className="library-grid">
-            {saved.map((item) => {
+            {savedOrdered.map((item) => {
               const seriesSlug = seriesSlugFromDevotionalSlug(
                 item.devotionalSlug,
               )
@@ -297,7 +403,33 @@ export default function LibraryView() {
                       </span>
                     )}
                   </p>
+                  {savedWholeSeries &&
+                    (() => {
+                      const st = seriesStanding(seriesSlug, isRead)
+                      return st && st.completed > 0 ? (
+                        <SeriesProgress {...st} />
+                      ) : null
+                    })()}
                   <div className="library-card-actions">
+                    {/* Coursera names the next item on the card and links
+                        straight to it, so resuming never means landing at the
+                        top of a course and hunting. A saved series the reader
+                        has started should do the same — ACTIVATE is the right
+                        verb for one never opened, and the wrong one for a
+                        series they are six days into. */}
+                    {savedWholeSeries &&
+                      (() => {
+                        const st = seriesStanding(seriesSlug, isRead)
+                        if (!st || st.completed === 0 || !st.next) return null
+                        return (
+                          <Link
+                            href={activeDayHref(seriesSlug!, st.next.day)}
+                            className="cta-major text-label vw-small px-4 py-2"
+                          >
+                            CONTINUE &middot; DAY {st.next.day}
+                          </Link>
+                        )
+                      })()}
                     {seriesSlug && (
                       <button
                         type="button"
@@ -345,6 +477,10 @@ export default function LibraryView() {
                   You reached Day {row.furthestDayReached}
                   {row.totalDays ? ` of ${row.totalDays}` : ''}.
                 </p>
+                {(() => {
+                  const st = seriesStanding(row.seriesSlug, isRead)
+                  return st ? <SeriesProgress {...st} /> : null
+                })()}
                 <div className="library-card-actions">
                   <button
                     type="button"

@@ -147,3 +147,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-142 | Reading surfaces  | Listening position survives navigation; per-slug throttle | 0/10     | wip     | [F-142.md](./F-142.md) |
 | F-143 | Reading surfaces  | Global audio host, queue, bar, library listening          | 0/10     | wip     | [F-143.md](./F-143.md) |
 | F-144 | Platform          | Audio served from R2; 206 range requests; durability      | 0/10     | shipped | [F-144.md](./F-144.md) |
+| F-145 | Platform          | Library series standing: CURRENT, N of M, Continue        | 0/10     | wip     | [F-145.md](./F-145.md) |

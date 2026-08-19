@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The Library says where you are, not just what you own (SA-099, F-145)
+
+**2026-08-19**
+
+Founder: _"The Library needs better organization, and layout. Its as basic as it
+can possibly be."_
+
+The four sections were already right — ACTIVE / SAVED / PAUSED / COMPLETED. The
+cards were not. A saved series read "Whole series · 7 days" and stopped:
+**identical whether you had finished six days or never opened it.** The one
+place that should know where you are knew only what you owned.
+
+Series cards now carry their standing. The live one is badged CURRENT. A saved
+series you have started shows "N of M read" and offers **CONTINUE · DAY n**,
+linking to that exact day rather than the top of the series — ACTIVATE is the
+right verb for a series never opened and the wrong one for a series you are six
+days into, so both are offered and you pick. Started series lead the saved list.
+
+COMPLETED is deliberately untouched: a bar that is always full is decoration,
+and finished is finished.
+
+Drawn from Coursera (name the next item, link straight to it), Speak (badge the
+live one), Peloton and Moonly (a fraction on the card, In Progress first).
+Rendered with inline design tokens rather than new CSS, because globals.css was
+being worked in another session at the time.
+
 ## Audio moves to R2, and seeking actually seeks (SA-098, F-144)
 
 **2026-08-19**
