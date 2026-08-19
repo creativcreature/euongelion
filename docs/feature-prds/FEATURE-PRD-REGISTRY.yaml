@@ -1251,3 +1251,11 @@ features:
     prd: docs/feature-prds/F-135.md
     methodology_refs:
       - M00
+  - id: F-136
+    title: The Daily Bread becomes a daily paper
+    slug: daily-bread-edition-engine
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-136.md
+    methodology_refs:
+      - M00
