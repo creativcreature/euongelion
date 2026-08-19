@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Audio moves to R2, and seeking actually seeks (SA-098, F-144)
+
+**2026-08-19**
+
+Two defects, one project.
+
+**Seeking downloaded the whole track.** A real `GET` with
+`Range: bytes=1000000-1000999` against a 7.4 MB reading returned `200` and the
+entire body — on the apex and the origin worker, cache hit and all. Cloudflare's
+static-asset layer does not implement 206 Partial Content, and `_headers`
+advertised `Accept-Ranges: bytes` anyway. Every scrub refetched the reading.
+
+**The catalogue lived on one laptop.** 380 of 550 tracks are gitignored, so they
+existed only here plus whatever was deployed, and could not be rebuilt without
+re-rendering.
+
+**All 550 tracks (3.70 GiB) are now in R2**, and served by a route that returns
+real byte ranges. Verified in the Workers runtime: 1000 bytes requested, 1000
+received, correct `Content-Range`; a suffix range returns the last N bytes; a
+full GET is byte-identical to disk.
+
+**The trap that cost the most time:** `assets.run_worker_first` is documented to
+hand `/audio/*` to the Worker and, on wrangler 4.110, does not. A track that
+exists as an asset never reached the route; one that does not exist reached it
+fine — which is the test that isolated it. Stripping audio from the bundle after
+build is what actually hands the path over.
+
+Two things fall out beyond seeking: deploys stop uploading 3.70 GiB every time,
+and **Cloudflare's 25 MiB per-asset limit stops applying to tracks at all** —
+which had been recorded as a blocker on any catalogue-wide scored re-render.
+
+The fallback is labelled, never silent: a key missing from R2 still serves from
+the bundle carrying `x-audio-origin: assets-fallback`.
+
+Standing obligation: re-run `scripts/upload-audio-to-r2.sh` after any re-render.
+
+---
+
 ## Audio survives the route, and a queue plays on (SA-097, F-143)
 
 **2026-08-19**

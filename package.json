@@ -41,13 +41,14 @@
     "test:watch": "vitest",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css,json}\"",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "opennextjs-cloudflare build && npm run strip:audio-assets && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && npm run strip:audio-assets && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "prepare": "husky",
     "build:edge-function": "node scripts/build-edge-function.mjs",
-    "test:e2e:signed-in": "node scripts/e2e-signed-in.mjs"
+    "test:e2e:signed-in": "node scripts/e2e-signed-in.mjs",
+    "strip:audio-assets": "node scripts/strip-audio-from-assets.mjs"
   },
   "dependencies": {
     "@capacitor/cli": "^8.1.0",

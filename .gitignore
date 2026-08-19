@@ -148,3 +148,11 @@ imagery-staging/
 
 # Scored stereo masters staged for R2 — never in git, never in the deploy
 euangelion-voice-prototype/scored/
+
+# Loudness-normalisation staging (scripts/normalize-audio.mjs). Transient, and
+# 2.1 GB — it must never reach git or the Workers asset upload. Deleted after
+# the verified output is swapped into public/audio/.
+public/audio-normalized/
+
+# R2 upload ledger (scripts/upload-audio-to-r2.sh). Local cache, never shared.
+.r2-upload-ledger.txt

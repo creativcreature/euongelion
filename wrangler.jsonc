@@ -6,8 +6,26 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // SA-098: /audio/* must reach the Worker, because Cloudflare's static-asset
+    // layer does not implement 206 Partial Content — a Range request comes back
+    // 200 with the whole body, so every scrub in a 20-minute reading refetched
+    // all of it. The route at src/app/audio/[file]/route.ts serves the same
+    // bytes out of R2, which reads byte ranges natively. Without this line the
+    // asset layer answers first and that route is never reached.
+    "run_worker_first": ["/audio/*"]
   },
+
+  // Narration masters. Also the durability answer: 380 of the 550 tracks are
+  // gitignored, so before this they existed only on one laptop plus whatever
+  // was deployed, and could not be rebuilt without re-rendering.
+  // Upload with scripts/upload-audio-to-r2.sh after any re-render.
+  "r2_buckets": [
+    {
+      "binding": "AUDIO_BUCKET",
+      "bucket_name": "euangelion-audio"
+    }
+  ],
   "observability": {
     "enabled": true
   },
