@@ -48,6 +48,35 @@ interface AuditPrint {
  * does is state a fact about the work — that comes from the filename family
  * and the audit, never from here.
  */
+/**
+ * Vasari entries (SA-092): per-print title/shown/quality, every one written by
+ * an agent LOOKING at the print (src/data/gallery-vasari.json). Founder:
+ * captions "written like visari- talk about the art quality, and what is
+ * literally being shown." When a clean print has an entry, its title comes
+ * from the entry (derived from the image, not the filename) and the lightbox
+ * carries shown+quality. A clean print without an entry still publishes with
+ * the filename title and the looking paragraph — but the 145-entry bank
+ * covers the whole clean pool at ship time.
+ */
+interface VasariEntry {
+  file: string
+  title: string
+  shown: string
+  quality: string
+}
+
+let vasariCache: Map<string, VasariEntry> | null = null
+
+function vasariFor(file: string): VasariEntry | undefined {
+  if (vasariCache === null) {
+    const raw = JSON.parse(
+      readFileSync(join(process.cwd(), 'src/data/gallery-vasari.json'), 'utf8'),
+    ) as { entries: VasariEntry[] }
+    vasariCache = new Map(raw.entries.map((e) => [e.file, e]))
+  }
+  return vasariCache.get(file)
+}
+
 const LOOKING_BANK: readonly string[] = [
   'Notice where the light enters and what it refuses to touch. Whatever is lit is what you are being asked to attend to, and the dark is not leftover space — it is the part of the image that was told to stay quiet.',
   'Ask how far away you have been made to stand. Every image gives its viewer a distance — close enough to touch, or far enough that the whole thing reads as one shape — and that distance is the first thing it says to you.',
@@ -250,25 +279,44 @@ export async function generateGallery(
     .toISOString()
     .slice(0, 10)
 
-  const print = pool[dayOfYear(date) % pool.length]
+  // SEVEN plates a day (founder: "a full gallery with 7 images (lightbox)").
+  // Seven arms spaced a seventh of the pool apart, stepped by day — the same
+  // stride family the quiz uses, so a day's seven are always distinct and the
+  // full pool cycles in ~pool/7 days.
+  const SLOTS = 7
+  const day = dayOfYear(date)
+  const spacing = Math.max(1, Math.floor(pool.length / SLOTS))
   const rand = mulberry32(hashSeed(`${publishDate}:gallery`))
-  const looking = LOOKING_BANK[Math.floor(rand() * LOOKING_BANK.length)]
 
-  const payload: GalleryPayload = {
-    image: `${PRINT_DIR}/${print.file}`,
-    artist: print.artist,
-    title: titleFromFile(print.file),
-    looking,
-    auditVerdict: 'clean',
-  }
+  const items: EditionItem<'gallery'>[] = []
+  const used = new Set<number>()
+  for (let slot = 0; slot < SLOTS; slot += 1) {
+    let idx = (day + slot * spacing) % pool.length
+    // Small pools could collide arms; walk forward to the next unused print.
+    while (used.has(idx)) idx = (idx + 1) % pool.length
+    used.add(idx)
+    const print = pool[idx]
+    const vasari = vasariFor(print.file)
+    const looking =
+      vasari?.shown ?? LOOKING_BANK[Math.floor(rand() * LOOKING_BANK.length)]
 
-  return [
-    {
+    const payload: GalleryPayload = {
+      image: `${PRINT_DIR}/${print.file}`,
+      artist: print.artist,
+      title: vasari?.title ?? titleFromFile(print.file),
+      looking,
+      auditVerdict: 'clean',
+      ...(vasari ? { shown: vasari.shown, quality: vasari.quality } : {}),
+    }
+
+    items.push({
       kind: 'gallery',
       publishDate,
-      slot: 0,
+      slot,
       status: 'approved',
       payload,
-    },
-  ]
+    })
+  }
+
+  return items
 }

@@ -26,16 +26,23 @@ import { liturgicalDay } from '@/lib/liturgical'
 import { GUIDES, pickManyForDay } from '@/data/daily-edition'
 import { getEdition, type Edition } from '@/lib/edition/store'
 import {
+  ArchiveBox,
+  B365Box,
   EditionUnavailable,
-  GalleryFrame,
   LettersColumn,
   NoticesColumn,
   PrayerColumn,
+  ProverbBox,
+  QuestionBox,
+  RedLetterColumn,
   ScreeningRoom,
   SeasonBox,
   StripPanel,
+  VerseBox,
+  VoicesColumn,
   WitnessColumn,
 } from '@/components/edition/EditionSections'
+import GallerySpread from '@/components/edition/GallerySpread'
 import CrosswordClient from '@/components/edition/puzzles/CrosswordClient'
 import UnscrambleClient from '@/components/edition/puzzles/UnscrambleClient'
 import QuizClient from '@/components/edition/puzzles/QuizClient'
@@ -49,6 +56,8 @@ import {
 } from '@/lib/today-devotional'
 import { DEVOTIONAL_TEASERS } from '@/data/devotional-teasers'
 import { getSeriesHero } from '@/lib/series-hero'
+import AudioPlayer from '@/components/AudioPlayer'
+import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
 import type { Devotional, Module, Panel } from '@/types'
 
 /* ── Section icons (F-098) ─────────────────────────────────────────────
@@ -369,7 +378,7 @@ export default async function DailyBreadPage() {
   const edSeason = edition?.season?.[0]?.payload
   const edWord = edition?.word?.[0]?.payload
   const edStrip = edition?.strip?.[0]?.payload
-  const edGallery = edition?.gallery?.[0]?.payload
+  const edGalleryPlates = (edition?.gallery ?? []).map((g) => g.payload)
   const edPrayer = edition?.prayer?.[0]?.payload
   const edWitness = edition?.witness?.[0]?.payload
   const edCrossword = edition?.crossword?.[0]?.payload
@@ -378,6 +387,14 @@ export default async function DailyBreadPage() {
   const edScreening = (edition?.screening ?? []).map((q) => q.payload)
   const edLetters = (edition?.letter ?? []).map((q) => q.payload)
   const edNotices = (edition?.notice ?? []).map((q) => q.payload)
+  // SA-092: the paper grows to ~30 modules a day.
+  const edRedLetter = edition?.redletter?.[0]?.payload
+  const edProverb = edition?.proverb?.[0]?.payload
+  const edVerse = edition?.verse?.[0]?.payload
+  const edArchive = edition?.archive?.[0]?.payload
+  const edB365 = edition?.b365?.[0]?.payload
+  const edVoices = edition?.voices?.[0]?.payload
+  const edQuestion = edition?.question?.[0]?.payload
 
   // The lead plate — a feature article leads with art (founder: "very image
   // and text as art forward"). Riso series hero; absent for an authored lead
@@ -428,6 +445,18 @@ export default async function DailyBreadPage() {
   const panels: Panel[] = hasPanels
     ? ((devotional as Devotional & { panels?: Panel[] })?.panels ?? [])
     : []
+
+  // Audio Edition (founder 2026-08-19): the day's reading is listenable on
+  // this page. Segments are computed server-side; AudioPlayer plays the
+  // pre-rendered Voicebox track when one exists (all rotation slugs are
+  // rendered), and falls back to on-device speech - never a silent player.
+  const audioSegments = authoredLead
+    ? []
+    : hasModules
+      ? buildModuleSegments(dayTitle, modules)
+      : hasPanels
+        ? buildPanelSegments(dayTitle, panels)
+        : []
 
   // JSON-LD: Article schema
   const articleJsonLd = {
@@ -509,6 +538,25 @@ export default async function DailyBreadPage() {
           </div>
           <div className="edition-rule-bottom" aria-hidden="true" />
         </div>
+
+        {/* The reading spine — a cobalt hairline that fills as you read.
+            Pure CSS scroll timeline (design-system/edition-scroll-motion.css);
+            renders as a static invisible sliver where unsupported. */}
+        <div className="edition-spine" aria-hidden="true" />
+
+        {/* In this edition — the contents line. The whole paper before the
+            first story, and a jump to any section. */}
+        <nav className="edition-contents" aria-label="In this edition">
+          <a href="#the-reading">The reading</a>
+          {edPrayer && <a href="#the-daily-prayer">The prayer</a>}
+          {edWord && <a href="#word-of-the-day">The word</a>}
+          {edCrossword && <a href="#the-crossword">Crossword</a>}
+          {(edUnscramble || edQuiz.length > 0) && (
+            <a href="#word-games">Word games</a>
+          )}
+          {edGalleryPlates.length > 0 && <a href="#the-gallery">The gallery</a>}
+          {guides.length > 0 && <a href="#how-to-read">How to read</a>}
+        </nav>
 
         {/* Front page: the lead story, and a rail of what else is in the
             edition. The rail is real catalog data chosen deterministically by
@@ -623,7 +671,11 @@ export default async function DailyBreadPage() {
               )}
 
               {edWord && (
-                <section className="edition-word" aria-label="Word of the day">
+                <section
+                  id="word-of-the-day"
+                  className="edition-word"
+                  aria-label="Word of the day"
+                >
                   <p className="edition-kicker">
                     <WordIcon />
                     {edWord.language} today
@@ -640,6 +692,14 @@ export default async function DailyBreadPage() {
                   <p className="edition-word-ref">{edWord.reference}</p>
                 </section>
               )}
+            </div>
+          )}
+
+          {/* SA-092: a saying of Jesus, full measure, straight after the
+              practice — content between the furniture and the funnies. */}
+          {edRedLetter && (
+            <div className="paper-box paper-box--wide" data-reveal>
+              <RedLetterColumn saying={edRedLetter} />
             </div>
           )}
 
@@ -674,6 +734,7 @@ export default async function DailyBreadPage() {
               className="edition-section paper-box paper-box--wide"
               data-reveal
               aria-label="How to read"
+              id="how-to-read"
             >
               <div className="edition-section-bar">
                 <h2 className="edition-section-head">How to read</h2>
@@ -684,8 +745,13 @@ export default async function DailyBreadPage() {
               </div>
               <div className="edition-guides">
                 {guides.map((g) => (
-                  <article key={g.title} className="edition-guide">
-                    <span className="edition-guide-plate" data-parallax="0.35">
+                  <article key={g.slug} className="edition-guide">
+                    <Link
+                      href={`/guides/${g.slug}`}
+                      className="edition-guide-plate"
+                      aria-label={g.title}
+                      data-parallax="0.35"
+                    >
                       <Image
                         src={g.image}
                         alt={g.alt}
@@ -693,7 +759,7 @@ export default async function DailyBreadPage() {
                         sizes="(max-width: 900px) 100vw, 30vw"
                         className="edition-guide-img"
                       />
-                    </span>
+                    </Link>
                     <p className="edition-guide-kicker">{g.kicker}</p>
                     <h3 className="edition-guide-head">{g.title}</h3>
                     <p className="edition-guide-stand">{g.standfirst}</p>
@@ -703,20 +769,32 @@ export default async function DailyBreadPage() {
                       ))}
                     </ol>
                     <p className="edition-guide-time">{g.minutes}</p>
+                    {/* The card is the teaser; the full page is the guide —
+                        essay, expanded steps, mistakes, and passages to try
+                        the method on (founder 2026-08-18: the teasers "need
+                        to lead to more robust pages"). */}
+                    <Link
+                      href={`/guides/${g.slug}`}
+                      className="edition-rail-more"
+                    >
+                      Read the full guide &rarr;
+                    </Link>
                   </article>
                 ))}
               </div>
             </section>
           )}
 
-          {/* The puzzles page. Crossword beside the word games — the most
-              reliably daily page in the paper, and the reason to come back
-              with coffee. */}
+          {/* The puzzles pages, broken up by content (SA-092, founder: the
+              games should be interleaved, not clustered). The crossword now
+              shares its row with the proverb; the word games share theirs
+              with a historic voice. */}
           {edCrossword && (
             <section
               className="edition-section paper-box paper-box--crossword"
               data-reveal
               aria-label="The crossword"
+              id="the-crossword"
             >
               <div className="edition-section-bar">
                 <h2 className="edition-section-head">The crossword</h2>
@@ -728,9 +806,28 @@ export default async function DailyBreadPage() {
             </section>
           )}
 
+          {edProverb && (
+            <div
+              className={`paper-box ${edCrossword ? 'paper-box--proverb' : 'paper-box--wide'}`}
+              data-reveal
+            >
+              <ProverbBox proverb={edProverb} />
+            </div>
+          )}
+
+          {edVoices && (
+            <div
+              className={`paper-box ${edUnscramble || edQuiz.length > 0 ? 'paper-box--voices' : 'paper-box--wide'}`}
+              data-reveal
+            >
+              <VoicesColumn voice={edVoices} />
+            </div>
+          )}
+
           {(edUnscramble || edQuiz.length > 0) && (
             <div
-              className={`paper-box ${edCrossword ? 'paper-box--wordgames' : 'paper-box--wide'}`}
+              id="word-games"
+              className={`paper-box ${edVoices ? 'paper-box--wordgames' : 'paper-box--wide'}`}
               data-reveal
             >
               {edUnscramble && (
@@ -755,18 +852,64 @@ export default async function DailyBreadPage() {
           )}
 
           {/* The arts row: a reproduction beside the daily prayer. */}
-          {edGallery && (
-            <div className="paper-box paper-box--gallery" data-reveal>
-              <GalleryFrame art={edGallery} />
+          {edGalleryPlates.length > 0 && (
+            <div
+              id="the-gallery"
+              className="paper-box paper-box--wide"
+              data-reveal
+            >
+              <GallerySpread plates={edGalleryPlates} />
             </div>
           )}
 
           {edPrayer && (
+            <div className="paper-box paper-box--wide" data-reveal>
+              <span
+                id="the-daily-prayer"
+                className="sr-only"
+                aria-hidden="true"
+              />
+              <PrayerColumn prayer={edPrayer} />
+            </div>
+          )}
+
+          {/* SA-092: the archive row — an older reading resurfaced beside
+              today's stop in the year-long plan. */}
+          {edArchive && (
             <div
-              className={`paper-box ${edGallery ? 'paper-box--prayercol' : 'paper-box--wide'}`}
+              className={`paper-box ${edB365 ? 'paper-box--archive' : 'paper-box--wide'}`}
               data-reveal
             >
-              <PrayerColumn prayer={edPrayer} />
+              <ArchiveBox archive={edArchive} />
+            </div>
+          )}
+
+          {edB365 && (
+            <div
+              className={`paper-box ${edArchive ? 'paper-box--b365' : 'paper-box--wide'}`}
+              data-reveal
+            >
+              <B365Box b365={edB365} />
+            </div>
+          )}
+
+          {/* SA-092: the week's memory verse beside the day's question — the
+              take-away row before the reported sections. */}
+          {edVerse && (
+            <div
+              className={`paper-box ${edQuestion ? 'paper-box--verse' : 'paper-box--wide'}`}
+              data-reveal
+            >
+              <VerseBox verse={edVerse} />
+            </div>
+          )}
+
+          {edQuestion && (
+            <div
+              className={`paper-box ${edVerse ? 'paper-box--question' : 'paper-box--wide'}`}
+              data-reveal
+            >
+              <QuestionBox question={edQuestion} />
             </div>
           )}
 
@@ -818,6 +961,16 @@ export default async function DailyBreadPage() {
 
         {/* Rule */}
         <div className="mock-rule today-rule" aria-hidden="true" />
+
+        {/* Listen to the reading */}
+        {audioSegments.length > 0 && (
+          <AudioPlayer
+            slug={slug}
+            title={dayTitle}
+            segments={audioSegments}
+            artworkSrc={leadHero?.src}
+          />
+        )}
 
         {/* Reading body — server-rendered, full text in initial HTML */}
         <article

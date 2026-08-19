@@ -5,7 +5,7 @@
     "words": 897,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2482217,
+    "bytes": 4414632,
     "textHash": "45f095a5e243",
     "chapters": [
       {
@@ -66,7 +66,7 @@
     "words": 896,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2415822,
+    "bytes": 4306090,
     "textHash": "4533256274f4",
     "chapters": [
       {
@@ -127,7 +127,7 @@
     "words": 941,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2598173,
+    "bytes": 4657937,
     "textHash": "50de9d761865",
     "chapters": [
       {
@@ -188,7 +188,7 @@
     "words": 963,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2715040,
+    "bytes": 4848615,
     "textHash": "8986960ea277",
     "chapters": [
       {
@@ -249,7 +249,7 @@
     "words": 1032,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2726921,
+    "bytes": 4890816,
     "textHash": "026c9a176bdd",
     "chapters": [
       {
@@ -310,7 +310,7 @@
     "words": 958,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2801667,
+    "bytes": 5012199,
     "textHash": "c839065b2ab6",
     "chapters": [
       {
@@ -371,7 +371,7 @@
     "words": 977,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2435461,
+    "bytes": 4336591,
     "textHash": "bfbed58ef92f",
     "chapters": [
       {
@@ -432,7 +432,7 @@
     "words": 956,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2481468,
+    "bytes": 4447797,
     "textHash": "2dbee3f76389",
     "chapters": [
       {
@@ -493,7 +493,7 @@
     "words": 1080,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2694609,
+    "bytes": 4821245,
     "textHash": "ab3b7e79b70f",
     "chapters": [
       {
@@ -554,7 +554,7 @@
     "words": 1092,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2733466,
+    "bytes": 4894706,
     "textHash": "aff8c6cf312d",
     "chapters": [
       {
@@ -615,7 +615,7 @@
     "words": 1139,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2663696,
+    "bytes": 4740939,
     "textHash": "d90061d1e652",
     "chapters": [
       {
@@ -676,7 +676,7 @@
     "words": 1858,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4072590,
+    "bytes": 7385668,
     "textHash": "384beec8d490",
     "chapters": [
       {
@@ -737,7 +737,7 @@
     "words": 1963,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4338314,
+    "bytes": 7891318,
     "textHash": "4529930a3918",
     "chapters": [
       {
@@ -798,7 +798,7 @@
     "words": 1847,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4189910,
+    "bytes": 7615713,
     "textHash": "21bdc6701c41",
     "chapters": [
       {
@@ -859,7 +859,7 @@
     "words": 1959,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4373832,
+    "bytes": 7935914,
     "textHash": "aa54e8c1a72f",
     "chapters": [
       {
@@ -920,7 +920,7 @@
     "words": 1842,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4191553,
+    "bytes": 7609449,
     "textHash": "5eabf52a824c",
     "chapters": [
       {
@@ -981,7 +981,7 @@
     "words": 2036,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4676825,
+    "bytes": 8525875,
     "textHash": "04ff4c382ede",
     "chapters": [
       {
@@ -1042,7 +1042,7 @@
     "words": 2102,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4688876,
+    "bytes": 8537651,
     "textHash": "e7990d4d80e2",
     "chapters": [
       {
@@ -1103,7 +1103,7 @@
     "words": 2028,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4455527,
+    "bytes": 8074434,
     "textHash": "6e92d0ed6404",
     "chapters": [
       {
@@ -1164,7 +1164,7 @@
     "words": 1907,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4276359,
+    "bytes": 7750184,
     "textHash": "9a6977a7d850",
     "chapters": [
       {
@@ -1225,7 +1225,7 @@
     "words": 1944,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4395797,
+    "bytes": 7990265,
     "textHash": "4b1fb038ec49",
     "chapters": [
       {
@@ -1286,7 +1286,7 @@
     "words": 1933,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4399536,
+    "bytes": 8003935,
     "textHash": "cdf19b3286df",
     "chapters": [
       {
@@ -1347,7 +1347,7 @@
     "words": 1875,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4262998,
+    "bytes": 7721862,
     "textHash": "517e4c5a7b51",
     "chapters": [
       {
@@ -1408,7 +1408,7 @@
     "words": 1986,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4394465,
+    "bytes": 8029164,
     "textHash": "b5f3190f5d0f",
     "chapters": [
       {
@@ -1469,7 +1469,7 @@
     "words": 1989,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4419473,
+    "bytes": 8031667,
     "textHash": "1d39dcd45572",
     "chapters": [
       {
@@ -1530,7 +1530,7 @@
     "words": 2004,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4569923,
+    "bytes": 8309030,
     "textHash": "16064ca19ef3",
     "chapters": [
       {
@@ -1591,7 +1591,7 @@
     "words": 1845,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4052613,
+    "bytes": 7353197,
     "textHash": "9ff9494b97b9",
     "chapters": [
       {
@@ -1652,7 +1652,7 @@
     "words": 1937,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4336039,
+    "bytes": 7856884,
     "textHash": "90c18ceab2e0",
     "chapters": [
       {
@@ -1713,7 +1713,7 @@
     "words": 1994,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4695352,
+    "bytes": 8543825,
     "textHash": "913921362d99",
     "chapters": [
       {
@@ -1774,7 +1774,7 @@
     "words": 2029,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4528504,
+    "bytes": 8205884,
     "textHash": "62d565cdb93a",
     "chapters": [
       {
@@ -1835,7 +1835,7 @@
     "words": 2099,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4522384,
+    "bytes": 8235746,
     "textHash": "720db6221986",
     "chapters": [
       {
@@ -1896,7 +1896,7 @@
     "words": 1902,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4213752,
+    "bytes": 7625681,
     "textHash": "3c51b07b73e4",
     "chapters": [
       {
@@ -1957,7 +1957,7 @@
     "words": 1951,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4286600,
+    "bytes": 7770278,
     "textHash": "14700efbef86",
     "chapters": [
       {
@@ -2018,7 +2018,7 @@
     "words": 1920,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4258856,
+    "bytes": 7731711,
     "textHash": "a0be33f10fe3",
     "chapters": [
       {
@@ -2079,7 +2079,7 @@
     "words": 2261,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5025282,
+    "bytes": 9169208,
     "textHash": "d3bef4d43f3d",
     "chapters": [
       {
@@ -2140,7 +2140,7 @@
     "words": 1897,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4233799,
+    "bytes": 7683878,
     "textHash": "94727065ba0d",
     "chapters": [
       {
@@ -2201,7 +2201,7 @@
     "words": 1858,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4142120,
+    "bytes": 7510023,
     "textHash": "41cb65f53917",
     "chapters": [
       {
@@ -2262,7 +2262,7 @@
     "words": 2012,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4403813,
+    "bytes": 7991784,
     "textHash": "19c3189a2371",
     "chapters": [
       {
@@ -2323,7 +2323,7 @@
     "words": 1851,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4137728,
+    "bytes": 7468685,
     "textHash": "5067059da7d5",
     "chapters": [
       {
@@ -2384,7 +2384,7 @@
     "words": 1816,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4181499,
+    "bytes": 7549630,
     "textHash": "7f5ad738250e",
     "chapters": [
       {
@@ -2445,7 +2445,7 @@
     "words": 1817,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4129649,
+    "bytes": 7497259,
     "textHash": "0163b30a7b04",
     "chapters": [
       {
@@ -2506,7 +2506,7 @@
     "words": 1759,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3961074,
+    "bytes": 7153791,
     "textHash": "1984d2b8d444",
     "chapters": [
       {
@@ -2567,7 +2567,7 @@
     "words": 1624,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3836102,
+    "bytes": 6917894,
     "textHash": "979feb5aedac",
     "chapters": [
       {
@@ -2628,7 +2628,7 @@
     "words": 1846,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4284255,
+    "bytes": 7740090,
     "textHash": "6ec658733554",
     "chapters": [
       {
@@ -2689,7 +2689,7 @@
     "words": 1801,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4172411,
+    "bytes": 7552799,
     "textHash": "e33879aa423e",
     "chapters": [
       {
@@ -2750,7 +2750,7 @@
     "words": 1765,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3884897,
+    "bytes": 7018902,
     "textHash": "8df88d20b3e4",
     "chapters": [
       {
@@ -2811,7 +2811,7 @@
     "words": 1640,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3881195,
+    "bytes": 7017150,
     "textHash": "fc0f3113cf93",
     "chapters": [
       {
@@ -2872,7 +2872,7 @@
     "words": 1745,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4007214,
+    "bytes": 7247829,
     "textHash": "85997ab3adf8",
     "chapters": [
       {
@@ -2933,7 +2933,7 @@
     "words": 2107,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4822398,
+    "bytes": 8754797,
     "textHash": "ed5075cc4944",
     "chapters": [
       {
@@ -2994,7 +2994,7 @@
     "words": 1773,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4094102,
+    "bytes": 7437747,
     "textHash": "e6633a0011b5",
     "chapters": [
       {
@@ -3055,7 +3055,7 @@
     "words": 1963,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4395167,
+    "bytes": 7971119,
     "textHash": "983304092bba",
     "chapters": [
       {
@@ -3116,7 +3116,7 @@
     "words": 1949,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4405378,
+    "bytes": 8013390,
     "textHash": "2b91b65c048e",
     "chapters": [
       {
@@ -3177,7 +3177,7 @@
     "words": 2408,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5432869,
+    "bytes": 9923470,
     "textHash": "daf97333b76a",
     "chapters": [
       {
@@ -3238,7 +3238,7 @@
     "words": 2064,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4755276,
+    "bytes": 8671738,
     "textHash": "bf2695daf4ea",
     "chapters": [
       {
@@ -3299,7 +3299,7 @@
     "words": 2104,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4724229,
+    "bytes": 8571292,
     "textHash": "044d7c3e7ccb",
     "chapters": [
       {
@@ -3360,7 +3360,7 @@
     "words": 1939,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4444392,
+    "bytes": 8075306,
     "textHash": "e291a384d222",
     "chapters": [
       {
@@ -3421,7 +3421,7 @@
     "words": 1994,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4252305,
+    "bytes": 7710003,
     "textHash": "e1c3a048356c",
     "chapters": [
       {
@@ -3482,7 +3482,7 @@
     "words": 2146,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4765701,
+    "bytes": 8652961,
     "textHash": "88eb00c61b7d",
     "chapters": [
       {
@@ -3543,7 +3543,7 @@
     "words": 1769,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4011950,
+    "bytes": 7255422,
     "textHash": "c153d61f8838",
     "chapters": [
       {
@@ -3604,7 +3604,7 @@
     "words": 1725,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3835834,
+    "bytes": 6952637,
     "textHash": "cd0a96d7760b",
     "chapters": [
       {
@@ -3665,7 +3665,7 @@
     "words": 1874,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4146689,
+    "bytes": 7539898,
     "textHash": "f2bb85b42f89",
     "chapters": [
       {
@@ -3726,7 +3726,7 @@
     "words": 1967,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4362910,
+    "bytes": 7981450,
     "textHash": "7166244b9af8",
     "chapters": [
       {
@@ -3787,7 +3787,7 @@
     "words": 1904,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4181156,
+    "bytes": 7582677,
     "textHash": "e84a9607ef1a",
     "chapters": [
       {
@@ -3848,7 +3848,7 @@
     "words": 1944,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4305615,
+    "bytes": 7811607,
     "textHash": "1f33a2c87b3e",
     "chapters": [
       {
@@ -3909,7 +3909,7 @@
     "words": 1955,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4314451,
+    "bytes": 7836312,
     "textHash": "ce14d800c55f",
     "chapters": [
       {
@@ -3970,7 +3970,7 @@
     "words": 1702,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3814976,
+    "bytes": 6902456,
     "textHash": "58053e8bf295",
     "chapters": [
       {
@@ -4031,7 +4031,7 @@
     "words": 1904,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4259072,
+    "bytes": 7724637,
     "textHash": "b224b458f072",
     "chapters": [
       {
@@ -4092,7 +4092,7 @@
     "words": 1674,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3822714,
+    "bytes": 6940159,
     "textHash": "9f7efe5099aa",
     "chapters": [
       {
@@ -4153,7 +4153,7 @@
     "words": 1758,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3937144,
+    "bytes": 7099530,
     "textHash": "73c5c3c5e2a7",
     "chapters": [
       {
@@ -4214,7 +4214,7 @@
     "words": 1896,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4232487,
+    "bytes": 7671095,
     "textHash": "d318d3c00403",
     "chapters": [
       {
@@ -4275,7 +4275,7 @@
     "words": 2070,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4609169,
+    "bytes": 8375551,
     "textHash": "88f72d539791",
     "chapters": [
       {
@@ -4336,7 +4336,7 @@
     "words": 1851,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4128315,
+    "bytes": 7435490,
     "textHash": "61c3b7ade002",
     "chapters": [
       {
@@ -4397,7 +4397,7 @@
     "words": 1724,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3873551,
+    "bytes": 7008976,
     "textHash": "ab812aa13eb1",
     "chapters": [
       {
@@ -4458,7 +4458,7 @@
     "words": 1618,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3591068,
+    "bytes": 6498301,
     "textHash": "131dcb7aa66e",
     "chapters": [
       {
@@ -4519,7 +4519,7 @@
     "words": 1943,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4508264,
+    "bytes": 8173249,
     "textHash": "4c1cd7aab2a1",
     "chapters": [
       {
@@ -4580,7 +4580,7 @@
     "words": 1958,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4423102,
+    "bytes": 8010178,
     "textHash": "611993f82954",
     "chapters": [
       {
@@ -4641,7 +4641,7 @@
     "words": 2059,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4639946,
+    "bytes": 8370497,
     "textHash": "821cd091011f",
     "chapters": [
       {
@@ -4702,7 +4702,7 @@
     "words": 1976,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4421151,
+    "bytes": 7992876,
     "textHash": "fd287f09c99f",
     "chapters": [
       {
@@ -4763,7 +4763,7 @@
     "words": 1898,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4312678,
+    "bytes": 7842814,
     "textHash": "1c0075616340",
     "chapters": [
       {
@@ -4824,7 +4824,7 @@
     "words": 1967,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4381991,
+    "bytes": 7934131,
     "textHash": "bec934b61046",
     "chapters": [
       {
@@ -4885,7 +4885,7 @@
     "words": 2020,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4590691,
+    "bytes": 8337228,
     "textHash": "b68b7307b940",
     "chapters": [
       {
@@ -4946,7 +4946,7 @@
     "words": 1829,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4067352,
+    "bytes": 7403415,
     "textHash": "00bbad6bda53",
     "chapters": [
       {
@@ -5007,7 +5007,7 @@
     "words": 1906,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4238129,
+    "bytes": 7701069,
     "textHash": "3ac16d7d19ae",
     "chapters": [
       {
@@ -5068,7 +5068,7 @@
     "words": 1962,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4336556,
+    "bytes": 7884992,
     "textHash": "451fd0ba165a",
     "chapters": [
       {
@@ -5129,7 +5129,7 @@
     "words": 2032,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4520341,
+    "bytes": 8195064,
     "textHash": "c90221bc08d4",
     "chapters": [
       {
@@ -5190,7 +5190,7 @@
     "words": 1782,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4031218,
+    "bytes": 7328316,
     "textHash": "77cd7c3015a2",
     "chapters": [
       {
@@ -5251,7 +5251,7 @@
     "words": 1841,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4168174,
+    "bytes": 7545058,
     "textHash": "6bb13c4aae92",
     "chapters": [
       {
@@ -5312,7 +5312,7 @@
     "words": 1980,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4444569,
+    "bytes": 8101889,
     "textHash": "83c65246cbc6",
     "chapters": [
       {
@@ -5373,7 +5373,7 @@
     "words": 1868,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4098162,
+    "bytes": 7406659,
     "textHash": "2eaedf8e68ed",
     "chapters": [
       {
@@ -5434,7 +5434,7 @@
     "words": 2252,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4867661,
+    "bytes": 8826024,
     "textHash": "49073af12abc",
     "chapters": [
       {
@@ -5495,7 +5495,7 @@
     "words": 1992,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4429033,
+    "bytes": 8031053,
     "textHash": "892a5e9587c2",
     "chapters": [
       {
@@ -5556,7 +5556,7 @@
     "words": 1675,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3668424,
+    "bytes": 6607195,
     "textHash": "4d3d7975c21f",
     "chapters": [
       {
@@ -5617,7 +5617,7 @@
     "words": 1931,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4306488,
+    "bytes": 7797015,
     "textHash": "f37a80e0511c",
     "chapters": [
       {
@@ -5678,7 +5678,7 @@
     "words": 1766,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3930397,
+    "bytes": 7104883,
     "textHash": "ea3bb39aee0f",
     "chapters": [
       {
@@ -5739,7 +5739,7 @@
     "words": 2156,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4700336,
+    "bytes": 8534417,
     "textHash": "79caf25e0af8",
     "chapters": [
       {
@@ -5800,7 +5800,7 @@
     "words": 1895,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4158906,
+    "bytes": 7542726,
     "textHash": "49df48430fa7",
     "chapters": [
       {
@@ -5861,7 +5861,7 @@
     "words": 1843,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4053096,
+    "bytes": 7359867,
     "textHash": "ae5f8397d7f3",
     "chapters": [
       {
@@ -5922,7 +5922,7 @@
     "words": 1970,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4349873,
+    "bytes": 7909371,
     "textHash": "9c6882c6195c",
     "chapters": [
       {
@@ -5983,7 +5983,7 @@
     "words": 2006,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4439052,
+    "bytes": 8052875,
     "textHash": "bdae9ad361b7",
     "chapters": [
       {
@@ -6044,7 +6044,7 @@
     "words": 1939,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4308106,
+    "bytes": 7810635,
     "textHash": "69748f4fe24c",
     "chapters": [
       {
@@ -6105,7 +6105,7 @@
     "words": 2224,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4918298,
+    "bytes": 8983136,
     "textHash": "8546d63a1e94",
     "chapters": [
       {
@@ -6166,7 +6166,7 @@
     "words": 1821,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4082175,
+    "bytes": 7392938,
     "textHash": "a9cc3419b83b",
     "chapters": [
       {
@@ -6227,7 +6227,7 @@
     "words": 1959,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4264884,
+    "bytes": 7763918,
     "textHash": "403fbbce699e",
     "chapters": [
       {
@@ -6288,7 +6288,7 @@
     "words": 1807,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4085078,
+    "bytes": 7430308,
     "textHash": "49bb35c629c8",
     "chapters": [
       {
@@ -6349,7 +6349,7 @@
     "words": 1752,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3854444,
+    "bytes": 6976543,
     "textHash": "f9429a25a239",
     "chapters": [
       {
@@ -6410,7 +6410,7 @@
     "words": 2030,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4452451,
+    "bytes": 8085487,
     "textHash": "837cf02245d2",
     "chapters": [
       {
@@ -6471,7 +6471,7 @@
     "words": 1970,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4367254,
+    "bytes": 7939823,
     "textHash": "801291d02dc3",
     "chapters": [
       {
@@ -6532,7 +6532,7 @@
     "words": 1855,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4002848,
+    "bytes": 7253245,
     "textHash": "5f366e9b0225",
     "chapters": [
       {
@@ -6593,7 +6593,7 @@
     "words": 1724,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3676771,
+    "bytes": 6676855,
     "textHash": "b7e221fdca74",
     "chapters": [
       {
@@ -6654,7 +6654,7 @@
     "words": 1782,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3916572,
+    "bytes": 7087494,
     "textHash": "f99c6089b863",
     "chapters": [
       {
@@ -6715,7 +6715,7 @@
     "words": 1869,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4224757,
+    "bytes": 7680788,
     "textHash": "2da0f749ab86",
     "chapters": [
       {
@@ -6776,7 +6776,7 @@
     "words": 2088,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4513344,
+    "bytes": 8219374,
     "textHash": "5a30e8196094",
     "chapters": [
       {
@@ -6837,7 +6837,7 @@
     "words": 1839,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4137263,
+    "bytes": 7466638,
     "textHash": "1c1c50dc7a2e",
     "chapters": [
       {
@@ -6898,7 +6898,7 @@
     "words": 2130,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4703320,
+    "bytes": 8548682,
     "textHash": "fd753644d8f1",
     "chapters": [
       {
@@ -6959,7 +6959,7 @@
     "words": 2131,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4709382,
+    "bytes": 8524565,
     "textHash": "dae03d7cf14e",
     "chapters": [
       {
@@ -7020,7 +7020,7 @@
     "words": 1877,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4147400,
+    "bytes": 7516105,
     "textHash": "6a0197b5d0b0",
     "chapters": [
       {
@@ -7081,7 +7081,7 @@
     "words": 1946,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4187680,
+    "bytes": 7575242,
     "textHash": "5cdbbb337267",
     "chapters": [
       {
@@ -7142,7 +7142,7 @@
     "words": 2004,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4374377,
+    "bytes": 7931620,
     "textHash": "d3d75bd6000d",
     "chapters": [
       {
@@ -7203,7 +7203,7 @@
     "words": 1915,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4279176,
+    "bytes": 7735884,
     "textHash": "08d831944545",
     "chapters": [
       {
@@ -7264,7 +7264,7 @@
     "words": 1991,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4687569,
+    "bytes": 8500668,
     "textHash": "d81b8cd655f1",
     "chapters": [
       {
@@ -7325,7 +7325,7 @@
     "words": 1893,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4337813,
+    "bytes": 7822892,
     "textHash": "847a243cf63b",
     "chapters": [
       {
@@ -7386,7 +7386,7 @@
     "words": 1769,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4078587,
+    "bytes": 7358816,
     "textHash": "af6d172bd531",
     "chapters": [
       {
@@ -7447,7 +7447,7 @@
     "words": 1859,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4212584,
+    "bytes": 7659384,
     "textHash": "e6e84db8a866",
     "chapters": [
       {
@@ -7508,7 +7508,7 @@
     "words": 1856,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4054008,
+    "bytes": 7387835,
     "textHash": "5d8e3489c315",
     "chapters": [
       {
@@ -7569,7 +7569,7 @@
     "words": 1736,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3968316,
+    "bytes": 7185832,
     "textHash": "3f8216dbf8e9",
     "chapters": [
       {
@@ -7630,7 +7630,7 @@
     "words": 1784,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4111390,
+    "bytes": 7452127,
     "textHash": "ca9f6eea6e34",
     "chapters": [
       {
@@ -7691,7 +7691,7 @@
     "words": 1955,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4518048,
+    "bytes": 8185666,
     "textHash": "075610bf4abf",
     "chapters": [
       {
@@ -7752,7 +7752,7 @@
     "words": 1802,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4093952,
+    "bytes": 7418475,
     "textHash": "99c06e19af44",
     "chapters": [
       {
@@ -7813,7 +7813,7 @@
     "words": 1783,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3945022,
+    "bytes": 7127887,
     "textHash": "aa1c5a07c646",
     "chapters": [
       {
@@ -7874,7 +7874,7 @@
     "words": 1672,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3876510,
+    "bytes": 6988783,
     "textHash": "1c3a4b9bd3ed",
     "chapters": [
       {
@@ -7935,7 +7935,7 @@
     "words": 1616,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3643564,
+    "bytes": 6573998,
     "textHash": "aee3cbde8b01",
     "chapters": [
       {
@@ -7996,7 +7996,7 @@
     "words": 1939,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4266281,
+    "bytes": 7738538,
     "textHash": "231a3827475a",
     "chapters": [
       {
@@ -8057,7 +8057,7 @@
     "words": 1899,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4218436,
+    "bytes": 7655593,
     "textHash": "6adad11de168",
     "chapters": [
       {
@@ -8118,7 +8118,7 @@
     "words": 1769,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3993047,
+    "bytes": 7205613,
     "textHash": "0f66d8a38f65",
     "chapters": [
       {
@@ -8179,7 +8179,7 @@
     "words": 1918,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4175674,
+    "bytes": 7584268,
     "textHash": "e5e608626afa",
     "chapters": [
       {
@@ -8240,7 +8240,7 @@
     "words": 2036,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4459642,
+    "bytes": 8109503,
     "textHash": "db0a6af08ce2",
     "chapters": [
       {
@@ -8301,7 +8301,7 @@
     "words": 2148,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4701252,
+    "bytes": 8484129,
     "textHash": "d519e08dbbf3",
     "chapters": [
       {
@@ -8362,7 +8362,7 @@
     "words": 1801,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3925140,
+    "bytes": 7057060,
     "textHash": "93e506687da4",
     "chapters": [
       {
@@ -8423,7 +8423,7 @@
     "words": 1825,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4050726,
+    "bytes": 7310572,
     "textHash": "c02ced944291",
     "chapters": [
       {
@@ -8484,7 +8484,7 @@
     "words": 1940,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4212083,
+    "bytes": 7585456,
     "textHash": "d93084383118",
     "chapters": [
       {
@@ -8545,7 +8545,7 @@
     "words": 1797,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3860248,
+    "bytes": 6947274,
     "textHash": "d8208fe87cd4",
     "chapters": [
       {
@@ -8606,7 +8606,7 @@
     "words": 1933,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4201863,
+    "bytes": 7553699,
     "textHash": "30e41d86e37e",
     "chapters": [
       {
@@ -8667,7 +8667,7 @@
     "words": 1989,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4311830,
+    "bytes": 7776612,
     "textHash": "a133b6184d91",
     "chapters": [
       {
@@ -8728,7 +8728,7 @@
     "words": 1929,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4323931,
+    "bytes": 7854546,
     "textHash": "ddd5bf5c38fc",
     "chapters": [
       {
@@ -8789,7 +8789,7 @@
     "words": 1981,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4428153,
+    "bytes": 8041413,
     "textHash": "b6134dfb4d25",
     "chapters": [
       {
@@ -8850,7 +8850,7 @@
     "words": 2239,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4997151,
+    "bytes": 9078969,
     "textHash": "aa96a5246ba7",
     "chapters": [
       {
@@ -8911,7 +8911,7 @@
     "words": 2156,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4766352,
+    "bytes": 8692620,
     "textHash": "6a09e8505f1e",
     "chapters": [
       {
@@ -8972,7 +8972,7 @@
     "words": 1924,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4323258,
+    "bytes": 7865863,
     "textHash": "ee6ff2472f2d",
     "chapters": [
       {
@@ -9033,7 +9033,7 @@
     "words": 1966,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4353211,
+    "bytes": 7917194,
     "textHash": "3c9c35c798e8",
     "chapters": [
       {
@@ -9094,7 +9094,7 @@
     "words": 2202,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4932684,
+    "bytes": 8975239,
     "textHash": "0375dce47f41",
     "chapters": [
       {
@@ -9155,7 +9155,7 @@
     "words": 2176,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4831848,
+    "bytes": 8787645,
     "textHash": "d139f9bb849d",
     "chapters": [
       {
@@ -9216,7 +9216,7 @@
     "words": 1687,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3931680,
+    "bytes": 7114598,
     "textHash": "4cbfcd339700",
     "chapters": [
       {
@@ -9277,7 +9277,7 @@
     "words": 1708,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3917075,
+    "bytes": 7062361,
     "textHash": "469e57c6b0e1",
     "chapters": [
       {
@@ -9338,7 +9338,7 @@
     "words": 1806,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4254956,
+    "bytes": 7705433,
     "textHash": "be5a58aecd1a",
     "chapters": [
       {
@@ -9399,7 +9399,7 @@
     "words": 1743,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3954984,
+    "bytes": 7157001,
     "textHash": "acc628bbc65f",
     "chapters": [
       {
@@ -9460,7 +9460,7 @@
     "words": 1950,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4435621,
+    "bytes": 8055144,
     "textHash": "df684bdffa44",
     "chapters": [
       {
@@ -9521,7 +9521,7 @@
     "words": 2122,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4404953,
+    "bytes": 8009001,
     "textHash": "fa68c333f465",
     "chapters": [
       {
@@ -9582,7 +9582,7 @@
     "words": 1819,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4176733,
+    "bytes": 7550781,
     "textHash": "9ad5e56b983a",
     "chapters": [
       {
@@ -9643,7 +9643,7 @@
     "words": 1943,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4575035,
+    "bytes": 8291154,
     "textHash": "3faa95b4697d",
     "chapters": [
       {
@@ -9704,7 +9704,7 @@
     "words": 1931,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4280100,
+    "bytes": 7780537,
     "textHash": "a00aa219a3bc",
     "chapters": [
       {
@@ -9765,7 +9765,7 @@
     "words": 1883,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4199761,
+    "bytes": 7632204,
     "textHash": "938a7118c481",
     "chapters": [
       {
@@ -9826,7 +9826,7 @@
     "words": 2090,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4668021,
+    "bytes": 8500389,
     "textHash": "d7b53967ed61",
     "chapters": [
       {
@@ -9887,7 +9887,7 @@
     "words": 1998,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4453215,
+    "bytes": 8095170,
     "textHash": "2c5917e75e4d",
     "chapters": [
       {
@@ -9948,7 +9948,7 @@
     "words": 1796,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3943063,
+    "bytes": 7152219,
     "textHash": "379b308505e7",
     "chapters": [
       {
@@ -10009,7 +10009,7 @@
     "words": 1946,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4443459,
+    "bytes": 8079656,
     "textHash": "c0d69b95e002",
     "chapters": [
       {
@@ -10070,7 +10070,7 @@
     "words": 2055,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4593577,
+    "bytes": 8369337,
     "textHash": "e41bf0d20e3a",
     "chapters": [
       {
@@ -10131,7 +10131,7 @@
     "words": 1821,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4090594,
+    "bytes": 7448871,
     "textHash": "5702c0b0fbca",
     "chapters": [
       {
@@ -10192,7 +10192,7 @@
     "words": 2024,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4435201,
+    "bytes": 8021982,
     "textHash": "8f368c844ea1",
     "chapters": [
       {
@@ -10253,7 +10253,7 @@
     "words": 1932,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4295833,
+    "bytes": 7844039,
     "textHash": "18564e4f2fb0",
     "chapters": [
       {
@@ -10314,7 +10314,7 @@
     "words": 2058,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4629782,
+    "bytes": 8433448,
     "textHash": "bfa3918b9148",
     "chapters": [
       {
@@ -10375,7 +10375,7 @@
     "words": 2016,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4397321,
+    "bytes": 7988174,
     "textHash": "ff22124e66bc",
     "chapters": [
       {
@@ -10436,7 +10436,7 @@
     "words": 1749,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3885881,
+    "bytes": 7053792,
     "textHash": "f504422c3bf6",
     "chapters": [
       {
@@ -10497,7 +10497,7 @@
     "words": 2049,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4589605,
+    "bytes": 8342200,
     "textHash": "4da2b976113b",
     "chapters": [
       {
@@ -10558,7 +10558,7 @@
     "words": 1931,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4270258,
+    "bytes": 7746622,
     "textHash": "3de1a42bb9f8",
     "chapters": [
       {
@@ -10619,7 +10619,7 @@
     "words": 1869,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4191804,
+    "bytes": 7605678,
     "textHash": "3aff350911a4",
     "chapters": [
       {
@@ -10680,7 +10680,7 @@
     "words": 2019,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4572339,
+    "bytes": 8293330,
     "textHash": "fa0b1d57acbb",
     "chapters": [
       {
@@ -10741,7 +10741,7 @@
     "words": 2036,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4734752,
+    "bytes": 8590770,
     "textHash": "bab5ce95e2b7",
     "chapters": [
       {
@@ -10802,7 +10802,7 @@
     "words": 1793,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4145105,
+    "bytes": 7490053,
     "textHash": "a1e54251b2b2",
     "chapters": [
       {
@@ -10863,7 +10863,7 @@
     "words": 1963,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4385645,
+    "bytes": 7940113,
     "textHash": "a5cb56ab6893",
     "chapters": [
       {
@@ -10924,7 +10924,7 @@
     "words": 1692,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3812383,
+    "bytes": 6906703,
     "textHash": "8ba7d8d86f0b",
     "chapters": [
       {
@@ -10985,7 +10985,7 @@
     "words": 1974,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4484813,
+    "bytes": 8117542,
     "textHash": "0e933cb17059",
     "chapters": [
       {
@@ -11046,7 +11046,7 @@
     "words": 1750,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4102502,
+    "bytes": 7404221,
     "textHash": "a2f4dc0a2a35",
     "chapters": [
       {
@@ -11107,7 +11107,7 @@
     "words": 1872,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4095235,
+    "bytes": 7407822,
     "textHash": "b41ed7f3b034",
     "chapters": [
       {
@@ -11168,7 +11168,7 @@
     "words": 1653,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3796954,
+    "bytes": 6870398,
     "textHash": "5245ca7c55ac",
     "chapters": [
       {
@@ -11229,7 +11229,7 @@
     "words": 1788,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4069650,
+    "bytes": 7373709,
     "textHash": "e27737798118",
     "chapters": [
       {
@@ -11290,7 +11290,7 @@
     "words": 1753,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4114787,
+    "bytes": 7416861,
     "textHash": "01f4f0ee5b35",
     "chapters": [
       {
@@ -11351,7 +11351,7 @@
     "words": 1828,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4155189,
+    "bytes": 7513650,
     "textHash": "0e84c77634e6",
     "chapters": [
       {
@@ -11412,7 +11412,7 @@
     "words": 1821,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4123148,
+    "bytes": 7447094,
     "textHash": "b9412841abc8",
     "chapters": [
       {
@@ -11473,7 +11473,7 @@
     "words": 1798,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4130713,
+    "bytes": 7464928,
     "textHash": "9157ce0ca42e",
     "chapters": [
       {
@@ -11534,7 +11534,7 @@
     "words": 2025,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4468921,
+    "bytes": 8160990,
     "textHash": "a7046029b547",
     "chapters": [
       {
@@ -11595,7 +11595,7 @@
     "words": 1833,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4145344,
+    "bytes": 7485804,
     "textHash": "8b9cfbb36d97",
     "chapters": [
       {
@@ -11656,7 +11656,7 @@
     "words": 1848,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4143566,
+    "bytes": 7468290,
     "textHash": "f5a67aa5c8a5",
     "chapters": [
       {
@@ -11717,7 +11717,7 @@
     "words": 1736,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3908532,
+    "bytes": 7080252,
     "textHash": "06e6417a0953",
     "chapters": [
       {
@@ -11778,7 +11778,7 @@
     "words": 1767,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3982933,
+    "bytes": 7212983,
     "textHash": "fcd1915bf631",
     "chapters": [
       {
@@ -11839,7 +11839,7 @@
     "words": 1863,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4062469,
+    "bytes": 7377823,
     "textHash": "ef78fc75eaba",
     "chapters": [
       {
@@ -11900,7 +11900,7 @@
     "words": 2443,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5431918,
+    "bytes": 9918004,
     "textHash": "3c9bdbaaf8e0",
     "chapters": [
       {
@@ -11961,7 +11961,7 @@
     "words": 1709,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3863003,
+    "bytes": 7011362,
     "textHash": "d3a2352beb53",
     "chapters": [
       {
@@ -12022,7 +12022,7 @@
     "words": 1559,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3595044,
+    "bytes": 6512445,
     "textHash": "ae671863f61d",
     "chapters": [
       {
@@ -12083,7 +12083,7 @@
     "words": 1954,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4376924,
+    "bytes": 7935092,
     "textHash": "e203ddb9ba11",
     "chapters": [
       {
@@ -12144,7 +12144,7 @@
     "words": 1899,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4399884,
+    "bytes": 7954706,
     "textHash": "fdcb359add95",
     "chapters": [
       {
@@ -12205,7 +12205,7 @@
     "words": 1971,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4224361,
+    "bytes": 7624562,
     "textHash": "3ef94800781b",
     "chapters": [
       {
@@ -12266,7 +12266,7 @@
     "words": 1585,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3570391,
+    "bytes": 6441970,
     "textHash": "bf18ae76b1ed",
     "chapters": [
       {
@@ -12327,7 +12327,7 @@
     "words": 1900,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4292441,
+    "bytes": 7738514,
     "textHash": "73d17fd9bf52",
     "chapters": [
       {
@@ -12388,7 +12388,7 @@
     "words": 1753,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4111735,
+    "bytes": 7398089,
     "textHash": "924ecf053467",
     "chapters": [
       {
@@ -12449,7 +12449,7 @@
     "words": 1768,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4013406,
+    "bytes": 7216781,
     "textHash": "50900e9a52d2",
     "chapters": [
       {
@@ -12510,7 +12510,7 @@
     "words": 1709,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3741552,
+    "bytes": 6757799,
     "textHash": "4be34d8c5e22",
     "chapters": [
       {
@@ -12571,7 +12571,7 @@
     "words": 1921,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4424388,
+    "bytes": 8026484,
     "textHash": "b87ebad2b0e1",
     "chapters": [
       {
@@ -12632,7 +12632,7 @@
     "words": 1792,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4075162,
+    "bytes": 7357447,
     "textHash": "19eaa9479ea6",
     "chapters": [
       {
@@ -12693,7 +12693,7 @@
     "words": 1888,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4167946,
+    "bytes": 7540625,
     "textHash": "3fb684690d83",
     "chapters": [
       {
@@ -12754,7 +12754,7 @@
     "words": 2038,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4586654,
+    "bytes": 8305203,
     "textHash": "e87517d5e8d5",
     "chapters": [
       {
@@ -12815,7 +12815,7 @@
     "words": 1947,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4295353,
+    "bytes": 7775079,
     "textHash": "429b6b66a445",
     "chapters": [
       {
@@ -12876,7 +12876,7 @@
     "words": 1739,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3737933,
+    "bytes": 6756002,
     "textHash": "adb4feba5c0d",
     "chapters": [
       {
@@ -12937,7 +12937,7 @@
     "words": 1857,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4097422,
+    "bytes": 7413823,
     "textHash": "0181b721ba29",
     "chapters": [
       {
@@ -12998,7 +12998,7 @@
     "words": 1788,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4122273,
+    "bytes": 7478897,
     "textHash": "d50a33e95526",
     "chapters": [
       {
@@ -13059,7 +13059,7 @@
     "words": 1776,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4104116,
+    "bytes": 7393952,
     "textHash": "53278784a878",
     "chapters": [
       {
@@ -13120,7 +13120,7 @@
     "words": 1861,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4157816,
+    "bytes": 7519659,
     "textHash": "a19107b5ee29",
     "chapters": [
       {
@@ -13181,7 +13181,7 @@
     "words": 1938,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4252382,
+    "bytes": 7675679,
     "textHash": "89ddd460d2a8",
     "chapters": [
       {
@@ -13242,7 +13242,7 @@
     "words": 1860,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4220871,
+    "bytes": 7664366,
     "textHash": "090c677a334d",
     "chapters": [
       {
@@ -13303,7 +13303,7 @@
     "words": 2029,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4501942,
+    "bytes": 8187790,
     "textHash": "dfd765d2ffcb",
     "chapters": [
       {
@@ -13364,7 +13364,7 @@
     "words": 1838,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4076822,
+    "bytes": 7343013,
     "textHash": "6a9f6e804dd1",
     "chapters": [
       {
@@ -13425,7 +13425,7 @@
     "words": 1726,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3825761,
+    "bytes": 6892605,
     "textHash": "2d3e8fd17acd",
     "chapters": [
       {
@@ -13486,7 +13486,7 @@
     "words": 1846,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4105607,
+    "bytes": 7426495,
     "textHash": "32e063c9756e",
     "chapters": [
       {
@@ -13547,7 +13547,7 @@
     "words": 2193,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4906414,
+    "bytes": 8916175,
     "textHash": "fa23a3e3b505",
     "chapters": [
       {
@@ -13608,7 +13608,7 @@
     "words": 1820,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4050595,
+    "bytes": 7325640,
     "textHash": "d214179a3b55",
     "chapters": [
       {
@@ -13669,7 +13669,7 @@
     "words": 1825,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4083151,
+    "bytes": 7377048,
     "textHash": "18dcdaf32dc8",
     "chapters": [
       {
@@ -13730,7 +13730,7 @@
     "words": 1795,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4007075,
+    "bytes": 7216859,
     "textHash": "f2678f394988",
     "chapters": [
       {
@@ -13791,7 +13791,7 @@
     "words": 1889,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4223142,
+    "bytes": 7616705,
     "textHash": "922aec97fcdc",
     "chapters": [
       {
@@ -13852,7 +13852,7 @@
     "words": 1831,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4022015,
+    "bytes": 7263940,
     "textHash": "820b7fbb5338",
     "chapters": [
       {
@@ -13913,7 +13913,7 @@
     "words": 1751,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3993635,
+    "bytes": 7209478,
     "textHash": "64567bf0d76b",
     "chapters": [
       {
@@ -13974,7 +13974,7 @@
     "words": 1853,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4151474,
+    "bytes": 7520559,
     "textHash": "d717c67553e5",
     "chapters": [
       {
@@ -14035,7 +14035,7 @@
     "words": 2007,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4468359,
+    "bytes": 8077910,
     "textHash": "edd55fc2b39b",
     "chapters": [
       {
@@ -14096,7 +14096,7 @@
     "words": 1780,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4030447,
+    "bytes": 7303455,
     "textHash": "87a57b6094e7",
     "chapters": [
       {
@@ -14157,7 +14157,7 @@
     "words": 1808,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4111624,
+    "bytes": 7441099,
     "textHash": "859961ea46a6",
     "chapters": [
       {
@@ -14218,7 +14218,7 @@
     "words": 1613,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3610019,
+    "bytes": 6520068,
     "textHash": "5307eef11009",
     "chapters": [
       {
@@ -14279,7 +14279,7 @@
     "words": 1813,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4189788,
+    "bytes": 7591842,
     "textHash": "34f80c6e5ed3",
     "chapters": [
       {
@@ -14340,7 +14340,7 @@
     "words": 1819,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4072182,
+    "bytes": 7377150,
     "textHash": "fde6c7e86571",
     "chapters": [
       {
@@ -14401,7 +14401,7 @@
     "words": 1817,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4171826,
+    "bytes": 7567004,
     "textHash": "490a231741aa",
     "chapters": [
       {
@@ -14462,7 +14462,7 @@
     "words": 1950,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4309754,
+    "bytes": 7796232,
     "textHash": "e6839499a58c",
     "chapters": [
       {
@@ -14523,7 +14523,7 @@
     "words": 2034,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4373886,
+    "bytes": 7919716,
     "textHash": "1ba225027857",
     "chapters": [
       {
@@ -14584,7 +14584,7 @@
     "words": 1811,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3942931,
+    "bytes": 7133679,
     "textHash": "fd3908770dd9",
     "chapters": [
       {
@@ -14645,7 +14645,7 @@
     "words": 1726,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3941961,
+    "bytes": 7131227,
     "textHash": "6c359bfeb623",
     "chapters": [
       {
@@ -14706,7 +14706,7 @@
     "words": 1961,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4311247,
+    "bytes": 7805227,
     "textHash": "8f9cef9805b2",
     "chapters": [
       {
@@ -14767,7 +14767,7 @@
     "words": 1767,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3985555,
+    "bytes": 7185786,
     "textHash": "e2e1c7e41b01",
     "chapters": [
       {
@@ -14828,7 +14828,7 @@
     "words": 1802,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3997629,
+    "bytes": 7237039,
     "textHash": "ace70a74db5c",
     "chapters": [
       {
@@ -14889,7 +14889,7 @@
     "words": 1842,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3989930,
+    "bytes": 7225657,
     "textHash": "a75c0293e32a",
     "chapters": [
       {
@@ -14950,7 +14950,7 @@
     "words": 1880,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4133192,
+    "bytes": 7482462,
     "textHash": "a4752bfb0d81",
     "chapters": [
       {
@@ -15011,7 +15011,7 @@
     "words": 1821,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3952225,
+    "bytes": 7153308,
     "textHash": "5ea9f50b1a2b",
     "chapters": [
       {
@@ -15072,7 +15072,7 @@
     "words": 1939,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4290873,
+    "bytes": 7769561,
     "textHash": "66e7e614c328",
     "chapters": [
       {
@@ -15133,7 +15133,7 @@
     "words": 1659,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3555981,
+    "bytes": 6430003,
     "textHash": "89d80b8dc65e",
     "chapters": [
       {
@@ -15194,7 +15194,7 @@
     "words": 1764,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3795229,
+    "bytes": 6894394,
     "textHash": "27a000bc7474",
     "chapters": [
       {
@@ -15255,7 +15255,7 @@
     "words": 1828,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4052497,
+    "bytes": 7358662,
     "textHash": "88f6b1808c2e",
     "chapters": [
       {
@@ -15316,7 +15316,7 @@
     "words": 1838,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3933889,
+    "bytes": 7112911,
     "textHash": "5f5159951967",
     "chapters": [
       {
@@ -15377,7 +15377,7 @@
     "words": 1953,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4078495,
+    "bytes": 7372184,
     "textHash": "5636618494b4",
     "chapters": [
       {
@@ -15438,7 +15438,7 @@
     "words": 2028,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4363991,
+    "bytes": 7971654,
     "textHash": "29b61cbe92af",
     "chapters": [
       {
@@ -15499,7 +15499,7 @@
     "words": 1900,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4062190,
+    "bytes": 7336999,
     "textHash": "8c456937a6d3",
     "chapters": [
       {
@@ -15560,7 +15560,7 @@
     "words": 1730,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3745682,
+    "bytes": 6744728,
     "textHash": "212708988278",
     "chapters": [
       {
@@ -15621,7 +15621,7 @@
     "words": 2104,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4638474,
+    "bytes": 8435716,
     "textHash": "51fb5eef09b5",
     "chapters": [
       {
@@ -15682,7 +15682,7 @@
     "words": 1741,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3715971,
+    "bytes": 6708675,
     "textHash": "b1d6dd29a070",
     "chapters": [
       {
@@ -15743,7 +15743,7 @@
     "words": 1817,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3861272,
+    "bytes": 6990279,
     "textHash": "df9f58bed900",
     "chapters": [
       {
@@ -15804,7 +15804,7 @@
     "words": 1708,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3635862,
+    "bytes": 6570571,
     "textHash": "7b38741bb3a9",
     "chapters": [
       {
@@ -15865,7 +15865,7 @@
     "words": 1760,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3863069,
+    "bytes": 7012788,
     "textHash": "ebe0aa5b6020",
     "chapters": [
       {
@@ -15926,7 +15926,7 @@
     "words": 1777,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3796015,
+    "bytes": 6860946,
     "textHash": "29135b360111",
     "chapters": [
       {
@@ -15987,7 +15987,7 @@
     "words": 1827,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4019911,
+    "bytes": 7296774,
     "textHash": "fe43907389eb",
     "chapters": [
       {
@@ -16048,7 +16048,7 @@
     "words": 1997,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4421896,
+    "bytes": 7985454,
     "textHash": "df54663760d2",
     "chapters": [
       {
@@ -16109,7 +16109,7 @@
     "words": 1638,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3604825,
+    "bytes": 6547523,
     "textHash": "0a6de1b6a86f",
     "chapters": [
       {
@@ -16170,7 +16170,7 @@
     "words": 1719,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3795095,
+    "bytes": 6877648,
     "textHash": "9729b37c687e",
     "chapters": [
       {
@@ -16231,7 +16231,7 @@
     "words": 1626,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3565618,
+    "bytes": 6422797,
     "textHash": "468b05fbbff1",
     "chapters": [
       {
@@ -16292,7 +16292,7 @@
     "words": 1993,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4493290,
+    "bytes": 8177208,
     "textHash": "7cca1423d290",
     "chapters": [
       {
@@ -16353,7 +16353,7 @@
     "words": 1844,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4085973,
+    "bytes": 7388434,
     "textHash": "e6a50d5a6afc",
     "chapters": [
       {
@@ -16414,7 +16414,7 @@
     "words": 1755,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4018942,
+    "bytes": 7272513,
     "textHash": "75ce94c2d9af",
     "chapters": [
       {
@@ -16475,7 +16475,7 @@
     "words": 1967,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4413984,
+    "bytes": 8018702,
     "textHash": "dbc6b332d953",
     "chapters": [
       {
@@ -16536,7 +16536,7 @@
     "words": 1725,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3998539,
+    "bytes": 7270023,
     "textHash": "3f6e7b1a0b5c",
     "chapters": [
       {
@@ -16597,7 +16597,7 @@
     "words": 1750,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4083714,
+    "bytes": 7414629,
     "textHash": "475f49ebd695",
     "chapters": [
       {
@@ -16658,7 +16658,7 @@
     "words": 1607,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3703346,
+    "bytes": 6695487,
     "textHash": "a1be7e31a82d",
     "chapters": [
       {
@@ -16719,7 +16719,7 @@
     "words": 1708,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3880672,
+    "bytes": 7023390,
     "textHash": "782c20906546",
     "chapters": [
       {
@@ -16780,7 +16780,7 @@
     "words": 1627,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3746998,
+    "bytes": 6789673,
     "textHash": "5d2dccc11934",
     "chapters": [
       {
@@ -16841,7 +16841,7 @@
     "words": 1744,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4084962,
+    "bytes": 7393200,
     "textHash": "04f8b55e8d45",
     "chapters": [
       {
@@ -16902,7 +16902,7 @@
     "words": 1690,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3881629,
+    "bytes": 7013118,
     "textHash": "2490f25369aa",
     "chapters": [
       {
@@ -16963,7 +16963,7 @@
     "words": 2032,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4497129,
+    "bytes": 8184376,
     "textHash": "bb2ef127115f",
     "chapters": [
       {
@@ -17024,7 +17024,7 @@
     "words": 1880,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4147517,
+    "bytes": 7490660,
     "textHash": "e52063b5d2e0",
     "chapters": [
       {
@@ -17085,7 +17085,7 @@
     "words": 1872,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4315336,
+    "bytes": 7841180,
     "textHash": "f090f9c8f20a",
     "chapters": [
       {
@@ -17146,7 +17146,7 @@
     "words": 1628,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3782571,
+    "bytes": 6806574,
     "textHash": "23676eb039ac",
     "chapters": [
       {
@@ -17207,7 +17207,7 @@
     "words": 1779,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4050717,
+    "bytes": 7331397,
     "textHash": "4c01363d56b2",
     "chapters": [
       {
@@ -17268,7 +17268,7 @@
     "words": 1845,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4235056,
+    "bytes": 7660619,
     "textHash": "5fd55a3b70b5",
     "chapters": [
       {
@@ -17329,7 +17329,7 @@
     "words": 1723,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3968361,
+    "bytes": 7182676,
     "textHash": "38f38c94e632",
     "chapters": [
       {
@@ -17390,7 +17390,7 @@
     "words": 1657,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3849748,
+    "bytes": 6925254,
     "textHash": "c219ba74b542",
     "chapters": [
       {
@@ -17451,7 +17451,7 @@
     "words": 1949,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4397632,
+    "bytes": 7934671,
     "textHash": "fdff2ee9939d",
     "chapters": [
       {
@@ -17512,7 +17512,7 @@
     "words": 1871,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4358904,
+    "bytes": 7902195,
     "textHash": "81a8e3847d4f",
     "chapters": [
       {
@@ -17573,7 +17573,7 @@
     "words": 1762,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4008420,
+    "bytes": 7248369,
     "textHash": "1518351aa718",
     "chapters": [
       {
@@ -17634,7 +17634,7 @@
     "words": 2035,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4349224,
+    "bytes": 7886111,
     "textHash": "01da8c454bd6",
     "chapters": [
       {
@@ -17695,7 +17695,7 @@
     "words": 1967,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4334208,
+    "bytes": 7855025,
     "textHash": "fbb5f1ad786b",
     "chapters": [
       {
@@ -17756,7 +17756,7 @@
     "words": 1778,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4035918,
+    "bytes": 7297318,
     "textHash": "ec2abb51d05d",
     "chapters": [
       {
@@ -17817,7 +17817,7 @@
     "words": 1898,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4275397,
+    "bytes": 7732278,
     "textHash": "1243ae121f4f",
     "chapters": [
       {
@@ -17878,7 +17878,7 @@
     "words": 1981,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4408597,
+    "bytes": 7950249,
     "textHash": "90e1abc83671",
     "chapters": [
       {
@@ -17939,7 +17939,7 @@
     "words": 1742,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3886050,
+    "bytes": 7021352,
     "textHash": "21a1fb3c1628",
     "chapters": [
       {
@@ -18000,7 +18000,7 @@
     "words": 1483,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3355516,
+    "bytes": 6035846,
     "textHash": "b9a1abe91b46",
     "chapters": [
       {
@@ -18061,7 +18061,7 @@
     "words": 1973,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4363608,
+    "bytes": 7858136,
     "textHash": "aa79a2622744",
     "chapters": [
       {
@@ -18122,7 +18122,7 @@
     "words": 2024,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4489815,
+    "bytes": 8139278,
     "textHash": "479fd21381c8",
     "chapters": [
       {
@@ -18183,7 +18183,7 @@
     "words": 1850,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4140044,
+    "bytes": 7497046,
     "textHash": "2ea9bda4ecff",
     "chapters": [
       {
@@ -18244,7 +18244,7 @@
     "words": 2038,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4385501,
+    "bytes": 7991194,
     "textHash": "53bcf96e048c",
     "chapters": [
       {
@@ -18305,7 +18305,7 @@
     "words": 1836,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4284898,
+    "bytes": 7794137,
     "textHash": "d5f57df7fd9f",
     "chapters": [
       {
@@ -18366,7 +18366,7 @@
     "words": 2120,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4671564,
+    "bytes": 8477973,
     "textHash": "681d74338ec2",
     "chapters": [
       {
@@ -18427,7 +18427,7 @@
     "words": 2096,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4517054,
+    "bytes": 8181850,
     "textHash": "c23e941a3e0e",
     "chapters": [
       {
@@ -18488,7 +18488,7 @@
     "words": 1954,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4194119,
+    "bytes": 7623965,
     "textHash": "4487326c4006",
     "chapters": [
       {
@@ -18549,7 +18549,7 @@
     "words": 2009,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4370130,
+    "bytes": 7936871,
     "textHash": "60f73616b630",
     "chapters": [
       {
@@ -18610,7 +18610,7 @@
     "words": 2093,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4601658,
+    "bytes": 8357660,
     "textHash": "9de10471b2f5",
     "chapters": [
       {
@@ -18671,7 +18671,7 @@
     "words": 1559,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3508728,
+    "bytes": 6315634,
     "textHash": "0881516aea2a",
     "chapters": [
       {
@@ -18732,7 +18732,7 @@
     "words": 1996,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4330359,
+    "bytes": 7864731,
     "textHash": "990058c08db7",
     "chapters": [
       {
@@ -18793,7 +18793,7 @@
     "words": 2011,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4364803,
+    "bytes": 7918218,
     "textHash": "7a29dd470f61",
     "chapters": [
       {
@@ -18854,7 +18854,7 @@
     "words": 1916,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4254222,
+    "bytes": 7736194,
     "textHash": "8ed15c69bf31",
     "chapters": [
       {
@@ -18915,7 +18915,7 @@
     "words": 2098,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4536609,
+    "bytes": 8236238,
     "textHash": "176e29e360b3",
     "chapters": [
       {
@@ -18976,7 +18976,7 @@
     "words": 1987,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4396372,
+    "bytes": 7996646,
     "textHash": "a8d429361415",
     "chapters": [
       {
@@ -19037,7 +19037,7 @@
     "words": 1985,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4379483,
+    "bytes": 7937902,
     "textHash": "3ff9770d1374",
     "chapters": [
       {
@@ -19098,7 +19098,7 @@
     "words": 1675,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3710492,
+    "bytes": 6683394,
     "textHash": "39facea4c28c",
     "chapters": [
       {
@@ -19159,7 +19159,7 @@
     "words": 1811,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3968864,
+    "bytes": 7175997,
     "textHash": "5ae18fca208a",
     "chapters": [
       {
@@ -19220,7 +19220,7 @@
     "words": 1891,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4093785,
+    "bytes": 7384432,
     "textHash": "d33e3bd93594",
     "chapters": [
       {
@@ -19281,7 +19281,7 @@
     "words": 1807,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3968939,
+    "bytes": 7195366,
     "textHash": "31a3cecfc46c",
     "chapters": [
       {
@@ -19342,7 +19342,7 @@
     "words": 1907,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4098425,
+    "bytes": 7463507,
     "textHash": "c81bca3ab937",
     "chapters": [
       {
@@ -19403,7 +19403,7 @@
     "words": 1949,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4383855,
+    "bytes": 7988603,
     "textHash": "200ee4516e46",
     "chapters": [
       {
@@ -19464,7 +19464,7 @@
     "words": 1845,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4040035,
+    "bytes": 7333187,
     "textHash": "5746b040b86f",
     "chapters": [
       {
@@ -19525,7 +19525,7 @@
     "words": 1987,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4193265,
+    "bytes": 7578719,
     "textHash": "dc5175211922",
     "chapters": [
       {
@@ -19586,7 +19586,7 @@
     "words": 2143,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4744431,
+    "bytes": 8629051,
     "textHash": "03c2ff6312bf",
     "chapters": [
       {
@@ -19647,7 +19647,7 @@
     "words": 1929,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4211745,
+    "bytes": 7666666,
     "textHash": "9f6220beed4b",
     "chapters": [
       {
@@ -19708,7 +19708,7 @@
     "words": 1989,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4373972,
+    "bytes": 7961119,
     "textHash": "a9d33eddbc3d",
     "chapters": [
       {
@@ -19769,7 +19769,7 @@
     "words": 1971,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4243362,
+    "bytes": 7709590,
     "textHash": "30ae5be44f8b",
     "chapters": [
       {
@@ -19830,7 +19830,7 @@
     "words": 1981,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4346354,
+    "bytes": 7942433,
     "textHash": "fa362b956f3b",
     "chapters": [
       {
@@ -19891,7 +19891,7 @@
     "words": 1950,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4395212,
+    "bytes": 7962915,
     "textHash": "f71eb844b98e",
     "chapters": [
       {
@@ -19952,7 +19952,7 @@
     "words": 1845,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4019951,
+    "bytes": 7297086,
     "textHash": "4b973b5e50ec",
     "chapters": [
       {
@@ -20013,7 +20013,7 @@
     "words": 1884,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4156060,
+    "bytes": 7483515,
     "textHash": "25c0cd1fac70",
     "chapters": [
       {
@@ -20074,7 +20074,7 @@
     "words": 1959,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4349848,
+    "bytes": 7905686,
     "textHash": "c0cee179cd3e",
     "chapters": [
       {
@@ -20135,7 +20135,7 @@
     "words": 1740,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3936090,
+    "bytes": 7177651,
     "textHash": "87d69dbe0f54",
     "chapters": [
       {
@@ -20196,7 +20196,7 @@
     "words": 1944,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4208553,
+    "bytes": 7636662,
     "textHash": "b28a3ae7a43d",
     "chapters": [
       {
@@ -20257,7 +20257,7 @@
     "words": 1660,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3714694,
+    "bytes": 6694101,
     "textHash": "a554aac52398",
     "chapters": [
       {
@@ -20318,7 +20318,7 @@
     "words": 1905,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4370412,
+    "bytes": 7925813,
     "textHash": "c65fb2fac7cd",
     "chapters": [
       {
@@ -20379,7 +20379,7 @@
     "words": 1851,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4013831,
+    "bytes": 7260531,
     "textHash": "ddc80b6322a0",
     "chapters": [
       {
@@ -20440,7 +20440,7 @@
     "words": 2091,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4499380,
+    "bytes": 8138284,
     "textHash": "8b7368a7ae8d",
     "chapters": [
       {
@@ -20501,7 +20501,7 @@
     "words": 1874,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4176278,
+    "bytes": 7579323,
     "textHash": "44fcce3a3184",
     "chapters": [
       {
@@ -20562,7 +20562,7 @@
     "words": 2273,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5038765,
+    "bytes": 9131239,
     "textHash": "69bcdb213989",
     "chapters": [
       {
@@ -20623,7 +20623,7 @@
     "words": 1995,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4401041,
+    "bytes": 8011510,
     "textHash": "60f8bf421c5c",
     "chapters": [
       {
@@ -20684,7 +20684,7 @@
     "words": 1930,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4200241,
+    "bytes": 7629936,
     "textHash": "524d38232779",
     "chapters": [
       {
@@ -20745,7 +20745,7 @@
     "words": 1832,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4149563,
+    "bytes": 7530741,
     "textHash": "f970df0131ce",
     "chapters": [
       {
@@ -20806,7 +20806,7 @@
     "words": 1819,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4040661,
+    "bytes": 7331276,
     "textHash": "5445b91f03b7",
     "chapters": [
       {
@@ -20867,7 +20867,7 @@
     "words": 1703,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3850428,
+    "bytes": 6938415,
     "textHash": "70a9271557b4",
     "chapters": [
       {
@@ -20928,7 +20928,7 @@
     "words": 1382,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3103102,
+    "bytes": 5570806,
     "textHash": "d9d6fc71941c",
     "chapters": [
       {
@@ -20989,7 +20989,7 @@
     "words": 1889,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4309226,
+    "bytes": 7824330,
     "textHash": "d8379aba5913",
     "chapters": [
       {
@@ -21050,7 +21050,7 @@
     "words": 2267,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5035528,
+    "bytes": 9165749,
     "textHash": "06553796a281",
     "chapters": [
       {
@@ -21111,7 +21111,7 @@
     "words": 2029,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4385936,
+    "bytes": 7968934,
     "textHash": "bd82c2272baa",
     "chapters": [
       {
@@ -21172,7 +21172,7 @@
     "words": 1839,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4198905,
+    "bytes": 7600798,
     "textHash": "94a7643b9309",
     "chapters": [
       {
@@ -21233,7 +21233,7 @@
     "words": 1881,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4241863,
+    "bytes": 7713255,
     "textHash": "3ae3343eb4cb",
     "chapters": [
       {
@@ -21294,7 +21294,7 @@
     "words": 1904,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4271961,
+    "bytes": 7757588,
     "textHash": "e5c4b0da708d",
     "chapters": [
       {
@@ -21355,7 +21355,7 @@
     "words": 2064,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4690690,
+    "bytes": 8519826,
     "textHash": "2e3772bde442",
     "chapters": [
       {
@@ -21416,7 +21416,7 @@
     "words": 2083,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4653546,
+    "bytes": 8422990,
     "textHash": "788300367221",
     "chapters": [
       {
@@ -21477,7 +21477,7 @@
     "words": 1925,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4237718,
+    "bytes": 7710498,
     "textHash": "80153f3fbfd7",
     "chapters": [
       {
@@ -21538,7 +21538,7 @@
     "words": 1613,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3590177,
+    "bytes": 6430858,
     "textHash": "e29e2d68c476",
     "chapters": [
       {
@@ -21599,7 +21599,7 @@
     "words": 1770,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3931594,
+    "bytes": 7097123,
     "textHash": "9eae47e1d83a",
     "chapters": [
       {
@@ -21660,7 +21660,7 @@
     "words": 1916,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4308382,
+    "bytes": 7812398,
     "textHash": "01199e8157e7",
     "chapters": [
       {
@@ -21721,7 +21721,7 @@
     "words": 1741,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4093227,
+    "bytes": 7448225,
     "textHash": "4b6ad0fbd1cc",
     "chapters": [
       {
@@ -21782,7 +21782,7 @@
     "words": 1930,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4329881,
+    "bytes": 7836550,
     "textHash": "6adf6a173148",
     "chapters": [
       {
@@ -21843,7 +21843,7 @@
     "words": 1997,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4482653,
+    "bytes": 8136812,
     "textHash": "bf0f6d0d69c5",
     "chapters": [
       {
@@ -21904,7 +21904,7 @@
     "words": 1790,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3973989,
+    "bytes": 7177455,
     "textHash": "633aeee8e6e3",
     "chapters": [
       {
@@ -21965,7 +21965,7 @@
     "words": 1825,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3998950,
+    "bytes": 7249999,
     "textHash": "30ecd4441873",
     "chapters": [
       {
@@ -22026,7 +22026,7 @@
     "words": 1861,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4181674,
+    "bytes": 7558446,
     "textHash": "7fb77586037b",
     "chapters": [
       {
@@ -22087,7 +22087,7 @@
     "words": 1992,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4453298,
+    "bytes": 8074845,
     "textHash": "73c6a569885f",
     "chapters": [
       {
@@ -22148,7 +22148,7 @@
     "words": 2206,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4926462,
+    "bytes": 8959405,
     "textHash": "cbc7d4b35598",
     "chapters": [
       {
@@ -22209,7 +22209,7 @@
     "words": 1917,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4129867,
+    "bytes": 7477129,
     "textHash": "d4ec62b36e63",
     "chapters": [
       {
@@ -22270,7 +22270,7 @@
     "words": 1588,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3619061,
+    "bytes": 6533775,
     "textHash": "84f1c826a9e6",
     "chapters": [
       {
@@ -22331,7 +22331,7 @@
     "words": 1811,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4062629,
+    "bytes": 7380427,
     "textHash": "9a93cfe75678",
     "chapters": [
       {
@@ -22392,7 +22392,7 @@
     "words": 1791,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4047905,
+    "bytes": 7308278,
     "textHash": "002c7b64c292",
     "chapters": [
       {
@@ -22453,7 +22453,7 @@
     "words": 1868,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4077661,
+    "bytes": 7397662,
     "textHash": "256215355ed7",
     "chapters": [
       {
@@ -22514,7 +22514,7 @@
     "words": 1979,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4424557,
+    "bytes": 8026617,
     "textHash": "4ed7117450c3",
     "chapters": [
       {
@@ -22575,7 +22575,7 @@
     "words": 1911,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4237235,
+    "bytes": 7658241,
     "textHash": "44472c6e4dd7",
     "chapters": [
       {
@@ -22636,7 +22636,7 @@
     "words": 1827,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4085441,
+    "bytes": 7370822,
     "textHash": "ecb370f08bba",
     "chapters": [
       {
@@ -22697,7 +22697,7 @@
     "words": 1945,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4382393,
+    "bytes": 7932793,
     "textHash": "7c7837078e45",
     "chapters": [
       {
@@ -22758,7 +22758,7 @@
     "words": 1797,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4092674,
+    "bytes": 7419179,
     "textHash": "01c5e64e3386",
     "chapters": [
       {
@@ -22819,7 +22819,7 @@
     "words": 1872,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4124146,
+    "bytes": 7487673,
     "textHash": "8c91e9c656d2",
     "chapters": [
       {
@@ -22880,7 +22880,7 @@
     "words": 2018,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4489251,
+    "bytes": 8148794,
     "textHash": "0be25c7a4fe5",
     "chapters": [
       {
@@ -22941,7 +22941,7 @@
     "words": 1031,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2754490,
+    "bytes": 4950676,
     "textHash": "7e3c27ec7361",
     "chapters": [
       {
@@ -23002,7 +23002,7 @@
     "words": 929,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2507326,
+    "bytes": 4489929,
     "textHash": "8a7a32730220",
     "chapters": [
       {
@@ -23058,7 +23058,7 @@
     "words": 943,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2633350,
+    "bytes": 4742912,
     "textHash": "75c98c35df68",
     "chapters": [
       {
@@ -23114,7 +23114,7 @@
     "words": 1016,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2792200,
+    "bytes": 5000785,
     "textHash": "f918e92dfa4c",
     "chapters": [
       {
@@ -23170,7 +23170,7 @@
     "words": 1097,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2975693,
+    "bytes": 5377692,
     "textHash": "469578258fb4",
     "chapters": [
       {
@@ -23226,7 +23226,7 @@
     "words": 969,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2377486,
+    "bytes": 4294085,
     "textHash": "9ecd10a239e1",
     "chapters": [
       {
@@ -23282,7 +23282,7 @@
     "words": 1077,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2737515,
+    "bytes": 4912323,
     "textHash": "d6125f2f6cd5",
     "chapters": [
       {
@@ -23343,7 +23343,7 @@
     "words": 973,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2360953,
+    "bytes": 4201335,
     "textHash": "615199c119bd",
     "chapters": [
       {
@@ -23399,7 +23399,7 @@
     "words": 1152,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2773917,
+    "bytes": 4998211,
     "textHash": "47593af3e4f6",
     "chapters": [
       {
@@ -23460,7 +23460,7 @@
     "words": 1316,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3303118,
+    "bytes": 5939124,
     "textHash": "4f84276ca3bb",
     "chapters": [
       {
@@ -23526,7 +23526,7 @@
     "words": 3549,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 20806425,
+    "bytes": 22398554,
     "textHash": "a0cc7fbd606f",
     "chapters": [
       {
@@ -23653,7 +23653,7 @@
     "words": 3691,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 21969052,
+    "bytes": 22520938,
     "textHash": "bde242213e6f",
     "chapters": [
       {
@@ -23780,7 +23780,7 @@
     "words": 3878,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 23030516,
+    "bytes": 22364793,
     "textHash": "4424513be69b",
     "chapters": [
       {
@@ -23907,7 +23907,7 @@
     "words": 3954,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 24417462,
+    "bytes": 22187211,
     "textHash": "5d7fc64e5ad5",
     "chapters": [
       {
@@ -24034,7 +24034,7 @@
     "words": 3887,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 22691602,
+    "bytes": 22547278,
     "textHash": "4236fd3b6fb0",
     "chapters": [
       {
@@ -24166,7 +24166,7 @@
     "words": 1366,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 8202334,
+    "bytes": 11123648,
     "textHash": "e1cc23629731",
     "chapters": [
       {
@@ -24228,7 +24228,7 @@
     "words": 397,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 2368125,
+    "bytes": 3211817,
     "textHash": "e72d837d7d28",
     "chapters": [
       {
@@ -24265,7 +24265,7 @@
     "words": 898,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2414517,
+    "bytes": 4279603,
     "textHash": "8d5c3ce5ee28",
     "chapters": [
       {
@@ -24326,7 +24326,7 @@
     "words": 975,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2685744,
+    "bytes": 4788959,
     "textHash": "f15590f76de7",
     "chapters": [
       {
@@ -24387,7 +24387,7 @@
     "words": 1069,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2819776,
+    "bytes": 5089586,
     "textHash": "f3e932981b8c",
     "chapters": [
       {
@@ -24448,7 +24448,7 @@
     "words": 1050,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2713498,
+    "bytes": 4861754,
     "textHash": "6b6b40636371",
     "chapters": [
       {
@@ -24509,7 +24509,7 @@
     "words": 1094,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2921521,
+    "bytes": 5232721,
     "textHash": "141033581d5f",
     "chapters": [
       {
@@ -24570,7 +24570,7 @@
     "words": 1064,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2850851,
+    "bytes": 5120331,
     "textHash": "4bac1bed94d0",
     "chapters": [
       {
@@ -24625,13 +24625,243 @@
       }
     ]
   },
+  "hope-day-1": {
+    "src": "/audio/hope-day-1.m4a",
+    "duration": 244.9,
+    "words": 609,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1506799,
+    "textHash": "c6b85f7c41a9",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.2,
+        "label": "OPTIMISM IS DEAD",
+        "module": 1
+      },
+      {
+        "t": 45.6,
+        "label": "THE TYRANNY OF TOXIC POSITIVITY",
+        "module": 2
+      },
+      {
+        "t": 87.6,
+        "label": "THE COST OF PRETENDING",
+        "module": 3
+      },
+      {
+        "t": 129.8,
+        "label": "THE ANCIENT PATTERN",
+        "module": 4
+      },
+      {
+        "t": 174.3,
+        "label": "THE DIFFERENT KIND OF HOPE",
+        "module": 5
+      },
+      {
+        "t": 217.7,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "hope-day-2": {
+    "src": "/audio/hope-day-2.m4a",
+    "duration": 225.1,
+    "words": 629,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1382761,
+    "textHash": "98efe4ebfb41",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.2,
+        "label": "THE SILENCING OF GRIEF",
+        "module": 1
+      },
+      {
+        "t": 39.7,
+        "label": "THE PSALMS OF RAGE",
+        "module": 2
+      },
+      {
+        "t": 77.8,
+        "label": "PERMISSION TO GRIEVE",
+        "module": 3
+      },
+      {
+        "t": 122.2,
+        "label": "THE PATTERN OF LAMENT",
+        "module": 4
+      },
+      {
+        "t": 157.7,
+        "label": "THE PROMISE IN THE DARK",
+        "module": 5
+      },
+      {
+        "t": 196.1,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "hope-day-3": {
+    "src": "/audio/hope-day-3.m4a",
+    "duration": 243.3,
+    "words": 658,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1497904,
+    "textHash": "f9611f3a802f",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.1,
+        "label": "THE MYTH OF UNSHAKEABLE FAITH",
+        "module": 1
+      },
+      {
+        "t": 44.0,
+        "label": "GETHSEMANE \u2014 THE GARDEN OF TERROR",
+        "module": 2
+      },
+      {
+        "t": 85.2,
+        "label": "THE PRAYER IN THE DARK",
+        "module": 3
+      },
+      {
+        "t": 127.6,
+        "label": "THE PIVOT \u2014 THE CROSS IN THE DARKNESS",
+        "module": 4
+      },
+      {
+        "t": 171.4,
+        "label": "THE HOPE THAT WALKS THROUGH DEATH",
+        "module": 5
+      },
+      {
+        "t": 215.1,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "hope-day-4": {
+    "src": "/audio/hope-day-4.m4a",
+    "duration": 248.8,
+    "words": 665,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1530677,
+    "textHash": "79694c434adb",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.0,
+        "label": "THE PARALYSIS OF UNCERTAINTY",
+        "module": 1
+      },
+      {
+        "t": 48.2,
+        "label": "THE HABITS OF HOPE",
+        "module": 2
+      },
+      {
+        "t": 89.6,
+        "label": "THE PRACTICE OF PRESENCE",
+        "module": 3
+      },
+      {
+        "t": 135.0,
+        "label": "THE KINGDOM PATTERN OF FAITHFULNESS",
+        "module": 4
+      },
+      {
+        "t": 177.8,
+        "label": "THE INVITATION TO ACT",
+        "module": 5
+      },
+      {
+        "t": 218.6,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "hope-day-5": {
+    "src": "/audio/hope-day-5.m4a",
+    "duration": 254.4,
+    "words": 645,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1564446,
+    "textHash": "90c4dcc72905",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.9,
+        "label": "THE DIFFERENCE BETWEEN OPTIMISM AND HOPE",
+        "module": 1
+      },
+      {
+        "t": 48.4,
+        "label": "THE RESURRECTION PATTERN",
+        "module": 2
+      },
+      {
+        "t": 90.8,
+        "label": "THE PROMISE IN THE DARKNESS",
+        "module": 3
+      },
+      {
+        "t": 132.7,
+        "label": "THE HOPE THAT ENDURES",
+        "module": 4
+      },
+      {
+        "t": 177.8,
+        "label": "THE KINGDOM ALREADY AND NOT YET",
+        "module": 5
+      },
+      {
+        "t": 225.2,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
   "in-the-beginning-week-1-day-1": {
     "src": "/audio/in-the-beginning-week-1-day-1.m4a",
     "duration": 441.6,
     "words": 977,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2715879,
+    "bytes": 4842899,
     "textHash": "6a6f371d9927",
     "chapters": [
       {
@@ -24697,7 +24927,7 @@
     "words": 1029,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2856615,
+    "bytes": 5090247,
     "textHash": "526d76fe4497",
     "chapters": [
       {
@@ -24763,7 +24993,7 @@
     "words": 1017,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2730565,
+    "bytes": 4901485,
     "textHash": "7c0db73d74ab",
     "chapters": [
       {
@@ -24824,7 +25054,7 @@
     "words": 1010,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2837550,
+    "bytes": 5119703,
     "textHash": "b40364799c03",
     "chapters": [
       {
@@ -24885,7 +25115,7 @@
     "words": 1188,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3155802,
+    "bytes": 5676938,
     "textHash": "370761e7f96b",
     "chapters": [
       {
@@ -24951,7 +25181,7 @@
     "words": 1224,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3341028,
+    "bytes": 5963504,
     "textHash": "0ceaff465ee4",
     "chapters": [
       {
@@ -25027,7 +25257,7 @@
     "words": 3966,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 8658122,
+    "bytes": 15715849,
     "textHash": "dc40a0b844e1",
     "chapters": [
       {
@@ -25153,7 +25383,7 @@
     "words": 3557,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 8177406,
+    "bytes": 14802933,
     "textHash": "4ad69c406e6b",
     "chapters": [
       {
@@ -25279,7 +25509,7 @@
     "words": 4160,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 9181624,
+    "bytes": 16719463,
     "textHash": "606169fa938f",
     "chapters": [
       {
@@ -25405,7 +25635,7 @@
     "words": 3836,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 8510693,
+    "bytes": 15446190,
     "textHash": "19d0e7c83625",
     "chapters": [
       {
@@ -25531,7 +25761,7 @@
     "words": 3336,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 7634906,
+    "bytes": 13830667,
     "textHash": "3a8742eb2641",
     "chapters": [
       {
@@ -25652,7 +25882,7 @@
     "words": 1444,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3281874,
+    "bytes": 5965021,
     "textHash": "b6437a9f6345",
     "chapters": [
       {
@@ -25718,7 +25948,7 @@
     "words": 450,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1005761,
+    "bytes": 1784571,
     "textHash": "f6ca05a46d43",
     "chapters": [
       {
@@ -25759,7 +25989,7 @@
     "words": 961,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2545655,
+    "bytes": 4527824,
     "textHash": "3c412a165502",
     "chapters": [
       {
@@ -25820,7 +26050,7 @@
     "words": 927,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2489793,
+    "bytes": 4485558,
     "textHash": "8d57807a5087",
     "chapters": [
       {
@@ -25876,7 +26106,7 @@
     "words": 1014,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2625873,
+    "bytes": 4701824,
     "textHash": "44682611b019",
     "chapters": [
       {
@@ -25932,7 +26162,7 @@
     "words": 1051,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2788782,
+    "bytes": 5024506,
     "textHash": "d05cb247ef3b",
     "chapters": [
       {
@@ -25988,7 +26218,7 @@
     "words": 994,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2479452,
+    "bytes": 4464532,
     "textHash": "1babbd78afd1",
     "chapters": [
       {
@@ -26044,7 +26274,7 @@
     "words": 1055,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2705959,
+    "bytes": 4813297,
     "textHash": "a355ef37e3f0",
     "chapters": [
       {
@@ -26105,7 +26335,7 @@
     "words": 427,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1024532,
+    "bytes": 1833117,
     "textHash": "75a326ad8fab",
     "chapters": [
       {
@@ -26141,7 +26371,7 @@
     "words": 3123,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 7380991,
+    "bytes": 13417622,
     "textHash": "ce4a9e174bf2",
     "chapters": [
       {
@@ -26242,7 +26472,7 @@
     "words": 3368,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 8144951,
+    "bytes": 14844945,
     "textHash": "b87534b381d5",
     "chapters": [
       {
@@ -26343,7 +26573,7 @@
     "words": 3420,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 8080121,
+    "bytes": 14712846,
     "textHash": "1b7b4cbe2a0d",
     "chapters": [
       {
@@ -26444,7 +26674,7 @@
     "words": 3242,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 7894666,
+    "bytes": 14390593,
     "textHash": "84a04918a617",
     "chapters": [
       {
@@ -26545,7 +26775,7 @@
     "words": 3069,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 7161223,
+    "bytes": 13052748,
     "textHash": "018dca5fba93",
     "chapters": [
       {
@@ -26646,7 +26876,7 @@
     "words": 1052,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2402564,
+    "bytes": 4333425,
     "textHash": "5df0453705dd",
     "chapters": [
       {
@@ -26702,7 +26932,7 @@
     "words": 1010,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2641371,
+    "bytes": 4712831,
     "textHash": "705f79fe0a98",
     "chapters": [
       {
@@ -26763,7 +26993,7 @@
     "words": 961,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2556023,
+    "bytes": 4576697,
     "textHash": "aa7c4b85a990",
     "chapters": [
       {
@@ -26824,7 +27054,7 @@
     "words": 1031,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2962036,
+    "bytes": 5310356,
     "textHash": "440930efcf09",
     "chapters": [
       {
@@ -26885,7 +27115,7 @@
     "words": 1158,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3195427,
+    "bytes": 5740081,
     "textHash": "4b0933cb5421",
     "chapters": [
       {
@@ -26946,7 +27176,7 @@
     "words": 1248,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3218838,
+    "bytes": 5800079,
     "textHash": "a2cac900260b",
     "chapters": [
       {
@@ -27001,13 +27231,243 @@
       }
     ]
   },
+  "provision-day-1": {
+    "src": "/audio/provision-day-1.m4a",
+    "duration": 241.6,
+    "words": 617,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1489694,
+    "textHash": "a01cf25bce1d",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.8,
+        "label": "THE PANTRY IS FULL BUT YOU'RE STILL AFRAID",
+        "module": 1
+      },
+      {
+        "t": 43.2,
+        "label": "THE ANXIETY ECONOMY",
+        "module": 2
+      },
+      {
+        "t": 82.8,
+        "label": "THE COST OF NEVER ENOUGH",
+        "module": 3
+      },
+      {
+        "t": 129.8,
+        "label": "THE ANCIENT PATTERN",
+        "module": 4
+      },
+      {
+        "t": 170.9,
+        "label": "THE INVITATION TO TRUST",
+        "module": 5
+      },
+      {
+        "t": 209.2,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "provision-day-2": {
+    "src": "/audio/provision-day-2.m4a",
+    "duration": 226.8,
+    "words": 638,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1398292,
+    "textHash": "c90a5d064168",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.4,
+        "label": "THE MORE YOU HAVE, THE MORE YOU FEAR",
+        "module": 1
+      },
+      {
+        "t": 37.4,
+        "label": "FEAR AS THE ENGINE OF HOARDING",
+        "module": 2
+      },
+      {
+        "t": 77.7,
+        "label": "THE ILLUSION OF CONTROL",
+        "module": 3
+      },
+      {
+        "t": 112.9,
+        "label": "THE FEAR THAT OWNS YOU",
+        "module": 4
+      },
+      {
+        "t": 149.6,
+        "label": "THE DIFFERENT FOUNDATION",
+        "module": 5
+      },
+      {
+        "t": 188.5,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "provision-day-3": {
+    "src": "/audio/provision-day-3.m4a",
+    "duration": 232.5,
+    "words": 616,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1431385,
+    "textHash": "c325cdc71831",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.2,
+        "label": "THE MATH DOESN'T WORK",
+        "module": 1
+      },
+      {
+        "t": 39.9,
+        "label": "THE WIDOW'S OIL THAT NEVER RUNS OUT",
+        "module": 2
+      },
+      {
+        "t": 75.2,
+        "label": "THE MANNA THAT COULDN'T BE HOARDED",
+        "module": 3
+      },
+      {
+        "t": 112.1,
+        "label": "THE PIVOT \u2014 GOD'S ECONOMY OF ABUNDANCE",
+        "module": 4
+      },
+      {
+        "t": 155.5,
+        "label": "SEEK FIRST THE KINGDOM",
+        "module": 5
+      },
+      {
+        "t": 194.0,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "provision-day-4": {
+    "src": "/audio/provision-day-4.m4a",
+    "duration": 257.4,
+    "words": 652,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1583774,
+    "textHash": "107a7010cb88",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.9,
+        "label": "WHEN THE SYSTEM CAN'T HELP YOU",
+        "module": 1
+      },
+      {
+        "t": 50.1,
+        "label": "THE ACTS 2 COMMUNITY",
+        "module": 2
+      },
+      {
+        "t": 91.3,
+        "label": "WHAT MUTUAL AID LOOKS LIKE NOW",
+        "module": 3
+      },
+      {
+        "t": 137.8,
+        "label": "JESUS AND THE SHARED TABLE",
+        "module": 4
+      },
+      {
+        "t": 176.2,
+        "label": "YOUR ABUNDANCE IS NOT JUST FOR YOU",
+        "module": 5
+      },
+      {
+        "t": 219.9,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "provision-day-5": {
+    "src": "/audio/provision-day-5.m4a",
+    "duration": 246.0,
+    "words": 631,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1516078,
+    "textHash": "5d5308d987d0",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 3.8,
+        "label": "AFTER THE SHIFT",
+        "module": 1
+      },
+      {
+        "t": 36.8,
+        "label": "WHAT SURVIVES THE COLLAPSE",
+        "module": 2
+      },
+      {
+        "t": 81.4,
+        "label": "WHAT YOU CARRY FORWARD",
+        "module": 3
+      },
+      {
+        "t": 122.0,
+        "label": "JESUS SENDS YOU OUT WITH OPEN HANDS",
+        "module": 4
+      },
+      {
+        "t": 164.5,
+        "label": "SEEK FIRST THE KINGDOM \u2014 AND SHARE",
+        "module": 5
+      },
+      {
+        "t": 204.0,
+        "label": "THE SENDING",
+        "module": 6
+      }
+    ]
+  },
   "rekindled-day-1": {
     "src": "/audio/rekindled-day-1.m4a",
     "duration": 1142.0,
     "words": 3151,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 9392630,
+    "bytes": 13209695,
     "textHash": "054f1c851f82",
     "chapters": [
       {
@@ -27133,7 +27593,7 @@
     "words": 3052,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 9697989,
+    "bytes": 13587504,
     "textHash": "35676b2f416a",
     "chapters": [
       {
@@ -27254,7 +27714,7 @@
     "words": 3510,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 10549480,
+    "bytes": 14834435,
     "textHash": "8c7cd7528fd5",
     "chapters": [
       {
@@ -27370,7 +27830,7 @@
     "words": 2997,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 9286355,
+    "bytes": 13027044,
     "textHash": "d0b78057888e",
     "chapters": [
       {
@@ -27486,7 +27946,7 @@
     "words": 2738,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 8224651,
+    "bytes": 11612023,
     "textHash": "7b7d3751658f",
     "chapters": [
       {
@@ -27602,7 +28062,7 @@
     "words": 1324,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 4120477,
+    "bytes": 5842126,
     "textHash": "66953a95f9e6",
     "chapters": [
       {
@@ -27673,7 +28133,7 @@
     "words": 388,
     "voice": "chris-james-thca-master",
     "engine": "elevenlabs",
-    "bytes": 1148020,
+    "bytes": 1616958,
     "textHash": "370836c29d05",
     "chapters": [
       {
@@ -27714,7 +28174,7 @@
     "words": 1077,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2775744,
+    "bytes": 4943166,
     "textHash": "be5f7d3b6e02",
     "chapters": [
       {
@@ -27785,7 +28245,7 @@
     "words": 1104,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2753286,
+    "bytes": 4910147,
     "textHash": "5011aa82171d",
     "chapters": [
       {
@@ -27851,7 +28311,7 @@
     "words": 1080,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2722836,
+    "bytes": 4859382,
     "textHash": "6f52923dbbaf",
     "chapters": [
       {
@@ -27917,7 +28377,7 @@
     "words": 1169,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2954047,
+    "bytes": 5272324,
     "textHash": "41ce0d01e320",
     "chapters": [
       {
@@ -27983,7 +28443,7 @@
     "words": 1190,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3037539,
+    "bytes": 5461845,
     "textHash": "3a9c2ef6c8b8",
     "chapters": [
       {
@@ -28049,7 +28509,7 @@
     "words": 1000,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2309868,
+    "bytes": 4167439,
     "textHash": "1d4a4a1f57d4",
     "chapters": [
       {
@@ -28100,7 +28560,7 @@
     "words": 530,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1328700,
+    "bytes": 2386508,
     "textHash": "eb01933e7092",
     "chapters": [
       {
@@ -28151,7 +28611,7 @@
     "words": 670,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1834804,
+    "bytes": 3275462,
     "textHash": "a1eb9c941a7d",
     "chapters": [
       {
@@ -28207,7 +28667,7 @@
     "words": 638,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1712689,
+    "bytes": 3014985,
     "textHash": "882891a7eb0f",
     "chapters": [
       {
@@ -28263,7 +28723,7 @@
     "words": 689,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1938476,
+    "bytes": 3452996,
     "textHash": "993ddb9ef660",
     "chapters": [
       {
@@ -28319,7 +28779,7 @@
     "words": 971,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2581112,
+    "bytes": 4626201,
     "textHash": "af44443c967c",
     "chapters": [
       {
@@ -28380,7 +28840,7 @@
     "words": 960,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2556247,
+    "bytes": 4583695,
     "textHash": "419fe714367b",
     "chapters": [
       {
@@ -28441,7 +28901,7 @@
     "words": 1023,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2740740,
+    "bytes": 4880331,
     "textHash": "31d644a09341",
     "chapters": [
       {
@@ -28502,7 +28962,7 @@
     "words": 1064,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2921031,
+    "bytes": 5254132,
     "textHash": "cab99e5460d4",
     "chapters": [
       {
@@ -28563,7 +29023,7 @@
     "words": 1143,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3110842,
+    "bytes": 5599348,
     "textHash": "0ed8bacb6e35",
     "chapters": [
       {
@@ -28624,7 +29084,7 @@
     "words": 1156,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3118747,
+    "bytes": 5645911,
     "textHash": "9e0e3945060d",
     "chapters": [
       {
@@ -28685,7 +29145,7 @@
     "words": 1187,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3162324,
+    "bytes": 5676054,
     "textHash": "0e3c754a432c",
     "chapters": [
       {
@@ -28746,7 +29206,7 @@
     "words": 1015,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2667543,
+    "bytes": 4751795,
     "textHash": "b72a19af341b",
     "chapters": [
       {
@@ -28807,7 +29267,7 @@
     "words": 996,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2520249,
+    "bytes": 4511093,
     "textHash": "4fcc7e7c5f90",
     "chapters": [
       {
@@ -28868,7 +29328,7 @@
     "words": 943,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2458183,
+    "bytes": 4370879,
     "textHash": "c50df83b091b",
     "chapters": [
       {
@@ -28929,7 +29389,7 @@
     "words": 967,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2548066,
+    "bytes": 4541382,
     "textHash": "e3a2c229eb79",
     "chapters": [
       {
@@ -28990,7 +29450,7 @@
     "words": 927,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2414232,
+    "bytes": 4283982,
     "textHash": "0226979c36c7",
     "chapters": [
       {
@@ -29051,7 +29511,7 @@
     "words": 1028,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2599787,
+    "bytes": 4644888,
     "textHash": "9a563f85be22",
     "chapters": [
       {
@@ -29112,7 +29572,7 @@
     "words": 761,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1983967,
+    "bytes": 3563015,
     "textHash": "a597b3e89f0a",
     "chapters": [
       {
@@ -29163,7 +29623,7 @@
     "words": 704,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1845759,
+    "bytes": 3320540,
     "textHash": "f15a75816241",
     "chapters": [
       {
@@ -29214,7 +29674,7 @@
     "words": 761,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1896989,
+    "bytes": 3420017,
     "textHash": "4b7e5cf73a9c",
     "chapters": [
       {
@@ -29265,7 +29725,7 @@
     "words": 838,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2219740,
+    "bytes": 4025993,
     "textHash": "658cb17636e7",
     "chapters": [
       {
@@ -29316,7 +29776,7 @@
     "words": 847,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2217329,
+    "bytes": 4008876,
     "textHash": "25bc689b8dcb",
     "chapters": [
       {
@@ -29367,7 +29827,7 @@
     "words": 4306,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 9991045,
+    "bytes": 18138122,
     "textHash": "032ccce65d56",
     "chapters": [
       {
@@ -29488,7 +29948,7 @@
     "words": 4130,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 9626852,
+    "bytes": 17505109,
     "textHash": "6fbea81fc430",
     "chapters": [
       {
@@ -29609,7 +30069,7 @@
     "words": 4384,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 10406647,
+    "bytes": 18946099,
     "textHash": "95a057340eb6",
     "chapters": [
       {
@@ -29730,7 +30190,7 @@
     "words": 3829,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 9225582,
+    "bytes": 16738522,
     "textHash": "f737b1b7663f",
     "chapters": [
       {
@@ -29851,7 +30311,7 @@
     "words": 3826,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 9170839,
+    "bytes": 16615002,
     "textHash": "4ac7cafea443",
     "chapters": [
       {
@@ -29972,7 +30432,7 @@
     "words": 1168,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2718713,
+    "bytes": 4920818,
     "textHash": "eb29d6a4c1ec",
     "chapters": [
       {
@@ -30033,7 +30493,7 @@
     "words": 446,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1021011,
+    "bytes": 1816094,
     "textHash": "081a8d29eae7",
     "chapters": [
       {
@@ -30069,7 +30529,7 @@
     "words": 1526,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4024472,
+    "bytes": 7194555,
     "textHash": "32792a97c439",
     "chapters": [
       {
@@ -30145,7 +30605,7 @@
     "words": 813,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1997022,
+    "bytes": 3573077,
     "textHash": "d48e5218bdad",
     "chapters": [
       {
@@ -30201,7 +30661,7 @@
     "words": 1090,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2492631,
+    "bytes": 4494824,
     "textHash": "4affbb60a1b0",
     "chapters": [
       {
@@ -30257,7 +30717,7 @@
     "words": 1227,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2842069,
+    "bytes": 5128742,
     "textHash": "ccad92d4fe84",
     "chapters": [
       {
@@ -30318,7 +30778,7 @@
     "words": 1219,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2738136,
+    "bytes": 4948471,
     "textHash": "d21b14ac041e",
     "chapters": [
       {
@@ -30379,7 +30839,7 @@
     "words": 1240,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2902148,
+    "bytes": 5216896,
     "textHash": "90403a97d49e",
     "chapters": [
       {
@@ -30440,7 +30900,7 @@
     "words": 1513,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3605913,
+    "bytes": 6511763,
     "textHash": "f5d5c3a972bd",
     "chapters": [
       {
@@ -30501,7 +30961,7 @@
     "words": 1846,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4461944,
+    "bytes": 8088471,
     "textHash": "d92c59c47dc7",
     "chapters": [
       {
@@ -30562,7 +31022,7 @@
     "words": 1764,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4261139,
+    "bytes": 7702508,
     "textHash": "a0477d288f48",
     "chapters": [
       {
@@ -30623,7 +31083,7 @@
     "words": 1922,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4646079,
+    "bytes": 8418910,
     "textHash": "1734cbf3daaf",
     "chapters": [
       {
@@ -30684,7 +31144,7 @@
     "words": 1929,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4488629,
+    "bytes": 8101112,
     "textHash": "f8bcfb21deea",
     "chapters": [
       {
@@ -30745,7 +31205,7 @@
     "words": 1862,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4484843,
+    "bytes": 8113923,
     "textHash": "8145dae469ef",
     "chapters": [
       {
@@ -30806,7 +31266,7 @@
     "words": 714,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2088397,
+    "bytes": 3692290,
     "textHash": "a62cc7937af1",
     "chapters": [
       {
@@ -30867,7 +31327,7 @@
     "words": 630,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1918356,
+    "bytes": 3373699,
     "textHash": "4f290654196d",
     "chapters": [
       {
@@ -30928,7 +31388,7 @@
     "words": 696,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2090163,
+    "bytes": 3679505,
     "textHash": "d68375b34633",
     "chapters": [
       {
@@ -30989,7 +31449,7 @@
     "words": 708,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2055066,
+    "bytes": 3639644,
     "textHash": "68016d6b1318",
     "chapters": [
       {
@@ -31050,7 +31510,7 @@
     "words": 706,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1983871,
+    "bytes": 3498658,
     "textHash": "c81f2923639a",
     "chapters": [
       {
@@ -31111,7 +31571,7 @@
     "words": 748,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2160551,
+    "bytes": 3825787,
     "textHash": "13e0a3243de4",
     "chapters": [
       {
@@ -31166,13 +31626,243 @@
       }
     ]
   },
+  "truth-day-1": {
+    "src": "/audio/truth-day-1.m4a",
+    "duration": 204.7,
+    "words": 501,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1257799,
+    "textHash": "f20a337fdc71",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.3,
+        "label": "THE INFORMATION FLOOD",
+        "module": 1
+      },
+      {
+        "t": 43.9,
+        "label": "THE COLLAPSE OF TRUST",
+        "module": 2
+      },
+      {
+        "t": 77.2,
+        "label": "THE COST OF CONSTANT DOUBT",
+        "module": 3
+      },
+      {
+        "t": 119.5,
+        "label": "AN ANCIENT CRISIS",
+        "module": 4
+      },
+      {
+        "t": 153.6,
+        "label": "THE UNANSWERED QUESTION",
+        "module": 5
+      },
+      {
+        "t": 179.7,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "truth-day-2": {
+    "src": "/audio/truth-day-2.m4a",
+    "duration": 221.2,
+    "words": 559,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1360404,
+    "textHash": "164fe705d3e9",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.8,
+        "label": "THE PARANOIA SPIRAL",
+        "module": 1
+      },
+      {
+        "t": 47.0,
+        "label": "THE COST OF HYPERVIGILANCE",
+        "module": 2
+      },
+      {
+        "t": 82.4,
+        "label": "WHEN NOTHING FEELS REAL",
+        "module": 3
+      },
+      {
+        "t": 126.0,
+        "label": "A DIFFERENT KIND OF KNOWING",
+        "module": 4
+      },
+      {
+        "t": 162.4,
+        "label": "THE EXHAUSTION OF ENDLESS VERIFICATION",
+        "module": 5
+      },
+      {
+        "t": 197.1,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "truth-day-3": {
+    "src": "/audio/truth-day-3.m4a",
+    "duration": 226.2,
+    "words": 617,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1394799,
+    "textHash": "62b932904ef6",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.6,
+        "label": "THE INFORMATION TRAP",
+        "module": 1
+      },
+      {
+        "t": 39.3,
+        "label": "THE COST OF INFORMATION OVERLOAD",
+        "module": 2
+      },
+      {
+        "t": 73.3,
+        "label": "THE BREAKING POINT",
+        "module": 3
+      },
+      {
+        "t": 113.4,
+        "label": "THE PIVOT \u2014 \"I AM THE TRUTH\"",
+        "module": 4
+      },
+      {
+        "t": 157.8,
+        "label": "THE KINGDOM REVERSAL",
+        "module": 5
+      },
+      {
+        "t": 199.2,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "truth-day-4": {
+    "src": "/audio/truth-day-4.m4a",
+    "duration": 238.7,
+    "words": 604,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1471276,
+    "textHash": "f49d1cc7a342",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.6,
+        "label": "THE DIFFERENCE BETWEEN KNOWLEDGE AND WISDOM",
+        "module": 1
+      },
+      {
+        "t": 43.1,
+        "label": "WHAT WISDOM LOOKS LIKE",
+        "module": 2
+      },
+      {
+        "t": 81.6,
+        "label": "DISCERNMENT AS A SPIRITUAL PRACTICE",
+        "module": 3
+      },
+      {
+        "t": 131.7,
+        "label": "WISDOM OVER INFORMATION",
+        "module": 4
+      },
+      {
+        "t": 171.3,
+        "label": "SEEK FIRST THE KINGDOM",
+        "module": 5
+      },
+      {
+        "t": 214.7,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
+  "truth-day-5": {
+    "src": "/audio/truth-day-5.m4a",
+    "duration": 241.9,
+    "words": 632,
+    "voice": "am_michael",
+    "engine": "kokoro",
+    "bytes": 1488244,
+    "textHash": "9121cd30b3dc",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.3,
+        "label": "THE LONELINESS OF SOLO VERIFICATION",
+        "module": 1
+      },
+      {
+        "t": 43.5,
+        "label": "TRUTH ISN'T NEUTRAL",
+        "module": 2
+      },
+      {
+        "t": 86.1,
+        "label": "THE COST AND THE GIFT",
+        "module": 3
+      },
+      {
+        "t": 135.6,
+        "label": "TRUTH KNOWS YOUR NAME",
+        "module": 4
+      },
+      {
+        "t": 171.7,
+        "label": "SEEK FIRST THE KINGDOM",
+        "module": 5
+      },
+      {
+        "t": 214.1,
+        "label": "THE INVITATION",
+        "module": 6
+      }
+    ]
+  },
   "valued-day-1": {
     "src": "/audio/valued-day-1.m4a",
     "duration": 412.4,
     "words": 990,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2528522,
+    "bytes": 4498312,
     "textHash": "418e0925e45d",
     "chapters": [
       {
@@ -31233,7 +31923,7 @@
     "words": 973,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2621578,
+    "bytes": 4670705,
     "textHash": "b923f59c9bb8",
     "chapters": [
       {
@@ -31294,7 +31984,7 @@
     "words": 1076,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2725429,
+    "bytes": 4897536,
     "textHash": "3ca2006ce6eb",
     "chapters": [
       {
@@ -31355,7 +32045,7 @@
     "words": 1125,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2921380,
+    "bytes": 5253564,
     "textHash": "b1fa53667ad3",
     "chapters": [
       {
@@ -31416,7 +32106,7 @@
     "words": 1229,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3139973,
+    "bytes": 5634837,
     "textHash": "81253e8b5697",
     "chapters": [
       {
@@ -31477,7 +32167,7 @@
     "words": 1304,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3677927,
+    "bytes": 6624604,
     "textHash": "23f58f22bf35",
     "chapters": [
       {
@@ -31543,7 +32233,7 @@
     "words": 1068,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2979111,
+    "bytes": 5405516,
     "textHash": "dfcd3a58417d",
     "chapters": [
       {
@@ -31599,7 +32289,7 @@
     "words": 1185,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3284089,
+    "bytes": 5931691,
     "textHash": "ae463073a4e8",
     "chapters": [
       {
@@ -31655,7 +32345,7 @@
     "words": 1204,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3432745,
+    "bytes": 6235525,
     "textHash": "cd34921b8ef7",
     "chapters": [
       {
@@ -31711,7 +32401,7 @@
     "words": 1275,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3546322,
+    "bytes": 6422601,
     "textHash": "614c7fb6d890",
     "chapters": [
       {
@@ -31767,7 +32457,7 @@
     "words": 1278,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3518497,
+    "bytes": 6381087,
     "textHash": "882182af950c",
     "chapters": [
       {
@@ -31823,7 +32513,7 @@
     "words": 1434,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3702491,
+    "bytes": 6683232,
     "textHash": "fa09802e7bbb",
     "chapters": [
       {
@@ -31884,7 +32574,7 @@
     "words": 2035,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5461052,
+    "bytes": 9948473,
     "textHash": "405446594401",
     "chapters": [
       {
@@ -31945,7 +32635,7 @@
     "words": 1960,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5228814,
+    "bytes": 9506868,
     "textHash": "754232126860",
     "chapters": [
       {
@@ -32006,7 +32696,7 @@
     "words": 1831,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4959920,
+    "bytes": 9065954,
     "textHash": "3d4ea2677766",
     "chapters": [
       {
@@ -32067,7 +32757,7 @@
     "words": 1899,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5006947,
+    "bytes": 9135478,
     "textHash": "c682e54311a2",
     "chapters": [
       {
@@ -32128,7 +32818,7 @@
     "words": 2216,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5737392,
+    "bytes": 10467676,
     "textHash": "df96d1dc0496",
     "chapters": [
       {
@@ -32189,7 +32879,7 @@
     "words": 1343,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3685032,
+    "bytes": 6638850,
     "textHash": "8a94cb86b2b3",
     "chapters": [
       {
@@ -32255,7 +32945,7 @@
     "words": 1017,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2811516,
+    "bytes": 5087298,
     "textHash": "78cbbb97cc9a",
     "chapters": [
       {
@@ -32311,7 +33001,7 @@
     "words": 1089,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2996692,
+    "bytes": 5391222,
     "textHash": "a419a99d10ef",
     "chapters": [
       {
@@ -32367,7 +33057,7 @@
     "words": 1003,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2744021,
+    "bytes": 4929014,
     "textHash": "bbf1ff161452",
     "chapters": [
       {
@@ -32423,7 +33113,7 @@
     "words": 973,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2713094,
+    "bytes": 4868447,
     "textHash": "8543e507127a",
     "chapters": [
       {
@@ -32479,7 +33169,7 @@
     "words": 984,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2784494,
+    "bytes": 5011533,
     "textHash": "b73e6b1f5d18",
     "chapters": [
       {
@@ -32535,7 +33225,7 @@
     "words": 1889,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4716154,
+    "bytes": 8579136,
     "textHash": "61570b7879fd",
     "chapters": [
       {
@@ -32596,7 +33286,7 @@
     "words": 1575,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4109695,
+    "bytes": 7480266,
     "textHash": "c2e97005f0e2",
     "chapters": [
       {
@@ -32652,7 +33342,7 @@
     "words": 1753,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4318522,
+    "bytes": 7814869,
     "textHash": "5c4672752fba",
     "chapters": [
       {
@@ -32708,7 +33398,7 @@
     "words": 1525,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4002928,
+    "bytes": 7252346,
     "textHash": "684e45021f1a",
     "chapters": [
       {
@@ -32764,7 +33454,7 @@
     "words": 1770,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 4320015,
+    "bytes": 7860839,
     "textHash": "88ce09ed0706",
     "chapters": [
       {
@@ -32820,7 +33510,7 @@
     "words": 905,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2552522,
+    "bytes": 4572641,
     "textHash": "09a51f0c21c4",
     "chapters": [
       {
@@ -32881,7 +33571,7 @@
     "words": 765,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2129492,
+    "bytes": 3759192,
     "textHash": "03550cf56f03",
     "chapters": [
       {
@@ -32942,7 +33632,7 @@
     "words": 829,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2469184,
+    "bytes": 4414611,
     "textHash": "8c668df7a49c",
     "chapters": [
       {
@@ -33003,7 +33693,7 @@
     "words": 846,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2433081,
+    "bytes": 4356220,
     "textHash": "9eac49590f94",
     "chapters": [
       {
@@ -33064,7 +33754,7 @@
     "words": 800,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2300340,
+    "bytes": 4092014,
     "textHash": "f6b961519cf3",
     "chapters": [
       {
@@ -33125,7 +33815,7 @@
     "words": 779,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2236744,
+    "bytes": 3981388,
     "textHash": "8680d28e0e97",
     "chapters": [
       {
@@ -33186,7 +33876,7 @@
     "words": 796,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2166190,
+    "bytes": 3853028,
     "textHash": "44c917fad2e9",
     "chapters": [
       {
@@ -33237,7 +33927,7 @@
     "words": 675,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 1930538,
+    "bytes": 3408211,
     "textHash": "7fb9fce6685c",
     "chapters": [
       {
@@ -33288,7 +33978,7 @@
     "words": 797,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2286497,
+    "bytes": 4099133,
     "textHash": "49ec4571ceef",
     "chapters": [
       {
@@ -33334,7 +34024,7 @@
     "words": 779,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2319596,
+    "bytes": 4142934,
     "textHash": "16d11e181df7",
     "chapters": [
       {
@@ -33380,7 +34070,7 @@
     "words": 930,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2584430,
+    "bytes": 4633427,
     "textHash": "29a2f4be174f",
     "chapters": [
       {
@@ -33426,7 +34116,7 @@
     "words": 931,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2627987,
+    "bytes": 4724432,
     "textHash": "3ccdaf4e8f28",
     "chapters": [
       {
@@ -33467,7 +34157,7 @@
     "words": 1931,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 5203190,
+    "bytes": 9433746,
     "textHash": "167f29b96195",
     "chapters": [
       {
@@ -33548,7 +34238,7 @@
     "words": 1072,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2939946,
+    "bytes": 5316258,
     "textHash": "cb4525f2b69a",
     "chapters": [
       {
@@ -33604,7 +34294,7 @@
     "words": 1125,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 2991060,
+    "bytes": 5425763,
     "textHash": "94a7d1bd5875",
     "chapters": [
       {
@@ -33660,7 +34350,7 @@
     "words": 1452,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3815921,
+    "bytes": 6926470,
     "textHash": "265d6b57fe7e",
     "chapters": [
       {
@@ -33721,7 +34411,7 @@
     "words": 1504,
     "voice": "am_michael",
     "engine": "kokoro",
-    "bytes": 3703066,
+    "bytes": 6711785,
     "textHash": "228e8b26318e",
     "chapters": [
       {

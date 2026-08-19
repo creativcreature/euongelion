@@ -38,14 +38,14 @@ export default function AboutPage() {
           body: [
             'A user shares what they are wrestling with — what is heavy, unclear, or simply present. The Soul Audit matches the reflection to three curated devotional paths and explains why each one fits.',
             'Once a path is chosen, the user reads one devotional per day for the length of the series. Each day is grounded in scripture, written from the historic Christian tradition, and short enough to sustain — most days are five to seven minutes.',
-            'Reading position, journal entries, and bookmarks sync across devices when signed in. There is no streak counter. There is no guilt loop.',
+            'Reading position, journal entries, and bookmarks sync across devices when signed in — saving them requires an account. There is no streak counter. There is no guilt loop.',
           ],
         },
         {
           title: 'What grounds the writing',
           body: [
             'Every devotional is built on top of the historic Christian tradition. The reference library draws on 30+ voices spanning church history — from Augustine and Calvin to Spurgeon, Tozer, à Kempis, Brother Lawrence, Bunyan, Owen, Murray, Pascal, Chesterton, and the early apologists.',
-            "AI is used as a composer and arranger, not as an author. When AI assists a devotional, it weaves the tradition's own words into the day's reading. The user always sees what source informed what passage.",
+            "AI is used as a composer and arranger, not as an author. When AI assists a devotional, it weaves the tradition's own words into the day's reading, and quotations carry their attribution. Readings are credited honestly: written by Milo — the house byline for that AI synthesis — and edited by James Parker.",
           ],
         },
         {

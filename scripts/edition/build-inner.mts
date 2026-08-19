@@ -63,7 +63,10 @@ function assertIsoDate(value: string, label: string): string {
     throw new Error(`${label} must be YYYY-MM-DD, got: ${value}`)
   }
   const parsed = new Date(`${value}T00:00:00Z`)
-  if (Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== value) {
+  if (
+    Number.isNaN(parsed.getTime()) ||
+    parsed.toISOString().slice(0, 10) !== value
+  ) {
     throw new Error(`${label} is not a real calendar date: ${value}`)
   }
   return value
@@ -71,7 +74,11 @@ function assertIsoDate(value: string, label: string): string {
 
 function utcDayString(date: Date, offsetDays = 0): string {
   const shifted = new Date(
-    Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() + offsetDays),
+    Date.UTC(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate() + offsetDays,
+    ),
   )
   return shifted.toISOString().slice(0, 10)
 }
@@ -84,7 +91,10 @@ function utcDayString(date: Date, offsetDays = 0): string {
  * `now` is injectable purely so the default-`--from` behaviour is testable
  * without freezing the system clock; callers pass nothing.
  */
-export function parseArgs(argv: string[], now: Date = new Date()): EditionBuildArgs {
+export function parseArgs(
+  argv: string[],
+  now: Date = new Date(),
+): EditionBuildArgs {
   let days = 1
   let from: string | null = null
   let kinds: EditionKind[] | null = null
@@ -108,9 +118,11 @@ export function parseArgs(argv: string[], now: Date = new Date()): EditionBuildA
 
     switch (flag) {
       case '--days': {
-        if (!/^\d+$/.test(value)) throw new Error(`--days must be a whole number, got: ${value}`)
+        if (!/^\d+$/.test(value))
+          throw new Error(`--days must be a whole number, got: ${value}`)
         days = Number(value)
-        if (days < 1) throw new Error(`--days must be at least 1, got: ${value}`)
+        if (days < 1)
+          throw new Error(`--days must be at least 1, got: ${value}`)
         break
       }
       case '--from': {
@@ -124,7 +136,8 @@ export function parseArgs(argv: string[], now: Date = new Date()): EditionBuildA
           .split(',')
           .map((k) => k.trim().toLowerCase())
           .filter((k) => k.length > 0)
-        if (requested.length === 0) throw new Error(`--kinds needs at least one kind\n${USAGE}`)
+        if (requested.length === 0)
+          throw new Error(`--kinds needs at least one kind\n${USAGE}`)
         for (const kind of requested) {
           if (!(EDITION_KINDS as readonly string[]).includes(kind)) {
             throw new Error(
@@ -173,7 +186,9 @@ export function datesInWindow(from: string, days: number): string[] {
 function loadEnvLocal(repoRoot: string): void {
   const envPath = path.join(repoRoot, '.env.local')
   if (!fs.existsSync(envPath)) {
-    console.log(`[edition] no .env.local at ${envPath} — using the process environment`)
+    console.log(
+      `[edition] no .env.local at ${envPath} — using the process environment`,
+    )
     return
   }
   const text = fs.readFileSync(envPath, 'utf8')
@@ -200,9 +215,10 @@ function loadEnvLocal(repoRoot: string): void {
 }
 
 function assertSupabaseEnv(): void {
-  const missing = ['NEXT_PUBLIC_SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY'].filter(
-    (key) => !process.env[key],
-  )
+  const missing = [
+    'NEXT_PUBLIC_SUPABASE_URL',
+    'SUPABASE_SERVICE_ROLE_KEY',
+  ].filter((key) => !process.env[key])
   if (missing.length > 0) {
     throw new Error(
       `missing required environment: ${missing.join(', ')}. ` +
@@ -226,8 +242,27 @@ type GeneratorFn = (date: Date) => Promise<EditionItem[]>
  * in; and one broken generator file names itself in the stack trace instead of
  * taking down a shared index.
  */
-async function loadGenerators(): Promise<{ kind: EditionKind; generate: GeneratorFn }[]> {
-  const [lead, rail, season, word, practice, strip, puzzles, gallery, prayer] = await Promise.all([
+async function loadGenerators(): Promise<
+  { kind: EditionKind; generate: GeneratorFn }[]
+> {
+  const [
+    lead,
+    rail,
+    season,
+    word,
+    practice,
+    strip,
+    puzzles,
+    gallery,
+    prayer,
+    redletter,
+    proverb,
+    verse,
+    archive,
+    b365,
+    voices,
+    question,
+  ] = await Promise.all([
     import('../../src/lib/edition/generators/lead'),
     import('../../src/lib/edition/generators/rail'),
     import('../../src/lib/edition/generators/season'),
@@ -237,6 +272,13 @@ async function loadGenerators(): Promise<{ kind: EditionKind; generate: Generato
     import('../../src/lib/edition/generators/puzzles'),
     import('../../src/lib/edition/generators/gallery'),
     import('../../src/lib/edition/generators/prayer'),
+    import('../../src/lib/edition/generators/redletter'),
+    import('../../src/lib/edition/generators/proverb'),
+    import('../../src/lib/edition/generators/verse'),
+    import('../../src/lib/edition/generators/archive'),
+    import('../../src/lib/edition/generators/b365'),
+    import('../../src/lib/edition/generators/voices'),
+    import('../../src/lib/edition/generators/question'),
   ])
 
   return [
@@ -251,6 +293,14 @@ async function loadGenerators(): Promise<{ kind: EditionKind; generate: Generato
     { kind: 'quiz', generate: puzzles.generateQuiz },
     { kind: 'gallery', generate: gallery.generateGallery },
     { kind: 'prayer', generate: prayer.generatePrayer },
+    // SA-092: the paper grows to ~30 modules a day.
+    { kind: 'redletter', generate: redletter.generateRedLetter },
+    { kind: 'proverb', generate: proverb.generateProverb },
+    { kind: 'verse', generate: verse.generateVerse },
+    { kind: 'archive', generate: archive.generateArchive },
+    { kind: 'b365', generate: b365.generateB365 },
+    { kind: 'voices', generate: voices.generateVoices },
+    { kind: 'question', generate: question.generateQuestion },
   ]
 }
 
@@ -279,13 +329,18 @@ interface SummaryRow {
 function printSummary(rows: SummaryRow[], dryRun: boolean): void {
   const dateW = Math.max('DATE'.length, ...rows.map((r) => r.date.length))
   const kindW = Math.max('KIND'.length, ...rows.map((r) => r.kind.length))
-  const countW = Math.max('ITEMS'.length, ...rows.map((r) => String(r.count).length))
+  const countW = Math.max(
+    'ITEMS'.length,
+    ...rows.map((r) => String(r.count).length),
+  )
 
   console.log('')
   console.log(
     `${'DATE'.padEnd(dateW)}  ${'KIND'.padEnd(kindW)}  ${'ITEMS'.padStart(countW)}  STATUS`,
   )
-  console.log(`${'-'.repeat(dateW)}  ${'-'.repeat(kindW)}  ${'-'.repeat(countW)}  ------`)
+  console.log(
+    `${'-'.repeat(dateW)}  ${'-'.repeat(kindW)}  ${'-'.repeat(countW)}  ------`,
+  )
   for (const row of rows) {
     console.log(
       `${row.date.padEnd(dateW)}  ${row.kind.padEnd(kindW)}  ` +
@@ -302,7 +357,11 @@ function printSummary(rows: SummaryRow[], dryRun: boolean): void {
 }
 
 async function main(): Promise<void> {
-  const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..')
+  const repoRoot = path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    '..',
+    '..',
+  )
   const args = parseArgs(process.argv.slice(2))
   const dates = datesInWindow(args.from, args.days)
 
@@ -339,7 +398,9 @@ async function main(): Promise<void> {
   }
 
   const requested = args.kinds ? new Set<EditionKind>(args.kinds) : null
-  const generators = available.filter((g) => !requested || requested.has(g.kind))
+  const generators = available.filter(
+    (g) => !requested || requested.has(g.kind),
+  )
 
   const summary: SummaryRow[] = []
   const generated: EditionItem[] = []
@@ -352,7 +413,9 @@ async function main(): Promise<void> {
 
       for (const item of items) {
         if (item.kind !== kind) {
-          throw new Error(`${kind} generator produced a "${item.kind}" item for ${date}`)
+          throw new Error(
+            `${kind} generator produced a "${item.kind}" item for ${date}`,
+          )
         }
         if (item.publishDate !== date) {
           throw new Error(
@@ -366,7 +429,8 @@ async function main(): Promise<void> {
         date,
         kind,
         count: items.length,
-        statuses: [...new Set(items.map((i) => i.status))].sort().join(', ') || '—',
+        statuses:
+          [...new Set(items.map((i) => i.status))].sort().join(', ') || '—',
       })
     }
   }
@@ -400,7 +464,9 @@ const invokedDirectly =
 
 if (invokedDirectly) {
   main().catch((err: unknown) => {
-    console.error(`[edition] FAILED: ${err instanceof Error ? err.message : String(err)}`)
+    console.error(
+      `[edition] FAILED: ${err instanceof Error ? err.message : String(err)}`,
+    )
     if (err instanceof Error && err.stack) console.error(err.stack)
     process.exitCode = 1
   })

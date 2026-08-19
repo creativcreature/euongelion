@@ -1,0 +1,878 @@
+{
+  "_readme": "Vasari-style gallery entries (SA-092). Every entry written by an agent LOOKING at the print: title (never claiming to be the historical work), shown (what is literally in the frame), quality (honest connoisseurship). Founder brief: captions like Vasari — art quality + what is literally shown. Hand-edits welcome; regenerating requires re-looking, never templating.",
+  "entries": [
+    {
+      "file": "aivazovsky-ninth-wave-rooted.webp",
+      "title": "The Ninth Wave, in Blue",
+      "shown": "A storm at sea rendered in a single dark blue on cream, the sky built from tight horizontal ruling with a bank of pale cloud breaking open at centre right. Two great crested waves rise mid-frame, and at lower left a handful of survivors cling to a raft of broken spars, one figure raised against the light. The eye runs from the raft along a lane of lit water toward the bright gap in the clouds.",
+      "quality": "After Aivazovsky. The print gets its weather entirely out of line density — spray, cloud, and swell are all the same ink at different pressures — and the lit channel of sea leading from the wreck to the horizon is a genuinely well-judged passage. The raft itself is summarily drawn, more knot than boat."
+    },
+    {
+      "file": "aivazovsky-ninth-wave.webp",
+      "title": "The Ninth Wave",
+      "shown": "The same shipwreck subject with a warm amber sky: a vast luminous cloud fills the upper half while three toppling waves, engraved in dense curling strokes, close in on a spar-raft at lower centre. The survivors are picked out in spot red — the only red in the sheet — one arm flung up against the light. The horizon is kept low so the sky does most of the work.",
+      "quality": "After Aivazovsky. The two-colour scheme earns its keep: the amber wash reads as sunrise through storm, and the sparing red pulls the eye straight to the human stakes without a caption's help. The wave-foam, drawn as clustered dots, sits a little decoratively on top of the water rather than in it."
+    },
+    {
+      "file": "allston-elijah-desert-present.webp",
+      "title": "Elijah in the Desert",
+      "shown": "A blasted, bark-stripped tree dominates the left and centre of a wide wilderness, its dead branches reaching across a sky of coiling engraved cloud; a raven perches on one limb. At lower right, small against the rocks, the prophet kneels at the edge of a dark pool, and beyond him a cliff wall with a thin waterfall closes the right side. A pale peak sits far off at centre.",
+      "quality": "After Allston. The dead tree is the print's real achievement — its writhing anatomy carries more expression than the figure, and the scale drop from tree to prophet makes the desolation legible at a glance. The distant mountain is faint to the point of shyness."
+    },
+    {
+      "file": "allston-elijah-desert.webp",
+      "title": "Elijah Fed by the Ravens",
+      "shown": "The same composition in a colder, near-monochrome key: the dead tree splits the sky, a raven on its branch, storm cloud pressing down from the upper left while light opens along the horizon. Elijah crouches at the lower right by the pool, hand extended toward something on the ground; a second dark bird skims low over the water toward him.",
+      "quality": "After Allston. This darker pull has the better sky — the cloud mass has real weight, and the low band of horizon light gives the whole valley its depth. Its cost is legibility: the prophet nearly dissolves into the rocks around him."
+    },
+    {
+      "file": "angelico-annunciation-present.webp",
+      "title": "The Annunciation",
+      "shown": "Under a loggia of slender columns and vaulted arches, the angel Gabriel — rose-robed, wings barred in green and umber — bows at left with arms crossed on his breast. The Virgin sits at right on a low bench in a dark blue mantle lined green, mirroring the gesture, her haloed head inclined. A hedged garden thick with small flowers fills the left margin, and a single sun-disc hangs top centre between the two bays.",
+      "quality": "After Fra Angelico. The print understands its model's architecture of restraint — the paired crossed-arm gestures, the column dividing angel from Virgin, the flat honeyed ground — and its flat colour is laid with real discipline. The perspective of the receding arcade wobbles where the original's would not."
+    },
+    {
+      "file": "arch-alhambra-gardens-granada.webp",
+      "title": "The Water Stair of the Generalife",
+      "shown": "A long channel of water runs straight up the sheet between clipped hedges and potted shrubs, crossed by arcs of fountain-jets that meet overhead like a wet pergola. Each jet lands in its own ring of engraved ripples down the centre of the canal, ending at a scalloped basin in the foreground. Beyond, an arcaded Moorish facade dense with carved ornament holds a knot of small figures in the central arch.",
+      "quality": "The print's best decision is symmetry played absolutely straight — the crossing jets and the ladder of ripple-rings give it the rhythm of a woven textile. The figures under the arch are filler, but the water, drawn as pure line, actually sparkles."
+    },
+    {
+      "file": "arch-ancient-bread-oven-israel.webp",
+      "title": "Woman at the Old Door",
+      "shown": "An elderly woman in headscarf, round spectacles, and a long floral apron stands on bare trodden ground before a weathered plank door, hands clasped at her waist, face turned to her left. Behind her the house wall is cracked and peeling plaster, with a wire-grilled window at upper left. A band of red-patterned skirt shows below the apron hem — the sheet's one touch of colour.",
+      "quality": "Drawn in a dense pen-hatched manner closer to reportage than to any old master, and the textures are its strength: plaster, mesh, printed cotton, and creased hands each get their own stroke. The face verges on caricature under the weight of its own line."
+    },
+    {
+      "file": "arch-ancient-gaza-road-negev.webp",
+      "title": "Ruins on the Negev Road",
+      "shown": "A low ruined building of coursed stone with empty window openings stands on the middle horizon of a flat desert, flanked by two broken towers. The foreground is strewn ground — scrub, scattered stones, and one large fallen ashlar block at lower centre casting a hard shadow — under a sky ruled in fine horizontal lines that darken toward the top of the sheet.",
+      "quality": "An exercise in economy: the whole vast sky is nothing but ruled line thickening upward, and it works, pressing heat down onto the ruin. The foreground stones are inventoried a little evenly, so no one of them quite anchors the eye."
+    },
+    {
+      "file": "arch-ancient-olive-trees-gethsemane.webp",
+      "title": "Olive Trees at Gethsemane",
+      "shown": "A grove of olives fills the frame, their twisting double-stemmed trunks leaning left, the foliage drawn as spiralling wreaths of blue and green strokes against a pale sky. The ground runs downhill in broken dashes of pink, cream, and blue, with tree shadows pooling at lower left and a few small flowers in the middle ground.",
+      "quality": "After Van Gogh's Saint-Rémy olives, and it keeps the essential thing — every mark curls, so the whole grove seems to be turning in the same wind. In print the stroke system flattens slightly into pattern, decoration where the model had pressure."
+    },
+    {
+      "file": "arch-ancient-quarry-golgotha.webp",
+      "title": "Ornamental Interlace Band",
+      "shown": "A long horizontal headpiece in two registers: interlacing white strapwork loops across a deep cobalt ground, threaded with gold acanthus leaves and sparing accents of red, organised around a central gold palmette. The lower register sets the same vocabulary against a hatched blue field. No figures — the frame is entirely ornament.",
+      "quality": "A clean, confident piece of book decoration in the manuscript-border manner, the strapwork weaving over and under itself without a lost thread. It is a headpiece rather than a picture, and the filename's quarry is nowhere in it — this sheet belongs above a chapter, not beside a caption about Golgotha."
+    },
+    {
+      "file": "arch-arch-constantine.webp",
+      "title": "The Colosseum and the Arch of Constantine",
+      "shown": "The Colosseum's broken oval fills the sheet from the left, its arcades drawn arch by arch with the ruined upper wall against a sky of engraved cloud and streaked wind. At right stands the Arch of Constantine with its attic reliefs and roundels, trees and iron railings about its base. Tiny figures dot the piazza between the two monuments, and modern Rome shows faintly along the right horizon.",
+      "quality": "A patient topographical print in the vedute tradition — the count of arches alone is an act of devotion, and the scale of the strolling figures sets the buildings' size honestly. The sky's decorative swirls sit oddly against so sober an elevation."
+    },
+    {
+      "file": "arch-arch-titus-relief.webp",
+      "title": "The Spoils of Jerusalem, After the Arch of Titus",
+      "shown": "A procession in shallow relief moves left to right: bare-legged bearers in short tunics carry the great seven-branched menorah on a litter at left, while others shoulder placards on poles and the shewbread table at right. The figures overlap in ranks against a plain ground, feet stepping along a common baseline as if the marble itself were marching.",
+      "quality": "After the relief on the Arch of Titus. Rendering carved stone in pure line is the hard problem here, and the print solves it by hatching the ground dark behind the figures so they lift like the marble does. The faces repeat a little mechanically down the line, as reliefs' faces admittedly do."
+    },
+    {
+      "file": "arch-areopagus-mars-hill.webp",
+      "title": "The Areopagus Below the Acropolis",
+      "shown": "From the bare rock summit of Mars Hill, present-day visitors — one photographing, one posing, others in the near foreground with sunglasses and backpacks — occupy the terraced stone, while the Parthenon and Acropolis walls rise beyond the trees at centre. The upper half of the sheet is night-dark ruled sky pressing down on a band of white engraved cloud. Spot red picks out shirts and bags among the crowd.",
+      "quality": "The boldest sheet of the set: a two-thousand-year view given a frankly contemporary foreground, the red-shirted tourists doing what the red survivors do in the seascape — pinning the eye. The enormous dark sky is a gamble that pays; the foreground faces are the print at its roughest."
+    },
+    {
+      "file": "arch-baptistery-florence.webp",
+      "title": "The Baptistery Vault of Florence",
+      "shown": "The octagonal mosaic ceiling of the Florence Baptistery seen from directly below: concentric rings of narrative panels in gold and blue converge on a small octagonal lantern at centre, with tiers of angels in the inner rings. The great enthroned Christ of the Last Judgment occupies the oval mandorla at left, and a border of coffered openings runs the outer rim against a night-blue ground.",
+      "quality": "After the Baptistery mosaics. The print's intelligence is in surrendering detail to structure — hundreds of scenes reduced to a gold wheel turning on its lantern hub, which is exactly how the vault reads from the floor. Up close the individual panels blur into texture, a fair price for the whole."
+    },
+    {
+      "file": "arch-basilica-tabor.webp",
+      "title": "The Basilica of the Transfiguration, Mount Tabor",
+      "shown": "The church facade fills the sheet frontally: a gabled central bay with a triple-arched window over a deep recessed portal, flanked by two square towers with open belfry stages. A paved path leads straight to the dark open door between low walls of ancient rubble masonry, with shrubs and a single tall dead agave stalk at right, under a sky of engraved cloud.",
+      "quality": "A disciplined architectural elevation in the guidebook-woodcut manner, every voussoir and dogtooth course given its due, and the black doorway at the end of the pale path is the one theatrical stroke the design needs. Its symmetry is so strict the sheet risks reading as a drawing from plans rather than from the ground."
+    },
+    {
+      "file": "arch-canterbury-cathedral-nave.webp",
+      "title": "The Nave of Canterbury",
+      "shown": "The Gothic nave seen down its axis: clustered piers rise to fan-ribbed vaulting drawn in fine parallel line, converging on the great traceried window glowing at the east end. Rows of empty chairs flank the central pavement, a dark-draped table stands in the near foreground, and a few small figures in red robes stand at the crossing — the only colour in the sheet.",
+      "quality": "The print stakes everything on vertical line and wins: the vault's ribs and the piers' shafts pull the eye up and in with real architectural force, and the tiny red vergers give the height its measure. The foreground table is an awkward mass the perspective must climb over."
+    },
+    {
+      "file": "arch-capernaum-synagogue.webp",
+      "title": "The White Synagogue at Capernaum",
+      "shown": "The ruined limestone synagogue seen across its empty paved floor: a screen of columns carries a bare architrave against a sky of heaped clouds and pressing black, two capitals picked out in yellow ochre. Rows of broken column bases on red-banded plinths line both sides of the pavement, with the dark basalt of older walls behind at left.",
+      "quality": "The selective colour is the idea here — gilding two Corinthian capitals and rusting the plinth-bands red turns an inventory of ruins into a composition with a hierarchy. The paving is drawn slab by slab with more diligence than variety."
+    },
+    {
+      "file": "arch-catacombs-good-shepherd.webp",
+      "title": "The Good Shepherd",
+      "shown": "A single small vignette floats on a bare cream field: a beardless youth in a short belted tunic stands frontally with a sheep across his shoulders, right hand open at his side. Two sheep flank him on a strip of hatched ground, two birds perch on slight trees at either shoulder, and a yellow line follows the sash and the fleece — the only colour.",
+      "quality": "After the catacomb fresco type, and it honours the model's plainness: a few dozen pen strokes, generous emptiness, and one thread of yellow doing the work of gilding. The emblem-like isolation is the design; there is simply not much to it beyond the emblem, which is the point."
+    },
+    {
+      "file": "arch-chartres-labyrinth.webp",
+      "title": "The Labyrinth at Chartres",
+      "shown": "The pavement labyrinth of a great cathedral nave, seen at floor level with its curved stone segments running away toward an open west door. Wooden chairs stand ranked on either side, cleared from the path, and a single figure waits at a lectern by the doorway. Daylight from the portal is the only light, pulling the eye down the pale track between the dark colonnades.",
+      "quality": "The print earns its depth cheaply and well: the toned duotone lets the worn flags carry all the light while the aisles fall into ink. The chairs multiply a little mechanically at the edges, but the floor itself — pitted, scrubbed, legible stone by stone — is finely observed."
+    },
+    {
+      "file": "arch-church-annunciation-nazareth.webp",
+      "title": "The Lantern Dome of the Annunciation",
+      "shown": "The modern concrete dome of the Basilica of the Annunciation seen from directly beneath: ribbed panels radiate like an inverted lily from a small golden lantern at the apex. The surrounding ceiling falls into near-black, pierced by two warm spotlights at upper right. The eye spirals inward along the ribs to the one bright point of yellow.",
+      "quality": "A disciplined piece of pattern-making — the ribs are counted, tapered, and kept in true perspective, and the single note of gold at the crown does the work of a whole palette. Its geometry is so exact it reads almost as diagram; the darkness around the rim is what saves it as a picture."
+    },
+    {
+      "file": "arch-colosseum-arena-floor.webp",
+      "title": "On the Arena Floor of the Colosseum",
+      "shown": "The interior bowl of the Colosseum from the arena floor: tier upon tier of broken travertine arches and radial walls climb under a flat blue sky ruled in fine horizontal lines. In the foreground, present-day visitors in striped shirt, pink top, and green backpack stand at a barrier, one raising a camera toward the ruins.",
+      "quality": "The hand keeps its nerve across an enormous inventory of masonry — every arch and stub wall is drawn, not smudged, and the ruled sky sets the stone off handsomely. Placing tourists in the frame is a bold, dry touch that gives the ruin its scale, though their color sits a shade brighter than the stonework around them."
+    },
+    {
+      "file": "arch-dome-rock-interior.webp",
+      "title": "The Dome of the Rock",
+      "shown": "The Dome of the Rock seen across its paved esplanade, drawn corner-on so two arcaded porches recede left and right from a pale central pier. The tiled drum carries panels of ornament picked out in olive green, and above it the ribbed dome rises against a night-dark sky ruled in dense horizontals, the crescent finial at the very top. Jerusalem's rooftops show low and white between the columns.",
+      "quality": "This is the strongest kind of woodcut architecture: mass built from ruled line, ornament suggested by pattern rather than fussed over, and the paper itself left to play the marble. The corner-on symmetry is severe, but the low glimpses of city under the porches keep the plate breathing."
+    },
+    {
+      "file": "arch-garden-tomb-exterior.webp",
+      "title": "The Garden Tomb",
+      "shown": "The rock-cut face of the Garden Tomb: a low doorway outlined in red sits in a pale escarpment beneath a coursed stone wall crowned with trees. Wind-curled clouds spiral above, a pine bough overhangs the upper right, and in the foreground lie a fallen slab, a dry channel, and a broken flight of stone steps. The red-rimmed door is the single accent and the immediate target of the eye.",
+      "quality": "The plate is generous with its blacks — the trees and hatching press in from every side so the white rock face and its one red doorway arrive with real force. The spiralling clouds are a borrowed mannerism, but they rhyme with the pine and give the sky something to do."
+    },
+    {
+      "file": "arch-garden-tomb-jerusalem.webp",
+      "title": "A City Above the Bay",
+      "shown": "A hillside town seen from above, red-roofed houses and walled gardens stepping down toward a wide sea. Sailing ships and small craft sit on water ruled in fine horizontals, with arcs of engraved cloud overhead. The eye descends the rooftops from lower left out to the masts on the horizon.",
+      "quality": "A tidy topographical vignette in the old book-plate manner: the red roofs are registered cleanly against the indigo line work, and the ruled sea holds the whole upper half together. It is a view rather than a drama — its virtue is inventory, every house and boat given its due, and nothing in it raises its voice."
+    },
+    {
+      "file": "arch-gethsemane-end-ourselves.webp",
+      "title": "Olive Trees After Van Gogh",
+      "shown": "A grove of olive trees on rising ground, their trunks twisting in dark contour against foliage built from hooked blue and green strokes. The soil is laid in broken horizontal dashes of ochre, mauve, and blue, with small white blossoms and a few red-headed flowers scattered through. Light comes from everywhere at once, in the color itself; the eye rides the writhing trunks from left foreground into the massed crowns.",
+      "quality": "As a chromolithographic translation of a painted surface it is remarkably faithful — every stroke is a printed mark with its own edge, and the ground's broken dashes keep the whole sheet in motion. The debt to the Saint-Rémy olive orchards is total and undisguised; the print's own contribution is the crispness of the ink."
+    },
+    {
+      "file": "arch-gethsemane-olive-trees.webp",
+      "title": "The Olive Grove",
+      "shown": "Olive trees scattered across a sunstruck slope, drawn in the same hooked-stroke idiom: contorted trunks in brown and indigo, crowns of blue-green flame, and a ground of layered ochre, rose, and blue dashes running downhill toward the viewer. Red buds and low flowering plants punctuate the right foreground. The composition is all middle distance — no sky to speak of, just earth and trees.",
+      "quality": "A companion sheet to its neighbor and slightly the sunnier of the two: the palette warms, the ground opens up, and the strokes lie flatter and calmer. The trees are pattern more than portrait — no single trunk asks to be believed — but the field of marks holds together at any distance."
+    },
+    {
+      "file": "arch-hagia-sophia-apse.webp",
+      "title": "Virgin and Child Enthroned, After the Apse Mosaic",
+      "shown": "The Virgin sits frontally on a jewelled throne in a deep blue mantle, the Child on her lap in pale gold, each haloed — hers plain gold, his carrying a red cross. Two ornamented cushions flank her, and the stepped footstool is banded with mosaic-like squares of green, blue, and white. The ruled blue field behind them stands in for the gold ground of the apse, and the eye goes straight to the two faces stacked on the central axis.",
+      "quality": "The print understands its Byzantine source as design rather than illusion — flattened drapery folds, banded ornament, absolute frontality — and translates tesserae into crisp printed pattern with real conviction. The severity is the point; only the faces, drawn softer than everything around them, betray a modern hand."
+    },
+    {
+      "file": "arch-holy-sepulchre-dome.webp",
+      "title": "A Parlor with Portraits and a Birdcage",
+      "shown": "A high-ceilinged nineteenth-century sitting room: patterned drapes on tall windows, a chandelier, a carved fireplace with an ornate pier glass above it, and walls hung with framed portraits and small devotional pictures around a corner shelf of photographs. A settee with dark cushions faces a low table, and a domed wire birdcage sits on a stand at the right. Pale daylight filters through the sheer curtains.",
+      "quality": "The plate delights in inventory — every frame, tassel, and curtain repeat is drawn out patiently in two inks, and the muted red of the textiles is registered with care against the blue line. It reads as an interior of memory rather than of use: airless, exact, and all the more atmospheric for having nobody in it."
+    },
+    {
+      "file": "arch-judean-desert-engraving.webp",
+      "title": "The Temple Seen Between Columns",
+      "shown": "Two colossal ruined column shafts frame a distant temple front standing alone on a desert plain, its portico and freestanding gateway crisp against a sky ruled in close horizontals. Fallen blocks and drums litter the sand of the middle ground; the foreground lies in deep cast shadow. The framing shafts push the eye straight down the corridor of light to the far façade.",
+      "quality": "The framing device is old and it still works: the pitted, patched surfaces of the near columns are the best drawing on the sheet, and the ruled sky presses the distance flat like heat. Composition and handling both sit squarely in the Piranesi-postcard tradition, which is a compliment and a limit in one."
+    },
+    {
+      "file": "arch-lascaux-cave-paintings.webp",
+      "title": "The White Horse in a Field of Flowers",
+      "shown": "A pale horse in profile fills a rectangular panel, walking left with head lowered, its mane and tail struck in yellow ochre. Behind it the dark blue ground is worked solid with white flowering plants, ferns, and scrolled clouds; a yellow sun rays out in the upper left corner. The horse's cream body, left almost unworked, is the brightest mass on the sheet.",
+      "quality": "A handsome piece of flat-pattern work in the Morris and medieval-tapestry line: the millefleurs ground never crowds the animal because the cutter keeps the horse nearly empty and lets the paper shine. The drawing of the beast is more heraldic than anatomical — stiff at the hocks — and the panel is the better for that stiffness."
+    },
+    {
+      "file": "arch-library-celsus-ephesus-2.webp",
+      "title": "The Library of Celsus",
+      "shown": "The two-storey façade of the Library of Celsus drawn head-on: paired columns, broken pediments, and statues standing in their niches, with a stepped platform and scattered fallen masonry in front. A hillside with a palm rises at left, a ruined gate stands at right, and three small figures — two in red — give the front its scale. The eye runs up the central doorway to the fractured skyline of the attic.",
+      "quality": "An architect's elevation given life by wear: the cracks, patched marble, and broken cornices are drawn with as much care as the orders themselves, and the two red figures place the accent exactly where the scale needs it. The strict frontality forfeits drama for clarity, a fair trade the plate makes knowingly."
+    },
+    {
+      "file": "arch-maria-laach-choir-stalls.webp",
+      "title": "The Abbey of Maria Laach",
+      "shown": "The west end of a Romanesque abbey climbs through the frame: round turrets, arcaded galleries, a broad apse, and a tall square tower with a steep roof, all under a night-dark ruled sky. Small pennants in yellow and red fly from the towers, a mass of trees fills the left foreground, and tiny figures pass through the arched porch at lower right. The paper's cream does the work of sunstruck stone.",
+      "quality": "The cutter handles the abbey's stacked geometry — turret against apse against tower — without once losing the count of the arcades, and the dark sky gives the pale masonry a fine engraved weight. The foliage is the loosest passage on the sheet, a welcome rough patch against so much measured stone."
+    },
+    {
+      "file": "arch-monastery-sinai-burning-bush.webp",
+      "title": "The Monastery of Saint Catherine, Sinai",
+      "shown": "The fortified monastery seen from above, its massive granite walls enclosing a packed interior of chapels, cells, a bell tower, and a small white minaret, with one building washed in yellow. Behind it a bare mountainside of drawn boulders rises to fill the whole upper half; cypresses and a walled garden stand at the right. The eye drops from the scree straight into the walled compound.",
+      "quality": "The plate's real subject is texture — thousands of patient strokes turn the mountain into a single grinding mass against which the geometry of the walls reads with great authority. The lone yellow building is a quietly effective device, one warm note in an economy otherwise of stone."
+    },
+    {
+      "file": "arch-mont-saint-michel-cloister.webp",
+      "title": "The Cloister of Mont-Saint-Michel",
+      "shown": "A cloister taken from its corner, two arcaded walks receding left and right under steep timber-ribbed roofs, the slender doubled colonnettes screening a garth planted in rows. The perspective bows outward as in a wide lens, and small panels of red — doorways at the far ends and between the columns — flare in the gloom. The floor's long flags sweep the eye into both galleries at once.",
+      "quality": "The corner-first, double-vanishing composition is the print's gamble and it pays: the walks pull apart like wings while the colonnade knits them together, every paired shaft counted. The fisheye curvature is frankly modern for so medieval a subject, and the sheet is livelier for the anachronism."
+    },
+    {
+      "file": "arch-old-bailey-london.webp",
+      "title": "Justice Above the Old Bailey",
+      "shown": "The gilded figure of Justice atop the Old Bailey dome, seen from below against a sky of hard diagonal blue hatching: arms flung wide, sword raised in the right hand, scales hanging from the left, a spiked crown on her head. She stands on a golden orb set in green copper acanthus above the pale-banded stonework of the lantern. The diagonals of the sky drive the eye up the tower to the sword's point.",
+      "quality": "A vigorous piece of poster-cut drawing — the raking sky is one decision, made early and held everywhere, and it gives the gilt figure her lift. The statue's gold, rose, and green are registered cleanly against the black key; only the face, small and generalized at this distance, goes slack."
+    },
+    {
+      "file": "arch-palatine-hill-ruins.webp",
+      "title": "The Stone Pine on the Palatine",
+      "shown": "A single umbrella pine rises the full height of the sheet, its bare trunk lifting a broad dark canopy against a sky graded from deep ruled blue to white cumulus. Below, the brick arch and broken walls of a Roman ruin run across the base, with cypresses massed at the right. The tree splits the composition down the middle and the eye climbs it like a mast.",
+      "quality": "The finest plate of this run: sky, cloud, canopy, and brick each get their own distinct system of marks, and the graded ruled blue behind the crown is printmaking of real finish. Its poise is borrowed from the classic Rome vedute — one tree, one ruin, one sky — and the print carries the inheritance without strain."
+    },
+    {
+      "file": "arch-pantheon-dome-oculus.webp",
+      "title": "The Oculus of the Pantheon",
+      "shown": "The coffered dome of the Pantheon fills the whole frame, seen from directly beneath. Rings of square coffers radiate from the open oculus at center, a disc of pale cream ringed with a thin red line, from which cream-colored ribs fan outward like spokes. There are no figures; the eye is pulled straight to the bright circle and held there.",
+      "quality": "The print turns architecture into pure pattern, letting the dot-textured ribs carry both light and structure at once, and the single red halo around the oculus is a shrewd economy — one line of spot color doing the work of a sunbeam. Pushed this far toward the ornamental, the coffers lose some of their real recession into depth."
+    },
+    {
+      "file": "arch-philippi-ruins-greece.webp",
+      "title": "The Plain of Philippi",
+      "shown": "A wide valley opens toward a long mountain wall under a sky ruled in fine horizontal lines, a single cloud snagged at the upper left. In the middle distance, broken columns and wall fragments of the ancient city stand among bare and leafing trees, one tree at center flecked with yellow; the foreground is a dense band of grasses. A sliver of yellow sun edges over the ridge, and the eye travels from the grass up through the ruins to that crest.",
+      "quality": "The engraver's patience shows in the graded hatching of the mountains, which keeps five or six planes of distance legible in a single blue ink. The ruins themselves are almost swallowed by the vegetation — a truthful effect, though it costs the print its nominal subject."
+    },
+    {
+      "file": "arch-ravenna-good-shepherd-mosaic.webp",
+      "title": "The Good Shepherd of Ravenna",
+      "shown": "Within a lunette bordered by a wave-scroll band, a young beardless shepherd sits at center on a rock, haloed, holding a tall cross like a staff in his left hand and reaching with his right to touch the muzzle of a sheep. Six sheep in cream fleece surround him against a blue hillside set with stylized trees and stepped rocks; a starred vault of deep blue arches above. The eye goes first to the pale halo and face, then follows the outstretched arm to the sheep.",
+      "quality": "This is a print after the Galla Placidia mosaic, and its best decision is to keep the tesserae logic — every fleece and rock built from repeated flat marks — while flattening the palette to blue, cream, and black so the lunette reads as one woven surface. The shepherd's seated twist, the hardest passage in the original, comes through a little stiffly at the knee."
+    },
+    {
+      "file": "arch-roman-forum-chaos.webp",
+      "title": "Columns Among the Apartments",
+      "shown": "Two Corinthian columns rise at the left foreground of an excavated dirt field, their fluted shafts and leafy capitals drawn in dense line; behind them a ruined colonnade crosses the middle distance. Above and beyond press modern apartment blocks with awnings and balconies, a street with parked cars, power lines, and trees — one green, others rust-red. A small yellow object lies alone on the bare ground at center, and the emptiness of the lot is what the eye keeps returning to.",
+      "quality": "The print's wit is in its registration of two cities at once: the columns get the slow, loving hatching of an antiquarian plate while the apartment blocks are handled in brisker, flatter line, so the centuries are told apart by touch alone. The scatter of spot color — green, red, one yellow scrap of litter — is placed with a documentarian's dry eye."
+    },
+    {
+      "file": "arch-san-thome-basilica.webp",
+      "title": "San Thome Basilica, Madras",
+      "shown": "The long white Gothic flank of the basilica runs diagonally across the frame, all pinnacles, buttresses, and a tall central spire topped with a cross, its rooflines picked out in red. Palm trees line the forecourt, and a few small figures — one in white, one in red — walk near the doors. A vigorously hatched cloud bank fills the upper half, and the eye climbs the spire into it.",
+      "quality": "The engraved sky is the print's real performance: layered horizontal and contour hatching that gives the clouds actual weight over the crisp, sunstruck architecture. The red roof-line accents and the palms fix the place as Madras rather than Flanders, though the tiny figures are summary to the point of shorthand."
+    },
+    {
+      "file": "arch-scriptorium-medieval.webp",
+      "title": "The Monastery Garth",
+      "shown": "A two-story Romanesque cloister encloses a formal garden seen from above: clipped hedges laid out in a diamond parterre, dark cypresses rising at the corners and center, and a small urn-shaped fountain in a circular basin at the middle. The arcades run round all four sides in tiers of paired columns; no figure is present. The eye circles the hedges and settles on the fountain.",
+      "quality": "Printed in a single violet-blue over toned paper, the plate gets its depth entirely from grain — the gravel, the hedge tops, and the arcade shadows are all differing densities of the same dot. The high vantage flattens the cypresses into near-silhouette, which suits the garden's geometry better than it suits the trees."
+    },
+    {
+      "file": "arch-shepherds-field-chapel.webp",
+      "title": "The Excavation at Shepherds' Field",
+      "shown": "Under a sweeping tent canopy drawn as long curved lines, an archaeological dig lies open: rubble walls, flagstones, a modern steel walkway with railings crossing the trench, and at center a round stone table or column drum on a squat pedestal. A garden with cypresses and swirling engraved clouds shows beyond the upper railing; a single red vertical pole cuts the right side. The eye drops from the canopy's radiating lines to the drum at center.",
+      "quality": "The print takes an unpromising subject — scaffolding over rubble — and organizes it with the tent's great fan of lines, which gathers every stray stone under one graphic roof. The one red pole is the whole color argument, and it is enough; the middle-ground masonry, though, blurs into sameness of texture."
+    },
+    {
+      "file": "arch-tabgha-loaves-mosaic.webp",
+      "title": "The Loaves and Fishes of Tabgha",
+      "shown": "On a ground of deep blue tesserae, a basket of loaves marked with crosses stands between two cream-colored fish, drawn in the flat profile of the ancient pavement; lotus-like geometric medallions flank the group at left and right, flecked with red. Bands of darker mosaic close the top and bottom. The eye rests on the basket, the only complex form on the field.",
+      "quality": "A print after the famous Galilean pavement, and the strongest of the set as pure pattern: every tessera is individually cut in the block, so the blue field shimmers rather than sits flat. Restricting red to a scatter of single tiles keeps the emblem austere, exactly as the pavement itself teaches."
+    },
+    {
+      "file": "arch-trajan-market-ruins.webp",
+      "title": "The Markets of Trajan",
+      "shown": "The great hemicycle of Trajan's Markets curves across the middle of the frame in warm brick tones, its two tiers of arched shops surmounted by later houses and the tall medieval Torre delle Milizie against a deep blue ruled sky. A church dome and cupola rise behind; the sunken forum floor in the foreground is strewn with column stumps, broken walls, and yellow-green grass. The eye follows the arcade's curve up to the tower.",
+      "quality": "This is the most fully chromatic plate of the group, and the ochres and salmon of the brickwork are layered with real discipline — each arch shadowed just enough to keep the hemicycle turning in space. The ruled sky presses down a little mechanically, a flat lid over very lively masonry."
+    },
+    {
+      "file": "arch-via-sacra-rome.webp",
+      "title": "The Via Sacra",
+      "shown": "A paved ancient road of broad polygonal stones runs from the foreground into the Roman Forum, where a robed figure walks toward us at center and knots of visitors stand in the middle distance. Ruined brick walls, fallen column drums, and railings line both sides; the three columns of a temple, a basilica portico, and a distant arch mark the skyline under a heavy engraved sky. The eye runs straight down the road to the lone walker.",
+      "quality": "The print stakes everything on perspective and wins: the flagstones enlarge toward the viewer with such conviction that the road itself becomes the protagonist. The storm sky, hatched in thick horizontal masses, gives the plate its drama, though the background monuments are drawn with a guidebook's brevity."
+    },
+    {
+      "file": "arch-westminster-cloister.webp",
+      "title": "The Cloister Garth at Westminster",
+      "shown": "From within a shadowed archway, the view opens onto a dark lawn enclosed by Gothic cloister walks with traceried openings, a small canopied fountain or well standing alone at its center. Above the red-roofed range rise rose windows, a green-roofed chapel, and the pinnacled towers of the abbey against a pale sky. The eye crosses the empty grass to the fountain, then climbs to the towers.",
+      "quality": "The plate works its tonal range hard — near-black lawn, mid-toned stone, blown-out sky — so the garth reads as a well of quiet at the bottom of the composition. The heavy edge vignetting is more photographic than graphic, a borrowed effect the linework does not quite need."
+    },
+    {
+      "file": "arch-yardenit-jordan-site.webp",
+      "title": "The Baptismal Site at Yardenit",
+      "shown": "The Jordan River fills the right half of the frame, its surface stippled with reflections of a dense wall of eucalyptus and willow on the far bank. At left, stone terraces and railed walkways step down to the water under a white shade canopy, where a group of small figures in pale robes gathers at the rail; green-piped railings cross the foreground. The eye moves from the robed group out across the dark water.",
+      "quality": "The print's achievement is the river — long broken horizontals of blue that hold both current and reflection without a single wasted line. The modern infrastructure is drawn honestly rather than prettified, and the tiny white congregation, barely a centimeter of paper, quietly becomes the subject."
+    },
+    {
+      "file": "blake-glad-day-albion.webp",
+      "title": "Glad Day, After Blake",
+      "shown": "A nude youth stands with arms flung wide on a dark rocky outcrop, one foot forward, his head ringed by curling hair against a great burst of golden and white rays that fills the night-blue field behind him. Bat-dark clouds sink at the lower right; the light explodes from behind his body. The eye goes to the calm face at the center of the blaze.",
+      "quality": "A print after Blake's Albion Rose, translated into three inks — blue ground, ochre radiance, paper-white body — and the reduction suits Blake, whose figure was always contour first. The anatomy holds through the shoulders and torso; the springing energy of the original's stance is slightly tamed, the dance become a pose."
+    },
+    {
+      "file": "bosch-ship-fools-tongue.webp",
+      "title": "The Ship of Fools, with the Pink Ensign",
+      "shown": "A crowded rowing boat carries a lute-playing nun, a monk, and a shouting company gathered round a board on which sit a bowl of cherries and a cup; between the nun and monk a pale round object hangs on a string at mouth level. A leafy tree serves as mast, topped by an owl-faced moon in the branches, with a long pink pennant streaming; a man climbs the rigging with a knife, another figure roosts in the branches drinking, and swimmers reach up from the water below. The eye circles the singing mouths around the table.",
+      "quality": "A print after Bosch's Ship of Fools that keeps the panel's whole inventory in a strip of paper, its dense blue stippling giving the tree-mast a real mass against the bare hatched sea. The near-monochrome restraint sharpens the satire; only the ensign and cherries are allowed color, which is exactly where a fool's eye would go."
+    },
+    {
+      "file": "bosch-ship-fools.webp",
+      "title": "The Ship of Fools",
+      "shown": "The same crowded vessel: a nun with a lute and a monk face each other across a plank table bearing a plate of cherries, mouths open in song toward a pale cake dangling from a string; villagers press around them, one man vomits over the side, a woman in white drinks in the tree-rigging, and a climber with a knife mounts the mast toward an owl-faced moon in the foliage. Two half-naked swimmers beg at the gunwale, one holding up a bowl. The eye goes to the suspended cake between the two singers.",
+      "quality": "This version admits more of the palette — a yellow sleeve, a red funnel-hat, flesh tones on the swimmers — and the added color separates the crowd into individual fools where the bluer state fused them into one chorus. The hatched sea and sky stay coarse, sensibly, so the tangle of figures owns all the fine work."
+    },
+    {
+      "file": "bosch-the-conjurer.webp",
+      "title": "The Conjurer",
+      "shown": "At a trestle table set with cups, a cone, and small balls, a conjurer in a red gown and tall black hat holds up a ball in one hand and a wicker basket in the other, while a stooping onlooker in rose leans across the table, mouth agape — and behind that victim a confederate in green quietly lifts a purse. A crowd of nuns, burghers, and a child with a whirligig bunches at the left before a stone wall; a dog in a belled collar sits beneath the table beside a hoop. The eye shuttles between the conjurer's raised ball and the thief's busy hands.",
+      "quality": "A print after Bosch's Conjurer that understands the picture is a machine of gazes, and it keeps every sightline intact — all eyes on the ball, no eyes on the purse. The flat teal night sky and brick hatching set off the red and green principals cleanly; the crowd's faces, simplified to almond eyes and long noses, trade Bosch's malice for something nearer a woodcut's good humor."
+    },
+    {
+      "file": "bouguereau-difficult-lesson.webp",
+      "title": "The Difficult Lesson, After Bouguereau",
+      "shown": "A barefoot peasant girl sits on a stone ledge against a grey wall, an open book across her lap, one finger marking the page. She wears a white blouse under a grey pinafore tied with a bow, and she looks directly out of the frame, her expression grave; the light falls from the upper left onto her face and forearms. The eye locks with hers before it finds the book.",
+      "quality": "A print after Bouguereau rendered in a heavy photogravure grain that mutes his porcelain finish into something closer to pastel, and the trade is favorable — the grain lends the wall and skirt an atmosphere the original's polish refuses. The hands, Bouguereau's pride, survive the screen less well than the face."
+    },
+    {
+      "file": "bruegel-pentecost-expansion.webp",
+      "title": "The Peasant Wedding",
+      "shown": "In a barn hung with a green cloth and a crossed-sheaf emblem, wedding guests crowd two long tables: the bride sits centered before the cloth, bagpipers stand at left, a man in the left corner pours from jug to jug beside a basket of pitchers, and a child in an oversized red hat licks a plate on the floor. Dominating the foreground, two servers carry a door-panel loaded with round dishes of porridge, one man in a pale apron striding toward us. The eye follows the tray of dishes back to the bride.",
+      "quality": "A print after Bruegel's Peasant Wedding that translates the panel into colored woodcut terms — flat reds and greens on cream, contour doing all the modeling — and the famous diagonal of the porridge-tray still organizes the whole room. What the reduction loses is Bruegel's brown warmth; the barn air here is paper-white, festive rather than thick."
+    },
+    {
+      "file": "bruegel-tower-babel-1563.webp",
+      "title": "The Tower of Babel",
+      "shown": "The great spiral tower fills the frame, its lower storeys drawn in fine white line, its unfinished crown flaring brick-red against a hatched sky where a single dark cloud drifts. Around its foot a city spreads to flat hills, a harbor with masted ships lies at the right, and in the lower left a robed king in a white mantle visits the stonemasons, who kneel over their blocks. The eye climbs the ramps of arched windows to the raw red summit.",
+      "quality": "A print after Bruegel that keeps an astonishing amount of his miniature order — hundreds of arches individually stated without clotting — while the two-ink scheme turns the tower's unfinished top into the picture's one blaze of color, exactly where it should burn. The ruled sky is mechanical next to the tower's invention, though it serves as a quiet foil."
+    },
+    {
+      "file": "bruegel-tower-babel.webp",
+      "title": "The Tower of Babel with the King's Visit",
+      "shown": "The same spiral tower rises past the frame's top edge, here rendered almost entirely in dark blue line on cream, the city and estuary receding behind it under a heavily ruled sky. In the foreground the royal party stands among quarried blocks and kneeling masons, and a single figure in a yellow mantle at center front carries the print's only note of color. The eye goes first to that yellow, then up the mounting ramps.",
+      "quality": "The near-monochrome discipline suits the woodcut manner better than its companion sheet: mass and distance are carried by line density alone, and the one drop of yellow is placed with a printmaker's economy. The horizontal ruling of sea and sky grows insistent at the edges, where the burin's patience runs thinner than the tower's."
+    },
+    {
+      "file": "brueghel-garden-eden-elder.webp",
+      "title": "The Garden of Eden",
+      "shown": "In a blue-and-cream engraved Eden, Eve stands at center reaching up into the fruit tree where the serpent coils along a branch, while Adam sits on a rock at her side receiving the fruit. Around them the garden teems — a horse at the left edge, a lion and leopard at right, a peacock spreading its train in the foreground, parrots and herons filling the branches and grass. Light comes as bare paper breaking through the dense foliage down a central avenue of trees.",
+      "quality": "The sheet's real subject is abundance, and the line work sustains it: every animal is individually characterized without the thicket collapsing into noise, and the pale bodies of the first pair read cleanly against the dark tree. The composition is so evenly stocked that the fatal transaction at center must compete with the peacock for the eye."
+    },
+    {
+      "file": "brueghel-garden-eden-young.webp",
+      "title": "Paradise with a Scarlet Parrot",
+      "shown": "A tall, dark wood in the manner of the younger Brueghel: two great fruit trees frame a sunlit clearing where a lion reclines beside a lamb and a stag steps through flowering weeds. A scarlet parrot — the only color on the sheet — perches on a bare branch at upper left, with monkeys on the bough beside it and two pale cockatoos lower down; a bright opening between the trunks leads back to distant water and small figures. The eye moves from the red bird down to the peaceable animals at the pool.",
+      "quality": "A genuinely dark print that earns its darkness: the foliage is built from patient tonal stippling rather than outline, so the clearing's light feels excavated, not drawn. Placing the single red impression on the parrot is a stroke of wit, though the shadowed middle distance swallows some of its smaller creatures."
+    },
+    {
+      "file": "campi-still-life-vine.webp",
+      "title": "The Fruit Market",
+      "shown": "A market table seen close and from above, packed edge to edge: baskets and platters of apples, pears, cherries, and a dark heaped plate of blackberries; bundled asparagus tied with cane at the right; beans, blossoms, and root vegetables strewn across the middle; split melons and peaches crowding the near edge. There is no figure and no distance — the light is even, and the eye grazes from plate to plate as at a stall.",
+      "quality": "After Campi's market pictures, this reads as pure ornament of abundance, and the engraving handles the inventory well — each fruit's skin gets its own texture of stipple or contour line, with the muted green a third working ink rather than an afterthought. Without a governing light or axis the sheet is all middle, which is honest to its subject and a limit of it."
+    },
+    {
+      "file": "caravaggio-incredulity-thomas.webp",
+      "title": "The Incredulity of Saint Thomas",
+      "shown": "Four half-length figures crowd out of a field of flat night-blue: Christ at the left draws open his garment and guides the hand of Thomas, who bends in from the right, brow furrowed, his finger at the wound; two older disciples lean in above, all four heads converging on the same point. The light is the paper itself, breaking hardest on Christ's chest and the knot of hands at dead center.",
+      "quality": "The print understands what makes its source work — the funnel of four gazes down to one probing finger — and rebuilds Caravaggio's lamp-light entirely from reserved paper and hatching, which is no small feat in two inks. The faces are engraved with real character; only the drapery, laid in with somewhat regular parallel strokes, gives away the modern hand."
+    },
+    {
+      "file": "carracci-stoning-stephen.webp",
+      "title": "The Stoning of Saint Stephen",
+      "shown": "Outside a walled city with a round tower, Stephen kneels at the left in his deacon's robe, hands raised, while a ring of executioners heave stones — one lifts a rock overhead with both arms, and a young man in a red tunic, the sheet's one strong color, braces at center with his back to us. An angel dives from a cloud-borne vision of heaven bearing the palm and wreath; at the far left a turbaned elder watches from the shadow of a tree, and at lower right a seated youth guards the cloaks.",
+      "quality": "A well-marshalled crowd scene in the Carracci manner: the diagonal from the falling angel to the kneeling saint organizes a dozen figures without confusion, and spending the red on an executioner's back rather than the martyr is a shrewd inversion that pulls the eye into the violence. The heavenly cloud is more schematic than the earth below it, as such clouds usually are."
+    },
+    {
+      "file": "cassatt-mother-child.webp",
+      "title": "Mother and Child with a Hand Mirror",
+      "shown": "A red-haired mother in a loose pale gown holds a naked child on her lap in a bentwood chair, steadying a round hand mirror in which the child's face appears; behind them a larger mirror repeats the whole group in profile against deep blue. A yellow sunflower blazes at the mother's breast — the print's brightest color — and the eye circles from the child's reaching arms to the small reflected face and back.",
+      "quality": "After Cassatt, and faithful to her Japanese-print logic: flat blue ground, contour doing the work of modeling, and the double mirror-play kept perfectly legible. The drawn line is more insistent than Cassatt's drypoint would ever be, giving the flesh a poster firmness, but the color placement — copper hair, one yellow flower — is exact."
+    },
+    {
+      "file": "chardin-grace-anointed.webp",
+      "title": "The Grace",
+      "shown": "In a shadowed kitchen a mother in a rust bodice and blue apron leans over the round table, setting out the meal, while the elder child waits seated behind it and the younger kneels at her low chair in the foreground, hands folded, a drum and drumstick abandoned on the floor beside her. Light gathers on the white cloth and the mother's linen; a copper vessel hangs by the mantel at right and a small brazier sits on the tiled floor.",
+      "quality": "This impression keeps closest to painting — soft edges, a true brown-and-umber warmth, the still-life of toy and brazier weighted like Chardin's own props — and the fall of light on the tablecloth is its best passage. The room's far shadow goes slightly airless where a painted surface would breathe."
+    },
+    {
+      "file": "chardin-grace-at-table.webp",
+      "title": "Grace at Table",
+      "shown": "The same household in pure engraved line: the mother bends over the table laying the plates, the seated child watches, and the kneeling child prays in the foreground, her drum and stick on the floor by the little chair. The fireplace with its hanging pan closes the right side; dense diagonal hatching walls in the room, and the white cloth and the children's caps are the lightest things in it.",
+      "quality": "The most severe of the three Grace sheets, and the strongest as a print: everything is line, and the line is patient — the tablecloth's folds and the mother's striped skirt are built stroke by stroke without a gray wash anywhere. The severity costs it Chardin's warmth, which the sheet accepts rather than fakes."
+    },
+    {
+      "file": "chardin-grace-before-meal.webp",
+      "title": "Grace Before the Meal",
+      "shown": "Again the mother stoops over the table with the plates, the older child seated opposite, the younger kneeling in prayer beside her low chair, drum on the floor. Here the scene is bathed in a deep blue-black, the wall behind laid in with long vertical strokes like falling rain, and the cream paper glows through the tablecloth, the caps, and the kneeling child's skirt.",
+      "quality": "Between its two siblings this impression finds the middle way — the blue ink gives the kitchen an evening depth the line-only sheet lacks, while the figures stay crisper than in the painted version. The vertical rain of the back wall is a handsome invention, though it flattens the corner where wall should turn."
+    },
+    {
+      "file": "chardin-still-life-bread.webp",
+      "title": "Still Life with Bread and Eggs",
+      "shown": "On a plain wooden table against blackness: two long loaves crossed, two eggs and an onion with its papery skin curling off, a tin flask at the left, a stemmed glass of water at center, and a knife with a yellow handle — the only color — laid across a heap of white cloth that spills over the table's front edge. The light comes low from the left and the eye settles where glass, blade, and cloth meet.",
+      "quality": "A tight, confident sheet: the woodcut-style contour ink holds every object in one plane of attention, the crumpled cloth is the bravura passage, and reserving the single yellow for the knife handle gives the composition its hinge. The black ground is dead flat by design, and the objects are strong enough to stand against it."
+    },
+    {
+      "file": "chardin-still-life-stillness.webp",
+      "title": "Still Life with Jug and Basket",
+      "shown": "A kitchen shelf in raking light: a mortar and pestle at the left, a tall dark glazed jug with a looped handle, a wicker basket with its hoop handle up, and at the right a red-brown earthenware pipkin — the one warm color. Before them a bundle of garlic and onions lies on a white cloth that falls over the ledge, a few loose stalks crossing the shelf's edge. The wall behind is scraped with horizontal strokes, darkening to the left.",
+      "quality": "The quietest print in the group and among the best judged: the jug's near-black gloss, the basket's weave, and the cloth's white are three distinct textures held in one steady light, very much in Chardin's spirit of ennobled crockery. The scraped wall reads as tone rather than plaster, a printmaker's shorthand the objects can afford."
+    },
+    {
+      "file": "church-twilight-wilderness.webp",
+      "title": "Twilight in the Wilderness",
+      "shown": "A halftone twilight after Church: banked clouds burn orange and rose across the upper half of the sheet, their undersides breaking into coarse dot-screen, while below them low mountains and a still river lie in solid indigo silhouette. Dark conifers and a bare snag frame the right edge, a broken stump juts from the left bank, and the pale sky's reflection runs down the center of the water.",
+      "quality": "The gamble here is doing Church's incandescent sky in a printer's dot screen, and it mostly pays — the clouds keep their churning structure at reading distance and dissolve honestly into mechanism up close. The land, cut as one flat silhouette, gives the sky the dark shore it needs; the trade is that all detail lives overhead."
+    },
+    {
+      "file": "cole-sunny-morning-hudson.webp",
+      "title": "Sunny Morning on the Hudson",
+      "shown": "From a rocky foreground ledge — a red-brown sandstone outcrop crowned with scrub, a blasted silver branch clawing up at the left — the view drops past a dark rounded mountain into a sunlit river valley, where a bend of water and far hills dissolve in morning haze. Cloud steams off the summit into a sky ruled in fine horizontal line; small drifts of mist climb the shadowed ravine at the right.",
+      "quality": "A fine translation of Cole's near-far drama: the wild foreground is the only place the red ink is spent, so the eye vaults from warm rock to cold blue distance exactly as the composition intends, and the haze over the river is achieved with almost nothing — thinned line and bare paper. The ruled sky is dutiful rather than atmospheric."
+    },
+    {
+      "file": "cole-voyage-life-childhood.webp",
+      "title": "The Voyage of Life: Childhood",
+      "shown": "A dark craggy headland, engraved in dense blue line, rises over a river that issues from a cavern at the left; on the water a small ornamented boat carries an infant, and a glowing winged angel stands at its stern, the brightest point on the sheet. Flowering plants crowd both banks, and at the right the terrain opens to a pale sky where a distant range of pinnacles reads like a far city. The eye finds the radiant angel first and follows the stream toward the light.",
+      "quality": "After Cole's allegory, and the engraving keeps its essential machinery — darkness astern, light ahead, one luminous figure struck almost entirely from reserved paper amid the heaviest ink on the sheet. The botanical foreground is worked with real relish; the boat and child, so small, ask more of the burin than it quite delivers."
+    },
+    {
+      "file": "cortona-god-creating-animals.webp",
+      "title": "The Creator on the Clouds",
+      "shown": "A single colossal figure in wind-filled white drapery, sashed in red, rides a bank of engraved cumulus against a field of solid ultramarine, left arm flung out and up, right hand pointing down past the cloud's edge. A putto's head emerges from the cloudbank at his knee, and at the bottom edge a small figure printed entirely in red looks up from below. The gaze follows the diagonal of the two arms across the whole sheet.",
+      "quality": "A bold three-ink poster of a Baroque ceiling: the drapery is cut in sweeping woodcut furrows that give the figure real torque, and the flat blue ground does the work of infinite sky without a single hatch. It trades Cortona's aerial depth for graphic force, and the trade is made cleanly — only the red understudy at the foot feels unresolved."
+    },
+    {
+      "file": "daumier-good-samaritan.webp",
+      "title": "The Good Samaritan",
+      "shown": "Rendered in a coarse crosshatch screen like an old newspaper cut: the wounded man, head bandaged, slumps forward astride a dark mule, and the Samaritan in a cap braces behind the animal, both arms out to steady his charge down a rocky defile. A wedge of pale cliff opens at the left; touches of red print through at the wound, the sash, and the saddle. The two heads, one sinking and one intent, hold the top of the sheet.",
+      "quality": "After Daumier, whose subject was always weight, and the screen serves that: the bodies read as heavy masses first and figures second, which is the right order here. The mechanical dot grows noisy in the rocks, where Daumier's own crayon would have gone silent, but the mule's patient dark bulk at center is exactly judged."
+    },
+    {
+      "file": "daumier-third-class-carriage.webp",
+      "title": "The Third-Class Carriage",
+      "shown": "A crowded railway carriage after Daumier, seen from the front bench. A young mother nurses her infant at the left while a hooded older woman beside her grips the handle of a wicker basket, warmed with a rust wash; behind them rows of passengers in hats recede into a near-black interior, broken by two pale window panes at the upper left. The light falls entirely from those windows onto the two women's faces and hands.",
+      "quality": "The print earns its darkness — the deep cobalt is laid on so heavily that the carriage becomes a single mass, and the halftone dot carries every gradation from window glare to shadow without a stroke of gray. The far passengers dissolve a little too readily into that mass, though the loss reads as depth rather than neglect."
+    },
+    {
+      "file": "daumier-third-class-chaos.webp",
+      "title": "The Passengers",
+      "shown": "A close view of the rear bench of a third-class carriage: an old bearded man in a heavy coat sits at center, head tipped back, his face struck with a flat acid yellow; to his right a young mother in a pale bodice looks down at the dark round head of the child in her lap, and to his left a kerchiefed old woman turns away. Two blank cream windows glow behind the crowd of heads.",
+      "quality": "The single yellow face is a bold piece of spot-color logic — it drags the eye to the one passenger who is looking up, and the coarse dot everywhere else keeps the trick from feeling cheap. The drawing of the hands piled in the foreground is looser than the faces deserve."
+    },
+    {
+      "file": "daumier-third-class-truth.webp",
+      "title": "The Carriage at Dusk",
+      "shown": "The same third-class bench sunk further into night: the hooded woman with her basket now holds the center, her face and wimple catching what little light the two window panes at left still give, while the nursing mother beside her is nearly swallowed by shadow. The standing and seated passengers behind read only as silhouettes against the last pale glass.",
+      "quality": "Of the carriage plates this is the most severe — the ink is pushed to the edge of legibility and the composition survives it, because the basket's warm red and the woman's white hood are placed exactly where the eye needs footholds. What it gives up is incident; there is almost nothing left to look at outside those two islands of light."
+    },
+    {
+      "file": "daumier-third-class-valued.webp",
+      "title": "The Old Man in the Carriage",
+      "shown": "A strict duotone close-up of the rear bench: the bearded old man sits square at center in his rumpled coat, gazing up and past the viewer, flanked by the kerchiefed grandmother at left and the young mother at right, whose downturned face hovers over her sleeping child. Two cream window panes burn in the upper darkness and rim every head with paper light.",
+      "quality": "This is the cleanest statement of the set — pure blue and cream, no accent, and the halftone does all the modelling, from the man's creased forehead to the wool of his lapels. The restraint suits Daumier; the print is at its best where it says the least."
+    },
+    {
+      "file": "daumier-washerwoman.webp",
+      "title": "The Washerwoman",
+      "shown": "On a quay stair, a heavy-shouldered woman bends toward a small child, one arm steadying it, a great bundle of laundry slung over her other shoulder; the child clutches a wooden beater. Behind them a river of pale paper and a far bank of sun-bleached buildings, their rooflines eaten by a jagged rust-brown edge, close off the top of the frame.",
+      "quality": "The print states the whole subject as one dark wedge against blazing paper, and the fine stochastic dot inside that wedge keeps mother, child, and bundle distinct without ever breaking the silhouette. The scorched brown skyline is a rough passage, but it presses the light down onto the figures usefully."
+    },
+    {
+      "file": "del-sarto-last-supper.webp",
+      "title": "The Last Supper",
+      "shown": "An engraving-style rendering after del Sarto: thirteen figures at a long white-clothed table beneath a great coffered arch, Christ at center with a small gold halo, the apostles leaning and disputing in paired groups down both wings, and one figure seated at each end of the table facing inward. Above, two servants look down from a balustraded gallery under a sliver of moon, and a doorway behind Christ opens onto a striped evening sky.",
+      "quality": "The plate's virtue is architecture — the arch, the gallery, the raking floorboards are ruled with an engraver's patience and give the crowded table real room to breathe. At this density the apostles' faces flatten into formula, and the print is more impressive as a structure than as a drama."
+    },
+    {
+      "file": "durer-prodigal-son-swine-end.webp",
+      "title": "The Return of the Prodigal Son",
+      "shown": "A woodcut-style scene of the prodigal's homecoming: the ragged son kneels barefoot in the foreground, his back to us, while the red-mantled father bends over him and lays both hands on his shoulders. A tall elder brother in a red cloak stands at right leaning on a staff and looking down, a seated man in a fur cap watches from mid-ground, a youth peers over a partition, and a woman stands half-lit in a doorway at upper left.",
+      "quality": "The two red mantles are placed with real judgment — they hinge the composition between the father who stoops and the brother who does not, and the black line holds every figure crisply against the violet ground. It is Rembrandt's invention wearing a woodcut's clothes, and the flat cutting trades away the tenderness of the original faces for legibility."
+    },
+    {
+      "file": "el-greco-pentecost-anointed.webp",
+      "title": "Pentecost",
+      "shown": "A tall engraved panel after El Greco: the dove descends in a burst of white rays at the top, tongues of flame hang over every head, and Mary sits at center with hands pressed in prayer, ringed by apostles who twist and reach upward. Two great foreground figures seen from behind — one in a red mantle, one in cream — frame the steps at the bottom of the composition.",
+      "quality": "The print keeps El Greco's flame-like elongation and makes it read in line, the whole column of bodies flickering upward toward the dove. The muted olive-and-madder tinting is handsome, though it softens the shock the burnished darkness above the rays is working to deliver."
+    },
+    {
+      "file": "el-greco-pentecost.webp",
+      "title": "The Descent of the Holy Spirit",
+      "shown": "The companion Pentecost plate: the dove at top center radiates a fan of engraved light, small flames stand over each figure, and Mary prays at the middle of a steep pile of upturned faces. Below, two monumental repoussoir figures — one red-cloaked, one draped in pale cream — kneel and gesture on the steps, their backs carrying the eye up into the crowd.",
+      "quality": "The burin work in the aureole is the best passage — hundreds of ruled rays that make the paper itself the light source. Elsewhere the coloring sits a shade heavier than in its sibling print, and the crowd loses a little of its upward rush to sheer density."
+    },
+    {
+      "file": "el-greco-portrait-man.webp",
+      "title": "Portrait of a Gentleman with a Ruff",
+      "shown": "A bust-length portrait after El Greco: a balding, gray-bearded man faces the viewer against a field of flat near-black ink, his head rising from a white pleated ruff, his shoulders wrapped in a fur-trimmed cloak edged with a thin flicker of crimson. The light belongs entirely to the face, the ruff, and the fur; everything else is one dark plane.",
+      "quality": "This is engraved economy at its most confident — three values, and the pen-hatched fur and ruff carry all the texture the dark field refuses. The crimson misregistration along the collar is the one flourish, and it is exactly enough; the large emptiness above the head is a bold bet the sitter's gaze just manages to win."
+    },
+    {
+      "file": "friedrich-monk-by-sea.webp",
+      "title": "The Monk by the Sea",
+      "shown": "A vast ruled sky fills four-fifths of the frame — pale banded blue above, a long shelf of dark engraved cloud below — over a black strip of choppy sea. On the pale dune at the bottom edge stands one tiny figure in a red robe, the only warm note in the print, facing the water.",
+      "quality": "The plate understands that Friedrich's subject is proportion: the figure is kept almost too small to find, and the horizontal ruling of the sky makes the emptiness feel measured rather than vacant. The dark cloud bank is the finest cutting in it — dense, weathered, and never once resorting to a gray."
+    },
+    {
+      "file": "friedrich-monk-sea-end.webp",
+      "title": "The Monk and the Far Sail",
+      "shown": "The same shore at a later hour: the sky has opened into ragged cream clouds crossed by diagonal hatching, and a minute pale sail sits high on the horizon line near the top of the frame. The red-robed figure stands on the white dune at lower left, before the long dark band of the sea.",
+      "quality": "Adding the distant sail changes the print's arithmetic — the eye now travels from the red figure across the whole black sea to that single triangle of paper, and the crossed hatching of the storm clouds gives the passage genuine weather. The dune's foreground is summarily handled, but nothing down there was meant to detain you."
+    },
+    {
+      "file": "friedrich-wanderer-fog.webp",
+      "title": "The Wanderer Above the Fog",
+      "shown": "A fair-haired man in a dark coat stands on a summit of jagged black rocks, seen from behind, one hand on his hip and a walking stick planted beside him. Below and beyond, a sea of engraved fog swallows rock spires and pine-topped crags, with a far peak and a flat-topped butte on the horizon under a sky of plain ruled lines.",
+      "quality": "The cutting divides the world cleanly into three weights — solid black summit, half-tone fog, bare paper sky — and the thin red keyline that ghosts along the figure's contour is a printer's grace note, a deliberate misregistration worn like a signature. The fog's scribbled texture is livelier than the rather inert sky above it."
+    },
+    {
+      "file": "friedrich-woman-rising-sun.webp",
+      "title": "Woman Before the Rising Sun",
+      "shown": "A woman in a long dark gown stands on a path between meadows, seen from behind, her arms opened low at her sides; a red kerchief at her neck and red cuffs at her wrists are the print's only accents. Before her, ridgelines step back toward the light, and the whole upper half of the frame is a warm paper sky combed with long horizontal clouds.",
+      "quality": "The print gives the sunrise to the paper itself — no ink stands for the light, only its absence — and the woman's silhouette is cut with enough care that her open-handed gesture carries at any size. The engraved haystacks and grasses in the foreground are almost too busy for the stillness above, but they anchor her convincingly on the path."
+    },
+    {
+      "file": "ge-what-is-truth.webp",
+      "title": "What Is Truth?",
+      "shown": "Pilate, seen from behind in a full toga banded at the hem, extends an open hand toward Christ, who stands at right against a dark columned wall, hands bound, a fine engraved halo behind his head and a thread of red running down the length of his robe. Hard light rakes across a hexagonal-tiled floor, throwing both men's shadows long toward the lower right.",
+      "quality": "Reversing Ge's lighting into woodcut terms works: Pilate gets the paper and Christ gets the ink, and the red keyline holding Christ's contour keeps him from sinking into the wall. The tiled floor with its doubled shadows is the strongest invention in the plate — it makes the interrogation feel staged under a single hard lamp."
+    },
+    {
+      "file": "grunewald-resurrection-isenheim.webp",
+      "title": "The Resurrection",
+      "shown": "After the Isenheim altarpiece: Christ rises out of a whirl of grave-cloths into a huge disk of light, red at its rim and paper-pale at its heart, both arms lifted, his wrappings spiraling down past the open red stone of the tomb. Below, armored soldiers tumble across the foreground — one flat on his back in fluted plate, one crawling away at right — among fallen swords and the tipped slab of the sarcophagus.",
+      "quality": "The great aureole is the print's engine, engraved as a corona of fine rays around a red ring, and setting it against a field of flat ultramarine gives the rising figure real detonation. The sprawled soldiers are drawn with more relish than the Christ, whose face goes slightly slack at the center of all that light."
+    },
+    {
+      "file": "guercino-god-father-angels.webp",
+      "title": "God the Father with an Angel and the Orb",
+      "shown": "A close engraved scene after Guercino: the Father, bald-crowned and vastly bearded, leans down from the right in a dark mantle, one hand gripping a tall gold scepter, his gaze bent on a winged putto at left who sits among clouds steadying a large banded orb topped with a cross. The orb's straps, the scepter, and the jeweled band across the Father's lap carry the print's ochre accent.",
+      "quality": "The burin work in the beard and the putto's flesh is the plate at full strength — long swelling lines that model mass the way an engraver of the old school would. The gold third color is spent wisely on regalia alone, though the scene is cropped so tight that the Father's shoulder crowds the frame."
+    },
+    {
+      "file": "hammershoi-five-portraits.webp",
+      "title": "Five Portraits at a Table",
+      "shown": "Five men in dark clothes sit ranged around a white-clothed table in a paneled evening interior, after Hammershøi: at center a bearded man faces us behind two tall lit candles, his head circled by a thin yellow halo-line; a pipe-smoker sits in profile at left, a heavy figure with clasped hands and crossed boots lounges at right, and two further men stand and sit at the edges. Black windows flank the central figure, and the candle flames are the only warm light.",
+      "quality": "The print holds Hammershøi's airless quiet — five men at one table and not a glance exchanged — and the ruled paneling and floorboards build the room with real discipline. The yellow trace around the central head is an audacious intrusion on that reserve; it directs the eye efficiently, at the price of breaking the picture's studied indifference."
+    },
+    {
+      "file": "hooch-interior-woman-window.webp",
+      "title": "Interior with a Mother Beside the Cradle",
+      "shown": "A Dutch interior after de Hooch: a mother in a red skirt sits on a black-and-white tiled floor, holding a white-gowned infant on her lap while her right hand reaches toward a wicker cradle heaped with linen. A great curtained box bed and a carved fireplace with a kettle fill the right half; on the left an open door gives onto a sunlit courtyard with distant townhouses and two small figures. A wedge of pale sunlight falls across the back wall beneath a dark framed portrait, and the eye travels from the mother's face down to the cradle and out through the door.",
+      "quality": "The print earns its keep by discipline: the whole room is built from ruled hatching, and the one pool of red is spent exactly where the subject sits. The door-within-door recession is handled with real conviction, though the figure inside the bed curtains dissolves into the ink and reads only on a second look."
+    },
+    {
+      "file": "lippi-music-making-angels.webp",
+      "title": "Swans and the Abandoned Pipes",
+      "shown": "A close view at the water's edge: three white swans move across dark rippled water, one dipping its bill, while a set of panpipes bound with a strap and a small recorder lie abandoned on a mossy rock ledge above. At the right, the bare feet and hems of two robed figures — one in blue, one in rose — stand on the grassy bank; a pale wing-tip and a green frond enter from the edge. The light is even and cool, and the eye circles from the swans up to the set-down instruments.",
+      "quality": "An intelligent fragment: cropping the figures to their feet makes the swans and the silenced instruments carry the whole picture, and the reserve of the cream paper does the swans' plumage almost by itself. The dark water is hatched with great patience; the pink drapery, by contrast, is modelled a shade too softly to sit in the same graphic world."
+    },
+    {
+      "file": "lotto-adoration-christ-child.webp",
+      "title": "The Adoration of the Christ Child with Saints",
+      "shown": "The Virgin in red and blue bows over the naked Child, who lies sprawled across her lap on a white cloth, hands pressed together in prayer. Around them press four haloed companions: a tonsured friar with joined hands, an aged turbaned man, a crowned young woman holding a quill or palm, and the infant Baptist reaching toward the Child from the lower left. A green curtain closes the scene, with one slit of blue sky and cloud at the upper left; every gaze but the Baptist's descends to the Child, and the eye follows.",
+      "quality": "The chromolithographic flatness is used well — green, red, and blue laid in large frank shapes, with the gold halo-rings drawn as bare circles that keep the design honest. The Child's foreshortened body is the boldest passage and mostly succeeds; the friar's oversized blessing hands are where the drawing strains."
+    },
+    {
+      "file": "mantegna-agony-in-garden.webp",
+      "title": "The Agony in the Garden",
+      "shown": "After Mantegna: Christ kneels in prayer on a stratified outcrop of bare rock, facing a cloud at the upper left that carries five child-angels bearing the cross, column, and lance of the Passion. Below him three disciples lie asleep in heavy drapery across the foreground path, and along the road at the right a file of soldiers led by Judas approaches from a walled, towered Jerusalem stacked up the hillside. A dead tree with one leafing branch and a perched bird stands at the right; rabbits and small birds dot the stony ground.",
+      "quality": "The engraved line does everything here — the rock strata, the metallic drapery folds, the city climbing into the sky — with a hardness that suits Mantegna's geology better than most translations manage. Its limit is emotional: the sleepers are superbly carved but the praying Christ is small and stiff, so the drama lives in the landscape rather than the figure."
+    },
+    {
+      "file": "millet-man-with-hoe-anointed.webp",
+      "title": "The Man with the Hoe",
+      "shown": "A laborer in a white shirt and blue trousers stands bent in a field of broken clods and thistles, both hands stacked on the head of his hoe, mouth open, staring past the viewer. A red waistcoat hangs knotted at his hips — the print's only red. Behind him the land runs flat to a low horizon under a banded, empty sky; at the far right thin plumes of smoke rise from burning weed piles beside a tiny standing figure.",
+      "quality": "The print understands Millet's subject is exhaustion, and builds it structurally: the man's locked arms and the hoe make one load-bearing triangle against a sky of nothing but ruled lines. The foreground clods are drawn with obstinate, stone-by-stone care; the red outline around the waistcoat is a printer's bluntness the design absorbs but does not need."
+    },
+    {
+      "file": "millet-sower-work.webp",
+      "title": "The Sower",
+      "shown": "A striding sower fills the tall frame, caught mid-step down a dark hillside: right arm flung wide broadcasting seed, left hand clutching the seed-sack slung across his body, hat pulled low over a shadowed face. His gaitered legs drive diagonally across furrowed ground, and on the ridge behind him a small figure drives a harrow team against the last band of light. The sky is pure horizontal hatching, brightest at the horizon.",
+      "quality": "This is the strongest cutting of the set — the whole figure is one diagonal thrust, and the woodcut line follows the ground's contours so the hillside itself seems to move under him. The muted russet and buff are laid with restraint; only the face, buried in shadow by design, gives the block nothing to say."
+    },
+    {
+      "file": "moreau-salome-dancing.webp",
+      "title": "Salome Dancing Before Herod",
+      "shown": "After Moreau: Salome stands nearly nude at the center of a cavernous dark palace, her body overlaid with fine tattoo-like arabesques, a lotus blossom drawn on her chest. She wears a towering jeweled headdress, necklaces, and armlets, one arm raised holding a flower, a patterned mantle falling from her shoulder. Behind her, up shadowed steps, the enthroned Herod sits small and hieratic beneath an arched niche flanked by dark eagle finials; a veiled attendant stands at the right and a panther crouches at her feet. All light gathers on her pale body.",
+      "quality": "The print gets Moreau's essential trick right: one luminous figure reserved in bare paper against acres of worked, encrusted darkness, so the ornament reads as atmosphere rather than inventory. The linear tattooing of the flesh is a genuinely elegant substitute for his jeweled paint; the throne and its king, sunk deliberately in ink, verge on illegibility."
+    },
+    {
+      "file": "murillo-loaves-fishes.webp",
+      "title": "Girl with Flowers in Her Lap",
+      "shown": "After Murillo: a young woman sits on a stone ledge beside a rough masonry pier, smiling directly out at the viewer. A striped turban with a rose tucked in it wraps her head; a diamond-patterned shawl crosses her shoulder, its fringe spilling over the ledge. With both hands she gathers her apron into a hollow holding cut roses — the print's only touches of pale yellow — against a dusk sky over a low dark treeline.",
+      "quality": "A single-figure print that lives on its textures: turban, diamond shawl, fringe, and stippled stonework are each given a distinct graphic weather, and the frank, level gaze holds the whole thing together. The near-monochrome blue is confident; the flowers, the ostensible point, are the least resolved passage in the frame."
+    },
+    {
+      "file": "raphael-apostle-paul-preaching.webp",
+      "title": "Paul Preaching at Athens",
+      "shown": "After Raphael's cartoon: Paul stands elevated on steps at the left in a rose mantle, back to the viewer, both arms raised as he preaches. His audience fills the middle ground — seated and standing men in green, ochre, and white who lean, confer, and clasp hands; a kneeling pair at the lower right press their palms together. Behind them rises a round colonnaded temple with a balustraded upper storey, a bronze statue of Mars on its pedestal, and a geometric pavement running off to the left arcade.",
+      "quality": "The color lithography is unusually disciplined for so crowded a subject — each robe a flat, separable note, the pavement's pattern steering the eye up to Paul's raised hands. The architecture is drawn with more love than the faces, several of which go slack in the middle distance; the composition survives it because Raphael's scaffolding does the work."
+    },
+    {
+      "file": "raphael-healing-lame-man-2.webp",
+      "title": "The Healing of the Lame Man",
+      "shown": "After Raphael's cartoon: in a forest of massive spiral-fluted columns carved with vine reliefs, Peter in a golden mantle grasps the wrist of the lame beggar who sits on the pavement looking up at him, while John stands beside in yellow with hand raised. A second gaunt cripple with a staff hobbles in from the right past a mother with an infant and a red-hooded onlooker; at the left, women, elders, and two naked children crowd between the columns. The light falls evenly; the eye finds the joined hands at dead center.",
+      "quality": "The wisest decision here is tonal: the twisted columns are kept in pale greys so their ferocious ornament frames rather than swallows the figures, and the two beggars' knotted anatomy is drawn with an honesty the idealized bystanders don't attempt. Across so wide a field the color drifts sweetish in places, but the central grip of hand on wrist stays the strongest mark on the sheet."
+    },
+    {
+      "file": "raphael-paul-preaching-athens.webp",
+      "title": "St. Paul at the Areopagus",
+      "shown": "A second, cooler rendering of Raphael's Athens cartoon: Paul in red and green stands on the stepped platform at the left, arms lifted, addressing the knot of listeners gathered before the round temple with its statue of Mars. Seated disputants in orange and green turn to one another in the middle ground; a robed man in pale yellow stands full-length at center; the kneeling couple at the right raise clasped hands. The meander-patterned pavement and left colonnade lock the space in perspective, and a strip of blue sky opens above the rotunda.",
+      "quality": "Set beside its sibling sheet, this pull is bluer and evener, and the gain is spatial — the pavement, steps, and rotunda click into one continuous depth. What it trades away is heat: Paul's red mantle no longer dominates, so the crowd competes with its own architecture a little more than it should."
+    },
+    {
+      "file": "raphael-school-athens-standing.webp",
+      "title": "The School of Athens",
+      "shown": "After Raphael's fresco, rendered as a duotone engraving in deep violet-blue on cream: Plato and Aristotle walk forward under the great coffered barrel vaults, flanked by the full company — Pythagoras writing at the lower left, Heraclitus brooding at his block, Diogenes sprawled on the steps, Euclid bending over his slate at the right. Niched statues of Apollo and Minerva stand above the crowd, and a painted dado of grisaille panels and caryatids runs beneath. The receding arches stack toward a bright open sky at the center.",
+      "quality": "The engraver's real achievement is the vault — the diminishing coffers and Greek-key soffits carry the fresco's architecture into pure line without losing its pull toward the light. At this reduction the fifty-odd philosophers become a frieze of attitudes rather than portraits, which the print seems to accept; the ornamental border and dado are finished with a miniaturist's patience."
+    },
+    {
+      "file": "raphael-school-of-athens.webp",
+      "title": "The School of Athens, with Touches of Color",
+      "shown": "The same composition after Raphael's fresco, here with sparing hand-color laid over the blue engraving: a yellow mantle on a figure right of center, muted reds and violets scattered through the crowd. Plato and Aristotle advance beneath the coffered vaults between the statue niches; Pythagoras, Diogenes on the steps, and the geometers at the right hold their stations; the grisaille dado with its standing figures closes the base of the sheet.",
+      "shown_note": "",
+      "quality": "The added color is applied like accents in a margin — enough to lead the eye to the central pair and the sprawled Diogenes without breaking the engraving's tonal unity. It is the more legible of the two pulls, though the tinting is casual in the right-hand group, where a red robe floats free of its drawing."
+    },
+    {
+      "file": "raphael-transfiguration.webp",
+      "title": "The Transfiguration",
+      "shown": "After Raphael's last altarpiece: Christ hovers in a burst of white cloud at the summit, arms raised, flanked by the floating figures of Moses and Elijah, while the three disciples sprawl dazzled on the mount below and two witnesses kneel at the far left. Beneath the hill the second scene crowds the foreground — the nine apostles gesturing and pointing upward at the left, and at the right the possessed boy, eyes rolled back, held by his father amid the kneeling woman in white and rose who pivots between the two groups. Light pours downward from the cloud.",
+      "quality": "The print keeps Raphael's double machine intact: the upper zone is left airy and pale so the lower tumult, hand-tinted in rose and green, presses against it exactly as the design demands. The engraved stippling of the dark hillside is the connective tissue and it holds; the boy's convulsion, the hardest passage in the original, arrives at earnest stiffness rather than terror."
+    },
+    {
+      "file": "rembrandt-abraham-isaac.webp",
+      "title": "The Sacrifice of Isaac",
+      "shown": "After Rembrandt, printed in deep blue on cream: Isaac lies bound across the fagots in the foreground, bare-chested, his face covered entirely by Abraham's spread left hand as the old man turns his bearded face upward. The angel plunges in from the upper left, wings spread, one hand thrown up and the other gripping toward Abraham's arm; the loosed knife hangs falling in mid-air at the center of the sheet, above a horn and the smoking altar. A dark tree mass closes the right; a pale distance opens at the lower left.",
+      "quality": "The dramatic reading is Rembrandt's own — the hand smothering the boy's face, the knife caught between release and fall — and the duotone serves it, the ink night pressing in on the two reserved bodies. The suspended knife is the sheet's masterstroke of timing; the angel's second hand, oddly clawed, is where the drawing goes coarse."
+    },
+    {
+      "file": "rembrandt-adam-eve-etching.webp",
+      "title": "The Elephant in Eden",
+      "shown": "A dense pen-and-ink garden in blue line: an elephant, trunk raised, stands in a sunlit clearing at the center, framed between a huge shadowed tree trunk at the left, a curtain of cascading rock or foliage behind, and banks of scribbled shrubbery climbing the right edge. Dark cross-hatched masses close the lower corners; broad-leafed plants sprout in the foreground. The paper's bare cream makes the light of the clearing.",
+      "quality": "This takes the famous background beast of Rembrandt's Adam and Eve etching and lets it hold the stage alone, and the freedom of the line — loops, scribbles, crosshatch laid fast — is the pleasure of the sheet. It is atmosphere rather than anatomy: the elephant is a marvel of shorthand, but the surrounding vegetation dissolves into handwriting wherever the eye slows down."
+    },
+    {
+      "file": "rembrandt-christ-cross-etching.webp",
+      "title": "Christ Led Away",
+      "shown": "A hand-colored woodcut in the old German manner: Christ in a long pale robe, head bowed, is led at the wrists by a stooped man in green while an armored captain with a yellow-plumed helmet stands at the center gripping his sword hilt. Around them press five more figures — a green-robed elder with a staff at the left, a boy in red, soldiers in red at the right, one seen from behind with a sword at his belt — with a fence of pikes and spears rising behind. The ground is a flat dark band; the hatched sky opens to bare paper around the plume.",
+      "quality": "The block-book flatness is deliberate and well kept — figures in a single frieze, color confined to green, red, and one shout of yellow at the exact center of power. The bowed white figure of Christ, left almost unmarked amid the busy hatching, is the quietest and best decision on the sheet; the faces are stock types, as the idiom intends."
+    },
+    {
+      "file": "rembrandt-jacob-wrestling-angel.webp",
+      "title": "Jacob Wrestling with the Angel",
+      "shown": "Two figures fill a night-blue field: the angel, upright in a white off-shoulder garment with great bronze-feathered wings spread across the top of the sheet, looks calmly down while one hand cups the back of Jacob's neck and the other braces against his hip. Jacob, dark-curled and bearded, in a red mantle, drives his weight into the angel's body, face pressed toward the shoulder, one bare leg thrust back for purchase. There is no ground and no horizon — only the hold.",
+      "quality": "Cropping the story to the clinch is the print's whole argument, and it wins: the wings make the architecture, the red and white make the struggle, and the angel's unhurried face against Jacob's straining back states the mismatch better than any landscape could. The flat blue field is fearless; only Jacob's rear leg, slightly boneless, betrays the drawing."
+    },
+    {
+      "file": "rembrandt-jacob-wrestling-rooted.webp",
+      "title": "Jacob Wrestling the Angel",
+      "shown": "Two figures fill the frame against a night-blue ground ruled with fine horizontal lines: a winged angel in a white shift, calm-faced, curls lit from above, and a bearded man in a red robe pressed against her body, his face turned up to hers. One of her hands cups the back of his neck, the other rests at his hip; his bare foot braces on a ledge at the bottom edge. The light gathers on her face and gown, and the eye travels from her downcast gaze to his open, straining mouth.",
+      "quality": "The print, after Rembrandt, understands that the subject is a hold, not a blow — the whole struggle is carried in two quiet hands, and the red robe is spent in one place, where the bodies meet. The spread wings are drawn with real feathered weight, though the angel's serenity is so complete she risks reading as unmoved rather than merciful."
+    },
+    {
+      "file": "rembrandt-raising-lazarus.webp",
+      "title": "The Raising of Lazarus",
+      "shown": "In a cave dark enough to swallow most of the plate, Christ stands on a rock shelf with one arm thrown straight up, and below him at right a shrouded man lifts head and hand out of a stone grave. At left a knot of witnesses catches the light — an old man peering over Christ's shoulder, a young woman with both palms raised. On the cave wall hang a sword and sheath picked out in red and gold, the only bright objects in the upper half.",
+      "shown_note": "",
+      "quality": "The plate keeps its nerve about darkness: perhaps four-fifths of it is worked black, and the few lit passages — the raised hand, the grave-cloth, the girl's face — do all the telling. The hung weapons at upper right are a fine Rembrandtesque touch of still life, though they pull the eye harder than the miracle strictly allows.",
+      "note": ""
+    },
+    {
+      "file": "rembrandt-return-prodigal-grace.webp",
+      "title": "The Return of the Prodigal Son",
+      "shown": "A ragged son kneels with his back to us, one shoe half off his blistered feet, while his father in a red mantle bends over him and lays both hands flat on his shoulders. Three onlookers keep their distance: a servant at a doorway, a seated man in a hat with folded hands, and a tall bearded elder in a red cloak leaning on a staff at right. A woman watches from a dark arched window, and vine leaves close the scene at the top corner.",
+      "quality": "Cut in the manner of a woodblock after Rembrandt's design, the print puts its whole argument in the two pressed-down hands and the dirty soles turned toward us — the one detail Rembrandt himself insisted on. The flat duotone serves the composition well; the bystanders' faces are more summary than the drama of the drapery deserves."
+    },
+    {
+      "file": "rembrandt-samuel-anointing-david.webp",
+      "title": "The Anointing of David",
+      "shown": "A ruined tower of Roman masonry rises through most of the plate, ivy climbing its broken face, its cornice touched with gold against a flat night-blue sky. Fallen column drums and cut stones litter the foreground path, and at its base two small figures in scarlet enact the scene — a bearded elder stands over a kneeling youth, hand extended above his head. A lone walker and further ruins hold the right distance.",
+      "quality": "An audacious inversion: the anointing is reduced to two red marks at the foot of an enormous ruin, and the spot color makes the tiny act command the whole architecture. The stonework is drawn with a topographer's patience; the human figures, at that scale, can afford to be little more than gesture — and are."
+    },
+    {
+      "file": "rembrandt-self-portrait-old.webp",
+      "title": "Self-Portrait in a Red Gown",
+      "shown": "An old man in a deep crimson gown and matching soft cap turns three-quarters toward us against a blue ground striped with fine vertical hatching. His grey hair curls out beneath the cap, the face is heavily lined at brow and cheek, and his hands are folded together at the bottom of the frame. All the light sits in the face and the clasped hands; the gown holds the middle tones in long, simple folds.",
+      "quality": "After Rembrandt's late self-portraits, the print gets the essential thing right: the face is worked hardest where age is written — the pouched eyes, the furrowed forehead — while the costume is allowed to be broad and quiet. The steady vertical ground is a printmaker's economy that flatters the mass of the figure, though it gives the sitter none of the air Rembrandt's shadows breathe."
+    },
+    {
+      "file": "rembrandt-self-portrait-valued.webp",
+      "title": "Self-Portrait in a Flat Cap",
+      "shown": "A bust-length old man faces out from a square panel, wearing a wide flat cap banded in gold over abundant grey curls, a dark coat with a shawl collar, and a scarf touched with red at the throat. The ground behind him is a dense woven crosshatch of blue on cream. His eyes are large, level, and a little weary, and they hold the viewer directly.",
+      "quality": "This is the cleanest cutting in the set — every curl of hair and thread of the crosshatched ground is a deliberate stroke, and the two spot colors, gold at the cap and red at the throat, are placed with a jeweler's restraint. The woodcut convention flattens the great head slightly; what it loses in depth it repays in graphic force."
+    },
+    {
+      "file": "rembrandt-storm-sea-galilee.webp",
+      "title": "The Storm on the Sea of Galilee",
+      "shown": "A fishing boat heels hard to port on a mountainous sea, its bow climbing a breaking wave that throws spray over the men hauling at the rigging. Sailors cling to the mast and gunwale; in the stern a calmer group gathers around a haloed figure while one man leans on the tiller. Two crew in yellow — one aloft in the shrouds, one hooded amidships — mark the diagonal from wave-crest to stern, and torn clouds open to pale sky at upper left.",
+      "quality": "The print, after Rembrandt's lost seascape, keeps the great diagonal of the original and renders water entirely by line — the wave at left is a genuinely persuasive piece of engraved foam. The division of the crew into panic forward and stillness aft survives the translation intact; the faces in the stern are too small to carry much beyond their grouping, and the composition carries them instead."
+    },
+    {
+      "file": "rembrandt-supper-emmaus.webp",
+      "title": "The Supper at Emmaus",
+      "shown": "In an inn built into a great stone arch, Christ sits at a small draped table, hands at a loaf of bread, rays of light bursting from his head against the dark vault behind. One disciple sits with his back to us; the other, grey-bearded, leans in from the right and grips the table edge. A servant arrives from behind with a dish, unaware, and a dog sleeps by the chair leg at lower left.",
+      "quality": "The plate's best idea is borrowed honestly from Rembrandt: the enormous dark arch does the work of revelation, with the burst of engraved rays reading as light precisely because everything around it is patient crosshatch. The disciple's clenched hand on the table is the truest passage; the servant's obliviousness is nicely kept, though his anatomy is stiffer than his errand."
+    },
+    {
+      "file": "rembrandt-thomas-apostle.webp",
+      "title": "The Apostle Thomas in His Study",
+      "shown": "A grey-bearded man in a fur-collared robe sits beside a writing table, a quill raised in his right hand and paused at his chin, a carpenter's square held loosely in his left against his knee. Papers, an inkwell, and a candlestick occupy the desk at left; behind him the wall divides into a black panel and a band of ruled grey light. A thin rim of yellow edges his hair and sleeve, as if from a source outside the frame.",
+      "quality": "A dignified scholar-portrait in the Rembrandt manner, its fur collar built from hundreds of short flicked strokes that genuinely read as pelt against the long calm lines of the robe. The suspended quill and the square give the sitter both thought and trade in one glance; the yellow contour light is a printer's flourish more decorative than optical."
+    },
+    {
+      "file": "rembrandt-titus-reading.webp",
+      "title": "Titus Reading",
+      "shown": "A young man with loose shoulder-length curls sits in profile-turned-three-quarter view, eyes cast down on an open book held up in both hands, lips just parted as if reading aloud. He wears a dark coat with an embroidered cuff, and a wide-brimmed dark hat rings his head like a disc. The ground is close horizontal hatching; the light falls on his face, the page edges, and the reading hand.",
+      "quality": "After Rembrandt's portrait of his son, the print stakes everything on the absorbed face and wins — the lowered lids and open mouth are exactly the look of a boy lost in a page. The dark hat doubling as a halo is a happy graphic accident the cutter clearly noticed and kept; the embroidered cuff is lavished with more detail than the book it serves."
+    },
+    {
+      "file": "rembrandt-workers-vineyard.webp",
+      "title": "The Payment of the Labourers in the Vineyard",
+      "shown": "In a tall, cavernous counting-room, a turbaned master in a red-fronted robe sits at a draped table, one hand at his chest, as a labourer leans across to protest and others crowd behind him examining coins in their palms. A clerk bends over ledgers at the far left under two glowing leaded windows; barrels, baggage, a hanging cage, and a chimney fill the shadowed right half, where a dog noses the floorboards.",
+      "quality": "The most pictorially ambitious plate of the group: it holds a full Rembrandt interior — window light, still-life clutter, deep aerial dark — in two inks and a single stroke of red at the master's breast, placed exactly where the parable's authority sits. The middle-ground figures counting their wage are drawn with real narrative intelligence; the far right is left so dark it functions as mass rather than room."
+    },
+    {
+      "file": "rubens-washing-of-feet.webp",
+      "title": "Christ Washing the Feet of Peter",
+      "shown": "Christ kneels at a wide brass basin, sleeves pushed back, reaching toward the water, while Peter sits above him in a pale mantle, one hand raised in protest, the other opened at his chest. Ten disciples press around the candlelit table behind them, murmuring in pairs; a red cloak burns at the center of the group, and an open book stands between two candles on a stand at upper right.",
+      "quality": "After Rubens, and it shows in the good way: the two protagonists make a single interlocking diagonal of refusal and insistence, and the crowd behind is organized into legible conversations rather than a frieze of onlookers. The bare feet ringing the bottom of the frame are a quiet, correct touch. The single red cloak anchors the composition, though it crowns a bystander rather than either principal."
+    },
+    {
+      "file": "scheffer-temptation-christ.webp",
+      "title": "The Temptation of Christ",
+      "shown": "On a bare mountain ledge above the clouds, a haloed Christ in pale rose-striped robes stands upright, one arm raised in dismissal, eyes turned away. Beside and below him a naked winged tempter strides toward the drop, torso twisting back, both arms flung open toward the kingdoms he is offering — which the frame pointedly declines to show. A crevasse splits the rock between their feet.",
+      "quality": "After Scheffer's painting, the print sharpens the contrast into pure line: Christ is all vertical drapery and stillness, the tempter all musculature and diagonal, and the empty ruled sky refuses the devil his panorama. The demon's écorché anatomy is the bravura passage; Christ's raised hand is drawn smaller and weaker than the gesture it must perform."
+    },
+    {
+      "file": "sculpt-bernini-saint-teresa.webp",
+      "title": "The Ecstasy of Saint Teresa, After Bernini",
+      "shown": "A print of Bernini's marble group in its chapel: the smiling angel, arrow lowered in one hand, lifts a fold of the saint's habit, while Teresa collapses backward on a bank of cloud, hooded head thrown back, one bare foot hanging free. Gilt rays pour down behind them from a hidden window, and the frame is closed by marbled pilasters, Corinthian capitals, and a small altar cross below.",
+      "quality": "The plate takes on the hardest problem in reproducing Bernini — rendering rays, marble, and cloud in flat ink — and solves it by letting the ruled gold shafts carry the light while the drapery is described as pure tumbling line. The convulsed habit is excellent; the two faces, where all of Bernini's scandal lives, are gentler and vaguer than the marble's."
+    },
+    {
+      "file": "sculpt-bourdelle-beethoven-endure.webp",
+      "title": "Head of Beethoven, After Bourdelle",
+      "shown": "A colossal bearded head, cut off at the neck, sits directly on a plain plinth against a ground of ruled horizontal lines. The brow is knotted, the deep-set eyes glare slightly leftward under heavy ridges, the hair piles in rough-modelled locks, and the mouth — the one touch of red in the print — is set hard within the beard. The lighting falls from the left, splitting the face into a lit and a shadowed half.",
+      "quality": "The engraving grasps what Bourdelle's bronze is about: the head as geology, all mass and pressure, with the modelling translated into contour hatching that follows the clay like a relief map. Reserving the sole red for the closed lips is a genuinely witty printer's decision — the music kept shut in the mouth — even if it lends the titan a faint theatricality."
+    },
+    {
+      "file": "sculpt-bourdelle-beethoven.webp",
+      "title": "Beethoven, Tragic Mask, After Bourdelle",
+      "shown": "Another monumental Beethoven head after Bourdelle, seen slightly from below on a tall striped plinth, the neck ending in raw modelled clay. Here the face turns a few degrees right; one brow crushes down over the near eye while the far eye is lost in shadow, and the beard is worked into thick rope-like curls. A faint line of red again marks the lower lip; the ground is the same ruled blue field.",
+      "quality": "Of the two Beethoven plates this is the rougher and the stronger — the asymmetry of the crushed brow and the unhealed clay at the neck keep the head from settling into a monument, which is precisely Bourdelle's point. The hatching in the beard grows dense to the edge of clotting, a limit the cutter approaches but does not quite cross."
+    },
+    {
+      "file": "sculpt-donatello-marble-david.webp",
+      "title": "David, After Donatello's Marble",
+      "shown": "A slender youth in a knotted cloak and draped skirt stands in contrapposto on a low plinth, one hand at his hip, the other hanging with a stone against his thigh, his weight on the leg beside the huge bearded head of Goliath lying at his feet. Behind him rises a niche of dark masonry with a strip of geometric inlay at the left edge; his face is smooth, wide-eyed, and unbothered.",
+      "quality": "The print renders Donatello's early marble David with an engraver's tact, keeping the adolescent slightness of the figure — the too-large hand at the hip, the boneless ease — that later Davids abandoned. Goliath's head, all tangled curls around the embedded stone, is the richest cutting in the plate; the flat niche behind serves the silhouette without competing."
+    },
+    {
+      "file": "sculpt-donatello-saint-george.webp",
+      "title": "Saint George, After Donatello",
+      "shown": "A young knight in a cloak knotted at the throat stands frontally in a niche between two ornamented pilasters, both hands resting on a tall cross-blazoned shield set point-down before him. He wears armor at the arms and legs — the greaves picked out in gold — and his head turns slightly, brows level, jaw set, watching something beyond the frame. The niche behind is filled with diapered panels of dots and diamonds.",
+      "quality": "After the Orsanmichele marble, the plate preserves the one thing that matters in Donatello's George: the alert turn of the head over a perfectly braced stance, courage rendered as posture. The diapered background is transformed into a bold flat pattern that a woodcut can own outright rather than imitate stone; the gold on the greaves is arbitrary but handsome."
+    },
+    {
+      "file": "sculpt-ghiberti-gates-detail.webp",
+      "title": "A Panel from the Gates of Paradise",
+      "shown": "An engraved relief panel after Ghiberti: a deep arcaded courtyard of round arches and Corinthian pilasters, with robed figures conversing on the steps, a dog crossing the pavement at center, and a kneeling pair at the right where a slash of red opens behind an arch. Ornamental side pillars with single standing figures and floral bosses frame the scene like a doorjamb. The eye enters at the strollers on the stair and is drawn back through three receding archways.",
+      "quality": "The print's real subject is depth: parallel-hatched vaults stack one behind another with genuine conviction, and the two-tone economy — indigo line on cream, red held to one strategic slit — keeps the crowded stage legible. The figures, small and summarily drawn, are servants of the architecture rather than actors in it."
+    },
+    {
+      "file": "sculpt-ghiberti-gates-paradise-manna.webp",
+      "title": "The Gates of Paradise Seen from Below",
+      "shown": "A steep upward view of great bronze doors after Ghiberti, six relief panels visible in raking light, each a crowded landscape or architectural scene, with niched prophets and portrait roundels running down the ribbed frames between them. The gilt panels glow ochre against a night-black ground; the eye climbs the central pier from the lower medallions to the tilting cornice at top.",
+      "quality": "The dramatic worm's-eye foreshortening is the print's best decision — it restores to the doors the looming scale a straight-on plate would flatten — and the near-duotone of gold on blue-black reads as bronze more honestly than full color would. In the smallest reliefs the detail thickens into texture, and the individual stories dissolve."
+    },
+    {
+      "file": "sculpt-laocoon-sons.webp",
+      "title": "Laocoön and His Sons",
+      "shown": "An engraving after the antique group: the bearded father heaves back at center, head thrown up in agony, flanked by his two smaller sons, all three bound in coils of serpent picked out in red against ruled blue hatching. The figures stand on a stepped marble base before a flat sky of horizontal lines, with a dark hedge closing the middle distance.",
+      "quality": "The red serpents are a shrewd stroke — one spot color turns the whole tangle instantly legible and threads the three bodies into a single knot, while the woodcut-firm contours give the torsos real sculptural weight. The horizontally ruled sky is so mechanical it presses the group forward like a specimen against graph paper, which flatters clarity more than atmosphere."
+    },
+    {
+      "file": "sculpt-michelangelo-david-standing.webp",
+      "title": "David in the Tribune",
+      "shown": "A low, close view of the standing David after Michelangelo, seen from beneath the pedestal so the body towers, the head turned left with the sling hand raised to the shoulder — where a single disc of yellow marks the stone. Behind him curve the paneled walls and coffered half-dome of a gallery apse, ruled in fine blue line with thin red seams tracing the moldings.",
+      "quality": "The print understands that David is an experience of looking up, and its perspective does the persuading: the legs lengthen, the head recedes, the dome bends overhead. The anatomy is confidently hatched, and the one drop of yellow at the hand is a witty economy, though the ruled architecture behind sits closer to draughtsman's diagram than to air."
+    },
+    {
+      "file": "sculpt-rodin-prodigal-son.webp",
+      "title": "The Prodigal Son",
+      "shown": "A single nude male figure after Rodin, kneeling on a rough rock and flung upward from the hips, both arms stretched at full length toward the upper corners, head thrown back so only the underside of the jaw shows. He is a pale cream shape edged with a thin thread of gold, isolated against an unbroken field of deep night blue; the eye runs from the rock up the arched spine to the open hands.",
+      "quality": "This is the most abstemious print of the set and the strongest for it: one figure, one ground, and a silhouette that carries the whole cry in its diagonal. The interior hatching models the torso with real understanding of Rodin's strained musculature, while the vast empty blue does the emotional work a background would only dilute."
+    },
+    {
+      "file": "sculpt-rodin-thinker.webp",
+      "title": "The Thinker",
+      "shown": "The seated Thinker after Rodin in profile-quarter view, chin on the back of the bent right hand, elbow to knee, hunched on his rock above a stepped plinth. The bronze is rendered in deep blue with cream highlights raking across skull, shoulder, and shin, the whole figure rimmed by a rough red halo that separates him from the flat indigo ground.",
+      "quality": "The cream highlights are laid on like light on real bronze — the polish of the skull and the knuckles is observed, not invented — and the red keyline gives the mass a poster's punch without cheapening it. It is a print that trades Rodin's surface turbulence for graphic weight, and mostly wins the trade."
+    },
+    {
+      "file": "sculpt-winged-victory-samothrace.webp",
+      "title": "The Winged Victory of Samothrace",
+      "shown": "The headless, armless Victory strides forward atop a stippled stone parapet, her single visible wing swept back and both legs pressing through wind-flattened drapery. Behind her a woodcut sky of ruled horizontals carries scrolled clouds; light falls from the left, leaving the wing dark and the gown's ridges pale. The eye rides the drapery's diagonal from hem to shoulder.",
+      "quality": "The engraver's whole intelligence has gone into the drapery, and it pays: the folds churn like water while the ruled sky behind stays dead calm, which is exactly the contrast the marble itself proposes. The stippled base is coarse next to that finesse, a pedestal in more senses than one."
+    },
+    {
+      "file": "tintoretto-creation-animals.webp",
+      "title": "The Creation of the Animals",
+      "shown": "After Tintoretto: the Creator flies horizontally across the frame in a wind-filled red mantle, arm thrust out over a sea already boiling with fish, while flights of birds stream away to the left. Below and to the right the land fills with hares, deer, a porcupine, and, at the far edge, a white unicorn head among the trees; light radiates from the figure himself.",
+      "quality": "The print keeps Tintoretto's one great idea intact — creation as velocity, the Maker overtaking his own creatures — and the red cloak is the engine of the whole composition, the only saturated mass in a grisaille world. The animal inventory grows charmingly miscellaneous at the margins, more bestiary than ecosystem."
+    },
+    {
+      "file": "tissot-christ-appears-apostles.webp",
+      "title": "Christ Appears on the Shore of Galilee",
+      "shown": "A white-robed figure edged in red stands on a pebbled shore, arms lifted toward a boat of small standing figures out on a still lake; a thin column of smoke rises from a coal fire at his feet straight up the left of the frame. Behind, dark headlands step back to a distant white town, the water ruled in fine horizontals that hold the boat's reflection.",
+      "quality": "The composition is patient in the manner of Tissot — the vast ruled lake, the low shore, the event kept small and far — and the red contour around the one figure quietly settles where the eye must go. The vertical smoke is the print's finest invention, a plumb line dropped through a horizontal world."
+    },
+    {
+      "file": "tissot-gathering-manna.webp",
+      "title": "The Gathering of the Manna",
+      "shown": "A crowd of Israelites in headbands and striped robes stoops across a dune valley, sweeping the pale ground for manna with bare hands; bowls and wicker baskets collect it, and one woman stands upright at center, a laden basket on her head, gazing out of the frame. Ridged hills rise behind under a strip of blue sky, and the fallen manna speckles the sand like coarse grain.",
+      "quality": "The print's structure is its virtue: a field of bent backs radiating around the one vertical woman, so the standing figure reads as the still center of the harvest. The hand-tinted flesh and drapery over crisp pen work give it the flavor of an old chromolithographed Bible plate, though the crowd's repeated stooping poses admit their shared origin."
+    },
+    {
+      "file": "tissot-saint-john-baptist.webp",
+      "title": "The Youth Among the Gazelles",
+      "shown": "Seen from behind, a curly-haired youth sits in the shade of a great wind-bent tree on a bluff, a thin staff planted beside him, one hand raised toward a group of gazelles that surround him — two at his shoulder, three more in the near foreground. Below the bluff a pale road switchbacks through a sunlit valley; the light comes from the open distance while the foreground stays in blue shadow.",
+      "quality": "The shade-against-glare structure is handled with real finesse — dense blue foliage and dark animals framing a bleached valley — and putting the viewer behind the boy, inside his shadow, is a quietly effective piece of staging. The gazelles are individually well drawn but crowd the sitter closely enough to strain the scene's wildness."
+    },
+    {
+      "file": "turner-evening-deluge.webp",
+      "title": "The Evening of the Deluge",
+      "shown": "A vast pale vortex of moon and cloud fills the upper two-thirds of the frame, engraved in concentric whorls, with a flock of birds spiraling into the light; below, a calm sea, then a dark shore where a tent stands open with a fire and bottles inside, a red-cloaked figure stooping at its mouth, and pale animals — a waterfall pouring behind them — gathering at the right. The eye is pulled first and always into the luminous ring of sky.",
+      "quality": "This is the boldest translation in the set: Turner's dissolving light rebuilt as pure engraved line, the sky's circular hatching spinning the whole plate around its moon. The tiny warm-colored figure below is placed with cunning — one ember against the machine of the heavens — even if the foreground's inventory of tent, beasts, and cataract grows a little busy for a world about to drown."
+    },
+    {
+      "file": "van-dyck-martyrdom-sebastian.webp",
+      "title": "Sebastian Bound for Martyrdom",
+      "shown": "After Van Dyck: the young saint, pale and nearly nude with a white cloth at his hips, looks out at the viewer while a muscular executioner crouches to bind his ankles and a bearded soldier pulls his raised arm back overhead. Behind them crowd a white horse, helmeted men, and an upturned face, with one red banner glinting in the armor; a dog's grizzled head watches from the dark lower left.",
+      "quality": "The plate keeps Van Dyck's essential contrast — one smooth, luminous body set against a machinery of straining backs, horses, and steel — and the deep blue ink gives the crowd a genuinely nocturnal pressure. The saint's outward glance is the print's nerve; the surrounding melee is engraved so densely it verges on congestion."
+    },
+    {
+      "file": "vermeer-christ-martha-mary.webp",
+      "title": "Christ in the House of Martha and Mary",
+      "shown": "A colored woodcut-style interior after Vermeer: Christ sits at right in a purple robe with a green mantle across his knees, gesturing toward Mary, who sits low at his feet in red bodice and white headcloth, chin in hand. Between them Martha leans over the white-clothed table to set down a basket of bread; light falls flat and even, and the eye circles the triangle of the three heads.",
+      "quality": "The print flattens Vermeer's early Baroque shadow into bold color fields with black-line hatching, closer to a fine chromoxylograph than to the painting, and the triangular composition survives the translation intact. The bread basket at dead center is exactly where the story's argument sits, and the colorist knows it."
+    },
+    {
+      "file": "vermeer-girl-pearl-earring.webp",
+      "title": "Girl with a Pearl Earring",
+      "shown": "After Vermeer: the girl turns over her left shoulder against a near-black blue ground, lips parted, in a blue-and-ochre turban whose long yellow lappet falls down her back; the pearl hangs in the shadow of her jaw above a white collar. The light comes from the left onto face and collar, and the eye goes where it always goes — eyes, mouth, pearl, in that order.",
+      "quality": "As a chromolithographic reduction of the most famous glance in painting it is honest work: the turban's blue and gold are struck in confident, visible strokes, and the dark ground is deep enough to make the head float. What the flat inks cannot do is the wet light in the eyes and pearl, and the print, sensibly, does not pretend otherwise."
+    },
+    {
+      "file": "vermeer-girl-pearl-standing.webp",
+      "title": "Girl in a Turban, with a Thread of Red",
+      "shown": "A second, longer version of the turbaned girl after Vermeer, showing more of her ochre jacket and shoulder as she turns against a scratched blue-black field; a sliver of red edges the turban above her brow, and the pearl catches a single white point in the ear's shadow. The lappet falls in broad cream-and-blue planes, and light models the face in soft, even tones.",
+      "quality": "The added shoulder gives the figure a torsion the tighter crop lacks, and the vertical tool-scratching in the dark ground lends the plate a worked, physical surface. The unexplained red edge at the turban is the printmaker's own liberty — a small vanity, but it wakes the whole color chord."
+    },
+    {
+      "file": "vermeer-woman-pearl-necklace.webp",
+      "title": "Woman with a Pearl Necklace",
+      "shown": "After Vermeer: a young woman in a yellow, ermine-trimmed jacket stands in profile at right, hands raised to the ribbons of her necklace, facing a tall window at far left through which the light enters past a yellow curtain. Between them stretches a broad blank wall; below, a table heaped with dark drapery, a jar, and a powder brush holds down the shadowed foreground.",
+      "quality": "The engraver has grasped the painting's true subject — the empty, lit wall between woman and window — and has had the discipline to leave it almost untouched while hatching the foreground into near-blackness. That held emptiness against the massed dark is the print's quiet triumph; the profile itself is serviceable rather than tender."
+    },
+    {
+      "file": "watteau-gilles-pierrot.webp",
+      "title": "Gilles",
+      "shown": "After Watteau: the clown Pierrot stands full-length and frontal in his white satin suit — round hat, ruff, too-short sleeves, ribboned slippers — arms hanging, face blank and open. He is raised on a bank above four half-hidden companions: a straw-hatted pair, a red-capped man in red reclining at right, and a donkey's head with its rider glowering at lower left, all under halftone-dotted trees and sky.",
+      "quality": "Rendered in coarse halftone dots with one red intervention, the print turns Watteau's melancholy into something like an old theatre poster, and the trade mostly works: the white suit stays luminous because everything around it is screened darker. The dots blunt the famous face's ambiguity a little — softness becomes vagueness — but the lonely frontality, the whole point of the picture, is untouched."
+    },
+    {
+      "file": "wright-philosopher-orrery.webp",
+      "title": "A Philosopher Lecturing on the Orrery",
+      "shown": "Eight figures crowd around a brass orrery in a darkened study, its arcing yellow rings framing two children who lean in at the machine's center, their faces the brightest passage in the frame. The light rises from a lamp hidden inside the instrument itself, so every face is lit from below; a grey-haired philosopher in a red robe presides from above, a note-taker works at the left, and a silhouetted man seen from behind blocks the source at the front. Bookshelves and a green drape sink into the near-black ground behind them.",
+      "quality": "A print after Wright of Derby that understands the original's central trick: hiding the light and letting the rings and faces carry it, so the eye circles the orrery exactly as the planets would. The under-lighting on the children is genuinely tender and the dark masses hold together well, though the outer figures stiffen into flat cutouts where the shadow economy runs thin."
+    }
+  ]
+}

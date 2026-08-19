@@ -20,9 +20,9 @@ export default function CommunityGuidelinesPage() {
           ],
         },
         {
-          title: 'Public devotional submissions',
+          title: 'Reader submissions',
           body: [
-            'Public visibility is opt-in and includes automated safety, plagiarism, and citation checks before publication.',
+            'Reader letters and community notices are reviewed by a human editor before anything is printed. Nothing you submit is published automatically.',
             'Repeated policy violations may result in account restrictions.',
           ],
         },

@@ -190,14 +190,20 @@ describe('generateRail', () => {
 })
 
 describe('generateGallery', () => {
-  it('returns one approved item that passes the contract guard', async () => {
+  it('returns seven approved plates, distinct, that pass the contract guard', async () => {
+    // SA-092: "a full gallery with 7 images (lightbox)". Seven slots, seven
+    // different prints, all approved, all guard-clean.
     const items = await generateGallery(D('2026-08-18'))
-    expect(items).toHaveLength(1)
-    expect(items[0].kind).toBe('gallery')
-    expect(items[0].slot).toBe(0)
-    expect(items[0].status).toBe('approved')
-    expect(items[0].publishDate).toBe('2026-08-18')
-    expect(validateEditionItem(items[0])).toBeNull()
+    expect(items).toHaveLength(7)
+    const images = new Set(items.map((i) => i.payload.image))
+    expect(images.size).toBe(7)
+    items.forEach((item, slot) => {
+      expect(item.kind).toBe('gallery')
+      expect(item.slot).toBe(slot)
+      expect(item.status).toBe('approved')
+      expect(item.publishDate).toBe('2026-08-18')
+      expect(validateEditionItem(item)).toBeNull()
+    })
   })
 
   it('only ever prints a print the audit marked clean', async () => {
@@ -209,12 +215,17 @@ describe('generateGallery', () => {
     )
     expect(clean.size).toBeGreaterThan(0)
 
-    for (let day = 0; day < 366; day++) {
-      const [item] = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
-      const file = item.payload.image.replace('/images/devotional-prints/', '')
-      expect(clean.has(file)).toBe(true)
-      expect(notClean.has(file)).toBe(false)
-      expect(item.payload.auditVerdict).toBe('clean')
+    for (let day = 0; day < 366; day += 5) {
+      const items = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
+      for (const item of items) {
+        const file = item.payload.image.replace(
+          '/images/devotional-prints/',
+          '',
+        )
+        expect(clean.has(file)).toBe(true)
+        expect(notClean.has(file)).toBe(false)
+        expect(item.payload.auditVerdict).toBe('clean')
+      }
     }
   })
 
@@ -225,38 +236,44 @@ describe('generateGallery', () => {
       '2026-08-18',
       '2026-12-31',
     ]) {
-      const [item] = await generateGallery(D(iso))
-      expect(existsSync(join(PUBLIC_DIR, item.payload.image))).toBe(true)
+      const items = await generateGallery(D(iso))
+      for (const item of items) {
+        expect(existsSync(join(PUBLIC_DIR, item.payload.image))).toBe(true)
 
-      const file = item.payload.image.replace('/images/devotional-prints/', '')
-      const record = auditFile.prints.find((p) => p.file === file)
-      expect(record).toBeDefined()
-      expect(item.payload.artist).toBe(record!.artist)
-      expect(item.payload.title.length).toBeGreaterThan(0)
-      expect(item.payload.looking.length).toBeGreaterThan(80)
+        const file = item.payload.image.replace(
+          '/images/devotional-prints/',
+          '',
+        )
+        const record = auditFile.prints.find((p) => p.file === file)
+        expect(record).toBeDefined()
+        expect(item.payload.artist).toBe(record!.artist)
+        expect(item.payload.title.length).toBeGreaterThan(0)
+        expect(item.payload.looking.length).toBeGreaterThan(80)
+      }
     }
   })
 
-  it('rotates through the whole clean pool over a year rather than repeating one print', async () => {
+  it('rotates through the whole clean pool rather than repeating a favourite', async () => {
+    // Seven plates a day over a month must cover the entire clean pool
+    // (pool/7 ≈ 21 days for the ship-time 145).
     const seen = new Set<string>()
-    for (let day = 0; day < 366; day++) {
-      const [item] = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
-      seen.add(item.payload.image)
+    for (let day = 0; day < 31; day++) {
+      const items = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
+      for (const item of items) seen.add(item.payload.image)
     }
-    // 2026 has 365 days, so a pool larger than that cannot be exhausted.
     const cleanCount = auditFile.prints.filter(
       (p) => p.verdict === 'clean',
     ).length
-    expect(seen.size).toBe(Math.min(cleanCount, 365))
+    expect(seen.size).toBe(cleanCount)
   })
 
   it('varies the looking paragraph across dates without ever inventing one', async () => {
     const looks = new Set<string>()
-    for (let day = 0; day < 60; day++) {
-      const [item] = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
-      looks.add(item.payload.looking)
+    for (let day = 0; day < 10; day++) {
+      const items = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
+      for (const item of items) looks.add(item.payload.looking)
     }
-    expect(looks.size).toBeGreaterThan(1)
+    expect(looks.size).toBeGreaterThan(5)
   })
 
   it('drops the artist token and title-cases the rest of the filename', () => {
@@ -308,7 +325,12 @@ describe('generateGallery', () => {
     )
   })
 
-  it('every published title is filename words only, and never ends on a theme token', async () => {
+  it('every NON-Vasari title is filename words only, and never ends on a theme token', async () => {
+    // Vasari-backed plates (payload.shown present) take their title from the
+    // per-print entry, which is derived from LOOKING at the image — it may
+    // lawfully carry words the filename lacks ("The Ninth Wave, in Blue").
+    // The fabrication guard below therefore applies only to plates still
+    // titled from the filename.
     // The two halves of the fabrication guard: a title may LOSE filename
     // words, but it may never gain one, and it may never keep the devotional
     // theme that got appended to the file.
@@ -334,37 +356,52 @@ describe('generateGallery', () => {
       'with',
     ])
 
-    for (let day = 0; day < 366; day++) {
-      const [item] = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
-      const file = item.payload.image.replace('/images/devotional-prints/', '')
-      const fileWords = new Set(file.replace(/\.webp$/, '').split('-'))
-      const titleWords = item.payload.title.toLowerCase().split(' ')
-
-      for (const word of titleWords) {
-        expect(fileWords.has(word)).toBe(true)
-      }
-
-      const strippable =
-        titleWords.length > 1 &&
-        !CONNECTIVES.has(titleWords[titleWords.length - 2])
-      if (strippable) {
-        expect(THEME_SUFFIX_TOKENS.has(titleWords[titleWords.length - 1])).toBe(
-          false,
+    for (let day = 0; day < 366; day += 7) {
+      const items = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
+      for (const item of items) {
+        if (item.payload.shown !== undefined) continue // Vasari title — exempt
+        const file = item.payload.image.replace(
+          '/images/devotional-prints/',
+          '',
         )
+        const fileWords = new Set(file.replace(/\.webp$/, '').split('-'))
+        const titleWords = item.payload.title.toLowerCase().split(' ')
+
+        for (const word of titleWords) {
+          expect(fileWords.has(word)).toBe(true)
+        }
+
+        const strippable =
+          titleWords.length > 1 &&
+          !CONNECTIVES.has(titleWords[titleWords.length - 2])
+        if (strippable) {
+          expect(
+            THEME_SUFFIX_TOKENS.has(titleWords[titleWords.length - 1]),
+          ).toBe(false)
+        }
       }
     }
   })
 
-  it('never says anything about paint, figures or colour — the pool is not all paintings', async () => {
-    // Architecture, mosaics, sculpture and artifacts share this section with
-    // the canvases. A looking paragraph about hands, under a photograph of an
-    // olive press, is an invention.
+  it('generic looking copy never mentions paint or figures; Vasari copy is exempt because it was written from looking', async () => {
+    // The generic bank must stay safe under ANY print (architecture, mosaic,
+    // sculpture). A Vasari-backed plate is the opposite case: its `shown`
+    // text DESCRIBES the actual image — "Elijah crouches… hand extended" is
+    // reporting, not invention — so the guard does not apply to it.
     const FORBIDDEN =
       /\b(paint|paints|painted|painter|painters|painting|paintings|brush|brushwork|canvas|colour|colours|color|colors|figure|figures|face|faces|hand|hands|body|bodies|drapery|crowd|gaze|eyeline|eyelines)\b/i
 
-    for (let day = 0; day < 366; day++) {
-      const [item] = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
-      expect(item.payload.looking).not.toMatch(FORBIDDEN)
+    for (let day = 0; day < 366; day += 7) {
+      const items = await generateGallery(new Date(Date.UTC(2026, 0, 1 + day)))
+      for (const item of items) {
+        if (item.payload.shown === undefined) {
+          expect(item.payload.looking).not.toMatch(FORBIDDEN)
+        } else {
+          // Vasari plates must carry BOTH halves of the entry.
+          expect(item.payload.quality).toBeTruthy()
+          expect(item.payload.title.length).toBeGreaterThan(2)
+        }
+      }
     }
   })
 

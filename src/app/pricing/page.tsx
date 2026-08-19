@@ -52,7 +52,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What if I can't afford $7/month?",
-    a: 'The free tier is the full curated catalog — every devotional we\'ve written, every series, every word of Scripture. It is not a "lite" version. There is no feature you\'d miss except for AI-composed personal plans, which you can sample once a quarter for free.',
+    a: 'The free tier is the full curated catalog — every devotional we\'ve written, every series, every word of Scripture. It is not a "lite" version. There is no feature you\'d miss except for AI-composed personal plans, which every verified account can sample once for free.',
   },
   {
     q: 'Can I cancel anytime?',
@@ -60,7 +60,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What happens to my plan if I downgrade?',
-    a: "Any AI-composed plans you've already generated stay in your library permanently. You just can't compose new ones until you're back on the paid tier or your quarterly free GENERATE refreshes.",
+    a: "Any AI-composed plans you've already generated stay in your library permanently. You just can't compose new ones until you're back on the paid tier.",
   },
   {
     q: 'Do you offer student or nonprofit pricing?',
@@ -84,19 +84,17 @@ const DONATION_TIERS = [
 
 const FREE_TIER_FEATURES = [
   `All ${SERIES_COUNT} curated devotional series (${DEVOTIONAL_COUNT} devotionals)`,
-  'Wake-Up Magazine (7 series, 35 devotionals)',
   'Soul Audit submission',
-  '3 curated match recommendations with AI-written rationales',
-  '1 personalized AI plan per quarter (a taste)',
+  '3 matched reading paths with written rationales',
+  '1 free AI-composed personal plan (verified account)',
   'Reading position sync across devices (with sign-in)',
-  'Bookmarks + journal entries',
-  'Daily Bread surface',
+  'Bookmarks + journal entries (with sign-in)',
+  'The Daily Bread — the free daily edition',
 ] as const
 
 const PAID_TIER_ADDITIONS = [
-  'Unlimited AI-composed plans — written for your specific reflection',
-  'Unlimited Soul Audit re-rolls',
-  'Soft cap: 1 AI plan per week (catches abuse without restricting normal use)',
+  'AI-composed plans written for your specific reflection',
+  'A monthly fair-use allowance of new plans (catches abuse without restricting normal use)',
   'Priority support',
   'Founding Member badge for the first 500 annual subscribers',
 ] as const

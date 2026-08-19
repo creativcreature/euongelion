@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The Daily Bread, award-worthy — and true on every footer page (SA-092, F-138)
+
+**2026-08-19 (overnight)**
+
+Eleven pinned founder items, executed under ultracode. Research first:
+last30days (the community's turn is away from scroll-hijack — restraint wins)
+and Mobbin (New Yorker heroes, ruled front pages) set the register.
+
+**Scroll choreography, native.** A cobalt reading spine fills as you read;
+section rules draw themselves; plates settle; the masthead folds from
+broadsheet to reading size — all CSS `animation-timeline`, gated by
+`@supports` and `prefers-reduced-motion`, zero new JS.
+
+**One type ladder.** Ten rungs (`design-system/TYPE-SCALE.md`); 66 stray
+sizes migrated; 11 heads assigned one rung per semantic level. A hard-coded
+rem is now a defect.
+
+**The Gallery is a spread** — 7 audited plates a day, six-thumb contact row,
+a lightbox paging all seven with **Vasari entries written by agents that
+looked at each print** (145 entries: image-derived title, what is literally
+shown, one line of connoisseurship). The prayer prints its verse numbers.
+Six guide essays at `/guides/*`; honest author pages at `/authors/*`; every
+footer page audited claim-by-claim against the code.
+
+**The paper speaks.** Fifteen rotation slugs had no audio because the
+pipeline never supported panels format. The Python extractor now mirrors
+`buildPanelSegments` byte-for-byte (cross-language hash verified, parity gate
+extended), and all fifteen rendered through **Voicebox only** — 15/15, zero
+failures, chapters measured. The Daily Bread mounts the player.
+
+**Seven new module kinds** (redletter, proverb, verse, archive, b365, voices,
+question) are built, tested and interleaved so the games break up — awaiting
+one founder SQL paste; until then those sections render nothing and the seed
+excludes them. The overflow bug is fixed and the container rule is standing.
+
 ## v0.8.0 — release cut for the daily paper + accounts (SA-090, F-136)
 
 **2026-08-19**
@@ -10200,7 +10235,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.0
+**Version:** 0.8.1
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync

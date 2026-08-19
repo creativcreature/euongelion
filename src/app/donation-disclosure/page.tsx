@@ -22,8 +22,8 @@ export default function DonationDisclosurePage() {
         {
           title: 'Transparency',
           body: [
-            'Euangelion publishes allocation reporting on a public transparency page.',
-            'Paid users also see a personal + global allocation view in dashboard contexts.',
+            'Allocation reporting will be published on this page as donations are received. There is nothing to report yet.',
+            'The split above is the committed default; any change to it will be disclosed here first.',
           ],
         },
       ]}

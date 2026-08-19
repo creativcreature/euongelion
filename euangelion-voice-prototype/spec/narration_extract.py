@@ -359,6 +359,27 @@ def extract(dev):
         if k:
             seen.add(k)
 
+    # ── Panels format (Wake-Up legacy) ─────────────────────────────────
+    # Mirrors buildPanelSegments in src/lib/audio/segments.ts EXACTLY —
+    # the vitest parity gate (narration-manifest-current.test.ts) recomputes
+    # this hash from the TS side, so the two must stay byte-identical:
+    # panel 0 is the cover and is skipped; each remaining panel speaks
+    # (heading or "Section N") + content; the same <2-word floor applies;
+    # deliberately NO dedup, because the TS panels path has none.
+    if not dev.get("modules") and dev.get("panels"):
+        for i, panel in enumerate(dev["panels"][1:]):
+            t = to_speech(panel.get("content") or "")
+            if not t or len(t.split()) < 2:
+                continue
+            segs.append({
+                "label": panel.get("heading") or f"Section {i + 1}",
+                "register": "teaching",
+                "text": t,
+                "module_index": i + 1,
+                "heading": panel.get("heading"),
+            })
+        return segs
+
     for module_number, m in enumerate(dev.get("modules") or [], start=1):
         t = m.get("type", "teaching")
         if t in NAV_TYPES:

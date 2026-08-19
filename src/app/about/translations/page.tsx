@@ -70,6 +70,20 @@ const TRANSLATIONS: Translation[] = [
     bestFor:
       'Present in some pre-2026 series imported from earlier sources. Being audited and migrated to public-domain renderings.',
   },
+  {
+    abbreviation: 'ESV',
+    name: 'English Standard Version',
+    status: 'Licensed (legacy)',
+    bestFor:
+      'Present in a smaller set of pre-2026 imported series. Same audit and migration path as the NIV.',
+  },
+  {
+    abbreviation: 'NKJV',
+    name: 'New King James Version',
+    status: 'Licensed (legacy)',
+    bestFor:
+      'A handful of pre-2026 imported quotations. Same audit and migration path as the NIV.',
+  },
 ]
 
 export default function TranslationsPage() {
@@ -162,23 +176,24 @@ export default function TranslationsPage() {
 
           <section className="mb-14 space-y-3">
             <h2 className="text-label vw-small mb-3 text-gold">
-              About the legacy NIV references
+              About the legacy licensed references
             </h2>
             <p className="vw-body">
               A subset of the devotionals on this site were imported from
-              earlier sources that quoted the New International Version. Major
-              modern translations including the NIV, ESV, NASB, and NRSV are
-              copyrighted, and their license terms restrict how much of the text
-              can appear in a public work — even one that does not charge for
-              access.
+              earlier sources that quoted licensed translations — chiefly the
+              New International Version, with a smaller number of ESV and NKJV
+              quotations. Major modern translations including the NIV, ESV,
+              NASB, and NRSV are copyrighted, and their license terms restrict
+              how much of the text can appear in a public work — even one that
+              does not charge for access.
             </p>
             <p className="vw-body">
               All new devotionals written from 2026 forward use only public
-              domain or CC0 translations. The legacy NIV references are being
-              audited; passages that exceed permitted use are being re-rendered
-              into a public domain or CC0 translation chosen contextually.
-              Citations remain in place. The audit document is published when
-              complete.
+              domain or CC0 translations. The legacy licensed references are
+              being audited; passages that exceed permitted use are being
+              re-rendered into a public domain or CC0 translation chosen
+              contextually. Citations remain in place. The audit document is
+              published when complete.
             </p>
           </section>
 

@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last Updated:** January 18, 2026
+**Last Updated:** August 19, 2026
 **Effective Date:** January 18, 2026
 
 ## Introduction
@@ -25,15 +25,15 @@ We collect information you voluntarily provide when using our Service:
 When you use our Service, we automatically collect certain information:
 
 - **Device Information:** Device type, operating system, browser type, and device identifiers.
-- **Usage Data:** Pages visited, time spent on pages, features used, and interaction patterns.
+- **Usage Data:** Request logs and feature-usage counters needed to operate and rate-limit the Service.
 - **Log Data:** IP address, access times, and referring URLs.
 - **Offline Data:** When using offline features, data is stored locally on your device.
 
 ### Analytics and Performance
 
-We use analytics tools to understand how users interact with our Service:
+We do not run third-party analytics trackers. We keep limited first-party operational data:
 
-- **Aggregate Usage Statistics:** Non-personally identifiable data about feature usage.
+- **Aggregate Usage Statistics:** Non-personally identifiable counts of feature usage.
 - **Performance Metrics:** App performance data to improve user experience.
 - **Crash Reports:** Technical information when errors occur.
 
@@ -84,7 +84,7 @@ You have the right to:
 
 ### How to Exercise Your Rights
 
-To exercise any of these rights, contact us at privacy@euangelion.com.
+To exercise any of these rights, use the controls in Settings (described below) or contact us at privacy@euangelion.app.
 
 ### Notification Preferences
 
@@ -131,7 +131,7 @@ Our Service may contain links to third-party websites or services. We are not re
 As a PWA, EUANGELION stores data locally on your device:
 
 - **Service Worker:** Caches content for offline access.
-- **IndexedDB:** Stores reading progress and preferences locally.
+- **IndexedDB:** Stores clipped quotes and offline data locally.
 - **Local Storage:** Stores app settings and user preferences.
 
 This local data is not transmitted to our servers unless you enable sync features.
@@ -150,10 +150,9 @@ Your continued use of the Service after changes become effective constitutes acc
 
 If you have questions about this Privacy Policy or our privacy practices, please contact us:
 
-- **Email:** privacy@euangelion.com
-- **Address:** EUANGELION, [Address to be added]
+- **Email:** privacy@euangelion.app
 
-For data protection inquiries in the EU, you may also contact our Data Protection Officer at dpo@euangelion.com.
+For data protection inquiries in the EU, contact privacy@euangelion.app.
 
 ## Additional Information for EU Users
 
@@ -219,4 +218,4 @@ If a partial failure is reported (rare — we surface it explicitly in the respo
 
 Anonymous session data — reflection text submitted before sign-in — is retained for **30 days from last activity**, after which it is hard-deleted automatically. Authenticated user data is retained until you delete your account using the control above. We never retain Soul Audit reflection text after a hard delete.
 
-We never share Soul Audit reflection text with third-party analytics providers. Reflection text is processed by Anthropic for AI composition and is sent under their zero-data-retention contract.
+We never share Soul Audit reflection text with third-party analytics providers. Reflection text is sent to our AI provider (Anthropic) solely to compose your reading paths; under the commercial API terms it is sent under, it is not used to train models.

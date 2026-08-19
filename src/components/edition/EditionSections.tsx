@@ -6,12 +6,20 @@
  * them fetch; the page fetches once and hands payloads down.
  */
 import Image from 'next/image'
+import Link from 'next/link'
 import type {
+  ArchivePayload,
+  B365Payload,
   GalleryPayload,
   PrayerPayload,
+  ProverbPayload,
+  QuestionPayload,
+  RedLetterPayload,
   ScreeningPayload,
   SeasonPayload,
   StripPayload,
+  VersePayload,
+  VoicesPayload,
   WitnessPayload,
 } from '@/lib/edition/kinds'
 
@@ -40,7 +48,16 @@ export function PrayerColumn({ prayer }: { prayer: PrayerPayload }) {
           {prayer.prayedBy} &middot; {prayer.reference}
         </p>
       </div>
-      <blockquote className="edition-prayer-text">{prayer.text}</blockquote>
+      <blockquote className="edition-prayer-text">
+        {prayer.verses && prayer.verses.length > 0
+          ? prayer.verses.map(({ v, text }) => (
+              <span key={v} className="edition-prayer-verse">
+                <sup className="edition-verse-num">{v}</sup>
+                {text}{' '}
+              </span>
+            ))
+          : prayer.text}
+      </blockquote>
       <p className="edition-prayer-cite">
         {prayer.reference} ({prayer.translation})
       </p>
@@ -241,6 +258,141 @@ export function NoticesColumn({
           </article>
         ))}
       </div>
+    </section>
+  )
+}
+
+/* ── SA-092 — the paper grows to ~30 modules a day ─────────────────────── */
+
+/* ── The Red Letters — a saying of Jesus, quoted verbatim ──────────────── */
+
+export function RedLetterColumn({ saying }: { saying: RedLetterPayload }) {
+  return (
+    <section className="edition-redletter" aria-label="The red letters">
+      <div className="edition-section-bar">
+        <h2 className="edition-section-head">The red letters</h2>
+        <p className="edition-section-note">A saying of Jesus, verbatim</p>
+      </div>
+      <blockquote className="edition-redletter-text">{saying.text}</blockquote>
+      <p className="edition-redletter-cite">
+        {saying.reference} ({saying.translation})
+      </p>
+    </section>
+  )
+}
+
+/* ── The Proverb — a two-line saying, BSB verbatim ─────────────────────── */
+
+export function ProverbBox({ proverb }: { proverb: ProverbPayload }) {
+  return (
+    <section className="edition-proverb" aria-label="The proverb">
+      <div className="edition-section-bar">
+        <h2 className="edition-section-head">The proverb</h2>
+      </div>
+      <blockquote className="edition-proverb-text">{proverb.text}</blockquote>
+      <p className="edition-proverb-cite">
+        {proverb.reference} ({proverb.translation})
+      </p>
+    </section>
+  )
+}
+
+/* ── Voices — a historic voice, attributed to a named person and work ──── */
+
+export function VoicesColumn({ voice }: { voice: VoicesPayload }) {
+  return (
+    <section className="edition-voices" aria-label="Voices">
+      <div className="edition-section-bar">
+        <h2 className="edition-section-head">Voices</h2>
+        <p className="edition-section-note">From the church&rsquo;s shelf</p>
+      </div>
+      <blockquote className="edition-voices-quote">{voice.quote}</blockquote>
+      <p className="edition-voices-source">
+        {voice.author} &middot; <cite>{voice.work}</cite>
+      </p>
+    </section>
+  )
+}
+
+/* ── From the Archive — an older devotional resurfaced ─────────────────── */
+
+export function ArchiveBox({ archive }: { archive: ArchivePayload }) {
+  return (
+    <section className="edition-archive" aria-label="From the archive">
+      <div className="edition-section-bar">
+        <h2 className="edition-section-head">From the archive</h2>
+        <p className="edition-section-note">An older reading, resurfaced</p>
+      </div>
+      <Link
+        href={`/devotional/${archive.slug}`}
+        className="edition-archive-item"
+      >
+        <span className="edition-archive-plate">
+          <Image
+            src={archive.image}
+            alt=""
+            fill
+            sizes="(max-width: 900px) 100vw, 30vw"
+            className="edition-archive-img"
+          />
+        </span>
+        <span className="edition-archive-text">
+          <span className="edition-archive-head">{archive.title}</span>
+          <span className="edition-archive-teaser">{archive.teaser}</span>
+          <span className="edition-archive-more">Read it &rarr;</span>
+        </span>
+      </Link>
+    </section>
+  )
+}
+
+/* ── Today in Bible-365 — the paper's pointer into the year plan ───────── */
+
+export function B365Box({ b365 }: { b365: B365Payload }) {
+  return (
+    <section className="edition-b365" aria-label="Bible in a year">
+      <div className="edition-section-bar">
+        <h2 className="edition-section-head">Bible in a year</h2>
+        <p className="edition-section-note">Day {b365.day} of 365</p>
+      </div>
+      <p className="edition-b365-ref">{b365.reference}</p>
+      <p className="edition-b365-title">{b365.title}</p>
+      <Link href={`/devotional/${b365.slug}`} className="edition-b365-more">
+        Read today&rsquo;s plan &rarr;
+      </Link>
+    </section>
+  )
+}
+
+/* ── The Memory Verse — the week's verse, same all seven days ──────────── */
+
+export function VerseBox({ verse }: { verse: VersePayload }) {
+  return (
+    <section className="edition-verse" aria-label="The memory verse">
+      <div className="edition-section-bar">
+        <h2 className="edition-section-head">The memory verse</h2>
+        <p className="edition-section-note">
+          This week &middot; same verse all seven days
+        </p>
+      </div>
+      <blockquote className="edition-verse-text">{verse.text}</blockquote>
+      <p className="edition-verse-cite">
+        {verse.reference} ({verse.translation})
+      </p>
+    </section>
+  )
+}
+
+/* ── The Question — one reflection question, no right answer ───────────── */
+
+export function QuestionBox({ question }: { question: QuestionPayload }) {
+  return (
+    <section className="edition-question" aria-label="The question">
+      <div className="edition-section-bar">
+        <h2 className="edition-section-head">The question</h2>
+        <p className="edition-section-note">To carry, not to close</p>
+      </div>
+      <p className="edition-question-text">{question.question}</p>
     </section>
   )
 }

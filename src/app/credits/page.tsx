@@ -115,9 +115,10 @@ export default function CreditsPage() {
               <code className="vw-small bg-surface-raised px-2 py-0.5 text-[var(--color-text-primary)]">
                 public/bibles/
               </code>{' '}
-              and looked up at devotional-generation time. The 175 hand-curated
-              devotionals on the site keep their originally-authored Scripture
-              text as published.
+              and looked up when devotionals are composed and when The Daily
+              Bread&rsquo;s puzzles and printed prayers are built. The
+              hand-curated devotionals on the site keep their
+              originally-authored Scripture text as published.
             </p>
           </div>
 
@@ -127,9 +128,17 @@ export default function CreditsPage() {
 
           <div className="space-y-4 vw-body leading-relaxed text-secondary">
             <p>
-              Devotional-print artwork is generated from public-domain source
-              imagery. See individual artwork captions for attribution where
-              applicable.
+              Artwork on this site is of two kinds. Series and editorial art is
+              AI-generated in the site&rsquo;s risograph style. The
+              devotional-print reproductions — including The Gallery in The
+              Daily Bread — derive from public-domain classical artworks, are
+              individually audited before use, and print with the artist&rsquo;s
+              name where the artist is known.
+            </p>
+            <p>
+              Word-study definitions are drawn from public-domain lexicons:
+              Brown-Driver-Briggs (Hebrew) and Abbott-Smith and Strong&rsquo;s
+              (Greek), with the source printed beside each entry.
             </p>
             <p>
               Original languages: Hebrew text is rendered with the SBL Hebrew

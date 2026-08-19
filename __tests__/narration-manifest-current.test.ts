@@ -18,7 +18,7 @@ import { describe, it, expect } from 'vitest'
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
-import { buildModuleSegments } from '@/lib/audio/segments'
+import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
 import manifest from '@/data/audio-manifest.json'
 
 const DIR = path.join(process.cwd(), 'public/devotionals')
@@ -37,10 +37,16 @@ function spokenHash(slug: string): string | null {
   const file = path.join(DIR, `${slug}.json`)
   if (!fs.existsSync(file)) return null
   const dev = JSON.parse(fs.readFileSync(file, 'utf8'))
-  if (!Array.isArray(dev.modules)) return null
-  const joined = buildModuleSegments(dev.title ?? '', dev.modules, dev.subtitle)
-    .map((s) => s.text)
-    .join('\n')
+  // Panels-format days render through the same pipeline since SA-092 — the
+  // Python extractor mirrors buildPanelSegments byte-for-byte, and this
+  // recomputation is the gate that keeps them identical.
+  const segments = Array.isArray(dev.modules)
+    ? buildModuleSegments(dev.title ?? '', dev.modules, dev.subtitle)
+    : Array.isArray(dev.panels)
+      ? buildPanelSegments(dev.title ?? '', dev.panels, dev.subtitle)
+      : null
+  if (segments === null) return null
+  const joined = segments.map((s) => s.text).join('\n')
   return crypto
     .createHash('sha1')
     .update(joined, 'utf8')
@@ -66,7 +72,6 @@ describe('narration manifest is current', () => {
     const stale: string[] = []
     for (const [slug, entry] of Object.entries(tracks)) {
       const want = spokenHash(slug)
-      if (want === null) continue // panel-format day, rendered by another path
       if (entry.textHash !== want) {
         stale.push(
           `${slug} (rendered ${entry.textHash ?? 'pre-hash'}, page ${want})`,

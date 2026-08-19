@@ -21,8 +21,8 @@ export const RETENTION_POLICY: RetentionPolicy = {
 export function retentionPolicySummary() {
   return {
     anonymousSession: `Anonymous session data is retained for ${RETENTION_POLICY.anonymousSessionDays} days.`,
-    bookmarks: `Bookmarks are retained for ${RETENTION_POLICY.bookmarksDays} days in anonymous mode.`,
-    notesHighlightsChat: `Notes, highlights, and chat history are retained for ${RETENTION_POLICY.notesDays} days in mock account mode.`,
+    bookmarks: `Bookmarks require sign-in and are kept until you remove them or delete your account; legacy anonymous bookmarks are purged after ${RETENTION_POLICY.bookmarksDays} days.`,
+    notesHighlightsChat: `Notes and highlights require sign-in and are kept until you remove them or delete your account; saved chat threads are retained for ${RETENTION_POLICY.chatHistoryDays} days.`,
     archiveAndTrash: `Archived artifacts are retained for ${RETENTION_POLICY.archivedArtifactsDays} days. Trash items can be restored for ${RETENTION_POLICY.trashRestoreWindowDays} days.`,
   }
 }
@@ -63,17 +63,16 @@ export function retentionClarityRows(): RetentionClarityRow[] {
     {
       id: 'bookmarks',
       artifact: 'Bookmarks',
-      what: 'The readings you save for later, keyed to your session.',
-      where:
-        'Our database, keyed by session token (merged to your account if you sign in).',
-      retention: `Kept for ${RETENTION_POLICY.bookmarksDays} days in anonymous mode.`,
+      what: 'The readings you save for later. Saving requires sign-in.',
+      where: 'Our database, keyed to your signed-in account.',
+      retention: `Kept until you remove them or delete your account. Legacy anonymous bookmarks are purged on the ${RETENTION_POLICY.anonymousSessionDays}-day anonymous-session schedule.`,
     },
     {
       id: 'notes-highlights',
       artifact: 'Notes & highlights',
-      what: 'Notes, highlights, sticky notes, and stickers you add to a reading.',
-      where: 'Our database, requires a signed-in or mock account.',
-      retention: `Kept for ${RETENTION_POLICY.notesDays} days.`,
+      what: 'Notes, highlights, sticky notes, and stickers you add to a reading. Saving requires sign-in.',
+      where: 'Our database, keyed to your signed-in account.',
+      retention: `Kept until you remove them or delete your account. Legacy anonymous rows are purged on the ${RETENTION_POLICY.anonymousSessionDays}-day anonymous-session schedule.`,
     },
     {
       id: 'chat-history',

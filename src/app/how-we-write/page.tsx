@@ -2,8 +2,10 @@
  * /how-we-write — Editorial transparency page.
  *
  * Explains how devotionals are composed: AI as composer/arranger (not
- * author), creedal anchoring, historic voices, plain-language Soul Audit
- * explanation, and privacy-honest statement about what is / is not stored.
+ * author), the honest Milo byline (SA-089), creedal anchoring, historic
+ * voices, plain-language Soul Audit explanation, the Daily Bread edition's
+ * computed-vs-reviewed split (SA-090), and a privacy-honest statement about
+ * what is / is not stored.
  *
  * Server-rendered. No client JavaScript required.
  */
@@ -228,6 +230,15 @@ export default function HowWeWritePage() {
               framing, and the connective tissue between passages that have
               always existed.
             </p>
+            <p className="how-we-body">
+              Some prose here is genuinely composed rather than arranged — the
+              optional personal plans, and the Sunday feature in The Daily
+              Bread. Composition runs through the same grounding: Scripture is
+              quoted verbatim from the translations we ship, word studies come
+              from real lexicons, and historic voices are retrieved from their
+              actual works. The Sunday feature is additionally read and approved
+              by a human editor before it prints.
+            </p>
             <ul className="how-we-list">
               <li>
                 <strong>Scripture is always verbatim.</strong> No paraphrase, no
@@ -247,6 +258,81 @@ export default function HowWeWritePage() {
                 mouths.
               </li>
             </ul>
+          </div>
+        </section>
+
+        <SectionRule />
+
+        {/* The masthead — who signs the page (SA-089). Both byline names
+            link to their author pages. */}
+        <section className="how-we-section" aria-labelledby="sec-masthead">
+          <SectionHeader kicker="THE MASTHEAD" headline="Who signs the page." />
+          <div className="how-we-body-col">
+            <p className="how-we-body">
+              Every reading on the site closes with the same two credits, and
+              both names are exactly what they claim to be.
+            </p>
+            <ul className="how-we-list">
+              <li>
+                <strong>
+                  Written by{' '}
+                  <Link href="/authors/milo" className="link-highlight">
+                    Milo
+                  </Link>
+                  .
+                </strong>{' '}
+                Milo is the house pseudonym for the AI-assisted composition
+                process described above &mdash; a disclosure, not a disguise.
+              </li>
+              <li>
+                <strong>
+                  Edited by{' '}
+                  <Link href="/authors/james-parker" className="link-highlight">
+                    James Parker
+                  </Link>
+                  .
+                </strong>{' '}
+                The editor selects, shapes, and verifies every reading, and
+                carries final responsibility for what prints.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <SectionRule />
+
+        {/* Section A2: The byline (SA-089) — the publishing record, told
+            honestly. Milo is a pen name for the AI synthesis; the editor is
+            a person; dates are only asserted where a true publication day
+            exists. */}
+        <section className="how-we-section" aria-labelledby="sec-byline">
+          <SectionHeader
+            kicker="THE BYLINE"
+            headline="Written by Milo. Edited by James Parker."
+          />
+          <div className="how-we-body-col">
+            <p className="how-we-body">
+              Every reading closes with a colophon, and the colophon tells the
+              truth. <strong>Milo</strong> is a pen name — the byline for the
+              synthesis of AI tools that composes and arranges these readings.
+              It is not a person, and we would rather say that plainly than let
+              a warm byline imply an author who does not exist.
+            </p>
+            <p className="how-we-body">
+              The editor is a person. James Parker reads, corrects, and approves
+              what carries an editorial voice, and he declines the writing
+              credit for work he did not write — deliberately, so that he can
+              come to each reading and discover it the way a reader does. Where
+              a piece is genuinely written by a human hand, the colophon names
+              that hand instead.
+            </p>
+            <p className="how-we-body">
+              Publication dates follow the same rule. A reading shows the day it
+              was first published only when we actually know that day; where a
+              reading arrived in a bulk import and no true publication day
+              exists, the colophon says &ldquo;Added&rdquo; with the month — it
+              never asserts a publishing event that did not take place.
+            </p>
           </div>
         </section>
 
@@ -383,9 +469,9 @@ export default function HowWeWritePage() {
                   </p>
                   <p className="how-we-audit-step-body">
                     Three matched plans appear. You select the one that speaks
-                    to where you actually are. Your choice is stored only in
-                    your browser&rsquo;s local session so the app knows which
-                    day you are on.
+                    to where you actually are. Your choice is saved with the
+                    same session record as your reflection so your plan can be
+                    reopened, and it is deleted on the same schedule.
                   </p>
                 </div>
               </div>
@@ -401,7 +487,9 @@ export default function HowWeWritePage() {
                     arrived. Scripture passages are reproduced exactly.
                     Historical quotes are taken from the original sources. The
                     AI arranges and sequences; it does not improvise theology to
-                    match your mood.
+                    match your mood. The one exception is the optional personal
+                    plan, which is composed for you on request — from the same
+                    verbatim Scripture, real lexicons, and historic sources.
                   </p>
                 </div>
               </div>
@@ -437,17 +525,20 @@ export default function HowWeWritePage() {
                 </li>
               </ul>
               <p className="how-we-body">
-                <strong>What we do store (with an account):</strong> which day
-                of your plan you are on, bookmarked devotionals, and optionally
-                highlights or notes you add. This progress data is stored in our
-                secure database so it syncs across your devices. It is not
-                shared or sold.
+                <strong>What we do store (with an account):</strong> your
+                reading and listening progress, bookmarked devotionals, and any
+                highlights or notes you add. Saving these requires signing in —
+                we do not keep an anonymous shadow copy — and they sync across
+                your devices from our database. None of it is shared or sold,
+                and all of it is included in your data export and removed by
+                account deletion.
               </p>
               <p className="how-we-privacy-honest vw-small">
                 We do not claim your words &ldquo;never leave your device&rdquo;
-                — they are transmitted to complete the composition request. What
-                we claim is that they are not retained, stored, or reused after
-                that request completes. See our{' '}
+                — they are transmitted to complete the composition request, and
+                stored with your session exactly as described above. What we
+                claim is that they go no further than that: never training data,
+                never third parties, deleted with your session. See our{' '}
                 <Link href="/privacy" className="link-highlight">
                   privacy policy
                 </Link>{' '}
@@ -475,6 +566,48 @@ export default function HowWeWritePage() {
             field, and the false one sat at the point of collection. The copy
             now matches the retention policy. Keep it that way: if the storage
             behaviour changes, this page and retention.ts change together. */}
+        <section className="how-we-section" aria-labelledby="sec-daily-bread">
+          <SectionHeader
+            kicker="THE DAILY BREAD"
+            headline="A daily paper with two kinds of ink."
+          />
+          <div className="how-we-body-col">
+            <p className="how-we-body">
+              The Daily Bread is assembled fresh for each date, and every
+              section of it belongs to one of two categories. The difference
+              decides how it gets to print.
+            </p>
+            <p className="how-we-body">
+              <strong>Computed sections carry no invented voice.</strong> The
+              daily prayer is Scripture that prays, printed in full with its
+              reference — nothing in it is written by us. The word of the day is
+              a real lexicon entry — Brown-Driver-Briggs for Hebrew,
+              Abbott-Smith and Strong&rsquo;s for Greek — with the attribution
+              printed beside it, never a definition we invented. The puzzles are
+              computed from the Bible text itself. The Gallery reproduces
+              public-domain classical artworks, each one individually audited
+              before it may appear, printed with the artist&rsquo;s name. The
+              commemorations column reports from documented sources, with the
+              source named. These sections publish without editorial review
+              because there is nothing invented in them to review.
+            </p>
+            <p className="how-we-body">
+              <strong>
+                Everything with a voice passes a human editor first.
+              </strong>{' '}
+              The Sunday feature — the one genuinely new piece each week — is
+              composed through the same grounded pipeline that writes personal
+              plans, then held as a draft until a human reads and approves it.
+              The daily practice, the caption on the comic strip, and any
+              third-party link we point to take the same road: drafted,
+              reviewed, and only then printed. Monday through Saturday the front
+              page carries a reading from the existing catalog.
+            </p>
+          </div>
+        </section>
+
+        <SectionRule />
+
         <section className="how-we-section" aria-labelledby="sec-red-letter">
           <SectionHeader
             kicker="THE WORDS OF CHRIST"
@@ -515,10 +648,15 @@ export default function HowWeWritePage() {
               reader who does not exist.
             </p>
             <p className="how-we-body">
-              The audio is generated from the same text you see on the page, in
-              full. It is not an abridgement, a summary, or a different edition
-              of the reading. Where a reading has chapters, the transport marks
-              them so you can move within it rather than scrubbing blindly.
+              The narration is generated from the reading&rsquo;s own text —
+              nothing is summarized, rewritten, or abridged. What it skips, it
+              skips deliberately: artwork, embeds, and link lists are visual
+              furniture rather than prose, and a pull quote that repeats a
+              sentence already spoken in place is not spoken twice. Where a
+              reading has chapters, the transport marks them so you can move
+              within it rather than scrubbing blindly. A reading whose studio
+              track has not been rendered yet falls back to your browser&rsquo;s
+              built-in voice — rougher, but reading the same text.
             </p>
           </div>
         </section>

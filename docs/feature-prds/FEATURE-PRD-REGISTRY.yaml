@@ -1267,3 +1267,11 @@ features:
     prd: docs/feature-prds/F-137.md
     methodology_refs:
       - M00
+  - id: F-138
+    title: The Daily Bread, award-worthy — and true on every footer page
+    slug: daily-bread-awwworthy
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-138.md
+    methodology_refs:
+      - M00

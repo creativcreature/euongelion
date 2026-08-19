@@ -1,0 +1,276 @@
+/* ═══ The Daily Bread — scroll choreography (SA-092 / F-138) ══════════════
+   Native CSS scroll-driven animations. Research (last30days, 2026-08-19):
+   animation-timeline runs on the compositor thread at ~85% global support;
+   the community's turn is AWAY from scroll-hijack gimmicks toward motion
+   that serves reading. So: nothing here moves the page for the reader —
+   the page responds to the reader. Everything is gated twice: @supports
+   (animation-timeline) so unsupporting browsers get the still paper, and
+   prefers-reduced-motion so readers who asked for stillness get it.
+
+   F-104's JS reveals ([data-reveal]/[data-parallax]) are untouched and
+   animate different properties on different elements — no double-driving.
+
+   Loaded from globals.css. UNLAYERED on purpose: design-system CSS beats
+   @layer utilities in this build (documented trap), and these rules are
+   meant to win. */
+
+@supports (animation-timeline: scroll()) {
+  @media not (prefers-reduced-motion: reduce) {
+    /* ── The reading spine ─────────────────────────────────────────────
+       A hairline of cobalt down the left page edge that fills as the
+       reader descends — a newspaper column rule that keeps their place.
+       Pure scroll() timeline: zero JS, compositor-only. */
+    .edition-spine {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--mock-blue, #1f2a8d);
+      transform-origin: top;
+      transform: scaleY(0);
+      animation: edition-spine-fill linear both;
+      animation-timeline: scroll(root);
+      z-index: 40;
+      pointer-events: none;
+    }
+
+    /* ── Section rules draw themselves ────────────────────────────────
+       The 2px rule under each section bar draws left-to-right as the
+       compartment enters the viewport — the compositor's version of a
+       compositor's pen. view() timeline, per element. */
+    .paper-sheet .edition-section-bar {
+      border-bottom-color: transparent;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      background-size: 100% 2px;
+      transform-origin: left;
+      animation: edition-rule-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 80%;
+    }
+
+    /* ── Plates settle ─────────────────────────────────────────────────
+       Images arrive a breath larger and settle to rest as they cross
+       into view. Scale only — no opacity (the JS reveal owns opacity),
+       no translation (nothing jumps). */
+    .edition-guide-plate,
+    .edition-gallery-plate,
+    .edition-strip-plate,
+    .edition-lead-plate {
+      overflow: hidden;
+    }
+
+    .edition-guide-plate > img,
+    .edition-gallery-plate > img,
+    .edition-strip-plate > img,
+    .edition-lead-plate > img {
+      animation: edition-plate-settle linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+
+    /* ── The masthead folds ────────────────────────────────────────────
+       The paper's name starts at full size and condenses slightly as
+       the reader moves into the edition — the broadsheet folding to
+       reading size. Subtle by design: 1 → 0.86, nothing disappears. */
+    .edition-masthead .edition-name {
+      transform-origin: center top;
+      animation: edition-masthead-fold linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px 480px;
+    }
+  }
+}
+
+@keyframes edition-spine-fill {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes edition-rule-draw {
+  from {
+    background-size: 0% 2px;
+  }
+  to {
+    background-size: 100% 2px;
+  }
+}
+
+@keyframes edition-plate-settle {
+  from {
+    transform: scale(1.045);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes edition-masthead-fold {
+  to {
+    transform: scale(0.86);
+  }
+}
+
+/* ── In this edition — the contents line (all browsers) ────────────────
+   An anchor index under the masthead: the reader sees the whole paper
+   before the first story, and can jump. Static furniture, no motion. */
+.edition-contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1.1rem;
+  max-width: 78rem;
+  margin: 0.6rem auto 0;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+
+.edition-contents a {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.edition-contents a:hover {
+  color: var(--mock-ink, currentColor);
+}
+
+/* ── Gallery spread + lightbox (all browsers) ───────────────────────── */
+
+.edition-gallery-open {
+  border: var(--ed-hair);
+  padding: 0;
+  cursor: zoom-in;
+  background: transparent;
+}
+
+.edition-gallery-row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  min-width: 0;
+}
+
+.edition-gallery-thumb {
+  position: relative;
+  aspect-ratio: 1;
+  border: var(--ed-hair);
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.edition-gallery-thumb .edition-gallery-img {
+  object-fit: cover;
+}
+
+.edition-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.6rem, 3vw, 2rem);
+  background: color-mix(in srgb, var(--mock-ink, #10152b) 88%, transparent);
+}
+
+.edition-lightbox-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: min(100%, 64rem);
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--mock-paper, #f6f1e7);
+  border: var(--ed-hair);
+  padding: 1rem clamp(0.8rem, 2.5vw, 1.6rem) 1.3rem;
+}
+
+.edition-lightbox-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.edition-lightbox-count {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+}
+
+.edition-lightbox-btn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.4rem 0.8rem;
+  border: var(--ed-hair);
+  background: transparent;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.edition-lightbox-stage {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.edition-lightbox-platewrap {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.edition-lightbox-img {
+  max-width: 100%;
+  max-height: min(62vh, 640px);
+  object-fit: contain;
+  border: var(--ed-hair);
+}
+
+.edition-lightbox-card {
+  max-width: 56ch;
+}
+
+.edition-lightbox-shown {
+  margin: 0.5rem 0 0.4rem;
+  font-size: var(--type-body-s, 0.9rem);
+  line-height: 1.6;
+}
+
+.edition-lightbox-quality {
+  margin: 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: var(--mock-type-0, 1rem);
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .edition-gallery-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .edition-lightbox-nav {
+    display: none;
+  }
+  .edition-lightbox-stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

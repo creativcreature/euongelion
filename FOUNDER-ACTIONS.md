@@ -64,9 +64,13 @@ Work list, verbatim intent, in progress:
    image archive should be showcased.
 8. **Comic strip (already pinned above):** real multi-panel strip; waiting on
    the founder's ChatGPT cartoon → `content/strip-reference/`.
-9. **~30 modules a day on Daily Bread; interactives broken up** across the
-   page, not clustered. New kinds: redletter, proverb, verse, archive, b365,
-   voices, question. (Needs the 2026-08-19b SQL paste.)
-10. **Audio on the Daily Bread devotional** — Voicebox only, never ElevenLabs.
-    15 rotation slugs missing audio (provision/truth/hope) render tonight.
+9. **~30 modules a day — BUILT, needs your paste.** Open
+   https://supabase.com/dashboard/project/ovivwbopjfruikehrlgm/sql/new and
+   paste BOTH `database/APPLY-NOW-2026-08-19.sql` and
+   `database/APPLY-NOW-2026-08-19b.sql` (safe, additive). Then run:
+   `npm run edition:build -- --days=31 --from=2026-08-19`
+   Seven new sections light up (redletter, proverb, memory verse, archive,
+   bible-365, voices, question) — everything else already works without it.
+10. ~~Audio on the Daily Bread devotional~~ — DONE. 15/15 rendered via
+    Voicebox (provision/truth/hope), chapters measured, player mounted.
 11. **Container rule:** no content breaks its container on any page touched.

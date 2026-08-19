@@ -1,6 +1,6 @@
 # Terms of Service
 
-**Last Updated:** January 18, 2026
+**Last Updated:** August 19, 2026
 **Effective Date:** January 18, 2026
 
 ## Agreement to Terms
@@ -225,7 +225,7 @@ These Terms are governed by the laws of [Jurisdiction to be specified], without 
 
 ### Informal Resolution
 
-Before filing a formal dispute, you agree to attempt informal resolution by contacting us at legal@euangelion.com.
+Before filing a formal dispute, you agree to attempt informal resolution by contacting us at legal@euangelion.app.
 
 ### Arbitration
 
@@ -271,7 +271,7 @@ Continued use after changes constitutes acceptance of the new Terms.
 
 For questions about these Terms, please contact us:
 
-- **Email:** legal@euangelion.com
-- **Support:** support@euangelion.com
+- **Email:** legal@euangelion.app
+- **Support:** support@euangelion.app
 
 Thank you for using EUANGELION. We pray that our Service supports your spiritual journey.

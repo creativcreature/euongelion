@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import '../../design-system/typography-craft.css';
+@import '../../design-system/edition-scroll-motion.css';
 
 /* ============================================
    Audit batch 2026-05-13 — token additions + utilities
@@ -4154,6 +4155,29 @@ html.reduce-motion *::after {
   --mock-h-faq: 170px;
   --mock-h-cta: 368px;
   --mock-h-bottom-brand: 230px;
+  /* ── The unified type scale (SA-092) ─────────────────────────────
+     ONE ladder, ten rungs. The founder's ruling 2026-08-19: "typographic
+     hiearchy is allover the place. I need a unified system that works
+     across the board, is according to best standindards, and is beautiful."
+     Above the body: the existing fluid mock-type ramp (unchanged — it is
+     good). Below the body: three fixed label steps that replace the ~20
+     stray hard-coded rem values that had accumulated (0.53…0.72rem all
+     collapse onto these three). Any font-size in this stylesheet that is
+     not one of these tokens is a defect.
+       --type-micro   tiny furniture: folio numbers, cell numbers
+       --type-label   kickers, bylines, buttons, uppercase UI labels
+       --type-meta    notes, citations, timestamps, small running text
+       --type-body-s  secondary prose: briefs, captions, list bodies
+       --mock-type-0  body
+       --mock-type-1  lead body / standfirsts
+       --mock-type-2  section heads / card titles
+       --mock-type-3  page + feature headlines
+       --mock-type-4  display
+       --mock-type-masthead  the wordmark, nothing else            */
+  --type-micro: 0.56rem;
+  --type-label: 0.64rem;
+  --type-meta: 0.72rem;
+  --type-body-s: 0.9rem;
   --mock-type-0: clamp(0.98rem, 0.84vw, 1.12rem);
   --mock-type-1: clamp(1.08rem, 0.98vw, 1.24rem);
   --mock-type-2: clamp(1.26rem, 1.2vw, 1.58rem);
@@ -8070,7 +8094,7 @@ body:not(.rhythm-enabled) .rhythm-block-image {
 }
 
 .today-headline {
-  font-size: clamp(2rem, 3.5vw, 3.6rem);
+  font-size: var(--mock-type-3);
   line-height: 1;
   margin: 0.2rem 0 0;
 }
@@ -12856,7 +12880,7 @@ html[data-held-moment] .mobile-tab-bar {
   gap: 0.4rem 1.2rem;
   margin-top: 0.55rem;
   font-family: var(--font-family-ui);
-  font-size: 0.58rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -12882,7 +12906,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-kicker,
 .edition-byline {
   font-family: var(--font-family-ui);
-  font-size: 0.56rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.17em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -12892,7 +12916,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-lead-head {
   margin: 0.3rem 0 0;
   font-family: var(--font-family-serif);
-  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  font-size: var(--mock-type-3);
   line-height: 0.99;
   letter-spacing: -0.022em;
   text-wrap: balance;
@@ -12912,7 +12936,7 @@ html[data-held-moment] .mobile-tab-bar {
   display: inline-block;
   margin-top: 0.7rem;
   font-family: var(--font-family-ui);
-  font-size: 0.58rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mock-ink);
@@ -12930,7 +12954,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-rail-head,
 .edition-section-head {
   font-family: var(--font-family-ui);
-  font-size: 0.58rem;
+  font-size: var(--type-meta);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--mock-ink);
@@ -12950,14 +12974,14 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-brief-head {
   display: block;
   font-family: var(--font-family-serif);
-  font-size: 1.02rem;
+  font-size: var(--mock-type-0);
   line-height: 1.12;
 }
 
 .edition-brief-body {
   display: block;
   font-family: var(--font-family-serif);
-  font-size: 0.83rem;
+  font-size: var(--type-body-s);
   line-height: 1.3;
   color: var(--mock-muted);
   margin-top: 0.12rem;
@@ -12967,7 +12991,7 @@ html[data-held-moment] .mobile-tab-bar {
   display: inline-block;
   margin-top: 0.6rem;
   font-family: var(--font-family-ui);
-  font-size: 0.56rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -13009,7 +13033,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-item-head {
   margin: 0;
   font-family: var(--font-family-serif);
-  font-size: 1.1rem;
+  font-size: var(--mock-type-1);
   line-height: 1.1;
   color: var(--mock-ink);
 }
@@ -13018,7 +13042,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-item-source {
   margin: 0.2rem 0 0;
   font-family: var(--font-family-ui);
-  font-size: 0.53rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -13027,7 +13051,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-item-body {
   margin: 0.3rem 0 0;
   font-family: var(--font-family-serif);
-  font-size: 0.9rem;
+  font-size: var(--type-body-s);
   line-height: 1.36;
   color: var(--mock-ink);
 }
@@ -13049,14 +13073,14 @@ html[data-held-moment] .mobile-tab-bar {
 
 .edition-prayer-text {
   font-family: var(--font-family-serif);
-  font-size: var(--mock-type-0);
+  font-size: var(--mock-type-1);
   color: var(--mock-ink);
 }
 
 .edition-prayer-from {
   flex: 0 0 auto;
   font-family: var(--font-family-ui);
-  font-size: 0.53rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -13110,7 +13134,7 @@ html[data-held-moment] .mobile-tab-bar {
 .fp-desk-name {
   font-family: var(--font-industry), system-ui, sans-serif;
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: var(--type-body-s);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mock-ink);
@@ -13126,7 +13150,7 @@ html[data-held-moment] .mobile-tab-bar {
 
 .fp-desk-count {
   font-family: var(--font-industry), system-ui, sans-serif;
-  font-size: 0.68rem;
+  font-size: var(--type-label);
   letter-spacing: 0.1em;
   color: var(--mock-muted);
   font-variant-numeric: tabular-nums;
@@ -13136,7 +13160,7 @@ html[data-held-moment] .mobile-tab-bar {
   margin: 0.4rem 0 1.05rem;
   font-family: var(--font-instrument-serif), Georgia, serif;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: var(--type-body-s);
   color: var(--mock-muted);
 }
 
@@ -13189,7 +13213,7 @@ html[data-held-moment] .mobile-tab-bar {
 
 .fp-desk-lede-stand {
   font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 0.98rem;
+  font-size: var(--mock-type-0);
   line-height: 1.4;
   color: var(--mock-muted);
 }
@@ -13225,7 +13249,7 @@ html[data-held-moment] .mobile-tab-bar {
 
 .fp-desk-item-head {
   font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 1rem;
+  font-size: var(--mock-type-0);
   line-height: 1.15;
   text-wrap: balance;
 }
@@ -13366,7 +13390,7 @@ html[data-held-moment] .mobile-tab-bar {
   margin: 0.55rem 0 0;
   font-family: var(--font-instrument-serif), Georgia, serif;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: var(--type-body-s);
   line-height: 1.45;
   color: var(--mock-muted);
 }
@@ -13375,7 +13399,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-word-ref {
   margin: 0.75rem 0 0;
   font-family: var(--font-family-ui);
-  font-size: 0.58rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -13383,7 +13407,7 @@ html[data-held-moment] .mobile-tab-bar {
 
 .edition-word-original {
   margin: 0.5rem 0 0;
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-size: var(--mock-type-3);
   line-height: 1;
   color: var(--mock-ink);
 }
@@ -13392,14 +13416,14 @@ html[data-held-moment] .mobile-tab-bar {
   margin: 0.2rem 0 0;
   font-family: var(--font-instrument-serif), Georgia, serif;
   font-style: italic;
-  font-size: 1.02rem;
+  font-size: var(--mock-type-0);
   color: var(--mock-muted);
 }
 
 .edition-word-gloss {
   margin: 0.5rem 0 0;
   font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 1rem;
+  font-size: var(--mock-type-0);
   line-height: 1.35;
   color: var(--mock-ink);
 }
@@ -13407,7 +13431,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-word-note {
   margin: 0.45rem 0 0;
   font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 0.92rem;
+  font-size: var(--type-body-s);
   line-height: 1.45;
   color: var(--mock-muted);
 }
@@ -13435,7 +13459,7 @@ html[data-held-moment] .mobile-tab-bar {
   margin: 0;
   font-family: var(--font-instrument-serif), Georgia, serif;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: var(--type-body-s);
   color: var(--mock-muted);
 }
 
@@ -13473,7 +13497,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-guide-kicker {
   margin: 0;
   font-family: var(--font-family-ui);
-  font-size: 0.56rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-crimson);
@@ -13482,7 +13506,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-guide-head {
   margin: 0.3rem 0 0;
   font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 1.22rem;
+  font-size: var(--mock-type-1);
   line-height: 1.14;
   color: var(--mock-ink);
   text-wrap: balance;
@@ -13491,7 +13515,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-guide-stand {
   margin: 0.4rem 0 0;
   font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 0.94rem;
+  font-size: var(--type-body-s);
   line-height: 1.4;
   color: var(--mock-muted);
 }
@@ -13506,7 +13530,7 @@ html[data-held-moment] .mobile-tab-bar {
   flex-direction: column;
   gap: 0.32rem;
   font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 0.92rem;
+  font-size: var(--type-body-s);
   line-height: 1.35;
   color: var(--mock-ink);
 }
@@ -13520,7 +13544,7 @@ html[data-held-moment] .mobile-tab-bar {
 .edition-guide-time {
   margin: 0.7rem 0 0;
   font-family: var(--font-family-ui);
-  font-size: 0.56rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -13551,7 +13575,7 @@ html[data-held-moment] .mobile-tab-bar {
 
 .edition-panel-title {
   font-family: var(--font-family-ui);
-  font-size: 0.58rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -13581,7 +13605,7 @@ html[data-held-moment] .mobile-tab-bar {
   align-items: flex-start;
   gap: 0.1rem;
   font-family: var(--font-instrument-serif), Georgia, serif;
-  font-size: 1rem;
+  font-size: var(--mock-type-0);
   line-height: 1.4;
   color: var(--mock-ink);
   padding-top: 0.9rem;
@@ -13676,6 +13700,10 @@ html[data-held-moment] .mobile-tab-bar {
   border-right: var(--ed-hair);
   border-bottom: var(--ed-hair);
   min-width: 0;
+  /* CONTAINER RULE: nothing inside a compartment may widen the sheet. Long
+     references, URLs and original-language words wrap; anything intrinsically
+     wide (grids, tables) must scroll inside its own box, never the page. */
+  overflow-wrap: break-word;
 }
 
 /* A compartment that takes the full measure. */
@@ -13752,7 +13780,7 @@ html[data-held-moment] .mobile-tab-bar {
   margin-top: 1rem;
   text-align: right;
   font-family: var(--font-family-ui);
-  font-size: 0.56rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -13896,7 +13924,7 @@ html[data-held-moment] .mobile-tab-bar {
 
 .preview-kicker {
   font-family: var(--font-family-ui);
-  font-size: 0.56rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--mock-muted);
@@ -13911,7 +13939,7 @@ html[data-held-moment] .mobile-tab-bar {
 
 .preview-summary {
   font-family: var(--font-family-serif);
-  font-size: 1rem;
+  font-size: var(--mock-type-0);
   line-height: 1.45;
   color: var(--mock-muted);
   /* The summary is capped at three whole sentences in the component, so there
@@ -13922,7 +13950,7 @@ html[data-held-moment] .mobile-tab-bar {
 .preview-more {
   margin-top: 0.15rem;
   font-family: var(--font-family-ui);
-  font-size: 0.56rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-crimson);
@@ -14155,7 +14183,7 @@ html[data-held-moment] .mobile-tab-bar {
   padding-bottom: 0.3rem;
   border-bottom: 2px solid currentColor;
   font-family: var(--font-family-ui);
-  font-size: 0.6rem;
+  font-size: var(--type-label);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -14230,7 +14258,7 @@ html[data-held-moment] .mobile-tab-bar {
   align-items: center;
   min-height: 2.9rem;
   padding: 0 1rem;
-  font-size: 0.72rem;
+  font-size: var(--type-meta);
   letter-spacing: 0.14em;
   border-bottom: var(--mock-stroke, 1px) solid
     color-mix(in srgb, var(--mock-line) 45%, transparent);
@@ -14521,7 +14549,7 @@ blockquote.font-reading {
   background: none;
   border: 0;
   padding: 0.5rem 0 0.3rem;
-  font-size: 0.6rem;
+  font-size: var(--type-label);
   letter-spacing: 0.14em;
   color: inherit;
   opacity: 0.55;
@@ -14549,7 +14577,7 @@ blockquote.font-reading {
   background: transparent;
   color: inherit;
   font-family: var(--font-family-serif);
-  font-size: 0.9rem;
+  font-size: var(--type-body-s);
   line-height: 1.2;
   text-align: left;
   cursor: pointer;
@@ -14661,7 +14689,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 
 .global-search-filter {
   font-family: var(--font-family-ui);
-  font-size: 0.6rem;
+  font-size: var(--type-label);
   letter-spacing: var(--track-label, 0.04em);
   text-transform: uppercase;
   min-height: 30px;
@@ -14723,13 +14751,13 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .edition-season-name {
   margin: 0.45rem 0 0.3rem;
   font-family: var(--font-family-serif, Georgia, serif);
-  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+  font-size: var(--mock-type-2);
   line-height: 1.1;
 }
 
 .edition-season-note {
   margin: 0;
-  font-size: 0.86rem;
+  font-size: var(--type-body-s);
   line-height: 1.5;
   color: var(--mock-muted, currentColor);
   max-width: 34ch;
@@ -14751,7 +14779,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .edition-prayer-cite {
   margin: 0;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.62rem;
+  font-size: var(--type-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--mock-muted, currentColor);
@@ -14785,7 +14813,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .edition-strip-title {
   flex: none;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.62rem;
+  font-size: var(--type-label);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -14793,7 +14821,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .edition-strip-line {
   font-family: var(--font-family-serif, Georgia, serif);
   font-style: italic;
-  font-size: 1rem;
+  font-size: var(--mock-type-0);
   line-height: 1.4;
 }
 
@@ -14830,20 +14858,20 @@ html[data-reading-measure='wide'] .vw-body-lg {
 
 .edition-gallery-title {
   font-family: var(--font-family-serif, Georgia, serif);
-  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  font-size: var(--mock-type-2);
   line-height: 1.15;
 }
 
 .edition-gallery-artist {
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.62rem;
+  font-size: var(--type-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--mock-muted, currentColor);
 }
 
 .edition-gallery-looking {
-  font-size: 0.9rem;
+  font-size: var(--type-body-s);
   line-height: 1.55;
   max-width: 38ch;
 }
@@ -14892,7 +14920,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 
 .edition-screening-kind {
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.56rem;
+  font-size: var(--type-micro);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--mock-muted, currentColor);
@@ -14900,12 +14928,12 @@ html[data-reading-measure='wide'] .vw-body-lg {
 
 .edition-screening-title {
   font-family: var(--font-family-serif, Georgia, serif);
-  font-size: 1.05rem;
+  font-size: var(--mock-type-1);
   line-height: 1.3;
 }
 
 .edition-screening-blurb {
-  font-size: 0.84rem;
+  font-size: var(--type-body-s);
   line-height: 1.5;
   color: var(--mock-muted, currentColor);
 }
@@ -14913,7 +14941,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .edition-screening-source {
   margin-top: auto;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.62rem;
+  font-size: var(--type-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -14923,7 +14951,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .edition-witness-name {
   margin: 0.8rem 0 0.35rem;
   font-family: var(--font-family-serif, Georgia, serif);
-  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-size: var(--mock-type-2);
 }
 
 .edition-witness-year {
@@ -14933,7 +14961,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 
 .edition-witness-body {
   margin: 0 0 0.5rem;
-  font-size: 0.92rem;
+  font-size: var(--type-body-s);
   line-height: 1.55;
   max-width: 52ch;
 }
@@ -14941,7 +14969,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .edition-witness-source {
   margin: 0;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.6rem;
+  font-size: var(--type-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--mock-muted, currentColor);
@@ -14959,14 +14987,14 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .edition-broken-head {
   margin: 0 0 0.3rem;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.72rem;
+  font-size: var(--type-meta);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .edition-broken-body {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: var(--type-body-s);
   color: var(--mock-muted, currentColor);
 }
 
@@ -14976,7 +15004,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
   min-height: 3.2rem;
   margin: 0.9rem 0;
   font-family: var(--font-family-serif, Georgia, serif);
-  font-size: 1.1rem;
+  font-size: var(--mock-type-1);
   line-height: 1.6;
 }
 
@@ -14985,7 +15013,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 }
 
 .puzzle-built-empty {
-  font-size: 0.86rem;
+  font-size: var(--type-body-s);
   font-family: var(--font-family-ui, system-ui), sans-serif;
   color: var(--mock-muted, currentColor);
 }
@@ -14994,6 +15022,18 @@ html[data-reading-measure='wide'] .vw-body-lg {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  /* CONTAINER RULE (founder 2026-08-19): the word bank was the page's one
+     overflow — long verses in narrow columns pushed past the compartment.
+     min-width: 0 lets the flex container shrink inside its grid track, and
+     the buttons themselves may break long words rather than the page. */
+  min-width: 0;
+  max-width: 100%;
+}
+
+.puzzle-word-btn,
+.puzzle-built {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .puzzle-word-btn {
@@ -15002,7 +15042,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
   border: var(--ed-hair);
   background: transparent;
   font-family: var(--font-family-serif, Georgia, serif);
-  font-size: 1rem;
+  font-size: var(--mock-type-0);
   cursor: pointer;
 }
 
@@ -15027,7 +15067,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .puzzle-score {
   margin: 1rem 0 0;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.72rem;
+  font-size: var(--type-meta);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -15045,7 +15085,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
   padding: 0;
   border: 0;
   font-family: var(--font-family-serif, Georgia, serif);
-  font-size: 1.08rem;
+  font-size: var(--mock-type-0);
   font-style: italic;
   line-height: 1.5;
 }
@@ -15062,7 +15102,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
   border: var(--ed-hair);
   background: transparent;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.82rem;
+  font-size: var(--type-body-s);
   text-align: left;
   cursor: pointer;
 }
@@ -15086,13 +15126,13 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .puzzle-cw-cluebar {
   min-height: 2.4rem;
   margin: 0.9rem 0 0.7rem;
-  font-size: 0.92rem;
+  font-size: var(--type-body-s);
   line-height: 1.45;
 }
 
 .puzzle-cw-cluenum {
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.62rem;
+  font-size: var(--type-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -15173,7 +15213,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
   border: var(--ed-hair);
   background: transparent;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.66rem;
+  font-size: var(--type-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
@@ -15185,7 +15225,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 
 .puzzle-cw-cluelists summary {
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.66rem;
+  font-size: var(--type-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
@@ -15201,7 +15241,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .puzzle-cw-listhead {
   margin: 0 0 0.4rem;
   font-family: var(--font-family-ui, system-ui), sans-serif;
-  font-size: 0.6rem;
+  font-size: var(--type-label);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -15209,7 +15249,7 @@ html[data-reading-measure='wide'] .vw-body-lg {
 .puzzle-cw-cluecols ol {
   margin: 0;
   padding-left: 1.4rem;
-  font-size: 0.84rem;
+  font-size: var(--type-body-s);
   line-height: 1.55;
 }
 
@@ -15237,12 +15277,39 @@ html[data-reading-measure='wide'] .vw-body-lg {
   grid-column: span 1;
 }
 
-/* Puzzles: crossword takes two columns, the word games stack in the third. */
+/* Puzzles, broken up by content (SA-092): the crossword shares its row with
+   the proverb column; the word games share theirs with the Voices column. */
 .paper-box--crossword {
   grid-column: span 2;
 }
 
 .paper-box--wordgames {
+  grid-column: span 1;
+}
+
+/* SA-092 rows. Each pair is a span-2 beside a span-1; each member falls back
+   to --wide in the page markup when its partner is absent. */
+.paper-box--proverb {
+  grid-column: span 1;
+}
+
+.paper-box--voices {
+  grid-column: span 2;
+}
+
+.paper-box--archive {
+  grid-column: span 2;
+}
+
+.paper-box--b365 {
+  grid-column: span 1;
+}
+
+.paper-box--verse {
+  grid-column: span 2;
+}
+
+.paper-box--question {
   grid-column: span 1;
 }
 
@@ -15252,7 +15319,13 @@ html[data-reading-measure='wide'] .vw-body-lg {
   .paper-box--gallery,
   .paper-box--prayercol,
   .paper-box--crossword,
-  .paper-box--wordgames {
+  .paper-box--wordgames,
+  .paper-box--proverb,
+  .paper-box--voices,
+  .paper-box--archive,
+  .paper-box--b365,
+  .paper-box--verse,
+  .paper-box--question {
     grid-column: span 1;
   }
 
@@ -15302,4 +15375,581 @@ html[data-reading-measure='wide'] .vw-body-lg {
 
 .edition-lead-img {
   object-fit: cover;
+}
+
+/* ── Biblical verse annotation in the daily prayer (SA-092) ───────────── */
+
+.edition-verse-num {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-style: normal;
+  font-size: 0.58em;
+  letter-spacing: 0;
+  margin-right: 0.28em;
+  color: var(--mock-muted, currentColor);
+  /* superscripts must not open the leading — line-height 0 keeps the grid */
+  line-height: 0;
+}
+
+/* ═══ Author pages — the masthead's two names (SA-089 follow-on) ══════════
+   One page per colophon credit. Same furniture as the paper: --ed-hair
+   rules, industry caps for labels, serif for anything meant to be read.
+   The "portrait" is an author MARK — an audit-clean plate from the print
+   archive — captioned so it never claims to be a likeness. */
+
+.author-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 1.8rem;
+  align-items: start;
+}
+
+.author-mark {
+  margin: 0;
+  min-width: 0;
+}
+
+.author-mark-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: var(--ed-hair);
+  background: var(--mock-paper, transparent);
+}
+
+.author-mark-img {
+  object-fit: contain;
+}
+
+.author-mark-caption {
+  margin-top: 0.5rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+  overflow-wrap: break-word;
+}
+
+.author-bio {
+  min-width: 0;
+}
+
+.author-bio-p {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: var(--mock-type-0);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.author-bio-p:last-child {
+  margin-bottom: 0;
+}
+
+.author-appearances-section {
+  margin: 2.2rem 0 3rem;
+}
+
+.author-appearances {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.author-appearance {
+  min-width: 0;
+}
+
+.author-appearance + .author-appearance {
+  border-top: var(--ed-hair);
+}
+
+.author-appearance-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.9rem 0;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.author-appearance-label {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+.author-appearance-desc {
+  font-size: var(--type-body-s);
+  line-height: 1.55;
+  color: var(--mock-muted, currentColor);
+  max-width: 52ch;
+  overflow-wrap: break-word;
+}
+
+/* The colophon's byline names, now links to their author pages. Dotted so
+   the credit still reads as a credit, not a button. (No ::after here — the
+   EditorialMotionSystem owns ::after on every .mock-paper link.) */
+.author-colophon-name-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .author-page-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.4rem;
+  }
+}
+
+/* ── How to read — the guide pages (/guides, /guides/[slug]) ──────────────
+   The Daily Bread's guide cards lead here (founder 2026-08-18: the teasers
+   "need to lead to more robust pages that explain the section in more
+   detail"). Same furniture as the paper — hairline rules, industry caps for
+   labels, serif for anything meant to be read — at a single reading measure.
+
+   Container rule (founder): no content breaks its container. The column caps
+   its measure, every grid child gets min-width: 0, and prose wraps. */
+
+.guide-page {
+  max-width: 46rem;
+  margin: 2.2rem auto 0;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  min-width: 0;
+}
+
+.guide-page-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  /* Fill images add no height — without the ratio this hero collapses to
+     46rem x 0 (same trap as .edition-guide-plate, found 2026-08-16). */
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--plate-ground);
+  border: var(--ed-hair);
+  margin-bottom: 1.4rem;
+}
+
+.guide-page-head {
+  margin: 0 0 1.8rem;
+}
+
+.guide-page-kicker-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.guide-page-kicker-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.guide-page-title {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(1.9rem, 4.6vw, 2.9rem);
+  line-height: 1.08;
+  color: var(--mock-ink);
+  text-wrap: balance;
+}
+
+.guide-page-stand {
+  margin: 0.7rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.45;
+  color: var(--mock-muted);
+}
+
+.guide-page-meta {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-family-ui);
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
+/* The essay — the reading column proper. */
+.guide-page-essay {
+  border-top: var(--ed-hair);
+  padding-top: 1.4rem;
+}
+
+.guide-page-essay p {
+  margin: 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.62;
+  color: var(--mock-ink);
+  overflow-wrap: break-word;
+}
+
+.guide-page-essay p + p {
+  margin-top: 1em;
+}
+
+.guide-page-section {
+  margin-top: 2.4rem;
+  min-width: 0;
+}
+
+/* Steps — the card's numbered idiom, given room to explain itself. */
+.guide-page-steps {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: decimal;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.guide-page-steps li {
+  min-width: 0;
+}
+
+.guide-page-steps li::marker {
+  color: var(--color-crimson);
+  font-family: var(--font-family-ui);
+  font-size: 0.78em;
+}
+
+.guide-page-step-lead {
+  margin: 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.4;
+  color: var(--mock-ink);
+  overflow-wrap: break-word;
+}
+
+.guide-page-step-how {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--mock-muted);
+  overflow-wrap: break-word;
+}
+
+/* Mistakes and go-deeper — ruled entries, the paper's list idiom. */
+.guide-page-mistakes,
+.guide-page-deeper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guide-page-mistakes li,
+.guide-page-deeper li {
+  padding: 0.9rem 0;
+  border-bottom: var(--ed-hair);
+  min-width: 0;
+}
+
+.guide-page-mistakes li:last-child,
+.guide-page-deeper li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.guide-page-mistake-name {
+  margin: 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--mock-ink);
+  overflow-wrap: break-word;
+}
+
+.guide-page-mistake-body,
+.guide-page-deeper-why {
+  margin: 0.3rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 0.96rem;
+  line-height: 1.5;
+  color: var(--mock-muted);
+  overflow-wrap: break-word;
+}
+
+.guide-page-deeper-ref {
+  margin: 0;
+  font-family: var(--font-family-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-ink);
+  overflow-wrap: break-word;
+}
+
+.guide-page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem 1.4rem;
+  margin-top: 2.6rem;
+  padding-top: 1rem;
+  border-top: var(--ed-hair);
+}
+
+.guide-page-footer > * {
+  min-width: 0;
+}
+
+/* The index — the whole shelf, in the paper's card language. */
+.guides-index-head {
+  max-width: 46rem;
+  margin: 2.2rem auto 0;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  min-width: 0;
+}
+
+.guides-index-title {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(2.1rem, 5.4vw, 3.4rem);
+  line-height: 1.05;
+  color: var(--mock-ink);
+  text-wrap: balance;
+}
+
+.guides-index-dek {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--mock-muted);
+}
+
+.guides-index-grid {
+  max-width: 78rem;
+  margin: 2.2rem auto 0;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.4rem 1.9rem;
+}
+
+.guides-index-grid > * {
+  min-width: 0;
+}
+
+.guide-card-titlelink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.guide-card-titlelink:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.guides-index-foot {
+  max-width: 78rem;
+  margin: 2.4rem auto 0;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+
+@media (max-width: 900px) {
+  .guides-index-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .guide-page-footer {
+    flex-direction: column;
+  }
+}
+
+/* ── SA-092 — the paper grows to ~30 modules a day ──────────────────────
+   Content styles for the seven new compartments. Same vocabulary as the
+   rest of the sheet: serif for quoted text, UI caps for citations, --ed-hair
+   for any internal rule. CONTAINER RULE: every quote wraps (overflow-wrap
+   on .paper-box already applies); the archive plate carries an explicit
+   aspect-ratio so the fill image cannot collapse; nothing here may widen
+   the sheet. */
+
+/* The red letters — a saying of Jesus, set large across the full measure. */
+.edition-redletter-text {
+  margin: 1.1rem 0 0.6rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: clamp(1.15rem, 2.6vw, 1.55rem);
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  max-width: 62ch;
+}
+
+.edition-redletter-cite,
+.edition-proverb-cite,
+.edition-verse-cite,
+.edition-voices-source {
+  margin: 0;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+}
+
+.edition-voices-source cite {
+  font-style: normal;
+}
+
+/* The proverb — a two-line saying in the third column. */
+.edition-proverb-text {
+  margin: 1.1rem 0 0.6rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.55;
+  font-style: italic;
+  overflow-wrap: break-word;
+}
+
+/* Voices — a historic paragraph; body size, it is prose not display. */
+.edition-voices-quote {
+  margin: 1.1rem 0 0.6rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  max-width: 62ch;
+}
+
+/* From the archive — a brief with a plate, the rail idiom at row scale. */
+.edition-archive-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 1.1rem;
+  margin-top: 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.edition-archive-item > * {
+  min-width: 0;
+}
+
+.edition-archive-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: var(--ed-hair);
+}
+
+.edition-archive-img {
+  object-fit: cover;
+}
+
+.edition-archive-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.edition-archive-head {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: var(--mock-type-2);
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+.edition-archive-item:hover .edition-archive-head {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.edition-archive-teaser {
+  font-size: var(--type-body-s);
+  line-height: 1.55;
+  color: var(--mock-muted, currentColor);
+  overflow-wrap: break-word;
+  max-width: 52ch;
+}
+
+.edition-archive-more,
+.edition-b365-more {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+}
+
+.edition-b365-more {
+  display: inline-block;
+  margin-top: 0.6rem;
+}
+
+.edition-archive-more:hover,
+.edition-b365-more:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+/* Bible in a year — the pointer into the plan, one column. */
+.edition-b365-ref {
+  margin: 1rem 0 0.25rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+  overflow-wrap: break-word;
+}
+
+.edition-b365-title {
+  margin: 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: var(--mock-type-2);
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+/* The memory verse — the week's verse, set to be re-read. */
+.edition-verse-text {
+  margin: 1.1rem 0 0.6rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.55;
+  overflow-wrap: break-word;
+  max-width: 62ch;
+}
+
+/* The question — one line, room to sit with it. */
+.edition-question-text {
+  margin: 1rem 0 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: var(--mock-type-1);
+  line-height: 1.55;
+  font-style: italic;
+  overflow-wrap: break-word;
+  max-width: 40ch;
+}
+
+@media (max-width: 900px) {
+  .edition-archive-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

@@ -17,7 +17,7 @@ const FAQ_ITEMS: HelpFaq[] = [
     category: 'Getting Started',
     question: 'Do I need to sign up first?',
     answer:
-      'No. You can run a Soul Audit and preview options first. Sign in is required when you save progress, highlights, notes, or chat.',
+      'No. You can run a Soul Audit, preview options, and read everything first. Sign in is required to save bookmarks, highlights, notes, and synced reading progress.',
   },
   {
     category: 'Soul Audit',
@@ -35,13 +35,13 @@ const FAQ_ITEMS: HelpFaq[] = [
     category: 'Daily Bread',
     question: 'What is Daily Bread?',
     answer:
-      'Daily Bread is your devotional home after activation. It centralizes active day, archive, bookmarks, highlights, notes, and chat history.',
+      'The Daily Bread is the daily edition: a front-page reading from the catalog each day (with a genuinely new Sunday feature), plus a daily practice, a Greek or Hebrew word of the day, a prayer printed straight from Scripture, puzzles, and The Gallery. Your saved things live in the Library.',
   },
   {
     category: 'Daily Bread',
     question: 'How do I replay the onboarding tutorial?',
     answer:
-      'Open Daily Bread and select “Replay Tutorial,” or use the replay link in Settings.',
+      'Open Settings and use the Tutorial section (Settings → Tutorial). The walkthrough link at the top of this page goes straight there.',
   },
   {
     category: 'Account',

@@ -68,7 +68,10 @@ def work_list(only=None, shard=None):
             dev = json.load(open(os.path.join(DEVOTIONALS, path)))
         except Exception:
             continue
-        if not dev.get("modules"):
+        # SA-092: panels-format (Wake-Up legacy) devotionals render too — the
+        # extractor mirrors buildPanelSegments since 2026-08-19. Only a
+        # devotional with NEITHER format has nothing to speak.
+        if not dev.get("modules") and not dev.get("panels"):
             continue
         # Skip only when the rendered audio still says what the page says.
         # A track published before textHash existed has None recorded, so it

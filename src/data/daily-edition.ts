@@ -153,6 +153,11 @@ export const PRACTICES: Practice[] = [
 /* ── How to read — practical guides ───────────────────────────────────── */
 
 export interface Guide {
+  /**
+   * Stable kebab-case id — the /guides/[slug] route segment. The full essay
+   * for each guide lives in src/data/guide-essays.ts, keyed by this slug.
+   */
+  slug: string
   /** Section kicker: what kind of guide this is. */
   kicker: 'Method' | 'Practice' | 'Tools' | 'Getting started'
   title: string
@@ -189,6 +194,7 @@ export interface Guide {
  */
 export const GUIDES: Guide[] = [
   {
+    slug: 'read-a-whole-book',
     kicker: 'Getting started',
     title: 'Read a whole book before you read a single verse',
     standfirst:
@@ -204,6 +210,7 @@ export const GUIDES: Guide[] = [
     minutes: '20–40 min',
   },
   {
+    slug: 'who-is-speaking',
     kicker: 'Method',
     title: 'Ask who is speaking, and who is being spoken to',
     standfirst:
@@ -219,6 +226,7 @@ export const GUIDES: Guide[] = [
     minutes: '10 min',
   },
   {
+    slug: 'scripture-interprets-scripture',
     kicker: 'Method',
     title: 'Let scripture interpret scripture',
     standfirst:
@@ -234,6 +242,7 @@ export const GUIDES: Guide[] = [
     minutes: '15 min',
   },
   {
+    slug: 'lectio-divina',
     kicker: 'Practice',
     title: 'Lectio divina, in four passes',
     standfirst:
@@ -249,6 +258,7 @@ export const GUIDES: Guide[] = [
     minutes: '8 min',
   },
   {
+    slug: 'word-roots',
     kicker: 'Tools',
     title: 'Take one word down to its root',
     standfirst:
@@ -264,6 +274,7 @@ export const GUIDES: Guide[] = [
     minutes: '20 min',
   },
   {
+    slug: 'read-together',
     kicker: 'Practice',
     title: 'Read it with one other person',
     standfirst:

@@ -263,6 +263,9 @@ export async function generatePrayer(
     translation: 'BSB',
     text: result.text,
     prayedBy: entry.prayedBy,
+    // Proper biblical annotation (founder, 2026-08-19): each verse keeps its
+    // number, straight from the corpus — the page sets them as superscripts.
+    verses: result.verses.map((v) => ({ v: v.verse, text: v.text })),
   }
 
   return [
