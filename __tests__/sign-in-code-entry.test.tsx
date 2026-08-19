@@ -223,17 +223,33 @@ describe('sign-in in-app code entry', () => {
     // 6 now, but being liberal in what we accept means the next change to it is
     // not an outage.
     const { calls } = installFetchMock()
-    const user = userEvent.setup()
-    render(<SignInPage />)
-    await sendMagicLink(user)
+    const assignSpy = vi.fn()
+    const originalLocation = window.location
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: { ...originalLocation, assign: assignSpy },
+    })
 
-    await user.type(
-      screen.getByRole('textbox', { name: 'Sign-in code from your email' }),
-      '12345678',
-    )
-    await user.click(screen.getByRole('button', { name: 'Verify Code' }))
+    try {
+      const user = userEvent.setup()
+      render(<SignInPage />)
+      await sendMagicLink(user)
 
-    // It reached the network instead of being refused locally.
-    expect(calls.some((c) => c.url.includes('verify-code'))).toBe(true)
+      await user.type(
+        screen.getByRole('textbox', { name: 'Sign-in code from your email' }),
+        '12345678',
+      )
+      await user.click(screen.getByRole('button', { name: 'Verify Code' }))
+
+      // It reached the network instead of being refused locally.
+      await waitFor(() => {
+        expect(calls.some((c) => c.url.includes('verify-code'))).toBe(true)
+      })
+    } finally {
+      Object.defineProperty(window, 'location', {
+        configurable: true,
+        value: originalLocation,
+      })
+    }
   })
 })

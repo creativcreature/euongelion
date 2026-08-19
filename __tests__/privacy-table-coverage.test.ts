@@ -17,7 +17,8 @@
  * cascade and forgets the export, which no runtime test would catch.
  */
 import { describe, expect, it } from 'vitest'
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync, statSync } from 'node:fs'
+import { join } from 'node:path'
 
 const DELETION = 'src/lib/privacy/account-deletion.ts'
 const EXPORT = 'src/lib/privacy/data-export.ts'
@@ -96,5 +97,98 @@ describe('privacy table coverage', () => {
     // file exists to prevent.
     expect(read(DELETION)).toContain("'listening_progress'")
     expect(read(EXPORT)).toContain("'listening_progress'")
+  })
+})
+
+/**
+ * Second drift class, found 2026-08-18 on push_subscriptions: a route that
+ * writes an AUTH USER ID into a `session_token` column (the F-105
+ * two-site-states keying, `user?.id ?? auditToken` or a bare
+ * `sessionToken = user.id`) creates rows no user_sessions sweep can reach.
+ * Both privacy helpers must list that table in
+ * USER_ID_KEYED_SESSION_TOKEN_TABLES or deletion and export silently skip
+ * it. The route half and the privacy half live far apart, so — like the
+ * delete/export pairing above — this is pinned by source text, not audited
+ * by eye.
+ *
+ * ROUTES_WRITING_USER_ID_AS_SESSION_TOKEN is the human-maintained half:
+ * route file → the session_token-keyed table(s) it writes. The scan below
+ * keeps the map honest in both directions, then checks every mapped table
+ * against both privacy files. A new route adopting this keying fails here
+ * until its table is wired into deletion AND export.
+ */
+const ROUTES_WRITING_USER_ID_AS_SESSION_TOKEN: Record<string, string[]> = {
+  'src/app/api/annotations/route.ts': ['annotations'],
+  'src/app/api/bookmarks/route.ts': ['session_bookmarks'],
+  'src/app/api/devotionals/saved/route.ts': ['session_bookmarks'],
+  'src/app/api/push/subscribe/route.ts': ['push_subscriptions'],
+  'src/app/api/push/preferences/route.ts': ['push_subscriptions'],
+}
+
+/** The source patterns that put an auth user id where a session token goes. */
+const USER_ID_KEYING_PATTERNS = [
+  /user\?\.id \?\? /,
+  /sessionToken\s*[:=]\s*user\.id\b/,
+]
+
+function walkTsFiles(dir: string): string[] {
+  const files: string[] = []
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry)
+    if (statSync(full).isDirectory()) files.push(...walkTsFiles(full))
+    else if (full.endsWith('.ts')) files.push(full)
+  }
+  return files
+}
+
+/**
+ * Pull the table names out of USER_ID_KEYED_SESSION_TOKEN_TABLES. The two
+ * files declare it differently (a ReadonlySet vs an `as const` array), so
+ * this splits on the const name and reads to the first `]`.
+ */
+function userIdKeyedTablesIn(path: string): string[] {
+  const block = readFileSync(path, 'utf8')
+    .split('const USER_ID_KEYED_SESSION_TOKEN_TABLES')[1]
+    ?.split(']')[0]
+  if (block === undefined) {
+    throw new Error(
+      `Could not find USER_ID_KEYED_SESSION_TOKEN_TABLES in ${path} — was it renamed?`,
+    )
+  }
+  return [...block.matchAll(/'([a-z_]+)'/g)].map((match) => match[1])
+}
+
+describe('user-id-keyed session_token coverage', () => {
+  const detected = walkTsFiles('src/app/api').filter((file) => {
+    const source = readFileSync(file, 'utf8')
+    return USER_ID_KEYING_PATTERNS.some((pattern) => pattern.test(source))
+  })
+
+  it('maps every API route that writes a user id as a session_token', () => {
+    // A route in `detected` but not in the map is the next silent GDPR gap:
+    // add it to ROUTES_WRITING_USER_ID_AS_SESSION_TOKEN with the table it
+    // writes, and add that table to USER_ID_KEYED_SESSION_TOKEN_TABLES in
+    // BOTH src/lib/privacy/account-deletion.ts and data-export.ts.
+    const mapped = Object.keys(ROUTES_WRITING_USER_ID_AS_SESSION_TOKEN)
+    expect(detected.sort()).toEqual(mapped.sort())
+  })
+
+  it('lists every mapped table in USER_ID_KEYED_SESSION_TOKEN_TABLES in both privacy files', () => {
+    const tables = [
+      ...new Set(Object.values(ROUTES_WRITING_USER_ID_AS_SESSION_TOKEN).flat()),
+    ]
+    const deletion = userIdKeyedTablesIn('src/lib/privacy/account-deletion.ts')
+    const exported = userIdKeyedTablesIn('src/lib/privacy/data-export.ts')
+    for (const table of tables) {
+      expect(deletion).toContain(table)
+      expect(exported).toContain(table)
+    }
+  })
+
+  it('detects a non-trivial number of routes', () => {
+    // Guards the guard: if the patterns or the api directory move, detection
+    // returns [] and the mapping test would compare two honest-looking empty
+    // lists. The keying genuinely exists in at least these five routes today.
+    expect(detected.length).toBeGreaterThanOrEqual(5)
   })
 })

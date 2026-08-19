@@ -1,0 +1,1753 @@
+{
+  "generatedAt": "2026-08-18T23:15:00.000Z",
+  "note": "SA-090/F-136. Every verdict below comes from a VISUAL inspection — 15 parallel agents opened each file with image reading and recorded what they saw. This file is the curation surface: hand-edits survive; scripts/edition/audit-prints.mjs must never overwrite a reviewed verdict. The Gallery serves ONLY verdict=clean.",
+  "method": "visual-inspection-2026-08-18 (wf_d68edc7d-b2c)",
+  "prints": [
+    {
+      "artist": "Aivazovsky",
+      "file": "aivazovsky-ninth-wave-rooted.webp",
+      "verdict": "clean",
+      "reason": "Duotone wave engraving, no lettering and no legible figures to fail anatomy."
+    },
+    {
+      "artist": "Aivazovsky",
+      "file": "aivazovsky-ninth-wave.webp",
+      "verdict": "clean",
+      "reason": "Same stormy-sea engraving in blue/cream/red, no text or anatomy issues."
+    },
+    {
+      "artist": "Allston",
+      "file": "allston-elijah-desert-present.webp",
+      "verdict": "clean",
+      "reason": "Coherent desert landscape print with tiny prone figure; no lettering."
+    },
+    {
+      "artist": "Allston",
+      "file": "allston-elijah-desert.webp",
+      "verdict": "clean",
+      "reason": "Tonal landscape reproduction, no glyphs or anatomy failures."
+    },
+    {
+      "artist": "Angelico",
+      "file": "angelico-annunciation-believe.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled pseudo-Latin inscription lines across the bottom margin and predella band."
+    },
+    {
+      "artist": "Angelico",
+      "file": "angelico-annunciation-draw-near.webp",
+      "verdict": "text-artifact",
+      "reason": "Two rows of nonsense lettering along the lower edge."
+    },
+    {
+      "artist": "Angelico",
+      "file": "angelico-annunciation-faith-worth.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-text caption and bottom inscription band."
+    },
+    {
+      "artist": "Angelico",
+      "file": "angelico-annunciation-logos.webp",
+      "verdict": "text-artifact",
+      "reason": "Illegible inscribed lettering under the figures and along the base rule."
+    },
+    {
+      "artist": "Angelico",
+      "file": "angelico-annunciation-present.webp",
+      "verdict": "clean",
+      "reason": "Same composition with the inscription band cropped away; no visible glyphs."
+    },
+    {
+      "artist": "Angelico",
+      "file": "angelico-christ-pilgrim.webp",
+      "verdict": "text-artifact",
+      "reason": "A stamped 'G' monogram glyph sits in the lower-left corner, and the two monks' heads are fused."
+    },
+    {
+      "artist": "Angelico",
+      "file": "angelico-last-judgment-detail.webp",
+      "verdict": "unusable",
+      "reason": "Dense crowd of smeared, melted faces and mangled limbs in the lower panels."
+    },
+    {
+      "artist": "Angelico",
+      "file": "angelico-noli-me-tangere-2.webp",
+      "verdict": "unusable",
+      "reason": "Christ's face is distorted under a warped hat and Magdalene's arms/hands are malformed."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-alhambra-gardens-granada.webp",
+      "verdict": "clean",
+      "reason": "Symmetrical courtyard fountain engraving with no lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-amphitheater-caesarea.webp",
+      "verdict": "text-artifact",
+      "reason": "A small white signboard with pseudo-lettering stands at the right of the ruin."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-ancient-bread-oven-israel.webp",
+      "verdict": "clean",
+      "reason": "Portrait of an elderly woman by a doorway, coherent and text-free."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-ancient-gaza-road-negev.webp",
+      "verdict": "clean",
+      "reason": "Desert ruin line engraving, no glyphs or anatomy."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-ancient-olive-press.webp",
+      "verdict": "text-artifact",
+      "reason": "A red-bordered placard reading 'OLIVE PRESS' on the stone pillar."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-ancient-olive-trees-gethsemane.webp",
+      "verdict": "clean",
+      "reason": "Van Gogh-style olive grove, no text and no figures."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-ancient-quarry-golgotha.webp",
+      "verdict": "clean",
+      "reason": "Decorative scrollwork border band, no lettering (wrong subject, but not a defect type here)."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-antonia-fortress-site.webp",
+      "verdict": "text-artifact",
+      "reason": "It is a captioned 'PLAN OF JERUSALEM' map covered in place-name lettering and a legend."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-arch-constantine.webp",
+      "verdict": "clean",
+      "reason": "Woodcut Colosseum and arch, no lettering or anatomy issues visible."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-arch-titus-relief.webp",
+      "verdict": "clean",
+      "reason": "Triumphal procession relief renders coherently with no inscription."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-areopagus-mars-hill.webp",
+      "verdict": "clean",
+      "reason": "Acropolis view with modern visitors, no text and no visible anatomy failures."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-baptistery-florence.webp",
+      "verdict": "clean",
+      "reason": "Octagonal mosaic dome, dense panels but no legible glyphs."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-basilica-tabor.webp",
+      "verdict": "clean",
+      "reason": "Church facade engraving, no lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-beautiful-gate-temple.webp",
+      "verdict": "text-artifact",
+      "reason": "Plate number '21' printed at lower right inside the frame."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-canterbury-cathedral-nave.webp",
+      "verdict": "clean",
+      "reason": "Nave interior reads coherently with no lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-capernaum-synagogue-ruins.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint pseudo-text scribbles on the stones between the central columns."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-capernaum-synagogue.webp",
+      "verdict": "clean",
+      "reason": "Same ruins without the inscription marks; no text."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-catacombs-good-shepherd.webp",
+      "verdict": "clean",
+      "reason": "Simple Good Shepherd woodcut, no lettering and hands read correctly."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-cave-elijah-carmel-2.webp",
+      "verdict": "text-artifact",
+      "reason": "Placards read 'S.ELIAS PROPHET' and garbled 'S.EDE6D3'."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-cave-elijah-carmel.webp",
+      "verdict": "text-artifact",
+      "reason": "Shrine plaque lettering 'S.ELIAS PROPHE' across the base."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-cenaculum-upper-room.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-Arabic inscription plaque on the right wall plus scribbled marks lower right."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-chartres-cathedral-exterior.webp",
+      "verdict": "text-artifact",
+      "reason": "Carved lettering 'TID...' on the pedestal at lower right."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-chartres-labyrinth.webp",
+      "verdict": "clean",
+      "reason": "Labyrinth floor and chairs, no lettering or artifacts."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-church-annunciation-nazareth.webp",
+      "verdict": "clean",
+      "reason": "Ribbed dome oculus, purely geometric, no text."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-church-nativity-bethlehem.webp",
+      "verdict": "text-artifact",
+      "reason": "Large garbled signboard 'OF ROOF AND WINDOWS RESTORATION' at upper left."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-colosseum-arena-floor.webp",
+      "verdict": "clean",
+      "reason": "Arena interior with tourists, no legible lettering or anatomy failures."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-damascus-gate-jerusalem.webp",
+      "verdict": "text-artifact",
+      "reason": "Engraver's monogram/signature glyphs in the lower-left corner."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-damascus-road-ancient.webp",
+      "verdict": "text-artifact",
+      "reason": "Modern alley with a car showing glyphs on its license plate."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-dome-rock-interior.webp",
+      "verdict": "clean",
+      "reason": "Woodcut of the Dome of the Rock with geometric tilework; no lettering or anatomy issues."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-dura-europos-house-church.webp",
+      "verdict": "text-artifact",
+      "reason": "Illuminated panel carries banded Latin/blackletter inscriptions under the central scene and in the upper-right cartouche."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-egyptian-granary.webp",
+      "verdict": "text-artifact",
+      "reason": "Entire doorway is covered in hieroglyphic glyph columns."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-ephesus-library-celsus.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-text inscription plaque on the ruin block at right of the Celsus facade."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-fontenay-cloister.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint scratched pseudo-lettering on the lower-right pier base and floor."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-forum-romanum.webp",
+      "verdict": "text-artifact",
+      "reason": "Triumphal arch attic and frieze carry rows of engraved pseudo-inscription."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-galatia-ancient-road.webp",
+      "verdict": "text-artifact",
+      "reason": "Explicit caption 'EPHESUS. THE RENOWNED TEMPLE OF DIANA.' across the base."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-garden-tomb-exterior-2.webp",
+      "verdict": "text-artifact",
+      "reason": "Multiple wall signs with garbled 'THE GARDEN TOMB' pseudo-text plus graffiti numerals."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-garden-tomb-exterior.webp",
+      "verdict": "clean",
+      "reason": "Garden tomb engraving with red-outlined doorway; no glyphs or anatomy present."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-garden-tomb-jerusalem.webp",
+      "verdict": "clean",
+      "reason": "Coastal town woodcut, coherent and text-free."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-gethsemane-end-ourselves.webp",
+      "verdict": "clean",
+      "reason": "Van Gogh-style olive grove, no figures and no lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-gethsemane-olive-trees.webp",
+      "verdict": "clean",
+      "reason": "Olive grove painting, coherent brushwork, no text."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-hagia-sophia-apse.webp",
+      "verdict": "clean",
+      "reason": "Byzantine Theotokos print with intact hands and faces and no inscription."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-hagia-sophia-dome.webp",
+      "verdict": "text-artifact",
+      "reason": "Arabic calligraphic roundel at the center of the dome medallion; also reads as a photograph."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-holy-sepulchre-dome-int.webp",
+      "verdict": "text-artifact",
+      "reason": "Concentric bands of garbled Greek/Latin inscription plus IC XC lettering around Christ."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-holy-sepulchre-dome.webp",
+      "verdict": "clean",
+      "reason": "Victorian parlor interior print; no lettering and no anatomy failures."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-hospital-innocents-belief.webp",
+      "verdict": "text-artifact",
+      "reason": "Modern taxi in the foreground carries pseudo-lettering/badging on its door and plate."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-jordan-river-wilderness.webp",
+      "verdict": "text-artifact",
+      "reason": "Icon-style scene labeled with several garbled Cyrillic/Greek name inscriptions."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-judean-desert-engraving.webp",
+      "verdict": "clean",
+      "reason": "Ruins framed by columns; no glyphs, no figures."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-lascaux-cave-paintings.webp",
+      "verdict": "clean",
+      "reason": "Woodcut horse in a floral field, anatomically sound and text-free."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-library-celsus-ephesus-2.webp",
+      "verdict": "clean",
+      "reason": "Line-engraved Celsus facade with red-robed figures; no lettering or anatomy faults visible."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-mamertine-prison-cell.webp",
+      "verdict": "text-artifact",
+      "reason": "It is an antique street map of the Roman Forum covered in Latin place labels."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-mamertine-prison-paul.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled pseudo-Latin inscription plaque on the upper-left cell wall."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-mamertine-prison-rome.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-lettering cast into the manhole cover's grating bars."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-maria-laach-choir-stalls.webp",
+      "verdict": "clean",
+      "reason": "Romanesque abbey exterior in blue woodcut; no glyphs, figures too small to fault."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-monastery-sinai-burning-bush.webp",
+      "verdict": "clean",
+      "reason": "St Catherine's walled monastery below Sinai rock face, no lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-mont-saint-michel-cloister.webp",
+      "verdict": "clean",
+      "reason": "Engraved cloister arcade, coherent perspective, no text."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-old-bailey-london.webp",
+      "verdict": "clean",
+      "reason": "Lady Justice statue against hatched blue sky; hands and scales read correctly, no lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-ospedale-innocenti.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-text noticeboard at left plus garbled lettering on the wall and the modern taxi."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-palatine-hill-ruins.webp",
+      "verdict": "clean",
+      "reason": "Umbrella pine over brick ruins, clean color woodcut with no glyphs."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-pantheon-dome-oculus.webp",
+      "verdict": "clean",
+      "reason": "Coffered dome and oculus, purely geometric, no text."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-philippi-ruins-greece.webp",
+      "verdict": "clean",
+      "reason": "Mountain and distant ruins in blue line engraving, no lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-ravenna-good-shepherd-mosaic.webp",
+      "verdict": "clean",
+      "reason": "Good Shepherd mosaic lunette; anatomy sound and no inscription band."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-road-to-gaza-ancient.webp",
+      "verdict": "text-artifact",
+      "reason": "A labeled trade-route map full of place names and route captions."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-roman-forum-chaos.webp",
+      "verdict": "clean",
+      "reason": "Excavated columns beside a modern street; no readable signage or lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-san-thome-basilica.webp",
+      "verdict": "clean",
+      "reason": "Gothic basilica with palms; no signage or glyphs anywhere."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-sant-apollinare-mosaic.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled 'SANCTVS APOLENARIS' inscription flanking the orant figure in the apse."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-sant-apollinare-nave.webp",
+      "verdict": "text-artifact",
+      "reason": "Same pseudo-Latin apse inscription beside the saint's head."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-santa-croce-interior.webp",
+      "verdict": "text-artifact",
+      "reason": "Red titulus panel above the reliquary carries garbled pseudo-lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-scriptorium-medieval.webp",
+      "verdict": "clean",
+      "reason": "Cloister garden from above, halftone duotone, no text or figures."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-shepherds-field-chapel.webp",
+      "verdict": "clean",
+      "reason": "Line-engraved excavation site with no lettering, figures, or anatomy to fail."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-straight-street-damascus.webp",
+      "verdict": "text-artifact",
+      "reason": "Small garbled sign/placard glyphs on the lower balcony fascia and window panes."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-tabgha-loaves-mosaic.webp",
+      "verdict": "clean",
+      "reason": "Loaves-and-fishes mosaic panel, purely ornamental tesserae with no glyphs."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-tabgha-mosaic-fish.webp",
+      "verdict": "text-artifact",
+      "reason": "Red sign in the foreground plaza reads 'ENTRY'."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-temple-mount-engraving.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint pseudo-script inscriptions in the lower-left and lower-right margins mimicking a plate caption/signature."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-trajan-market-ruins.webp",
+      "verdict": "clean",
+      "reason": "Coloured engraving of the Roman market ruins with no legible lettering or figures."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-upper-room-cenaculum.webp",
+      "verdict": "text-artifact",
+      "reason": "Arabic-script calligraphic plaque on the right-hand wall above the door."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-upper-room-spirit.webp",
+      "verdict": "text-artifact",
+      "reason": "Same right-wall Arabic-script plaque plus scratchy pseudo-text on the left wall."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-via-dolorosa-arch.webp",
+      "verdict": "text-artifact",
+      "reason": "Band of blackletter pseudo-Latin lettering across the crowd scene."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-via-dolorosa-jerusalem.webp",
+      "verdict": "text-artifact",
+      "reason": "Street sign reading 'VIA DOLOROSA' in Hebrew, Arabic and Latin script."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-via-sacra-rome.webp",
+      "verdict": "clean",
+      "reason": "Woodcut of the Forum road; distant figures are small and sound, no lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-via-sacra-rooted.webp",
+      "verdict": "text-artifact",
+      "reason": "Large Latin dedicatory inscription filling the arch attic panel."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-western-wall-19c.webp",
+      "verdict": "unusable",
+      "reason": "Photo-derived group portrait of identifiable modern people in suits — not a classical print, with mushy hands."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-westminster-cloister.webp",
+      "verdict": "clean",
+      "reason": "Cloister courtyard, no lettering, no figures, architecture reads correctly."
+    },
+    {
+      "artist": "Unknown",
+      "file": "arch-yardenit-jordan-site.webp",
+      "verdict": "clean",
+      "reason": "Riverside baptism site in duotone woodcut; figures are distant silhouettes, no text."
+    },
+    {
+      "artist": "Unknown",
+      "file": "artifact-babylonian-creation-tablet.webp",
+      "verdict": "text-artifact",
+      "reason": "The stele face is covered in cuneiform pseudo-glyphs."
+    },
+    {
+      "artist": "Unknown",
+      "file": "artifact-rosetta-stone.webp",
+      "verdict": "text-artifact",
+      "reason": "Entire stone surface is dense hieroglyphic, demotic and Greek pseudo-lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "artifact-sumerian-creation-tablet.webp",
+      "verdict": "text-artifact",
+      "reason": "Cuneiform inscription carved across the clay cone held in the hand."
+    },
+    {
+      "artist": "Unknown",
+      "file": "artifact-torah-scroll-historical.webp",
+      "verdict": "text-artifact",
+      "reason": "Photographic halftone of an open Torah scroll with columns of Hebrew script."
+    },
+    {
+      "artist": "Blake",
+      "file": "blake-glad-day-albion.webp",
+      "verdict": "clean",
+      "reason": "Blake's Albion figure, anatomy coherent and frame free of any lettering."
+    },
+    {
+      "artist": "Bosch",
+      "file": "bosch-garden-hell-panel.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-lettering on the sheet-music page and playing cards at lower left plus an inscribed plaque."
+    },
+    {
+      "artist": "Bosch",
+      "file": "bosch-ship-fools-tongue.webp",
+      "verdict": "clean",
+      "reason": "Coherent duotone print, blank banner, no glyphs or anatomy failures."
+    },
+    {
+      "artist": "Bosch",
+      "file": "bosch-ship-fools.webp",
+      "verdict": "clean",
+      "reason": "Colored variant, blank pennant, figures read correctly with no lettering."
+    },
+    {
+      "artist": "Bosch",
+      "file": "bosch-the-conjurer.webp",
+      "verdict": "clean",
+      "reason": "Crisp colored woodcut scene, no text and no anatomy problems."
+    },
+    {
+      "artist": "Botticelli",
+      "file": "botticelli-mystical-nativity.webp",
+      "verdict": "text-artifact",
+      "reason": "Three lines of garbled pseudo-Latin inscription run across the top margin."
+    },
+    {
+      "artist": "Bouguereau",
+      "file": "bouguereau-difficult-lesson.webp",
+      "verdict": "clean",
+      "reason": "Single seated child, intact face, hands and feet, no lettering."
+    },
+    {
+      "artist": "Bouguereau",
+      "file": "bouguereau-youth.webp",
+      "verdict": "unusable",
+      "reason": "Woman's face is distorted and mask-like with smeared mouth and eyes in the halftone."
+    },
+    {
+      "artist": "Brown",
+      "file": "brown-work-shared.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled lettering painted on the boat hull at upper center."
+    },
+    {
+      "artist": "Brown",
+      "file": "brown-work.webp",
+      "verdict": "text-artifact",
+      "reason": "Signboard at lower left carries rows of pseudo-text."
+    },
+    {
+      "artist": "Bruegel",
+      "file": "bruegel-carnival-lent.webp",
+      "verdict": "unusable",
+      "reason": "Both central figures have blank, featureless smeared faces."
+    },
+    {
+      "artist": "Bruegel",
+      "file": "bruegel-peasant-wedding-roots.webp",
+      "verdict": "unusable",
+      "reason": "Left-hand crowd is a mass of blank featureless heads."
+    },
+    {
+      "artist": "Bruegel",
+      "file": "bruegel-pentecost-expansion.webp",
+      "verdict": "clean",
+      "reason": "Colored wedding-feast interior reads coherently with no lettering."
+    },
+    {
+      "artist": "Bruegel",
+      "file": "bruegel-tower-babel-1563.webp",
+      "verdict": "clean",
+      "reason": "Detailed colored tower print, no glyphs, architecture coherent."
+    },
+    {
+      "artist": "Bruegel",
+      "file": "bruegel-tower-babel.webp",
+      "verdict": "clean",
+      "reason": "Monochrome tower variant, no text or anatomy failures."
+    },
+    {
+      "artist": "Bruegel",
+      "file": "bruegel-works-mercy-belief.webp",
+      "verdict": "unusable",
+      "reason": "Several faces are melted blobs and limbs fuse into the crowd."
+    },
+    {
+      "artist": "Bruegel",
+      "file": "bruegel-works-mercy.webp",
+      "verdict": "unusable",
+      "reason": "Same crowd with distorted, partially faceless heads and merged arms."
+    },
+    {
+      "artist": "Brueghel",
+      "file": "brueghel-garden-eden-elder.webp",
+      "verdict": "clean",
+      "reason": "Eden engraving with intact figures and animals, no lettering."
+    },
+    {
+      "artist": "Brueghel",
+      "file": "brueghel-garden-eden-young.webp",
+      "verdict": "clean",
+      "reason": "Dense forest landscape with animals, no text and no anatomy issues."
+    },
+    {
+      "artist": "Burnand",
+      "file": "burnand-peter-john-running.webp",
+      "verdict": "unusable",
+      "reason": "Foreground hand has malformed, extra-jointed fingers."
+    },
+    {
+      "artist": "Campi",
+      "file": "campi-still-life-vine.webp",
+      "verdict": "clean",
+      "reason": "Pure produce still life, no figures and no lettering."
+    },
+    {
+      "artist": "Caravaggio",
+      "file": "caravaggio-incredulity-thomas.webp",
+      "verdict": "clean",
+      "reason": "Coherent engraving of Thomas and the disciples; hands and faces read correctly, no lettering."
+    },
+    {
+      "artist": "Caravaggio",
+      "file": "caravaggio-john-wilderness.webp",
+      "verdict": "unusable",
+      "reason": "Anatomy failure — a detached, floating knee/leg segment sits at right with no body connection."
+    },
+    {
+      "artist": "Carracci",
+      "file": "carracci-pieta-1603.webp",
+      "verdict": "text-artifact",
+      "reason": "Scratchy white pseudo-lettering marks float in the dark band at upper right."
+    },
+    {
+      "artist": "Carracci",
+      "file": "carracci-stoning-stephen.webp",
+      "verdict": "clean",
+      "reason": "Busy but coherent stoning scene; no glyphs and no obvious anatomy breakage."
+    },
+    {
+      "artist": "Cassatt",
+      "file": "cassatt-mother-child.webp",
+      "verdict": "clean",
+      "reason": "Mother, child and mirror render coherently with intact hands and faces, no lettering."
+    },
+    {
+      "artist": "Chardin",
+      "file": "chardin-grace-anointed.webp",
+      "verdict": "clean",
+      "reason": "Straight painterly reproduction of the Chardin interior; no text, no anatomy faults."
+    },
+    {
+      "artist": "Chardin",
+      "file": "chardin-grace-at-table.webp",
+      "verdict": "clean",
+      "reason": "Line-engraved interior, figures intact, no inscriptions."
+    },
+    {
+      "artist": "Chardin",
+      "file": "chardin-grace-before-meal.webp",
+      "verdict": "clean",
+      "reason": "Same interior in duotone hatching; coherent, no glyphs."
+    },
+    {
+      "artist": "Chardin",
+      "file": "chardin-still-life-arts.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled cursive inscription reading roughly \"The Doing Same\" on the paper in the foreground."
+    },
+    {
+      "artist": "Chardin",
+      "file": "chardin-still-life-bread.webp",
+      "verdict": "clean",
+      "reason": "Bread, glass and knife still life; crisp woodcut, no lettering."
+    },
+    {
+      "artist": "Chardin",
+      "file": "chardin-still-life-stillness.webp",
+      "verdict": "clean",
+      "reason": "Jug, basket and onions still life; no text or artifacts."
+    },
+    {
+      "artist": "Church",
+      "file": "church-twilight-wilderness.webp",
+      "verdict": "clean",
+      "reason": "Halftone twilight landscape, coherent, no glyphs."
+    },
+    {
+      "artist": "Clausen",
+      "file": "clausen-stone-pickers.webp",
+      "verdict": "unusable",
+      "reason": "Smeared, muddy face on the standing figure and mushy undefined hands — degraded and embarrassing to print."
+    },
+    {
+      "artist": "Cole",
+      "file": "cole-sunny-morning-hudson.webp",
+      "verdict": "clean",
+      "reason": "Engraved Hudson valley vista, coherent, no lettering."
+    },
+    {
+      "artist": "Cole",
+      "file": "cole-voyage-life-childhood.webp",
+      "verdict": "clean",
+      "reason": "Boat, angel and cliffs read clearly; no text artifacts."
+    },
+    {
+      "artist": "Coleman",
+      "file": "coleman-storm-king-hudson.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-text on the steamer's hull plus a garbled yellow signature/date block at lower right."
+    },
+    {
+      "artist": "Corot",
+      "file": "corot-lake-ville-davray.webp",
+      "verdict": "text-artifact",
+      "reason": "Legible \"COROT\" signature lettering in the lower right corner."
+    },
+    {
+      "artist": "Cortona",
+      "file": "cortona-god-creating-animals.webp",
+      "verdict": "clean",
+      "reason": "Bold riso figure on clouds; hands are odd-jointed but readable, no lettering."
+    },
+    {
+      "artist": "Courbet",
+      "file": "courbet-desperate-man-end.webp",
+      "verdict": "unusable",
+      "reason": "Mangled left hand with fused/clawed fingers and a blotchy discolored face."
+    },
+    {
+      "artist": "Courbet",
+      "file": "courbet-desperate-rooted.webp",
+      "verdict": "unusable",
+      "reason": "Left hand collapses into a fused claw of indistinct fingers."
+    },
+    {
+      "artist": "Courbet",
+      "file": "courbet-stone-breakers-cross.webp",
+      "verdict": "text-artifact",
+      "reason": "\"Courbet.\" signature inscribed at lower left."
+    },
+    {
+      "artist": "Courbet",
+      "file": "courbet-stone-breakers-valued.webp",
+      "verdict": "text-artifact",
+      "reason": "\"Courbet.\" signature at lower left of the plate."
+    },
+    {
+      "artist": "Courbet",
+      "file": "courbet-stone-breakers-work.webp",
+      "verdict": "text-artifact",
+      "reason": "\"Courbet.\" signature lettering at bottom left."
+    },
+    {
+      "artist": "Courbet",
+      "file": "courbet-stone-breakers.webp",
+      "verdict": "text-artifact",
+      "reason": "\"Courbet.\" signature at lower left."
+    },
+    {
+      "artist": "Courbet",
+      "file": "courbet-the-desperate-man.webp",
+      "verdict": "unusable",
+      "reason": "Garbled pseudo-text on the lips plus mangled, extra-jointed fingers on both hands."
+    },
+    {
+      "artist": "Cranach",
+      "file": "cranach-adam-eve.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint pseudo-script squiggles in the grass at the bottom center margin."
+    },
+    {
+      "artist": "Dahl",
+      "file": "dahl-ship-storm.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint smudged pseudo-inscription in the paper margin below the plate."
+    },
+    {
+      "artist": "Daumier",
+      "file": "daumier-good-samaritan.webp",
+      "verdict": "clean",
+      "reason": "Coarse halftone scene of rider and helper, no lettering or anatomy failure."
+    },
+    {
+      "artist": "Daumier",
+      "file": "daumier-third-class-carriage.webp",
+      "verdict": "clean",
+      "reason": "Coherent halftone carriage interior with no glyphs or deformity."
+    },
+    {
+      "artist": "Daumier",
+      "file": "daumier-third-class-chaos.webp",
+      "verdict": "clean",
+      "reason": "Riso duotone carriage scene, spot-yellow face is stylistic, no text."
+    },
+    {
+      "artist": "Daumier",
+      "file": "daumier-third-class-truth.webp",
+      "verdict": "clean",
+      "reason": "Dark halftone carriage interior, legible figures, no lettering."
+    },
+    {
+      "artist": "Daumier",
+      "file": "daumier-third-class-valued.webp",
+      "verdict": "clean",
+      "reason": "Duotone halftone crowd, no glyphs or anatomy breakage."
+    },
+    {
+      "artist": "Daumier",
+      "file": "daumier-washerwoman.webp",
+      "verdict": "clean",
+      "reason": "Silhouetted washerwoman and child, textless, forms hold together."
+    },
+    {
+      "artist": "Del",
+      "file": "del-sarto-last-supper.webp",
+      "verdict": "clean",
+      "reason": "Engraved Last Supper, no inscriptions, consistent figures and architecture."
+    },
+    {
+      "artist": "Duccio",
+      "file": "duccio-pentecost-1308.webp",
+      "verdict": "unusable",
+      "reason": "Detached tube-like finger forms on the left apostle's hand and stubbed fingers on the book-holder."
+    },
+    {
+      "artist": "Durer",
+      "file": "durer-prodigal-son-swine-end.webp",
+      "verdict": "clean",
+      "reason": "Prodigal-return woodcut with no lettering and sound hands and faces."
+    },
+    {
+      "artist": "Durer",
+      "file": "durer-prodigal-son-swine.webp",
+      "verdict": "text-artifact",
+      "reason": "Durer AD monogram tablet at bottom center."
+    },
+    {
+      "artist": "Durer",
+      "file": "durer-prodigal-swine-cage.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-lettering \"Xyc\" inscribed at lower left."
+    },
+    {
+      "artist": "Durer",
+      "file": "durer-self-portrait-1500.webp",
+      "verdict": "text-artifact",
+      "reason": "Latin inscription block, \"1500\" date, and AD monogram."
+    },
+    {
+      "artist": "Durer",
+      "file": "durer-self-portrait-imago-dei.webp",
+      "verdict": "text-artifact",
+      "reason": "Five-line Latin inscription plus date and monogram."
+    },
+    {
+      "artist": "El",
+      "file": "el-greco-pentecost-anointed.webp",
+      "verdict": "clean",
+      "reason": "Coherent riso Pentecost print, no lettering and hands/faces hold together."
+    },
+    {
+      "artist": "El",
+      "file": "el-greco-pentecost.webp",
+      "verdict": "clean",
+      "reason": "Same composition, no glyphs anywhere and anatomy reads correctly."
+    },
+    {
+      "artist": "El",
+      "file": "el-greco-portrait-man.webp",
+      "verdict": "clean",
+      "reason": "Clean engraved portrait with no inscription or margin text."
+    },
+    {
+      "artist": "Friedrich",
+      "file": "friedrich-monk-by-sea.webp",
+      "verdict": "clean",
+      "reason": "Empty seascape with a single tiny figure, no text or anatomy visible."
+    },
+    {
+      "artist": "Friedrich",
+      "file": "friedrich-monk-sea-end.webp",
+      "verdict": "clean",
+      "reason": "Hatched sea-and-sky scene, no lettering or defects."
+    },
+    {
+      "artist": "Friedrich",
+      "file": "friedrich-wanderer-fog.webp",
+      "verdict": "clean",
+      "reason": "Rear-view figure on rock, no text and no visible anatomy failure."
+    },
+    {
+      "artist": "Friedrich",
+      "file": "friedrich-woman-rising-sun.webp",
+      "verdict": "clean",
+      "reason": "Rear-view figure in field, no lettering in the frame."
+    },
+    {
+      "artist": "Ge",
+      "file": "ge-what-is-truth.webp",
+      "verdict": "clean",
+      "reason": "Two-figure Pilate scene, no inscription and hands are correctly formed."
+    },
+    {
+      "artist": "Goya",
+      "file": "goya-sleep-reason-monsters.webp",
+      "verdict": "text-artifact",
+      "reason": "Large red inscription 'El sueño de la razon produce monstruos' across the desk."
+    },
+    {
+      "artist": "Grunewald",
+      "file": "grunewald-crucifixion-isenheim.webp",
+      "verdict": "text-artifact",
+      "reason": "INRI titulus plus a block of garbled pseudo-Latin lettering beside the Baptist."
+    },
+    {
+      "artist": "Grunewald",
+      "file": "grunewald-resurrection-isenheim.webp",
+      "verdict": "clean",
+      "reason": "Resurrection with fallen soldiers, no lettering and no melted faces."
+    },
+    {
+      "artist": "Grunewald",
+      "file": "grunewald-resurrection-rooted.webp",
+      "verdict": "text-artifact",
+      "reason": "Open book in the Annunciation panel is filled with garbled pseudo-text lines."
+    },
+    {
+      "artist": "Guercino",
+      "file": "guercino-god-father-angels.webp",
+      "verdict": "clean",
+      "reason": "Father-and-putto scene, no glyphs and hands/fingers are correct."
+    },
+    {
+      "artist": "Hammershoi",
+      "file": "hammershoi-five-portraits.webp",
+      "verdict": "clean",
+      "reason": "Five seated figures, no lettering; faces are plain but intact."
+    },
+    {
+      "artist": "Hammershoi",
+      "file": "hammershoi-interior-still.webp",
+      "verdict": "text-artifact",
+      "reason": "A 'VH' monogram is printed in the lower-left corner."
+    },
+    {
+      "artist": "Hooch",
+      "file": "hooch-interior-woman-window.webp",
+      "verdict": "clean",
+      "reason": "Dutch interior with woman and child, no text and no anatomy failures."
+    },
+    {
+      "artist": "Juanes",
+      "file": "juanes-last-supper.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled pseudo-text inscription lettered on the stool at lower right."
+    },
+    {
+      "artist": "Lhermitte",
+      "file": "lhermitte-the-harvest.webp",
+      "verdict": "text-artifact",
+      "reason": "Signature-like glyph string in the lower-right corner of the field."
+    },
+    {
+      "artist": "Lippi",
+      "file": "lippi-music-making-angels.webp",
+      "verdict": "clean",
+      "reason": "Cropped feet, swans and instruments, no lettering and toes are correctly formed."
+    },
+    {
+      "artist": "Lotto",
+      "file": "lotto-adoration-christ-child.webp",
+      "verdict": "clean",
+      "reason": "Adoration group with clean halos and hands, no inscription anywhere."
+    },
+    {
+      "artist": "Lucas",
+      "file": "lucas-van-leyden-adam-eve.webp",
+      "verdict": "text-artifact",
+      "reason": "Hanging tablet at upper left carries garbled pseudo-Latin lettering."
+    },
+    {
+      "artist": "Mantegna",
+      "file": "mantegna-agony-in-garden.webp",
+      "verdict": "clean",
+      "reason": "Coherent engraved Gethsemane scene with no lettering or anatomy faults."
+    },
+    {
+      "artist": "Michelangelo",
+      "file": "michelangelo-creation-adam-hands.webp",
+      "verdict": "unusable",
+      "reason": "The touching hands are malformed — Adam's fingers smear into extra digits at the focal point."
+    },
+    {
+      "artist": "Millet",
+      "file": "millet-angelus-rhythm.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint pseudo-signature glyphs at bottom center and lower right."
+    },
+    {
+      "artist": "Millet",
+      "file": "millet-angelus-rooted.webp",
+      "verdict": "text-artifact",
+      "reason": "Scribbled pseudo-signature mark in the lower right corner."
+    },
+    {
+      "artist": "Millet",
+      "file": "millet-man-with-hoe-anointed.webp",
+      "verdict": "clean",
+      "reason": "Clean riso-style field scene, no glyphs and sound anatomy."
+    },
+    {
+      "artist": "Millet",
+      "file": "millet-sower-work.webp",
+      "verdict": "clean",
+      "reason": "Coherent sower print with no lettering or distortion."
+    },
+    {
+      "artist": "Millet",
+      "file": "millet-the-angelus.webp",
+      "verdict": "text-artifact",
+      "reason": "Small pseudo-lettering marks near the basket and lower right margin."
+    },
+    {
+      "artist": "Monet",
+      "file": "monet-water-lilies-creation.webp",
+      "verdict": "text-artifact",
+      "reason": "Red cursive signature painted across the lower right corner."
+    },
+    {
+      "artist": "Moreau",
+      "file": "moreau-salome-dancing.webp",
+      "verdict": "clean",
+      "reason": "Ornate Salome interior, decorative carving only, no readable glyphs or anatomy failure."
+    },
+    {
+      "artist": "Murillo",
+      "file": "murillo-loaves-fishes.webp",
+      "verdict": "clean",
+      "reason": "Engraved seated girl with flowers, no text and intact hands."
+    },
+    {
+      "artist": "Murillo",
+      "file": "murillo-mystic-marriage-catherine.webp",
+      "verdict": "unusable",
+      "reason": "Left figure's resting hand has splayed, extra-long malformed fingers."
+    },
+    {
+      "artist": "Murillo",
+      "file": "murillo-return-prodigal.webp",
+      "verdict": "unusable",
+      "reason": "Kneeling son's legs are anatomically incoherent, reading as a stray extra limb."
+    },
+    {
+      "artist": "Palmer",
+      "file": "palmer-magic-apple-tree.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint pseudo-inscription squiggle in the lower left margin."
+    },
+    {
+      "artist": "Pontormo",
+      "file": "pontormo-two-friends.webp",
+      "verdict": "text-artifact",
+      "reason": "Held letter is covered in garbled pseudo-script."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-apostle-paul-preaching.webp",
+      "verdict": "clean",
+      "reason": "Coherent Areopagus scene, no lettering, figures intact."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-conversion-paul.webp",
+      "verdict": "unusable",
+      "reason": "Fallen soldier's limbs and the rearing horses fuse into muddled anatomy."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-god-father-school.webp",
+      "verdict": "text-artifact",
+      "reason": "Open books held by the putti and saints show ruled pseudo-text."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-healing-lame-man-2.webp",
+      "verdict": "clean",
+      "reason": "Colonnade healing scene reads coherently with no glyphs."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-healing-lame-man.webp",
+      "verdict": "unusable",
+      "reason": "Seated beggar's hand and lower legs are clawed and melted together."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-paul-preaching-athens.webp",
+      "verdict": "clean",
+      "reason": "Coherent Raphael-style Paul at Athens; no lettering or anatomy failures visible."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-school-athens-standing.webp",
+      "verdict": "clean",
+      "reason": "Dense blue engraving of the School of Athens with no legible glyphs or inscriptions."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-school-of-athens.webp",
+      "verdict": "clean",
+      "reason": "Same composition in warm ink; crowded but no lettering and no obvious anatomy breaks."
+    },
+    {
+      "artist": "Raphael",
+      "file": "raphael-transfiguration.webp",
+      "verdict": "clean",
+      "reason": "Hand-colored Transfiguration engraving, no text and figures read correctly."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-abraham-isaac.webp",
+      "verdict": "clean",
+      "reason": "Duotone Sacrifice of Isaac; anatomy and dagger read fine, no inscription."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-adam-eve-etching.webp",
+      "verdict": "clean",
+      "reason": "No text, but it is only a foliage/animal crop with no human figures — coherent as an etching fragment."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-apostle-paul-galatians.webp",
+      "verdict": "text-artifact",
+      "reason": "Cursive 'Rembrandt f' signature on the desk plus pseudo-text on the open book."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-apostle-paul-standing.webp",
+      "verdict": "text-artifact",
+      "reason": "'Rembrandt f' inscription plaque and garbled lettering across the book page."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-apostle-paul-writing.webp",
+      "verdict": "text-artifact",
+      "reason": "Legible 'Rembrandt' pseudo-signature panel on the desk edge."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-apostle-peter-prison.webp",
+      "verdict": "text-artifact",
+      "reason": "Small monogram/glyph block in the lower-left corner of the framed woodcut."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-baptism-christ.webp",
+      "verdict": "text-artifact",
+      "reason": "Large 'Rembrandt f 1650' inscription across the bottom margin."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-christ-cross-etching.webp",
+      "verdict": "clean",
+      "reason": "Colored woodcut of Christ led by soldiers; no lettering, figures intact."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-jacob-wrestling-angel.webp",
+      "verdict": "clean",
+      "reason": "Angel and man on deep blue ground, hands and faces well formed, no text."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-jacob-wrestling-belief.webp",
+      "verdict": "text-artifact",
+      "reason": "'DURERE FECIT' lettering in the lower-right corner."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-jacob-wrestling-rooted.webp",
+      "verdict": "clean",
+      "reason": "Same embrace composition, no inscription and anatomy holds up."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-old-man-praying.webp",
+      "verdict": "text-artifact",
+      "reason": "Open book in the foreground is filled with garbled pseudo-text lines."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-philip-baptizing-ethiopian.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-signature scrawl at lower right plus lettering on the open scroll/book."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-philip-ethiopian-2.webp",
+      "verdict": "text-artifact",
+      "reason": "Open book held mid-frame shows garbled printed lettering."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-prodigal-son-return.webp",
+      "verdict": "unusable",
+      "reason": "Central figure's face is distorted with a melted mouth/growth artifact and the background dissolves into noise."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-raising-lazarus.webp",
+      "verdict": "clean",
+      "reason": "Dark Raising of Lazarus with no lettering and coherent figures."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-return-prodigal-end.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled pseudo-lettering inscribed at lower left of the print."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-return-prodigal-grace.webp",
+      "verdict": "clean",
+      "reason": "Coherent riso-style prodigal scene, no lettering and hands/faces read correctly."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-rich-young-ruler.webp",
+      "verdict": "unusable",
+      "reason": "Multiple fused/duplicated faces in the left crowd and a distorted floating cherub head at right."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-samuel-anointing-david.webp",
+      "verdict": "clean",
+      "reason": "Architectural ruin landscape with tiny staffage figures, no glyphs or anatomy failures."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-scholar-study.webp",
+      "verdict": "text-artifact",
+      "reason": "Latin lettering ringing the glowing disc (ADAM TE DAGERAM ALGAR)."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-self-portrait-old.webp",
+      "verdict": "clean",
+      "reason": "Coherent engraved portrait, no text, hands and face intact."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-self-portrait-valued.webp",
+      "verdict": "clean",
+      "reason": "Halftone bust portrait, no lettering or anatomy defects."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-stoning-stephen-1625.webp",
+      "verdict": "unusable",
+      "reason": "Left-edge crowd has melted and duplicated faces plus a detached head, and horse/limb geometry is muddled."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-storm-sea-galilee.webp",
+      "verdict": "clean",
+      "reason": "Duotone storm-boat engraving, no glyphs, figures coherent."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-supper-emmaus.webp",
+      "verdict": "clean",
+      "reason": "Coherent Emmaus interior, no lettering, faces and hands intact."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-thomas-apostle.webp",
+      "verdict": "clean",
+      "reason": "Seated scholar figure, no text, hands correctly formed."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-titus-reading.webp",
+      "verdict": "clean",
+      "reason": "Reading portrait with a blank-paged book, no lettering or anatomy faults."
+    },
+    {
+      "artist": "Rembrandt",
+      "file": "rembrandt-workers-vineyard.webp",
+      "verdict": "clean",
+      "reason": "Dark interior parable scene, no visible text and no evident anatomy failures."
+    },
+    {
+      "artist": "Reni",
+      "file": "reni-massacre-innocents.webp",
+      "verdict": "unusable",
+      "reason": "Severe crop with a melted red smear of figures on the balcony and a faceless cropped head foreground."
+    },
+    {
+      "artist": "Rubens",
+      "file": "rubens-anointing-christ-feet.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-lettering on the banderole/cartouche at lower left."
+    },
+    {
+      "artist": "Rubens",
+      "file": "rubens-saint-peter-tribute.webp",
+      "verdict": "text-artifact",
+      "reason": "Small monogram/mark stamped in the sand at bottom center."
+    },
+    {
+      "artist": "Rubens",
+      "file": "rubens-washing-of-feet.webp",
+      "verdict": "clean",
+      "reason": "Foot-washing scene with blank open book, no lettering or malformed anatomy."
+    },
+    {
+      "artist": "Scheffer",
+      "file": "scheffer-temptation-christ.webp",
+      "verdict": "clean",
+      "reason": "Two-figure hilltop scene, no text; hands and feet render correctly."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-bernini-angel-cross.webp",
+      "verdict": "text-artifact",
+      "reason": "INRI-style lettering carved on the scroll the angel holds."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-bernini-saint-teresa.webp",
+      "verdict": "clean",
+      "reason": "Bernini chapel group in duotone, no lettering and sculpture forms intact."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-bourdelle-beethoven-endure.webp",
+      "verdict": "clean",
+      "reason": "Engraved Beethoven bust on plinth, no lettering and no anatomy faults."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-bourdelle-beethoven.webp",
+      "verdict": "clean",
+      "reason": "Same bust motif, coherent hatched engraving with no glyphs."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-donatello-marble-david.webp",
+      "verdict": "clean",
+      "reason": "Standing David in niche; no text, hands and face read correctly."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-donatello-saint-george.webp",
+      "verdict": "clean",
+      "reason": "Armored figure with shield between columns; no lettering, anatomy holds."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-ghiberti-gates-detail.webp",
+      "verdict": "clean",
+      "reason": "Relief-panel architectural scene with framing niches, no inscriptions."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-ghiberti-gates-paradise-manna.webp",
+      "verdict": "clean",
+      "reason": "Gilded bronze door panels, no legible or pseudo lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-laocoon-sons.webp",
+      "verdict": "clean",
+      "reason": "Laocoön group with red serpents; figures intact, no text."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-michelangelo-david-standing.webp",
+      "verdict": "clean",
+      "reason": "David under a dome; hands and feet resolve cleanly, no glyphs."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-michelangelo-pieta-cross.webp",
+      "verdict": "text-artifact",
+      "reason": "Mary's chest sash carries dashed pseudo-inscription marks."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-michelangelo-pieta-end.webp",
+      "verdict": "text-artifact",
+      "reason": "Monogram-like glyph printed in the lower-right corner plus marks on the sash band."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-michelangelo-pieta.webp",
+      "verdict": "text-artifact",
+      "reason": "Beaded sash across Mary's chest reads as garbled inscription lettering."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-rodin-burghers-calais.webp",
+      "verdict": "unusable",
+      "reason": "Left figures have melted, eroded faces and clawed, malformed hands."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-rodin-prodigal-son-sin.webp",
+      "verdict": "text-artifact",
+      "reason": "Museum signage in the background shows large garbled pseudo-text."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-rodin-prodigal-son.webp",
+      "verdict": "clean",
+      "reason": "Kneeling figure with raised arms on plain ground, no text or anatomy faults."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-rodin-thinker.webp",
+      "verdict": "clean",
+      "reason": "Screenprint Thinker on plinth; no lettering, form is coherent."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-themis-justice.webp",
+      "verdict": "text-artifact",
+      "reason": "Large Greek title 'Θεά Θεμίδα' plus lettered product packaging in the foreground."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-thorvaldsen-christ-grace.webp",
+      "verdict": "unusable",
+      "reason": "Both hands render as blackened, webbed, malformed fingers."
+    },
+    {
+      "artist": "Unknown",
+      "file": "sculpt-winged-victory-samothrace.webp",
+      "verdict": "clean",
+      "reason": "Nike of Samothrace against hatched sky, no text, damage is authentic to the sculpture."
+    },
+    {
+      "artist": "Sloan",
+      "file": "sloan-sunday-women.webp",
+      "verdict": "text-artifact",
+      "reason": "Artist signature inscribed in the lower-right corner."
+    },
+    {
+      "artist": "Steen",
+      "file": "steen-merry-family-chaos.webp",
+      "verdict": "text-artifact",
+      "reason": "The seated man holds an open sheet covered in pseudo-text lines."
+    },
+    {
+      "artist": "Steen",
+      "file": "steen-merry-family.webp",
+      "verdict": "text-artifact",
+      "reason": "Pinned sheet on the wall at upper right carries garbled pseudo-lettering."
+    },
+    {
+      "artist": "Steen",
+      "file": "steen-rhetoricians-window.webp",
+      "verdict": "text-artifact",
+      "reason": "The held paper is covered in garbled pseudo-text lines."
+    },
+    {
+      "artist": "Tintoretto",
+      "file": "tintoretto-creation-animals.webp",
+      "verdict": "clean",
+      "reason": "Coherent creation scene, no lettering and no anatomy failures."
+    },
+    {
+      "artist": "Tissot",
+      "file": "tissot-christ-appears-apostles.webp",
+      "verdict": "clean",
+      "reason": "Lakeshore figure and boat, no glyphs, anatomy intact."
+    },
+    {
+      "artist": "Tissot",
+      "file": "tissot-feeding-five-thousand.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint scrawled signature-like glyphs in the lower center foreground."
+    },
+    {
+      "artist": "Tissot",
+      "file": "tissot-gathering-manna.webp",
+      "verdict": "clean",
+      "reason": "Crowd gathering manna, no lettering, hands and faces hold up."
+    },
+    {
+      "artist": "Tissot",
+      "file": "tissot-prodigal-son-city.webp",
+      "verdict": "unusable",
+      "reason": "Coarse halftone with smeared, featureless faces on nearly every figure."
+    },
+    {
+      "artist": "Tissot",
+      "file": "tissot-saint-john-baptist.webp",
+      "verdict": "clean",
+      "reason": "Figure under olive tree with deer, no text or visible anatomy break."
+    },
+    {
+      "artist": "Tissot",
+      "file": "tissot-the-tabernacle.webp",
+      "verdict": "text-artifact",
+      "reason": "Printed caption line 'II-63—Copyright, 1004, by M. de Brunoff.' across the bottom margin."
+    },
+    {
+      "artist": "Turner",
+      "file": "turner-evening-deluge.webp",
+      "verdict": "clean",
+      "reason": "Sun-over-water engraving, no glyphs, no anatomy issues."
+    },
+    {
+      "artist": "Van",
+      "file": "van-dyck-christ-cross.webp",
+      "verdict": "unusable",
+      "reason": "Christ's body is contorted and limbs fuse into the surrounding figures; faces are malformed."
+    },
+    {
+      "artist": "Van",
+      "file": "van-dyck-martyrdom-sebastian.webp",
+      "verdict": "clean",
+      "reason": "Well-formed figures and horse, no lettering anywhere."
+    },
+    {
+      "artist": "Van",
+      "file": "van-eyck-ghent-adoration-lamb.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-Latin inscriptions in the arch bands and under nearly every panel."
+    },
+    {
+      "artist": "Velazquez",
+      "file": "velazquez-christ-crucified-sin.webp",
+      "verdict": "text-artifact",
+      "reason": "Titulus plaque reads garbled 'Iesus Nazaraemus Rex Iudaeorum'."
+    },
+    {
+      "artist": "Velazquez",
+      "file": "velazquez-christ-crucified.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled titulus lettering at the top and again on the footrest."
+    },
+    {
+      "artist": "Vermeer",
+      "file": "vermeer-christ-martha-mary.webp",
+      "verdict": "clean",
+      "reason": "Woodcut interior scene, no lettering; figures legible."
+    },
+    {
+      "artist": "Vermeer",
+      "file": "vermeer-girl-pearl-earring.webp",
+      "verdict": "clean",
+      "reason": "Portrait with intact features and no glyphs."
+    },
+    {
+      "artist": "Vermeer",
+      "file": "vermeer-girl-pearl-standing.webp",
+      "verdict": "clean",
+      "reason": "Same portrait treatment, no text and no anatomy failure."
+    },
+    {
+      "artist": "Vermeer",
+      "file": "vermeer-the-geographer.webp",
+      "verdict": "text-artifact",
+      "reason": "Wall inscription 'I Ver Meer MDCLXVIII' plus lettering on the cabinet panel."
+    },
+    {
+      "artist": "Vermeer",
+      "file": "vermeer-woman-pearl-necklace.webp",
+      "verdict": "clean",
+      "reason": "Interior scene, hands and face intact, no lettering."
+    },
+    {
+      "artist": "Vermeer",
+      "file": "vermeer-woman-reading-chaos.webp",
+      "verdict": "text-artifact",
+      "reason": "Garbled pseudo-lettering in the map cartouche behind the woman."
+    },
+    {
+      "artist": "Vermeer",
+      "file": "vermeer-woman-reading-letter.webp",
+      "verdict": "text-artifact",
+      "reason": "Wall map carries scattered pseudo-text place-name glyphs."
+    },
+    {
+      "artist": "Veronese",
+      "file": "veronese-feast-cana-hunger.webp",
+      "verdict": "unusable",
+      "reason": "Banquet figures have skull-like melted faces and malformed limbs throughout."
+    },
+    {
+      "artist": "Veronese",
+      "file": "veronese-feast-cana.webp",
+      "verdict": "unusable",
+      "reason": "Multiple distorted faces and fused/extra hands around the table."
+    },
+    {
+      "artist": "Veronese",
+      "file": "veronese-the-resurrection.webp",
+      "verdict": "text-artifact",
+      "reason": "Hex code '#EDE6D3' printed in the bottom margin."
+    },
+    {
+      "artist": "Watteau",
+      "file": "watteau-gilles-pierrot.webp",
+      "verdict": "clean",
+      "reason": "Coherent halftone Pierrot scene, no lettering and no anatomy faults."
+    },
+    {
+      "artist": "Watts",
+      "file": "watts-hope-1886.webp",
+      "verdict": "text-artifact",
+      "reason": "Faint signature-like scribble in the lower-right corner of the plate."
+    },
+    {
+      "artist": "Watts",
+      "file": "watts-hope-end.webp",
+      "verdict": "text-artifact",
+      "reason": "Pseudo-text squiggles inscribed along the lyre's crossbar."
+    },
+    {
+      "artist": "Wright",
+      "file": "wright-alchemist-patience.webp",
+      "verdict": "text-artifact",
+      "reason": "Small framed plaque on the pier bears illegible inscribed glyphs."
+    },
+    {
+      "artist": "Wright",
+      "file": "wright-philosopher-orrery.webp",
+      "verdict": "clean",
+      "reason": "Intact orrery scene; bookshelf spines carry no legible lettering."
+    },
+    {
+      "artist": "Wright",
+      "file": "wright-the-alchemist.webp",
+      "verdict": "text-artifact",
+      "reason": "Wall clock face shows drawn numerals/markings."
+    }
+  ]
+}

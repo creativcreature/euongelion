@@ -295,10 +295,12 @@ const RATE_LIMITS: RateLimitConfig[] = [
   },
 ]
 
+// SA-090 / F-136 retired `/admin/youtube-allowlist` and `/admin/feed-controls`
+// (dead mockups, Development Rule 6) and added `/admin/edition`, the review
+// queue for The Daily Bread.
 const ADMIN_ROUTES = [
-  '/admin/youtube-allowlist',
+  '/admin/edition',
   '/admin/moderation',
-  '/admin/feed-controls',
   '/admin/transparency',
   '/admin/audit-logs',
 ]
@@ -410,8 +412,8 @@ const ROLE_PERMISSIONS: RolePermission[] = [
   },
   {
     role: 'admin',
-    route: '/admin/youtube-allowlist',
-    methods: ['GET', 'POST', 'DELETE'],
+    route: '/admin/edition',
+    methods: ['GET', 'POST'],
     allowed: true,
   },
 ]
@@ -878,14 +880,12 @@ describe('Role-based access control', () => {
   it('admin can access admin routes', () => {
     expect(checkRoleAccess('admin', '/admin/moderation', 'GET')).toBe(true)
     expect(checkRoleAccess('admin', '/admin/moderation', 'POST')).toBe(true)
-    expect(checkRoleAccess('admin', '/admin/youtube-allowlist', 'GET')).toBe(
-      true,
-    )
+    expect(checkRoleAccess('admin', '/admin/edition', 'GET')).toBe(true)
   })
 
   it('all admin routes defined', () => {
-    expect(ADMIN_ROUTES).toHaveLength(5)
-    expect(ADMIN_ROUTES).toContain('/admin/youtube-allowlist')
+    expect(ADMIN_ROUTES).toHaveLength(4)
+    expect(ADMIN_ROUTES).toContain('/admin/edition')
     expect(ADMIN_ROUTES).toContain('/admin/moderation')
     expect(ADMIN_ROUTES).toContain('/admin/audit-logs')
   })
@@ -1471,6 +1471,13 @@ describe('Contract tables reference shipped routes', () => {
   it('every admin route has a page on disk', () => {
     for (const route of ADMIN_ROUTES) {
       expect(handlerExists(route), `${route} has no page`).toBe(true)
+    }
+  })
+
+  it('the retired admin mockup pages are off disk (SA-090 / F-136)', () => {
+    for (const route of ['/admin/youtube-allowlist', '/admin/feed-controls']) {
+      expect(handlerExists(route), `${route} unexpectedly exists`).toBe(false)
+      expect(ADMIN_ROUTES, `${route} is still asserted`).not.toContain(route)
     }
   })
 

@@ -95,15 +95,23 @@ describe('migrateSessionData', () => {
 
   it('runs UPDATE against every session-keyed table when tokens differ', async () => {
     const result = await migrateSessionData('old-token', 'new-token')
-    expect(result.updatesAttempted).toBe(6)
+    expect(result.updatesAttempted).toBe(4)
 
     const tables = supabaseMock.updates.map((u) => u.table)
     expect(tables).toContain('devotional_plan_instances')
     expect(tables).toContain('audit_runs')
     expect(tables).toContain('consent_records')
-    expect(tables).toContain('annotations')
-    expect(tables).toContain('session_bookmarks')
     expect(tables).toContain('soul_audit_jobs')
+  })
+
+  it('does NOT migrate annotations or session_bookmarks (SA-062)', async () => {
+    // Those two are keyed to the auth user id since SA-062, so this UPDATE
+    // matched zero rows for every user, forever. Removed rather than left as
+    // a query that looks like it carries a reader's notes across devices.
+    await migrateSessionData('old-token', 'new-token')
+    const tables = supabaseMock.updates.map((u) => u.table)
+    expect(tables).not.toContain('annotations')
+    expect(tables).not.toContain('session_bookmarks')
   })
 
   it('uses session_id (not session_token) for soul_audit_jobs', async () => {
@@ -116,7 +124,7 @@ describe('migrateSessionData', () => {
     expect(jobUpdate?.filterValue).toBe('old-token')
   })
 
-  it('uses session_token for the other 5 tables', async () => {
+  it('uses session_token for the other 3 tables', async () => {
     await migrateSessionData('old-token', 'new-token')
     const others = supabaseMock.updates.filter(
       (u) => u.table !== 'soul_audit_jobs',
@@ -155,8 +163,8 @@ describe('linkSessionToUser', () => {
     )
     expect(tokensMigrated.has('phone-token')).toBe(true)
     expect(tokensMigrated.has('tablet-token')).toBe(true)
-    // 6 tables × 2 prior sessions = 12 UPDATEs.
-    expect(supabaseMock.updates).toHaveLength(12)
+    // 4 tables × 2 prior sessions = 8 UPDATEs.
+    expect(supabaseMock.updates).toHaveLength(8)
   })
 
   it('runs zero migration UPDATEs when the user has no other sessions', async () => {

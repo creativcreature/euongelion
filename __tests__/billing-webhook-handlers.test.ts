@@ -35,6 +35,10 @@ function makeChain(table: string) {
   let mode: 'select' | 'update' = 'select'
   let updateValues: Record<string, unknown> | null = null
   let countMode = false
+  // Rows an UPDATE actually matched — the writer `.select('id')`s to
+  // prove it wrote, so the mock must report matched rows, not just the
+  // absence of an error.
+  let updatedRows: UserRow[] = []
 
   const chain: Record<string, unknown> = {}
   chain.select = vi.fn(
@@ -52,6 +56,7 @@ function makeChain(table: string) {
     if (mode === 'update') {
       if (updateShouldFail) return chain
       users = users.map((u) => (u[col] === val ? { ...u, ...updateValues } : u))
+      updatedRows = users.filter((u) => u[col] === val)
     } else {
       filtered = users.filter((u) => u[col] === val)
     }
@@ -79,6 +84,7 @@ function makeChain(table: string) {
   chain.then = (resolve: (value: unknown) => void) => {
     if (mode === 'update') {
       resolve({
+        data: updateShouldFail ? null : updatedRows,
         error: updateShouldFail ? { message: 'simulated' } : null,
       })
       return
@@ -172,6 +178,8 @@ describe('handleSubscriptionCreated', () => {
     expect(result.handled).toBe(true)
     expect(result.userId).toBe('u1')
     expect(result.changes).toMatchObject({ subscription_tier: 'premium' })
+    // The writer proved it wrote — a matched-row update reports no error.
+    expect(result.error).toBeUndefined()
     expect(users[0].subscription_tier).toBe('premium')
   })
 

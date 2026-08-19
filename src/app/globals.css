@@ -10710,8 +10710,8 @@ html.reduce-motion
       --z-fixed 200). Safe-area aware; reduced-motion kills the
       entrance.
    2. .auth-code-input — the 6-digit magic-code field on
-      /auth/sign-in (Linear model): monospace-spaced numerals,
-      centered, one-time-code sized.
+      /auth/sign-in AND /auth/sign-up (Linear model):
+      monospace-spaced numerals, centered, one-time-code sized.
    Theme: rides --color-* tokens, so light + dark both resolve.
    ============================================================ */
 
@@ -10889,7 +10889,7 @@ html.reduce-motion .first-run-card {
   gap: 0.75rem;
 }
 
-/* --- 2. Sign-in 6-digit code field ------------------------------------- */
+/* --- 2. Sign-in / sign-up 6-digit code field ---------------------------- */
 
 .auth-code-input {
   text-align: center;
@@ -14706,4 +14706,600 @@ html[data-reading-measure='wide'] .vw-body-lg {
 
 .library-group-count {
   font-variant-numeric: tabular-nums;
+}
+
+/* ═══ The Daily Bread — the whole paper (SA-090 / F-136) ══════════════════
+   New sections of the edition, all speaking the existing bento-sheet
+   vocabulary: --ed-hair rules, paper-box compartments, edition-kicker /
+   edition-section-bar furniture. No new colors, no new fonts — a paper is
+   one sheet, and these are more compartments of it. */
+
+/* ── The season — the liturgical weather box ──────────────────────────── */
+
+.edition-season {
+  padding: 0;
+}
+
+.edition-season-name {
+  margin: 0.45rem 0 0.3rem;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+  line-height: 1.1;
+}
+
+.edition-season-note {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--mock-muted, currentColor);
+  max-width: 34ch;
+}
+
+/* ── The daily prayer — scripture set as the page's quiet center ──────── */
+
+.edition-prayer-text {
+  margin: 1.1rem 0 0.6rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.55;
+  font-style: italic;
+  white-space: pre-line;
+}
+
+.edition-prayer-cite {
+  margin: 0;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+}
+
+/* ── The funnies — one drawn panel, one dry line ──────────────────────── */
+
+.edition-strip {
+  margin: 0;
+}
+
+.edition-strip-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border: var(--ed-hair);
+}
+
+.edition-strip-img {
+  object-fit: cover;
+}
+
+.edition-strip-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+}
+
+.edition-strip-title {
+  flex: none;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.edition-strip-line {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* ── The gallery — a reproduction, framed like one ────────────────────── */
+
+.edition-gallery-frame {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 1.4rem;
+  margin: 0;
+}
+
+.edition-gallery-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: var(--ed-hair);
+  /* A print sits in a mat: breathing room between plate and rule. */
+  padding: 0;
+  background: var(--mock-paper, transparent);
+}
+
+.edition-gallery-img {
+  object-fit: contain;
+}
+
+.edition-gallery-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  align-self: end;
+}
+
+.edition-gallery-title {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  line-height: 1.15;
+}
+
+.edition-gallery-artist {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+}
+
+.edition-gallery-looking {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 38ch;
+}
+
+/* ── The screening room — attributed, linked out, never embedded ─────── */
+
+.edition-screening-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.edition-screening-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 1.1rem;
+  border-right: var(--ed-hair);
+  text-decoration: none;
+  color: inherit;
+}
+
+.edition-screening-item:first-child {
+  padding-left: 0;
+}
+
+.edition-screening-item:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.edition-screening-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: var(--ed-hair);
+  overflow: hidden;
+}
+
+.edition-screening-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edition-screening-kind {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+}
+
+.edition-screening-title {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.edition-screening-blurb {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--mock-muted, currentColor);
+}
+
+.edition-screening-source {
+  margin-top: auto;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ── The cloud of witnesses ───────────────────────────────────────────── */
+
+.edition-witness-name {
+  margin: 0.8rem 0 0.35rem;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+}
+
+.edition-witness-year {
+  font-size: 0.8em;
+  color: var(--mock-muted, currentColor);
+}
+
+.edition-witness-body {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+.edition-witness-source {
+  margin: 0;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-muted, currentColor);
+}
+
+/* ── The broken paper — Rule 1's visible failure ──────────────────────── */
+
+.edition-broken {
+  margin-top: 2.2rem;
+  padding: 1.2rem 1.4rem;
+  border: var(--ed-hair);
+  border-left-width: 4px;
+}
+
+.edition-broken-head {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.edition-broken-body {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--mock-muted, currentColor);
+}
+
+/* ── The puzzles page ─────────────────────────────────────────────────── */
+
+.puzzle-built {
+  min-height: 3.2rem;
+  margin: 0.9rem 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.puzzle-built-word {
+  margin-right: 0.35em;
+}
+
+.puzzle-built-empty {
+  font-size: 0.86rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  color: var(--mock-muted, currentColor);
+}
+
+.puzzle-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.puzzle-word-btn {
+  min-height: 44px;
+  padding: 0.45rem 0.85rem;
+  border: var(--ed-hair);
+  background: transparent;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.puzzle-word-wrong {
+  animation: puzzle-shake 0.3s;
+}
+
+@keyframes puzzle-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+.puzzle-reveal,
+.puzzle-score {
+  margin: 1rem 0 0;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Quiz */
+
+.puzzle-quiz-q + .puzzle-quiz-q {
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+  border-top: var(--ed-hair);
+}
+
+.puzzle-quiz-text {
+  margin: 0 0 0.7rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.puzzle-quiz-opts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.puzzle-quiz-opt {
+  min-height: 44px;
+  padding: 0.5rem 0.8rem;
+  border: var(--ed-hair);
+  background: transparent;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.82rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.puzzle-quiz-opt:disabled {
+  cursor: default;
+}
+
+.puzzle-quiz-right {
+  border-width: 2px;
+  font-weight: 600;
+}
+
+.puzzle-quiz-wrong {
+  text-decoration: line-through;
+  color: var(--mock-muted, currentColor);
+}
+
+/* Crossword */
+
+.puzzle-cw-cluebar {
+  min-height: 2.4rem;
+  margin: 0.9rem 0 0.7rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.puzzle-cw-cluenum {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.puzzle-cw-wrap {
+  position: relative;
+}
+
+.puzzle-cw-grid {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+  border: var(--ed-hair);
+}
+
+.puzzle-cw-cell {
+  position: relative;
+  border: 0.5px solid var(--mock-line, currentColor);
+  background: transparent;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  cursor: pointer;
+  padding: 0;
+  min-width: 0;
+}
+
+.puzzle-cw-block {
+  background: var(--mock-ink, currentColor);
+  border: 0.5px solid var(--mock-line, currentColor);
+}
+
+.puzzle-cw-active {
+  outline: 2px solid var(--mock-ink, currentColor);
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.puzzle-cw-word {
+  background: color-mix(in srgb, var(--mock-ink, black) 8%, transparent);
+}
+
+.puzzle-cw-wrongcell .puzzle-cw-letter {
+  text-decoration: line-through;
+  color: var(--mock-muted, currentColor);
+}
+
+.puzzle-cw-num {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  font-size: 0.42rem;
+  line-height: 1;
+}
+
+.puzzle-cw-letter {
+  font-size: clamp(0.7rem, 2.4vw, 1.05rem);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.puzzle-cw-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  border: 0;
+  padding: 0;
+}
+
+.puzzle-cw-actions {
+  margin-top: 0.9rem;
+}
+
+.puzzle-cw-check {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: var(--ed-hair);
+  background: transparent;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.puzzle-cw-cluelists {
+  margin-top: 1.1rem;
+}
+
+.puzzle-cw-cluelists summary {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.puzzle-cw-cluecols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+  margin-top: 0.8rem;
+}
+
+.puzzle-cw-listhead {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.puzzle-cw-cluecols ol {
+  margin: 0;
+  padding-left: 1.4rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.puzzle-cw-cluecols li + li {
+  margin-top: 0.35rem;
+}
+
+/* ── Sheet placements for the new compartments ────────────────────────── */
+
+/* The funnies take two columns; the season box takes the third. */
+.paper-box--strip {
+  grid-column: span 2;
+}
+
+.paper-box--season {
+  grid-column: span 1;
+}
+
+/* Gallery and prayer form the arts row: gallery wide, prayer the column. */
+.paper-box--gallery {
+  grid-column: span 2;
+}
+
+.paper-box--prayercol {
+  grid-column: span 1;
+}
+
+/* Puzzles: crossword takes two columns, the word games stack in the third. */
+.paper-box--crossword {
+  grid-column: span 2;
+}
+
+.paper-box--wordgames {
+  grid-column: span 1;
+}
+
+@media (max-width: 900px) {
+  .paper-box--strip,
+  .paper-box--season,
+  .paper-box--gallery,
+  .paper-box--prayercol,
+  .paper-box--crossword,
+  .paper-box--wordgames {
+    grid-column: span 1;
+  }
+
+  .edition-gallery-frame {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem;
+  }
+
+  .edition-screening-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .edition-screening-item {
+    padding: 1rem 0;
+    border-right: 0;
+    border-bottom: var(--ed-hair);
+  }
+
+  .edition-screening-item:first-child {
+    padding-top: 0;
+  }
+
+  .edition-screening-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .puzzle-quiz-opts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .puzzle-cw-grid {
+    max-width: 100%;
+  }
+}
+
+/* ── The lead plate — the feature leads with art (SA-090) ─────────────── */
+
+.edition-lead-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1408 / 768;
+  margin-bottom: 1.1rem;
+  border: var(--ed-hair);
+}
+
+.edition-lead-img {
+  object-fit: cover;
 }

@@ -19,6 +19,8 @@ type UserRow = {
 }
 
 let users: UserRow[] = []
+/** When false, correction UPDATEs match no row (drift between read and write). */
+let updateMatchesRow = true
 
 vi.mock('@/lib/supabase/admin', () => ({
   createAdminClient: () => ({
@@ -26,8 +28,16 @@ vi.mock('@/lib/supabase/admin', () => ({
       let filtered = users
       let mode: 'select' | 'update' = 'select'
       let updateValues: Record<string, unknown> = {}
+      let matchedRows: Array<{ id: string }> = []
       const chain: Record<string, unknown> = {}
-      chain.select = vi.fn(() => chain)
+      chain.select = vi.fn(() => {
+        if (mode === 'update') {
+          // .update().eq().select('id') — resolve with the rows the
+          // UPDATE actually matched, so the writer can prove it wrote.
+          return Promise.resolve({ data: matchedRows, error: null })
+        }
+        return chain
+      })
       chain.or = vi.fn(() => {
         filtered = users.filter(
           (row) =>
@@ -47,10 +57,13 @@ vi.mock('@/lib/supabase/admin', () => ({
       })
       chain.eq = vi.fn((col: string, val: unknown) => {
         if (mode === 'update') {
+          const matched = updateMatchesRow
+            ? users.filter((row) => row[col as 'id'] === val)
+            : []
+          matchedRows = matched.map((row) => ({ id: row.id }))
           users = users.map((row) =>
-            row[col as 'id'] === val ? { ...row, ...updateValues } : row,
+            matched.includes(row) ? { ...row, ...updateValues } : row,
           )
-          return Promise.resolve({ error: null })
         }
         return chain
       })
@@ -108,6 +121,7 @@ function fakeStripe(
 
 beforeEach(() => {
   users = []
+  updateMatchesRow = true
   vi.spyOn(console, 'error').mockImplementation(() => {})
   vi.spyOn(console, 'warn').mockImplementation(() => {})
 })
@@ -242,6 +256,26 @@ describe('reconcileBillingState', () => {
     })
     expect(report.errors).toHaveLength(1)
     expect(report.corrected).toHaveLength(0)
+    expect(users[0].subscription_tier).toBe('premium')
+  })
+
+  it('reports a failure, not a correction, when the UPDATE matches zero rows', async () => {
+    users = [
+      baseUser({
+        subscription_tier: 'premium',
+        subscription_status: 'active',
+        stripe_subscription_id: 'sub_ghost',
+      }),
+    ]
+    updateMatchesRow = false
+    const { reconcileBillingState } =
+      await import('@/lib/billing/reconciliation')
+    const report = await reconcileBillingState({
+      stripe: fakeStripe({ sub_ghost: { status: 'canceled' } }),
+    })
+    expect(report.corrected).toHaveLength(0)
+    expect(report.errors).toHaveLength(1)
+    expect(report.errors[0].error).toContain('matched 0 rows')
     expect(users[0].subscription_tier).toBe('premium')
   })
 

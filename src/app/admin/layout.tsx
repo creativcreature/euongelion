@@ -20,8 +20,8 @@ function adminAllowlist(): string[] {
  * Server-side gate for ALL `/admin/*` pages.
  *
  * The admin *APIs* were already gated (ADMIN_EMAIL_ALLOWLIST + Supabase auth),
- * but the admin *UI* pages (moderation, feed-controls, audit-logs,
- * youtube-allowlist, transparency, index) had no guard — anyone with the URL
+ * but the admin *UI* pages (edition, moderation, audit-logs, transparency,
+ * index) had no guard — anyone with the URL
  * could load them. This layout runs on the server before any admin page renders
  * and FAILS CLOSED: a request that is anonymous, signed-in-but-not-allowlisted,
  * or hitting an unset/empty allowlist gets a 404 (`notFound()`), so the admin

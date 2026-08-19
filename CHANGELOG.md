@@ -5,6 +5,169 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## v0.8.0 — release cut for the daily paper + accounts (SA-090, F-136)
+
+**2026-08-19**
+
+`npm run release minor`: edition 0.7.0 → 0.8.0, sw.js CACHE_NAME v117 → v118,
+client SW_VERSION v117 → v118 — the three numbers move in lockstep so the
+shell change ships with a cache generation bump (the F-134-era drift cannot
+recur). Deployed on the founder's explicit "please deploy".
+
+---
+
+## Accounts, fully implemented (SA-091, F-137)
+
+**2026-08-19 (overnight)**
+
+Founder: _"also fully impliment accounts."_ Method: a read-only audit of the
+entire auth surface first (12 broken findings, 13 missing pieces, every claim
+with file:line), then five parallel build lanes, then adversarial verification
+— which refuted every lane at least once — then a second fix round against the
+exact findings.
+
+**The P0 was a GDPR erosion nobody could see.** After the two-site-states data
+ruling (F-105), signed-in annotations and bookmarks key `session_token` to the
+auth user id — but deletion and export swept only anonymous session tokens.
+Every note, highlight and bookmark a signed-in reader ever made **survived
+"Delete My Account"** and was missing from their own export.
+`push_subscriptions` had the identical defect, caught by a verifier cloning
+the lane's own test harness. Both fixed, plus a structural test so the next
+user-id-keyed table cannot drift silently. One residual gap is documented
+rather than hidden: pre-F-105 rows keyed to the audit-session UUID are
+reachable by neither helper and need a linking decision.
+
+**Sign-up reaches parity with sign-in** — flag-gated Google below email,
+Turnstile token (defusing a 403 armed for the day the secret is set), in-page
+OTP entry on the page whose users are most exposed to the 2-emails/hour
+mailer cap, guest escape hatch, and a Turnstile remount defect fixed in both
+twins.
+
+**Reading progress becomes the reason to sign in.** `user_progress` had
+existed since migration 004 with zero readers or writers. `/api/reading-progress`
+now mirrors the listening-progress semantics; merge is a monotone union (done
+anywhere = done); and the store carries an **owner stamp** so a shared device
+never pushes one account's history into another — the second user's first
+sync replaces local state and re-stamps.
+
+**Billing works from any device.** The portal resolves via
+`stripe_customer_id` first (real as of tonight's migrations), falling back to
+the device-local checkout id; webhook and reconciliation writers now prove
+their writes and treat zero-row UPDATEs as failures instead of green logs.
+
+**Surface:** `/account` → `/settings` (the mobile tab already linked it),
+display name over the existing `full_name` column, email change with
+confirmation-time sync of `public.users.email`, `onboarding_completed`
+written non-fatally, and a middleware-matcher invariant test covering the
+F-083 regression class.
+
+**Still founder-blocked (external services):** custom SMTP — two emails an
+hour is not a product — and the Stripe environment. The read path is live;
+purchases stay off until `BILLING_CHECKOUT_LIVE` and keys exist.
+
+## The Daily Bread becomes a daily paper (SA-090, F-136)
+
+**2026-08-18/19**
+
+Founder: _"It needs new content every day. The cartoons are VERY bad right now.
+The devotional needs to be treated like a feature article… its own daily scroll
+hole of Good News… I dont want to have to prompt the content."_ Scope lock:
+_"Fully locked to the one page tho!"_
+
+**The engine.** Every section of the paper is now a row in `edition_items`,
+written by generators and read by the page at `revalidate 3600`. One contract
+file (`src/lib/edition/kinds.ts`: 16 kinds, typed payloads, plain predicate
+guards), one store (`src/lib/edition/store.ts` — the only module that touches
+the table; a failed read THROWS and the page renders a visible failure band,
+never a silently thinner paper). Content publishes with **no commit and no
+deploy** — Cloudflare Cron is inert here and auto-deploy is unreliable, so the
+nightly path is a GitHub Action (`daily-edition.yml`) writing rows; the
+founder's monthly batch is the same runner with `--days=30`.
+
+**Most of the paper needs no model.** The Daily Prayer (scripture prayed
+verbatim — 146-entry canon, every reference resolved against the BSB corpus in
+tests), the word of the day (140 curated Strong's numbers against the real
+lexicon index — no more 12-item loop), the crossword (real 11×11 construction,
+19 answers on a sampled day, clues with references), the verse unscramble, the
+three-question quiz, the liturgical season box, and the Gallery are all
+computed from assets already in the repo and publish directly. Only invented
+voice (the Sunday lead, strip captions) and third-party items pass the new
+review queue at `/admin/edition`.
+
+**The cartoons are replaced, not repaired.** The fedora panels are retired and
+`PANELS` deleted. The slot becomes **The Ninety-Nine** — the flock left behind
+while the shepherd goes after the one; sheep chosen partly because simple
+silhouettes cannot drift the way human figures did. Character sheet, ten
+SUBJECT lines, caption bank, and a prompt builder that reuses the locked
+preamble verbatim are all in `scripts/imagery/` with a Codex brief; the strip
+section renders nothing until founder-approved panels are installed.
+
+**Every print was actually looked at.** 15 parallel agents opened all 291
+prints in `public/images/devotional-prints/` and recorded verdict + reason:
+**145 clean / 116 text-artifact / 30 unusable**
+(`docs/print-audit-2026-08-18.json`). The Gallery serves only `clean` — five
+months of daily reproductions, each framed with artist and a line on what to
+look at. An earlier mechanical "provisionally clean" seed was caught by the
+adversarial verify pass publishing a print with a baked-in "OLIVE PRESS" sign,
+and was replaced by the visual audit.
+
+**The prayer list stops being invented.** F-098's authored weekday categories
+are replaced by prayers pulled directly from scripture, printed in full with
+reference and translation.
+
+**The Sunday feature.** `generateLead` composes one net-new lead each Sunday
+through `generateGroundedDay` — the same verbatim-scripture, grounded-lexicon,
+BM25-commentary pipeline as custom plans — against a 52-brief editorial
+calendar, landing as a draft for review. Rotation carries Monday–Saturday.
+
+**Adversarial verification caught four real defects before ship:** the queue
+approved strip artwork sight-unseen (now renders the panel); the queue omitted
+the authored lead's body — the longest invented text in the paper (now shows
+all of it); the mechanical clean-seed above; and a false "collision-free within
+a year" comment in two generators (each entry actually prints 2–3×/year; the
+real invariant — no repeat inside any 30-day window, including across the
+1 January index reset — is now stated correctly and proven in tests).
+
+**Cleanups en route:** `daily-edition.ts` trimmed 643→270 lines with a header
+recording where each retired section went; the dead `admin/youtube-allowlist`
+and `admin/feed-controls` mockups (hardcoded arrays, no handlers, a fabricated
+channel id) are deleted; `ADMIN_EMAIL_ALLOWLIST` was discovered unset anywhere
+(every admin surface failed closed in prod) — set locally, founder command for
+the prod secret in the morning notes.
+
+## The Daily Bread edition engine — four migrations applied (SA-090, F-136)
+
+**2026-08-18**
+
+Founder direction: _"I want to drastically improve The Daily Bread. It needs new
+content every day… I dont want to have to prompt the content."_ And on scope:
+_"Fully locked to the one page tho!"_
+
+**The paper repeats every ten days.** Every daily section is a fixed array in
+`src/data/daily-edition.ts` rotated by `dayOfYear % length` — 14 practices, 6
+guides, 10 panels, 12 word studies, 7 prayer foci — so a reader who returns for a
+fortnight has seen the whole paper twice. New content meant editing TypeScript
+and deploying.
+
+**`edition_items` is the store, and it publishes without a deploy.** One table
+keyed by `(kind, publish_date, slot)`. Cloudflare Cron is inert in this project
+(`triggers.crons` commented out; the OpenNext worker exports only `fetch`) and
+auto-deploy on push to main is not reliably firing, so any design where
+tomorrow's paper needs a deploy inherits this project's most failure-prone
+operation every single day. A GitHub Action writes rows instead.
+
+**Three billing migrations had been unapplied in production since July, and the
+failure was silent.** `readUserBillingState` selects `stripe_customer_id`,
+`subscription_status` and `generation_credits`; none of those columns existed, so
+it failed closed and **every signed-in user read as free tier**. Nothing looked
+broken, which is why it survived a month. All four migrations were applied
+together and verified by direct read-only probe against production — 8/8 columns
+and tables answering. `c.parker3@me.com` granted `role = 'admin'`.
+
+**Attribution is a constraint, not a convention.** `edition_items` carries a
+CHECK that third-party kinds cannot be inserted without `source_name` and
+`source_url`. The F-098 invention line, expressed in DDL.
+
 ## The publishing record — byline, publication dates, and one version (SA-089, F-135)
 
 **2026-08-18**
@@ -10037,7 +10200,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.7.0
+**Version:** 0.8.0
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync
