@@ -833,6 +833,13 @@ one per line as: Book C:V | one sentence on the link
 
 // ── main ─────────────────────────────────────────────────────────────
 
+/** BIBLE_BOOK_META names the book "Psalms"; a single reading cites one psalm.
+ * Display-only normalization for user-facing reference strings (SA-090 fix —
+ * the edition's prayer generator had the same defect). */
+function displayReference(canonical: string): string {
+  return canonical.replace(/^Psalms\b/, 'Psalm')
+}
+
 export async function generateGroundedDay(
   input: GroundedDayInput,
 ): Promise<GroundedDayResult> {
@@ -964,7 +971,7 @@ export async function generateGroundedDay(
   // the original (clean) body so a WordNote marker can't mask an author name.
   const endnotes: Endnote[] = buildStructuredEndnotes({
     body,
-    scriptureReference: verse.canonical,
+    scriptureReference: displayReference(verse.canonical),
     translation,
     sources,
     studies,
@@ -993,14 +1000,14 @@ export async function generateGroundedDay(
   }
 
   const content: DayContent = {
-    title: parsed.title || verse.canonical,
+    title: parsed.title || displayReference(verse.canonical),
     hookA: '',
     textB: markedBody,
     textBPreview: derivePreview(body),
     centerC: '',
     christConnectionBPrime: '',
     returnAPrime: '',
-    scriptureReference: verse.canonical,
+    scriptureReference: displayReference(verse.canonical),
     scriptureText: verse.text, // verbatim from corpus
     hebrewGreekStudy: primaryStudy,
     interactiveElement: { type: 'reflection', content: '' },

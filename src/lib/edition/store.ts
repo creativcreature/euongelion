@@ -57,7 +57,9 @@ export async function getEdition(date: string): Promise<Edition> {
   const supabase = createAdminClient()
   const { data, error } = await supabase
     .from('edition_items')
-    .select('id, kind, publish_date, slot, status, payload, source_name, source_url')
+    .select(
+      'id, kind, publish_date, slot, status, payload, source_name, source_url',
+    )
     .eq('publish_date', date)
     .eq('status', 'published')
     .order('slot', { ascending: true })
@@ -80,7 +82,9 @@ export async function getEdition(date: string): Promise<Edition> {
  * by the approval queue. Rejects the WHOLE batch on the first invalid item —
  * a partially-written edition is worse than a loudly-failed one.
  */
-export async function upsertEditionItems(items: EditionItem[]): Promise<number> {
+export async function upsertEditionItems(
+  items: EditionItem[],
+): Promise<number> {
   for (const item of items) {
     const err = validateEditionItem(item)
     if (err) {
@@ -117,7 +121,9 @@ export async function getReviewQueue(): Promise<EditionItem[]> {
   const supabase = createAdminClient()
   const { data, error } = await supabase
     .from('edition_items')
-    .select('id, kind, publish_date, slot, status, payload, source_name, source_url')
+    .select(
+      'id, kind, publish_date, slot, status, payload, source_name, source_url',
+    )
     .eq('status', 'draft')
     .order('publish_date', { ascending: true })
     .order('kind', { ascending: true })
@@ -127,14 +133,23 @@ export async function getReviewQueue(): Promise<EditionItem[]> {
   return ((data ?? []) as EditionRow[]).map(rowToItem)
 }
 
-/** Approve or reject one item by id. Approving publishes it. */
+/**
+ * Approve or reject one item by id. Approving publishes it.
+ *
+ * Returns TRUE only when a row actually moved. The `status = 'draft'` filter
+ * makes the verdict a compare-and-set: if the row was already reviewed — in
+ * another tab, by another admin, by a rerun — the update matches nothing and
+ * this returns false. The caller MUST NOT report that as success (Development
+ * Rule 1): a silent no-op verdict is how a reviewer comes to believe they
+ * rejected something the paper is about to print.
+ */
 export async function reviewEditionItem(
   id: string,
   verdict: 'published' | 'rejected',
   reviewerId: string,
-): Promise<void> {
+): Promise<boolean> {
   const supabase = createAdminClient()
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from('edition_items')
     .update({
       status: verdict,
@@ -143,8 +158,10 @@ export async function reviewEditionItem(
     })
     .eq('id', id)
     .eq('status', 'draft')
+    .select('id')
 
   if (error) throw new Error(`review update failed for ${id}: ${error.message}`)
+  return Array.isArray(data) && data.length > 0
 }
 
 /**
@@ -169,6 +186,7 @@ export async function getRecentPayloads(
     .lt('publish_date', beforeDate)
     .neq('status', 'rejected')
 
-  if (error) throw new Error(`recent payloads read failed (${kind}): ${error.message}`)
+  if (error)
+    throw new Error(`recent payloads read failed (${kind}): ${error.message}`)
   return (data ?? []).map((r) => r.payload)
 }

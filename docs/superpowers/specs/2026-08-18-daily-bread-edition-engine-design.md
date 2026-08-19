@@ -272,10 +272,14 @@ The 10 `par-*.webp` panels are retired from the daily slot.
 
 ## The Gallery and the print audit
 
-`scripts/edition/audit-prints.mjs` walks all 643 archived print sets and flags
-text artifacts, writing `docs/print-audit-2026-08-18.json` with a
-`clean | text-artifact | unusable` verdict per print. The Gallery generator
-draws only from `clean`.
+The audit covers the 291 tracked prints in `public/images/devotional-prints/`
+— the pool the site can actually serve. All 291 were VISUALLY inspected
+(fifteen parallel agents opened every file) and verdicted
+`clean | text-artifact | unusable` with a reason each, recorded in
+`docs/print-audit-2026-08-18.json`. The Gallery generator draws only from
+`clean` (145 prints — five months of dailies). The 643-directory archive at
+`archive/devotional-prints/` (662 MB, not served) is the later expansion pass:
+same JSON, same visual method, before any of it reaches the page.
 
 Each Gallery entry publishes as a reproduction, not decoration: artist, title,
 date, and one paragraph on what to look at. The frame is the point — it is what
@@ -313,7 +317,9 @@ Each phase ships independently; nothing waits on the phase after it.
 
 ## Acceptance
 
-- [ ] No section of the paper repeats within 30 days except the guides
+- [ ] No section of the paper repeats within 30 days except the guides and
+      the rail (37 series into 93 monthly rail slots makes repeats arithmetic,
+      not error — the rail is catalog promotion, not content)
 - [ ] A fresh edition appears daily with no human action and no deploy
 - [ ] `--days=30` produces a reviewable month in one run
 - [ ] Nothing third-party renders without `source_name` and `source_url`

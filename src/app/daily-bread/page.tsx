@@ -23,18 +23,22 @@ import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
 import { liturgicalDay } from '@/lib/liturgical'
+import { GUIDES, pickManyForDay } from '@/data/daily-edition'
+import { getEdition, type Edition } from '@/lib/edition/store'
 import {
-  COMMUNITY,
-  DISPATCHES,
-  GUIDES,
-  PANELS,
-  PRACTICES,
-  PRAYERS,
-  WORD_STUDIES,
-  pickForDay,
-  pickManyForDay,
-  prayerFocusFor,
-} from '@/data/daily-edition'
+  EditionUnavailable,
+  GalleryFrame,
+  LettersColumn,
+  NoticesColumn,
+  PrayerColumn,
+  ScreeningRoom,
+  SeasonBox,
+  StripPanel,
+  WitnessColumn,
+} from '@/components/edition/EditionSections'
+import CrosswordClient from '@/components/edition/puzzles/CrosswordClient'
+import UnscrambleClient from '@/components/edition/puzzles/UnscrambleClient'
+import QuizClient from '@/components/edition/puzzles/QuizClient'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
 import TodayReturningBand from '@/components/TodayReturningBand'
 import {
@@ -44,6 +48,7 @@ import {
   formatEditionDate,
 } from '@/lib/today-devotional'
 import { DEVOTIONAL_TEASERS } from '@/data/devotional-teasers'
+import { getSeriesHero } from '@/lib/series-hero'
 import type { Devotional, Module, Panel } from '@/types'
 
 /* ── Section icons (F-098) ─────────────────────────────────────────────
@@ -97,15 +102,6 @@ function WordIcon() {
 }
 
 /** Hands raised — the prayer list. */
-function PrayerIcon() {
-  return (
-    <SectionMark>
-      <path d="M12 20V9" />
-      <path d="M12 9c0-2.5-1.4-4.6-3.5-6C7 4.5 6.5 6.7 7 9c.4 1.8 1.5 3.2 3 4" />
-      <path d="M12 9c0-2.5 1.4-4.6 3.5-6C17 4.5 17.5 6.7 17 9c-.4 1.8-1.5 3.2-3 4" />
-    </SectionMark>
-  )
-}
 
 // ISR: revalidate every hour so the edition date is always correct
 export const revalidate = 3600
@@ -319,6 +315,10 @@ function ModuleBlock({ mod }: { mod: Module }) {
 // Page
 // ---------------------------------------------------------------------------
 
+function seriesSlugForHero(slug: string | undefined): string {
+  return slug ?? ''
+}
+
 export default async function DailyBreadPage() {
   const now = new Date()
   const slug = pickTodaySlug(now)
@@ -347,26 +347,63 @@ export default async function DailyBreadPage() {
   )
   // The rest of the paper, all keyed to the same day so the edition is one
   // thing rather than a set of independently-rotating widgets.
-  const practice = pickForDay(PRACTICES, dayOfYear)
-  const word = pickForDay(WORD_STUDIES, dayOfYear)
-  const panel = pickForDay(PANELS, dayOfYear)
   const guides = pickManyForDay(GUIDES, dayOfYear, 3)
-  const focus = prayerFocusFor(now.getUTCDay())
-  const editionWeekday = now.toLocaleDateString('en-US', {
-    weekday: 'long',
-    timeZone: 'UTC',
-  })
 
-  const seriesTitle = meta?.series.title ?? 'Daily Devotional'
+  // The DB-fed edition (SA-090). A failed read renders a VISIBLE failure band
+  // in place of the editorial sections — never a silently thinner paper. The
+  // reading itself never depends on this fetch.
+  const editionKey = now.toISOString().slice(0, 10)
+  let edition: Edition | null = null
+  let editionFailed = false
+  try {
+    edition = await getEdition(editionKey)
+  } catch {
+    editionFailed = true
+  }
+  // A published authored lead (the Sunday feature) REPLACES the rotation
+  // front page and the reading body. Rotation is the norm, not a fallback.
+  const edLead = edition?.lead?.[0]?.payload
+  const authoredLead = edLead?.mode === 'authored' ? edLead : undefined
+
+  const edPractice = edition?.practice?.[0]?.payload
+  const edSeason = edition?.season?.[0]?.payload
+  const edWord = edition?.word?.[0]?.payload
+  const edStrip = edition?.strip?.[0]?.payload
+  const edGallery = edition?.gallery?.[0]?.payload
+  const edPrayer = edition?.prayer?.[0]?.payload
+  const edWitness = edition?.witness?.[0]?.payload
+  const edCrossword = edition?.crossword?.[0]?.payload
+  const edUnscramble = edition?.unscramble?.[0]?.payload
+  const edQuiz = (edition?.quiz ?? []).map((q) => q.payload)
+  const edScreening = (edition?.screening ?? []).map((q) => q.payload)
+  const edLetters = (edition?.letter ?? []).map((q) => q.payload)
+  const edNotices = (edition?.notice ?? []).map((q) => q.payload)
+
+  // The lead plate — a feature article leads with art (founder: "very image
+  // and text as art forward"). Riso series hero; absent for an authored lead
+  // until Sunday features carry their own plates.
+  const leadHero = authoredLead
+    ? undefined
+    : getSeriesHero(seriesSlugForHero(meta?.seriesSlug))
+
+  const seriesTitle = authoredLead
+    ? 'The Sunday Feature'
+    : (meta?.series.title ?? 'Daily Devotional')
   const seriesSlug = meta?.seriesSlug ?? ''
-  const dayTitle = devotional?.title ?? meta?.day.title ?? 'Today'
-  const dayNumber = meta?.day.day ?? 1
+  const dayTitle =
+    authoredLead?.title ?? devotional?.title ?? meta?.day.title ?? 'Today'
+  const dayNumber = authoredLead ? 1 : (meta?.day.day ?? 1)
   const scriptureRef =
+    authoredLead?.scriptureReference ??
     (devotional as (Devotional & { scriptureReference?: string }) | null)
       ?.scriptureReference ??
     meta?.series.framework?.split(' - ')[0] ??
     ''
-  const teaser = DEVOTIONAL_TEASERS[slug] ?? meta?.series.question ?? ''
+  const teaser =
+    authoredLead?.standfirst ??
+    DEVOTIONAL_TEASERS[slug] ??
+    meta?.series.question ??
+    ''
 
   // Modules-format (Substack/rich) vs. panels-format (Wake-Up / legacy)
   const hasModules =
@@ -478,6 +515,18 @@ export default async function DailyBreadPage() {
             day — not a recommendation engine pretending to be one. */}
         <div className="edition-front">
           <section className="edition-lead" aria-label="Today's reading">
+            {leadHero && (
+              <span className="edition-lead-plate">
+                <Image
+                  src={leadHero.src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 900px) 100vw, 60vw"
+                  className="edition-lead-img"
+                  priority
+                />
+              </span>
+            )}
             {scriptureRef && <p className="edition-kicker">{scriptureRef}</p>}
             <h2 className="edition-lead-head">{dayTitle}</h2>
             {teaser && <p className="edition-lead-stand">{teaser}</p>}
@@ -551,42 +600,74 @@ export default async function DailyBreadPage() {
             COMPARTMENT, and the compartments butt edge to edge sharing their
             rules — which is how a real page is made up, and the reason a
             newspaper reads as one sheet rather than a stack of cards. */}
-        <div className="paper-sheet">
-          <div className="edition-band paper-box paper-box--wide" data-reveal>
-            {practice && (
-              <section
-                className="edition-practice"
-                aria-label="Today's practice"
-              >
-                <p className="edition-kicker">
-                  <PracticeIcon />
-                  The practice
-                </p>
-                <p className="edition-practice-do">{practice.instruction}</p>
-                <p className="edition-practice-why">{practice.reason}</p>
-                <p className="edition-practice-time">{practice.duration}</p>
-              </section>
-            )}
+        {editionFailed && <EditionUnavailable />}
 
-            {word && (
-              <section className="edition-word" aria-label="Word of the day">
-                <p className="edition-kicker">
-                  <WordIcon />
-                  {word.language} today
-                </p>
-                <p
-                  className="edition-word-original"
-                  lang={word.language === 'Greek' ? 'el' : 'he'}
+        <div className="paper-sheet">
+          {(edPractice || edWord) && (
+            <div className="edition-band paper-box paper-box--wide" data-reveal>
+              {edPractice && (
+                <section
+                  className="edition-practice"
+                  aria-label="Today's practice"
                 >
-                  {word.word}
-                </p>
-                <p className="edition-word-translit">{word.translit}</p>
-                <p className="edition-word-gloss">{word.gloss}</p>
-                <p className="edition-word-note">{word.note}</p>
-                <p className="edition-word-ref">{word.reference}</p>
-              </section>
-            )}
-          </div>
+                  <p className="edition-kicker">
+                    <PracticeIcon />
+                    The practice
+                  </p>
+                  <p className="edition-practice-do">
+                    {edPractice.instruction}
+                  </p>
+                  <p className="edition-practice-why">{edPractice.reason}</p>
+                  <p className="edition-practice-time">{edPractice.duration}</p>
+                </section>
+              )}
+
+              {edWord && (
+                <section className="edition-word" aria-label="Word of the day">
+                  <p className="edition-kicker">
+                    <WordIcon />
+                    {edWord.language} today
+                  </p>
+                  <p
+                    className="edition-word-original"
+                    lang={edWord.language === 'Greek' ? 'el' : 'he'}
+                  >
+                    {edWord.word}
+                  </p>
+                  <p className="edition-word-translit">{edWord.translit}</p>
+                  <p className="edition-word-gloss">{edWord.gloss}</p>
+                  <p className="edition-word-note">{edWord.source}</p>
+                  <p className="edition-word-ref">{edWord.reference}</p>
+                </section>
+              )}
+            </div>
+          )}
+
+          {/* The funnies + the season. The strip renders only when a drawn
+              panel exists for the day — no placeholder while the bank of The
+              Ninety-Nine is being drawn. */}
+          {edStrip && (
+            <section
+              className="edition-section paper-box paper-box--strip"
+              data-reveal
+              aria-label="The funnies"
+            >
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">The funnies</h2>
+                <p className="edition-section-note">The Ninety-Nine</p>
+              </div>
+              <StripPanel strip={edStrip} />
+            </section>
+          )}
+
+          {edSeason && (
+            <div
+              className={`paper-box ${edStrip ? 'paper-box--season' : 'paper-box--wide'}`}
+              data-reveal
+            >
+              <SeasonBox season={edSeason} />
+            </div>
+          )}
 
           {guides.length > 0 && (
             <section
@@ -628,116 +709,91 @@ export default async function DailyBreadPage() {
             </section>
           )}
 
-          {panel && (
+          {/* The puzzles page. Crossword beside the word games — the most
+              reliably daily page in the paper, and the reason to come back
+              with coffee. */}
+          {edCrossword && (
             <section
-              className="edition-section paper-box paper-box--panel"
+              className="edition-section paper-box paper-box--crossword"
               data-reveal
-              aria-label="The daily panel"
+              aria-label="The crossword"
             >
               <div className="edition-section-bar">
-                <h2 className="edition-section-head">The daily panel</h2>
-                <p className="edition-section-note">{panel.reference}</p>
+                <h2 className="edition-section-head">The crossword</h2>
+                <p className="edition-section-note">
+                  Answers from scripture &middot; no timer, no streak
+                </p>
               </div>
-              <figure className="edition-panel">
-                <span className="edition-panel-plate" data-parallax="0.5">
-                  <Image
-                    src={panel.image}
-                    alt={panel.alt}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 46vw"
-                    className="edition-panel-img"
-                  />
-                </span>
-                <figcaption className="edition-panel-caption">
-                  <span className="edition-panel-title">{panel.title}</span>
-                  <span className="edition-panel-line">{panel.caption}</span>
-                </figcaption>
-              </figure>
+              <CrosswordClient puzzle={edCrossword} />
             </section>
           )}
 
-          <section
-            className="edition-section paper-box paper-box--rail"
-            data-reveal
-            aria-label="The prayer list"
-          >
-            <div className="edition-section-bar">
-              <h2 className="edition-section-head">The prayer list</h2>
-              <p className="edition-section-note">
-                {focus.focus} &middot; {editionWeekday}
-              </p>
+          {(edUnscramble || edQuiz.length > 0) && (
+            <div
+              className={`paper-box ${edCrossword ? 'paper-box--wordgames' : 'paper-box--wide'}`}
+              data-reveal
+            >
+              {edUnscramble && (
+                <section aria-label="The verse, rebuilt">
+                  <div className="edition-section-bar">
+                    <h2 className="edition-section-head">The verse, rebuilt</h2>
+                  </div>
+                  <UnscrambleClient puzzle={edUnscramble} />
+                </section>
+              )}
+              {edQuiz.length > 0 && (
+                <section aria-label="Where is this from?">
+                  <div className="edition-section-bar">
+                    <h2 className="edition-section-head">
+                      Where is this from?
+                    </h2>
+                  </div>
+                  <QuizClient questions={edQuiz} />
+                </section>
+              )}
             </div>
-            <ul className="edition-petitions">
-              {focus.petitions.map((pet) => (
-                <li key={pet} className="edition-petition">
-                  <PrayerIcon />
-                  <span>{pet}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          {/* Editorial sections. Each renders ONLY when it carries real entries —
-            an empty section does not appear at all. There is no feed of global
-            reports or prayer submissions yet, and inventing one would publish
-            fiction as fact under a masthead. See src/data/daily-edition.ts. */}
-          {DISPATCHES.length > 0 && (
-            <section className="edition-section" aria-label="Dispatches">
-              <h2 className="edition-section-head">Dispatches</h2>
-              <div className="edition-columns">
-                {DISPATCHES.map((d) => (
-                  <article key={d.title} className="edition-item">
-                    <h3 className="edition-item-head">{d.title}</h3>
-                    <p className="edition-item-place">{d.place}</p>
-                    <p className="edition-item-body">{d.body}</p>
-                    <p className="edition-item-source">
-                      {d.href ? (
-                        <a
-                          href={d.href}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          {d.source}
-                        </a>
-                      ) : (
-                        d.source
-                      )}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </section>
           )}
 
-          {COMMUNITY.length > 0 && (
-            <section className="edition-section" aria-label="Community">
-              <h2 className="edition-section-head">Community</h2>
-              <div className="edition-columns">
-                {COMMUNITY.map((c) => (
-                  <article key={c.title} className="edition-item">
-                    <h3 className="edition-item-head">{c.title}</h3>
-                    <p className="edition-item-place">
-                      {c.by} · {c.place}
-                    </p>
-                    <p className="edition-item-body">{c.body}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
+          {/* The arts row: a reproduction beside the daily prayer. */}
+          {edGallery && (
+            <div className="paper-box paper-box--gallery" data-reveal>
+              <GalleryFrame art={edGallery} />
+            </div>
           )}
 
-          {PRAYERS.length > 0 && (
-            <section className="edition-section" aria-label="Prayer list">
-              <h2 className="edition-section-head">The prayer list</h2>
-              <ul className="edition-prayers">
-                {PRAYERS.map((pr) => (
-                  <li key={pr.request} className="edition-prayer">
-                    <span className="edition-prayer-text">{pr.request}</span>
-                    <span className="edition-prayer-from">{pr.from}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
+          {edPrayer && (
+            <div
+              className={`paper-box ${edGallery ? 'paper-box--prayercol' : 'paper-box--wide'}`}
+              data-reveal
+            >
+              <PrayerColumn prayer={edPrayer} />
+            </div>
+          )}
+
+          {/* Third-party content — allowlisted, founder-approved, attributed,
+              linked out. Renders nothing until real approved items exist. */}
+          {edScreening.length > 0 && (
+            <div className="paper-box paper-box--wide" data-reveal>
+              <ScreeningRoom items={edScreening} />
+            </div>
+          )}
+
+          {edWitness && (
+            <div className="paper-box paper-box--wide" data-reveal>
+              <WitnessColumn witness={edWitness} />
+            </div>
+          )}
+
+          {edLetters.length > 0 && (
+            <div className="paper-box paper-box--wide" data-reveal>
+              <LettersColumn letters={edLetters} />
+            </div>
+          )}
+
+          {edNotices.length > 0 && (
+            <div className="paper-box paper-box--wide" data-reveal>
+              <NoticesColumn notices={edNotices} />
+            </div>
           )}
         </div>
 
@@ -768,7 +824,19 @@ export default async function DailyBreadPage() {
           className="today-reading-body"
           aria-label={`${dayTitle} reading`}
         >
-          {devotional === null && (
+          {authoredLead &&
+            authoredLead.body &&
+            authoredLead.body
+              .split(/\n\n+/)
+              .map((para, i) => (
+                <p
+                  key={i}
+                  className="today-body"
+                  dangerouslySetInnerHTML={{ __html: inlineMd(para) }}
+                />
+              ))}
+
+          {!authoredLead && devotional === null && (
             <div className="today-fallback">
               <p className="mock-subcopy">
                 {`Today's reading didn't load. `}
@@ -781,11 +849,13 @@ export default async function DailyBreadPage() {
           )}
 
           {/* Modules format (Substack/rich devotionals) */}
-          {hasModules &&
+          {!authoredLead &&
+            hasModules &&
             modules.map((mod, i) => <ModuleBlock key={i} mod={mod} />)}
 
           {/* Panels format (Wake-Up / legacy devotionals) */}
-          {hasPanels &&
+          {!authoredLead &&
+            hasPanels &&
             panels
               .filter((p) => p.type !== 'cover')
               .map((panel, i) => <PanelContent key={i} panel={panel} />)}

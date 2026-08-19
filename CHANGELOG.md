@@ -5,6 +5,76 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The Daily Bread becomes a daily paper (SA-090, F-136)
+
+**2026-08-18/19**
+
+Founder: _"It needs new content every day. The cartoons are VERY bad right now.
+The devotional needs to be treated like a feature article… its own daily scroll
+hole of Good News… I dont want to have to prompt the content."_ Scope lock:
+_"Fully locked to the one page tho!"_
+
+**The engine.** Every section of the paper is now a row in `edition_items`,
+written by generators and read by the page at `revalidate 3600`. One contract
+file (`src/lib/edition/kinds.ts`: 16 kinds, typed payloads, plain predicate
+guards), one store (`src/lib/edition/store.ts` — the only module that touches
+the table; a failed read THROWS and the page renders a visible failure band,
+never a silently thinner paper). Content publishes with **no commit and no
+deploy** — Cloudflare Cron is inert here and auto-deploy is unreliable, so the
+nightly path is a GitHub Action (`daily-edition.yml`) writing rows; the
+founder's monthly batch is the same runner with `--days=30`.
+
+**Most of the paper needs no model.** The Daily Prayer (scripture prayed
+verbatim — 146-entry canon, every reference resolved against the BSB corpus in
+tests), the word of the day (140 curated Strong's numbers against the real
+lexicon index — no more 12-item loop), the crossword (real 11×11 construction,
+19 answers on a sampled day, clues with references), the verse unscramble, the
+three-question quiz, the liturgical season box, and the Gallery are all
+computed from assets already in the repo and publish directly. Only invented
+voice (the Sunday lead, strip captions) and third-party items pass the new
+review queue at `/admin/edition`.
+
+**The cartoons are replaced, not repaired.** The fedora panels are retired and
+`PANELS` deleted. The slot becomes **The Ninety-Nine** — the flock left behind
+while the shepherd goes after the one; sheep chosen partly because simple
+silhouettes cannot drift the way human figures did. Character sheet, ten
+SUBJECT lines, caption bank, and a prompt builder that reuses the locked
+preamble verbatim are all in `scripts/imagery/` with a Codex brief; the strip
+section renders nothing until founder-approved panels are installed.
+
+**Every print was actually looked at.** 15 parallel agents opened all 291
+prints in `public/images/devotional-prints/` and recorded verdict + reason:
+**145 clean / 116 text-artifact / 30 unusable**
+(`docs/print-audit-2026-08-18.json`). The Gallery serves only `clean` — five
+months of daily reproductions, each framed with artist and a line on what to
+look at. An earlier mechanical "provisionally clean" seed was caught by the
+adversarial verify pass publishing a print with a baked-in "OLIVE PRESS" sign,
+and was replaced by the visual audit.
+
+**The prayer list stops being invented.** F-098's authored weekday categories
+are replaced by prayers pulled directly from scripture, printed in full with
+reference and translation.
+
+**The Sunday feature.** `generateLead` composes one net-new lead each Sunday
+through `generateGroundedDay` — the same verbatim-scripture, grounded-lexicon,
+BM25-commentary pipeline as custom plans — against a 52-brief editorial
+calendar, landing as a draft for review. Rotation carries Monday–Saturday.
+
+**Adversarial verification caught four real defects before ship:** the queue
+approved strip artwork sight-unseen (now renders the panel); the queue omitted
+the authored lead's body — the longest invented text in the paper (now shows
+all of it); the mechanical clean-seed above; and a false "collision-free within
+a year" comment in two generators (each entry actually prints 2–3×/year; the
+real invariant — no repeat inside any 30-day window, including across the
+1 January index reset — is now stated correctly and proven in tests).
+
+**Cleanups en route:** `daily-edition.ts` trimmed 643→270 lines with a header
+recording where each retired section went; the dead `admin/youtube-allowlist`
+and `admin/feed-controls` mockups (hardcoded arrays, no handlers, a fabricated
+channel id) are deleted; `ADMIN_EMAIL_ALLOWLIST` was discovered unset anywhere
+(every admin surface failed closed in prod) — set locally, founder command for
+the prod secret in the morning notes.
+
 ## The Daily Bread edition engine — four migrations applied (SA-090, F-136)
 
 **2026-08-18**

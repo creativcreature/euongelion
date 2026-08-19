@@ -4,11 +4,14 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
 
+// SA-090 / F-136: `YouTube Allowlist` and `Feed Controls` are gone. They were
+// hardcoded arrays behind buttons with no handlers — one of the channel ids was
+// fabricated — which is exactly what Development Rule 6 forbids. The real
+// source allowlist arrives with the Screening Room.
 const ADMIN_NAV = [
   { href: '/admin', label: 'Dashboard' },
-  { href: '/admin/youtube-allowlist', label: 'YouTube Allowlist' },
+  { href: '/admin/edition', label: 'Edition Queue' },
   { href: '/admin/moderation', label: 'Moderation' },
-  { href: '/admin/feed-controls', label: 'Feed Controls' },
   { href: '/admin/transparency', label: 'Transparency' },
   { href: '/admin/audit-logs', label: 'Audit Logs' },
 ]

