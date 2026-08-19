@@ -42,6 +42,10 @@ catalogue's hours computed from the manifest so the claim can't drift.
 Caught in review: the first draft nested the play control inside the expand
 button. A control inside a control is invalid and unreachable by keyboard.
 
+**Service worker v128 -> v129.** Reading routes are cache-first, so without
+the bump a returning reader keeps the old shell and the bar they were
+complaining about.
+
 Homepage information flow is proposed separately, and deliberately not built.
 
 ---
