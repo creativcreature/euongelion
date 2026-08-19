@@ -150,3 +150,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-145 | Platform          | Library series standing: CURRENT, N of M, Continue        | 0/10     | wip     | [F-145.md](./F-145.md) |
 | F-146 | Content pipeline  | Weekly devo-go on subscription; override; gate kept       | 0/10     | shipped | [F-146.md](./F-146.md) |
 | F-147 | Reading surfaces  | Listenable paper; occasion picker; offline downloads      | 0/10     | wip     | [F-147.md](./F-147.md) |
+| F-148 | Platform          | Build guard: client config must be present                | 0/10     | wip     | [F-148.md](./F-148.md) |

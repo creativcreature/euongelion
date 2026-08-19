@@ -1347,3 +1347,11 @@ features:
     prd: docs/feature-prds/F-147.md
     methodology_refs:
       - M00
+  - id: F-148
+    title: A build without its client config must fail, not ship
+    slug: public-config-build-guard
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-148.md
+    methodology_refs:
+      - M00

@@ -16,7 +16,7 @@
     "build:wordnote-bank": "node scripts/build-wordnote-bank.mjs",
     "render:wakeup-handout": "node wakeup-mag/print/handouts/scripts/render-pocket-handout.mjs --input wakeup-mag/reference/HANDOUT.md",
     "expand:reference-index": "tsx scripts/expand-reference-index.ts",
-    "build": "node scripts/check-node-version.mjs && node scripts/generate-artwork-manifest.mjs && node scripts/generate-devotional-teasers.mjs && next build --webpack",
+    "build": "node scripts/check-node-version.mjs && node scripts/check-public-config.mjs && node scripts/generate-artwork-manifest.mjs && node scripts/generate-devotional-teasers.mjs && next build --webpack",
     "start": "next start --port 3333",
     "ios:sync": "npx cap sync ios",
     "ios:open": "npx cap open ios",

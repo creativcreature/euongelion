@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## A build without its client config must fail, not ship (SA-102, F-148)
+
+**2026-08-19**
+
+Google sign-in was enabled in Supabase, coded into both auth pages, flagged
+`true` — and absent from production.
+
+`NEXT_PUBLIC_*` is inlined **at build time**. `.env.local` holds those values and
+is gitignored, and a Worker secret does nothing for them. So a build from a fresh
+clone, a CI runner, or a clean git worktree silently succeeds and emits a bundle
+with no Supabase client config and no "Continue with Google". Nothing fails. The
+deploy reports success. The only way to notice is to go looking for a feature and
+find it gone.
+
+Proven rather than inferred: a local build **with** the file inlines "Continue
+with Google" into two chunks and the Supabase host into three. The code and the
+flag were right; the artifact was not.
+
+The irony is sharp — the clean-checkout deploy was introduced so one session
+could not ship another's uncommitted work, and it is precisely the path most
+likely to omit a gitignored file.
+
+`scripts/check-public-config.mjs` now runs first in the build and refuses to
+continue without the required keys, naming any optional flags that are dark so a
+sign-in method cannot go quietly off. Names only, never values.
+
 ## The paper is listenable, discovery has a front door, readings go offline (SA-101, F-147)
 
 **2026-08-19**
