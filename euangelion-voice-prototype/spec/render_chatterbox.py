@@ -183,7 +183,9 @@ DUP_RATIO = 1.18            # transcript longer than this = restart or loop
 DUP_MIN_EXCESS = 5          # ...but only if it is also this many words longer
 PACE_MAX = 240              # wpm; above this the audio is short for its text
 PACE_MIN = 90               # wpm; below this it stalled or garbled
-CHECK_MIN_WORDS = 12        # a wpm figure below this is noise
+CHECK_MIN_WORDS = 12        # a wpm figure below this is noise — and so is a
+                            # clarity RATIO; see the gate below
+SHORT_DROP_MAX = 1          # absolute ceiling for parts under that length
 SHORT_MIN_SEC = 0.14        # so short parts get a duration floor per word
                             # instead (0.14 s/word ≈ a 428 wpm ceiling — wide
                             # enough never to fire on a normally-read title,
@@ -400,7 +402,24 @@ def evaluate(spoken, hypothesis, duration, gate, drop_max=DROP_MAX):
         "wpm": round(words / duration * 60) if duration else 0,
     }
     reasons = []
-    if m["clarity"] < gate:
+    # A RATIO over a handful of tokens is noise, exactly as a wpm figure is —
+    # which is why the pace check below already exempts short parts via
+    # CHECK_MIN_WORDS. Clarity never got the same treatment, and it should:
+    # "A Small Reading" loses its unstressed article to the ASR and scores
+    # 0.67; "The Hebrew word tselem" loses the one word English cannot spell
+    # and scores 0.75. Both are correct audio, and both burn all four attempts.
+    # MIN_PART_WORDS exists to merge these away, but it only fires on a short
+    # TAIL of a multi-part segment — a standalone short segment is unprotected.
+    # So below the threshold, judge absolutely: at most ONE word-equivalent
+    # missing, which is stricter than the drop_max applied to long parts. The
+    # tail, pace and duplication detectors are untouched, so a short part that
+    # is truncated, rushed or looped still fails.
+    if words < CHECK_MIN_WORDS:
+        if dropped > SHORT_DROP_MAX:
+            reasons.append(
+                f"{dropped} of {words} word-equivalents missing "
+                f"> short-part ceiling {SHORT_DROP_MAX}")
+    elif m["clarity"] < gate:
         reasons.append(f"clarity {m['clarity']:.2f} < {gate:.2f}")
     elif dropped > drop_max:
         reasons.append(f"{dropped} word-equivalents missing > ceiling {drop_max}")

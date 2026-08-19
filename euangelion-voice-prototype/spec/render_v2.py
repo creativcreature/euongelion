@@ -129,6 +129,14 @@ ASR_CONFUSIONS = {
     frozenset(("lord", "lard")), frozenset(("psalm", "some")),
     frozenset(("hosea", "hoseah")), frozenset(("yahweh", "yaweh")),
     frozenset(("israel", "isreal")), frozenset(("thee", "the")),
+    # Hebrew/Greek transliterations Whisper cannot spell. The VOICE says these
+    # correctly — measured by ear and by the fact that every attempt produces a
+    # different plausible spelling — but the transcript never matches, so a
+    # four-word segment like "The Hebrew word tselem" scores a deterministic
+    # 0.75 and burns all four attempts. Observed spellings, day 2, 5 passes:
+    frozenset(("tselem", "selam")), frozenset(("tselem", "salem")),
+    frozenset(("tselem", "selim")), frozenset(("tselem", "selaym")),
+    frozenset(("tselem", "chalima")),
 }
 
 
@@ -149,6 +157,59 @@ def soundex(w):
     return (out + "000")[:4].upper()
 
 
+def near_transliteration(expected, heard):
+    """True when `heard` is plainly the ASR's spelling of `expected`.
+
+    Whisper was never trained on Hebrew and Greek transliterations, so it
+    invents a spelling every time and a token-exact ratio punishes correct
+    audio. Measured on day 4's word study, one segment carried four at once:
+    ezer/easer, kenegdo/kanego, neged/negged, 'in/in. The voice was right in
+    all four; only the transcript was wrong.
+
+    Soundex cannot rescue these because it keys on the first letter and the
+    ASR routinely drops or changes it (tselem -> selam). Edit distance can:
+    the observed pairs sit at 0.67-0.83 similarity while a genuinely different
+    word — the failures that MUST still fail, like hebrews/eruz at 0.29 or
+    tselem/chalima at 0.29 — sits far below.
+
+    Deliberately narrow: 1-for-1 token swaps only, tokens of 4+ characters so
+    short English words are not loosened, and a 0.6 floor. The absolute
+    dropped-word ceiling (DROP_MAX) and the tail, pace and duplication
+    detectors are untouched, so a truncated or looped take still fails.
+    """
+    import difflib as _dl
+    a = re.sub(r"[^a-z]", "", expected.lower())
+    b = re.sub(r"[^a-z]", "", heard.lower())
+    if not a or not b:
+        return False
+    if len(a) < 4 or len(b) < 3:
+        return False
+    # The rule exists for words English cannot spell. If the EXPECTED token is
+    # itself an English word, this must not fire: light/night and word/sword
+    # both clear a 0.6 similarity bar and are genuinely different words. Only
+    # non-dictionary tokens — which is what a transliteration is — qualify.
+    if a in _english_words():
+        return False
+    return _dl.SequenceMatcher(None, a, b).ratio() >= 0.6
+
+
+_ENGLISH = None
+
+
+def _english_words():
+    """Lowercased system word list, loaded once. Empty set if unavailable —
+    in which case the rule simply never fires and the gate stays as strict as
+    it was before, which is the safe direction to fail."""
+    global _ENGLISH
+    if _ENGLISH is None:
+        try:
+            with open("/usr/share/dict/words", encoding="utf-8", errors="ignore") as fh:
+                _ENGLISH = {w.strip().lower() for w in fh if w.strip()}
+        except OSError:
+            _ENGLISH = set()
+    return _ENGLISH
+
+
 def clarity(reference, hypothesis):
     import difflib
     r, h = norm_words(reference), norm_words(hypothesis)
@@ -163,10 +224,28 @@ def clarity(reference, hypothesis):
         if "".join(exp) == "".join(got):
             matched += i2 - i1
             continue
+        # One token heard as several: "kuttonet" -> "cut net". The boundary
+        # rule above only fires on an exact join; this is the same idea with
+        # the similarity test, so an ASR that splits a transliteration is not
+        # treated as a missing word. Still one expected token, so a genuinely
+        # dropped word cannot slip through here.
+        if (i2 - i1) == 1 and (j2 - j1) > 1:
+            if near_transliteration(exp[0], "".join(got)):
+                matched += 1
+            continue
+        # ...and the mirror: several tokens heard as one. "a tselem" comes back
+        # as "asselim". Same reasoning as the split case — the ASR moved a word
+        # boundary around a word it cannot spell.
+        if (i2 - i1) > 1 and (j2 - j1) == 1:
+            if near_transliteration("".join(exp), got[0]):
+                matched += i2 - i1
+            continue
         if (i2 - i1) != (j2 - j1):
             continue
         if [soundex(x) for x in exp] == [soundex(x) for x in got]:
             matched += i2 - i1                # same sound, different spelling
+        elif all(near_transliteration(a, b) for a, b in zip(exp, got)):
+            matched += i2 - i1                # ASR cannot spell it; voice is right
         elif all(frozenset((a, b)) in ASR_CONFUSIONS
                  for a, b in zip(exp, got) if a != b):
             matched += i2 - i1                # known transcription confusion

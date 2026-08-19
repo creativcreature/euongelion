@@ -4,21 +4,22 @@
   "teaser": "God finishes a universe and the next thing He does is stop. Before any human ever earned a paycheck, rest was already built into the shape of the week.",
   "framework": "Genesis 2:1-3 — Rest is the crown of creation, not its leftovers",
   "scriptureReference": "Genesis 2:1-3",
+  "scriptureReference_full": "Genesis 2:1-3",
   "chiastic_position": "pivot",
   "pardesLevel": "peshat",
+  "format": "two-minute-open-v2",
   "modules": [
     {
       "type": "scripture",
       "reference": "Genesis 2:1-3",
       "translation": "BSB",
+      "passage": "Thus the heavens and the earth were completed in all their vast array. And by the seventh day God had finished the work He had been doing; so on that day He rested from all His work. Then God blessed the seventh day and sanctified it, because on that day He rested from all the work of creation that He had accomplished.",
       "emphasis": [
         "finished",
         "rested",
         "blessed",
         "sanctified"
-      ],
-      "hebrewOriginal": "וַיְכֻלּוּ הַשָּׁמַיִם וְהָאָרֶץ וְכָל־צְבָאָם. וַיְכַל אֱלֹהִים בַּיּוֹם הַשְּׁבִיעִי מְלַאכְתּוֹ אֲשֶׁר עָשָׂה וַיִּשְׁבֹּת בַּיּוֹם הַשְּׁבִיעִי מִכָּל־מְלַאכְתּוֹ אֲשֶׁר עָשָׂה.",
-      "passage": "Thus the heavens and the earth were completed in all their vast array. And by the seventh day God had finished the work He had been doing; so on that day He rested from all His work. Then God blessed the seventh day and sanctified it, because on that day He rested from all the work of creation that He had accomplished."
+      ]
     },
     {
       "type": "vocab",
@@ -63,25 +64,103 @@
     },
     {
       "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "peshat",
+      "heading": "A Small Reading",
+      "content": "God finishes His work and then ceases. The Hebrew verb shavat means to stop or desist. It does not suggest that God became tired. His rest declares that creation is complete. God blesses the seventh day and makes it holy. The first holy thing named in Scripture is a stretch of time. Humanity enters this rhythm as a gift. Adam’s first full day is spent receiving a world he did not build. That order exposes our habit of using work to prove that we matter. Scripture gives work dignity, but it does not let work become our name. The New Testament carries creation’s rest toward Christ. Hebrews says a Sabbath rest remains for God’s people. We cease because God’s work holds us. Rest becomes a confession that the world has a Keeper, and we are not Him.",
+      "keyInsight": "Rest is the crown of creation, not the scrap left after useful work."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where in your life have you turned rest into something you must earn rather than something already given - and what would it cost you to simply stop for a day?",
+      "invitationType": "honest-examination"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Prayer for Today",
+      "prayerText": "Father, I confess I have treated rest like a reward and work like an identity. I have measured myself by what I produce and felt worthless when I stopped. Teach me that the week begins with Your finished work, not mine. Where I am exhausted, give me the courage to cease.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "Below, when there is time: the passage in full, its Hebrew texture, an ordinary story, and its connection to Christ."
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 2:1-3",
+      "translation": "BSB",
+      "emphasis": [
+        "finished",
+        "rested",
+        "blessed",
+        "sanctified"
+      ],
+      "hebrewOriginal": "וַיְכֻלּוּ הַשָּׁמַיִם וְהָאָרֶץ וְכָל־צְבָאָם. וַיְכַל אֱלֹהִים בַּיּוֹם הַשְּׁבִיעִי מְלַאכְתּוֹ אֲשֶׁר עָשָׂה וַיִּשְׁבֹּת בַּיּוֹם הַשְּׁבִיעִי מִכָּל־מְלַאכְתּוֹ אֲשֶׁר עָשָׂה.",
+      "passage": "Thus the heavens and the earth were completed in all their vast array. And by the seventh day God had finished the work He had been doing; so on that day He rested from all His work. Then God blessed the seventh day and sanctified it, because on that day He rested from all the work of creation that He had accomplished.",
+      "scriptureContext": "Genesis 2:1-3 — Rest is the crown of creation, not its leftovers"
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
       "heading": "When the Making Stops",
-      "body": "Six days of light and water and seed and creature. Six days of God speaking and the void filling up, each evening closing with the same verdict: it was good, and at the last, \"indeed, it was very good\" (Genesis 1:31). The grammar of the first chapter is all motion - God said, made, saw, called, blessed. Then, on the seventh day, the verbs change.\n\nNo new species. No new stars. \"By the seventh day God had finished the work He had been doing; so on that day He rested from all His work.\" The One who never tires, who \"will neither slumber nor sleep\" (Psalm 121:4), chose to model rest before He had ever asked anyone to work.\n\nThree verbs carry the weight, and their order matters: finished, then rested, then blessed. The Hebrew for rested is shavat - not a nap, but a deliberate ceasing, the putting-down of a finished thing. Then God does something stranger still. He blesses the seventh day and sanctifies it. The first thing in all of Scripture that God calls holy is not a mountain, not an altar, not a person, not a temple. It is a stretch of time. Before there was a sacred place, there was a sacred day.",
-      "keyInsight": "The first holy thing in the Bible is not a place or an object but a day. God sanctified time before He sanctified anything in it.",
-      "content": "Six days of light and water and seed and creature. Six days of God speaking and the void filling up, each evening closing with the same verdict: it was good, and at the last, \"indeed, it was very good\" (Genesis 1:31). The grammar of the first chapter is all motion - God said, made, saw, called, blessed. Then, on the seventh day, the verbs change.\n\nNo new species. No new stars. \"By the seventh day God had finished the work He had been doing; so on that day He rested from all His work.\" The One who never tires, who \"will neither slumber nor sleep\" (Psalm 121:4), chose to model rest before He had ever asked anyone to work.\n\nThree verbs carry the weight, and their order matters: finished, then rested, then blessed. The Hebrew for rested is shavat - not a nap, but a deliberate ceasing, the putting-down of a finished thing. Then God does something stranger still. He blesses the seventh day and sanctifies it. The first thing in all of Scripture that God calls holy is not a mountain, not an altar, not a person, not a temple. It is a stretch of time. Before there was a sacred place, there was a sacred day."
+      "content": "Six days of light and water and seed and creature. Six days of God speaking and the void filling up, each evening closing with the same verdict. It was good, and at the last, \"indeed, it was very good\" (Genesis 1:31). The grammar of the first chapter is all motion — God said, made, saw, called, blessed. Then, on the seventh day, the verbs change. No new species. No new stars. \"By the seventh day God had finished the work He had been doing. So on that day He rested from all His work.\" The One who never tires chose to model rest before asking anyone to work. The psalm says He \"will neither slumber nor sleep\" (Psalm 121:4). Three verbs carry the weight, and their order matters: finished, then rested, then blessed. The Hebrew for rested is shavat — not a nap, but a deliberate ceasing, the putting-down of a finished thing. Then God does something stranger still. He blesses the seventh day and sanctifies it. The first thing in all of Scripture that God calls holy is not a mountain, not an altar, not a person, not a temple. It is a stretch of time. Before there was a sacred place, there was a sacred day.",
+      "keyInsight": "The first holy thing in the Bible is not a place or an object but a day. God sanctified time before He sanctified anything in it."
     },
     {
-      "type": "story",
-      "heading": "Adam's First Full Day",
-      "body": "Walk the calendar of the first week and something quietly astonishing surfaces. The man is made on the sixth day, near its end, after the land animals. Which means the seventh day - the day of rest - was the first full day a human being ever lived.\n\nAdam's opening day of consciousness was not a day of labor. It was a day spent inside a finished world he had done nothing to build. The light, the seas, the garden, the breath in his lungs - all of it was a gift from a week he had no part in. He woke up into completion. His first posture toward the cosmos was not production but reception.\n\nThere is a man I know who spent thirty years measuring his worth by his output. When a heart scare forced him to stop, the first week home undid him - not the chest pain, but the silence. He kept reaching for the next task like a phantom limb. \"I didn't know who I was,\" he said, \"if I wasn't producing something.\" What broke open slowly, over months, was the thing Adam knew on day one: that he was held by a world he did not have to hold up.",
-      "connectionToTheme": "The seventh day was humanity's first full day - rest came before labor. We were made to receive a finished world before we were ever asked to work within it.",
-      "content": "Walk the calendar of the first week and something quietly astonishing surfaces. The man is made on the sixth day, near its end, after the land animals. Which means the seventh day - the day of rest - was the first full day a human being ever lived.\n\nAdam's opening day of consciousness was not a day of labor. It was a day spent inside a finished world he had done nothing to build. The light, the seas, the garden, the breath in his lungs - all of it was a gift from a week he had no part in. He woke up into completion. His first posture toward the cosmos was not production but reception.\n\nThere is a man I know who spent thirty years measuring his worth by his output. When a heart scare forced him to stop, the first week home undid him - not the chest pain, but the silence. He kept reaching for the next task like a phantom limb. \"I didn't know who I was,\" he said, \"if I wasn't producing something.\" What broke open slowly, over months, was the thing Adam knew on day one: that he was held by a world he did not have to hold up."
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "שָׁבַת",
+      "transliteration": "shavat",
+      "pronunciation": "shah-VAHT",
+      "meaning": "to cease, to stop, to desist from labor",
+      "rootMeaning": "Shavat does not mean to grow tired or to sleep. It means to put down what is in your hand - to stop on purpose, to let the thing be complete. The same root gives the noun shabbat, the name of the seventh day itself.",
+      "usageNote": "Genesis 2:2-3 is the first appearance of this root in Scripture, and it is used of God, not of a tired creature. When the word returns at Sinai - \"Remember the Sabbath day\" (Exodus 20:8-11) - Israel is told to cease because God ceased. The command is an invitation to imitate the rhythm God built into the week before there was anyone to command.",
+      "wordByWord": [
+        {
+          "word": "וַיְכֻלּוּ",
+          "transliteration": "vaykhullu",
+          "meaning": "and they were completed, brought to their full end"
+        },
+        {
+          "word": "וַיְכַל",
+          "transliteration": "vaykhal",
+          "meaning": "and He finished, He brought to completion"
+        },
+        {
+          "word": "מְלַאכְתּוֹ",
+          "transliteration": "melakhto",
+          "meaning": "His work, His craftsmanship - the same word later used for the skilled labor of building the tabernacle"
+        },
+        {
+          "word": "וַיִּשְׁבֹּת",
+          "transliteration": "vayyishbot",
+          "meaning": "and He ceased, He rested - He stopped from all of it"
+        }
+      ],
+      "relatedWords": [
+        {
+          "word": "שֶׁבַע / שָׁבַע",
+          "reference": "Sheva means seven; the verb shava can mean to swear an oath. The seventh day and the act of swearing share a sound-world in Hebrew, as though the day God set apart is itself a kind of promise kept."
+        }
+      ],
+      "strongsNumber": "H7673",
+      "definition": "a primitive root: to cease, desist, rest; to put away, leave off",
+      "usage": "Shavat carries no hint of exhaustion. God does not stop because He is spent; He stops because the work is whole. The word marks completion, not collapse."
     },
     {
-      "type": "insight",
+      "type": "pullquote",
+      "content": "Rest is the crown of creation, not the scrap left after useful work."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
       "heading": "Rest Is the Crown, Not the Leftovers",
-      "body": "We tend to read the seventh day as an afterthought - the part of the week left over once the real work is done. Genesis tells it the other way around. The making moves toward rest the way a song moves toward its final chord. Six days build; the seventh is what they were building toward. Rest is not the gap between productivities. It is the point.\n\nAnd God blesses this day. He had blessed the creatures and the humans, but here He blesses a measure of time and sets it apart as holy. So the seventh day is not empty. It is full - loaded with a different fruitfulness than the six that made it. The work-days produced things. The rest-day produces a people who remember they are not the source of their own lives.\n\nThis is the hinge the rest of Scripture turns on: human flourishing flows out of completed divine work, not toward it. We do not labor to earn our way into rest; we are invited to labor from inside a rest already given. The week, read from Genesis, does not begin with our striving and end with our reward. It begins with God's finished work - and our first move is to receive it.",
-      "historicalContext": "When Israel received the Sabbath command at Sinai, it was grounded directly in this passage: \"For in six days the LORD made the heavens and the earth... but on the seventh day He rested\" (Exodus 20:11). The seventh day of Genesis becomes the fourth commandment - not a new rule invented for the law, but the oldest rhythm of creation written into the life of a nation.",
-      "fascinatingFact": "Each of the first six days closes with the refrain \"there was evening, and there was morning.\" The seventh day has no such closing line; the boundary is left open. Readers across the centuries have heard in that silence a hint that the rest God entered was meant to keep going - a day still waiting to be fully entered.",
-      "content": "We tend to read the seventh day as an afterthought - the part of the week left over once the real work is done. Genesis tells it the other way around. The making moves toward rest the way a song moves toward its final chord. Six days build; the seventh is what they were building toward. Rest is not the gap between productivities. It is the point.\n\nAnd God blesses this day. He had blessed the creatures and the humans, but here He blesses a measure of time and sets it apart as holy. So the seventh day is not empty. It is full - loaded with a different fruitfulness than the six that made it. The work-days produced things. The rest-day produces a people who remember they are not the source of their own lives.\n\nThis is the hinge the rest of Scripture turns on: human flourishing flows out of completed divine work, not toward it. We do not labor to earn our way into rest; we are invited to labor from inside a rest already given. The week, read from Genesis, does not begin with our striving and end with our reward. It begins with God's finished work - and our first move is to receive it."
+      "content": "We tend to read the seventh day as an afterthought — the part of the week left over once the real work is done. Genesis tells it the other way around. The making moves toward rest the way a song moves toward its final chord. Six days build; the seventh is what they were building toward. Rest is not the gap between productivities. It is the point. And God blesses this day. He had blessed the creatures and the humans, but here He blesses a measure of time and sets it apart as holy. So the seventh day is not empty. It is full — loaded with a different fruitfulness than the six that made it. The work-days produced things. The rest-day produces a people who remember they are not the source of their own lives. This is the hinge the rest of Scripture turns on: human flourishing flows out of completed divine work, not toward it. We do not labor to earn our way into rest; we are invited to labor from inside a rest already given. The week, read from Genesis, does not begin with our striving and end with our reward. It begins with God's finished work — and our first move is to receive it.",
+      "keyInsight": "Each of the first six days closes with the refrain \"there was evening, and there was morning.\" The seventh day has no such closing line; the boundary is left open. Readers across the centuries have heard in that silence a hint that the rest God entered was meant to keep going - a day still waiting to be fully entered."
     },
     {
       "type": "bridge",
@@ -89,6 +168,42 @@
       "modernApplication": "We have inverted the order. We labor to earn rest, treating it as a reward at the far end of a productive stretch, and feel guilty when we stop. Genesis says rest was first, and free, and holy. To keep a sabbath is to confess with our calendar what we claim with our mouths: God keeps the world running, and He can keep it running without us for a day.",
       "connectionPoint": "The same restlessness that makes it hard to stop is the symptom the seventh day was meant to heal. The harder it is to cease, the more we needed to. Sabbath is not a productivity hack; it is a weekly rehearsal of how the world is actually held underneath our noise.",
       "newTestamentEcho": "Jesus said, \"The Sabbath was made for man, not man for the Sabbath\" (Mark 2:27). The day was never a cage. It was a gift the way the seventh day was a gift to Adam - rest offered before work was ever demanded."
+    },
+    {
+      "type": "scripture",
+      "reference": "Hebrews 4:9-11",
+      "translation": "BSB",
+      "passage": "There remains, then, a Sabbath rest for the people of God. For whoever enters God’s rest also rests from his own work, just as God did from His. Let us, therefore, make every effort to enter that rest, so that no one will fall by following the same pattern of disobedience.",
+      "scriptureContext": "The New Testament carries the day’s theme toward Christ."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "peshat",
+      "heading": "The Center of the Passage",
+      "content": "When Israel received the Sabbath command at Sinai, it was grounded directly in this passage: \"For in six days the LORD made the heavens and the earth... but on the seventh day He rested\" (Exodus 20:11). The seventh day of Genesis becomes the fourth commandment. Not a new rule invented for the law, but the oldest rhythm of creation written into the life of a nation. Each of the first six days closes with the refrain \"there was evening, and there was morning.\" The seventh day has no such closing line. The boundary is left open. Readers across the centuries have heard in that silence a hint that the rest God entered was meant to keep going. A day still waiting to be fully entered. Jesus said, \"The Sabbath was made for man, not man for the Sabbath\" (Mark 2:27). The day was never a cage. It was a gift the way the seventh day was a gift to Adam — rest offered before work was ever demanded.",
+      "keyInsight": "Rest is the crown of creation, not the scrap left after useful work."
+    },
+    {
+      "type": "story",
+      "heading": "Adam's First Full Day",
+      "body": "Walk the calendar of the first week and something quietly astonishing surfaces. The man is made on the sixth day, near its end, after the land animals. Which means the seventh day - the day of rest - was the first full day a human being ever lived.\n\nAdam's opening day of consciousness was not a day of labor. It was a day spent inside a finished world he had done nothing to build. The light, the seas, the garden, the breath in his lungs - all of it was a gift from a week he had no part in. He woke up into completion. His first posture toward the cosmos was not production but reception.\n\nThere is a man I know who spent thirty years measuring his worth by his output. When a heart scare forced him to stop, the first week home undid him - not the chest pain, but the silence. He kept reaching for the next task like a phantom limb. \"I didn't know who I was,\" he said. \"If I wasn't producing something.\" What broke open slowly, over months, was the thing Adam knew on day one. That he was held by a world he did not have to hold up.",
+      "connectionToTheme": "The seventh day was humanity's first full day - rest came before labor. We were made to receive a finished world before we were ever asked to work within it.",
+      "content": "Walk the calendar of the first week and something quietly astonishing surfaces. The man is made on the sixth day, near its end, after the land animals. Which means the seventh day — the day of rest — was the first full day a human being ever lived. Adam's opening day of consciousness was not a day of labor. It was a day spent inside a finished world he had done nothing to build. The light, the seas, the garden, the breath in his lungs — all of it was a gift from a week he had no part in. He woke up into completion. His first posture toward the cosmos was not production but reception. There is a man I know who spent thirty years measuring his worth by his output. When a heart scare forced him to stop, the first week home undid him — not the chest pain, but the silence. He kept reaching for the next task like a phantom limb. \"I didn't know who I was,\" he said. \"If I wasn't producing something.\" What broke open slowly, over months, was the thing Adam knew on day one. That he was held by a world he did not have to hold up."
+    },
+    {
+      "type": "insight",
+      "heading": "A Truth to Keep",
+      "content": "The seventh day was humanity's first full day — rest came before labor. We were made to receive a finished world before we were ever asked to work within it.",
+      "historicalContext": "When Israel received the Sabbath command at Sinai, it was grounded directly in this passage: \"For in six days the LORD made the heavens and the earth... but on the seventh day He rested\" (Exodus 20:11). The seventh day of Genesis becomes the fourth commandment — not a new rule invented for the law, but the oldest rhythm of creation written into the life of a nation."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "peshat",
+      "heading": "What This Asks of Us",
+      "content": "We have inverted the order. We labor to earn rest, treating it as a reward at the far end of a productive stretch, and feel guilty when we stop. Genesis says rest was first, and free, and holy. To keep a sabbath is to confess with our calendar what we claim with our mouths. God keeps the world running, and He can keep it running without us for a day. The same restlessness that makes it hard to stop is the symptom the seventh day was meant to heal. The harder it is to cease, the more we needed to. Sabbath is not a productivity hack; it is a weekly rehearsal of how the world is actually held underneath our noise.",
+      "keyInsight": "Rest is the crown of creation, not the scrap left after useful work."
     },
     {
       "type": "reflection",
@@ -99,6 +214,34 @@
         "If you treated one block of time this week as holy - set apart, unoptimized, received rather than achieved - what would you have to let go of to keep it?"
       ],
       "invitationType": "honest-examination"
+    },
+    {
+      "type": "interactive",
+      "heading": "A Practice for Today",
+      "instruction": "Use this short practice to carry the passage into the day.",
+      "interaction_type": "physical",
+      "steps": [
+        {
+          "title": "Name",
+          "description": "Name the place where this passage meets your life."
+        },
+        {
+          "title": "Receive",
+          "description": "Rest is the crown of creation, not the scrap left after useful work."
+        },
+        {
+          "title": "Act",
+          "description": "Choose one small response before the day ends."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "Carry It Into the Day",
+      "content": "The seventh day has no closing refrain of evening and morning. The text leaves the day open. Later Scripture turns that openness into promise. A rest remains, and Christ invites the weary to come. This does not make labor small. It puts labor in its proper place. Work flows from a life already received. It cannot become the price of belonging. The man who reached for tasks after his heart scare was learning this slowly. Silence felt like the loss of self because production had carried his name for years. Genesis offers another name: creature, blessed, held inside finished work. Set something down today. Let the unfinished task remain unfinished for a while. God’s care does not pause when yours does.",
+      "keyInsight": "Rest is the crown of creation, not the scrap left after useful work."
     },
     {
       "type": "prayer",
@@ -119,7 +262,7 @@
         "The freedom to cease without falling behind, because God upholds what I lay down",
         "The settled identity of a child who is held, not a worker who must hold everything up"
       ],
-      "content": "This week I will set apart one block of time as holy - one unscheduled evening, one screen-free meal, one morning I refuse to optimize - and I will let myself be a creature inside God's finished world rather than a manager of my own."
+      "content": "This week I will set apart one block of time as holy. One unscheduled evening, one screen-free meal, one morning I refuse to optimize. And I will let myself be a creature inside God's finished world rather than a manager of my own."
     },
     {
       "type": "comprehension",
@@ -133,6 +276,15 @@
         "Talk honestly about what comes up in you when you try to stop - relief, guilt, restlessness, fear - and where you think that comes from.",
         "Ask each other: what would it take to set apart one stretch of time this week as genuinely holy, and what will you each have to refuse in order to keep it?"
       ]
+    },
+    {
+      "type": "profile",
+      "name": "The Seventh Day",
+      "title": "The First Holy Thing",
+      "description": "Not a person but a day - the only character in the creation account that God blesses and sanctifies for its own sake. The seventh day stands at the head of all sacred time in Scripture: the seed of the Sabbath given at Sinai, the rhythm of the festivals, the sabbatical years and the Jubilee, and finally the Sabbath rest that Hebrews says still remains for the people of God. It is the day Adam woke into, the day Israel was commanded to remember, and the day the whole Bible keeps reaching toward - the rest opened at last when Christ cried, \"It is finished\" (John 19:30).",
+      "keyQuote": "Then God blessed the seventh day and sanctified it, because on that day He rested from all the work of creation that He had accomplished.",
+      "lessonForUs": "The first thing God ever called holy was time set apart for rest - not earned, not produced, simply received. If even the Maker of heaven and earth marked the completion of His work by ceasing, then our restlessness is not a virtue to be admired but a wound the seventh day was made to heal.",
+      "heading": "The First Holy Thing"
     },
     {
       "type": "resource",
@@ -166,22 +318,13 @@
           "note": "Read the New Testament's fullest meditation on Genesis 2's rest - how the seventh day became a promise still open to those who come to Christ."
         }
       ]
-    },
-    {
-      "type": "profile",
-      "name": "The Seventh Day",
-      "title": "The First Holy Thing",
-      "description": "Not a person but a day - the only character in the creation account that God blesses and sanctifies for its own sake. The seventh day stands at the head of all sacred time in Scripture: the seed of the Sabbath given at Sinai, the rhythm of the festivals, the sabbatical years and the Jubilee, and finally the Sabbath rest that Hebrews says still remains for the people of God. It is the day Adam woke into, the day Israel was commanded to remember, and the day the whole Bible keeps reaching toward - the rest opened at last when Christ cried, \"It is finished\" (John 19:30).",
-      "keyQuote": "Then God blessed the seventh day and sanctified it, because on that day He rested from all the work of creation that He had accomplished.",
-      "lessonForUs": "The first thing God ever called holy was time set apart for rest - not earned, not produced, simply received. If even the Maker of heaven and earth marked the completion of His work by ceasing, then our restlessness is not a virtue to be admired but a wound the seventh day was made to heal.",
-      "heading": "The First Holy Thing"
     }
   ],
   "panels": [],
-  "totalWords": 2172,
-  "scriptureReference_full": "Genesis 2:1-3",
+  "totalWords": 2616,
   "sources": [
     "Scripture quotations from the Berean Standard Bible (BSB), public domain.",
     "Hebrew word study (shavat, H7673; shabbat) reflects standard lexical sources. The seventh-day connection to the Sinai Sabbath (Exodus 20:11), to Christ's invitation (Matthew 11:28), to His cry 'It is finished' (John 19:30), and to the remaining Sabbath rest (Hebrews 4:9-11) is drawn directly from the cited biblical texts."
-  ]
+  ],
+  "chiasm_position": "C"
 }
