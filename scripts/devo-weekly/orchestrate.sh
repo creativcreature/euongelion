@@ -1,5 +1,9 @@
 #!/bin/bash
-# The weekly series builder (SA-100 / F-146) — launchd entry point.
+# The weekly series builder — LOCAL/ATTENDED runs only (SA-100 / F-146).
+# The SCHEDULED weekly build is .github/workflows/weekly-series.yml (cloud,
+# machine-independent — founder ruling 2026-08-19). This script remains for
+# attended local runs where the full 13GB reference library and Photoshop
+# are available. The launchd schedule was retired.
 #
 # Wednesdays after the founder's 5am ET Claude-quota reset: derive (or
 # accept) the thematic, then run the full devo-go pipeline headless on the

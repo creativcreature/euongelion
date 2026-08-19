@@ -1,0 +1,111 @@
+name: weekly-series
+
+# The weekly series machine, CLOUD EDITION (SA-100 / F-146, revised).
+#
+# Founder: "This needs to work as well as the Daily Bread page — regardless
+# of if this machine is on or not." So the whole devo-go build runs here,
+# Wednesdays just after the founder's 5am Eastern Claude-quota reset, on
+# infrastructure that never sleeps:
+#
+#   · Writing/verification: Claude Code headless on the founder's
+#     SUBSCRIPTION (CLAUDE_CODE_OAUTH_TOKEN). Grounding uses the COMMITTED
+#     reference index + lexicons — the same artifacts production composes
+#     from — plus WebSearch for verification. Anything needing the deep
+#     local library is CUT, never shipped hedged.
+#   · Narration: ElevenLabs founder voice over plain HTTPS
+#     (render_el_catalog.py; chunk cache persisted via actions/cache so a
+#     retried run never pays twice — SA-043).
+#   · Imagery: Codex headless (`codex exec`) on the founder's ChatGPT
+#     subscription via CODEX_AUTH_JSON — built-in image_gen only, style
+#     anchors attached, native size per the standing 2026-08-16 ruling
+#     (founder upscales downstream when desired).
+#   · The gate stands: output is a pushed `series/auto-*` branch and a PULL
+#     REQUEST — the reading gate as a PR the founder can read anywhere,
+#     including a phone. Merge = ship. Nothing publishes unseen unless the
+#     repo variable AUTO_PUBLISH=true exists (the founder's explicit switch).
+#
+# Thematic override, machine-independent: edit content/next-series-thematic.md
+# on ANY device (GitHub web editor works) and it rides the next run.
+#
+# REQUIRED SECRETS: CLAUDE_CODE_OAUTH_TOKEN, ELEVENLABS_API_KEY,
+# CODEX_AUTH_JSON, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
+# If Codex auth rotates stale, the imagery step fails VISIBLY here and the
+# fix is re-uploading ~/.codex/auth.json to the CODEX_AUTH_JSON secret.
+
+on:
+  schedule:
+    - cron: '20 10 * * 3' # Wed 10:20 UTC = 6:20am EDT / 5:20am EST
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'full = build the series; thematic-only = derive and print the thematic, build nothing'
+        required: false
+        default: 'full'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: weekly-series
+  cancel-in-progress: false
+
+jobs:
+  build-series:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: npm ci
+
+      - name: Install toolchain (claude, codex, ffmpeg)
+        run: |
+          set -euo pipefail
+          npm install -g @anthropic-ai/claude-code @openai/codex
+          sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+          pip install requests
+
+      - name: Materialize Codex auth (ChatGPT subscription)
+        env:
+          CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.codex
+          printf '%s' "$CODEX_AUTH_JSON" > ~/.codex/auth.json
+
+      # SA-043: never pay twice. The ElevenLabs chunk cache survives between
+      # runs so retries and revisions re-render only what changed.
+      - name: Restore narration chunk cache
+        uses: actions/cache@v4
+        with:
+          path: euangelion-voice-prototype/renders/.chunk-cache
+          key: el-chunk-cache-${{ github.run_id }}
+          restore-keys: |
+            el-chunk-cache-
+
+      - name: Build the week's series
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RUN_MODE: ${{ inputs.mode || 'full' }}
+          AUTO_PUBLISH: ${{ vars.AUTO_PUBLISH || '' }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "euangelion-weekly"
+          git config user.email "chrisparker21@gmail.com"
+          bash scripts/devo-weekly/ci-orchestrate.sh
