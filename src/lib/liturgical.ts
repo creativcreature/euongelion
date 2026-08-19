@@ -170,7 +170,6 @@ export function liturgicalDay(now: Date = new Date()): LiturgicalDay {
   const trinity = addDays(easter, 56)
 
   const adventThisYear = adventStart(year)
-  const adventLastYear = adventStart(year - 1)
   const epiphany = new Date(Date.UTC(year, 0, 6))
   const baptismOfLord = (() => {
     // Sunday after Epiphany
@@ -192,20 +191,13 @@ export function liturgicalDay(now: Date = new Date()): LiturgicalDay {
       ) + 1
     dayLabel = `${ordinal(week)} Sunday of Advent`
   } else if (utcNow.getUTCMonth() === 11 && utcNow.getUTCDate() < 25) {
-    // Before Christmas but before this year's Advent — likely
-    // pre-Advent Ordinary (Christ the King area). Use last year's
-    // Advent for context.
-    if (utcNow >= adventLastYear) {
-      season = 'advent'
-      const week =
-        Math.floor(
-          (utcNow.getTime() - adventLastYear.getTime()) / 86_400_000 / 7,
-        ) + 1
-      dayLabel = `${ordinal(week)} Sunday of Advent`
-    } else {
-      season = 'ordinary'
-      dayLabel = 'Ordinary Time'
-    }
+    // A December day BEFORE this year's Advent start (possible when Advent 1
+    // falls Dec 1-3) is the tail of Ordinary Time — Christ the King week.
+    // The old branch counted from LAST year's Advent and printed
+    // "53rd Sunday of Advent" (found by the SA-094 season-essay sweep).
+    // Last year's Advent is never the current season in December.
+    season = 'ordinary'
+    dayLabel = 'Ordinary Time'
   } else if (
     (utcNow.getUTCMonth() === 11 && utcNow.getUTCDate() >= 25) ||
     (utcNow.getUTCMonth() === 0 && utcNow < epiphany)

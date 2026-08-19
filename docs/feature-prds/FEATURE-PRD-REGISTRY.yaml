@@ -1283,3 +1283,19 @@ features:
     prd: docs/feature-prds/F-139.md
     methodology_refs:
       - M00
+  - id: F-140
+    title: The full paper, no excuses
+    slug: daily-bread-full-paper
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-140.md
+    methodology_refs:
+      - M00
+  - id: F-141
+    title: /today can finish a day of a curated series
+    slug: curated-series-mark-read
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-141.md
+    methodology_refs:
+      - M00

@@ -142,3 +142,5 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-137 | Platform          | Accounts: GDPR, parity, progress sync, billing       | 0/10     | wip     | [F-137.md](./F-137.md) |
 | F-138 | Reading surfaces  | Daily Bread award pass; footer accuracy; audio       | 0/10     | shipped | [F-138.md](./F-138.md) |
 | F-139 | Reading surfaces  | Transport vs shipped patterns; both skips on mobile  | 0/10     | wip     | [F-139.md](./F-139.md) |
+| F-141 | Platform          | /today can finish a day of a curated series          | 0/10     | wip    | [F-141.md](./F-141.md) |
+| F-140 | Reading surfaces  | Page-side modules; interleave; banks; word search     | 0/10     | shipped| [F-140.md](./F-140.md) |
