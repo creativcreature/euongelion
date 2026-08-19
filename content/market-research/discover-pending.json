@@ -1,0 +1,356 @@
+{
+  "kind": "discovery-pending",
+  "schema_version": "1.0",
+  "bundle_id": "c7205c47cf7ed98a",
+  "generated_at": "2026-08-19T23:22:30.796592+00:00",
+  "run_ref": "discover:christian faith and scripture:2026-08-19T23:22:30.796592+00:00",
+  "mock": false,
+  "report": {
+    "domain": "christian faith and scripture",
+    "range_from": "2026-07-20",
+    "range_to": "2026-08-19",
+    "generated_at": "2026-08-19T23:22:30.796592+00:00",
+    "plan": {
+      "domain": "christian faith and scripture",
+      "subreddits": [],
+      "sources": ["hackernews", "x"]
+    },
+    "topics": [
+      {
+        "rank": 1,
+        "name": "Is scripture the sole authority sola scriptura",
+        "why_spiking": "37 evidence items on github, instagram, reddit, tiktok, x and youtube generated 62,147 native interactions. @biblialatina1 Do you not believe the Bible is the sole infallible source of authority for Christian faith &amp; practice. 2 Timothy 3:16? What can trump the word of God? Do you believe the law is scripture?",
+        "momentum": "building",
+        "velocity_score": 91211.32,
+        "sources": ["github", "instagram", "reddit", "tiktok", "x", "youtube"],
+        "engagement_by_source": {
+          "github": {
+            "comments": 34,
+            "reactions": 0
+          },
+          "instagram": {
+            "comments": 3,
+            "likes": 1306,
+            "views": 0
+          },
+          "reddit": {
+            "num_comments": 1031
+          },
+          "tiktok": {
+            "comments": 577,
+            "likes": 6536,
+            "shares": 665,
+            "views": 51821
+          },
+          "x": {
+            "likes": 27,
+            "replies": 13,
+            "reposts": 1
+          },
+          "youtube": {
+            "comments": 0,
+            "likes": 0,
+            "views": 0
+          }
+        },
+        "command": "/last30days \"Is scripture the sole authority sola scriptura\"",
+        "evidence_urls": [
+          "https://x.com/RickWMiller1/status/2089522920234115272",
+          "https://x.com/Stevesson88/status/2090057501651726601",
+          "https://x.com/RickWMiller1/status/2089700080827748666",
+          "https://x.com/BennettBernard7/status/2090202909409513616",
+          "https://x.com/ScoutingAlong/status/2088563328079769766"
+        ],
+        "top_comment": "\"simply because nowhere in the bible it says: \"scripture is the final infallible authority\" and noone taught this for 1500 years until Luther went rebelious. Even if it had, that would be circular argu\" - Resident_Iron6701 (478 votes)",
+        "corroboration_count": 6,
+        "previously_surfaced_count": 0,
+        "covered": false
+      },
+      {
+        "rank": 2,
+        "name": "Are works the evidence someone is saved",
+        "why_spiking": "35 evidence items on github, hackernews, instagram, reddit, tiktok, x and youtube generated 174,725 native interactions. \u201cBUT WORKS ARE THE EVIDENCE SOMEONE IS SAVED!\u201d \ud83d\udcf7 (NOT SO FAST! WHAT DOES PAUL SAY IS THE EVIDENCE?) (KJV / Mid-Acts 9 / Rightly Divided) One of the most common objections you\u2019ll hear after preaching the gospel of our sal",
+        "momentum": "building",
+        "velocity_score": 73100.02,
+        "sources": [
+          "github",
+          "hackernews",
+          "instagram",
+          "reddit",
+          "tiktok",
+          "x",
+          "youtube"
+        ],
+        "engagement_by_source": {
+          "github": {
+            "comments": 581,
+            "reactions": 252
+          },
+          "hackernews": {
+            "comments": 317,
+            "points": 1337
+          },
+          "instagram": {
+            "comments": 1458,
+            "likes": 96079,
+            "views": 0
+          },
+          "reddit": {
+            "num_comments": 528
+          },
+          "tiktok": {
+            "comments": 304,
+            "likes": 3687,
+            "shares": 190,
+            "views": 31414
+          },
+          "x": {
+            "likes": 2,
+            "replies": 3,
+            "reposts": 0
+          },
+          "youtube": {
+            "comments": 0,
+            "likes": 1,
+            "views": 9
+          }
+        },
+        "command": "/last30days \"Are works the evidence someone is saved\"",
+        "evidence_urls": [
+          "https://x.com/Nickymann99/status/2090146769053102575",
+          "https://x.com/PaulGTTHM/status/2089867498988707921",
+          "https://x.com/chris_blodgett/status/2089435590592803068",
+          "https://x.com/Magnus_9_IOI/status/2089681111622259132",
+          "https://www.tiktok.com/@dinxthepuppet/video/7669540795531152654"
+        ],
+        "top_comment": "\"This happened to my sister! Her and the other gf became besties, travelled the world together, and eventually were bridesmaids for one another at their weddings to much better people. Good luck!!!\" - NapsCatsPancakeStax (7,418 votes)",
+        "corroboration_count": 7,
+        "previously_surfaced_count": 0,
+        "covered": false
+      },
+      {
+        "rank": 3,
+        "name": "Why the Messiah must be God incarnate",
+        "why_spiking": "25 evidence items on github, instagram, reddit, tiktok, x and youtube generated 115,250 native interactions. The Salvific Hinge: Why the Messiah Must Be God Incarnate",
+        "momentum": "building",
+        "velocity_score": 43255.44,
+        "sources": ["github", "instagram", "reddit", "tiktok", "x", "youtube"],
+        "engagement_by_source": {
+          "github": {
+            "comments": 0,
+            "reactions": 0
+          },
+          "instagram": {
+            "comments": 442,
+            "likes": 28520,
+            "views": 0
+          },
+          "reddit": {
+            "num_comments": 154
+          },
+          "tiktok": {
+            "comments": 822,
+            "likes": 4053,
+            "shares": 1585,
+            "views": 78736
+          },
+          "x": {
+            "likes": 629,
+            "replies": 161,
+            "reposts": 123
+          },
+          "youtube": {
+            "comments": 0,
+            "likes": 0,
+            "views": 0
+          }
+        },
+        "command": "/last30days \"Why the Messiah must be God incarnate\"",
+        "evidence_urls": [
+          "https://x.com/TheBodyguard777/status/2090184410859757857",
+          "https://x.com/icuragoose/status/2089451551467418022",
+          "https://x.com/DavidLimbaugh/status/2084507532920300026",
+          "https://x.com/Hadeeth55/status/2079837458317836684",
+          "https://www.reddit.com/r/DebateReligion/comments/1vf1qcx/the_superman_paradox_why_the_crucifixion_was_just/"
+        ],
+        "top_comment": "\"One for Israel and the professors there are a blessing to this generation. Thank you LORD for allowing us to continue our studies with brothers and sisters all over the world.\" - @DinahReviews (135 votes)",
+        "corroboration_count": 6,
+        "previously_surfaced_count": 0,
+        "covered": false
+      },
+      {
+        "rank": 4,
+        "name": "Foundation of apostles and prophets Ephesians 2:20",
+        "why_spiking": "46 evidence items on hackernews, reddit, tiktok, x and youtube generated 47,971 native interactions. And that\u2019s where Ephesians 2:20 becomes important to me. Paul says the household of God is \u201cbuilt upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone.\u201d I understand the fou",
+        "momentum": "building",
+        "velocity_score": 26403.28,
+        "sources": ["hackernews", "reddit", "tiktok", "x", "youtube"],
+        "engagement_by_source": {
+          "hackernews": {
+            "comments": 453,
+            "points": 515
+          },
+          "reddit": {
+            "num_comments": 262
+          },
+          "tiktok": {
+            "comments": 346,
+            "likes": 4551,
+            "shares": 324,
+            "views": 41262
+          },
+          "x": {
+            "likes": 79,
+            "replies": 8,
+            "reposts": 14
+          },
+          "youtube": {
+            "comments": 0,
+            "likes": 0,
+            "views": 0
+          }
+        },
+        "command": "/last30days \"Foundation of apostles and prophets Ephesians 2:20\"",
+        "evidence_urls": [
+          "https://x.com/JConaJourney/status/2088430473101947195",
+          "https://x.com/Bealertto/status/2088437843819647046",
+          "https://x.com/RookiePod2664/status/2090166414799769973",
+          "https://x.com/Windwalker070/status/2090042169352409303",
+          "https://x.com/AAllelon/status/2089204538456555920"
+        ],
+        "top_comment": "\"Hire an experienced inspector or an engineer to come look at it and tell you how bad it is from a standpoint of not trying to sell you something.\" - OkInevitable5020 (225 votes)",
+        "corroboration_count": 5,
+        "previously_surfaced_count": 0,
+        "covered": false
+      },
+      {
+        "rank": 5,
+        "name": "What scripture equips you to do 2 Timothy 3:17",
+        "why_spiking": "33 evidence items on github, hackernews, instagram, reddit, tiktok, x and youtube generated 15,752 native interactions. Finally, Scripture is profitable \u201cfor instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.\u201d In the King James Bible the word is \u201cthroughly,\u201d indicating equipment runn",
+        "momentum": "building",
+        "velocity_score": 22402.67,
+        "sources": [
+          "github",
+          "hackernews",
+          "instagram",
+          "reddit",
+          "tiktok",
+          "x",
+          "youtube"
+        ],
+        "engagement_by_source": {
+          "github": {
+            "comments": 32,
+            "reactions": 76
+          },
+          "hackernews": {
+            "comments": 46,
+            "points": 95
+          },
+          "instagram": {
+            "comments": 0,
+            "likes": 4108,
+            "views": 0
+          },
+          "reddit": {
+            "num_comments": 66
+          },
+          "tiktok": {
+            "comments": 27,
+            "likes": 627,
+            "shares": 89,
+            "views": 9599
+          },
+          "x": {
+            "likes": 674,
+            "replies": 64,
+            "reposts": 160
+          },
+          "youtube": {
+            "comments": 0,
+            "likes": 0,
+            "views": 0
+          }
+        },
+        "command": "/last30days \"What scripture equips you to do 2 Timothy 3:17\"",
+        "evidence_urls": [
+          "https://x.com/renewingprotest/status/2089696039867388005",
+          "https://x.com/TNTJohn1717/status/2090176648281043173",
+          "https://x.com/WonderWomaNinja/status/2088343840071856336",
+          "https://x.com/MrsDrPublius/status/2081651660506701949",
+          "https://x.com/Nickymann99/status/2085319129012048158"
+        ],
+        "top_comment": "\"It is like you are right on the verge of realizing that people pick their God on the basis of their own beliefs. Or rather, you are eager to apply that standard to others, but refuse to...\" - SamtheCossack (21 votes)",
+        "corroboration_count": 7,
+        "previously_surfaced_count": 0,
+        "covered": false
+      }
+    ],
+    "source_status": {
+      "digg": {
+        "source": "digg",
+        "state": "skipped-unconfigured",
+        "items_returned": 0,
+        "attempted": false,
+        "detail": "Source is not configured for discovery.",
+        "at": "2026-08-19T23:15:12.070409Z",
+        "fix_hint": "doctor"
+      },
+      "reddit": {
+        "source": "reddit",
+        "state": "no-results",
+        "items_returned": 0,
+        "attempted": true,
+        "at": "2026-08-19T23:15:10.419245Z"
+      },
+      "hackernews": {
+        "source": "hackernews",
+        "state": "ok",
+        "items_returned": 1,
+        "attempted": true,
+        "at": "2026-08-19T23:15:10.927751Z"
+      },
+      "x": {
+        "source": "x",
+        "state": "ok",
+        "items_returned": 30,
+        "attempted": true,
+        "at": "2026-08-19T23:15:12.070306Z"
+      }
+    },
+    "warnings": [],
+    "outcome": "ok"
+  },
+  "angle_inputs": {
+    "n13": {
+      "name": "Is scripture the sole authority sola scriptura",
+      "titles": "The doctrine of sola scriptura - Scripture alone - was completely unknown before the Protestant Reformers. It was not a concept understood o; The Five Solas changed the course of history.\n\nOn October 31, 1517, the Protestant Reformation began with a call to return to God\u2019s truth\u2014no; Yes, you read that correctly, the Bible is not my only authority it is my only infallible authority Sola Scriptura \u2260 Solo Scriptura -  Follo",
+      "top_comment": "\"simply because nowhere in the bible it says: \"scripture is the final infallible authority\" and noone taught this for 1500 years until Luther went rebelious. Even if it had, that would be circular argu\" - Resident_Iron6701 (478 votes)",
+      "engagement": "62,147 native interactions across github, instagram, reddit, tiktok, x and youtube"
+    },
+    "n11": {
+      "name": "Are works the evidence someone is saved",
+      "titles": "\u201cWho\u2019s going to hell?\u201d\nYT: Give me an answer with Stuart and Cliffe Knechtle; bf has a whole other girlfriend. we're meeting tomorrow; We are not saved or maintained by good works or actions. We are saved by faith in Christ and his work on the cross. #savedthroughfaith #save",
+      "top_comment": "\"This happened to my sister! Her and the other gf became besties, travelled the world together, and eventually were bridesmaids for one another at their weddings to much better people. Good luck!!!\" - NapsCatsPancakeStax (7,418 votes)",
+      "engagement": "174,725 native interactions across github, hackernews, instagram, reddit, tiktok, x and youtube"
+    },
+    "n10": {
+      "name": "Why the Messiah must be God incarnate",
+      "titles": "#biblestudy #christianity #jesuschrist #christiantiktok #jesusislord; Let\u2019s ignore the rest of scripture that clearly proves his divinity, and instead we\u2019ll stick with the verses that only prove his humanity. \ud83e\udee0; Shout out to @Biblical Leather for this edit #christian #muslim",
+      "top_comment": "\"One for Israel and the professors there are a blessing to this generation. Thank you LORD for allowing us to continue our studies with brothers and sisters all over the world.\" - @DinahReviews (135 votes)",
+      "engagement": "115,250 native interactions across github, instagram, reddit, tiktok, x and youtube"
+    },
+    "n6": {
+      "name": "Foundation of apostles and prophets Ephesians 2:20",
+      "titles": "The apostles were sent by Christ to proclaim His words. We are sent to proclaim the apostles\u2019 testimony of Christ, preserved for us in Scrip; THE ROLES OF A PROPHET AND A PREACHER ARE DIFFERENT Ephesians 4:11-13 - So Christ himself gave the apostles, the prophets, the evangelists,; \u200bEphesians 2:19\u201322  \u200b\"...built on the foundation of the apostles and prophets, Christ Jesus himself being the chief cornerstone, in whom the",
+      "top_comment": "\"Hire an experienced inspector or an engineer to come look at it and tell you how bad it is from a standpoint of not trying to sell you something.\" - OkInevitable5020 (225 votes)",
+      "engagement": "47,971 native interactions across hackernews, reddit, tiktok, x and youtube"
+    },
+    "n15": {
+      "name": "What scripture equips you to do 2 Timothy 3:17",
+      "titles": "Strange Creature \ud83d\udc79 #christiantiktok #bible #christian #bible #reaction; Do you have to feel God\u2019s power for Him to be at work?\n\nOn Ask the Pastor, we explore what Scripture says about faith, prayer, and God\u2019s pre; Good Morning,\n\nPlease join me for a daily scripture break.\n\nII Timothy 3:16-17:\n\n\"All Scripture is God-breathed and is useful for teaching,",
+      "top_comment": "\"It is like you are right on the verge of realizing that people pick their God on the basis of their own beliefs. Or rather, you are eager to apply that standard to others, but refuse to...\" - SamtheCossack (21 votes)",
+      "engagement": "15,752 native interactions across github, hackernews, instagram, reddit, tiktok, x and youtube"
+    }
+  }
+}

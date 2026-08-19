@@ -1,0 +1,768 @@
+{
+  "schema_version": "1.0",
+  "kind": "discovery-nominations",
+  "bundle_id": "c7205c47cf7ed98a",
+  "generated_at": "2026-08-19T23:15:12.083291Z",
+  "from_date": "2026-07-20",
+  "to_date": "2026-08-19",
+  "domain": "christian faith and scripture",
+  "tier": "deep",
+  "mock": false,
+  "source_status": {
+    "digg": {
+      "source": "digg",
+      "state": "skipped-unconfigured",
+      "items_returned": 0,
+      "attempted": false,
+      "detail": "Source is not configured for discovery.",
+      "at": "2026-08-19T23:15:12.070409Z",
+      "fix_hint": "doctor"
+    },
+    "reddit": {
+      "source": "reddit",
+      "state": "no-results",
+      "items_returned": 0,
+      "attempted": true,
+      "at": "2026-08-19T23:15:10.419245Z"
+    },
+    "hackernews": {
+      "source": "hackernews",
+      "state": "ok",
+      "items_returned": 1,
+      "attempted": true,
+      "at": "2026-08-19T23:15:10.927751Z"
+    },
+    "x": {
+      "source": "x",
+      "state": "ok",
+      "items_returned": 30,
+      "attempted": true,
+      "at": "2026-08-19T23:15:12.070306Z"
+    }
+  },
+  "context": {
+    "enrichment_source_boundary": null,
+    "requested_sources": null,
+    "lookback_days": 30
+  },
+  "nominations": [
+    {
+      "id": "n1",
+      "cluster_id": "cluster-1",
+      "heuristic_name": "What happens if an entire class",
+      "heuristic_junk": false,
+      "sources": ["hackernews"],
+      "engagement_by_source": {
+        "hackernews": {
+          "comments": 1334,
+          "points": 1110
+        }
+      },
+      "nomination": {
+        "name": "What happens if an entire class",
+        "seed_score": 677.8436,
+        "summary": "What happens if an entire class of workers loses faith in their careers",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "49209539",
+            "source": "hackernews",
+            "title": "What happens if an entire class of workers loses faith in their careers",
+            "body": "What happens if an entire class of workers loses faith in their careers",
+            "url": "https://www.noemamag.com/why-is-everyone-in-tech-so-sad/",
+            "author": "RickJWagner",
+            "container": "Hacker News",
+            "published_at": "2026-08-07",
+            "date_confidence": "high",
+            "engagement": {
+              "points": 1110,
+              "comments": 1334
+            },
+            "relevance_hint": 0.24,
+            "why_relevant": "HN story about What happens if an entire class of workers loses faith in th",
+            "snippet": "What happens if an entire class of workers loses faith in their careers",
+            "metadata": {
+              "hn_url": "https://news.ycombinator.com/item?id=49209539",
+              "top_comments": [],
+              "comment_insights": []
+            },
+            "local_relevance": 0.24,
+            "freshness": 58,
+            "engagement_score": 50,
+            "source_quality": 0.8,
+            "local_rank_score": 0.351
+          }
+        ]
+      }
+    },
+    {
+      "id": "n2",
+      "cluster_id": "cluster-2",
+      "heuristic_name": "Church Bible",
+      "heuristic_junk": true,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 23,
+          "replies": 0,
+          "reposts": 0
+        }
+      },
+      "nomination": {
+        "name": "Church Bible",
+        "seed_score": 34.5,
+        "summary": "How did the Church decide what belongs in the Bible? She did not grant divine authority to the books. She recognized the books that already possessed it. The process was not arbitrary. Over the first four centuries, the Church applied clear, consistent filters as she discerned which writings were truly inspired Scripture. The main criteria: 1. Apostolic origin Was the book written by an apostle, or by a close companion of an apostle under their authority? This was the primary test. The Chu",
+        "junk_shape": true,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X3",
+            "source": "x",
+            "title": "How did the Church decide what belongs in the Bible?\n\nShe did not grant divine authority to the books.\n\u2028She recognized the books that alread",
+            "body": "How did the Church decide what belongs in the Bible?\n\nShe did not grant divine authority to the books.\n\u2028She recognized the books that already possessed it.\n\nThe process was not arbitrary. Over the first four centuries, the Church applied clear, consistent filters as she discerned which writings were truly inspired Scripture.\n\nThe main criteria:\n\n1. Apostolic origin\u2028Was the book written by an apostle, or by a close companion of an apostle under their authority?\u2028\nThis was the primary test. The Chu",
+            "url": "https://x.com/TheHolySea/status/2090208280945561799",
+            "author": "TheHolySea",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 23,
+              "reposts": 0,
+              "replies": 0
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "How did the Church decide what belongs in the Bible? She did not grant divine authority to the books. She recognized the books that already possessed it. The process was not arbitrary. Over the first four centuries, the Church applied clear, consistent filters as she discerned which writings were truly inspired Scripture. The main criteria: 1. Apostolic origin Was the book written by an apostle, or by a close companion of an apostle under their authority? This was the primary test. The Chu",
+            "metadata": {},
+            "local_relevance": 0.24,
+            "freshness": 90,
+            "engagement_score": 98,
+            "source_quality": 0.68,
+            "local_rank_score": 0.479
+          }
+        ]
+      }
+    },
+    {
+      "id": "n3",
+      "cluster_id": "cluster-3",
+      "heuristic_name": "Bible Religious Decoration Key Passage",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 9,
+          "replies": 1,
+          "reposts": 4
+        }
+      },
+      "nomination": {
+        "name": "Bible Religious Decoration Key Passage",
+        "seed_score": 21.0,
+        "summary": "Your Bible Is Not a Religious Decoration Key Passage: 2 Timothy 3:16\u201317 \u201cAll scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.\u201d Introduction A closed Bible has never strengthened anybody. It may look dignified on the coffee table, impressive beneath the pulpit, sentimental beside the family photographs, and downright holy when car",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X12",
+            "source": "x",
+            "title": "Your Bible Is Not a Religious Decoration\n\nKey Passage: 2 Timothy 3:16\u201317\n\n\u201cAll scripture is given by inspiration of God, and is profitable f",
+            "body": "Your Bible Is Not a Religious Decoration\n\nKey Passage: 2 Timothy 3:16\u201317\n\n\u201cAll scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.\u201d\n\nIntroduction\n\nA closed Bible has never strengthened anybody. It may look dignified on the coffee table, impressive beneath the pulpit, sentimental beside the family photographs, and downright holy when car",
+            "url": "https://x.com/TNTJohn1717/status/2090176648281043173",
+            "author": "TNTJohn1717",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 9,
+              "reposts": 4,
+              "replies": 1
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "Your Bible Is Not a Religious Decoration Key Passage: 2 Timothy 3:16\u201317 \u201cAll scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.\u201d Introduction A closed Bible has never strengthened anybody. It may look dignified on the coffee table, impressive beneath the pulpit, sentimental beside the family photographs, and downright holy when car",
+            "metadata": {},
+            "local_relevance": 0.24,
+            "freshness": 90,
+            "engagement_score": 100,
+            "source_quality": 0.68,
+            "local_rank_score": 0.481
+          }
+        ]
+      }
+    },
+    {
+      "id": "n4",
+      "cluster_id": "cluster-4",
+      "heuristic_name": "https://t.co/lUfkmBtmek Sometimes Bible",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 7,
+          "replies": 3,
+          "reposts": 2
+        }
+      },
+      "nomination": {
+        "name": "https://t.co/lUfkmBtmek Sometimes Bible",
+        "seed_score": 18.0,
+        "summary": "https://t.co/lUfkmBtmek I know I put out a lot of material. Sometimes I probably put enough Bible study in front of you in one week to keep somebody busy for six months. But there is a reason for that. I do not know where every person following VerseQuest is standing today. Somebody is in Genesis. Somebody is wrestling with prophecy. Somebody is trying to understand eternal security. Somebody has been frightened half to death by \u201cfallen from grace.\u201d And somewhere, right now, somebody is sitting",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X26",
+            "source": "x",
+            "title": "https://t.co/lUfkmBtmek\n\nI know I put out a lot of material. Sometimes I probably put enough Bible study in front of you in one week to keep",
+            "body": "https://t.co/lUfkmBtmek\n\nI know I put out a lot of material. Sometimes I probably put enough Bible study in front of you in one week to keep somebody busy for six months. But there is a reason for that. I do not know where every person following VerseQuest is standing today. Somebody is in Genesis. Somebody is wrestling with prophecy. Somebody is trying to understand eternal security. Somebody has been frightened half to death by \u201cfallen from grace.\u201d And somewhere, right now, somebody is sitting",
+            "url": "https://x.com/TNTJohn1717/status/2090140847274590405",
+            "author": "TNTJohn1717",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 7,
+              "reposts": 2,
+              "replies": 3
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "https://t.co/lUfkmBtmek I know I put out a lot of material. Sometimes I probably put enough Bible study in front of you in one week to keep somebody busy for six months. But there is a reason for that. I do not know where every person following VerseQuest is standing today. Somebody is in Genesis. Somebody is wrestling with prophecy. Somebody is trying to understand eternal security. Somebody has been frightened half to death by \u201cfallen from grace.\u201d And somewhere, right now, somebody is sitting",
+            "metadata": {},
+            "local_relevance": 0.0,
+            "freshness": 90,
+            "engagement_score": 91,
+            "source_quality": 0.68,
+            "local_rank_score": 0.316
+          }
+        ]
+      }
+    },
+    {
+      "id": "n5",
+      "cluster_id": "cluster-5",
+      "heuristic_name": "Christian author David Clark",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 5,
+          "replies": 1,
+          "reposts": 1
+        }
+      },
+      "nomination": {
+        "name": "Christian author David Clark",
+        "seed_score": 10.5,
+        "summary": "Christian author David M. Clark says standing at his father\u2019s graveside forced him to confront what real gratitude means. He argues that thankfulness rooted only in good circumstances is fragile, calling it merely \u201crelief,\u201d while biblical gratitude is grounded in who God is even in grief, loss and suffering. Clark warns against what he calls \u201cMe-ology,\u201d a self-centered version of faith that asks what God can do for us instead of worshiping Him for who He is. Drawing on Scripture, he says Christ",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X4",
+            "source": "x",
+            "title": "Christian author David M. Clark says standing at his father\u2019s graveside forced him to confront what real gratitude means. He argues that tha",
+            "body": "Christian author David M. Clark says standing at his father\u2019s graveside forced him to confront what real gratitude means. He argues that thankfulness rooted only in good circumstances is fragile, calling it merely \u201crelief,\u201d while biblical gratitude is grounded in who God is even in grief, loss and suffering.\n\nClark warns against what he calls \u201cMe-ology,\u201d a self-centered version of faith that asks what God can do for us instead of worshiping Him for who He is. Drawing on Scripture, he says Christ",
+            "url": "https://x.com/WalkwithGod7/status/2090200887339724892",
+            "author": "WalkwithGod7",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 5,
+              "reposts": 1,
+              "replies": 1
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "Christian author David M. Clark says standing at his father\u2019s graveside forced him to confront what real gratitude means. He argues that thankfulness rooted only in good circumstances is fragile, calling it merely \u201crelief,\u201d while biblical gratitude is grounded in who God is even in grief, loss and suffering. Clark warns against what he calls \u201cMe-ology,\u201d a self-centered version of faith that asks what God can do for us instead of worshiping Him for who He is. Drawing on Scripture, he says Christ",
+            "metadata": {},
+            "local_relevance": 0.89,
+            "freshness": 90,
+            "engagement_score": 69,
+            "source_quality": 0.68,
+            "local_rank_score": 0.8724999999999999
+          }
+        ]
+      }
+    },
+    {
+      "id": "n6",
+      "cluster_id": "cluster-6",
+      "heuristic_name": "Ephesians 2:20 Paul God",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 2,
+          "replies": 1,
+          "reposts": 1
+        }
+      },
+      "nomination": {
+        "name": "Ephesians 2:20 Paul God",
+        "seed_score": 6.0,
+        "summary": "And that\u2019s where Ephesians 2:20 becomes important to me. Paul says the household of God is \u201cbuilt upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone.\u201d I understand the foundation as something laid, not something continually relaid. I also agree with you that the Church needs order, leadership, teaching, and accountability. I don\u2019t believe Christianity means every individual simply follows whatever they personally feel the Spirit is telling them.",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X16",
+            "source": "x",
+            "title": "And that\u2019s where Ephesians 2:20 becomes important to me. Paul says the household of God is \u201cbuilt upon the foundation of the apostles and pr",
+            "body": "And that\u2019s where Ephesians 2:20 becomes important to me. Paul says the household of God is \u201cbuilt upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone.\u201d I understand the foundation as something laid, not something continually relaid.\n\nI also agree with you that the Church needs order, leadership, teaching, and accountability. I don\u2019t believe Christianity means every individual simply follows whatever they personally feel the Spirit is telling them.",
+            "url": "https://x.com/RookiePod2664/status/2090166414799769973",
+            "author": "RookiePod2664",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 2,
+              "reposts": 1,
+              "replies": 1
+            },
+            "relevance_hint": 0.54,
+            "why_relevant": "",
+            "snippet": "And that\u2019s where Ephesians 2:20 becomes important to me. Paul says the household of God is \u201cbuilt upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone.\u201d I understand the foundation as something laid, not something continually relaid. I also agree with you that the Church needs order, leadership, teaching, and accountability. I don\u2019t believe Christianity means every individual simply follows whatever they personally feel the Spirit is telling them.",
+            "metadata": {},
+            "local_relevance": 0.0,
+            "freshness": 90,
+            "engagement_score": 46,
+            "source_quality": 0.68,
+            "local_rank_score": 0.271
+          }
+        ]
+      }
+    },
+    {
+      "id": "n7",
+      "cluster_id": "cluster-7",
+      "heuristic_name": "T.J Jackson",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 3,
+          "replies": 0,
+          "reposts": 1
+        }
+      },
+      "nomination": {
+        "name": "T.J Jackson",
+        "seed_score": 6.0,
+        "summary": "\u201cAlways mystify, mislead, and surprise the enemy.\u201d T.J. Jackson In spiritual warfare, we must understand that the enemy works through deception, temptation, and discouragement. Scripture warns us to be sober and vigilant because the adversary seeks opportunities to destroy our faith. The Christian therefore needs discernment and must not live carelessly or assume that every thought, desire, or opportunity is from God. Our defense is not worldly force, but the truth of Scripture, prayer, righ",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X28",
+            "source": "x",
+            "title": "\u201cAlways mystify, mislead, and surprise the enemy.\u201d T.J. Jackson \n\nIn spiritual warfare, we must understand that the enemy works through dece",
+            "body": "\u201cAlways mystify, mislead, and surprise the enemy.\u201d T.J. Jackson \n\nIn spiritual warfare, we must understand that the enemy works through deception, temptation, and discouragement. Scripture warns us to be sober and vigilant because the adversary seeks opportunities to destroy our faith. \n\nThe Christian therefore needs discernment and must not live carelessly or assume that every thought, desire, or opportunity is from God. Our defense is not worldly force, but the truth of Scripture, prayer, righ",
+            "url": "https://x.com/the_ostj/status/2090138447423885670",
+            "author": "the_ostj",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 3,
+              "reposts": 1,
+              "replies": 0
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "\u201cAlways mystify, mislead, and surprise the enemy.\u201d T.J. Jackson In spiritual warfare, we must understand that the enemy works through deception, temptation, and discouragement. Scripture warns us to be sober and vigilant because the adversary seeks opportunities to destroy our faith. The Christian therefore needs discernment and must not live carelessly or assume that every thought, desire, or opportunity is from God. Our defense is not worldly force, but the truth of Scripture, prayer, righ",
+            "metadata": {},
+            "local_relevance": 0.89,
+            "freshness": 90,
+            "engagement_score": 49,
+            "source_quality": 0.68,
+            "local_rank_score": 0.8525
+          }
+        ]
+      }
+    },
+    {
+      "id": "n8",
+      "cluster_id": "cluster-8",
+      "heuristic_name": "Scriptures God God Christ",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 2,
+          "replies": 0,
+          "reposts": 1
+        }
+      },
+      "nomination": {
+        "name": "Scriptures God God Christ",
+        "seed_score": 4.5,
+        "summary": "The Scriptures tell us who God is, and they reveal our fallen condition. They announce God's covenant promises, and they proclaim Christ's incarnation, death, resurrection, ascension, and coming judgment. They teach us the way of repentance and faith, and, above all, they bear witness to Jesus Christ. This is why the Anglican formularies refuse to treat Scripture as an optional supplement to Christian life. Article VI does not say merely that Scripture contains some helpful things about salvati",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X21",
+            "source": "x",
+            "title": "The Scriptures tell us who God is, and they reveal our fallen condition. They announce God's covenant promises, and they proclaim Christ's i",
+            "body": "The Scriptures tell us who God is, and they reveal our fallen condition. They announce God's covenant promises, and they proclaim Christ's incarnation, death, resurrection, ascension, and coming judgment. They teach us the way of repentance and faith, and, above all, they bear witness to Jesus Christ.\n\nThis is why the Anglican formularies refuse to treat Scripture as an optional supplement to Christian life. Article VI does not say merely that Scripture contains some helpful things about salvati",
+            "url": "https://x.com/the_ostj/status/2090152766517674374",
+            "author": "the_ostj",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 2,
+              "reposts": 1,
+              "replies": 0
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "The Scriptures tell us who God is, and they reveal our fallen condition. They announce God's covenant promises, and they proclaim Christ's incarnation, death, resurrection, ascension, and coming judgment. They teach us the way of repentance and faith, and, above all, they bear witness to Jesus Christ. This is why the Anglican formularies refuse to treat Scripture as an optional supplement to Christian life. Article VI does not say merely that Scripture contains some helpful things about salvati",
+            "metadata": {},
+            "local_relevance": 0.89,
+            "freshness": 90,
+            "engagement_score": 40,
+            "source_quality": 0.68,
+            "local_rank_score": 0.8435
+          }
+        ]
+      }
+    },
+    {
+      "id": "n9",
+      "cluster_id": "cluster-9",
+      "heuristic_name": "CorbanQualls Dr_Ratbotn1k Jew Jews",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 1,
+          "replies": 1,
+          "reposts": 0
+        }
+      },
+      "nomination": {
+        "name": "CorbanQualls Dr_Ratbotn1k Jew Jews",
+        "seed_score": 3.0,
+        "summary": "@CorbanQualls @Dr_Ratbotn1k @michaeljknowles I have a buddy who is a Jew hater and he spouts shit about Jews too (I\u2019m by no means a defender of their faith as a Catholic). He often mistakably refers to the Talmud as \u201cscripture\u201d. His hatred runs so deep that he knows more about supposed Jewish beliefs than Christian ones.",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X15",
+            "source": "x",
+            "title": "@CorbanQualls @Dr_Ratbotn1k @michaeljknowles I have a buddy who is a Jew hater and he spouts shit about Jews too (I\u2019m by no means a defender",
+            "body": "@CorbanQualls @Dr_Ratbotn1k @michaeljknowles I have a buddy who is a Jew hater and he spouts shit about Jews too (I\u2019m by no means a defender of their faith as a Catholic). \n\nHe often mistakably refers to the Talmud as \u201cscripture\u201d. His hatred runs so deep that he knows more about supposed Jewish beliefs than Christian ones.",
+            "url": "https://x.com/BraydonUltra64/status/2090171115557810402",
+            "author": "BraydonUltra64",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 1,
+              "reposts": 0,
+              "replies": 1
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "@CorbanQualls @Dr_Ratbotn1k @michaeljknowles I have a buddy who is a Jew hater and he spouts shit about Jews too (I\u2019m by no means a defender of their faith as a Catholic). He often mistakably refers to the Talmud as \u201cscripture\u201d. His hatred runs so deep that he knows more about supposed Jewish beliefs than Christian ones.",
+            "metadata": {
+              "mentioned_handles": [
+                "corbanqualls",
+                "dr_ratbotn1k",
+                "michaeljknowles"
+              ]
+            },
+            "local_relevance": 0.89,
+            "freshness": 90,
+            "engagement_score": 22,
+            "source_quality": 0.68,
+            "local_rank_score": 0.8255
+          }
+        ]
+      }
+    },
+    {
+      "id": "n10",
+      "cluster_id": "cluster-10",
+      "heuristic_name": "Salvific Hinge Messiah God Incarnate",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 1,
+          "replies": 1,
+          "reposts": 0
+        }
+      },
+      "nomination": {
+        "name": "Salvific Hinge Messiah God Incarnate",
+        "seed_score": 3.0,
+        "summary": "The Salvific Hinge: Why the Messiah Must Be God Incarnate",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X9",
+            "source": "x",
+            "title": "The Salvific Hinge: Why the Messiah Must Be God Incarnate",
+            "body": "The Salvific Hinge: Why the Messiah Must Be God Incarnate",
+            "url": "https://x.com/TheBodyguard777/status/2090184410859757857",
+            "author": "TheBodyguard777",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 1,
+              "reposts": 0,
+              "replies": 1
+            },
+            "relevance_hint": 0.0,
+            "why_relevant": "",
+            "snippet": "The Salvific Hinge: Why the Messiah Must Be God Incarnate",
+            "metadata": {},
+            "local_relevance": 0.0,
+            "freshness": 90,
+            "engagement_score": 22,
+            "source_quality": 0.68,
+            "local_rank_score": 0.247
+          }
+        ]
+      }
+    },
+    {
+      "id": "n11",
+      "cluster_id": "cluster-11",
+      "heuristic_name": "WORKS EVIDENCE SAVED FAST PAUL SAY",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 2,
+          "replies": 0,
+          "reposts": 0
+        }
+      },
+      "nomination": {
+        "name": "WORKS EVIDENCE SAVED FAST PAUL SAY",
+        "seed_score": 3.0,
+        "summary": "\u201cBUT WORKS ARE THE EVIDENCE SOMEONE IS SAVED!\u201d \ud83d\udcf7 (NOT SO FAST! WHAT DOES PAUL SAY IS THE EVIDENCE?) (KJV / Mid-Acts 9 / Rightly Divided) One of the most common objections you\u2019ll hear after preaching the gospel of our salvation is: \ud83d\udcf7 \u201cBut works are the evidence someone is truly saved!\u201d Sounds convincing\u2026 \ud83d\udcf7 But is that what Paul teaches? Let\u2019s let Scripture answer. \ud83d\udcf7 FIRST \u2014 THE ONLY \u201cEVIDENCE\u201d IS: WHAT GOSPEL DO THEY BELIEVE? Before examining someone\u2019s life\u2026 Before looking at their ministry\u2026 Befo",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X25",
+            "source": "x",
+            "title": "\u201cBUT WORKS ARE THE EVIDENCE SOMEONE IS SAVED!\u201d \ud83d\udcf7\n(NOT SO FAST! WHAT DOES PAUL SAY IS THE EVIDENCE?)\n(KJV / Mid-Acts 9 / Rightly Divided)\nOne",
+            "body": "\u201cBUT WORKS ARE THE EVIDENCE SOMEONE IS SAVED!\u201d \ud83d\udcf7\n(NOT SO FAST! WHAT DOES PAUL SAY IS THE EVIDENCE?)\n(KJV / Mid-Acts 9 / Rightly Divided)\nOne of the most common objections you\u2019ll hear after preaching the gospel of our salvation is:\n\ud83d\udcf7 \u201cBut works are the evidence someone is truly saved!\u201d\nSounds convincing\u2026\n\ud83d\udcf7 But is that what Paul teaches?\nLet\u2019s let Scripture answer.\n\ud83d\udcf7 FIRST \u2014 THE ONLY \u201cEVIDENCE\u201d IS: WHAT GOSPEL DO THEY BELIEVE?\nBefore examining someone\u2019s life\u2026\nBefore looking at their ministry\u2026\nBefo",
+            "url": "https://x.com/Nickymann99/status/2090146769053102575",
+            "author": "Nickymann99",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 2,
+              "reposts": 0,
+              "replies": 0
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "\u201cBUT WORKS ARE THE EVIDENCE SOMEONE IS SAVED!\u201d \ud83d\udcf7 (NOT SO FAST! WHAT DOES PAUL SAY IS THE EVIDENCE?) (KJV / Mid-Acts 9 / Rightly Divided) One of the most common objections you\u2019ll hear after preaching the gospel of our salvation is: \ud83d\udcf7 \u201cBut works are the evidence someone is truly saved!\u201d Sounds convincing\u2026 \ud83d\udcf7 But is that what Paul teaches? Let\u2019s let Scripture answer. \ud83d\udcf7 FIRST \u2014 THE ONLY \u201cEVIDENCE\u201d IS: WHAT GOSPEL DO THEY BELIEVE? Before examining someone\u2019s life\u2026 Before looking at their ministry\u2026 Befo",
+            "metadata": {},
+            "local_relevance": 0.24,
+            "freshness": 90,
+            "engagement_score": 29,
+            "source_quality": 0.68,
+            "local_rank_score": 0.41000000000000003
+          }
+        ]
+      }
+    },
+    {
+      "id": "n12",
+      "cluster_id": "cluster-13",
+      "heuristic_name": "17thletter01 Amen Scripture Christian",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 1,
+          "replies": 0,
+          "reposts": 0
+        }
+      },
+      "nomination": {
+        "name": "17thletter01 Amen Scripture Christian",
+        "seed_score": 1.5,
+        "summary": "@17thletter01 Amen! \ud83d\ude4f It\u2019s encouraging to see people turning toward Scripture and Christian faith. May this hunger lead not just to greater interest, but to genuine repentance, transformed lives, and a deeper relationship with Jesus.",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X2",
+            "source": "x",
+            "title": "@17thletter01 Amen! \ud83d\ude4f It\u2019s encouraging to see people turning toward Scripture and Christian faith. May this hunger lead not just to greater",
+            "body": "@17thletter01 Amen! \ud83d\ude4f It\u2019s encouraging to see people turning toward Scripture and Christian faith. May this hunger lead not just to greater interest, but to genuine repentance, transformed lives, and a deeper relationship with Jesus.",
+            "url": "https://x.com/flf_Ce/status/2090211003581518198",
+            "author": "flf_Ce",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 1,
+              "reposts": 0,
+              "replies": 0
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "@17thletter01 Amen! \ud83d\ude4f It\u2019s encouraging to see people turning toward Scripture and Christian faith. May this hunger lead not just to greater interest, but to genuine repentance, transformed lives, and a deeper relationship with Jesus.",
+            "metadata": {
+              "mentioned_handles": ["17thletter01"]
+            },
+            "local_relevance": 0.89,
+            "freshness": 90,
+            "engagement_score": 16,
+            "source_quality": 0.68,
+            "local_rank_score": 0.8195
+          }
+        ]
+      }
+    },
+    {
+      "id": "n13",
+      "cluster_id": "cluster-14",
+      "heuristic_name": "biblialatina1 Bible Christian 2 Timothy 3:16",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 0,
+          "replies": 1,
+          "reposts": 0
+        }
+      },
+      "nomination": {
+        "name": "biblialatina1 Bible Christian 2 Timothy 3:16",
+        "seed_score": 1.5,
+        "summary": "@biblialatina1 Do you not believe the Bible is the sole infallible source of authority for Christian faith &amp; practice. 2 Timothy 3:16? What can trump the word of God? Do you believe the law is scripture?",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X27",
+            "source": "x",
+            "title": "@biblialatina1 Do you not believe the Bible is the sole infallible source of authority for Christian faith &amp; practice. \n2 Timothy 3:16?",
+            "body": "@biblialatina1 Do you not believe the Bible is the sole infallible source of authority for Christian faith &amp; practice. \n2 Timothy 3:16? \nWhat can trump the word of God? \nDo you believe the law is scripture?",
+            "url": "https://x.com/homen2/status/2090138959703892203",
+            "author": "homen2",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 0,
+              "reposts": 0,
+              "replies": 1
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "@biblialatina1 Do you not believe the Bible is the sole infallible source of authority for Christian faith &amp; practice. 2 Timothy 3:16? What can trump the word of God? Do you believe the law is scripture?",
+            "metadata": {
+              "mentioned_handles": ["biblialatina1"]
+            },
+            "local_relevance": 0.89,
+            "freshness": 90,
+            "engagement_score": 0,
+            "source_quality": 0.68,
+            "local_rank_score": 0.8035
+          }
+        ]
+      }
+    },
+    {
+      "id": "n14",
+      "cluster_id": "cluster-12",
+      "heuristic_name": "Church Jesus Christ Latter-day Saints LDS/Mormonism",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 0,
+          "replies": 1,
+          "reposts": 0
+        }
+      },
+      "nomination": {
+        "name": "Church Jesus Christ Latter-day Saints LDS/Mormonism",
+        "seed_score": 1.5,
+        "summary": "**No, by the standards of biblical scripture and standard hermeneutics (grammatical-historical interpretation of the text in its original context, authorial intent, and the analogy of faith across the canon), the Church of Jesus Christ of Latter-day Saints (LDS/Mormonism) is not Christianity.** Christianity, as defined by the New Testament itself, centers on the person and work of Jesus Christ as revealed in the apostolic writings. Core, non-negotiable elements include: - The eternal, uncreate",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X20",
+            "source": "x",
+            "title": "**No, by the standards of biblical scripture and standard hermeneutics (grammatical-historical interpretation of the text in its original co",
+            "body": "**No, by the standards of biblical scripture and standard hermeneutics (grammatical-historical interpretation of the text in its original context, authorial intent, and the analogy of faith across the canon), the Church of Jesus Christ of Latter-day Saints (LDS/Mormonism) is not Christianity.**\n\nChristianity, as defined by the New Testament itself, centers on the person and work of Jesus Christ as revealed in the apostolic writings. Core, non-negotiable elements include:\n\n- The eternal, uncreate",
+            "url": "https://x.com/SamuelMelton5/status/2090155266964697493",
+            "author": "SamuelMelton5",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 0,
+              "reposts": 0,
+              "replies": 1
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "**No, by the standards of biblical scripture and standard hermeneutics (grammatical-historical interpretation of the text in its original context, authorial intent, and the analogy of faith across the canon), the Church of Jesus Christ of Latter-day Saints (LDS/Mormonism) is not Christianity.** Christianity, as defined by the New Testament itself, centers on the person and work of Jesus Christ as revealed in the apostolic writings. Core, non-negotiable elements include: - The eternal, uncreate",
+            "metadata": {},
+            "local_relevance": 0.54,
+            "freshness": 90,
+            "engagement_score": 0,
+            "source_quality": 0.68,
+            "local_rank_score": 0.5760000000000001
+          }
+        ]
+      }
+    },
+    {
+      "id": "n15",
+      "cluster_id": "cluster-16",
+      "heuristic_name": "Finally Scripture God",
+      "heuristic_junk": false,
+      "sources": ["x"],
+      "engagement_by_source": {
+        "x": {
+          "likes": 0,
+          "replies": 1,
+          "reposts": 0
+        }
+      },
+      "nomination": {
+        "name": "Finally Scripture God",
+        "seed_score": 1.5,
+        "summary": "Finally, Scripture is profitable \u201cfor instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.\u201d In the King James Bible the word is \u201cthroughly,\u201d indicating equipment running through the entire man, not a little religious polish smeared across the surface. God intends Scripture to furnish the believer for service. The Bible supplies truth for witnessing, wisdom for decisions, comfort for suffering, answers for error, standards for conduct, warning",
+        "junk_shape": false,
+        "worthiness": null,
+        "items": [
+          {
+            "item_id": "X11",
+            "source": "x",
+            "title": "Finally, Scripture is profitable \u201cfor instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good wo",
+            "body": "Finally, Scripture is profitable \u201cfor instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.\u201d In the King James Bible the word is \u201cthroughly,\u201d indicating equipment running through the entire man, not a little religious polish smeared across the surface. God intends Scripture to furnish the believer for service. The Bible supplies truth for witnessing, wisdom for decisions, comfort for suffering, answers for error, standards for conduct, warning",
+            "url": "https://x.com/TNTJohn1717/status/2090176665213395455",
+            "author": "TNTJohn1717",
+            "published_at": "2026-08-19",
+            "date_confidence": "high",
+            "engagement": {
+              "likes": 0,
+              "reposts": 0,
+              "replies": 1
+            },
+            "relevance_hint": 0.89,
+            "why_relevant": "",
+            "snippet": "Finally, Scripture is profitable \u201cfor instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.\u201d In the King James Bible the word is \u201cthroughly,\u201d indicating equipment running through the entire man, not a little religious polish smeared across the surface. God intends Scripture to furnish the believer for service. The Bible supplies truth for witnessing, wisdom for decisions, comfort for suffering, answers for error, standards for conduct, warning",
+            "metadata": {},
+            "local_relevance": 0.24,
+            "freshness": 90,
+            "engagement_score": 0,
+            "source_quality": 0.68,
+            "local_rank_score": 0.381
+          }
+        ]
+      }
+    }
+  ]
+}
