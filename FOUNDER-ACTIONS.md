@@ -37,3 +37,30 @@ Actions → New repository secret. Add these three (values are in `.env.local`):
 - **Stripe env** (`BILLING_CHECKOUT_LIVE` + keys) — purchases stay off until set.
 - **The comic strip** — new direction (real multi-panel strip, Peanuts/Boondocks
   register). Waiting on the ChatGPT cartoon you started — see CHANGELOG note.
+
+---
+
+# 📌 PINNED DIRECTION — founder, 2026-08-19 morning
+
+Work list, verbatim intent, in progress:
+
+1. **BUG:** the verse unscramble ("piece together a scripture") overflows the
+   page — needs a container.
+2. **Footer pages accuracy pass:** every page linked in the footer updated to
+   match how the site actually works today — accurate, no secret sauce, no
+   lying. **Specifically /how-we-write.**
+3. **Site-wide typographic hierarchy:** one unified system, best standards,
+   beautiful. Size hierarchies are all over — especially Daily Bread.
+   Daily Bread should get MORE robust.
+4. **Author pages:** each author listed on /how-we-write gets a dedicated page
+   — photo hopefully, small bio, where their words appear on site (not
+   comprehensive).
+5. **Daily Bread prayer:** full psalm is right, but needs proper biblical
+   annotation (verse numbers etc.).
+6. **The three "How to read" sections (lectio divina etc.):** each leads to a
+   robust dedicated page explaining it in detail. They feel incomplete.
+7. **Gallery, Vasari-style:** captions that talk about the art's quality and
+   what is literally shown. Full gallery of 7 images with a lightbox — the
+   image archive should be showcased.
+8. **Comic strip (already pinned above):** real multi-panel strip; waiting on
+   the founder's ChatGPT cartoon → `content/strip-reference/`.
