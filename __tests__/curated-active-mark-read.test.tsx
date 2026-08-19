@@ -20,7 +20,7 @@ import {
   waitFor,
 } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import CuratedActiveView from '@/components/daily-bread/CuratedActiveView'
+import CuratedActiveView from '@/components/today/CuratedActiveView'
 
 vi.mock('@/components/AudioPlayer', () => ({ default: () => null }))
 vi.mock('@/components/PushOptIn', () => ({ default: () => null }))

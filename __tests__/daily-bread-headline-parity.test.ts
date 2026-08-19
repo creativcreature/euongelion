@@ -16,17 +16,16 @@ import { describe, expect, it } from 'vitest'
  * `imageSrc`, which silently falls back to its `--textonly` variant and drops
  * the plate with no error.
  */
-const read = (p: string) =>
-  fs.readFileSync(path.join(process.cwd(), p), 'utf8')
+const read = (p: string) => fs.readFileSync(path.join(process.cwd(), p), 'utf8')
 
 const READERS = [
   {
     label: 'curated series reading (/daily-bread)',
-    file: 'src/components/daily-bread/CuratedActiveView.tsx',
+    file: 'src/components/today/CuratedActiveView.tsx',
   },
   {
     label: 'soul-audit plan reading (/daily-bread)',
-    file: 'src/components/daily-bread/DailyBreadView.tsx',
+    file: 'src/components/today/DailyBreadView.tsx',
   },
   {
     label: 'canonical devotional reader (/devotional/[slug])',

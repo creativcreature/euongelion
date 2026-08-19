@@ -5,6 +5,27 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The component folder now names the route it serves (SA-105, F-151)
+
+**2026-08-19**
+
+SA-059 swapped the routes; the folders never followed. `/today` — your reading —
+rendered out of `src/components/daily-bread/`, while `/daily-bread` — the paper —
+rendered out of `src/components/edition/`. Reading the tree gave you the
+information architecture backwards.
+
+Not hypothetical: it misled this session with the code open, producing a bug
+diagnosis against the wrong page that the founder had to correct. Anything
+reading the tree inherits the same wrong model.
+
+`components/daily-bread/` is now `components/today/`, seven importers rewritten,
+no behaviour change. Done now because the blast radius was seven files and none
+were held by another session — a rename is cheap when nothing is in flight.
+
+`DailyBreadView.tsx` keeps its name inside the new folder; it serves the Soul
+Audit plan path, so it is still misnamed at the file level. The folder was the
+load-bearing confusion.
+
 ## The series page says where you are (SA-103, F-149)
 
 **2026-08-19**

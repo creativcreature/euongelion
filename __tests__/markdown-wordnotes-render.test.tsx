@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it } from 'vitest'
 import MarkdownWithWordNotes, {
   hasWordNoteMarkers,
-} from '@/components/daily-bread/MarkdownWithWordNotes'
+} from '@/components/today/MarkdownWithWordNotes'
 import { getWordNote, type WordNoteEntry } from '@/lib/wordnote'
 
 afterEach(cleanup)

@@ -11,8 +11,8 @@
  */
 import { cleanup, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import DailyBreadView from '@/components/daily-bread/DailyBreadView'
-import CuratedActiveView from '@/components/daily-bread/CuratedActiveView'
+import DailyBreadView from '@/components/today/DailyBreadView'
+import CuratedActiveView from '@/components/today/CuratedActiveView'
 import type {
   DayContent,
   DayScheduleEntry,

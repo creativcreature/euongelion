@@ -16,7 +16,7 @@ import {
   waitFor,
 } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import DailyBreadView from '@/components/daily-bread/DailyBreadView'
+import DailyBreadView from '@/components/today/DailyBreadView'
 import { localDateKey } from '@/lib/presence'
 import type {
   DayContent,
