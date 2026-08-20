@@ -407,6 +407,12 @@ release can never drift from the footer, test-pinned. Swept all 47 routes:
 every rendering page reaches SiteBottom; /saved and /clippings are pure
 redirects and correctly render nothing.
 
+The 7am flip now lands ON TIME: /daily-bread revalidated hourly, so the
+new edition could arrive as late as 7:59 for cached readers. Revalidation
+is now five minutes. And Echo & Dust No. 1 premieres on TODAY'S paper —
+the founder's 'no comic strip' was the verdict; the draft moved from
+Friday to the live edition.
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)

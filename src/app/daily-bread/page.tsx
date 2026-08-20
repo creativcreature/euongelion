@@ -13,8 +13,10 @@ import { pickTodaySlug, findSeriesForSlug } from '@/lib/today-devotional'
 import { DEVOTIONAL_TEASERS } from '@/data/devotional-teasers'
 import { effectiveEditionDate } from '@/lib/edition/deadline'
 
-// ISR: revalidate every hour so the edition date is always correct
-export const revalidate = 3600
+// ISR at five minutes: the 7am flip must LAND at 7am, not up to an hour
+// late — with hourly revalidation a reader could get yesterday's paper at
+// 7:59. Five minutes keeps render cost negligible and the flip punctual.
+export const revalidate = 300
 
 export async function generateMetadata(): Promise<Metadata> {
   const now = new Date(`${effectiveEditionDate(new Date())}T00:00:00Z`)
