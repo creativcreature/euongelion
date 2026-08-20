@@ -120,7 +120,7 @@ export default function DevotionalPageClient({
   const [isDayNavOpenMobile, setIsDayNavOpenMobile] = useState(false)
 
   const router = useRouter()
-  const { isRead, markComplete, canRead } = useProgress()
+  const { isRead, markComplete, unmarkComplete, canRead } = useProgress()
 
   const seriesSlug = getSeriesSlugFromDevotional(slug)
   const dayIndex = getDayIndexFromSlug(slug)
@@ -903,6 +903,26 @@ export default function DevotionalPageClient({
                           ? 'Finished. Return anytime to re-read.'
                           : 'Finished reading? Mark this day read.'}
                       </p>
+                      {/* Marking a day read writes to three places and, until
+                          now, none of them had a way back — an accidental tap
+                          on a one-handed surface was permanent. Offered quietly
+                          rather than as a second CTA: undo should be findable,
+                          not competing with the thing it undoes. */}
+                      {isCompleted && (
+                        <button
+                          type="button"
+                          className="text-label vw-small link-highlight mt-3"
+                          onClick={() => {
+                            unmarkComplete(slug)
+                            setIsCompleted(false)
+                            window.dispatchEvent(
+                              new CustomEvent('libraryUpdated'),
+                            )
+                          }}
+                        >
+                          MARK AS UNREAD
+                        </button>
+                      )}
                       <div className="mt-4 flex flex-wrap items-center gap-3">
                         {!isCompleted && (
                           <button

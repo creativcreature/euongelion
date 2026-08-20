@@ -83,6 +83,25 @@ function client() {
       ) => {
         select: (cols: string) => { maybeSingle: () => Promise<QueryResult> }
       }
+      // Undo. Narrow like the rest of this wrapper: only the chain actually
+      // used, so the shape stays honest rather than importing a generated type
+      // that no longer matches the post-019 schema.
+      delete: () => {
+        eq: (
+          col: string,
+          val: string,
+        ) => {
+          eq: (
+            col: string,
+            val: string,
+          ) => {
+            select: (cols: string) => Promise<{
+              data: RawRow[] | null
+              error: unknown
+            }>
+          }
+        }
+      }
     }
   }
 }
@@ -203,4 +222,36 @@ export async function upsertReadingCompletion(params: {
     throw new Error('user_progress upsert returned a row without a slug')
   }
   return row
+}
+
+/**
+ * Remove a completion.
+ *
+ * A reader who marks the wrong day has, until now, had no way back: the write
+ * path had three steps and the read path had none of them in reverse. An action
+ * a person can take by accident needs an inverse, or the product is telling them
+ * their mistake is permanent.
+ *
+ * Deleting rather than tombstoning is deliberate. `user_progress` answers "has
+ * this been read", and a row that says "no" is the same as no row — except that
+ * it would also have to be filtered out of every count, every series standing
+ * and every reconcile. The reconcile already treats absence as not-read, so
+ * absence is the honest representation.
+ *
+ * Returns whether a row was actually removed, so the caller can tell a genuine
+ * undo from a no-op on something that was never marked.
+ */
+export async function deleteReadingCompletion(params: {
+  userId: string
+  devotionalSlug: string
+}): Promise<{ removed: boolean }> {
+  const { data, error } = await client()
+    .from('user_progress')
+    .delete()
+    .eq('user_id', params.userId)
+    .eq('devotional_slug', params.devotionalSlug)
+    .select(COLUMNS)
+
+  if (error) throw error
+  return { removed: Array.isArray(data) && data.length > 0 }
 }

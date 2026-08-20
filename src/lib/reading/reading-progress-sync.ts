@@ -343,3 +343,53 @@ export async function reconcileReadingProgress(
 
   return { status: 'synced', completions: merged, pushed }
 }
+
+/**
+ * Remove a completion from the account.
+ *
+ * The mirror of `pushReadingCompletion`, and it exists for the same reason: a
+ * completion that only disappears locally would come back on the next
+ * reconcile, so an undo that stops at localStorage is not an undo — it is a
+ * delay. This is what makes "I marked the wrong day" survive a reload and a
+ * second device.
+ *
+ * Fails closed exactly like the push does. A signed-out reader's local removal
+ * is the whole truth for them, and there is nothing to unsend.
+ */
+export async function removeReadingCompletion(
+  slug: string,
+): Promise<PushOutcome> {
+  if (typeof window === 'undefined') {
+    return { status: 'not-applicable', reason: 'server' }
+  }
+  if (!accountKnown) {
+    return { status: 'not-applicable', reason: 'auth-unknown' }
+  }
+  if (!hasAccount) {
+    return { status: 'not-applicable', reason: 'signed-out' }
+  }
+
+  try {
+    const response = await fetch(
+      `/api/reading-progress?devotionalSlug=${encodeURIComponent(slug)}`,
+      { method: 'DELETE', credentials: 'same-origin', keepalive: true },
+    )
+    if (response.status === 401 || response.status === 403) {
+      hasAccount = false
+      return { status: 'not-applicable', reason: 'signed-out' }
+    }
+    if (!response.ok) {
+      throw new Error(`DELETE /api/reading-progress ${response.status}`)
+    }
+    return { status: 'saved' }
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        evt: 'reading_progress.remove_failed',
+        slug,
+        message: error instanceof Error ? error.message : String(error),
+      }),
+    )
+    return { status: 'failed', error }
+  }
+}

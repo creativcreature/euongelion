@@ -322,8 +322,22 @@ export default function LibraryView() {
               {/* Founder 2026-08-14: the card said "Day 3" and then sent the
                   reader to a bare /daily-bread. It now opens the day it names.
                   activeDayHref falls back to the series page, never to day 1. */}
+              {/* One rule for the whole view.
+                  The SAVED cards resolve their next day from actual
+                  completions; this card used the server's
+                  `active_series.current_day`. Those agree until they do not —
+                  a completion whose server write failed, or days finished out
+                  of order — and then two cards in ONE view point at different
+                  days for the SAME series, which is worse than either answer
+                  alone. Completions are the reader's own record and the thing
+                  they can see, so they win; the server day remains the
+                  fallback for a series with nothing marked yet. */}
               <Link
-                href={activeDayHref(active.seriesSlug, active.currentDay)}
+                href={activeDayHref(
+                  active.seriesSlug,
+                  seriesStanding(active.seriesSlug, isRead)?.next?.day ??
+                    active.currentDay,
+                )}
                 className="cta-major text-label vw-small px-5 py-2"
               >
                 CONTINUE

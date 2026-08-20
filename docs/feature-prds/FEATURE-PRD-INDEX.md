@@ -159,3 +159,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-154 | Reading surfaces  | /today listens from where you are; plan path exempt       | 0/10     | wip     | [F-154.md](./F-154.md) |
 | F-155 | Reading surfaces  | Audio moves to a sidebar; off the browse surfaces         | 0/10     | wip     | [F-155.md](./F-155.md) |
 | F-156 | Reading surfaces  | Audio entry in the masthead; reachable everywhere         | 0/10     | wip     | [F-156.md](./F-156.md) |
+| F-157 | Platform          | Undo a completion; one day-source in the Library          | 0/10     | wip     | [F-157.md](./F-157.md) |

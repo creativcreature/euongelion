@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## A completion you can take back (SA-111, F-157)
+
+**2026-08-19**
+
+Founder: _"i accidentally marked one and now cant go back"._
+
+Marking a day read wrote to three places — localStorage, the account row, and
+`active_series.current_day` — and none of them had an inverse. An action a person
+can take by accident, on a surface built for one-handed use, needs a way back.
+
+The whole chain now reverses, and **local-only removal would have been worse than
+nothing**: the next reconcile pulls the completion back, so an undo that stopped
+at the device is a delay, not an undo. The day rewind only moves backward, and
+only for the active series — un-marking a day you are already past leaves your
+place alone.
+
+Offered as a quiet text link rather than a second CTA. Undo should be findable,
+not competing with the thing it undoes.
+
+**A second bug, found in the same pass.** The Library had two sources of truth in
+one view: the ACTIVE card resolved CONTINUE from the server's `current_day`, the
+SAVED cards from actual completions. Those agree until they do not — a failed
+write, or days finished out of order — and then two cards point at different days
+for the same series, which is worse than either answer alone. Completions now win
+everywhere, because they are the reader's own record and the thing they can see.
+
 ## The sidebar was invisible to ad blockers (SA-112, F-155)
 
 **2026-08-19**

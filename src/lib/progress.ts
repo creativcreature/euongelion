@@ -2,11 +2,15 @@
 
 import type { DevotionalProgress } from '@/types'
 import { SERIES_DATA } from '@/data/series'
-import { advanceActiveDayAfterCompletion } from '@/lib/reading/active-day'
+import {
+  advanceActiveDayAfterCompletion,
+  rewindActiveDayAfterUnmark,
+} from '@/lib/reading/active-day'
 import { unionCompletions } from '@/lib/reading/completion-merge'
 import {
   READING_PROGRESS_MERGED,
   pushReadingCompletion,
+  removeReadingCompletion,
 } from '@/lib/reading/reading-progress-sync'
 
 const PROGRESS_KEY = 'wakeup_progress'
@@ -178,4 +182,42 @@ function getSeriesDevotionals(seriesSlug: string): string[] {
   const series = SERIES_DATA[seriesSlug]
   if (!series) return []
   return series.days.map((d) => d.slug)
+}
+
+/**
+ * Undo a completion.
+ *
+ * Founder, 2026-08-19: _"i accidentally marked one and now cant go back"_.
+ * Marking a day read wrote to three places — localStorage, the server row, and
+ * `active_series.current_day` — and none of them had an inverse. An action a
+ * person can take by accident, on a surface built for one-handed use at 6am,
+ * needs a way back or the product is telling them their mistake is permanent.
+ *
+ * All three are reversed, in the order that keeps the reader's own device
+ * honest first: local state (so the UI corrects immediately), then the day they
+ * are standing on, then the account row. Removing only locally would be worse
+ * than doing nothing — the next reconcile would pull the completion back and
+ * the undo would silently un-undo itself.
+ */
+export function unmarkDevotionalComplete(slug: string): void {
+  if (typeof window === 'undefined') return
+  try {
+    const progress = getProgress()
+    const next = progress.filter((p) => p.slug !== slug)
+    // Nothing to undo. Say so by doing nothing rather than firing events that
+    // make surfaces re-render for no reason.
+    if (next.length === progress.length) return
+
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify(next))
+    window.dispatchEvent(
+      new CustomEvent('progressUpdated', { detail: { slug } }),
+    )
+  } catch {
+    // Storage unavailable — the server calls below are still worth making.
+  }
+
+  // Outside the try for the same reason the completion path is: a localStorage
+  // failure must not cancel the writes that make this survive a reload.
+  void rewindActiveDayAfterUnmark(slug)
+  void removeReadingCompletion(slug)
 }

@@ -94,7 +94,8 @@ export function activeDayLabel(
   seriesSlug: string,
   currentDay: number | null | undefined,
 ): string | null {
-  if (typeof currentDay !== 'number' || !Number.isFinite(currentDay)) return null
+  if (typeof currentDay !== 'number' || !Number.isFinite(currentDay))
+    return null
   const total = SERIES_DATA[seriesSlug]?.days.length
   const day = Math.floor(currentDay)
   return total ? `Day ${day} of ${total}` : `Day ${day}`
@@ -238,6 +239,103 @@ export async function advanceActiveDayAfterCompletion(
     window.dispatchEvent(
       new CustomEvent(ACTIVE_DAY_ADVANCE_FAILED, {
         detail: { completedSlug, seriesSlug: location.seriesSlug },
+      }),
+    )
+    return { status: 'failed', error }
+  }
+}
+
+/**
+ * Put the reader back on a day they un-marked.
+ *
+ * The mirror of `advanceActiveDayAfterCompletion`. Un-marking a day that only
+ * cleared local state would leave `active_series.current_day` past it, so every
+ * "continue reading" surface would keep sending the reader forward to a day
+ * they had just said they had not read. The undo has to reach the same value
+ * the completion moved.
+ *
+ * It only ever moves BACKWARD, and only for the active series. Un-marking a day
+ * the reader is already behind changes nothing — they are re-reading, and their
+ * place is theirs.
+ */
+export async function rewindActiveDayAfterUnmark(
+  unmarkedSlug: string,
+): Promise<AdvanceOutcome> {
+  if (typeof window === 'undefined') {
+    return { status: 'not-applicable', reason: 'server' }
+  }
+
+  const location = locateDay(unmarkedSlug)
+  if (!location) {
+    return { status: 'not-applicable', reason: 'not-a-series-day' }
+  }
+
+  try {
+    const currentResponse = await fetch('/api/devotionals/active', {
+      credentials: 'same-origin',
+    })
+    if (currentResponse.status === 401 || currentResponse.status === 403) {
+      return { status: 'not-applicable', reason: 'signed-out' }
+    }
+    if (!currentResponse.ok) {
+      throw new Error(`GET /api/devotionals/active ${currentResponse.status}`)
+    }
+
+    const current = (await currentResponse.json()) as ActiveSeriesResponse
+    const activeSlug = current.active?.seriesSlug
+    if (!activeSlug) {
+      return { status: 'not-applicable', reason: 'no-active-series' }
+    }
+    if (activeSlug !== location.seriesSlug) {
+      return { status: 'not-applicable', reason: 'different-series' }
+    }
+
+    const serverDay = current.active?.currentDay ?? 1
+    if (serverDay <= location.day) {
+      // Already at or before the un-marked day. Nothing to give back.
+      return { status: 'not-applicable', reason: 'behind-current-day' }
+    }
+
+    const patchResponse = await fetch('/api/devotionals/active', {
+      method: 'PATCH',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ currentDay: location.day }),
+    })
+    if (!patchResponse.ok) {
+      throw new Error(`PATCH /api/devotionals/active ${patchResponse.status}`)
+    }
+
+    const updated = (await patchResponse.json()) as ActiveSeriesResponse
+    const confirmedDay = updated.active?.currentDay ?? location.day
+    window.dispatchEvent(
+      new CustomEvent(ACTIVE_DAY_ADVANCED, {
+        detail: { seriesSlug: location.seriesSlug, currentDay: confirmedDay },
+      }),
+    )
+    window.dispatchEvent(new CustomEvent('libraryUpdated'))
+
+    return {
+      status: 'advanced',
+      seriesSlug: location.seriesSlug,
+      currentDay: confirmedDay,
+    }
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        evt: 'active_day.rewind_failed',
+        unmarkedSlug,
+        seriesSlug: location.seriesSlug,
+        day: location.day,
+        message: error instanceof Error ? error.message : String(error),
+      }),
+    )
+    window.dispatchEvent(
+      new CustomEvent(ACTIVE_DAY_ADVANCE_FAILED, {
+        detail: {
+          completedSlug: unmarkedSlug,
+          seriesSlug: location.seriesSlug,
+        },
       }),
     )
     return { status: 'failed', error }

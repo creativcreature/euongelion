@@ -55,7 +55,7 @@ export default function CuratedActiveView({
   const unsave = useDevotionalLibraryStore((s) => s.unsave)
   const saved = useDevotionalLibraryStore((s) => s.saved)
   const refresh = useDevotionalLibraryStore((s) => s.refresh)
-  const { isRead, markComplete } = useProgress()
+  const { isRead, markComplete, unmarkComplete } = useProgress()
   const hydrate = useDevotionalLibraryStore((s) => s.hydrate)
 
   const [devotional, setDevotional] = useState<Devotional | null>(null)
@@ -502,6 +502,19 @@ export default function CuratedActiveView({
                 ? 'Finished. Return anytime to re-read.'
                 : 'Finished reading? Mark this day read.'}
             </p>
+            {isRead(day.slug) && (
+              <button
+                type="button"
+                className="text-label vw-small link-highlight mt-3"
+                onClick={() => {
+                  unmarkComplete(day.slug)
+                  window.dispatchEvent(new CustomEvent('libraryUpdated'))
+                  void refresh()
+                }}
+              >
+                MARK AS UNREAD
+              </button>
+            )}
             {!isRead(day.slug) && (
               <div className="mt-4 flex flex-wrap items-center gap-3">
                 <button

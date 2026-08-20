@@ -15,6 +15,7 @@ import {
   isPendingReadingProgressMigration,
   listReadingProgress,
   upsertReadingCompletion,
+  deleteReadingCompletion,
 } from '@/lib/reading/reading-progress-repository'
 
 interface CompletionBody {
@@ -252,6 +253,81 @@ export async function POST(request: NextRequest) {
     return jsonError({
       error: 'Unable to save reading progress.',
       code: 'READING_PROGRESS_SAVE_FAILED',
+      status: 500,
+      requestId,
+    })
+  }
+}
+
+/**
+ * DELETE — undo a completion.
+ *
+ * A reader who marks the wrong day needs a way back. The write path had three
+ * steps (local, the day advance, the server row) and until now none of them had
+ * an inverse, which meant an accidental tap was permanent on every device the
+ * reader owned.
+ *
+ * Same auth, same rate limit and same slug validation as POST — an undo is a
+ * write, and the fact that it removes rather than adds does not make it cheaper
+ * to abuse. Returns `removed: false` rather than 404 when nothing was marked:
+ * the reader's intent ("this should not be complete") is satisfied either way,
+ * and a 404 would make a double-tap look like a failure.
+ */
+export async function DELETE(request: NextRequest) {
+  const requestId = createRequestId()
+  const clientKey = getClientKey(request)
+  try {
+    const user = await getUser()
+    if (!user) {
+      return jsonError({
+        error: 'Sign in to change your progress.',
+        code: 'AUTH_REQUIRED_SAVE_STATE',
+        status: 401,
+        requestId,
+      })
+    }
+
+    const limiter = await takeRateLimit({
+      namespace: 'reading-progress-delete',
+      key: clientKey,
+      limit: MAX_REQUESTS_PER_MINUTE,
+      windowMs: 60_000,
+    })
+    if (!limiter.ok) {
+      return jsonError({
+        error: 'Too many progress updates. Please retry shortly.',
+        status: 429,
+        requestId,
+        rateLimit: limiter,
+      })
+    }
+
+    const slug = String(
+      new URL(request.url).searchParams.get('devotionalSlug') ?? '',
+    ).trim()
+    if (!slug || !isSafeSlug(slug)) {
+      return jsonError({
+        error: 'A valid devotionalSlug is required.',
+        status: 400,
+        requestId,
+      })
+    }
+
+    const result = await deleteReadingCompletion({
+      userId: user.id,
+      devotionalSlug: slug,
+    })
+    return NextResponse.json({ ok: true, ...result, requestId })
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        evt: 'reading_progress.delete_failed',
+        requestId,
+        message: error instanceof Error ? error.message : String(error),
+      }),
+    )
+    return jsonError({
+      error: 'Could not change your progress.',
       status: 500,
       requestId,
     })

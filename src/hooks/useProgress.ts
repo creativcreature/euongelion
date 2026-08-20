@@ -9,6 +9,7 @@ import {
   getSeriesProgress,
   getOverallProgress,
   canReadDevotional,
+  unmarkDevotionalComplete,
 } from '@/lib/progress'
 import { READING_PROGRESS_MERGED } from '@/lib/reading/reading-progress-sync'
 
@@ -36,6 +37,7 @@ export function useProgress() {
     progress,
     isRead: isDevotionalRead,
     markComplete: markDevotionalComplete,
+    unmarkComplete: unmarkDevotionalComplete,
     getSeriesProgress,
     getOverallProgress,
     canRead: canReadDevotional,
