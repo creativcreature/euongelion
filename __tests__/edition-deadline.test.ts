@@ -1,28 +1,47 @@
 /**
- * The 3am rule (SA-111): drafts go live at 3:00am Eastern on their posting
- * day unless rejected. DST-safe on both sides of the year.
+ * The 7am rule (SA-114): the edition flips at 7:00am Eastern — before that,
+ * yesterday's paper is live; at the flip the new day arrives whole,
+ * unrejected drafts included. DST-safe on both sides of the year.
  */
 import { describe, expect, it } from 'vitest'
-import { deadlineUtc, draftIsLive } from '@/lib/edition/deadline'
+import { draftIsLive, effectiveEditionDate } from '@/lib/edition/deadline'
 
-describe('the 3am Eastern deadline', () => {
-  it('is 07:00 UTC in summer (EDT)', () => {
-    expect(deadlineUtc('2026-08-23').toISOString()).toBe(
-      '2026-08-23T07:00:00.000Z',
+describe('the 7am Eastern edition flip', () => {
+  it('serves yesterday before 7am ET in summer (EDT: flip = 11:00 UTC)', () => {
+    expect(effectiveEditionDate(new Date('2026-08-23T10:59:00Z'))).toBe(
+      '2026-08-22',
+    )
+    expect(effectiveEditionDate(new Date('2026-08-23T11:00:00Z'))).toBe(
+      '2026-08-23',
     )
   })
 
-  it('is 08:00 UTC in winter (EST)', () => {
-    expect(deadlineUtc('2026-01-15').toISOString()).toBe(
-      '2026-01-15T08:00:00.000Z',
+  it('serves yesterday before 7am ET in winter (EST: flip = 12:00 UTC)', () => {
+    expect(effectiveEditionDate(new Date('2026-01-15T11:59:00Z'))).toBe(
+      '2026-01-14',
+    )
+    expect(effectiveEditionDate(new Date('2026-01-15T12:00:00Z'))).toBe(
+      '2026-01-15',
     )
   })
 
-  it('holds a draft before the deadline and releases it after', () => {
-    const day = '2026-08-23'
-    expect(draftIsLive(day, new Date('2026-08-23T06:59:00Z'))).toBe(false)
-    expect(draftIsLive(day, new Date('2026-08-23T07:00:00Z'))).toBe(true)
-    expect(draftIsLive(day, new Date('2026-08-22T23:00:00Z'))).toBe(false)
-    expect(draftIsLive(day, new Date('2026-08-24T00:00:00Z'))).toBe(true)
+  it('evening still serves the same day (no premature flip at midnight UTC)', () => {
+    // 11pm ET Aug 22 = 03:00 UTC Aug 23 — a UTC-keyed paper would already
+    // have flipped; the 7am rule keeps Aug 22 live.
+    expect(effectiveEditionDate(new Date('2026-08-23T03:00:00Z'))).toBe(
+      '2026-08-22',
+    )
+  })
+
+  it('drafts print exactly when their edition becomes live', () => {
+    expect(draftIsLive('2026-08-23', new Date('2026-08-23T10:59:00Z'))).toBe(
+      false,
+    )
+    expect(draftIsLive('2026-08-23', new Date('2026-08-23T11:00:00Z'))).toBe(
+      true,
+    )
+    expect(draftIsLive('2026-08-23', new Date('2026-08-24T02:00:00Z'))).toBe(
+      true,
+    )
   })
 })

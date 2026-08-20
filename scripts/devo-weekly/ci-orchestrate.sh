@@ -50,6 +50,16 @@ cp "$THEMATIC_FILE" "docs/run/SERIES-THEMATIC-$STAMP.md"
 # Reset the override file so next week starts clean (no-op when unused).
 git checkout origin/main -- content/next-series-thematic.md || true
 
+# SA-114 (F-158): expose the branch to later workflow steps — the preview
+# comment plumbing finds the reading-gate PR by head branch. No-op locally.
+echo "SERIES_BRANCH=$BRANCH" >> "${GITHUB_ENV:-/dev/null}"
+
+# SA-114 (F-158): the reading-gate label must exist before the PR opens.
+# Created here in the script (idempotent — || true absorbs "already exists"),
+# never left to the model.
+gh label create "reading gate" --color "B45309" \
+  --description "Weekly series PR awaiting the founder's read" || true
+
 AUTOPUB_NOTE=""
 if [ "${AUTO_PUBLISH:-}" = "true" ]; then
   AUTOPUB_NOTE="The founder's AUTO_PUBLISH repo variable is set: after the reading-gate artifact, continue through devo-go's remaining phases INCLUDING merge to main. Do not push to main directly — merge the branch via 'gh pr merge --merge --admin' after opening the PR."
@@ -64,7 +74,17 @@ CLOUD CONSTRAINTS (these adapt the skill, they do not relax it):
 - START DAY: the Sunday after next Wednesday (SA-029 sabbath-first).
 - COMMITS: on this branch only, hook-compliant (SA-100, F-146 citations, tracking-spine updates). NEVER touch main.
 
-FINISH by: (1) writing the reading-gate artifact the skill prescribes, (2) pushing the branch, (3) opening a pull request titled 'Weekly series (reading gate): <series title>' whose body is the gate artifact content plus the thematic rationale — use \`gh pr create\`. $AUTOPUB_NOTE" \
+FINISH by: (1) writing the reading-gate artifact the skill prescribes, (2) pushing the branch, (3) opening a pull request titled 'Weekly series (reading gate): <series title>' whose body is the gate artifact content plus the thematic rationale — use \`gh pr create --label 'reading gate'\` (the 'reading gate' label already exists — apply it, do not create it). $AUTOPUB_NOTE" \
   --allowedTools "Bash,Read,Write,Edit,Grep,Glob,Skill,Agent,WebSearch,WebFetch" --permission-mode acceptEdits
 
-echo "[done] branch $BRANCH pushed; reading-gate PR opened"
+# SA-114 (F-158): plumbing-layer guarantee, independent of what the model
+# did above — the reading-gate PR must exist and must carry the label.
+# --state all because AUTO_PUBLISH runs merge the PR before we get here.
+PR_NUMBER="$(gh pr list --head "$BRANCH" --state all --json number --jq '.[0].number // empty' || true)"
+if [ -z "$PR_NUMBER" ]; then
+  echo "[fatal] no PR found for head branch $BRANCH — the reading gate never opened"
+  exit 1
+fi
+gh pr edit "$PR_NUMBER" --add-label "reading gate"
+
+echo "[done] branch $BRANCH pushed; reading-gate PR #$PR_NUMBER opened and labeled"

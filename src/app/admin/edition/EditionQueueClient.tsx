@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import type { EditionItem, EditionKind } from '@/lib/edition/kinds'
+import type { EditionItem, EditionKind, LeadPayload } from '@/lib/edition/kinds'
 
 /**
  * The review queue for The Daily Bread (SA-090 / F-136).
@@ -19,6 +19,11 @@ import type { EditionItem, EditionKind } from '@/lib/edition/kinds'
  * FAILURE IS VISIBLE (Development Rule 1). A queue that fails to load renders
  * the database's own message, never an empty list: "nothing waiting" and "the
  * read broke" must never look the same to the person clearing the queue.
+ *
+ * EDIT (SA-114 / F-158): every card can be edited in place before its verdict
+ * — the authored Sunday lead as prose fields, everything else as JSON — and
+ * the server re-validates the result against the same kind guards the
+ * generators pass.
  */
 
 /** Distributed so `kind` actually narrows `payload`. `EditionItem` on its own
@@ -277,6 +282,37 @@ async function postVerdict(
   return 'recorded'
 }
 
+/**
+ * Save an edited payload (SA-114 / F-158). THROWS with the server's own
+ * message on any non-OK answer — a guard refusal, a row that is no longer a
+ * draft, an auth failure — so the editor renders exactly what the contract
+ * said, never a generic shrug.
+ */
+async function patchPayload(id: string, payload: unknown): Promise<void> {
+  const response = await fetch('/api/admin/edition', {
+    method: 'PATCH',
+    credentials: 'same-origin',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id, payload }),
+  })
+
+  let body: unknown = null
+  try {
+    body = await response.json()
+  } catch {
+    if (!response.ok) {
+      throw new Error(
+        `The edit was rejected and the response was unreadable (HTTP ${response.status}).`,
+      )
+    }
+    return
+  }
+
+  if (!response.ok) {
+    throw new Error(errorMessageFrom(body, response.status))
+  }
+}
+
 /** Read the queue. THROWS with the server's own message — the caller decides
  *  whether that is a page-level failure or a note on top of a stale list. */
 async function fetchQueue(): Promise<QueueItem[]> {
@@ -304,12 +340,271 @@ async function fetchQueue(): Promise<QueueItem[]> {
   return body.items
 }
 
+const EDIT_FIELD_CLASS =
+  'vw-small w-full border border-[var(--color-border)] bg-transparent p-2'
+
+/** Save/Cancel row plus the visible save error, shared by both editors. */
+function EditorActions({
+  saving,
+  error,
+  onSave,
+  onCancel,
+}: {
+  saving: boolean
+  error: string | null
+  onSave: () => void
+  onCancel: () => void
+}) {
+  return (
+    <>
+      {error ? (
+        <p
+          role="alert"
+          className="vw-small border border-[var(--color-border-strong)] p-3"
+        >
+          {error}
+        </p>
+      ) : null}
+      <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          disabled={saving}
+          onClick={onSave}
+          className="text-label vw-small border border-[var(--color-border-strong)] px-3 py-2"
+        >
+          {saving ? 'Saving…' : 'Save'}
+        </button>
+        <button
+          type="button"
+          disabled={saving}
+          onClick={onCancel}
+          className="text-label vw-small border border-[var(--color-border)] px-3 py-2"
+        >
+          Cancel
+        </button>
+      </div>
+    </>
+  )
+}
+
+/**
+ * EDIT for the authored Sunday lead (SA-114 / F-158): prose fields, not JSON.
+ * The founder edits the feature the way it reads — title, standfirst, the
+ * body as one large textarea, two pull-quote lines. Mode, slug and the
+ * scripture reference ride along unchanged from the stored payload.
+ */
+function LeadProseEditor({
+  item,
+  onCancel,
+  onSaved,
+}: {
+  item: EditionItem<'lead'> & { id: string }
+  onCancel: () => void
+  onSaved: (payload: LeadPayload) => void
+}) {
+  const [title, setTitle] = useState(item.payload.title ?? '')
+  const [standfirst, setStandfirst] = useState(item.payload.standfirst ?? '')
+  const [body, setBody] = useState(item.payload.body ?? '')
+  const [quoteOne, setQuoteOne] = useState(item.payload.pullQuotes?.[0] ?? '')
+  const [quoteTwo, setQuoteTwo] = useState(item.payload.pullQuotes?.[1] ?? '')
+  const [saving, setSaving] = useState(false)
+  const [saveError, setSaveError] = useState<string | null>(null)
+
+  const save = useCallback(async () => {
+    const pullQuotes = [quoteOne, quoteTwo]
+      .map((quote) => quote.trim())
+      .filter(Boolean)
+    const payload: LeadPayload = {
+      ...item.payload,
+      title: title.trim(),
+      standfirst: standfirst.trim(),
+      body,
+      pullQuotes: pullQuotes.length > 0 ? pullQuotes : undefined,
+    }
+
+    setSaving(true)
+    setSaveError(null)
+    try {
+      await patchPayload(item.id, payload)
+    } catch (error) {
+      setSaveError(
+        error instanceof Error ? error.message : 'The edit did not save.',
+      )
+      setSaving(false)
+      return
+    }
+    onSaved(payload)
+  }, [
+    body,
+    item.id,
+    item.payload,
+    onSaved,
+    quoteOne,
+    quoteTwo,
+    standfirst,
+    title,
+  ])
+
+  return (
+    <div className="grid gap-3">
+      <label className="grid gap-1">
+        <span className="text-label vw-small text-muted">Title</span>
+        <input
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+          className={EDIT_FIELD_CLASS}
+        />
+      </label>
+      <label className="grid gap-1">
+        <span className="text-label vw-small text-muted">Standfirst</span>
+        <input
+          value={standfirst}
+          onChange={(event) => setStandfirst(event.target.value)}
+          className={EDIT_FIELD_CLASS}
+        />
+      </label>
+      <label className="grid gap-1">
+        <span className="text-label vw-small text-muted">Body</span>
+        <textarea
+          value={body}
+          onChange={(event) => setBody(event.target.value)}
+          rows={16}
+          className={`${EDIT_FIELD_CLASS} min-h-64 whitespace-pre-wrap`}
+        />
+      </label>
+      <label className="grid gap-1">
+        <span className="text-label vw-small text-muted">Pull quote 1</span>
+        <input
+          value={quoteOne}
+          onChange={(event) => setQuoteOne(event.target.value)}
+          className={EDIT_FIELD_CLASS}
+        />
+      </label>
+      <label className="grid gap-1">
+        <span className="text-label vw-small text-muted">Pull quote 2</span>
+        <input
+          value={quoteTwo}
+          onChange={(event) => setQuoteTwo(event.target.value)}
+          className={EDIT_FIELD_CLASS}
+        />
+      </label>
+      <EditorActions
+        saving={saving}
+        error={saveError}
+        onSave={() => {
+          void save()
+        }}
+        onCancel={onCancel}
+      />
+    </div>
+  )
+}
+
+/**
+ * EDIT for every other kind (SA-114 / F-158): the payload as pretty JSON.
+ * Parsed CLIENT-SIDE first — a typo never even reaches the server — and the
+ * server's own guard message renders verbatim when the shape is wrong.
+ */
+function JsonPayloadEditor({
+  item,
+  onCancel,
+  onSaved,
+}: {
+  item: QueueItem
+  onCancel: () => void
+  onSaved: (payload: QueueItem['payload']) => void
+}) {
+  const [text, setText] = useState(() => JSON.stringify(item.payload, null, 2))
+  const [saving, setSaving] = useState(false)
+  const [saveError, setSaveError] = useState<string | null>(null)
+
+  const save = useCallback(async () => {
+    let parsed: unknown
+    try {
+      parsed = JSON.parse(text)
+    } catch (error) {
+      setSaveError(
+        `That is not valid JSON, so nothing was sent: ${
+          error instanceof Error ? error.message : 'parse failed'
+        }`,
+      )
+      return
+    }
+    if (
+      typeof parsed !== 'object' ||
+      parsed === null ||
+      Array.isArray(parsed)
+    ) {
+      setSaveError('The payload must be a JSON object, so nothing was sent.')
+      return
+    }
+
+    setSaving(true)
+    setSaveError(null)
+    try {
+      await patchPayload(item.id, parsed)
+    } catch (error) {
+      setSaveError(
+        error instanceof Error ? error.message : 'The edit did not save.',
+      )
+      setSaving(false)
+      return
+    }
+    // The server validated this object against the kind's own guard before
+    // accepting it, so handing it back as the card's payload is the truth,
+    // not a hope.
+    onSaved(parsed as QueueItem['payload'])
+  }, [item.id, onSaved, text])
+
+  return (
+    <div className="grid gap-3">
+      <label className="grid gap-1">
+        <span className="text-label vw-small text-muted">Payload JSON</span>
+        <textarea
+          value={text}
+          onChange={(event) => setText(event.target.value)}
+          rows={14}
+          spellCheck={false}
+          className={`${EDIT_FIELD_CLASS} font-mono`}
+        />
+      </label>
+      <EditorActions
+        saving={saving}
+        error={saveError}
+        onSave={() => {
+          void save()
+        }}
+        onCancel={onCancel}
+      />
+    </div>
+  )
+}
+
+/** The EDIT affordance (SA-114 / F-158). The authored lead is edited like
+ *  prose; everything else — including a rotation lead, which is a slug
+ *  pointer, not prose — is edited as JSON. */
+function CardEditor({
+  item,
+  onCancel,
+  onSaved,
+}: {
+  item: QueueItem
+  onCancel: () => void
+  onSaved: (payload: QueueItem['payload']) => void
+}) {
+  if (item.kind === 'lead' && item.payload.mode === 'authored') {
+    return <LeadProseEditor item={item} onCancel={onCancel} onSaved={onSaved} />
+  }
+  return <JsonPayloadEditor item={item} onCancel={onCancel} onSaved={onSaved} />
+}
+
 export default function EditionQueueClient() {
   const [items, setItems] = useState<QueueItem[] | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
   const [confirmingBulk, setConfirmingBulk] = useState(false)
   const [busy, setBusy] = useState(false)
+  const [editingId, setEditingId] = useState<string | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -354,6 +649,20 @@ export default function EditionQueueClient() {
         }`,
       )
     }
+  }, [])
+
+  /** An accepted edit lands on the card in place (SA-114 / F-158): the
+   *  server has already validated the payload against the entry's own kind
+   *  guard, so the pairing is sound. */
+  const applyEdit = useCallback((id: string, payload: QueueItem['payload']) => {
+    setItems((prev) =>
+      prev
+        ? prev.map((entry) =>
+            entry.id === id ? ({ ...entry, payload } as QueueItem) : entry,
+          )
+        : prev,
+    )
+    setEditingId(null)
   }, [])
 
   const review = useCallback(
@@ -548,32 +857,54 @@ export default function EditionQueueClient() {
                   </p>
                 </div>
 
-                <div className="mb-3">
-                  <PayloadSummary item={item} />
-                </div>
+                {editingId === item.id ? (
+                  <CardEditor
+                    item={item}
+                    onCancel={() => setEditingId(null)}
+                    onSaved={(payload) => applyEdit(item.id, payload)}
+                  />
+                ) : (
+                  <>
+                    <div className="mb-3">
+                      <PayloadSummary item={item} />
+                    </div>
 
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    type="button"
-                    disabled={busy}
-                    onClick={() => {
-                      void review(item, 'published')
-                    }}
-                    className="text-label vw-small border border-[var(--color-border-strong)] px-3 py-2"
-                  >
-                    Approve
-                  </button>
-                  <button
-                    type="button"
-                    disabled={busy}
-                    onClick={() => {
-                      void review(item, 'rejected')
-                    }}
-                    className="text-label vw-small border border-[var(--color-border)] px-3 py-2"
-                  >
-                    Reject
-                  </button>
-                </div>
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        disabled={busy}
+                        onClick={() => {
+                          void review(item, 'published')
+                        }}
+                        className="text-label vw-small border border-[var(--color-border-strong)] px-3 py-2"
+                      >
+                        Approve
+                      </button>
+                      <button
+                        type="button"
+                        disabled={busy}
+                        onClick={() => {
+                          void review(item, 'rejected')
+                        }}
+                        className="text-label vw-small border border-[var(--color-border)] px-3 py-2"
+                      >
+                        Reject
+                      </button>
+                      <button
+                        type="button"
+                        disabled={busy}
+                        onClick={() => {
+                          setActionError(null)
+                          setConfirmingBulk(false)
+                          setEditingId(item.id)
+                        }}
+                        className="text-label vw-small border border-[var(--color-border)] px-3 py-2"
+                      >
+                        Edit
+                      </button>
+                    </div>
+                  </>
+                )}
               </article>
             ))}
           </div>

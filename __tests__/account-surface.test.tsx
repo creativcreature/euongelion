@@ -490,6 +490,11 @@ const settingsFetch = vi.fn(async (input: RequestInfo | URL) => {
       retentionSummary: {},
     })
   }
+  if (url.includes('/api/admin/edition')) {
+    // SA-114 / F-158: the settings admin-doorway probe. This reader is
+    // signed in but not an admin — the card must not render.
+    return jsonResponse({ error: 'Forbidden.' }, 403)
+  }
   if (url.includes('/api/brain/preferences')) {
     return jsonResponse({ ok: true })
   }

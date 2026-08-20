@@ -26,7 +26,7 @@ import SiteBottom from '@/components/SiteBottom'
 import { liturgicalDay } from '@/lib/liturgical'
 import { GUIDES, pickManyForDay } from '@/data/daily-edition'
 import type { Edition } from '@/lib/edition/store'
-import { getLiveEdition } from '@/lib/edition/deadline'
+import { effectiveEditionDate, getLiveEdition } from '@/lib/edition/deadline'
 import { getEditionPreview } from '@/lib/edition/preview'
 import PreviewChrome from '@/components/edition/PreviewChrome'
 import {
@@ -336,7 +336,13 @@ export default async function EditionPage({
   date: Date
   preview?: boolean
 }) {
-  const now = date
+  // The 7am rule: live renders key the WHOLE paper (rotation, puzzles,
+  // prayer — everything derived from the date) to the edition that is
+  // actually live in New York, so the paper flips at 7am ET like a morning
+  // paper, not at midnight UTC. Preview renders the date it was asked for.
+  const now = preview
+    ? date
+    : new Date(`${effectiveEditionDate(date)}T00:00:00Z`)
   const slug = pickTodaySlug(now)
   // Built on the server from the manifest, handed to the client button as a
   // plain object — no second manifest read in the browser.
@@ -377,7 +383,7 @@ export default async function EditionPage({
   let edition: Edition | null = null
   let editionFailed = false
   try {
-    // Live reads obey the 3am rule (SA-111): published rows always, and any
+    // Live reads obey the 3am rule (SA-114): published rows always, and any
     // draft whose posting day has passed 3:00am Eastern — silence publishes,
     // rejection vetoes.
     edition = preview
@@ -407,14 +413,17 @@ export default async function EditionPage({
   const edLetters = (edition?.letter ?? []).map((q) => q.payload)
   const edNotices = (edition?.notice ?? []).map((q) => q.payload)
   // SA-092: the paper grows to ~30 modules a day.
-  const edRedLetter = edition?.redletter?.[0]?.payload
   // SA-093: the deterministic daily modules compute PAGE-SIDE from bundled
   // data — no rows, no paste, full paper by construction. The DB keeps what
   // it is for: the review queue and the audited gallery.
   const edProverb = pageProverb(now)
   const edArchive = pageArchive(now, slug)
   const edB365 = pageB365(now)
-  const edRedletter = (await generateRedLetter(now))[0]?.payload
+  // A DB redletter row (post-SQL-paste) wins over the page-side generator so
+  // an audited correction can override the computed pick (SA-114 / F-158).
+  const edRedletter =
+    edition?.redletter?.[0]?.payload ??
+    (await generateRedLetter(now))[0]?.payload
   const edVerse = (await generateVerse(now))[0]?.payload
   const edQuestion = (await generateQuestion(now))[0]?.payload
   const edVoices = pickVoiceForDay(now)

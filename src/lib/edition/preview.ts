@@ -1,5 +1,5 @@
 /**
- * Preview reads for the founder's browser drafts (SA-111 / F-157).
+ * Preview reads for the founder's browser drafts (SA-114 / F-158).
  *
  * getEditionPreview returns EVERY row for a date — drafts, approved,
  * published — each carrying its id and status so the preview page can wrap

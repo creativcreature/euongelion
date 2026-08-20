@@ -1,5 +1,5 @@
 /**
- * /daily-bread — The Daily Bread (thin route since SA-111).
+ * /daily-bread — The Daily Bread (thin route since SA-114).
  *
  * The whole paper lives in src/components/edition/EditionPage.tsx so the
  * founder's finished-state preview (/admin/preview/daily-bread) renders the
@@ -11,12 +11,13 @@ import type { Metadata } from 'next'
 import EditionPage from '@/components/edition/EditionPage'
 import { pickTodaySlug, findSeriesForSlug } from '@/lib/today-devotional'
 import { DEVOTIONAL_TEASERS } from '@/data/devotional-teasers'
+import { effectiveEditionDate } from '@/lib/edition/deadline'
 
 // ISR: revalidate every hour so the edition date is always correct
 export const revalidate = 3600
 
 export async function generateMetadata(): Promise<Metadata> {
-  const now = new Date()
+  const now = new Date(`${effectiveEditionDate(new Date())}T00:00:00Z`)
   const slug = pickTodaySlug(now)
   const meta = findSeriesForSlug(slug)
   const teaser = DEVOTIONAL_TEASERS[slug] ?? meta?.series.question ?? undefined

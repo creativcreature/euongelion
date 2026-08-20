@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * Approve/reject chrome for the finished-state preview (SA-111 / F-157).
+ * Approve/reject chrome for the finished-state preview (SA-114 / F-158).
  *
  * Wraps a piece of the rendered paper that has not been approved yet: a
  * dashed frame, a status ribbon, and the same verdict API the queue uses.
@@ -29,7 +29,7 @@ export default function PreviewChrome({
     return (
       <div className="preview-chrome preview-chrome--approved">
         {verdict === 'published' && (
-          <p className="preview-ribbon">APPROVED — prints regardless of the clock</p>
+          <p className="preview-ribbon">APPROVED — prints at the 7am flip</p>
         )}
         {children}
       </div>
@@ -66,7 +66,7 @@ export default function PreviewChrome({
     <div className="preview-chrome preview-chrome--draft">
       <div className="preview-bar">
         <span className="preview-ribbon">
-          DRAFT — {kind} — goes live at 3am unless you reject
+          DRAFT — {kind} — prints at the 7am flip unless you reject
         </span>
         <span className="preview-actions">
           <button

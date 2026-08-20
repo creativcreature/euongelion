@@ -22,6 +22,7 @@ const PRACTICE_ID = '11111111-1111-4111-8111-111111111111'
 const STRIP_ID = '22222222-2222-4222-8222-222222222222'
 const SCREENING_ID = '33333333-3333-4333-8333-333333333333'
 const NOTICE_ID = '44444444-4444-4444-8444-444444444444'
+const LEAD_ID = '55555555-5555-4555-8555-555555555555'
 
 function queueFixture() {
   return [
@@ -84,6 +85,26 @@ function queueFixture() {
   ]
 }
 
+/** An authored Sunday lead, kept OUT of queueFixture() so the bulk-approve
+ *  counts in the older tests stay true. */
+function authoredLeadFixture() {
+  return {
+    id: LEAD_ID,
+    kind: 'lead',
+    publishDate: '2026-08-23',
+    slot: 0,
+    status: 'draft',
+    payload: {
+      mode: 'authored',
+      title: 'The Door Nobody Guards',
+      standfirst: 'On the one gate the city forgot to watch.',
+      body: 'Nehemiah counted gates the way other men count debts.',
+      scriptureReference: 'Nehemiah 3:1-32',
+      pullQuotes: ['He counted gates like debts.', 'The wall was a ledger.'],
+    },
+  }
+}
+
 function jsonResponse(body: unknown, init?: { ok?: boolean; status?: number }) {
   return {
     ok: init?.ok ?? true,
@@ -92,12 +113,12 @@ function jsonResponse(body: unknown, init?: { ok?: boolean; status?: number }) {
   } as Response
 }
 
-/** GET returns `items`; POST resolves ok. Returns the mock so tests can read
- *  exactly what was sent. */
+/** GET returns `items`; POST and PATCH resolve ok. Returns the mock so tests
+ *  can read exactly what was sent. */
 function mockFetch(items: unknown[]) {
   const fetchMock = vi.fn(
     async (_input: RequestInfo | URL, init?: RequestInit) => {
-      if (init?.method === 'POST') {
+      if (init?.method === 'POST' || init?.method === 'PATCH') {
         return jsonResponse({ ok: true })
       }
       return jsonResponse({ ok: true, items })
@@ -110,6 +131,14 @@ function mockFetch(items: unknown[]) {
 function postBodies(fetchMock: ReturnType<typeof mockFetch>) {
   return fetchMock.mock.calls
     .filter(([, init]) => init?.method === 'POST')
+    .map(
+      ([, init]) => JSON.parse(String(init?.body)) as Record<string, unknown>,
+    )
+}
+
+function patchBodies(fetchMock: ReturnType<typeof mockFetch>) {
+  return fetchMock.mock.calls
+    .filter(([, init]) => init?.method === 'PATCH')
     .map(
       ([, init]) => JSON.parse(String(init?.body)) as Record<string, unknown>,
     )
@@ -443,6 +472,171 @@ describe('Edition review queue (SA-090 / F-136)', () => {
     expect(alert).toHaveTextContent('row is no longer a draft')
     expect(
       screen.getByTestId(`edition-item-${PRACTICE_ID}`),
+    ).toBeInTheDocument()
+  })
+
+  /* ── EDIT (SA-114 / F-158) ─────────────────────────────────────────── */
+
+  it('edits the Sunday lead as prose fields and PATCHes the rebuilt payload', async () => {
+    const fetchMock = mockFetch([...queueFixture(), authoredLeadFixture()])
+    const user = userEvent.setup()
+    render(<EditionQueueClient />)
+
+    const card = await screen.findByTestId(`edition-item-${LEAD_ID}`)
+    await user.click(within(card).getByRole('button', { name: 'Edit' }))
+
+    // Prefilled with the stored feature, field by field — prose, not JSON.
+    const title = within(card).getByLabelText('Title')
+    expect(title).toHaveValue('The Door Nobody Guards')
+    expect(within(card).getByLabelText('Standfirst')).toHaveValue(
+      'On the one gate the city forgot to watch.',
+    )
+    expect(within(card).getByLabelText('Body')).toHaveValue(
+      'Nehemiah counted gates the way other men count debts.',
+    )
+    expect(within(card).getByLabelText('Pull quote 1')).toHaveValue(
+      'He counted gates like debts.',
+    )
+
+    await user.clear(title)
+    await user.type(title, 'The Unguarded Door')
+    const body = within(card).getByLabelText('Body')
+    await user.clear(body)
+    await user.paste('The gate story, rewritten.')
+    await user.clear(within(card).getByLabelText('Pull quote 2'))
+
+    await user.click(within(card).getByRole('button', { name: 'Save' }))
+
+    await waitFor(() => {
+      expect(patchBodies(fetchMock)).toHaveLength(1)
+    })
+    // Mode and scripture reference ride along unchanged; the emptied second
+    // pull quote is dropped rather than sent as ''.
+    expect(patchBodies(fetchMock)[0]).toEqual({
+      id: LEAD_ID,
+      payload: {
+        mode: 'authored',
+        title: 'The Unguarded Door',
+        standfirst: 'On the one gate the city forgot to watch.',
+        body: 'The gate story, rewritten.',
+        scriptureReference: 'Nehemiah 3:1-32',
+        pullQuotes: ['He counted gates like debts.'],
+      },
+    })
+
+    // The card re-renders in place with the edited payload; the editor closes.
+    expect(within(card).getByText('The Unguarded Door')).toBeInTheDocument()
+    expect(
+      within(card).getByText('The gate story, rewritten.'),
+    ).toBeInTheDocument()
+    expect(within(card).queryByLabelText('Title')).toBeNull()
+  })
+
+  it('edits any other kind as JSON and PATCHes the parsed payload', async () => {
+    const fetchMock = mockFetch(queueFixture())
+    const user = userEvent.setup()
+    render(<EditionQueueClient />)
+
+    const card = await screen.findByTestId(`edition-item-${PRACTICE_ID}`)
+    await user.click(within(card).getByRole('button', { name: 'Edit' }))
+
+    const editor = within(card).getByLabelText('Payload JSON')
+    expect(editor).toHaveValue(
+      JSON.stringify(queueFixture()[0].payload, null, 2),
+    )
+
+    const edited = {
+      instruction: 'Read Psalm 62 aloud, twice.',
+      reason: 'The psalm argues with itself before it settles.',
+      duration: 'Five minutes',
+    }
+    await user.clear(editor)
+    await user.paste(JSON.stringify(edited, null, 2))
+    await user.click(within(card).getByRole('button', { name: 'Save' }))
+
+    await waitFor(() => {
+      expect(patchBodies(fetchMock)).toHaveLength(1)
+    })
+    expect(patchBodies(fetchMock)[0]).toEqual({
+      id: PRACTICE_ID,
+      payload: edited,
+    })
+    expect(
+      within(card).getByText('Read Psalm 62 aloud, twice.'),
+    ).toBeInTheDocument()
+    expect(within(card).queryByLabelText('Payload JSON')).toBeNull()
+  })
+
+  it('blocks bad JSON client-side — a visible error, nothing sent', async () => {
+    const fetchMock = mockFetch(queueFixture())
+    const user = userEvent.setup()
+    render(<EditionQueueClient />)
+
+    const card = await screen.findByTestId(`edition-item-${PRACTICE_ID}`)
+    await user.click(within(card).getByRole('button', { name: 'Edit' }))
+
+    const editor = within(card).getByLabelText('Payload JSON')
+    await user.clear(editor)
+    await user.paste('{ not json')
+    await user.click(within(card).getByRole('button', { name: 'Save' }))
+
+    const alert = await within(card).findByRole('alert')
+    expect(alert).toHaveTextContent('not valid JSON')
+    expect(patchBodies(fetchMock)).toHaveLength(0)
+    // The editor stays open with the bad text so it can be fixed, not retyped.
+    expect(within(card).getByLabelText('Payload JSON')).toHaveValue(
+      '{ not json',
+    )
+  })
+
+  it("renders the server's own validation message when the PATCH is refused", async () => {
+    const fetchMock = vi.fn(
+      async (_input: RequestInfo | URL, init?: RequestInit) => {
+        if (init?.method === 'PATCH') {
+          return jsonResponse(
+            { error: 'payload failed practice guard' },
+            { ok: false, status: 400 },
+          )
+        }
+        if (init?.method === 'POST') return jsonResponse({ ok: true })
+        return jsonResponse({ ok: true, items: queueFixture() })
+      },
+    )
+    vi.stubGlobal('fetch', fetchMock)
+    const user = userEvent.setup()
+    render(<EditionQueueClient />)
+
+    const card = await screen.findByTestId(`edition-item-${PRACTICE_ID}`)
+    await user.click(within(card).getByRole('button', { name: 'Edit' }))
+
+    const editor = within(card).getByLabelText('Payload JSON')
+    await user.clear(editor)
+    await user.paste('{ "instruction": "Only this." }')
+    await user.click(within(card).getByRole('button', { name: 'Save' }))
+
+    const alert = await within(card).findByRole('alert')
+    expect(alert).toHaveTextContent('payload failed practice guard')
+    // The card was NOT updated in place; the editor stays open for the fix.
+    expect(within(card).getByLabelText('Payload JSON')).toBeInTheDocument()
+  })
+
+  it('cancel closes the editor and restores the card untouched', async () => {
+    const fetchMock = mockFetch(queueFixture())
+    const user = userEvent.setup()
+    render(<EditionQueueClient />)
+
+    const card = await screen.findByTestId(`edition-item-${PRACTICE_ID}`)
+    await user.click(within(card).getByRole('button', { name: 'Edit' }))
+
+    const editor = within(card).getByLabelText('Payload JSON')
+    await user.clear(editor)
+    await user.paste('{ "instruction": "Half an edit" }')
+    await user.click(within(card).getByRole('button', { name: 'Cancel' }))
+
+    expect(patchBodies(fetchMock)).toHaveLength(0)
+    expect(within(card).queryByLabelText('Payload JSON')).toBeNull()
+    expect(
+      within(card).getByText('Read Psalm 62 aloud, slowly, once.'),
     ).toBeInTheDocument()
   })
 })

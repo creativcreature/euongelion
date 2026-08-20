@@ -7,13 +7,22 @@ import {
   readJsonWithLimit,
   withRequestIdHeaders,
 } from '@/lib/api-security'
-import { getReviewQueue, reviewEditionItem } from '@/lib/edition/store'
+import { validateEditionItem, type EditionItem } from '@/lib/edition/kinds'
+import {
+  getEditionItem,
+  getReviewQueue,
+  reviewEditionItem,
+  updateEditionItemPayload,
+} from '@/lib/edition/store'
 
 /**
  * /api/admin/edition — the review queue for The Daily Bread (SA-090 / F-136).
  *
- * GET  → every `draft` row awaiting a verdict, oldest edition first.
- * POST → { id, verdict: 'published' | 'rejected' } records one verdict.
+ * GET   → every `draft` row awaiting a verdict, oldest edition first.
+ * POST  → { id, verdict: 'published' | 'rejected' } records one verdict.
+ * PATCH → { id, payload } replaces one DRAFT's payload after validation
+ *         (SA-114 / F-158) — the founder edits a section before approving it.
+ *         Published content is edited by the next generation, not by hand.
  *
  * Auth is the SAME gate the other admin surfaces use: a Supabase session whose
  * email is in ADMIN_EMAIL_ALLOWLIST (see `/api/admin/brain/reindex` and the
@@ -37,6 +46,11 @@ type Verdict = (typeof VERDICTS)[number]
 interface ReviewBody {
   id?: unknown
   verdict?: unknown
+}
+
+interface EditBody {
+  id?: unknown
+  payload?: unknown
 }
 
 function adminAllowlist(): string[] {
@@ -175,6 +189,120 @@ export async function POST(request: NextRequest) {
       status: 500,
       requestId,
       code: 'REVIEW_FAILED',
+    })
+  }
+}
+
+export async function PATCH(request: NextRequest) {
+  const requestId = createRequestId()
+  try {
+    const auth = await assertAdmin()
+    if (!auth.ok) {
+      return jsonError({ error: auth.reason, status: auth.status, requestId })
+    }
+
+    // An authored Sunday lead carries a whole markdown body, so the cap is
+    // well above any real section — but it is still a cap (SA-114 / F-158).
+    const parsed = await readJsonWithLimit<EditBody>({
+      request,
+      maxBytes: 64_000,
+    })
+    if (!parsed.ok) {
+      return jsonError({
+        error: parsed.error,
+        status: parsed.status,
+        requestId,
+        code: 'BAD_BODY',
+      })
+    }
+
+    const { id, payload } = parsed.data
+    if (typeof id !== 'string' || !EDITION_ITEM_ID_RE.test(id.trim())) {
+      return jsonError({
+        error: 'A valid edition item id is required.',
+        status: 400,
+        requestId,
+        code: 'BAD_ITEM_ID',
+      })
+    }
+    if (typeof payload !== 'object' || payload === null) {
+      return jsonError({
+        error: 'A payload object is required.',
+        status: 400,
+        requestId,
+        code: 'BAD_PAYLOAD',
+      })
+    }
+
+    const itemId = id.trim()
+    const existing = await getEditionItem(itemId)
+    if (!existing) {
+      return jsonError({
+        error: 'No edition item with that id.',
+        status: 404,
+        requestId,
+        code: 'NOT_FOUND',
+      })
+    }
+    if (existing.status !== 'draft') {
+      // Published content is edited by the NEXT generation, not by hand —
+      // and a rejected row is dead, not a draft (SA-114 / F-158).
+      return jsonError({
+        error: `Only drafts can be edited — this item is '${existing.status}'.`,
+        status: 409,
+        requestId,
+        code: 'NOT_A_DRAFT',
+      })
+    }
+
+    // The row with the REPLACEMENT payload must pass the same guard every
+    // generator passes. The validator's own message goes back verbatim so the
+    // editor can see exactly what the contract refused.
+    const candidate: EditionItem = {
+      ...existing,
+      payload: payload as EditionItem['payload'],
+    }
+    const guardError = validateEditionItem(candidate)
+    if (guardError) {
+      return jsonError({
+        error: guardError,
+        status: 400,
+        requestId,
+        code: 'INVALID_PAYLOAD',
+      })
+    }
+
+    const updated = await updateEditionItemPayload(itemId, candidate.payload)
+    if (!updated) {
+      // The row left `draft` between the read and this write. Reporting 200
+      // would tell the founder their edit stuck when the database ignored it
+      // (Development Rule 1).
+      return jsonError({
+        error: 'That item is no longer a draft, so the edit changed nothing.',
+        status: 409,
+        requestId,
+        code: 'NOT_A_DRAFT',
+      })
+    }
+
+    return withRequestIdHeaders(
+      NextResponse.json({ ok: true, id: itemId }, { status: 200 }),
+      requestId,
+    )
+  } catch (error) {
+    logApiError({
+      scope: 'admin-edition-edit',
+      requestId,
+      error,
+      method: request.method,
+      path: '/api/admin/edition',
+    })
+    return jsonError({
+      error:
+        error instanceof Error ? error.message : 'Unable to save the edit.',
+      status: 500,
+      requestId,
+      code: 'EDIT_FAILED',
     })
   }
 }

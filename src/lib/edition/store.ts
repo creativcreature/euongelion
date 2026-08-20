@@ -165,6 +165,58 @@ export async function reviewEditionItem(
 }
 
 /**
+ * Read one row by id, whatever its status (SA-114 / F-158). Service-role
+ * read for the admin edit endpoint: the route needs the full row to rebuild
+ * the EditionItem around a replacement payload before validating it.
+ * Returns null when no such row exists; THROWS on a database failure —
+ * "no row" and "the read broke" must never look the same (Rule 1).
+ */
+export async function getEditionItem(id: string): Promise<EditionItem | null> {
+  const supabase = createAdminClient()
+  const { data, error } = await supabase
+    .from('edition_items')
+    .select(
+      'id, kind, publish_date, slot, status, payload, source_name, source_url',
+    )
+    .eq('id', id)
+    .maybeSingle()
+
+  if (error) {
+    throw new Error(`edition item read failed for ${id}: ${error.message}`)
+  }
+  return data ? rowToItem(data as EditionRow) : null
+}
+
+/**
+ * Replace one DRAFT's payload (SA-114 / F-158). The caller (the PATCH route)
+ * has already run validateEditionItem against the row's kind with this
+ * payload in place — this helper only performs the compare-and-set write.
+ *
+ * Row-count proven like reviewEditionItem: the `status = 'draft'` filter
+ * means a row that was published or rejected between the read and this write
+ * matches nothing, and this returns false. The caller MUST NOT report that
+ * as success (Development Rule 1) — published content is edited by the next
+ * generation, never by hand.
+ */
+export async function updateEditionItemPayload(
+  id: string,
+  payload: EditionPayloadMap[EditionKind],
+): Promise<boolean> {
+  const supabase = createAdminClient()
+  const { data, error } = await supabase
+    .from('edition_items')
+    .update({ payload: payload as unknown as Record<string, unknown> })
+    .eq('id', id)
+    .eq('status', 'draft')
+    .select('id')
+
+  if (error) {
+    throw new Error(`edition edit failed for ${id}: ${error.message}`)
+  }
+  return Array.isArray(data) && data.length > 0
+}
+
+/**
  * Recent payloads of a kind, for no-repeat-within-N-days checks in
  * generators. Looks BACK from `beforeDate` exclusive.
  */

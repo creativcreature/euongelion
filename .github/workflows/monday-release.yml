@@ -1,0 +1,132 @@
+# Monday release — the weekly devotional series goes live at 7am ET Monday.
+# SA-114 (F-158).
+#
+# THE RULE (founder, 2026-08-19): "the weekly devotional goes live 7 am
+# monday." Silence publishes. The weekly-series build (Wednesdays) opens a
+# "reading gate" PR on a series/auto-* branch; the founder's veto is CLOSING
+# that PR (or merging early to approve). Whatever reading-gate PR is still
+# open at 7am ET Monday merges and deploys here, unattended.
+#
+# TWO CRONS, ONE GUARD: GitHub cron speaks UTC only, and 7am New York is
+# 11:00 UTC in summer (EDT) and 12:00 UTC in winter (EST). Both fire; the
+# ET-hour guard lets exactly one of them through. A workflow_dispatch run
+# skips the guard — the founder pressing the button means "release now".
+#
+# DEPLOY LIVES HERE, NOT IN A PUSH TRIGGER: merges made with the built-in
+# GITHUB_TOKEN do not trigger other workflows (GitHub anti-recursion), and
+# the push->deploy integration is unreliable anyway (see CLAUDE.md). So this
+# workflow deploys the merged main itself — gated on the same optional
+# CLOUDFLARE_API_TOKEN secret weekly-series.yml uses, loud when absent.
+name: monday-release
+
+on:
+  schedule:
+    - cron: '5 11 * * 1' # 7:05am EDT (summer)
+    - cron: '5 12 * * 1' # 7:05am EST (winter)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: monday-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: ET-hour guard (7am New York, exactly one cron passes)
+        id: guard
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            echo "Manual run — releasing now."
+            echo "go=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          ET_HOUR=$(TZ=America/New_York date +%H)
+          ET_DAY=$(TZ=America/New_York date +%u)
+          if [ "$ET_HOUR" = "07" ] && [ "$ET_DAY" = "1" ]; then
+            echo "It is 7am Monday in New York — releasing."
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Not 7am Monday ET (hour=$ET_HOUR day=$ET_DAY) — this is the"
+            echo "off-season cron twin. The other cron handles this Monday."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.guard.outputs.go == 'true'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge the open reading-gate PR (silence publishes)
+        if: steps.guard.outputs.go == 'true'
+        id: merge
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # Newest open reading-gate PR on a series/auto-* branch. An open PR
+          # means the founder neither vetoed (closed) nor already approved
+          # (merged) — per the rule, it goes live now.
+          PR_NUM=$(gh pr list --state open --label 'reading gate' \
+            --json number,headRefName,createdAt \
+            --jq '[.[] | select(.headRefName | startswith("series/auto-"))] | sort_by(.createdAt) | last | .number // empty')
+          if [ -z "$PR_NUM" ]; then
+            echo "No open reading-gate PR — nothing to release this Monday."
+            echo "(Either the founder already merged/closed it, or no build ran.)"
+            echo "merged=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "Releasing reading-gate PR #$PR_NUM"
+          # Plain merge first; --admin only if branch protection blocks the bot.
+          if ! gh pr merge "$PR_NUM" --merge --delete-branch=false; then
+            echo "Plain merge refused — retrying with --admin."
+            gh pr merge "$PR_NUM" --merge --admin --delete-branch=false
+          fi
+          gh pr comment "$PR_NUM" --body \
+            "Released by monday-release: the 7am Monday rule — silence publishes. SA-114 (F-158)." \
+            || true
+          echo "merged=true" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node
+        if: steps.guard.outputs.go == 'true' && steps.merge.outputs.merged == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Deploy merged main to Cloudflare Workers
+        if: steps.guard.outputs.go == 'true' && steps.merge.outputs.merged == 'true'
+        env:
+          HAS_CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 15a3f83632fea316caa448503bb786f9
+        run: |
+          set -euo pipefail
+          if [ "$HAS_CF_TOKEN" != "true" ]; then
+            echo "::warning::Series MERGED but NOT DEPLOYED — the CLOUDFLARE_API_TOKEN secret is not set."
+            echo "The reading-gate PR is merged to main, but this runner cannot deploy without"
+            echo "a Cloudflare token. The series will NOT be live until a deploy happens."
+            echo "Either run 'npm run deploy' from the repo, or set the secret (one-time):"
+            echo "  1. Create a Cloudflare API token with 'Workers Scripts:Edit' at"
+            echo "     https://dash.cloudflare.com/profile/api-tokens"
+            echo "  2. Add it as CLOUDFLARE_API_TOKEN: GitHub -> creativcreature/euongelion"
+            echo "     -> Settings -> Secrets and variables -> Actions -> New repository secret."
+            echo "Full walkthrough: FOUNDER-ACTIONS.md, 'Series browser preview'."
+            exit 0
+          fi
+          git fetch origin main
+          git checkout origin/main
+          npm ci
+          rm -rf .next .open-next
+          npx opennextjs-cloudflare build
+          npx opennextjs-cloudflare deploy
+          echo "Deployed merged main to the euangelion Worker."

@@ -1,6 +1,6 @@
 # 📌 FOUNDER ACTIONS — pinned 2026-08-19
 
-Four steps, in order. Each unblocks something already built.
+Five steps, in order. Each unblocks something already built.
 
 ## 1. Paste one SQL file → turns on cross-device reading progress
 
@@ -24,7 +24,7 @@ Nightly pipeline proven live (two successful cloud runs). The Sunday feature
 now composes on your **Claude subscription** (`CLAUDE_CODE_OAUTH_TOKEN`);
 `ANTHROPIC_API_KEY` was **removed from GitHub** — the content pipeline's
 Anthropic bill is **$0.00/month**. (The Worker keeps its own key for on-site
-chat only.) If the token ever expires, Sunday builds fail *visibly* in the
+chat only.) If the token ever expires, Sunday builds fail _visibly_ in the
 Actions tab — rerun `claude setup-token` and update the secret.
 
 ### (original instructions, kept for reference)
@@ -37,6 +37,25 @@ Actions → New repository secret. Add these three (values are in `.env.local`):
 - `ANTHROPIC_API_KEY`
 
 ## 4. ~~Say "deploy"~~ — DONE. Deployed 2026-08-19 on your "is it up?" message.
+
+## 5. Series browser preview — one Cloudflare token (one-time)
+
+Every weekly series build can hand you the finished series **rendered in a
+real browser** before you merge: the workflow uploads a _preview version_ of
+the Worker (production traffic untouched) and comments the link on the
+reading-gate PR — "Read it rendered: …". It needs one secret:
+
+1. Open **https://dash.cloudflare.com/profile/api-tokens** → **Create Token**
+   → **Create Custom Token**.
+2. Permissions: **Account → Workers Scripts → Edit**. That exact permission —
+   nothing more. Scope it to the **chrisparker21@gmail.com** account
+   (`15a3f83632fea316caa448503bb786f9`).
+3. Add the token as a repository secret named **`CLOUDFLARE_API_TOKEN`**:
+   GitHub → creativcreature/euongelion → Settings → Secrets and variables →
+   Actions → New repository secret.
+
+Until it's set, the weekly run prints loudly in the Actions log that the
+preview was skipped, with these same instructions.
 
 ---
 

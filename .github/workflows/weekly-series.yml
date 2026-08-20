@@ -31,6 +31,12 @@ name: weekly-series
 # CODEX_AUTH_JSON, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
 # If Codex auth rotates stale, the imagery step fails VISIBLY here and the
 # fix is re-uploading ~/.codex/auth.json to the CODEX_AUTH_JSON secret.
+#
+# OPTIONAL SECRET (SA-114 / F-158): CLOUDFLARE_API_TOKEN — a Cloudflare token
+# with Workers Scripts:Edit (see FOUNDER-ACTIONS.md, "Series browser
+# preview"). When present, the run uploads a PREVIEW VERSION of the Worker
+# (production traffic untouched) and comments the rendered URL on the
+# reading-gate PR. When absent, the preview step says so loudly and skips.
 
 on:
   schedule:
@@ -45,6 +51,9 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  # SA-114 (F-158): `gh label create` (the reading-gate label) goes through
+  # the Issues API — without this it 403s and the PR label can never apply.
+  issues: write
 
 concurrency:
   group: weekly-series
@@ -109,3 +118,81 @@ jobs:
           git config user.name "euangelion-weekly"
           git config user.email "chrisparker21@gmail.com"
           bash scripts/devo-weekly/ci-orchestrate.sh
+
+      # SA-114 (F-158): true browser preview of the reading gate. `wrangler
+      # versions upload` creates a PREVIEW VERSION of the euangelion Worker
+      # WITHOUT routing production traffic to it and prints a versioned
+      # …workers.dev preview URL — the founder reads the built series rendered
+      # in a real browser. Gated on the CLOUDFLARE_API_TOKEN secret (same
+      # env-mapped HAS_* pattern daily-edition.yml uses for its token); when
+      # the secret is absent the skip is LOUD, never silent.
+      - name: Preview deployment
+        id: preview
+        if: ${{ (inputs.mode || 'full') == 'full' }}
+        env:
+          HAS_CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 15a3f83632fea316caa448503bb786f9
+        run: |
+          set -euo pipefail
+          if [ "$HAS_CF_TOKEN" != "true" ]; then
+            echo "::warning::Series browser preview SKIPPED — the CLOUDFLARE_API_TOKEN secret is not set."
+            echo "Preview skipped: no CLOUDFLARE_API_TOKEN repository secret, so this run cannot"
+            echo "upload a preview version of the Worker for the founder to read in a browser."
+            echo "To enable it (one-time):"
+            echo "  1. Create a Cloudflare API token with the 'Workers Scripts:Edit' permission at"
+            echo "     https://dash.cloudflare.com/profile/api-tokens"
+            echo "     (account chrisparker21@gmail.com / 15a3f83632fea316caa448503bb786f9)."
+            echo "  2. Add it as the CLOUDFLARE_API_TOKEN repo secret: GitHub -> creativcreature/euongelion"
+            echo "     -> Settings -> Secrets and variables -> Actions -> New repository secret."
+            echo "Full walkthrough: FOUNDER-ACTIONS.md, 'Series browser preview'."
+            exit 0
+          fi
+          rm -rf .next .open-next
+          npx opennextjs-cloudflare build
+          UPLOAD_LOG="$(mktemp)"
+          npx wrangler versions upload 2>&1 | tee "$UPLOAD_LOG"
+          PREVIEW_URL="$(sed -n 's/.*Version Preview URL:[[:space:]]*//p' "$UPLOAD_LOG" | head -n 1 | tr -d '[:space:]' || true)"
+          if [ -z "$PREVIEW_URL" ]; then
+            PREVIEW_URL="$(grep -Eio 'https://[a-z0-9.-]+\.workers\.dev[^[:space:]]*' "$UPLOAD_LOG" | head -n 1 || true)"
+          fi
+          if [ -z "$PREVIEW_URL" ]; then
+            echo "::error::wrangler versions upload printed no preview URL — nothing to hand the founder. Read the upload log above."
+            exit 1
+          fi
+          echo "preview_url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
+          echo "[preview] $PREVIEW_URL"
+
+      # SA-114 (F-158): hand the preview to the founder ON the reading-gate
+      # PR, wired here in the workflow layer — the PR is found by head branch
+      # (SERIES_BRANCH, exported by ci-orchestrate.sh), so the comment lands
+      # regardless of what the model did inside the build step.
+      - name: Comment preview URL on the reading-gate PR
+        if: ${{ (inputs.mode || 'full') == 'full' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREVIEW_URL: ${{ steps.preview.outputs.preview_url }}
+        run: |
+          set -euo pipefail
+          if [ -z "${PREVIEW_URL:-}" ]; then
+            echo "No preview URL — the preview deployment was skipped (that step's log says how to enable it). Nothing to comment."
+            exit 0
+          fi
+          if [ -z "${SERIES_BRANCH:-}" ]; then
+            echo "::error::SERIES_BRANCH was not exported by ci-orchestrate.sh — cannot find the reading-gate PR by head branch."
+            exit 1
+          fi
+          # --state all: AUTO_PUBLISH runs merge the PR before this step runs.
+          PR_NUMBER="$(gh pr list --head "$SERIES_BRANCH" --state all --json number --jq '.[0].number // empty' || true)"
+          if [ -z "$PR_NUMBER" ]; then
+            echo "::error::No PR found for head branch $SERIES_BRANCH — the reading gate never opened, so the preview has nowhere to land. Preview URL (this log only): $PREVIEW_URL"
+            exit 1
+          fi
+          SLUG="$(git diff --name-only --diff-filter=A origin/main...HEAD -- public/devotionals/ | sed -E 's|^public/devotionals/||; s|-day-[0-9]+\.json$||' | sort -u | head -n 1 || true)"
+          if [ -n "$SLUG" ]; then
+            BODY="Read it rendered: $PREVIEW_URL/series/$SLUG"$'\n\n'"Preview version of the Worker — production traffic is untouched. Whole site at this version: $PREVIEW_URL"
+          else
+            echo "::warning::Could not derive the new series slug from the branch diff — commenting the preview root instead."
+            BODY="Read it rendered: $PREVIEW_URL"$'\n\n'"(Could not derive the series slug from the branch diff — open $PREVIEW_URL/series and pick the new series. Production traffic is untouched.)"
+          fi
+          gh pr comment "$PR_NUMBER" --body "$BODY"

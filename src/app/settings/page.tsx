@@ -213,6 +213,9 @@ export default function SettingsPage() {
   const [accountDeleteError, setAccountDeleteError] = useState<string | null>(
     null,
   )
+  // SA-114 / F-158 — Settings → Admin doorway. True only after the admin
+  // probe answered 200; non-admins never see the card at all.
+  const [isAdmin, setIsAdmin] = useState(false)
   const [accountDeleteMessage, setAccountDeleteMessage] = useState<
     string | null
   >(null)
@@ -756,6 +759,33 @@ export default function SettingsPage() {
   useEffect(() => {
     if (!accountAuthed) return
     void loadDisplayName()
+  }, [accountAuthed])
+
+  // SA-114 / F-158 — admin doorway probe. GET /api/admin/edition answers 200
+  // only for an allowlisted admin session (401 anonymous, 403 signed-in but
+  // not allowlisted), so one request doubles as the admin check without a
+  // dedicated endpoint. Anonymous readers can only ever get a 401, so —
+  // same idiom as the display-name load above — the anonymous path must not
+  // fire the request at all. Anything but 200 (including a network failure)
+  // renders nothing: the card is absent, not degraded.
+  useEffect(() => {
+    if (!accountAuthed) return
+    let cancelled = false
+    void (async () => {
+      try {
+        const res = await fetch('/api/admin/edition', {
+          credentials: 'include',
+          cache: 'no-store',
+        })
+        if (!cancelled && res.ok) setIsAdmin(true)
+      } catch {
+        // No probe answer → no card. The hub itself stays server-gated at
+        // /admin, so hiding the doorway here loses nothing security-wise.
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
   }, [accountAuthed])
 
   useEffect(() => {
@@ -2238,6 +2268,22 @@ export default function SettingsPage() {
                 </div>
               </CardSection>
             </SettingsCard>
+
+            {/* SA-114 / F-158 — the Admin doorway. Renders ONLY after the
+                probe above confirmed an allowlisted admin session; everyone
+                else gets nothing here, not a locked or disabled card. */}
+            {isAdmin && (
+              <SettingsCard id="admin" title="ADMIN">
+                <p className="vw-small mb-4 text-secondary">
+                  The back office: the edition review queue, tomorrow&rsquo;s
+                  paper rendered for approval, next week&rsquo;s series
+                  thematic, and the series reading gate.
+                </p>
+                <Link href="/admin" className="mock-btn text-label">
+                  OPEN ADMIN
+                </Link>
+              </SettingsCard>
+            )}
           </div>
 
           {/* Saved indicator */}

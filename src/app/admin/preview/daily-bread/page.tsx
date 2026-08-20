@@ -1,5 +1,5 @@
 /**
- * /admin/preview/daily-bread — tomorrow's paper, rendered REAL (SA-111 / F-157).
+ * /admin/preview/daily-bread — tomorrow's paper, rendered REAL (SA-114 / F-158).
  *
  * The identical EditionPage component the public route renders, for any
  * date (?date=YYYY-MM-DD, default tomorrow), with drafts VISIBLE and
@@ -63,7 +63,8 @@ export default async function DailyBreadPreview({
           ← {prev}
         </Link>
         <span className="preview-ribbon">
-          PREVIEW — {iso} — drafts go live at 3am unless rejected
+          PREVIEW — {iso} — this edition goes live at 7am ET; unrejected drafts
+          print with it
         </span>
         <Link
           href={`/admin/preview/daily-bread?date=${next}`}

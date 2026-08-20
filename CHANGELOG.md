@@ -60,6 +60,10 @@ Renumbering note: built as SA-111/F-157, renumbered twice in one night as
 parallel sessions recorded SA-111 (unmark) and SA-113 (hero rotation); the
 three "SA-111 intermediate" wip commits belong to this decision.
 
+Also in this pass: a DB `redletter` row (once the blocked SQL lands) now
+overrides the page-side generator's pick, so an audited correction can replace
+the computed saying without a deploy.
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)
