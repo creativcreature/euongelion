@@ -23,7 +23,7 @@ M4A="$WORK/paper-$DATE.m4a"
 
 npx tsx scripts/edition/assemble-paper-narration.mts "$DATE" "$JSON"
 ( cd euangelion-voice-prototype && python3 spec/render_v2.py "$JSON" "$WAV" )
-ffmpeg -y -i "$WAV" -c:a aac -b:a 96k "$M4A" 2>/dev/null
+afconvert "$WAV" -o "$M4A" -f m4af -d aac
 
 DURATION=$(python3 - "$WAV" <<'PY'
 import sys, wave
