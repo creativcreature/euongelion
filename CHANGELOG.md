@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Audio is reachable from every page (SA-110, F-156)
+
+**2026-08-19**
+
+_"wait I should be able to access the audio player on everypage right?"_ — and
+you could not. That regression was mine.
+
+Moving discovery off `/series` and into the sidebar was right. But the sidebar
+could only be opened by the tucked handle, and the handle requires something
+already queued. So with an empty queue the whole site had **one** entry point:
+the homepage callout. On `/series`, `/today`, `/daily-bread` or any devotional
+there was no way in at all.
+
+The lesson worth keeping: removing an intrusion without replacing its _function_
+is a regression, not a fix. The picker was in the wrong place — and it was also,
+at that moment, the only door.
+
+**An audio control now sits in the masthead utilities**, beside search and
+theme, on both the desktop and mobile rows. That tier renders on all 27 shell
+pages, costs no vertical space, interrupts no reading, and is where SA-024
+already ruled that global utilities belong.
+
+**A dot marks a live queue** — present only when something is queued, pulsing
+only while playing, stopped under `prefers-reduced-motion`. Quiet when there is
+nothing to return to; legible the moment there is.
+
+Service worker v131 → v132.
+
+---
+
 ## Audio gets its own area, and gets out of the way (SA-109, F-155)
 
 **2026-08-19**

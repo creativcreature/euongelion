@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import AudioHeaderButton from '@/components/audio/AudioHeaderButton'
 import ActivePlanBadge from './ActivePlanBadge'
 import GlobalSearchOverlay from './GlobalSearchOverlay'
 import { useSettingsStore } from '@/stores/settingsStore'
@@ -658,6 +659,12 @@ export default function EuangelionShellHeader({
                 data-divider="true"
               />
               <div className="mock-topbar-utilities">
+                {/* SA-110: the way into audio, from every page. Discovery moved
+                    into the sidebar and the tucked handle only exists once
+                    something is queued, so without this the site had no entry
+                    point at all with an empty queue. Utilities is the right
+                    tier — no vertical space, no interruption to reading. */}
+                <AudioHeaderButton />
                 {/* F-071: global search entry — SA-024 puts search in the
                     masthead utilities tier, never the mobile tab bar. */}
                 <button
@@ -862,6 +869,7 @@ export default function EuangelionShellHeader({
                 on the left keeps the ticker's center track closest to
                 optical center against the 44px menu button on the right. */}
             <div className="mock-topbar-mobile-utils">
+              <AudioHeaderButton className="mock-topbar-mobile-toggle" />
               <button
                 type="button"
                 className="mock-icon-control mock-mode-toggle mock-topbar-mobile-toggle"

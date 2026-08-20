@@ -3,6 +3,7 @@ import { act, cleanup, render, screen, within } from '@testing-library/react'
 import AudioDrawer from '@/components/audio/AudioDrawer'
 import AddToQueue from '@/components/audio/AddToQueue'
 import SavedPlaylists from '@/components/audio/SavedPlaylists'
+import AudioHeaderButton from '@/components/audio/AudioHeaderButton'
 import { registerAudioElement } from '@/lib/audio/audio-element'
 import { useAudioStore, type QueueItem } from '@/stores/audioStore'
 import { usePlaylistsStore } from '@/stores/playlistsStore'
@@ -219,5 +220,45 @@ describe('the sidebar as audio’s own area', () => {
     const panel = screen.getByRole('dialog')
     expect(within(panel).queryByLabelText('Back 15 seconds')).toBeNull()
     expect(within(panel).queryByRole('button', { name: /^clear$/i })).toBeNull()
+  })
+})
+
+/**
+ * Audio has to be reachable from every page.
+ *
+ * Founder, 2026-08-19: "wait I should be able to access the audio player on
+ * everypage right?" — and at that moment he could not. Discovery had moved into
+ * the sidebar, and the sidebar could only be opened by the tucked handle, which
+ * requires something already queued. With an empty queue the entire site had
+ * one entry point: the homepage callout.
+ *
+ * This lives in the masthead utilities, beside search and theme, so it is on
+ * every page that renders the shell.
+ */
+describe('the header entry point', () => {
+  it('opens the sidebar with nothing queued', () => {
+    render(<AudioHeaderButton />)
+    expect(useAudioStore.getState().panelOpen).toBe(false)
+    act(() =>
+      screen.getByRole('button', { name: /open the audio sidebar/i }).click(),
+    )
+    expect(useAudioStore.getState().panelOpen).toBe(true)
+  })
+
+  it('stays quiet when there is nothing to return to', () => {
+    const { container } = render(<AudioHeaderButton />)
+    // The dot is the "not invisible" part, and it is wrong to show it when
+    // there is no queue behind it.
+    expect(container.querySelector('.audio-header-dot')).toBeNull()
+  })
+
+  it('marks a live queue, and says how many', () => {
+    useAudioStore.getState().start({
+      items: [item('a', 'One'), item('b', 'Two')],
+      source: 'series',
+    })
+    const { container } = render(<AudioHeaderButton />)
+    expect(container.querySelector('.audio-header-dot')).not.toBeNull()
+    expect(screen.getByRole('button', { name: /2 in the queue/i })).toBeTruthy()
   })
 })
