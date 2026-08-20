@@ -28,6 +28,15 @@ Deleted, founder-authorized: the action ladder, both trust rows, "What is
 this place?", and the closing block's competing secondary link. Copy via the
 DEVOTIONAL-WRITER (all alternates preserved for morning swaps). TDD: the
 contract test watched red before any production code.
+
+**Same-night fix:** the first deploy's Word block rendered its Rule-1
+fallback in production — on Workers, fs does not exist and the resolver's
+self-fetch of the page's own zone re-enters the same Worker, which
+Cloudflare blocks as recursion. The corpus is committed, so the resolver
+now BUNDLES it as a static import (the one loader that works at build, in
+dev, and inside ISR revalidation alike). A new contract test pins the
+resolver to no-fs, no-fetch, and to byte parity with the on-disk corpus.
+
 ## The reading's panel is one row (SA-120, F-165)
 
 **2026-08-20**
