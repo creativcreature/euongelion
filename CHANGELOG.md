@@ -91,6 +91,18 @@ never had the front page's width constraint — it now sits in max-width
 78rem with clamped gutters, so no compartment edge ever runs flush to the
 viewport.
 
+The gutter is now the SAME 6px as the gap between compartments (founder
+iterated the clamp down twice: one rhythm inside and out). And the strip
+premiere is replaced: the founder called a continuity defect on The Bakery
+Question (Teddy vanished from panel 2), so PANEL CONTINUITY is now LAW in
+the canon and the generator prompt — every character and object present in
+the scene appears in every panel. The new premiere, written fresh on a
+completely different premise: 'The Microwave Minute' (Teddy: why does a
+microwave minute feel longer than a real one; Dust: eternity practices on
+you in small doses; the beep comes and Teddy doesn't move: ...I wasn't
+done). Verified: all three characters and the microwave hold across all
+three panels.
+
 ---
 
 ## The player, measured against real ones (SA-122, F-167)

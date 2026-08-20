@@ -39,6 +39,15 @@ confident linework, print imperfections, bold silhouettes, minimal
 backgrounds, strong facial acting. FORBIDDEN: glossy 3D, anime, Pixar-style
 rendering, photorealism, full-color palettes, corporate flat-vector style.
 
+## Panel continuity (LAW — founder, 2026-08-20)
+
+Every character present in the scene appears in EVERY panel unless the
+story explicitly moves them ("Teddy just straight disappears" is a defect,
+never a style choice). Across panels: same positions relative to each
+other, same wardrobe, same props unless a beat changes them, same
+environment. Think like an animation layout artist, not an illustrator of
+three unrelated drawings.
+
 ## Format
 
 3 horizontal panels (4 only when the joke truly needs the beat), thin black

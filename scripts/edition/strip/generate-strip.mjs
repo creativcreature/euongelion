@@ -136,7 +136,7 @@ const panelText = script.panels
   )
   .join('\n\n')
 
-const drawPrompt = `The first attached image is the LOCKED character model sheet for "ECHO & DUST"; the second is an approved strip — match its exact style, palette (riso duotone: cobalt ink on warm cream paper, halftone shading, crimson ONLY for Echo's heart print), line weight, hand lettering, and character designs. Modern-day setting. Do not redesign anyone. Today Dust wears: ${script.dustHat}.
+const drawPrompt = `The first attached image is the LOCKED character model sheet for "ECHO & DUST"; the second is an approved strip — match its exact style, palette (riso duotone: cobalt ink on warm cream paper, halftone shading, crimson ONLY for Echo's heart print), line weight, hand lettering, and character designs. Modern-day setting. Do not redesign anyone. Today Dust wears: ${script.dustHat} CONTINUITY LAW: every character present in the scene appears in EVERY panel — same relative positions, wardrobe, and environment across all three, unless a scripted beat moves them.`
 
 Use your built-in image generation tool to generate ONE image saved to ${outPng} . Landscape 3:2, a complete 3-panel comic strip across the middle of the canvas: three equal panels, thin cobalt gutters and border, minimal modern backgrounds. Hand-lettered cobalt balloons that never cover faces.
 
