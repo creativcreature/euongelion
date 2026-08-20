@@ -1,5 +1,8 @@
 import { SERIES_DATA } from '@/data/series'
 import { getNarrationTrack } from '@/lib/audio/tracks'
+import { DEVOTIONAL_ARTWORKS, type ArtworkEntry } from '@/data/artwork-manifest'
+import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
+import { getSeriesHero } from '@/lib/series-hero'
 import type { QueueItem } from '@/stores/audioStore'
 
 /**
@@ -111,4 +114,29 @@ export function queueForReading(
   }
   const solo = itemForSlug(slug, title)
   return { items: solo ? [solo] : [], label: null }
+}
+
+/**
+ * The cover a reading should show in the player.
+ *
+ * Seven of the eight players surveyed on Mobbin lead with cover art; ours led
+ * with nothing, while the reading page below it was already showing artwork.
+ *
+ * The resolution order is deliberately the SAME one the devotional page uses —
+ * the day's own art, then the series hero — so the player and the page can
+ * never disagree about which image belongs to a reading. The series fallback is
+ * what stops a day with no curated art of its own from rendering an empty
+ * square, which is the state most of Bible-365 is in.
+ */
+export function coverForReading(slug: string): ArtworkEntry | null {
+  const own = SITE_DEVOTIONAL_ART[slug] ?? DEVOTIONAL_ARTWORKS[slug] ?? []
+  if (own.length > 0) return own[0]
+
+  for (const seriesSlug of Object.keys(SERIES_DATA)) {
+    if (!SERIES_DATA[seriesSlug]?.days?.some((day) => day.slug === slug)) {
+      continue
+    }
+    return getSeriesHero(seriesSlug) ?? null
+  }
+  return null
 }

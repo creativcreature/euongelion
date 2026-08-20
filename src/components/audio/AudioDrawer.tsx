@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
@@ -7,7 +8,12 @@ import {
   getAudioElement,
   subscribeAudioElement,
 } from '@/lib/audio/audio-element'
-import { formatRuntime, queueDuration } from '@/lib/audio/queue-builder'
+import {
+  coverForReading,
+  formatRuntime,
+  queueDuration,
+  queueForReading,
+} from '@/lib/audio/queue-builder'
 import { formatTime, getNarrationTrack } from '@/lib/audio/tracks'
 import SpeedSheet, {
   type Speed,
@@ -176,6 +182,28 @@ export default function AudioDrawer() {
     () => null,
   )
   const item = currentItem({ queue, index })
+  const cover = item ? coverForReading(item.slug) : null
+
+  /**
+   * The reading the reader is actually looking at.
+   *
+   * Founder, on the panel's "more listening controls": pressing it on a
+   * reading you have not started "opens the sidebar saying 'Nothing playing'".
+   * Read off the path rather than queued on open — queuing would light the
+   * header dot, which promises something is waiting, off a button that only
+   * asked to see more. The queue changes when play is pressed, not before.
+   */
+  const onPage = useMemo(() => {
+    if (item) return null
+    const match = /^\/devotional\/([a-z0-9-]+)\/?$/.exec(pathname ?? '')
+    if (!match) return null
+    const slug = match[1]
+    if (!getNarrationTrack(slug)) return null
+    const { items, label } = queueForReading(slug, slug)
+    if (!items.length) return null
+    return { slug, items, label, title: items[0].title }
+  }, [item, pathname])
+  const onPageCover = onPage ? coverForReading(onPage.slug) : null
 
   useEffect(() => {
     if (!element) return
@@ -341,6 +369,8 @@ export default function AudioDrawer() {
                       </p>
                     )}
                   </>
+                ) : onPage ? (
+                  <p className="lsn-now">{onPage.title}</p>
                 ) : (
                   <p className="lsn-now">Nothing playing</p>
                 )}
@@ -353,6 +383,54 @@ export default function AudioDrawer() {
                 Close
               </button>
             </header>
+
+            {/* Seven of the eight players surveyed lead with cover art. The
+                reading page below is already showing this image, so the player
+                showing nothing read as a player that had not loaded. Decorative
+                alt: the title and series are in text immediately above. */}
+            {!item && onPage && (
+              <div className="lsn-offer">
+                {onPageCover && (
+                  <Image
+                    className="lsn-cover"
+                    src={onPageCover.src}
+                    alt=""
+                    aria-hidden
+                    width={640}
+                    height={640}
+                    sizes="(max-width: 900px) 100vw, 420px"
+                  />
+                )}
+                <button
+                  type="button"
+                  className="lsn-offer-play"
+                  aria-label={`Play this reading — ${onPage.title}`}
+                  onClick={() => {
+                    useAudioStore.getState().start({
+                      items: onPage.items,
+                      source: onPage.label ? 'series' : 'single',
+                      label: onPage.label ?? onPage.title,
+                    })
+                    const a = audio()
+                    if (a) void a.play().catch(() => {})
+                  }}
+                >
+                  Play this reading
+                </button>
+              </div>
+            )}
+
+            {item && cover && (
+              <Image
+                className="lsn-cover"
+                src={cover.src}
+                alt=""
+                aria-hidden
+                width={640}
+                height={640}
+                sizes="(max-width: 900px) 100vw, 420px"
+              />
+            )}
 
             {item && (
               <div className="lsn-transport">
@@ -1094,6 +1172,39 @@ export default function AudioDrawer() {
         .lsn-clear {
           color: var(--color-text-muted, var(--color-text-secondary));
         }
+        .lsn-offer {
+          margin-top: 0.9rem;
+        }
+        .lsn-offer-play {
+          display: block;
+          width: 100%;
+          min-height: 44px;
+          margin-top: 0.7rem;
+          background: transparent;
+          border: 1px solid var(--color-gold);
+          border-radius: 999px;
+          font-size: 0.6rem;
+          letter-spacing: 0.13em;
+          text-transform: uppercase;
+          color: var(--color-gold);
+          cursor: pointer;
+        }
+        .lsn-offer-play:focus-visible {
+          outline: 2px solid var(--color-gold);
+          outline-offset: 2px;
+        }
+
+        .lsn-drawer :global(.lsn-cover) {
+          display: block;
+          width: 100%;
+          /* Square, as every surveyed player uses. object-fit keeps a
+             landscape plate from stretching. */
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          margin: 0.9rem 0 0.2rem;
+          background: var(--color-surface-2, transparent);
+        }
+
         /* The seek control, the time readout and the chips.
            These five classes shipped with no rules at all: the markup landed
            in SA-119 and the CSS did not, so the player rendered

@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { useAudioStore, currentItem, type QueueItem } from '@/stores/audioStore'
 import {
+  coverForReading,
   formatRuntime,
   queueDuration,
   queueFromDay,
@@ -139,5 +140,39 @@ describe('listening from where you are', () => {
 
   it('returns nothing for a series that does not exist', () => {
     expect(queueFromDay('no-such-series', 'whatever')).toHaveLength(0)
+  })
+})
+
+/**
+ * A cover for the player.
+ *
+ * Seven of the eight players surveyed on Mobbin lead with cover art — Spotify
+ * Audiobooks, Headway, Blinkist, Finimize, The Atlantic and the rest. Ours had
+ * none, while every devotional already has artwork on the page. See
+ * docs/audio/PLAYER-GAP-ANALYSIS-2026-08-20.md.
+ *
+ * The resolution order matches what the reading page itself does, so the player
+ * and the page never disagree about which image belongs to a reading: the day's
+ * own art first, then the series hero. The fallback is what keeps a Bible-365
+ * day — which has no per-day art — from showing an empty square.
+ *
+ * Bible-365 is read here and never written; the founder's "leave the 365 bible
+ * alone" stands.
+ */
+describe('coverForReading', () => {
+  it('uses the reading’s own artwork when it has some', () => {
+    const cover = coverForReading('abiding-in-his-presence-day-2')
+    expect(cover).toBeTruthy()
+    expect(cover!.src.startsWith('/')).toBe(true)
+  })
+
+  it('falls back to the series hero for a day with no art of its own', () => {
+    const cover = coverForReading('bible-365-day-3')
+    expect(cover).toBeTruthy()
+    expect(cover!.src.startsWith('/')).toBe(true)
+  })
+
+  it('returns null rather than a broken image for an unknown reading', () => {
+    expect(coverForReading('not-a-real-devotional-day-1')).toBeNull()
   })
 })

@@ -36,6 +36,18 @@ forwards `className`, so the anchor shipped without the scope class and the rule
 could never match. Two of those. Reached now via `:global()` under a scoped
 parent, with a second test that fails if any class on a child component isn't.
 
+**Then the cover and the empty state.** The player now leads with the
+devotional's artwork — seven of eight surveyed players do, and ours was the only
+surface on the page showing nothing. It resolves the image exactly the way the
+reading page does, so the two can't disagree, and falls back to the series hero
+so a day without its own art doesn't render an empty square.
+
+And pressing "more listening controls" on a reading you haven't started no
+longer says "Nothing playing" — it offers that reading, with its cover and one
+button. It doesn't queue anything just because you opened a panel: the header
+dot promises something is waiting for you, and a button that only asked to see
+more shouldn't make that promise. Play still queues the series behind it.
+
 **Shipped: volume** (Apple Podcasts and ElevenReader both carry one; desktop had
 none, and it hides on touch because iOS ignores it) **and share** (four of eight
 carry it; system sheet, clipboard fallback that says "Link copied").
@@ -11535,7 +11547,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.13
+**Version:** 0.8.14
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync

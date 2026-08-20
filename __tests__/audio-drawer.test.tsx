@@ -597,3 +597,90 @@ describe('the player carries what real players carry', () => {
     vi.unstubAllGlobals()
   })
 })
+
+/**
+ * The player leads with the cover, as seven of eight surveyed players do.
+ *
+ * The art is decorative here rather than informative — the title and series sit
+ * immediately beside it in text — so it carries an empty alt and is hidden from
+ * assistive tech. Announcing the same reading twice is worse than not
+ * announcing the picture.
+ */
+describe('the player shows a cover', () => {
+  const openWith = (slug: string) => {
+    act(() =>
+      useAudioStore.getState().start({
+        items: [item(slug, 'Finding the Secret Place')],
+        source: 'series',
+        label: 'Abiding in His Presence',
+      }),
+    )
+    act(() => useAudioStore.getState().setPanelOpen(true))
+    return render(<AudioDrawer />)
+  }
+
+  it('renders the artwork for the reading being played', () => {
+    const { container } = openWith('abiding-in-his-presence-day-2')
+    const img = container.querySelector('img')
+    expect(img).not.toBeNull()
+    expect(img!.getAttribute('src')).toBeTruthy()
+    // Decorative: the title is already read out beside it.
+    expect(img!.getAttribute('alt')).toBe('')
+  })
+
+  it('shows no empty frame when a reading has no art at all', () => {
+    const { container } = openWith('not-a-real-devotional-day-1')
+    expect(container.querySelector('img')).toBeNull()
+  })
+})
+
+/**
+ * Opening the player from a reading should offer THAT reading.
+ *
+ * Founder, on the panel's "more listening controls": pressing it "on a reading
+ * you haven't started opens the sidebar saying 'Nothing playing'." True, and
+ * useless — the reader is looking at a reading and asking for its controls.
+ *
+ * The fix deliberately does NOT queue anything as a side effect of opening a
+ * panel. Queuing would light the header dot, which means "something is waiting
+ * for you", off the back of a button that was only ever a request to see more.
+ * So the sidebar reads the reading off the path instead, offers it, and the
+ * queue changes only when the reader actually presses play.
+ */
+describe('opening the sidebar from a reading', () => {
+  const openOn = (path: string) => {
+    pathname = path
+    act(() => useAudioStore.getState().setPanelOpen(true))
+    return render(<AudioDrawer />)
+  }
+
+  it('offers the reading on the page when nothing is queued', () => {
+    openOn('/devotional/abiding-in-his-presence-day-2')
+    expect(
+      screen.getByRole('button', { name: /play this reading/i }),
+    ).toBeTruthy()
+  })
+
+  it('does not queue anything merely by being opened', () => {
+    openOn('/devotional/abiding-in-his-presence-day-2')
+    expect(useAudioStore.getState().queue).toHaveLength(0)
+  })
+
+  it('queues the reading and its series once play is pressed', () => {
+    openOn('/devotional/abiding-in-his-presence-day-2')
+    act(() =>
+      screen.getByRole('button', { name: /play this reading/i }).click(),
+    )
+    const { queue } = useAudioStore.getState()
+    expect(queue.length).toBeGreaterThan(1)
+    expect(queue[0].slug).toBe('abiding-in-his-presence-day-2')
+  })
+
+  it('still says nothing is playing away from a reading', () => {
+    openOn('/series')
+    expect(
+      screen.queryByRole('button', { name: /play this reading/i }),
+    ).toBeNull()
+    expect(screen.getByText(/nothing playing/i)).toBeTruthy()
+  })
+})
