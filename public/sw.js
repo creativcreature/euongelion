@@ -89,7 +89,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v144'
+const CACHE_NAME = 'euangelion-v145'
 
 /**
  * Downloaded readings. SA-101.

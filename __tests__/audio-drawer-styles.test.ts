@@ -44,3 +44,46 @@ describe('the sidebar styles every class it renders', () => {
     expect(unstyled).toEqual([])
   })
 })
+
+/**
+ * styled-jsx does not scope child COMPONENTS, only DOM elements.
+ *
+ * Found 2026-08-20 in production: the queue rows rendered
+ * "ABIDING IN HIS PRESENCEDay 2" on one line, because `.lsn-text` is a
+ * `next/link` <Link>. styled-jsx appends its `jsx-<hash>` class to elements it
+ * emits itself; it cannot know that <Link> forwards `className`, so the anchor
+ * ships as `class="lsn-text"` with no scope class and the rule
+ * `.lsn-text.jsx-<hash>` never matches. The declaration is right there in the
+ * file and does nothing.
+ *
+ * The class-presence test above cannot catch this — the class IS styled, the
+ * rule just cannot match. Styling a component through styled-jsx requires
+ * `:global(...)`, ideally under a scoped ancestor so it does not leak.
+ */
+describe('classes on child components are reachable', () => {
+  const source = fs.readFileSync(
+    path.join(process.cwd(), 'src/components/audio/AudioDrawer.tsx'),
+    'utf8',
+  )
+  const split = source.indexOf('<style jsx>')
+  const markup = source.slice(0, split)
+  const css = source.slice(split)
+
+  it('styles every component-borne lsn- class through :global()', () => {
+    // className on a capitalised JSX tag — a component, not a DOM element.
+    const onComponents = [
+      ...markup.matchAll(/<[A-Z][A-Za-z]*[^>]*className="([^"]*)"/g),
+    ].flatMap((m) => m[1].match(/lsn-[a-z0-9-]+/g) ?? [])
+
+    const globals = new Set(
+      [...css.matchAll(/:global\(([^)]*)\)/g)].flatMap(
+        (m) => m[1].match(/lsn-[a-z0-9-]+/g) ?? [],
+      ),
+    )
+
+    const unreachable = [...new Set(onComponents)]
+      .filter((c) => !globals.has(c))
+      .sort()
+    expect(unreachable).toEqual([])
+  })
+})

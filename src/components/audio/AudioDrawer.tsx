@@ -910,7 +910,8 @@ export default function AudioDrawer() {
           color: var(--color-gold);
           margin-bottom: 0.2rem;
         }
-        .lsn-now {
+        /* Also a <Link> — see the note on .lsn-text. */
+        .lsn-head :global(.lsn-now) {
           font-family: var(--font-family-serif, Georgia, serif);
           font-style: italic;
           font-size: 1.15rem;
@@ -1012,7 +1013,13 @@ export default function AudioDrawer() {
           height: 15px;
           fill: currentColor;
         }
-        .lsn-text {
+        /* :global because this is a next/link <Link>, not a DOM element.
+           styled-jsx scopes only the elements it emits, so the anchor ships as
+           class="lsn-text" with no jsx-<hash> and a plain .lsn-text rule can
+           never match it — which is why the queue rows rendered
+           "ABIDING IN HIS PRESENCEDay 2" on one line in production. The scoped
+           .lsn-row ancestor keeps it from leaking. */
+        .lsn-row :global(.lsn-text) {
           flex: 1 1 auto;
           min-width: 0;
           display: flex;

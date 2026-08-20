@@ -28,6 +28,14 @@ markup landed; the styling never did. Thirty-nine unit tests passed against it,
 because they query by role and an unstyled button is still findable. There is
 now a test that fails if any class in the markup has no rule.
 
+**A third, subtler one underneath it.** The queue rows read
+`ABIDING IN HIS PRESENCEDay 2` on one line, and the CSS to stack them was right
+there in the file, computing to nothing. Those rows use `next/link`, and
+styled-jsx only scopes elements it emits itself — it can't know a component
+forwards `className`, so the anchor shipped without the scope class and the rule
+could never match. Two of those. Reached now via `:global()` under a scoped
+parent, with a second test that fails if any class on a child component isn't.
+
 **Shipped: volume** (Apple Podcasts and ElevenReader both carry one; desktop had
 none, and it hides on touch because iOS ignores it) **and share** (four of eight
 carry it; system sheet, clipboard fallback that says "Link copied").
@@ -11527,7 +11535,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.12
+**Version:** 0.8.13
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync
