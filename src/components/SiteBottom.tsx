@@ -1,5 +1,9 @@
 import Link from 'next/link'
 import SiteFooter from '@/components/SiteFooter'
+// The version in the footer reads from package.json so a release bump can
+// never drift from what the page claims (founder: "all footers should have
+// copyright and versioning info", 2026-08-20).
+import pkg from '../../package.json'
 
 /**
  * The bottom of every page (F-101).
@@ -33,12 +37,17 @@ export default function SiteBottom() {
       {/* One line, at small size. The copyright and the legal links used to
           stack into two paragraphs; the founder wants a single rule of small
           type, so both sit in one flowing line separated by middots. */}
-      <section className="homepage-bottom-legal" aria-label="Copyright and legal">
+      <section
+        className="homepage-bottom-legal"
+        aria-label="Copyright and legal"
+      >
         <p className="homepage-bottom-legal-line">
           <span>
             EUANGELION is a product of WokeGod LLC. Copyright © 2026 WokeGod
             LLC. All rights reserved.
           </span>
+          <span aria-hidden="true"> · </span>
+          <span>v{pkg.version}</span>
           <span aria-hidden="true"> · </span>
           <Link href="/terms" className="link-highlight">
             Terms

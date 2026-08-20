@@ -398,6 +398,15 @@ sheet v3 + strip 001 v4 generated to the new canon; the Friday draft row
 now points at the new strip (echo-dust-001b.jpg); the old black-and-white
 asset is removed.
 
+Founder: "all footers should have copyright and versioning info... check
+all pages." The copyright line already rendered site-wide via SiteBottom
+(the founder was reading the stale v141 service-worker shell, cured by the
+v143 generation); the VERSION did not exist anywhere. The legal line now
+carries v{package.json version} — read at build from package.json so a
+release can never drift from the footer, test-pinned. Swept all 47 routes:
+every rendering page reaches SiteBottom; /saved and /clippings are pure
+redirects and correctly render nothing.
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)
