@@ -117,7 +117,12 @@ function jsonResponse(body: unknown, init?: { ok?: boolean; status?: number }) {
  *  can read exactly what was sent. */
 function mockFetch(items: unknown[]) {
   const fetchMock = vi.fn(
-    async (_input: RequestInfo | URL, init?: RequestInit) => {
+    async (input: RequestInfo | URL, init?: RequestInit) => {
+      // The Next Series box (SA-114) has its own endpoint; answer it quietly
+      // so these tests keep exercising ONLY the queue's behavior.
+      if (String(input).includes('/thematic')) {
+        return jsonResponse({ ok: true, thematic: null })
+      }
       if (init?.method === 'POST' || init?.method === 'PATCH') {
         return jsonResponse({ ok: true })
       }
@@ -382,7 +387,11 @@ describe('Edition review queue (SA-090 / F-136)', () => {
     const remaining = queueFixture().filter((item) => item.id !== PRACTICE_ID)
     let gets = 0
     const fetchMock = vi.fn(
-      async (_input: RequestInfo | URL, init?: RequestInit) => {
+      async (input: RequestInfo | URL, init?: RequestInit) => {
+        // The Next Series box reads its steer on mount; it is not a queue read.
+        if (String(input).includes('/thematic')) {
+          return jsonResponse({ ok: true, thematic: null })
+        }
         if (init?.method === 'POST') {
           return jsonResponse(
             { error: 'Already reviewed', code: 'ALREADY_REVIEWED' },
@@ -416,7 +425,11 @@ describe('Edition review queue (SA-090 / F-136)', () => {
   it('a 409 whose re-read also fails puts the card BACK and says the list may be stale', async () => {
     let gets = 0
     const fetchMock = vi.fn(
-      async (_input: RequestInfo | URL, init?: RequestInit) => {
+      async (input: RequestInfo | URL, init?: RequestInit) => {
+        // The Next Series box reads its steer on mount; it is not a queue read.
+        if (String(input).includes('/thematic')) {
+          return jsonResponse({ ok: true, thematic: null })
+        }
         if (init?.method === 'POST') {
           return jsonResponse(
             { error: 'Already reviewed' },
@@ -638,5 +651,101 @@ describe('Edition review queue (SA-090 / F-136)', () => {
     expect(
       within(card).getByText('Read Psalm 62 aloud, slowly, once.'),
     ).toBeInTheDocument()
+  })
+})
+
+/**
+ * SA-114 / F-158 — the Next Series steer box.
+ *
+ * The founder steers next week's devotional from the SITE, not from git: a
+ * box on the queue page writes the thematic override the Wednesday build
+ * consumes (Storage object via /api/admin/edition/thematic). This box was
+ * built once, shipped uncommitted, and was erased by a parallel rewrite —
+ * these tests pin it so that cannot happen silently again.
+ */
+function mockFetchWithThematic(items: unknown[], thematic: string | null) {
+  const fetchMock = vi.fn(
+    async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input)
+      if (url.includes('/api/admin/edition/thematic')) {
+        if (init?.method === 'POST' || init?.method === 'DELETE') {
+          return jsonResponse({ ok: true })
+        }
+        return jsonResponse({ ok: true, thematic })
+      }
+      if (init?.method === 'POST' || init?.method === 'PATCH') {
+        return jsonResponse({ ok: true })
+      }
+      return jsonResponse({ ok: true, items })
+    },
+  )
+  vi.stubGlobal('fetch', fetchMock)
+  return fetchMock
+}
+
+describe('Next Series steer box (SA-114 / F-158)', () => {
+  afterEach(() => {
+    cleanup()
+    vi.unstubAllGlobals()
+  })
+
+  it('renders the box with the saved steer from the thematic API', async () => {
+    mockFetchWithThematic(queueFixture(), 'A week on the prayers of the psalms')
+    render(<EditionQueueClient />)
+    const box = await screen.findByRole('region', { name: /next series/i })
+    expect(
+      await within(box).findByText(/A week on the prayers of the psalms/),
+    ).toBeTruthy()
+    expect(within(box).getByRole('textbox')).toBeTruthy()
+    expect(
+      within(box).getByRole('button', { name: /set for next run/i }),
+    ).toBeTruthy()
+    expect(box.id).toBe('next-series')
+  })
+
+  it('SET FOR NEXT RUN posts the steer to the thematic API', async () => {
+    const user = userEvent.setup()
+    const fetchMock = mockFetchWithThematic(queueFixture(), null)
+    render(<EditionQueueClient />)
+    const box = await screen.findByRole('region', { name: /next series/i })
+    await user.type(
+      within(box).getByRole('textbox'),
+      'Elijah under the broom tree — burnout and the God who feeds',
+    )
+    await user.click(
+      within(box).getByRole('button', { name: /set for next run/i }),
+    )
+    await waitFor(() => {
+      const call = fetchMock.mock.calls.find(
+        ([input, init]) =>
+          String(input).includes('/thematic') && init?.method === 'POST',
+      )
+      expect(call).toBeTruthy()
+      expect(JSON.parse(String(call![1]?.body)).thematic).toMatch(/broom tree/)
+    })
+  })
+
+  it('CLEAR deletes the steer', async () => {
+    const user = userEvent.setup()
+    const fetchMock = mockFetchWithThematic(queueFixture(), 'Old steer')
+    render(<EditionQueueClient />)
+    const box = await screen.findByRole('region', { name: /next series/i })
+    await user.click(within(box).getByRole('button', { name: /clear/i }))
+    await waitFor(() => {
+      expect(
+        fetchMock.mock.calls.some(
+          ([input, init]) =>
+            String(input).includes('/thematic') && init?.method === 'DELETE',
+        ),
+      ).toBe(true)
+    })
+  })
+
+  it('renders in the empty-queue state too — steering is not gated on drafts existing', async () => {
+    mockFetchWithThematic([], null)
+    render(<EditionQueueClient />)
+    expect(
+      await screen.findByRole('region', { name: /next series/i }),
+    ).toBeTruthy()
   })
 })

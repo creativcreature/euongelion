@@ -791,18 +791,22 @@ export default function EditionQueueClient() {
 
   if (items.length === 0) {
     return (
-      <div className="border border-[var(--color-border)] p-4">
-        <p className="text-label vw-small mb-2 text-gold">NOTHING WAITING</p>
-        <p className="vw-body">
-          Every drafted section has a verdict. The next run will fill this
-          again.
-        </p>
+      <div>
+        <NextSeriesThematic />
+        <div className="border border-[var(--color-border)] p-4">
+          <p className="text-label vw-small mb-2 text-gold">NOTHING WAITING</p>
+          <p className="vw-body">
+            Every drafted section has a verdict. The next run will fill this
+            again.
+          </p>
+        </div>
       </div>
     )
   }
 
   return (
     <div>
+      <NextSeriesThematic />
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3 border border-[var(--color-border)] p-3">
         <p className="text-label vw-small text-muted">
           {items.length} awaiting review
@@ -911,5 +915,161 @@ export default function EditionQueueClient() {
         </section>
       ))}
     </div>
+  )
+}
+
+/**
+ * SA-114 / F-158 — the founder steers next week's devotional from the site.
+ *
+ * Writes the thematic override the Wednesday weekly-series build consumes
+ * (Supabase Storage `pipeline/next-series-thematic.md`, one-shot: the run
+ * moves it to consumed/). No steer set = the machine researches its own
+ * theme. Rebuilt after a parallel rewrite erased the uncommitted original;
+ * pinned by tests in edition-admin-queue.test.tsx.
+ */
+function NextSeriesThematic() {
+  const [draft, setDraft] = useState('')
+  const [current, setCurrent] = useState<string | null>(null)
+  const [phase, setPhase] = useState<'loading' | 'idle' | 'busy'>('loading')
+  const [boxError, setBoxError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let alive = true
+    void (async () => {
+      try {
+        const res = await fetch('/api/admin/edition/thematic', {
+          cache: 'no-store',
+        })
+        const body = (await res.json()) as {
+          ok?: boolean
+          thematic?: string | null
+          error?: string
+        }
+        if (!alive) return
+        if (!res.ok || !body.ok) {
+          setBoxError(body.error ?? `Thematic read failed (${res.status}).`)
+        } else {
+          setCurrent(body.thematic ?? null)
+        }
+      } catch (err) {
+        if (alive) setBoxError(err instanceof Error ? err.message : String(err))
+      } finally {
+        if (alive) setPhase('idle')
+      }
+    })()
+    return () => {
+      alive = false
+    }
+  }, [])
+
+  const save = async () => {
+    setBoxError(null)
+    setPhase('busy')
+    try {
+      const res = await fetch('/api/admin/edition/thematic', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ thematic: draft.trim() }),
+      })
+      const body = (await res.json()) as { ok?: boolean; error?: string }
+      if (!res.ok || !body.ok) {
+        setBoxError(body.error ?? `Save failed (${res.status}).`)
+      } else {
+        setCurrent(draft.trim())
+        setDraft('')
+      }
+    } catch (err) {
+      setBoxError(err instanceof Error ? err.message : String(err))
+    } finally {
+      setPhase('idle')
+    }
+  }
+
+  const clear = async () => {
+    setBoxError(null)
+    setPhase('busy')
+    try {
+      const res = await fetch('/api/admin/edition/thematic', {
+        method: 'DELETE',
+      })
+      const body = (await res.json()) as { ok?: boolean; error?: string }
+      if (!res.ok || !body.ok) {
+        setBoxError(body.error ?? `Clear failed (${res.status}).`)
+      } else {
+        setCurrent(null)
+      }
+    } catch (err) {
+      setBoxError(err instanceof Error ? err.message : String(err))
+    } finally {
+      setPhase('idle')
+    }
+  }
+
+  return (
+    <section
+      id="next-series"
+      aria-label="Next series"
+      className="mb-8 border border-[var(--color-border-strong)] p-4"
+    >
+      <p className="text-label vw-small mb-2 text-gold">NEXT SERIES</p>
+      <p className="vw-body mb-3">
+        Steer next week&apos;s devotional: write a sentence or two — a passage,
+        a struggle, a question — and Wednesday&apos;s build writes the whole
+        series from it. Leave it empty and the machine researches its own theme.
+      </p>
+
+      {phase === 'loading' ? (
+        <p className="vw-small text-muted">Reading the current steer…</p>
+      ) : current ? (
+        <p className="vw-small mb-3 border border-[var(--color-border)] p-3">
+          <span className="text-label text-gold">SET FOR THE NEXT RUN: </span>
+          {current}
+        </p>
+      ) : (
+        <p className="vw-small text-muted mb-3">
+          No steer set — the next run picks its own theme.
+        </p>
+      )}
+
+      <textarea
+        aria-label="Next series thematic"
+        value={draft}
+        onChange={(e) => setDraft(e.target.value)}
+        rows={3}
+        className="vw-body mb-3 w-full border border-[var(--color-border)] bg-transparent p-3"
+        placeholder="e.g. Elijah under the broom tree — burnout, and the God who feeds before He explains."
+      />
+
+      <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          disabled={phase !== 'idle' || draft.trim().length < 8}
+          onClick={() => {
+            void save()
+          }}
+          className="text-label vw-small border border-[var(--color-border-strong)] px-3 py-2"
+        >
+          Set for next run
+        </button>
+        {current ? (
+          <button
+            type="button"
+            disabled={phase !== 'idle'}
+            onClick={() => {
+              void clear()
+            }}
+            className="text-label vw-small border border-[var(--color-border)] px-3 py-2"
+          >
+            Clear
+          </button>
+        ) : null}
+      </div>
+
+      {boxError ? (
+        <p role="alert" className="vw-small mt-3 text-muted">
+          {boxError}
+        </p>
+      ) : null}
+    </section>
   )
 }

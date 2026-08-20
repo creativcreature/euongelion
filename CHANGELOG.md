@@ -259,6 +259,13 @@ and a headless containment sweep at 375/1440 confirms nothing on the page
 breaks its container (the word search's internal scroll frame is the
 sanctioned pattern, not a break).
 
+Rebuilt after discovery: the NEXT SERIES steer box on /admin/edition. The
+original shipped in a deploy but was never committed, and a parallel rewrite
+of the queue client erased it — the admin hub was linking to an anchor that no
+longer existed. It is back (same thematic API), rendered in both the queue and
+empty states, and this time it is pinned by four tests so it cannot vanish
+silently again.
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)
