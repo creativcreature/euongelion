@@ -276,6 +276,17 @@ lead devotional, the comic strip) instead of a kind slug. Test-first
 fills its compartment instead of leaving a dead zone beneath a fixed-ratio
 frame (founder screenshot, 2026-08-20).
 
+ECHO & DUST premieres. The founder delivered the strip's full concept —
+an adult philosophical comic in 1920s rubber-hose style: Theo (the
+question), Echo (the constant, heart hoodie), Dust (the variable, galaxy
+body, rotating hats). Canon locked in content/strip-reference/
+ECHO-AND-DUST-CANON.md; character model sheet + strip No. 1 ("The Bakery
+Question") generated via codex exec image_generation with the sheet as the
+character anchor; installed as a DRAFT strip row for 2026-08-21 so it
+passes the founder's NEEDS YOUR EYE gate before its first print. Daily
+automation (claude -p writes, codex draws, inspection gate, draft row)
+wires into daily-edition.yml AFTER the founder approves the look.
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)
