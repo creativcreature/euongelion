@@ -113,6 +113,13 @@ Also in this pass: a DB `redletter` row (once the blocked SQL lands) now
 overrides the page-side generator's pick, so an audited correction can replace
 the computed saying without a deploy.
 
+Follow-up caught in Workers-runtime verification: the /admin layout gate alone
+LEAKED — React renders layout and page concurrently, so anonymous `/admin`
+received the hub's markup inside the not-found stream. Every admin page now
+asserts the allowlist itself (`assertAdminOr404()`); re-verified against the
+local Workers runtime: zero admin markup for anonymous requests on /admin,
+/admin/edition, and /admin/preview/daily-bread.
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)
