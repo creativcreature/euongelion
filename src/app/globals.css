@@ -16393,3 +16393,76 @@ html.dark .edition-quote-text--red {
     animation: none;
   }
 }
+
+/* ── Finished-state preview chrome (SA-111) ───────────────────────────── */
+
+.preview-chrome--draft {
+  outline: 2px dashed var(--mock-blue, #1f2a8d);
+  outline-offset: 6px;
+  margin: 8px;
+}
+
+.preview-chrome--rejected {
+  padding: 1rem;
+  outline: 2px dashed color-mix(in srgb, currentColor 40%, transparent);
+  outline-offset: 6px;
+  margin: 8px;
+  opacity: 0.55;
+}
+
+.preview-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.preview-ribbon {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mock-blue, #1f2a8d);
+}
+
+.preview-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.preview-btn {
+  min-height: 40px;
+  padding: 0.35rem 0.9rem;
+  border: 1.5px solid currentColor;
+  background: transparent;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.preview-btn--approve {
+  background: var(--mock-blue, #1f2a8d);
+  color: var(--mock-paper, #f6f1e7);
+  border-color: var(--mock-blue, #1f2a8d);
+}
+
+.preview-error {
+  margin: 0 0 0.5rem;
+  font-size: var(--type-meta, 0.72rem);
+  color: #8c1d18;
+}
+
+.preview-datebar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0.8rem clamp(1rem, 4vw, 2.5rem);
+  border-bottom: var(--ed-hair, 1.5px solid currentColor);
+}
