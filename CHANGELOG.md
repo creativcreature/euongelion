@@ -5,6 +5,19 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Homepage rebuild reverted (SA-121, F-166)
+
+**2026-08-20**
+
+Founder, morning after: _"revert the homepage your flow just doesnt make
+sense."_ The below-header rebuild is rolled back in full — the Word block,
+the reorder, the deletions, the writer copy, and the FAQ order all return
+to their pre-SA-121 state (`git revert` of #38 and #39). The hero rotation
+(SA-113) is untouched; it shipped separately and was separately approved.
+Kept from the rebuild: the pure-function extraction in the proverb
+generator (behavior-neutral, tested) and all tracking records — F-166 is
+marked `reverted`, the SA-121 note carries the ruling. SW pair v143.
+
 ## The homepage leads with the Word (SA-121, F-166)
 
 **2026-08-20**

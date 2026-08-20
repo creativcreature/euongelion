@@ -1485,7 +1485,7 @@ features:
     title: The homepage leads with the Word
     slug: homepage-word-first
     baseline_score: 0
-    status: shipped
+    status: reverted
     prd: docs/feature-prds/F-166.md
     methodology_refs:
       - M00
