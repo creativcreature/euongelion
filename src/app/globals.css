@@ -427,6 +427,17 @@ h3 {
      every viewport. Heights: ~103px @ 375 width, ~395px @ 1440 width. */
   aspect-ratio: 3358 / 920;
   overflow: hidden;
+  /* SA-113 rotation: the parse-time draw script sets --hero-rot on <html>;
+     the tomb is the CSS fallback so a JS-off reader still gets a plate.
+     Painting via background (not an injected <img>) keeps the drawn plate
+     outside React hydration's reach — this page is a client component. */
+  background-image: var(
+    --hero-rot,
+    url('/images/site/homepage/hero/header-v2.webp')
+  );
+  background-size: cover;
+  background-position: center;
+  filter: contrast(1.05);
 }
 .homepage-hero-banner-art img {
   object-fit: cover;

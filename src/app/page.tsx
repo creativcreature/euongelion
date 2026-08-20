@@ -17,6 +17,7 @@ import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
 import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
 import { typographer } from '@/lib/typographer'
 import { SERIES_COUNT } from '@/data/series'
+import { HERO_ROTATION, heroDrawScript } from '@/lib/home/hero-rotation'
 import { featuredForServer, rotateFeatured } from '@/lib/home/featured-rotation'
 import { isScrollLocked } from '@/lib/use-scroll-lock'
 
@@ -75,24 +76,11 @@ const HOW_STEPS = [
   },
 ]
 
-/**
- * Homepage hero — ROTATES per page load (SA-113 / F-159, 2026-08-20,
- * superseding R38's static-tomb ruling). Seven gospel plates: the
- * empty tomb plus six founder-chosen scenes, all cut to the banner's
- * native ratio. The draw happens in a parse-time inline script so the
- * page stays statically renderable and cacheable while every load
- * still lands on a fresh plate; JS-off readers get the tomb.
- * Provenance + the pinned candidate pool: docs/HERO-ROTATION-CANDIDATE-POOL.md.
- */
-const HERO_ROTATION = [
-  '/images/site/homepage/hero/header-v2.webp', // the empty tomb — the anchor plate
-  '/images/site/homepage/hero/hero-passover.webp', // Exodus 12 — blood on the doorframe
-  '/images/site/homepage/hero/hero-furnace.webp', // Daniel 3 — the fourth man in the fire
-  '/images/site/homepage/hero/hero-baptism.webp', // Mark 1 — the torn-open sky
-  '/images/site/homepage/hero/hero-finished.webp', // John 19:30 — it is finished
-  '/images/site/homepage/hero/hero-vines.webp', // John 15 — the true vine
-  '/images/site/homepage/hero/hero-via-dolorosa.webp', // John 19:17 — carrying his cross
-]
+// Homepage hero rotation (SA-113 / F-159): plates + parse-time draw script
+// live in src/lib/home/hero-rotation.ts — the draw sets a CSS custom
+// property on <html>, outside React's reconciliation, because this page is
+// a hydrated client component and DOM built inside it gets reset on a
+// client re-render (the first implementation blanked the banner that way).
 /** Narrated hours, from the manifest — stated rather than rounded by hand, so
  *  the claim on the homepage cannot drift from what actually renders. */
 const AUDIO_HOURS = Math.round(
@@ -376,25 +364,21 @@ export default function Home() {
           className="homepage-hero-banner"
           aria-label="Euangelion home banner"
         >
-          {/* Parse-time draw (SA-113): one inline script, serialized as
-              raw innerHTML so hydration never reconciles this subtree —
-              React skips dangerouslySetInnerHTML children, so the <img>
-              the script injects survives hydration untouched. The script
-              runs synchronously as the parser reaches it: one fetch, no
-              flash — and unlike a render-time pick, the draw cannot be
-              frozen into the year-long edge cache (see the featured
-              rotation note above). fetchpriority=high keeps the LCP
-              priority the old next/image `priority` prop provided;
-              sizing/cover come from .homepage-hero-banner-art img rules.
-              JS-off readers get the tomb via <noscript>. */}
-          <div
-            className="homepage-hero-banner-art"
+          {/* Parse-time draw (SA-113): the script runs synchronously as
+              the parser reaches it and puts the chosen plate on <html> as
+              --hero-rot, plus a fetchpriority=high preload for the LCP
+              contract. The banner div below is static markup that paints
+              the variable as its background (globals.css), with the tomb
+              as the CSS fallback for JS-off readers — nothing here for
+              hydration to reconcile away, and no render-time randomness
+              to freeze into the year-long edge cache (see the featured
+              rotation note above). */}
+          <script
             dangerouslySetInnerHTML={{
-              __html:
-                `<script>(function(){var h=${JSON.stringify(HERO_ROTATION)};var s=h[Math.floor(Math.random()*h.length)];document.currentScript.insertAdjacentHTML('beforebegin','<img src="'+s+'" alt="" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%">');})()</script>` +
-                `<noscript><img src="${HOMEPAGE_TODAY.heroSrc}" alt="" style="position:absolute;inset:0;width:100%;height:100%"></noscript>`,
+              __html: heroDrawScript(HERO_ROTATION),
             }}
           />
+          <div className="homepage-hero-banner-art" />
         </section>
 
         {/* Active-plan resume banner — sits BELOW the hero image (founder

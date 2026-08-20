@@ -157,6 +157,18 @@ fallback in the served HTML, all seven assets 200, and a jsdom execution of
 the page proving the image injects with `fetchpriority="high"` and the draw
 varies across loads.
 
+**Fixed same day (founder: "images are not rendering").** The first
+implementation injected an `<img>` into the banner via the inline script —
+but the homepage is a hydrated client component, so a React client re-render
+reset that subtree's innerHTML, and scripts re-inserted through innerHTML
+never execute: blank banner in production. CSP was ruled out first
+(`script-src` allows inline). The draw now lives entirely outside React's
+reach: the script sets `--hero-rot` on `<html>` plus a `fetchpriority=high`
+preload, and the banner paints the variable as its CSS background with the
+tomb as the `var()` fallback for JS-off readers. TDD per the invoked skill:
+`__tests__/hero-rotation-contract.test.ts` reproduces the innerHTML-reset
+failure and pins the survival contract — watched red, then green.
+
 ## A completion you can take back (SA-111, F-157)
 
 **2026-08-19**
