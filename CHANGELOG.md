@@ -9,6 +9,10 @@ Format: Reverse chronological, grouped by sprint/date.
 
 **2026-08-19**
 
+_This entry was committed by a parallel session ahead of the code it
+describes; the component change and the SA-117 decision record land in the
+following commit._
+
 Founder, from live use: _"the site should not be autoplaying.... and ther is no
 way to turn pause right now. the player didnt even detect the audio was
 playing."_

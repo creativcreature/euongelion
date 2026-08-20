@@ -17,6 +17,7 @@ import {
   getAudioElement,
   subscribeAudioElement,
 } from '@/lib/audio/audio-element'
+import { useAudioStore } from '@/stores/audioStore'
 import NarrationChapters from '@/components/NarrationChapters'
 import NarrationMiniBar from '@/components/NarrationMiniBar'
 import SpeedSheet, {
@@ -272,15 +273,22 @@ export default function NarrationPlayer({
       // that would count opens as listens, which is exactly the kind of number
       // that is worse than no number.
       if (!hasStarted && listenedSince.current <= 0) return
-      pushPosition({
-        slug,
-        seconds: options.ended ? 0 : seconds,
-        duration,
-        listenedDelta: listenedSince.current,
-        ended: options.ended,
-        flush: options.flush,
-      })
-      listenedSince.current = 0
+      // Only clear the accumulator when the account actually took it. This
+      // interval runs every 5s and the server write is throttled to 30s, so
+      // clearing unconditionally threw away five of every six ticks — the
+      // listening total was undercounting by roughly that much.
+      if (
+        pushPosition({
+          slug,
+          seconds: options.ended ? 0 : seconds,
+          duration,
+          listenedDelta: listenedSince.current,
+          ended: options.ended,
+          flush: options.flush,
+        })
+      ) {
+        listenedSince.current = 0
+      }
     },
     [slug, track.duration, hasStarted],
   )
@@ -587,6 +595,34 @@ export default function NarrationPlayer({
       setPlaying(true)
       setHasStarted(true)
       setError(null)
+      /**
+       * Tell the store what is sounding.
+       *
+       * Playback survives navigation, but the drawer handle — which carries
+       * the only pause control outside this panel — appears only when the
+       * store holds something. Without this, leaving a reading left audio
+       * playing with no way to stop it anywhere on the site, which reads as
+       * the site autoplaying at you.
+       *
+       * Only when this reading is not already the cursor: pressing play inside
+       * a queue must not collapse that queue to one item.
+       */
+      const store = useAudioStore.getState()
+      if (store.queue[store.index]?.slug !== slug) {
+        store.start({
+          items: [
+            {
+              slug,
+              title,
+              src: track.src,
+              duration: track.duration,
+              href: `/devotional/${slug}`,
+            },
+          ],
+          source: 'single',
+          label: title,
+        })
+      }
     }
     const onPause = () => setPlaying(false)
     const onTime = () => handleTimeUpdate(audio.currentTime)
@@ -625,6 +661,9 @@ export default function NarrationPlayer({
   }, [
     globalAudio,
     track.src,
+    track.duration,
+    slug,
+    title,
     speed,
     handleTimeUpdate,
     restorePosition,

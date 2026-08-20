@@ -1451,3 +1451,19 @@ features:
     prd: docs/feature-prds/F-160.md
     methodology_refs:
       - M00
+  - id: F-161
+    title: The breadth axis, and the continuity bug that moved
+    slug: audio-breadth-axis
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-161.md
+    methodology_refs:
+      - M00
+  - id: F-162
+    title: A reading registers itself, so it can be paused from anywhere
+    slug: reading-registers-itself
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-162.md
+    methodology_refs:
+      - M00
