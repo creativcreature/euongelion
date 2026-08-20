@@ -41,7 +41,14 @@ const BUDGET_LABEL: Record<Budget, string> = {
  * minutes. Hiding that would make the picker feel broken instead of making the
  * gap visible.
  */
-export default function OccasionPicker({ pool }: { pool: QueueItem[] }) {
+export default function OccasionPicker({
+  pool,
+  compact = false,
+}: {
+  pool: QueueItem[]
+  /** Inside the audio sidebar, where it is a section rather than a surface. */
+  compact?: boolean
+}) {
   const [minutes, setMinutes] = useState<Budget | null>(null)
   const [activity, setActivity] = useState<Activity | null>(null)
   const start = useAudioStore((s) => s.start)
@@ -54,11 +61,15 @@ export default function OccasionPicker({ pool }: { pool: QueueItem[] }) {
   const ready = minutes !== null && activity !== null
 
   return (
-    <section className="op" aria-labelledby="op-heading">
-      <p className="op-eyebrow">Listen</p>
+    <section
+      className={`op${compact ? ' is-compact' : ''}`}
+      aria-labelledby="op-heading"
+    >
+      {!compact && <p className="op-eyebrow">Listen</p>}
       <h2 id="op-heading" className="op-title">
-        How long have you got?
+        {compact ? 'Find something' : 'How long have you got?'}
       </h2>
+      {compact && <h3 className="op-sub">How long have you got?</h3>}
 
       <div className="op-row" role="group" aria-label="How long have you got">
         {BUDGETS.map((b) => (
@@ -124,6 +135,23 @@ export default function OccasionPicker({ pool }: { pool: QueueItem[] }) {
           border-top: 2px solid var(--color-gold);
           padding-top: 1rem;
           margin: 2rem 0;
+        }
+        /* In the sidebar it is a section, not a surface: no rule of its own,
+           smaller heading, tighter rhythm. */
+        .op.is-compact {
+          border-top: 0;
+          padding-top: 0;
+          margin: 0;
+        }
+        .op.is-compact .op-title {
+          font-size: 1.05rem;
+          font-style: normal;
+          font-family: inherit;
+          letter-spacing: 0.13em;
+          text-transform: uppercase;
+          font-size: 0.58rem;
+          color: var(--color-text-muted, var(--color-text-secondary));
+          margin-bottom: 0.6rem;
         }
         .op-eyebrow {
           font-size: 0.55rem;

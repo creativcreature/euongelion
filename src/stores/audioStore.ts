@@ -42,6 +42,15 @@ interface AudioState {
   playing: boolean
   /** Set once the reader has pressed play, so nothing appears before that. */
   started: boolean
+  /**
+   * Whether the audio sidebar is open.
+   *
+   * Lives here rather than in the sidebar's own state because it must be
+   * openable from OUTSIDE the sidebar — the homepage callout opens it with an
+   * empty queue, which is the only way discovery is reachable now that audio
+   * has been taken off the browse surfaces.
+   */
+  panelOpen: boolean
 
   start: (params: {
     items: QueueItem[]
@@ -58,6 +67,7 @@ interface AudioState {
   reorder: (from: number, to: number) => void
   clear: () => void
   setPlaying: (playing: boolean) => void
+  setPanelOpen: (open: boolean) => void
 }
 
 export const useAudioStore = create<AudioState>()(
@@ -69,6 +79,7 @@ export const useAudioStore = create<AudioState>()(
       label: null,
       playing: false,
       started: false,
+      panelOpen: false,
 
       start: ({ items, index = 0, source, label = null }) =>
         set({
@@ -145,11 +156,15 @@ export const useAudioStore = create<AudioState>()(
         }),
 
       setPlaying: (playing) => set({ playing }),
+
+      setPanelOpen: (panelOpen) => set({ panelOpen }),
     }),
     {
       name: 'euangelion:listening-queue',
       // `playing` is deliberately NOT persisted: restoring it would claim audio
       // is sounding when nothing is, and nothing on this site autoplays on load.
+      // `panelOpen` is not persisted either: a sidebar that reopens itself on
+      // every load is exactly the intrusion this redesign removed.
       partialize: (s) => ({
         queue: s.queue,
         index: s.index,

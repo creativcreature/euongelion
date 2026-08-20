@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState, useSyncExternalStore } from 'react'
+import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
 import {
   getAudioElement,
   subscribeAudioElement,
@@ -11,12 +11,23 @@ import { formatRuntime, queueDuration } from '@/lib/audio/queue-builder'
 import { formatTime } from '@/lib/audio/tracks'
 import { currentItem, useAudioStore } from '@/stores/audioStore'
 import { usePlaylistsStore } from '@/stores/playlistsStore'
+import OccasionPicker from '@/components/audio/OccasionPicker'
+import { allListenable } from '@/lib/audio/occasion'
 
 /**
- * The queue, tucked.
+ * The audio sidebar.
  *
- * Founder, 2026-08-19: audio was "clunky on the site in the areas that aren't
- * strictly the devotional" and needs to be "tucked, but not invisible".
+ * Founder, 2026-08-19, twice. First: audio was "clunky on the site in the areas
+ * that aren't strictly the devotional" and needs to be "tucked, but not
+ * invisible". Then, after the first attempt put a Listen call-to-action on the
+ * series page and a "what are you doing?" picker above the shelves: "This
+ * placement is extremely intrusive... Audio should be a seperate area
+ * (sidebar) non intrusive."
+ *
+ * So audio has exactly ONE home now. Nothing about it is injected into a
+ * reading or browse surface except the small `+` on a day row, which is how a
+ * reader adds while navigating. Discovery moved in here too — it used to sit
+ * above the series shelves, which is precisely the intrusion complained of.
  *
  * The bar this replaces was a full-width card pinned across the bottom of every
  * page — it announced itself constantly and pushed against the written content,
@@ -42,8 +53,11 @@ export default function AudioDrawer() {
   const goNext = useAudioStore((s) => s.next)
   const savePlaylist = usePlaylistsStore((s) => s.save)
 
-  const [open, setOpen] = useState(false)
+  const open = useAudioStore((s) => s.panelOpen)
+  const setOpen = useAudioStore((s) => s.setPanelOpen)
   const [saved, setSaved] = useState<string | null>(null)
+  // Computed once per open, not per render — it walks the whole manifest.
+  const listenPool = useMemo(() => (open ? allListenable() : []), [open])
   const [remaining, setRemaining] = useState<number | null>(null)
 
   const element = useSyncExternalStore(
@@ -74,11 +88,13 @@ export default function AudioDrawer() {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
-  }, [open])
+  }, [open, setOpen])
 
-  if (!item || !started) return null
+  // The handle needs something playing; the sidebar itself does not — it is
+  // openable with an empty queue, because that is where discovery now lives.
+  const showHandle = !!item && started && !(pathname === item.href) && !open
+  if (!open && !showHandle) return null
   // On the reading it is playing, the reader's own panel is the better surface.
-  if (pathname === item.href && !open) return null
 
   const audio = () => getAudioElement()
   const upNext = queue.length - index - 1
@@ -87,73 +103,83 @@ export default function AudioDrawer() {
     <>
       {/* Two sibling buttons, not one nested in the other: a control inside a
           control is invalid markup and unreachable for a keyboard. */}
-      <div className="ad-handle-wrap">
-        <div className={`ad-handle${playing ? ' is-playing' : ''}`}>
-          <button
-            type="button"
-            className="ad-handle-open"
-            aria-expanded={open}
-            aria-label={`Now playing: ${item.title}${upNext > 0 ? `, ${upNext} more queued` : ''}. Open the queue.`}
-            onClick={() => setOpen(true)}
-          >
-            <span className="ad-bars" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-            </span>
-            <span className="ad-handle-title">{item.title}</span>
-            {upNext > 0 && <span className="ad-handle-count">+{upNext}</span>}
-          </button>
-          <button
-            type="button"
-            className="ad-handle-play"
-            aria-label={playing ? 'Pause the reading' : 'Resume the reading'}
-            onClick={() => {
-              const a = audio()
-              if (!a) return
-              if (playing) a.pause()
-              else void a.play().catch(() => {})
-            }}
-          >
-            {playing ? (
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 5h4v14H7zM13 5h4v14h-4z" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            )}
-          </button>
+      {showHandle && item && (
+        <div className="ad-handle-wrap">
+          <div className={`ad-handle${playing ? ' is-playing' : ''}`}>
+            <button
+              type="button"
+              className="ad-handle-open"
+              aria-expanded={open}
+              aria-label={`Now playing: ${item.title}${upNext > 0 ? `, ${upNext} more queued` : ''}. Open the queue.`}
+              onClick={() => setOpen(true)}
+            >
+              <span className="ad-bars" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+              </span>
+              <span className="ad-handle-title">{item.title}</span>
+              {upNext > 0 && <span className="ad-handle-count">+{upNext}</span>}
+            </button>
+            <button
+              type="button"
+              className="ad-handle-play"
+              aria-label={playing ? 'Pause the reading' : 'Resume the reading'}
+              onClick={() => {
+                const a = audio()
+                if (!a) return
+                if (playing) a.pause()
+                else void a.play().catch(() => {})
+              }}
+            >
+              {playing ? (
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 5h4v14H7zM13 5h4v14h-4z" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       {open && (
         <div className="ad-root">
           <button
             type="button"
             className="ad-scrim"
-            aria-label="Close the queue"
+            aria-label="Close the listening sidebar"
             onClick={() => setOpen(false)}
           />
           <div
             className="ad-drawer"
             role="dialog"
             aria-modal="true"
-            aria-label="Listening queue"
+            aria-label="Listening"
           >
             <div className="ad-grip" aria-hidden="true" />
 
             <header className="ad-head">
               <div>
-                <p className="ad-eyebrow">{label ?? 'Listening'}</p>
-                <Link href={item.href} className="ad-now">
-                  {item.title}
-                </Link>
-                {remaining !== null && (
-                  <p className="ad-remaining oldstyle-nums">
-                    {formatTime(remaining)} left
-                  </p>
+                <p className="ad-eyebrow">
+                  {item ? (label ?? 'Listening') : 'Listen'}
+                </p>
+                {item ? (
+                  <>
+                    <Link href={item.href} className="ad-now">
+                      {item.title}
+                    </Link>
+                    {remaining !== null && (
+                      <p className="ad-remaining oldstyle-nums">
+                        {formatTime(remaining)} left
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <p className="ad-now">Nothing playing</p>
                 )}
               </div>
               <button
@@ -165,158 +191,173 @@ export default function AudioDrawer() {
               </button>
             </header>
 
-            <div className="ad-transport">
-              <button
-                type="button"
-                className="ad-btn"
-                aria-label="Back 15 seconds"
-                onClick={() => {
-                  const a = audio()
-                  if (a) a.currentTime = Math.max(0, a.currentTime - 15)
-                }}
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                className="ad-btn ad-btn-play"
-                aria-label={
-                  playing ? 'Pause the reading' : 'Resume the reading'
-                }
-                onClick={() => {
-                  const a = audio()
-                  if (!a) return
-                  playing ? a.pause() : void a.play().catch(() => {})
-                }}
-              >
-                {playing ? (
+            {item && (
+              <div className="ad-transport">
+                <button
+                  type="button"
+                  className="ad-btn"
+                  aria-label="Back 15 seconds"
+                  onClick={() => {
+                    const a = audio()
+                    if (a) a.currentTime = Math.max(0, a.currentTime - 15)
+                  }}
+                >
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 5h4v14H7zM13 5h4v14h-4z" />
+                    <path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z" />
                   </svg>
-                ) : (
+                </button>
+                <button
+                  type="button"
+                  className="ad-btn ad-btn-play"
+                  aria-label={
+                    playing ? 'Pause the reading' : 'Resume the reading'
+                  }
+                  onClick={() => {
+                    const a = audio()
+                    if (!a) return
+                    playing ? a.pause() : void a.play().catch(() => {})
+                  }}
+                >
+                  {playing ? (
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 5h4v14H7zM13 5h4v14h-4z" />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  )}
+                </button>
+                <button
+                  type="button"
+                  className="ad-btn"
+                  aria-label="Forward 15 seconds"
+                  onClick={() => {
+                    const a = audio()
+                    if (a) a.currentTime = a.currentTime + 15
+                  }}
+                >
                   <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 5v14l11-7z" />
+                    <path d="M12 5V2l5 4-5 4V7a5 5 0 1 0 5 5h2a7 7 0 1 1-7-7z" />
                   </svg>
-                )}
-              </button>
-              <button
-                type="button"
-                className="ad-btn"
-                aria-label="Forward 15 seconds"
-                onClick={() => {
-                  const a = audio()
-                  if (a) a.currentTime = a.currentTime + 15
-                }}
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 5V2l5 4-5 4V7a5 5 0 1 0 5 5h2a7 7 0 1 1-7-7z" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                className="ad-btn"
-                aria-label="Next in queue"
-                disabled={index >= queue.length - 1}
-                onClick={() => goNext()}
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M6 6l10 6-10 6V6zM16 6h2v12h-2z" />
-                </svg>
-              </button>
+                </button>
+                <button
+                  type="button"
+                  className="ad-btn"
+                  aria-label="Next in queue"
+                  disabled={index >= queue.length - 1}
+                  onClick={() => goNext()}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 6l10 6-10 6V6zM16 6h2v12h-2z" />
+                  </svg>
+                </button>
+              </div>
+            )}
+
+            {item && (
+              <>
+                <p className="ad-uplabel">
+                  Up next
+                  {upNext > 0
+                    ? ` · ${formatRuntime(queueDuration(queue.slice(index + 1)))}`
+                    : ''}
+                </p>
+
+                <ol className="ad-list">
+                  {queue.map((track, i) => (
+                    <li key={track.slug}>
+                      <div
+                        className={`ad-row${i === index ? ' is-current' : ''}${i < index ? ' is-past' : ''}`}
+                      >
+                        <button
+                          type="button"
+                          className="ad-play"
+                          aria-label={`Play ${track.title}`}
+                          onClick={() => {
+                            jumpTo(i)
+                            const a = audio()
+                            if (a) void a.play().catch(() => {})
+                          }}
+                        >
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                        <Link href={track.href} className="ad-text">
+                          {track.context && (
+                            <span className="ad-context">{track.context}</span>
+                          )}
+                          <span className="ad-name">{track.title}</span>
+                        </Link>
+                        <span className="ad-dur oldstyle-nums">
+                          {formatTime(track.duration)}
+                        </span>
+                        <button
+                          type="button"
+                          className="ad-icon"
+                          aria-label={`Move ${track.title} up`}
+                          disabled={i === 0}
+                          onClick={() => reorder(i, i - 1)}
+                        >
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 8l6 6H6z" />
+                          </svg>
+                        </button>
+                        <button
+                          type="button"
+                          className="ad-icon"
+                          aria-label={`Remove ${track.title}`}
+                          onClick={() => remove(track.slug)}
+                        >
+                          <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            )}
+
+            {/* Discovery lives HERE now, not above the series shelves. Two
+                questions, then a queue — the same picker, moved into audio's
+                own area instead of injected into a browse surface. */}
+            <div className="ad-find">
+              <OccasionPicker pool={listenPool} compact />
             </div>
 
-            <p className="ad-uplabel">
-              Up next
-              {upNext > 0
-                ? ` · ${formatRuntime(queueDuration(queue.slice(index + 1)))}`
-                : ''}
-            </p>
-
-            <ol className="ad-list">
-              {queue.map((track, i) => (
-                <li key={track.slug}>
-                  <div
-                    className={`ad-row${i === index ? ' is-current' : ''}${i < index ? ' is-past' : ''}`}
-                  >
-                    <button
-                      type="button"
-                      className="ad-play"
-                      aria-label={`Play ${track.title}`}
-                      onClick={() => {
-                        jumpTo(i)
-                        const a = audio()
-                        if (a) void a.play().catch(() => {})
-                      }}
-                    >
-                      <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-                    <Link href={track.href} className="ad-text">
-                      {track.context && (
-                        <span className="ad-context">{track.context}</span>
-                      )}
-                      <span className="ad-name">{track.title}</span>
-                    </Link>
-                    <span className="ad-dur oldstyle-nums">
-                      {formatTime(track.duration)}
-                    </span>
-                    <button
-                      type="button"
-                      className="ad-icon"
-                      aria-label={`Move ${track.title} up`}
-                      disabled={i === 0}
-                      onClick={() => reorder(i, i - 1)}
-                    >
-                      <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 8l6 6H6z" />
-                      </svg>
-                    </button>
-                    <button
-                      type="button"
-                      className="ad-icon"
-                      aria-label={`Remove ${track.title}`}
-                      onClick={() => remove(track.slug)}
-                    >
-                      <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z" />
-                      </svg>
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ol>
-
-            <div className="ad-foot">
-              {/* Saving is one tap on what is already queued — a create-then-fill
+            {item && (
+              <div className="ad-foot">
+                {/* Saving is one tap on what is already queued — a create-then-fill
                   flow is the kind nobody finishes. */}
-              <button
-                type="button"
-                className="ad-save"
-                onClick={() => {
-                  const playlist = savePlaylist(
-                    label ?? 'Saved listening',
-                    queue,
-                  )
-                  if (playlist) setSaved(playlist.name)
-                }}
-              >
-                {saved ? `Saved as “${saved}”` : 'Save as a playlist'}
-              </button>
-              <button
-                type="button"
-                className="ad-clear"
-                onClick={() => {
-                  audio()?.pause()
-                  clear()
-                  setOpen(false)
-                }}
-              >
-                Clear
-              </button>
-            </div>
+                <button
+                  type="button"
+                  className="ad-save"
+                  onClick={() => {
+                    const playlist = savePlaylist(
+                      label ?? 'Saved listening',
+                      queue,
+                    )
+                    if (playlist) setSaved(playlist.name)
+                  }}
+                >
+                  {saved ? `Saved as “${saved}”` : 'Save as a playlist'}
+                </button>
+                <button
+                  type="button"
+                  className="ad-clear"
+                  onClick={() => {
+                    audio()?.pause()
+                    clear()
+                    setOpen(false)
+                  }}
+                >
+                  Clear
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -452,16 +493,37 @@ export default function AudioDrawer() {
           animation: ad-in var(--motion-slow, 380ms)
             var(--motion-ease, ease-out) both;
         }
+        /* A SIDEBAR on anything with room for one — founder direction: audio
+           gets its own area rather than a band across the page. On a phone a
+           right-hand sidebar is a full-screen panel anyway, so there it stays a
+           bottom sheet, which is also where a thumb is. */
         @media (min-width: 768px) {
           .ad-drawer {
-            width: min(38rem, 100%);
-            margin-inline: auto;
-            border-inline: 1px solid var(--color-border);
+            inset-block: 0;
+            inset-inline: auto 0;
+            bottom: 0;
+            width: min(26rem, 92vw);
+            max-height: none;
+            margin-inline: 0;
+            border-top: 0;
+            border-left: 3px solid var(--color-gold);
+            animation-name: ad-in-side;
+          }
+          .ad-grip {
+            display: none;
           }
         }
         @keyframes ad-in {
           from {
             transform: translateY(100%);
+          }
+          to {
+            transform: none;
+          }
+        }
+        @keyframes ad-in-side {
+          from {
+            transform: translateX(100%);
           }
           to {
             transform: none;
@@ -640,6 +702,10 @@ export default function AudioDrawer() {
         }
         .ad-icon:disabled {
           opacity: 0.28;
+        }
+        .ad-find {
+          padding: 1rem 1.2rem;
+          border-top: 1px solid var(--color-border);
         }
         .ad-foot {
           display: flex;

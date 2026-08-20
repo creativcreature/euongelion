@@ -5,6 +5,60 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Audio gets its own area, and gets out of the way (SA-109, F-155)
+
+**2026-08-19**
+
+The founder on the previous pass: _"the listen and what are you doing on the
+Series page should not be ther. Audio should be a seperate area (sidebar) non
+intrusive. This placement is extremely intrusive."_
+
+He was right, and the error is worth naming. The Listen call-to-action in the
+series meta-action row and the "How long have you got?" picker above the shelves
+were both reasoned from real research — every audio product studied puts play
+beside read. But that research came from **audio-first products**. This is a
+reading site with audio in it, and copying the placement copied a posture that
+does not belong here. A pattern being correct in its own category is not an
+argument for it in another.
+
+**Both removed.** Nothing about audio is injected into a browse surface now.
+
+**Audio has one home: a sidebar** — right-anchored and full height where there
+is room, a bottom sheet on a phone, because a right-hand sidebar at 375px is a
+full-screen panel anyway and the thumb is at the bottom.
+
+**Discovery moved inside it.** The picker is a compact section now, not a
+surface — it lost its rule, its display heading and its rhythm, because inside
+audio's own area it is a section and not a headline.
+
+**The sidebar opens with an empty queue**, which is the consequence that had to
+be designed for: taking the picker off `/series` removed the only way in. The
+homepage callout opens the sidebar instead of navigating, and `panelOpen` is
+deliberately not persisted — a sidebar that reopens itself on load is the same
+intrusion in another form.
+
+Two things stayed on purpose: the small `+` on a day row, which is how you add
+while navigating and which you asked for; and the tucked handle, which appears
+only when something is queued.
+
+Service worker v130 → v131.
+
+---
+
+## Rekindled animated series film
+
+**2026-08-19**
+
+Created a 44-second, 1080×1920 Remotion film for the newest series,
+`Rekindled`. The cut uses the existing series hero, approved three-plate motion
+arc, day-seven ember plate, local Instrument Serif/Industry fonts, and the
+founder-voice day-one narration. No new imagery was generated. The editable
+composition and rendered MP4 live in `devotional-rekindled-video/`.
+
+Validation: the standalone Remotion project passes ESLint and TypeScript; a
+representative frame and the full 1,320-frame H.264 export both rendered
+successfully.
+
 ## Listening from where you are, on /today (SA-108, F-154)
 
 **2026-08-19**

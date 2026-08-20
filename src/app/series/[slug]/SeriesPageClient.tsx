@@ -10,7 +10,6 @@ import {
 } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import ListenButton from '@/components/audio/ListenButton'
 import AddToQueue from '@/components/audio/AddToQueue'
 import { buildSeriesQueue } from '@/lib/audio/queue-builder'
 import { useSearchParams } from 'next/navigation'
@@ -282,18 +281,6 @@ export default function SeriesPageClient({
             </div>
 
             <div className="mock-series-meta-actions">
-              {/* SA-096: listening is a peer of reading on a series page, not
-                  something you discover inside one day. The runtime is stated
-                  because what a listener needs before committing is how long
-                  this is. Renders nothing when the series has no delivered
-                  audio, rather than offering a button that plays silence. */}
-              <ListenButton
-                items={seriesQueue}
-                source="series"
-                label={series.title}
-              >
-                Listen
-              </ListenButton>
               <Link href={parentHref} className="mock-btn text-label">
                 {browseLabel}
               </Link>

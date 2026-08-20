@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import AUDIO_MANIFEST from '@/data/audio-manifest.json'
+import { useAudioStore } from '@/stores/audioStore'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -115,6 +116,7 @@ const FAQ_ITEMS = [
 ]
 
 export default function Home() {
+  const setAudioPanelOpen = useAudioStore((s) => s.setPanelOpen)
   const router = useRouter()
   const {
     text: auditText,
@@ -498,9 +500,17 @@ export default function Home() {
             on any device.
           </p>
           <div className="homepage-audio-actions">
-            <Link href="/series" className="mock-btn text-label">
+            {/* Opens the audio sidebar rather than navigating. Discovery used
+                to sit above the series shelves and the founder called that
+                placement intrusive, so it moved into audio's own area — which
+                means this is now the way in. */}
+            <button
+              type="button"
+              className="mock-btn text-label"
+              onClick={() => setAudioPanelOpen(true)}
+            >
               FIND SOMETHING TO LISTEN TO
-            </Link>
+            </button>
             <Link href="/library" className="text-label homepage-audio-link">
               Your queue &rarr;
             </Link>

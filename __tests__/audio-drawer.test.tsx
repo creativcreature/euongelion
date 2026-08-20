@@ -32,6 +32,9 @@ beforeEach(() => {
   pathname = '/series'
   localStorage.clear()
   useAudioStore.getState().clear()
+  // `clear()` deliberately leaves the sidebar's own open state alone, so it
+  // has to be reset here or it leaks between tests.
+  useAudioStore.getState().setPanelOpen(false)
   usePlaylistsStore.setState({ playlists: [] })
   const audio = document.createElement('audio')
   // jsdom implements neither, and both are called from tap handlers here.
@@ -185,5 +188,36 @@ describe('playlists in the library', () => {
     render(<SavedPlaylists />)
     act(() => screen.getByRole('button', { name: /delete temp/i }).click())
     expect(usePlaylistsStore.getState().playlists).toHaveLength(0)
+  })
+})
+
+/**
+ * The sidebar opens with an empty queue, because discovery lives inside it now.
+ *
+ * Founder, 2026-08-19: the "what are you doing?" picker above the series
+ * shelves was "extremely intrusive". It moved into audio's own area — which
+ * means the sidebar has to be reachable when nothing is playing, or there is no
+ * way in at all.
+ */
+describe('the sidebar as audio’s own area', () => {
+  it('opens with nothing queued and offers a way to find something', () => {
+    useAudioStore.getState().setPanelOpen(true)
+    render(<AudioDrawer />)
+    const panel = screen.getByRole('dialog')
+    expect(within(panel).getByText('Nothing playing')).toBeTruthy()
+    expect(within(panel).getByText('Find something')).toBeTruthy()
+  })
+
+  it('shows no handle when nothing is playing', () => {
+    render(<AudioDrawer />)
+    expect(screen.queryByRole('button', { name: /open the queue/i })).toBeNull()
+  })
+
+  it('hides transport and queue controls when there is nothing to control', () => {
+    useAudioStore.getState().setPanelOpen(true)
+    render(<AudioDrawer />)
+    const panel = screen.getByRole('dialog')
+    expect(within(panel).queryByLabelText('Back 15 seconds')).toBeNull()
+    expect(within(panel).queryByRole('button', { name: /^clear$/i })).toBeNull()
   })
 })
