@@ -628,6 +628,24 @@ describe('the player shows a cover', () => {
     expect(img!.getAttribute('alt')).toBe('')
   })
 
+  it('loads the cover eagerly, or it never loads at all', () => {
+    /**
+     * next/image lazy-loads by default, and on the deployed site that cover
+     * never loaded: `loading="lazy"`, `complete: false`, `currentSrc: ""`,
+     * an empty 491x491 square. Next's lazy loader uses its own
+     * IntersectionObserver, and the drawer mounts its contents inside a panel
+     * that slides in — the observer records the image as not intersecting and
+     * never revisits it. A `new Image()` with the identical src loaded fine
+     * (928x1152), which is what ruled out the file, the URL and the CSP.
+     *
+     * Lazy buys nothing here anyway: the markup only exists once the reader
+     * has opened the panel.
+     */
+    const { container } = openWith('abiding-in-his-presence-day-2')
+    const img = container.querySelector('img')
+    expect(img!.getAttribute('loading')).not.toBe('lazy')
+  })
+
   it('shows no empty frame when a reading has no art at all', () => {
     const { container } = openWith('not-a-real-devotional-day-1')
     expect(container.querySelector('img')).toBeNull()

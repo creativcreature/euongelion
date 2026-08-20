@@ -384,7 +384,13 @@ export default function AudioDrawer() {
               </button>
             </header>
 
-            {/* Seven of the eight players surveyed lead with cover art. The
+            {/* `priority` because next/image lazy-loads by default and this
+                cover never loaded on the deployed site: the lazy observer does
+                not fire for markup mounted inside the panel as it slides in,
+                so the reader got an empty square. Nothing is saved by lazy
+                here — the markup only exists once the panel is open.
+
+                Seven of the eight players surveyed lead with cover art. The
                 reading page below is already showing this image, so the player
                 showing nothing read as a player that had not loaded. Decorative
                 alt: the title and series are in text immediately above. */}
@@ -399,6 +405,7 @@ export default function AudioDrawer() {
                     width={640}
                     height={640}
                     sizes="(max-width: 900px) 100vw, 420px"
+                    priority
                   />
                 )}
                 <button
@@ -429,6 +436,7 @@ export default function AudioDrawer() {
                 width={640}
                 height={640}
                 sizes="(max-width: 900px) 100vw, 420px"
+                priority
               />
             )}
 

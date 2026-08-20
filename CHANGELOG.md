@@ -36,6 +36,12 @@ forwards `className`, so the anchor shipped without the scope class and the rule
 could never match. Two of those. Reached now via `:global()` under a scoped
 parent, with a second test that fails if any class on a child component isn't.
 
+**The cover then turned out not to load at all** — an empty square where the
+art should be. `next/image` lazy-loads by default, and its observer never fires
+for something mounted inside a panel that slides in, so the request was never
+even started. Nothing was saved by lazy anyway: that markup only exists once
+you've opened the panel. Both covers load eagerly now.
+
 **And the queue now calls readings by their names.** It was showing "Day 2,
 Day 3, Day 4" — placeholders that live in the series data — where the readings
 are actually called things like "Finding the Secret Place". Every player
@@ -11554,7 +11560,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.15
+**Version:** 0.8.16
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync
