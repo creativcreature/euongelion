@@ -1,4 +1,9 @@
 import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
+import { FORMAT_META } from '@/lib/audio/formats'
+import {
+  longFormBookRuns,
+  type ScriptureBookRun,
+} from '@/lib/audio/scripture-whole'
 import { getNarrationTrack } from '@/lib/audio/tracks'
 import type { QueueItem } from '@/stores/audioStore'
 
@@ -133,6 +138,31 @@ export function buildOccasionQueue(
   }
 
   return chosen
+}
+
+/**
+ * Long-form answers to "an hour or more".
+ *
+ * The picker's honest empty state — *nothing that length yet, the catalogue
+ * tops out at 28 minutes* — was true of the devotional pool and never true of
+ * the whole catalogue. `bible-365` runs in canonical order, so grouped by book
+ * it is already long-form: 36 runs clear 40 minutes and the longest is over
+ * five hours. Nothing new is recorded to make this true; it was always there,
+ * addressed a day at a time.
+ *
+ * Returns runs, not a flattened queue, because at this length the listener is
+ * choosing WHICH book — a shuffle across five hours of scripture is not a
+ * thing anyone asked for. Empty for every budget but the longest, and for
+ * activities the format does not suit (see `FORMAT_META['scripture-whole']`).
+ */
+export function longFormFor(occasion: Occasion): ScriptureBookRun[] {
+  if (occasion.minutes !== 60) return []
+  if (!FORMAT_META['scripture-whole'].activities.includes(occasion.activity)) {
+    return []
+  }
+  return longFormBookRuns(FORMAT_META['scripture-whole'].minutes[0]).sort(
+    (a, b) => a.duration - b.duration,
+  )
 }
 
 /** "about 10 minutes" — how the choice reads back to a listener. */

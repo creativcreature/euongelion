@@ -132,6 +132,15 @@ in front of a microphone. Decision 04 (where the founder's voice goes) and
 Decision 06 (whether narration is disclosed as synthesised) are unanswered; 06
 is a trust posture, not an engineering call.
 
+**Landed in two commits, and that is worth recording.** A parallel session's
+`git add -A` swept this entry, the F-161 registry and index rows, the SA-116
+decision and the `NarrationPlayer` fix into its own commit — leaving `main`
+briefly describing a feature whose source (`formats.ts`, `scripture-whole.ts`,
+`F-161.md`) was still untracked, with the PRD index pointing at a file that did
+not exist. The follow-up commit carries the implementation and repairs that.
+Three sessions on one worktree is how this happens; staging by explicit file
+list is how it stops.
+
 ---
 
 ## One audio element, site-wide (SA-115, F-160)

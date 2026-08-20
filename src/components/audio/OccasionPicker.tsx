@@ -6,10 +6,12 @@ import {
   ACTIVITIES,
   BUDGETS,
   buildOccasionQueue,
+  longFormFor,
   type Activity,
   type Budget,
 } from '@/lib/audio/occasion'
 import { formatRuntime, queueDuration } from '@/lib/audio/queue-builder'
+import { buildBookQueue } from '@/lib/audio/scripture-whole'
 import { useAudioStore, type QueueItem } from '@/stores/audioStore'
 
 const ACTIVITY_LABEL: Record<Activity, string> = {
@@ -36,10 +38,13 @@ const BUDGET_LABEL: Record<Budget, string> = {
  * then play. No questionnaire.
  *
  * When a choice returns nothing it says so plainly rather than quietly
- * substituting something else. "An hour or more" currently returns nothing at
- * all, and that is the honest state of the catalogue: nothing runs past 28
- * minutes. Hiding that would make the picker feel broken instead of making the
- * gap visible.
+ * substituting something else — a gap made visible is a gap that gets closed.
+ *
+ * "An hour or more" was the gap, and it is now answered honestly rather than
+ * cosmetically: `bible-365` read in canonical order is long-form already, so
+ * the budget offers whole books rather than a shuffle of eleven-minute days.
+ * The remaining empty state is real and stays — the short end still has
+ * nothing, because the Office has not been recorded.
  */
 export default function OccasionPicker({
   pool,
@@ -57,6 +62,15 @@ export default function OccasionPicker({
     if (minutes === null || activity === null) return []
     return buildOccasionQueue({ minutes, activity }, new Date(), pool)
   }, [minutes, activity, pool])
+
+  /**
+   * Whole books, for the budget the devotional pool cannot answer. Empty for
+   * every other occasion, so nothing below changes shape for them.
+   */
+  const books = useMemo(() => {
+    if (minutes === null || activity === null) return []
+    return longFormFor({ minutes, activity })
+  }, [minutes, activity])
 
   const ready = minutes !== null && activity !== null
 
@@ -123,10 +137,39 @@ export default function OccasionPicker({
         </button>
       )}
 
-      {ready && queue.length === 0 && (
+      {ready && books.length > 0 && (
+        <div className="op-books">
+          <h3 className="op-sub">Or a book, end to end</h3>
+          <ul className="op-book-list">
+            {books.map((run) => (
+              <li key={`${run.book}-${run.days[0]}`}>
+                <button
+                  type="button"
+                  className="op-book"
+                  onClick={() => {
+                    const items = buildBookQueue(run)
+                    if (items.length === 0) return
+                    start({ items, source: 'series', label: run.name })
+                    // Synchronous inside the tap, or iOS drops the grant.
+                    const audio = getAudioElement()
+                    if (audio) void audio.play().catch(() => {})
+                  }}
+                >
+                  <span className="op-book-name">{run.name}</span>
+                  <span className="op-book-time oldstyle-nums">
+                    {formatRuntime(run.duration)}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {ready && queue.length === 0 && books.length === 0 && (
         <p className="op-none">
-          Nothing that length yet. The catalogue tops out at 28 minutes — the
-          longer formats are still to be made.
+          Nothing that length yet. The readings top out at 28 minutes — the
+          shorter and longer formats are still to be made.
         </p>
       )}
 
@@ -226,6 +269,49 @@ export default function OccasionPicker({
           font-size: 0.9rem;
           color: var(--color-text-muted, var(--color-text-secondary));
           max-width: 32rem;
+        }
+        .op-books {
+          margin-top: 1.1rem;
+        }
+        .op-book-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          /* Long enough to scroll, short enough not to bury the play button
+             under three dozen books in the sidebar. */
+          max-height: 15rem;
+          overflow-y: auto;
+        }
+        .op-book {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.75rem;
+          width: 100%;
+          min-height: 44px;
+          padding: 0.5rem 0.15rem;
+          background: transparent;
+          border: 0;
+          border-bottom: 1px solid var(--color-border);
+          color: var(--color-text-primary, var(--color-fg));
+          text-align: left;
+          cursor: pointer;
+        }
+        .op-book:focus-visible {
+          outline: 2px solid var(--color-gold);
+          outline-offset: 2px;
+        }
+        .op-book-name {
+          font-family: var(--font-family-serif, Georgia, serif);
+          font-size: 1rem;
+        }
+        .op-book-time {
+          font-size: 0.62rem;
+          letter-spacing: 0.11em;
+          text-transform: uppercase;
+          color: var(--color-text-muted, var(--color-text-secondary));
+          font-variant-numeric: oldstyle-nums;
+          white-space: nowrap;
         }
       `}</style>
     </section>

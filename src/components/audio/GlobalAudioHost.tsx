@@ -61,6 +61,12 @@ export default function GlobalAudioHost() {
     const audio = audioRef.current
     if (!audio || !item) return
     if (lastSrc.current === item.src) return
+    // Already loaded — the reader set this src itself and is mid-playback.
+    // Reloading here would restart the reading under the listener.
+    if (audio.getAttribute('src') === item.src) {
+      lastSrc.current = item.src
+      return
+    }
     const wasPlaying = lastSrc.current !== null && !audio.paused
     lastSrc.current = item.src
     audio.src = item.src
@@ -81,6 +87,26 @@ export default function GlobalAudioHost() {
     if (wasPlaying) void audio.play().catch(() => {})
   }, [item])
 
+  /**
+   * Seconds of real playback not yet written to the account.
+   *
+   * Both push sites used to send a hard-coded `listenedDelta: 0`, so anything
+   * played outside the reader panel — the drawer queue, the occasion picker,
+   * /today, the Edition — accumulated no listening total at all. The clamp
+   * matches `NarrationPlayer` exactly, on purpose: two accumulators answering
+   * "was that listening?" from different arithmetic would eventually disagree,
+   * and the account would hold a number neither of them could explain.
+   */
+  const listenedSince = useRef(0)
+  const lastTick = useRef<number | null>(null)
+  /**
+   * Last position seen, kept so a flush never needs the element.
+   *
+   * `pagehide` can fire after React has detached the ref, which is precisely
+   * the moment the position matters most.
+   */
+  const lastKnown = useRef({ slug: '', seconds: 0, duration: 0 })
+
   // Transport state, position, and auto-advance.
   useEffect(() => {
     const audio = audioRef.current
@@ -95,10 +121,12 @@ export default function GlobalAudioHost() {
           slug: finished.slug,
           seconds: 0,
           duration: finished.duration,
-          listenedDelta: 0,
+          listenedDelta: listenedSince.current,
           ended: true,
           flush: true,
         })
+        listenedSince.current = 0
+        lastTick.current = null
       }
       // Auto-advance everywhere (SA-096). A queue that stops between items is
       // not a queue; the founder's ruling is that finishing a series in one
@@ -108,12 +136,34 @@ export default function GlobalAudioHost() {
     const onTimeUpdate = () => {
       const playing = currentItem(useAudioStore.getState())
       if (!playing || audio.paused) return
-      pushPosition({
-        slug: playing.slug,
-        seconds: audio.currentTime,
-        duration: audio.duration || playing.duration,
-        listenedDelta: 0,
-      })
+      const seconds = audio.currentTime
+      const duration = audio.duration || playing.duration
+      lastKnown.current = { slug: playing.slug, seconds, duration }
+
+      // Accumulate REAL elapsed listening between ticks, clamped so a seek or
+      // a suspended tab cannot be counted as time spent. `timeupdate` fires
+      // roughly 4x/second, so a gap larger than a couple of seconds means the
+      // listener jumped or the tab slept — neither is listening.
+      const previous = lastTick.current
+      if (previous !== null) {
+        const delta = seconds - previous
+        if (delta > 0 && delta < 2) listenedSince.current += delta
+      }
+      lastTick.current = seconds
+
+      // Only clear the accumulator when the account actually took it. A
+      // throttled call writes localStorage and returns false, and resetting on
+      // that would discard five sixths of every listening total.
+      if (
+        pushPosition({
+          slug: playing.slug,
+          seconds,
+          duration,
+          listenedDelta: listenedSince.current,
+        })
+      ) {
+        listenedSince.current = 0
+      }
     }
 
     audio.addEventListener('play', onPlay)
@@ -127,6 +177,48 @@ export default function GlobalAudioHost() {
       audio.removeEventListener('timeupdate', onTimeUpdate)
     }
   }, [next, setPlaying])
+
+  /**
+   * Save on the way out.
+   *
+   * `pagehide` covers tab close, navigation away and the iOS back-forward
+   * cache; `visibilitychange` covers a phone being locked or the app being
+   * backgrounded, which on mobile is the far more common way listening ends.
+   * Both flush through `sendBeacon`, because a fetch is cancelled with the page.
+   *
+   * `NarrationPlayer` has had this since it owned the element. When SA-115
+   * hoisted playback to this host, the reader panel kept the handler and the
+   * host did not — so everything played from the drawer, the picker, /today or
+   * the Edition could lose up to 30 seconds of position on the way out. The
+   * bug did not survive the refactor by being missed; it survived by moving.
+   */
+  useEffect(() => {
+    const save = () => {
+      const known = lastKnown.current
+      // Nothing has played yet. The element is mounted on every route whether
+      // or not anyone presses play, and this fires on every navigation — so
+      // without this guard, merely LOADING the site would write a row at
+      // position 0 and count an open as a listen.
+      if (!known.slug) return
+      pushPosition({
+        slug: known.slug,
+        seconds: known.seconds,
+        duration: known.duration,
+        listenedDelta: listenedSince.current,
+        flush: true,
+      })
+      listenedSince.current = 0
+    }
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') save()
+    }
+    window.addEventListener('pagehide', save)
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => {
+      window.removeEventListener('pagehide', save)
+      document.removeEventListener('visibilitychange', onVisibility)
+    }
+  }, [])
 
   // Lock screen and hardware keys. This is what a media element buys that
   // speechSynthesis never could.

@@ -140,6 +140,11 @@ export function __resetThrottle(): void {
 /**
  * Record progress. Always writes locally; writes to the account at most once
  * per 30s unless `flush` is set.
+ *
+ * Returns whether the account write actually happened. Callers accumulate
+ * `listenedDelta` between calls, and a throttled call does NOT consume it — so
+ * resetting the accumulator unconditionally silently discards five sixths of
+ * every listening total. The caller needs to know, so it is reported.
  */
 export function pushPosition(params: {
   slug: string
@@ -149,12 +154,12 @@ export function pushPosition(params: {
   listenedDelta: number
   ended?: boolean
   flush?: boolean
-}): void {
+}): boolean {
   writeLocalPosition(params.slug, params.seconds)
 
   const now = Date.now()
   const since = now - (lastPushAt.get(params.slug) ?? 0)
-  if (!params.flush && since < THROTTLE_MS) return
+  if (!params.flush && since < THROTTLE_MS) return false
   lastPushAt.set(params.slug, now)
 
   const payload = JSON.stringify({
@@ -177,7 +182,7 @@ export function pushPosition(params: {
         '/api/listening-progress',
         new Blob([payload], { type: 'application/json' }),
       )
-      return
+      return true
     } catch {
       // fall through to fetch
     }
@@ -192,4 +197,5 @@ export function pushPosition(params: {
     // The local cache already holds it, so this device still resumes. A failed
     // sync is not worth interrupting a reading to report.
   })
+  return true
 }

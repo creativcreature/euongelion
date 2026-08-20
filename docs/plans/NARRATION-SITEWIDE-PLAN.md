@@ -1,6 +1,15 @@
 # Narration, site-wide — implementation plan
 
-**Status:** proposal. Founder said explicitly: do not start until asked.
+> ## SUPERSEDED 2026-08-19 (SA-116). Do not execute this document.
+>
+> Its load-bearing decision — one element, one store — shipped as **SA-115**,
+> and the surfaces around it as SA-107 through SA-110. The "do not start until
+> asked" line below is spent: it was asked, and it was built.
+>
+> Current measured state: **`docs/plans/AUDIO-STATE-2026-08-19.md`**.
+> Kept below as the historical argument, not as a work list.
+
+**Status:** superseded (see above). Was: proposal, do not start until asked.
 **Context:** F-086 / SA-035. The reader-page player and the reading rule are
 shipped; this is what it takes to make narration a property of the site rather
 than of one route.

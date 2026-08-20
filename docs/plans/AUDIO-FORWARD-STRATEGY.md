@@ -1,7 +1,36 @@
 # Audio-forward — product strategy
 
-**Status:** proposal, written 2026-08-19, revised the same day against a
-measurement pass. Nothing here is started.
+> ## SUPERSEDED 2026-08-19 (SA-116). Do not execute this document.
+>
+> **Eight of its nine stages shipped the same day it was written**, under SA-098
+> and SA-104 through SA-115. The "Nothing here is started" line below was true
+> for a few hours. A later session handed this plan to the executing-plans skill
+> and would have rebuilt shipped work had the review step not caught it.
+>
+> | Stage                            | State                                           |
+> | -------------------------------- | ----------------------------------------------- |
+> | 1 · R2 + continuity bugs         | Shipped — SA-098; last bug closed by SA-116     |
+> | 2 · Lift the player above routes | Shipped — SA-115                                |
+> | 3 · Global bar                   | Shipped — SA-110                                |
+> | 4 · Queues, now playing, advance | Shipped — SA-107, auto-advance SA-096           |
+> | 5 · Listening in the library     | Shipped — SA-096, `ListeningSection`            |
+> | 6 · The Edition voiced           | Shipped — SA-098                                |
+> | 7 · Occasion picker              | Shipped — SA-101/SA-098; long-form added SA-116 |
+> | 8 · The Office and Night         | **NOT built.** New writing and new recording.   |
+> | 9 · Downloads                    | Shipped — SA-098                                |
+>
+> **What is genuinely still open** is Stage 8 and the founder decisions behind
+> it — which audio-native formats get written, where the founder's voice goes,
+> and whether narration is disclosed as synthesised. Those are content and trust
+> calls, not engineering ones. `src/lib/audio/formats.ts` declares the formats
+> and reports zero delivered pieces for each until they are recorded.
+>
+> The current measured state lives in **`docs/plans/AUDIO-STATE-2026-08-19.md`**.
+> Read that before planning any further audio work. Everything below is kept as
+> the historical argument, not as a work list.
+
+**Status:** superseded (see above). Written 2026-08-19, revised the same day
+against a measurement pass. Nothing here is started.
 **Founder's words:** _"A persistent audio player wherever you are on the site.
 A queue so that you can just listen. The audio is becoming just as important."_
 
