@@ -165,4 +165,5 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-160 | Reading surfaces  | One audio element site-wide; reader adopts the host       | 0/10     | shipped | [F-160.md](./F-160.md) |
 | F-161 | Reading surfaces  | Listening formats; books end to end; exit-save restored   | 0/10     | shipped | [F-161.md](./F-161.md) |
 | F-162 | Reading surfaces  | A reading registers itself; pause reachable anywhere      | 0/10     | shipped | [F-162.md](./F-162.md) |
-| F-164 | Reading surfaces  | Sidebar is the player; playing queues the series          | 0/10     | wip     | [F-164.md](./F-164.md) |
+| F-164 | Reading surfaces  | Sidebar is the player; playing queues the series          | 0/10     | shipped | [F-164.md](./F-164.md) |
+| F-165 | Reading surfaces  | The reading's panel is one row; sleep timer really stops  | 0/10     | shipped | [F-165.md](./F-165.md) |

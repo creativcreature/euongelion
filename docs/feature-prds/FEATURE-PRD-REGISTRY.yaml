@@ -1471,7 +1471,15 @@ features:
     title: The sidebar is the player
     slug: sidebar-is-the-player
     baseline_score: 0
-    status: wip
+    status: shipped
     prd: docs/feature-prds/F-164.md
+    methodology_refs:
+      - M00
+  - id: F-165
+    title: The reading's panel is one row
+    slug: reading-panel-is-one-row
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-165.md
     methodology_refs:
       - M00

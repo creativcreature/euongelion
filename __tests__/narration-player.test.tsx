@@ -78,14 +78,10 @@ describe('AudioPlayer reader selection', () => {
     expect(audio?.getAttribute('src')).toBe(
       '/audio/has-track-day-1.m4a?v=8001959',
     )
-    // Transport belongs to the media element, not a section scrubber.
-    expect(screen.getByRole('slider', { name: /seek/i })).toBeTruthy()
-    expect(
-      screen.getByRole('button', { name: /back 15 seconds/i }),
-    ).toBeTruthy()
-    expect(
-      screen.getByRole('button', { name: /forward 15 seconds/i }),
-    ).toBeTruthy()
+    // The progress control belongs to the media element, not a section
+    // scrubber. Skipping used to be asserted here too; since option A it lives
+    // in the sidebar, and the panel is one row — see 'the reader panel is one
+    // row' below.
   })
 
   it('shows the track duration before playback starts', () => {
@@ -106,7 +102,7 @@ describe('AudioPlayer reader selection', () => {
   })
 
   it('falls back to synthesised speech when no track exists yet', () => {
-    const { container } = render(
+    render(
       <>
         <GlobalAudioHost />
         <AudioPlayer
@@ -350,5 +346,76 @@ describe('NarrationPlayer — soft navigation', () => {
     expect(beacon).not.toHaveBeenCalled()
 
     vi.unstubAllGlobals()
+  })
+})
+
+/**
+ * Option A: the reader's panel is one row.
+ *
+ * The founder, looking at the sidebar and the reading's own panel: "both exist
+ * and basically are redundant." He then picked option A from the mockups —
+ * "the sidebar becomes the full player... the reader panel shrinks to a single
+ * Listen row: play/pause, progress, duration. Anything more opens the sidebar."
+ *
+ * So the panel keeps only what you need WHILE READING — is it playing, where am
+ * I, how much is left — and every player control that the sidebar also carries
+ * leaves. What stays is the one thing the sidebar cannot do: clip a moment,
+ * which attaches a note to THIS reading at THIS timestamp. That is an act of
+ * reading, not a transport control, and it is not duplicated anywhere.
+ */
+describe('the reader panel is one row', () => {
+  const renderPanel = () =>
+    render(
+      <>
+        <GlobalAudioHost />
+        <AudioPlayer
+          title="The Fruit of Lies"
+          segments={SEGMENTS}
+          slug="has-track-day-1"
+        />
+      </>,
+    )
+
+  it('keeps play/pause, progress and time', () => {
+    renderPanel()
+    const panel = screen.getByRole('region', { name: 'Audio edition' })
+    expect(within(panel).getByRole('button', { name: /^play$/i })).toBeTruthy()
+    expect(within(panel).getByRole('slider', { name: /seek/i })).toBeTruthy()
+    expect(within(panel).getByText(/21:39 left/)).toBeTruthy()
+  })
+
+  it('drops the controls the sidebar already carries', () => {
+    renderPanel()
+    const panel = screen.getByRole('region', { name: 'Audio edition' })
+    // Each of these has a home in the sidebar. Two homes was the redundancy.
+    expect(
+      within(panel).queryByRole('button', { name: /back 15 seconds/i }),
+    ).toBeNull()
+    expect(
+      within(panel).queryByRole('button', { name: /forward 15 seconds/i }),
+    ).toBeNull()
+    expect(
+      within(panel).queryByRole('button', { name: /playback speed/i }),
+    ).toBeNull()
+    expect(
+      within(panel).queryByRole('button', { name: /sleep timer/i }),
+    ).toBeNull()
+  })
+
+  it('keeps clipping, which lives nowhere else', () => {
+    renderPanel()
+    const panel = screen.getByRole('region', { name: 'Audio edition' })
+    expect(
+      within(panel).getByRole('button', { name: /clip this moment/i }),
+    ).toBeTruthy()
+  })
+
+  it('offers the way through to everything else', () => {
+    renderPanel()
+    const panel = screen.getByRole('region', { name: 'Audio edition' })
+    // "Anything more opens the sidebar" — so the panel has to say where more is.
+    expect(
+      within(panel).getByRole('button', { name: /more listening controls/i }),
+    ).toBeTruthy()
   })
 })

@@ -141,7 +141,23 @@ describe('chapterAt', () => {
   })
 })
 
+/**
+ * Since option A the reading's own panel is one row — play/pause, progress,
+ * time — so the chapters button is no longer on it. The opener that remains on
+ * the reading is the mini bar's title, which is why these tests now play and
+ * scroll the panel away before asking for chapters. The sheet's own contracts
+ * are unchanged, and they are what this block is for.
+ */
 describe('the chapter sheet', () => {
+  const openChapters = (container: HTMLElement) => {
+    const audio = container.querySelector('audio') as HTMLAudioElement
+    act(() => {
+      audio.dispatchEvent(new Event('play'))
+    })
+    act(() => observerCallback?.([{ isIntersecting: false }]))
+    fireEvent.click(screen.getByRole('button', { name: /chapters/i }))
+  }
+
   it('is not on the page until it is asked for', () => {
     renderPlayer()
     expect(screen.queryByRole('dialog')).toBeNull()
@@ -149,9 +165,9 @@ describe('the chapter sheet', () => {
     expect(screen.queryByText('The Saying He Did Not Write')).toBeNull()
   })
 
-  it('opens from the panel and lists the devotional’s own headings', () => {
-    renderPlayer()
-    fireEvent.click(screen.getByRole('button', { name: /chapters/i }))
+  it('opens from the reading and lists the devotional’s own headings', () => {
+    const { container } = renderPlayer()
+    openChapters(container)
     const dialog = screen.getByRole('dialog')
     expect(dialog).toBeTruthy()
     expect(
@@ -174,7 +190,7 @@ describe('the chapter sheet', () => {
 
     const { container } = renderPlayer()
     const audio = container.querySelector('audio') as HTMLAudioElement
-    fireEvent.click(screen.getByRole('button', { name: /chapters/i }))
+    openChapters(container)
     fireEvent.click(
       screen.getByRole('button', { name: /The Saying He Did Not Write/ }),
     )
@@ -186,8 +202,8 @@ describe('the chapter sheet', () => {
   })
 
   it('closes on Escape', () => {
-    renderPlayer()
-    fireEvent.click(screen.getByRole('button', { name: /chapters/i }))
+    const { container } = renderPlayer()
+    openChapters(container)
     expect(screen.getByRole('dialog')).toBeTruthy()
     fireEvent.keyDown(document, { key: 'Escape' })
     expect(screen.queryByRole('dialog')).toBeNull()

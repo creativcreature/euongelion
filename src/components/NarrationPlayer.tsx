@@ -21,24 +21,11 @@ import { useAudioStore } from '@/stores/audioStore'
 import { queueForReading } from '@/lib/audio/queue-builder'
 import NarrationChapters from '@/components/NarrationChapters'
 import NarrationMiniBar from '@/components/NarrationMiniBar'
-import SpeedSheet, {
-  type SkipSeconds,
-  type Speed,
-} from '@/components/audio/SpeedSheet'
-import SleepTimer, {
-  type SleepMode,
-  type SleepSelection,
-} from '@/components/audio/SleepTimer'
+import { type SkipSeconds } from '@/components/audio/SpeedSheet'
 import {
-  ChapterNextIcon,
-  ChapterPrevIcon,
-  ChaptersIcon,
   ClipIcon,
   PauseIcon,
   PlayIcon,
-  SkipBackIcon,
-  SkipForwardIcon,
-  SleepIcon,
 } from '@/components/audio/TransportIcons'
 import {
   fetchServerPosition,
@@ -60,7 +47,6 @@ const RESUME_TAIL_S = 30
  */
 const CHAPTER_RESTART_WINDOW_S = 3
 /** Sleep fade length. Long enough to read as a fade, short enough not to drift. */
-const FADE_MS = 5000
 /** Device preferences never change underneath us; only this component writes them. */
 const NOOP_SUBSCRIBE = () => () => {}
 
@@ -131,8 +117,6 @@ export default function NarrationPlayer({
    */
   const [hasStarted, setHasStarted] = useState(false)
   const [chaptersOpen, setChaptersOpen] = useState(false)
-  const [speedOpen, setSpeedOpen] = useState(false)
-  const [sleepOpen, setSleepOpen] = useState(false)
   const [panelVisible, setPanelVisible] = useState(true)
   const [current, setCurrent] = useState(0)
   const [duration, setDuration] = useState(track.duration)
@@ -163,13 +147,12 @@ export default function NarrationPlayer({
     () => (readNumber(SKIP_KEY, 15) === 30 ? 30 : 15),
     () => 15 as const,
   )
-  const [chosenSpeed, setChosenSpeed] = useState<number | null>(null)
-  const [chosenSkip, setChosenSkip] = useState<SkipSeconds | null>(null)
-  const speed = chosenSpeed ?? storedSpeed
-  const skipSeconds: SkipSeconds = chosenSkip ?? (storedSkip as SkipSeconds)
-  const [sleepMode, setSleepMode] = useState<SleepMode | null>(null)
-  const [sleepEndsAt, setSleepEndsAt] = useState<number | null>(null)
-  const [sleepRemaining, setSleepRemaining] = useState<number | null>(null)
+  // Read only, since option A: the controls that SET these live in the
+  // sidebar now, which writes the same two keys. The panel still applies the
+  // remembered rate to the element and still reports the skip length to the
+  // media-session handlers and the mini bar.
+  const speed = storedSpeed
+  const skipSeconds: SkipSeconds = storedSkip as SkipSeconds
   const [error, setError] = useState<string | null>(null)
   const [resumedFrom, setResumedFrom] = useState<number | null>(null)
   /**
@@ -220,27 +203,6 @@ export default function NarrationPlayer({
     },
     [slug, track.duration],
   )
-
-  /** Apply a rate to the element AND remember it. */
-  const applySpeed = useCallback((next: number) => {
-    const audio = audioRef.current
-    if (audio) {
-      audio.playbackRate = next
-      // Without this a 2× reading is chipmunked and unusable — the whole point
-      // of the speed control. Both spellings are set: the unprefixed property
-      // is standard now, the prefixed one is still what older WebKit reads.
-      audio.preservesPitch = true
-      ;(
-        audio as HTMLAudioElement & { webkitPreservesPitch?: boolean }
-      ).webkitPreservesPitch = true
-    }
-    setChosenSpeed(next)
-    try {
-      localStorage.setItem(SPEED_KEY, String(next))
-    } catch {
-      // device preference; losing it costs nothing
-    }
-  }, [])
 
   /**
    * Seconds of real playback since the last server write, so the account can
@@ -457,86 +419,6 @@ export default function NarrationPlayer({
   )
 
   /**
-   * Fade out, then pause.
-   *
-   * A hard stop mid-sentence is the opposite of what a sleep timer on a
-   * devotional is for. Volume is restored after pausing so the next play does
-   * not start silent.
-   */
-  const fadeOutAndPause = useCallback(() => {
-    const audio = audioRef.current
-    if (!audio) return
-    const reduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (reduced || typeof requestAnimationFrame === 'undefined') {
-      audio.pause()
-      return
-    }
-    const startVolume = audio.volume
-    const startedAt = performance.now()
-    const tick = () => {
-      const ratio = Math.min((performance.now() - startedAt) / FADE_MS, 1)
-      audio.volume = startVolume * (1 - ratio)
-      if (ratio < 1) {
-        requestAnimationFrame(tick)
-        return
-      }
-      audio.pause()
-      audio.volume = startVolume
-    }
-    requestAnimationFrame(tick)
-  }, [])
-
-  const selectSleep = useCallback((selection: SleepSelection) => {
-    if (selection === 'off') {
-      setSleepMode(null)
-      setSleepEndsAt(null)
-      setSleepRemaining(null)
-      return
-    }
-    setSleepMode(selection)
-    if (selection === 'end-of-chapter') {
-      setSleepEndsAt(null)
-      setSleepRemaining(null)
-      return
-    }
-    setSleepEndsAt(Date.now() + selection * 60_000)
-  }, [])
-
-  // Countdown for the fixed-duration sleep modes.
-  useEffect(() => {
-    if (sleepEndsAt === null) return
-    const tick = () => {
-      const left = sleepEndsAt - Date.now()
-      setSleepRemaining(Math.max(0, left))
-      if (left <= 0) {
-        fadeOutAndPause()
-        setSleepMode(null)
-        setSleepEndsAt(null)
-        setSleepRemaining(null)
-      }
-    }
-    tick()
-    const id = window.setInterval(tick, 1000)
-    return () => window.clearInterval(id)
-  }, [sleepEndsAt, fadeOutAndPause])
-
-  // End-of-chapter sleep: fires as the current chapter's boundary is crossed.
-  const sleepChapterEnd = useRef<number | null>(null)
-  useEffect(() => {
-    if (sleepMode !== 'end-of-chapter') {
-      sleepChapterEnd.current = null
-      return
-    }
-    // Latch the boundary when the mode is set, so that seeking afterwards does
-    // not silently move the goalposts.
-    if (sleepChapterEnd.current === null && bounds) {
-      sleepChapterEnd.current = bounds.end
-    }
-  }, [sleepMode, bounds])
-
-  /**
    * Advance the clock, and fire the end-of-chapter sleep as the boundary is
    * crossed.
    *
@@ -563,15 +445,8 @@ export default function NarrationPlayer({
       lastTick.current = seconds
 
       setCurrent(seconds)
-      const target = sleepChapterEnd.current
-      if (sleepMode !== 'end-of-chapter' || target === null) return
-      if (seconds >= target - 0.25) {
-        fadeOutAndPause()
-        setSleepMode(null)
-        sleepChapterEnd.current = null
-      }
     },
-    [sleepMode, fadeOutAndPause, track.duration],
+    [track.duration],
   )
 
   /**
@@ -833,12 +708,6 @@ export default function NarrationPlayer({
 
   const progressPct = duration > 0 ? (current / duration) * 100 : 0
   const hasChapters = Boolean(track.chapters?.length)
-  const sleepLabel =
-    sleepMode === 'end-of-chapter'
-      ? 'chapter'
-      : sleepRemaining !== null
-        ? `${Math.max(1, Math.ceil(sleepRemaining / 60_000))}m`
-        : null
 
   /**
    * One line, one element.
@@ -930,45 +799,18 @@ export default function NarrationPlayer({
             )}
           </label>
 
-          {/* Three cells: speed alone left, transport centred, utilities right.
-            The centre is `auto` and the flanks are `1fr`, so at 375px only the
-            outer cells compress and the transport never wraps — which is what
-            broke the previous row (SA-058 predecessor: labels split mid-word
-            and the buttons overlapped). */}
-          <div className="narration-row">
-            <div className="narration-cell narration-cell-left">
-              <button
-                type="button"
-                className="narration-util narration-util-speed"
-                onClick={() => setSpeedOpen(true)}
-                aria-haspopup="dialog"
-                aria-label={`Playback speed, currently ${speed}×`}
-              >
-                {speed}&times;
-              </button>
-            </div>
+          {/* ONE ROW. Founder, option A: "the reader panel shrinks to a single
+            Listen row: play/pause, progress, duration. Anything more opens the
+            sidebar." He reached it by noticing that this panel and the sidebar
+            "both exist and basically are redundant" — and they did: speed,
+            ±15s, chapters and the sleep timer were all in both places.
 
+            What stays is what you need WHILE READING, plus the one control the
+            sidebar cannot offer: clipping a moment attaches a note to THIS
+            reading at THIS timestamp. That is an act of reading, not a player
+            control, so it is not the redundancy he objected to. */}
+          <div className="narration-row narration-row-slim">
             <div className="narration-transport">
-              {hasChapters && (
-                <button
-                  type="button"
-                  className="narration-step narration-step-chapter"
-                  onClick={() => stepChapter(-1)}
-                  aria-label="Previous chapter"
-                >
-                  <ChapterPrevIcon size={17} />
-                </button>
-              )}
-
-              <button
-                type="button"
-                className="narration-step"
-                onClick={() => skip(-skipSeconds)}
-                aria-label={`Back ${skipSeconds} seconds`}
-              >
-                <SkipBackIcon size={21} seconds={skipSeconds} />
-              </button>
-
               <button
                 type="button"
                 className="narration-play"
@@ -984,26 +826,6 @@ export default function NarrationPlayer({
               >
                 {playing ? <PauseIcon size={22} /> : <PlayIcon size={22} />}
               </button>
-
-              <button
-                type="button"
-                className="narration-step"
-                onClick={() => skip(skipSeconds)}
-                aria-label={`Forward ${skipSeconds} seconds`}
-              >
-                <SkipForwardIcon size={21} seconds={skipSeconds} />
-              </button>
-
-              {hasChapters && (
-                <button
-                  type="button"
-                  className="narration-step narration-step-chapter"
-                  onClick={() => stepChapter(1)}
-                  aria-label="Next chapter"
-                >
-                  <ChapterNextIcon size={17} />
-                </button>
-              )}
             </div>
 
             <div className="narration-cell narration-cell-right">
@@ -1018,33 +840,24 @@ export default function NarrationPlayer({
 
               <button
                 type="button"
-                className={`narration-util${sleepLabel ? ' is-armed' : ''}`}
-                onClick={() => setSleepOpen(true)}
+                className="narration-util"
+                onClick={() => useAudioStore.getState().setPanelOpen(true)}
                 aria-haspopup="dialog"
-                aria-label={
-                  sleepLabel
-                    ? `Sleep timer, ${sleepMode === 'end-of-chapter' ? 'end of chapter' : `${sleepLabel} remaining`}`
-                    : 'Sleep timer'
-                }
+                aria-label="More listening controls"
+                title="Speed, skip, chapters, sleep timer and what is up next"
               >
-                {sleepLabel ? (
-                  <span className="narration-util-text">{sleepLabel}</span>
-                ) : (
-                  <SleepIcon size={17} />
-                )}
-              </button>
-
-              {hasChapters && (
-                <button
-                  type="button"
-                  className="narration-util"
-                  onClick={() => setChaptersOpen(true)}
-                  aria-haspopup="dialog"
-                  aria-label={`Chapters — ${track.chapters!.length} sections`}
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
                 >
-                  <ChaptersIcon size={18} />
-                </button>
-              )}
+                  <circle cx="5" cy="12" r="1.8" />
+                  <circle cx="12" cy="12" r="1.8" />
+                  <circle cx="19" cy="12" r="1.8" />
+                </svg>
+              </button>
             </div>
           </div>
 
@@ -1141,6 +954,19 @@ export default function NarrationPlayer({
             grid-template-columns: 1fr auto 1fr;
             align-items: center;
             margin-top: 0.35rem;
+          }
+
+          /* Option A's row has two children, not three, and the grid still
+             has to hold the play control dead centre — the placement the
+             founder chose in SA-058. Placing them explicitly keeps the empty
+             first column doing its job as a counterweight instead of letting
+             play slide left into it. */
+          .narration-row-slim .narration-transport {
+            grid-column: 2;
+            justify-self: center;
+          }
+          .narration-row-slim .narration-cell-right {
+            grid-column: 3;
           }
 
           .narration-cell {
@@ -1404,32 +1230,6 @@ export default function NarrationPlayer({
           currentTime={current}
           onSeek={seekToChapter}
           onClose={() => setChaptersOpen(false)}
-        />
-      )}
-
-      {speedOpen && (
-        <SpeedSheet
-          speed={speed}
-          skipSeconds={skipSeconds}
-          onSelectSpeed={(next: Speed) => applySpeed(next)}
-          onSelectSkip={(next: SkipSeconds) => {
-            setChosenSkip(next)
-            try {
-              localStorage.setItem(SKIP_KEY, String(next))
-            } catch {
-              // device preference; losing it costs nothing
-            }
-          }}
-          onClose={() => setSpeedOpen(false)}
-        />
-      )}
-
-      {sleepOpen && (
-        <SleepTimer
-          active={sleepMode}
-          remainingMs={sleepRemaining}
-          onSelect={selectSleep}
-          onClose={() => setSleepOpen(false)}
         />
       )}
     </>

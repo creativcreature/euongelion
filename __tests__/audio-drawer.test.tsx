@@ -29,6 +29,8 @@ const item = (slug: string, title: string): QueueItem => ({
   context: 'He Cannot Deny Himself',
 })
 
+let audioEl: HTMLAudioElement
+
 beforeEach(() => {
   pathname = '/series'
   localStorage.clear()
@@ -41,6 +43,7 @@ beforeEach(() => {
   // jsdom implements neither, and both are called from tap handlers here.
   audio.play = vi.fn(() => Promise.resolve())
   audio.pause = vi.fn()
+  audioEl = audio
   registerAudioElement(audio)
 })
 afterEach(cleanup)
@@ -382,5 +385,137 @@ describe('the sidebar carries the whole player', () => {
     expect(
       within(panel).getByRole('button', { name: /previous/i }),
     ).toBeTruthy()
+  })
+})
+
+/**
+ * The sidebar's sleep timer has to STOP the reading.
+ *
+ * SA-119 gave the sidebar a sleep chip and a sheet that opens, and I called
+ * that done. It was not: the sheet recorded the choice into local state and
+ * nothing ever read it, so a reader who set fifteen minutes and put the phone
+ * down got the whole reading anyway. A control that answers and does nothing is
+ * worse than no control — the reader stops watching the clock precisely because
+ * they think it is handled.
+ *
+ * This matters more now that option A takes the working timer off the reading's
+ * own panel: after that the sidebar is the ONLY place a sleep timer exists.
+ */
+describe('the sidebar sleep timer stops the reading', () => {
+  const openWithOnePlaying = () => {
+    act(() =>
+      useAudioStore.getState().start({
+        items: [item('day-1', 'The Fruit of Lies')],
+        source: 'single',
+        label: 'The Fruit of Lies',
+      }),
+    )
+    act(() => useAudioStore.getState().setPanelOpen(true))
+    render(<AudioDrawer />)
+  }
+
+  const arm = (name: RegExp) => {
+    act(() => screen.getByRole('button', { name: /sleep timer/i }).click())
+    act(() => screen.getByRole('button', { name }).click())
+  }
+
+  afterEach(() => vi.useRealTimers())
+
+  it('pauses once the chosen minutes have run out', () => {
+    vi.useFakeTimers()
+    openWithOnePlaying()
+    arm(/^5 minutes$/)
+
+    act(() => void vi.advanceTimersByTime(4 * 60_000))
+    expect(audioEl.pause).not.toHaveBeenCalled()
+
+    act(() => void vi.advanceTimersByTime(90_000))
+    expect(audioEl.pause).toHaveBeenCalled()
+  })
+
+  it('shows what it is set to, so the choice is visible after the sheet closes', () => {
+    vi.useFakeTimers()
+    openWithOnePlaying()
+    arm(/^10 minutes$/)
+    expect(
+      screen.getByRole('button', { name: /sleep timer.*10m|10m.*remaining/i }),
+    ).toBeTruthy()
+  })
+
+  it('turning it off leaves the reading alone', () => {
+    vi.useFakeTimers()
+    openWithOnePlaying()
+    arm(/^5 minutes$/)
+    act(() => screen.getByRole('button', { name: /sleep timer/i }).click())
+    act(() => screen.getByRole('button', { name: /^off$|turn off/i }).click())
+    act(() => void vi.advanceTimersByTime(20 * 60_000))
+    expect(audioEl.pause).not.toHaveBeenCalled()
+  })
+})
+
+/**
+ * A speed chosen in the sidebar has to outlive the reading it was chosen in.
+ *
+ * Option A makes the sidebar the only place a speed control exists, and the
+ * reading's own panel re-applies the REMEMBERED rate to the element every time
+ * a track loads. So a sidebar that only set `playbackRate` would be undone by
+ * the next reading: you set 1.5x, tap the next devotional, and it opens at 1x
+ * with nothing to explain why. The preference is one key, written by whichever
+ * surface the reader used.
+ */
+describe('the sidebar remembers the speed', () => {
+  const SPEED_KEY = 'euangelion:narration-speed'
+
+  it('persists the choice, not just the element rate', () => {
+    act(() =>
+      useAudioStore.getState().start({
+        items: [item('day-1', 'The Fruit of Lies')],
+        source: 'single',
+        label: 'The Fruit of Lies',
+      }),
+    )
+    act(() => useAudioStore.getState().setPanelOpen(true))
+    render(<AudioDrawer />)
+
+    act(() => screen.getByRole('button', { name: /speed/i }).click())
+    act(() => screen.getByRole('button', { name: /^1\.5×$|^1\.5x$/i }).click())
+
+    expect(audioEl.playbackRate).toBe(1.5)
+    expect(localStorage.getItem(SPEED_KEY)).toBe('1.5')
+  })
+
+  it('persists the skip length too, which it did not', () => {
+    act(() =>
+      useAudioStore.getState().start({
+        items: [item('day-1', 'The Fruit of Lies')],
+        source: 'single',
+        label: 'The Fruit of Lies',
+      }),
+    )
+    act(() => useAudioStore.getState().setPanelOpen(true))
+    render(<AudioDrawer />)
+
+    act(() => screen.getByRole('button', { name: /speed/i }).click())
+    act(() => screen.getByRole('button', { name: /^30 seconds$/i }).click())
+
+    expect(localStorage.getItem('euangelion:narration-skip')).toBe('30')
+  })
+
+  it('opens showing the remembered speed, not 1×', () => {
+    // Writing the preference is only half of it: a sidebar that always opens
+    // at 1× tells the reader their choice was forgotten, while the audio plays
+    // at the rate they picked. The chip has to agree with the element.
+    localStorage.setItem('euangelion:narration-speed', '1.5')
+    act(() =>
+      useAudioStore.getState().start({
+        items: [item('day-1', 'The Fruit of Lies')],
+        source: 'single',
+        label: 'The Fruit of Lies',
+      }),
+    )
+    act(() => useAudioStore.getState().setPanelOpen(true))
+    render(<AudioDrawer />)
+
+    expect(screen.getByRole('button', { name: /1\.5× speed/i })).toBeTruthy()
   })
 })

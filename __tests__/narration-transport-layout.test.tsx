@@ -13,9 +13,17 @@
  *  - the chapter is a CAPTION, not an uppercase system label;
  *  - one meta line, one element (nested spans made the elapsed/total pair
  *    match twice — ambiguous for a test and for a live region);
- *  - the transport sits in the centre cell so only the flanks compress at
+ *  - the play control sits in the centre cell so only the flanks compress at
  *    375px, which is what stops it wrapping;
  *  - the scrubber is still a real <input type="range">.
+ *
+ * AMENDED BY OPTION A (SA-120). The founder found this panel and the audio
+ * sidebar "basically redundant" and chose to make the sidebar the player: the
+ * panel is now ONE ROW — play/pause, progress, time — plus clipping, which
+ * exists nowhere else. Speed, skip, chapters and the sleep timer moved to the
+ * sidebar, and the tests that pinned them here moved with them, to
+ * audio-drawer.test.tsx. What SA-058 settled and this file still guards is the
+ * type: a caption rather than a system label, and one meta line in one element.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
@@ -26,6 +34,7 @@ import {
   within,
 } from '@testing-library/react'
 import AudioPlayer from '@/components/AudioPlayer'
+import GlobalAudioHost from '@/components/audio/GlobalAudioHost'
 
 vi.mock('@/data/audio-manifest.json', () => ({
   default: {
@@ -64,7 +73,12 @@ beforeEach(() => {
 afterEach(cleanup)
 
 const renderPlayer = () =>
-  render(<AudioPlayer title="Laid Out" segments={[]} slug="laid-out-day-1" />)
+  render(
+    <>
+      <GlobalAudioHost />
+      <AudioPlayer title="Laid Out" segments={[]} slug="laid-out-day-1" />
+    </>,
+  )
 
 const panel = () => screen.getByLabelText('Audio edition')
 
@@ -94,52 +108,31 @@ describe('the chosen transport layout', () => {
     expect(screen.getByText(/10:00 left/)).toBeTruthy()
   })
 
-  it('puts the five transport controls together in the centre cell', () => {
+  it('leaves play alone in the centre cell', () => {
     const { container } = renderPlayer()
     const transport = container.querySelector('.narration-transport')
     expect(transport).not.toBeNull()
     const labels = [...transport!.querySelectorAll('button')].map((b) =>
       b.getAttribute('aria-label'),
     )
-    expect(labels).toEqual([
-      'Previous chapter',
-      'Back 15 seconds',
-      'Play',
-      'Forward 15 seconds',
-      'Next chapter',
-    ])
+    // Was five controls until option A. Skipping and chapter-stepping are the
+    // sidebar's now; what a reader needs from the page is whether it is
+    // playing.
+    expect(labels).toEqual(['Play'])
   })
 
-  it('keeps speed alone on the left and the utilities on the right', () => {
-    // Clip LEADS the right cell rather than splitting the pair: sleep and
-    // chapters were adjacent in the mock the founder approved, and a new
-    // control should not reorder what was signed off.
+  it('keeps only what the sidebar cannot do on the right', () => {
+    // Clipping attaches a note to THIS reading at THIS timestamp — an act of
+    // reading, not a player control, so it stays. Beside it is the way
+    // through: "anything more opens the sidebar".
     const { container } = renderPlayer()
-    const left = container.querySelector('.narration-cell-left')
+    expect(container.querySelector('.narration-cell-left')).toBeNull()
     const right = container.querySelector('.narration-cell-right')
-    expect(
-      [...left!.querySelectorAll('button')].map((b) =>
-        b.getAttribute('aria-label'),
-      ),
-    ).toEqual(['Playback speed, currently 1×'])
     expect(
       [...right!.querySelectorAll('button')].map((b) =>
         b.getAttribute('aria-label'),
       ),
-    ).toEqual(['Clip this moment', 'Sleep timer', 'Chapters — 3 sections'])
-  })
-
-  it('opens the speed sheet, which reaches 2×', () => {
-    renderPlayer()
-    fireEvent.click(screen.getByRole('button', { name: /playback speed/i }))
-    expect(screen.getByRole('dialog')).toBeTruthy()
-    expect(screen.getByRole('button', { name: '2×' })).toBeTruthy()
-  })
-
-  it('opens the sleep timer', () => {
-    renderPlayer()
-    fireEvent.click(screen.getByRole('button', { name: 'Sleep timer' }))
-    expect(screen.getByRole('button', { name: /end of chapter/i })).toBeTruthy()
+    ).toEqual(['Clip this moment', 'More listening controls'])
   })
 
   it('still exposes the scrubber as a real range input', () => {
@@ -151,15 +144,15 @@ describe('the chosen transport layout', () => {
     expect(container.querySelectorAll('.narration-ticks i')).toHaveLength(3)
   })
 
-  it('remembers the chosen speed across mounts', () => {
-    renderPlayer()
-    fireEvent.click(screen.getByRole('button', { name: /playback speed/i }))
-    fireEvent.click(screen.getByRole('button', { name: '2×' }))
-    cleanup()
-
-    renderPlayer()
-    expect(
-      screen.getByRole('button', { name: 'Playback speed, currently 2×' }),
-    ).toBeTruthy()
+  it('still reads the remembered speed, even with no control to set it', () => {
+    // The panel no longer offers the speed control, but it is still what
+    // applies the remembered rate to the element when a reading loads. Were
+    // this to stop reading the preference, a reader who chose 1.5x in the
+    // sidebar would be dropped back to 1x by the next devotional they opened.
+    localStorage.setItem('euangelion:narration-speed', '2')
+    const { container } = renderPlayer()
+    const audio = container.querySelector('audio') as HTMLAudioElement
+    fireEvent(audio, new Event('loadedmetadata'))
+    expect(audio.playbackRate).toBe(2)
   })
 })

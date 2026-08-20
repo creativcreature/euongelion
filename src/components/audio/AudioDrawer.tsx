@@ -58,6 +58,61 @@ import { allListenable } from '@/lib/audio/occasion'
  * audio is playing, and it states the count so "there are four more after this"
  * is legible without opening anything.
  */
+/** Milliseconds of fade before a sleep timer stops the reading. */
+const FADE_MS = 5000
+
+/**
+ * Fade out, then pause.
+ *
+ * A hard stop mid-sentence is the opposite of what a sleep timer on a
+ * devotional is for. This came off the reading's own panel when option A took
+ * the timer out of it — the behaviour is worth keeping, and the sidebar is
+ * where the only sleep timer lives now. Volume is restored after pausing so
+ * the next play does not start silent.
+ */
+function fadeOutAndPause(audio: HTMLAudioElement) {
+  const reduced =
+    typeof window !== 'undefined' &&
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  if (reduced || typeof requestAnimationFrame === 'undefined') {
+    audio.pause()
+    return
+  }
+  const startVolume = audio.volume
+  const startedAt = performance.now()
+  const tick = () => {
+    const ratio = Math.min((performance.now() - startedAt) / FADE_MS, 1)
+    audio.volume = startVolume * (1 - ratio)
+    if (ratio < 1) {
+      requestAnimationFrame(tick)
+      return
+    }
+    audio.pause()
+    audio.volume = startVolume
+  }
+  requestAnimationFrame(tick)
+}
+
+/**
+ * One key each, shared with the reading's own panel — a preference the reader
+ * set in one place must hold in the other.
+ */
+const SPEED_PREF = 'euangelion:narration-speed'
+const SKIP_PREF = 'euangelion:narration-skip'
+
+/** Nothing outside React changes these mid-session, so there is nothing to subscribe to. */
+const NOOP_SUBSCRIBE = () => () => {}
+
+function readStored(key: string, fallback: number): number {
+  try {
+    const raw = window.localStorage.getItem(key)
+    const value = raw === null ? Number.NaN : Number(raw)
+    return Number.isFinite(value) ? value : fallback
+  } catch {
+    return fallback
+  }
+}
+
 export default function AudioDrawer() {
   const pathname = usePathname()
   const queue = useAudioStore((s) => s.queue)
@@ -84,9 +139,34 @@ export default function AudioDrawer() {
   const [speedOpen, setSpeedOpen] = useState(false)
   const [sleepOpen, setSleepOpen] = useState(false)
   const [chaptersOpen, setChaptersOpen] = useState(false)
-  const [speed, setSpeed] = useState(1)
-  const [skipSeconds, setSkipSeconds] = useState<SkipSeconds>(15)
+  /**
+   * Read through to the stored preference, exactly as the reading's own panel
+   * does, rather than starting at 1x and 15s every time the drawer mounts. The
+   * server snapshot is the default, so the first client render matches the
+   * markup React hydrates and the chip does not flicker from 1x to 1.5x.
+   *
+   * A local `chosen` value takes precedence once the reader picks one, so the
+   * control still responds instantly without waiting on a storage round trip.
+   */
+  const storedSpeed = useSyncExternalStore(
+    NOOP_SUBSCRIBE,
+    () => readStored(SPEED_PREF, 1),
+    () => 1,
+  )
+  const storedSkip = useSyncExternalStore(
+    NOOP_SUBSCRIBE,
+    () => (readStored(SKIP_PREF, 15) === 30 ? 30 : 15),
+    () => 15,
+  )
+  const [chosenSpeed, setChosenSpeed] = useState<number | null>(null)
+  const [chosenSkip, setChosenSkip] = useState<SkipSeconds | null>(null)
+  const speed = chosenSpeed ?? storedSpeed
+  const skipSeconds: SkipSeconds = chosenSkip ?? (storedSkip as SkipSeconds)
+  const setSpeed = setChosenSpeed
+  const setSkipSeconds = setChosenSkip
   const [sleepMode, setSleepMode] = useState<SleepMode | null>(null)
+  const [sleepEndsAt, setSleepEndsAt] = useState<number | null>(null)
+  const [sleepLeft, setSleepLeft] = useState<number | null>(null)
 
   const element = useSyncExternalStore(
     subscribeAudioElement,
@@ -111,6 +191,55 @@ export default function AudioDrawer() {
       element.removeEventListener('loadedmetadata', tick)
     }
   }, [element, item])
+
+  /**
+   * The sleep timer, enforced.
+   *
+   * Recording the choice is not the feature — stopping is. This counts against
+   * a wall-clock end time rather than summing ticks, so a phone that sleeps
+   * mid-countdown still stops at the right moment instead of resuming with
+   * however long was left when the tab was frozen.
+   */
+  useEffect(() => {
+    if (sleepEndsAt === null) return
+    // Every write is inside the interval callback: the first value is set when
+    // the reader arms the timer, so nothing has to be set synchronously here.
+    const id = setInterval(() => {
+      const left = sleepEndsAt - Date.now()
+      setSleepLeft(Math.max(0, left))
+      if (left <= 0) {
+        const a = getAudioElement()
+        if (a) fadeOutAndPause(a)
+        setSleepEndsAt(null)
+        setSleepMode(null)
+        setSleepLeft(null)
+      }
+    }, 1000)
+    return () => clearInterval(id)
+  }, [sleepEndsAt])
+
+  /**
+   * End of chapter is not a duration, so it resolves against the track: stop
+   * when playback passes the boundary of the chapter that was playing when the
+   * reader asked. Falls back to the end of the reading when it has no chapters,
+   * which is what "end of chapter" means for a track that is one chapter.
+   */
+  useEffect(() => {
+    if (sleepMode !== 'end-of-chapter' || !element || !item) return
+    const chapters = getNarrationTrack(item.slug)?.chapters ?? []
+    const at = element.currentTime
+    const next = chapters.find((chapter) => chapter.t > at)
+    const stopAt = next ? next.t : element.duration || item.duration || 0
+    if (!stopAt) return
+    const onTime = () => {
+      if (element.currentTime >= stopAt) {
+        fadeOutAndPause(element)
+        setSleepMode(null)
+      }
+    }
+    element.addEventListener('timeupdate', onTime)
+    return () => element.removeEventListener('timeupdate', onTime)
+  }, [sleepMode, element, item])
 
   // Escape closes the drawer, as any sheet on this site does.
   useEffect(() => {
@@ -332,10 +461,21 @@ export default function AudioDrawer() {
                   </button>
                   <button
                     type="button"
-                    className="lsn-chip"
+                    className={`lsn-chip${sleepMode ? ' is-armed' : ''}`}
                     onClick={() => setSleepOpen(true)}
+                    aria-label={
+                      sleepMode === 'end-of-chapter'
+                        ? 'Sleep timer, end of chapter'
+                        : sleepLeft !== null
+                          ? `Sleep timer, ${Math.max(1, Math.ceil(sleepLeft / 60_000))}m remaining`
+                          : 'Sleep timer'
+                    }
                   >
-                    Sleep timer
+                    {sleepMode === 'end-of-chapter'
+                      ? 'Ends chapter'
+                      : sleepLeft !== null
+                        ? `${Math.max(1, Math.ceil(sleepLeft / 60_000))}m`
+                        : 'Sleep timer'}
                   </button>
                   <button
                     type="button"
@@ -467,15 +607,19 @@ export default function AudioDrawer() {
               a.preservesPitch = true
             }
             try {
-              window.localStorage.setItem(
-                'euangelion:narration-speed',
-                String(next),
-              )
+              window.localStorage.setItem(SPEED_PREF, String(next))
             } catch {
               // Private mode. The rate still applies for this session.
             }
           }}
-          onSelectSkip={(secs: SkipSeconds) => setSkipSeconds(secs)}
+          onSelectSkip={(secs: SkipSeconds) => {
+            setSkipSeconds(secs)
+            try {
+              window.localStorage.setItem(SKIP_PREF, String(secs))
+            } catch {
+              // Private mode. The choice still holds for this session.
+            }
+          }}
           onClose={() => setSpeedOpen(false)}
         />
       )}
@@ -483,10 +627,19 @@ export default function AudioDrawer() {
       {sleepOpen && item && (
         <SleepTimer
           active={sleepMode}
-          remainingMs={null}
+          remainingMs={sleepLeft}
           onSelect={(selection: SleepSelection) => {
-            // 'off' clears it; anything else IS the mode.
+            // 'off' clears it; anything else IS the mode. A number also arms
+            // the countdown — without this the sheet only remembered.
             setSleepMode(selection === 'off' ? null : selection)
+            setSleepEndsAt(
+              typeof selection === 'number'
+                ? Date.now() + selection * 60_000
+                : null,
+            )
+            setSleepLeft(
+              typeof selection === 'number' ? selection * 60_000 : null,
+            )
             setSleepOpen(false)
           }}
           onClose={() => setSleepOpen(false)}

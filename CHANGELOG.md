@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The reading's panel is one row (SA-120, F-165)
+
+**2026-08-20**
+
+The other half of option A. You said the sidebar and the reading's own panel
+were "basically redundant" — both had speed, ±15s, chapters and a sleep timer,
+both drove the same audio, both showed the same position.
+
+**The panel is now one row:** play/pause, progress, time remaining — plus
+clipping, and a way through to the sidebar. Clipping stays on purpose: it pins
+a note to this reading at this moment, which the sidebar cannot do, and cutting
+it in the name of "one row" would have deleted a feature under cover of a
+layout change.
+
+**Moving the rest showed up three faults**, all fixed here, all test-first:
+
+- **The sidebar's sleep timer did nothing.** I gave it a chip and a sheet last
+  night and called it done; it remembered your choice and never acted on it. Set
+  fifteen minutes, put the phone down, and you got the whole reading. It stops
+  now — and it fades out over five seconds rather than cutting mid-sentence,
+  which is the behaviour the panel had and I moved across rather than dropped.
+- **The sidebar forgot the skip length** and opened at 1× and 15s no matter what
+  you had picked. It reads and writes the same preferences the panel does now.
+
+Suite green at 2620.
+
+**Not browser-verified.** The Chrome this session can drive cannot decode the
+audio format at all — a blob of known-good bytes fails instantly — so I could
+check the layout and the sidebar live, but not playback, the timer or the fade.
+
+---
+
 ## The sidebar is the player (SA-119, F-164)
 
 **2026-08-19**
@@ -497,6 +529,15 @@ Service worker v130 → v131.
 ---
 
 ## Rekindled animated series film
+
+**2026-08-20 — cinematic recut**
+
+Rebuilt the film as a 38-second, music-led vertical trailer: typography now
+holds the visual hierarchy in the upper and central frame, image crops are
+deliberate, and the pacing moves through provocative cold-open statements,
+slow cinematic reveals, and a final invitation. Replaced the weak middle plate
+with the existing day-six image of one lit lamp passing between two hands and
+rescored the cut with restrained low strings. No new imagery was generated.
 
 **2026-08-19**
 
