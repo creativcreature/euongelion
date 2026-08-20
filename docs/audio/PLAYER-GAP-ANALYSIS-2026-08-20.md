@@ -31,22 +31,22 @@ Counted across [Spotify Audiobooks](https://mobbin.com/screens/c9cb0602-c90a-4e1
 [Patreon](https://mobbin.com/screens/1b240b25-6b50-4dec-a02c-312320546e92),
 [The Atlantic](https://mobbin.com/screens/34b88ad6-d3af-43cc-bcf6-b48a2e69a5d2).
 
-| Feature                                   | Seen in                                             | Ours                |
-| ----------------------------------------- | --------------------------------------------------- | ------------------- |
-| Big play/pause, ±skip                     | all 8                                               | yes                 |
-| Scrubber with elapsed + remaining         | all 8                                               | yes                 |
-| Speed                                     | 8 of 8                                              | yes                 |
-| Sleep timer                               | Spotify, Apple, ElevenReader, Patreon               | yes (fixed tonight) |
-| Queue / list                              | Spotify, Apple, ElevenReader, Atlantic              | yes                 |
-| Position in set ("1 of 8", "1% complete") | Spotify, Headway                                    | yes                 |
-| Download                                  | Patreon, Finimize                                   | yes                 |
-| **Volume**                                | Apple Podcasts, ElevenReader                        | **NO**              |
-| **Share**                                 | Spotify, ElevenReader, Headway, SCMP                | **NO**              |
-| **Cover art in the player**               | 7 of 8                                              | **NO**              |
-| **Read-along text highlight**             | ElevenReader, Speechify, Headway, Blinkist          | **NO**              |
-| **Named narrator**                        | ElevenReader ("Oliver Silk"), Speechify ("MrBeast") | **NO**              |
-| **Dismiss the player**                    | Atlantic (X on the mini bar)                        | **NO**              |
-| Output route / AirPlay                    | Apple, Patreon                                      | n/a on web          |
+| Feature                                   | Seen in                                             | Ours                    |
+| ----------------------------------------- | --------------------------------------------------- | ----------------------- |
+| Big play/pause, ±skip                     | all 8                                               | yes                     |
+| Scrubber with elapsed + remaining         | all 8                                               | yes                     |
+| Speed                                     | 8 of 8                                              | yes                     |
+| Sleep timer                               | Spotify, Apple, ElevenReader, Patreon               | yes (fixed tonight)     |
+| Queue / list                              | Spotify, Apple, ElevenReader, Atlantic              | yes                     |
+| Position in set ("1 of 8", "1% complete") | Spotify, Headway                                    | yes                     |
+| Download                                  | Patreon, Finimize                                   | yes                     |
+| **Volume**                                | Apple Podcasts, ElevenReader                        | **NO**                  |
+| **Share**                                 | Spotify, ElevenReader, Headway, SCMP                | **NO**                  |
+| **Cover art in the player**               | 7 of 8                                              | **NO**                  |
+| **Read-along text highlight**             | ElevenReader, Speechify, Headway, Blinkist          | **section level ships** |
+| **Named narrator**                        | ElevenReader ("Oliver Silk"), Speechify ("MrBeast") | **NO**                  |
+| **Dismiss the player**                    | Atlantic (X on the mini bar)                        | **NO**                  |
+| Output route / AirPlay                    | Apple, Patreon                                      | n/a on web              |
 
 ## What that means, in order
 
@@ -61,12 +61,23 @@ a thing people send to someone.
 **3. Cover art.** Seven of eight lead with it. We already have per-devotional
 artwork; the player just does not show it.
 
-**4. Read-along is the big one, and it is blocked on data.** ElevenReader
-highlights the paragraph AND the word; Speechify highlights the sentence. Both
-need per-word or per-sentence timings. Our manifests carry chapter marks only
-(`{t, label, module}`), so **section-level** highlight is buildable today and
-word-level needs the render pipeline to emit timings. This is the single change
-that would most distinguish the product, because the site is a reading first.
+**4. Read-along — CORRECTED. Section level already ships.** I listed this as
+missing. It is not. `NarrationPlayer` writes `data-narrating="true"` onto
+`#devotional-section-N` as playback crosses into each section, and `globals.css`
+marks that section with a 3px cobalt gutter rule and a faint wash — F-086 /
+SA-035, shipped well before tonight. Verified on the live site: the rule computes
+to `rgb(31, 42, 141)` at `3px`.
+
+What we actually lack is the FINER grain. ElevenReader highlights the paragraph
+AND the word; Speechify highlights the sentence. Both need per-word or
+per-sentence timings, and our manifests carry chapter marks only
+(`{t, label, module}`), so that one is blocked on the render pipeline.
+
+One observation while verifying: the accompanying wash,
+`color-mix(in srgb, var(--color-gold) 3.5%, transparent)`, computes to fully
+transparent (`oklab(0 0 0 / 0)`) rather than a 3.5% tint. The gutter rule is the
+primary marker and it works, so this is cosmetic — but the wash is currently
+doing nothing. Founder's call whether it should show.
 
 **5. Named narrator — DO NOT BUILD YET.** Real products name the voice, which is
 evidence for the founder's open ruling on disclosing that narration is
@@ -79,7 +90,11 @@ synthesised. It is his call, still pending, so this stays a recommendation.
 
 ## Not shipped, and why
 
-- **Cover art / read-along / narrator** — cover art and section-level read-along
-  are real builds against the reading surface the founder signed off hours ago,
-  and word-level read-along needs data we do not have. Named narrator is blocked
-  on a founder ruling. Proposing beats half-building.
+- **Word-level read-along** — needs per-word timings the render pipeline does
+  not emit. Section level already ships; see the correction above.
+- **Named narrator** — blocked on the founder's pending ruling about disclosing
+  that narration is synthesised. That real products name the voice is evidence
+  for the decision, not a substitute for it.
+
+Everything else in the table has now shipped: volume, share, cover art, real
+titles in the queue, and the reading-on-page offer.
