@@ -70,6 +70,18 @@ suggested numbers nobody is graded on, progress persisted like the
 puzzles. It closes the paper as the back-page game, in every weekday
 arrangement, never adjacent to another game.
 
+**The whole paper, read aloud.** One track covers every written
+non-interactive section (practice, the word, red letters, season,
+hymnal, proverb, memory verse, question, catechism, prayer, voices) —
+assembled by assemble-paper-narration.mts, rendered through Voicebox (the
+ruled voice), encoded, and installed to Storage by
+render-paper-audio.sh; the paper reads a 5-minute-cached manifest and
+offers 'The whole paper, read aloud' at the top of its listen queue only
+on days a track exists — honest absence otherwise. HONEST CONSTRAINT,
+stated not hidden: Voicebox runs only on the founder's Mac, so daily
+paper audio renders when that machine runs the script; the cloud cannot
+produce it under the Voicebox-only ruling.
+
 ---
 
 ## The player, measured against real ones (SA-122, F-167)

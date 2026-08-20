@@ -19,6 +19,7 @@
 
 import ListenButton from '@/components/audio/ListenButton'
 import { itemForSlug } from '@/lib/audio/queue-builder'
+import { getPaperAudio } from '@/lib/edition/paper-audio'
 import Link from 'next/link'
 import Image from 'next/image'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
@@ -385,6 +386,21 @@ export default async function EditionPage({
   // in place of the editorial sections — never a silently thinner paper. The
   // reading itself never depends on this fetch.
   const editionKey = now.toISOString().slice(0, 10)
+
+  // SA-114: the whole paper, read aloud — one track covering every written
+  // non-interactive section, rendered through Voicebox and manifest-fed.
+  // Days without a rendered track simply lack the item (honest absence).
+  const paperAudio = await getPaperAudio(now.toISOString().slice(0, 10))
+  if (paperAudio) {
+    listenItems.unshift({
+      slug: `daily-bread-${now.toISOString().slice(0, 10)}`,
+      title: 'The whole paper, read aloud',
+      src: paperAudio.src,
+      duration: paperAudio.duration,
+      href: '/daily-bread',
+      context: 'The Daily Bread',
+    })
+  }
   let edition: Edition | null = null
   let editionFailed = false
   try {
