@@ -52,6 +52,20 @@ export default async function AdminDashboardPage() {
     <AdminShell title="Admin" kicker="THE BACK OFFICE" activeHref="/admin">
       <div className="grid gap-4 md:grid-cols-2">
         <Link
+          href="/admin/pitches"
+          className={cardClass(true)}
+          data-testid="hub-card-pitches"
+        >
+          <p className="text-label vw-small text-gold">Pitches</p>
+          <p className="vw-body mt-2">
+            Every idea from every session, one archive
+          </p>
+          <p className="vw-small mt-1 text-secondary">
+            Read a pitch, then rule on it — approve, reject, park, or just talk
+            back. Nothing lives in chat artifacts anymore.
+          </p>
+        </Link>
+        <Link
           href="/admin/edition"
           className={cardClass(true)}
           data-testid="hub-card-edition-queue"

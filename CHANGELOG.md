@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The pitch site — every idea, one archive, founder-respondable (SA-114, F-158)
+
+**2026-08-20**
+
+Founder: _"Im sick of having a million artifacts. I need a site i can see
+things on respond on, that archives all the pitch pages so I can see
+everything in one place, and its now the place ALL euangelion pitches land
+from ANY session... the site needs to be organized so that multiple agents
+can write to it simultaneously."_
+
+- **/admin/pitches** (admin-gated, page-level assert): AWAITING YOU / IN
+  DISCUSSION / THE ARCHIVE sections, newest first; each pitch page renders
+  the session-authored document with a response thread and verdict buttons
+  (Approve / Reject / Park / Comment) posting to /api/admin/pitches.
+- **Concurrent-safe by design**: one private-bucket Storage object per
+  pitch, NO shared index file — the site derives its index by listing the
+  bucket, so simultaneous sessions can never clobber each other. Re-publish
+  the same slug to revise in place. No deploy in the publish path: live in
+  seconds.
+- **The hook**: a repo skill (`.claude/skills/pitch`) every euangelion
+  session loads — any ask for a pitch, proposal, or visual illustration
+  routes here; artifacts are banned for pitches (CLAUDE.md carries the
+  ruling).
+- First pitch published: "The Daily Bread as a Scroll Hole for God" — the
+  research-fed brainstorm deck (scroll shape, Echo & Dust voice options
+  with the honest diagnosis of why the first strips failed, and a ranked
+  engagement menu), awaiting three verdicts.
+
+---
+
 ## The morning critique, wave one — format, compartments, color, memory, the archive (SA-114, F-158)
 
 **2026-08-20**

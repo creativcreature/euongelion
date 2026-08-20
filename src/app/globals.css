@@ -17043,3 +17043,66 @@ html.dark .edition-quote-text--red {
     padding: 1.2rem 0 0 0;
   }
 }
+
+/* ── The pitch site (SA-114 / F-158) ──────────────────────────────────── */
+.pitch-body {
+  max-width: 46rem;
+  line-height: 1.6;
+}
+
+.pitch-body h1,
+.pitch-body h2,
+.pitch-body h3 {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  line-height: 1.15;
+  margin: 1.4em 0 0.4em;
+}
+
+.pitch-body h1 {
+  font-size: 1.9rem;
+}
+.pitch-body h2 {
+  font-size: 1.45rem;
+}
+.pitch-body h3 {
+  font-size: 1.15rem;
+}
+
+.pitch-body p,
+.pitch-body li {
+  margin: 0 0 0.7em;
+}
+.pitch-body ul,
+.pitch-body ol {
+  padding-left: 1.4rem;
+  margin: 0 0 0.9em;
+}
+.pitch-body blockquote {
+  border-left: 3px solid var(--color-crimson, #c4192e);
+  margin: 0 0 0.9em;
+  padding: 0.2em 0 0.2em 1em;
+  font-style: italic;
+}
+.pitch-body img {
+  max-width: 100%;
+  border: var(--ed-hair);
+}
+.pitch-body table {
+  border-collapse: collapse;
+  margin: 0 0 1em;
+}
+.pitch-body th,
+.pitch-body td {
+  border: 1px solid var(--color-border, #94a3b8);
+  padding: 0.35em 0.6em;
+}
+.pitch-body code {
+  font-size: 0.88em;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  padding: 0.1em 0.3em;
+}
+.pitch-body hr {
+  border: 0;
+  border-top: var(--ed-hair);
+  margin: 1.4em 0;
+}

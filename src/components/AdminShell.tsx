@@ -11,6 +11,7 @@ import SiteBottom from '@/components/SiteBottom'
 const ADMIN_NAV = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/edition', label: 'Edition Queue' },
+  { href: '/admin/pitches', label: 'Pitches' },
   { href: '/admin/moderation', label: 'Moderation' },
   { href: '/admin/transparency', label: 'Transparency' },
   { href: '/admin/audit-logs', label: 'Audit Logs' },

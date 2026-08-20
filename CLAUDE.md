@@ -209,6 +209,26 @@ the tall master) — **do not hand-write prompts**.
 founder-approved anchors as references on every generation:
 `public/images/site/series/{prayer-of-jabez,he-cannot-deny-himself,looking-at-the-sun,the-harvest}.webp`.
 
+## Pitches — ONE Place, Never Artifacts (NON-NEGOTIABLE, founder ruling 2026-08-20)
+
+Founder: "Im sick of having a million artifacts... its now the place ALL
+euangelion pitches land from ANY session."
+
+- **Every pitch, proposal, brainstorm doc, design option deck, or VISUAL
+  ILLUSTRATION goes to the pitch site** — whenever the founder asks for a
+  pitch or an illustration of an idea, this is the delivery surface. The
+  repo skill `pitch` (.claude/skills/pitch) carries the full protocol —
+  invoke it. Publish with
+  `node scripts/pitches/publish-pitch.mjs <body.md|html> --title="..." [--slug=…] [--tags=…] [--session=…]`
+  (source `.env.local` first). No deploy needed — it is live in seconds.
+- The founder reads and responds at **euangelion.app/admin/pitches** (verdict
+  buttons + comments per pitch). CHECK FOR RESPONSES there before re-asking
+  in chat.
+- **Do NOT create Claude artifacts for Euangelion pitches.** One archive,
+  one URL, forever.
+- Re-publishing the same `--slug` updates the pitch in place (revisions are
+  the norm — keep one page per idea).
+
 ## Image Library — Always Check First (NON-NEGOTIABLE)
 
 This project has ~8,500 generated images already on disk. **Always check the library before generating a new image.** Generation is the last resort.
