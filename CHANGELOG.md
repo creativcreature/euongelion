@@ -103,6 +103,12 @@ you in small doses; the beep comes and Teddy doesn't move: ...I wasn't
 done). Verified: all three characters and the microwave hold across all
 three panels.
 
+And then the founder ruled on the voice itself: "your cartoons have been
+terrible" — the daily generation machine is PAUSED (repo variable
+STRIP_MACHINE, default paused) until the writing, tone, and scenarios are
+nailed and approved. The strips already slotted stay reviewable in the
+queue; nothing new generates.
+
 ---
 
 ## The player, measured against real ones (SA-122, F-167)
