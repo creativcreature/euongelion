@@ -262,3 +262,64 @@ describe('the header entry point', () => {
     expect(screen.getByRole('button', { name: /2 in the queue/i })).toBeTruthy()
   })
 })
+
+/**
+ * The button and the drawer, together.
+ *
+ * Both were tested in isolation — the button sets `panelOpen`, the drawer
+ * renders when it is set — and neither test proved that CLICKING THE BUTTON
+ * PUTS THE DRAWER ON SCREEN. That is the thing the founder actually asked for
+ * ("when I click audio button the playlist que drawer should slide out"), so it
+ * gets its own test rather than being inferred from two passing halves.
+ */
+describe('clicking the header button slides the drawer out', () => {
+  it('opens it from an empty queue', () => {
+    render(
+      <>
+        <AudioHeaderButton />
+        <AudioDrawer />
+      </>,
+    )
+    expect(screen.queryByRole('dialog')).toBeNull()
+    act(() =>
+      screen.getByRole('button', { name: /open the audio sidebar/i }).click(),
+    )
+    expect(screen.getByRole('dialog')).toBeTruthy()
+  })
+
+  it('opens it with a queue, showing what is up next', () => {
+    useAudioStore.getState().start({
+      items: [
+        item('a', 'The Fruit of Lies'),
+        item('b', 'Like a Morning Cloud'),
+      ],
+      source: 'series',
+      label: 'He Cannot Deny Himself',
+    })
+    render(
+      <>
+        <AudioHeaderButton />
+        <AudioDrawer />
+      </>,
+    )
+    act(() =>
+      screen.getByRole('button', { name: /open the audio sidebar/i }).click(),
+    )
+    const panel = screen.getByRole('dialog')
+    expect(within(panel).getByText('Like a Morning Cloud')).toBeTruthy()
+  })
+
+  it('closes again from inside the drawer', () => {
+    render(
+      <>
+        <AudioHeaderButton />
+        <AudioDrawer />
+      </>,
+    )
+    act(() =>
+      screen.getByRole('button', { name: /open the audio sidebar/i }).click(),
+    )
+    act(() => screen.getByRole('button', { name: /^close$/i }).click())
+    expect(screen.queryByRole('dialog')).toBeNull()
+  })
+})

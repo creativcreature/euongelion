@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The sidebar was invisible to ad blockers (SA-112, F-155)
+
+**2026-08-19**
+
+_"when I click audio button the playlist que drawer should slide out."_ It did
+not — and every automated check passed while it was broken.
+
+The container class was `.ad-root`. Ad blockers ship cosmetic filters matching
+that exact string and inject `display: none !important` from the **user**
+origin, which beats author `!important`, beats an inline style set from JS, and
+never appears in `document.styleSheets`. Nothing on the page can see it or
+override it, which is why the element was in the DOM, attached, correctly
+positioned — and no rule anywhere explained why it was hidden.
+
+Measured in Chrome against production: a bare div appended to `body` computes
+`display: block`; the identical div classed `ad-root` computes `none`;
+`ad-drawer`, `ad-handle`, `banner-ad` and `sponsored` are all fine. It is that
+one string on a filter list.
+
+Every class in the component is now prefixed `lsn-`.
+
+**The lesson is bigger than the bug.** 24 unit tests passed against this
+component, including one asserting the drawer opens on click. jsdom has no ad
+blocker, so none of them could ever have caught it. What caught it was opening
+the deployed page in a browser and clicking the button. A green suite is not
+evidence that a reader can use the feature.
+
+---
+
 ## Audio is reachable from every page (SA-110, F-156)
 
 **2026-08-19**
@@ -88,6 +117,11 @@ composition and rendered MP4 live in `devotional-rekindled-video/`.
 Validation: the standalone Remotion project passes ESLint and TypeScript; a
 representative frame and the full 1,320-frame H.264 export both rendered
 successfully.
+
+Founder review moved the cut to a text-first hierarchy: key statements now sit
+high in a dedicated reading field while landscape plates retain their cinematic
+composition below. Added restrained rule-draw, rise, scale, and ember-pulse
+motion, then revalidated representative frames and replaced the final export.
 
 ## Listening from where you are, on /today (SA-108, F-154)
 
