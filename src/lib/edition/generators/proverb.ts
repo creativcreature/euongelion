@@ -35,7 +35,7 @@ const MAX_WORDS = 30
  * below this something is wrong with the data or the filter. */
 export const PROVERB_POOL_FLOOR = 300
 
-interface ProverbEntry {
+export interface ProverbEntry {
   reference: string
   text: string
 }
@@ -77,7 +77,18 @@ export function proverbPool(
     )
   }
   const book = JSON.parse(raw) as Record<string, Record<string, string>>
+  cachedPool = buildProverbPool(book)
+  return cachedPool
+}
 
+/**
+ * The pure pool builder — corpus in, ordered pool out. Shared with the
+ * homepage's Word of the Day (src/lib/home/word-of-the-day.ts), which loads
+ * the same corpus over the network on Workers where fs does not exist.
+ */
+export function buildProverbPool(
+  book: Record<string, Record<string, string>>,
+): ProverbEntry[] {
   const pool: ProverbEntry[] = []
   for (let chapter = FIRST_CHAPTER; chapter <= LAST_CHAPTER; chapter += 1) {
     const verses = book[String(chapter)]
@@ -110,8 +121,13 @@ export function proverbPool(
       a.reference.localeCompare(b.reference),
   )
 
-  cachedPool = pool
-  return cachedPool
+  return pool
+}
+
+/** One proverb for the UTC date — the deterministic daily walk. Shared
+ * with the homepage's Word of the Day. */
+export function pickProverb(pool: ProverbEntry[], date: Date): ProverbEntry {
+  return pool[daysSinceEpoch(date) % pool.length]
 }
 
 /** Days since 1970-01-01 UTC. The rotation index. */
@@ -136,7 +152,7 @@ export async function generateProverb(
   date: Date,
 ): Promise<EditionItem<'proverb'>[]> {
   const pool = proverbPool()
-  const entry = pool[daysSinceEpoch(date) % pool.length]
+  const entry = pickProverb(pool, date)
 
   const payload: ProverbPayload = {
     reference: entry.reference,

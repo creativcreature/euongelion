@@ -1,6 +1,8 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterAll, describe, it, expect, beforeEach, vi } from 'vitest'
-import Page from '@/app/page'
+// page.tsx is now an async ISR server wrapper (the-Word-leads rebuild) —
+// RTL renders the client body directly, with a stub Word.
+import HomeClient from '@/app/HomeClient'
 
 vi.mock('next/navigation', () => ({
   useRouter: () => ({
@@ -80,7 +82,15 @@ afterAll(async () => {
 
 describe('Smoke Test', () => {
   it('renders the landing page without crashing', () => {
-    render(<Page />)
+    render(
+      <HomeClient
+        word={{
+          reference: 'Proverbs 16:9',
+          text: 'A man’s heart plans his course, but the LORD determines his steps.',
+          translation: 'BSB',
+        }}
+      />,
+    )
     // EUANGELION appears in both nav logo and hero — use getAllByText
     const euangelionElements = screen.getAllByText('EUANGELION')
     expect(euangelionElements.length).toBeGreaterThanOrEqual(1)

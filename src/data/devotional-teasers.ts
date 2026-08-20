@@ -23,7 +23,7 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     "God's anointing is oil for wounds — His presence heals what is broken",
   'anointed-day-5': "Anointing is not to keep — it's to give. You are sent.",
   'bible-365-day-1':
-    'A year-long walk through Scripture begins with four words that change everything: in the beginning, God.',
+    'A year through Scripture begins where everything begins: with God already present, speaking light into the dark.',
   'bible-365-day-10':
     'Day 10 of Bible 365 - Genesis 8:20-9:17. A pleasing aroma rises, and God hangs His war-bow in the clouds, aimed away.',
   'bible-365-day-100':

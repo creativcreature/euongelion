@@ -33,14 +33,14 @@ Card 26 shares still-11 (same Seventh Seal frame, by direction).
 
 ## CHOSEN SIX (generation set, 2026-08-20)
 
-| #   | Title                      | Scripture            | Film source (composition)                                 | Treatment                                                                                                           |
-| --- | -------------------------- | -------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| 03  | Blood on the Doorframe     | Exodus 12:13         | The Searchers — closing doorway                           | derive                                                                                                              |
-| 10  | The Fourth Man in the Fire | Daniel 3:24–25       | There Will Be Blood — derrick fire                        | derive                                                                                                              |
-| 12  | The Torn-Open Sky          | Mark 1:10–11         | O Brother — river baptism                                 | **LITERAL restage** — the still IS the composition; congregation → Jordan crowd, baptized → the Son, sky torn above |
-| 22  | It Is Finished             | John 19:30           | Last Temptation — cross, blown sky                        | derive                                                                                                              |
-| 25  | A Field of Vines           | John 15:1–5          | The New World — sun through growth                        | derive                                                                                                              |
-| 26  | Carrying His Cross         | John 19:17; Lk 23:26 | The Seventh Seal — danse-macabre ridge (same frame as 11) | derive, №11's ridge grammar                                                                                         |
+| #   | Title                                          | Scripture            | Film source (composition)                                 | Treatment                                                                                                           |
+| --- | ---------------------------------------------- | -------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 03  | Blood on the Doorframe                         | Exodus 12:13         | The Searchers — closing doorway                           | derive                                                                                                              |
+| 10  | The Fourth Man in the Fire                     | Daniel 3:24–25       | There Will Be Blood — derrick fire                        | derive                                                                                                              |
+| 12  | The Torn-Open Sky                              | Mark 1:10–11         | O Brother — river baptism                                 | **LITERAL restage** — the still IS the composition; congregation → Jordan crowd, baptized → the Son, sky torn above |
+| 04  | The Road Through the Sea (Moses parts the sea) | Exodus 14:21–22      | Arrival — hanging mass over tiny figures                  | derive; swapped IN for 22 by founder, 2026-08-20                                                                    |
+| 25  | A Field of Vines                               | John 15:1–5          | The New World — sun through growth                        | derive                                                                                                              |
+| 26  | Carrying His Cross                             | John 19:17; Lk 23:26 | The Seventh Seal — danse-macabre ridge (same frame as 11) | derive, №11's ridge grammar                                                                                         |
 
 ## PINNED POOL (20 — approved concepts, not yet generated)
 

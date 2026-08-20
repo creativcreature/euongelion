@@ -94,7 +94,7 @@ for (const token of requiredChatTokens) {
   }
 }
 
-const homePage = readFile(path.join(ROOT, 'src/app/page.tsx'))
+const homePage = readFile(path.join(ROOT, 'src/app/HomeClient.tsx'))
 const soulAuditPage = readFile(path.join(ROOT, 'src/app/soul-audit/page.tsx'))
 const submitClientPath = path.join(
   ROOT,
@@ -109,7 +109,7 @@ const homeDirectSubmit = homePage.includes('/api/soul-audit/submit')
 const homeHelperSubmit = homePage.includes('submitSoulAuditResponse(')
 const homeHookSubmit = homePage.includes('useSoulAuditSubmit')
 if (!homeDirectSubmit && !homeHelperSubmit && !homeHookSubmit) {
-  fail('src/app/page.tsx must submit to /api/soul-audit/submit')
+  fail('src/app/HomeClient.tsx must submit to /api/soul-audit/submit')
 }
 if ((homeHelperSubmit || homeHookSubmit) && !helperTargetsSubmitRoute) {
   fail('submit helper must submit to /api/soul-audit/submit')

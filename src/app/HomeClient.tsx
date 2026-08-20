@@ -1,0 +1,850 @@
+'use client'
+
+import { useEffect, useMemo, useState } from 'react'
+import AUDIO_MANIFEST from '@/data/audio-manifest.json'
+import { useAudioStore } from '@/stores/audioStore'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import EuangelionShellHeader from '@/components/EuangelionShellHeader'
+import FirstRunIntro from '@/components/FirstRunIntro'
+import SiteBottom from '@/components/SiteBottom'
+import ChurchYearOverline from '@/components/devotional/ChurchYearOverline'
+import SeriesRailSection from '@/components/SeriesRailSection'
+import CrisisInterstitial from '@/components/soul-audit/CrisisInterstitial'
+import ComposingPaths from '@/components/soul-audit/ComposingPaths'
+import { useSoulAuditSubmit } from '@/hooks/useSoulAuditSubmit'
+import { CRISIS_RESOURCES } from '@/lib/soul-audit/crisis-gate'
+import { typographer } from '@/lib/typographer'
+import { SERIES_COUNT } from '@/data/series'
+import { DEVOTIONAL_TEASERS } from '@/data/devotional-teasers'
+import { HERO_ROTATION, heroDrawScript } from '@/lib/home/hero-rotation'
+import type { WordOfTheDay } from '@/lib/home/word-of-the-day'
+import { featuredForServer, rotateFeatured } from '@/lib/home/featured-rotation'
+import { isScrollLocked } from '@/lib/use-scroll-lock'
+
+/**
+ * Homepage featured SERIES content. Founder direction 2026-05-13: the
+ * featured slot now surfaces the SERIES as a whole, not an individual
+ * devotional. Title is the series title; copy is the series question
+ * + a beat of introduction; CTA opens the series page (where the
+ * reader sees all days and starts). Day-level data lives in
+ * `daySlug` / `dayTitle` only as fallback context.
+ */
+// SA-031 (founder, 2026-07-26): the main feature slot always belongs
+// to the MOST RECENT series. SA-034 (2026-08-10): he-cannot-deny-himself
+// replaces the-harvest, which rotates back into the six FEATURED_SERIES
+// cards below it.
+const HOMEPAGE_TODAY = {
+  series: 'rekindled',
+  daySlug: 'rekindled-day-1',
+  dayTitle: 'Look What Sits in This Word',
+  kicker: 'FEATURED SERIES · 7 DAYS · 2 TIMOTHY 1:6',
+  title: 'Rekindled',
+  // Series-level scripture anchor (the framework verse).
+  scripture: '2 Timothy 1:6 · Genesis 15:17 · Leviticus 6:13',
+  // Surfaces the series QUESTION (what the reader actually carries),
+  // then one beat of the introduction. Series-level copy, not Day 1's.
+  // Founder 2026-08-16: "the text on the right should not have soo much —
+  // 10-14 words max." A featured slot is a headline and a line, not a
+  // paragraph; the full introduction is one tap away on the series page.
+  teaser: 'The fire was lit before you got here. Seven days on keeping it.',
+  // Homepage hero banner (full-bleed at top of page). SA-113
+  // (2026-08-20) supersedes R38: the banner now ROTATES per page load
+  // across seven gospel plates (HERO_ROTATION below). heroSrc stays
+  // pointed at the tomb — it is the JS-off/noscript fallback plate.
+  heroSrc: '/images/site/homepage/hero/header-v2.webp',
+  // Featured-card art: the rekindled day-3 lamp handoff (3:2 landscape to
+  // match the container's landscape aspect; the 1:1 series card
+  // would crop badly under object-fit: cover).
+  featuredArt: '/images/series/rekindled/day3-end.webp',
+}
+
+const HOW_STEPS = [
+  {
+    title: '1. Name it.',
+    body: 'Name what is real without polishing it. Honest words are enough.',
+    image: '/images/site/homepage/steps/step-1-name.webp',
+  },
+  {
+    title: '2. Read it.',
+    body: 'See three plans matched to what you said. Choose one.',
+    image: '/images/site/homepage/steps/step-2-read.webp',
+  },
+  {
+    title: '3. Walk it out.',
+    body: 'Read your 7-day plan. Take one honest step a day.',
+    image: '/images/site/homepage/steps/step-3-walk.webp',
+  },
+]
+
+// Homepage hero rotation (SA-113 / F-159): plates + parse-time draw script
+// live in src/lib/home/hero-rotation.ts — the draw sets a CSS custom
+// property on <html>, outside React's reconciliation, because this page is
+// a hydrated client component and DOM built inside it gets reset on a
+// client re-render (the first implementation blanked the banner that way).
+/** Narrated hours, from the manifest — stated rather than rounded by hand, so
+ *  the claim on the homepage cannot drift from what actually renders. */
+const AUDIO_HOURS = Math.round(
+  Object.values(AUDIO_MANIFEST as Record<string, { duration?: number }>).reduce(
+    (total, track) => total + (track.duration ?? 0),
+    0,
+  ) / 3600,
+)
+
+// Reordered 2026-08-20 (the-Word-leads rebuild): the last-30-days research
+// says cost, account, and missed-day fears are the objections people
+// actually arrive with — they lead; skepticism closes.
+const FAQ_ITEMS = [
+  {
+    question: 'Do I need to sign up first?',
+    answer: 'No account required. Start immediately with a custom 7-day plan.',
+  },
+  {
+    question: 'What if I miss a day?',
+    answer:
+      'No guilt loop. Return the next day and continue your path with the same clarity.',
+  },
+  {
+    question: 'How much time do I need each day?',
+    answer:
+      'Most days are 5-7 minutes. Long enough to matter, short enough to sustain.',
+  },
+  {
+    question: 'What if I am skeptical or feel spiritually numb?',
+    answer:
+      'This is built for honest questions and earnest searching. Start exactly where you are.',
+  },
+]
+
+export default function HomeClient({
+  word,
+}: {
+  /** Today's Word from the Daily Bread — null renders visibly unavailable. */
+  word: WordOfTheDay | null
+}) {
+  const setAudioPanelOpen = useAudioStore((s) => s.setPanelOpen)
+  const router = useRouter()
+  const {
+    text: auditText,
+    setText: setAuditText,
+    isSubmitting,
+    error,
+    setError,
+    lastFailedSubmission,
+    submit: submitAudit,
+    reset: handleResetAudit,
+    hydrated,
+    auditCount,
+    limitReached,
+    showLowContextHint,
+    crisisText,
+    dismissCrisisAndContinue,
+  } = useSoulAuditSubmit()
+
+  const [faqIndex, setFaqIndex] = useState(0)
+  const [activeFaqQuestion, setActiveFaqQuestion] = useState<string | null>(
+    null,
+  )
+  // Auto-rotate highlight across desktop FAQ row. Hover overrides the
+  // highlight to the card under cursor; releasing hover resumes rotation.
+  // First card (index 0 of the visible window) starts highlighted.
+  const [faqAutoIndex, setFaqAutoIndex] = useState(0)
+  const [faqHoverIndex, setFaqHoverIndex] = useState<number | null>(null)
+  const [resumeRoute, setResumeRoute] = useState<string | null>(null)
+  const [isMobileViewport, setIsMobileViewport] = useState(false)
+
+  // Founder 2026-08-14: "New series in the features each refresh, except the
+  // latest uploaded should always be the first shown on homepage." / "Each
+  // page refresh."
+  //
+  // The first render MUST be the deterministic set: this page is edge-cached
+  // for a year, so a rotation computed during render would be frozen into the
+  // cached HTML, and any Math.random() in render is a hydration mismatch. The
+  // effect below reshuffles the tail once, on the client, after hydration.
+  // The lead — the newest eligible series — never moves.
+  const [featuredSlugs, setFeaturedSlugs] = useState<string[]>(() =>
+    featuredForServer(),
+  )
+
+  useEffect(() => {
+    setFeaturedSlugs(rotateFeatured())
+  }, [])
+  const faqWindow = useMemo(
+    () =>
+      [0, 1, 2].map(
+        (offset) => FAQ_ITEMS[(faqIndex + offset) % FAQ_ITEMS.length],
+      ),
+    [faqIndex],
+  )
+  const faqItemsToRender = isMobileViewport ? FAQ_ITEMS : faqWindow
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const params = new URLSearchParams(window.location.search)
+    const hasAuthCallbackParams =
+      params.has('code') || params.has('token_hash') || params.has('type')
+
+    if (!hasAuthCallbackParams) return
+
+    const query = params.toString()
+    router.replace(`/auth/callback${query ? `?${query}` : ''}`)
+  }, [router])
+
+  useEffect(() => {
+    if (!isMobileViewport) {
+      setActiveFaqQuestion(null)
+    }
+  }, [isMobileViewport])
+
+  // Auto-rotate FAQ highlight every 4s on desktop. Pause while hovered.
+  useEffect(() => {
+    if (isMobileViewport) return
+    if (faqHoverIndex !== null) return
+    const id = window.setInterval(() => {
+      setFaqAutoIndex((prev) => (prev + 1) % 3)
+    }, 4000)
+    return () => window.clearInterval(id)
+  }, [isMobileViewport, faqHoverIndex])
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function resolveCurrentHome() {
+      try {
+        const response = await fetch('/api/soul-audit/current', {
+          cache: 'no-store',
+        })
+        if (!response.ok) throw new Error('Current route unavailable.')
+
+        const payload = (await response.json()) as {
+          hasCurrent?: boolean
+          route?: string
+        }
+        if (cancelled) return
+
+        if (
+          payload.hasCurrent &&
+          typeof payload.route === 'string' &&
+          payload.route !== '/'
+        ) {
+          setResumeRoute(payload.route)
+        } else {
+          setResumeRoute(null)
+          localStorage.removeItem('soul-audit-selection-v2')
+        }
+      } catch {
+        if (cancelled) return
+        setResumeRoute(null)
+      }
+    }
+
+    void resolveCurrentHome()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  useEffect(() => {
+    // Defensive reset in case an earlier route left the page locked.
+    //
+    // Guarded on the shared lock depth (backlog #59): this used to clear
+    // overflow unconditionally on mount, so navigating home while any overlay
+    // legitimately held the lock silently unlocked the page underneath it. It
+    // now only clears a lock that nothing owns — which is the stale state it
+    // was written to catch, and nothing else.
+    if (!isScrollLocked()) document.body.style.overflow = ''
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const media = window.matchMedia('(max-width: 900px)')
+    const syncViewport = () => setIsMobileViewport(media.matches)
+    syncViewport()
+    media.addEventListener('change', syncViewport)
+    return () => media.removeEventListener('change', syncViewport)
+  }, [])
+
+  // Schema.org JSON-LD: declare the site (with sitelinks search box)
+  // and surface the on-page FAQ as structured data so search engines
+  // can render rich results. Static — does not depend on hydration.
+  const siteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Euangelion',
+    url: 'https://euangelion.app',
+    description:
+      'Daily bread for the cluttered, hungry soul. Ancient wisdom, modern design.',
+    inLanguage: 'en',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Euangelion',
+      url: 'https://euangelion.app',
+    },
+    potentialAction: {
+      // F-071: the advertised search target is now real. The shell
+      // header (rendered on every route) reads ?search= and opens the
+      // global search overlay pre-filled — previously this pointed at
+      // /series?q=, which no page ever handled.
+      '@type': 'SearchAction',
+      target: 'https://euangelion.app/?search={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
+  // Audit T15 — Organization schema gives Google + AI search a clean
+  // entity for "Euangelion." sameAs intentionally empty until the
+  // founder confirms canonical social handles.
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Euangelion',
+    url: 'https://euangelion.app',
+    logo: 'https://euangelion.app/icons/icon-512.png',
+    description:
+      'Daily bread for the cluttered, hungry soul. Ancient wisdom, modern design.',
+    sameAs: [] as string[],
+    foundingDate: '2026',
+  }
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }
+
+  return (
+    <div className="mock-home mock-homepage">
+      {/* Crisis interstitial — shown before any network call when gate fires */}
+      {crisisText !== null && (
+        <CrisisInterstitial
+          resources={CRISIS_RESOURCES}
+          onContinue={() => void dismissCrisisAndContinue()}
+        />
+      )}
+      {/* F-065 — anonymous first-run introduction. Homepage only, so a
+          deep-linked devotional is never blocked; the component itself
+          gates on anonymous + genuinely-first visit. */}
+      <FirstRunIntro />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <main id="main-content" className="mock-paper">
+        {/* Audit T3: stable, screen-reader-only H1 anchors page identity
+            for search engines. The visible H2 below is the daily devotional
+            title, which is a rotating field. */}
+        <h1 className="sr-only">
+          Euangelion — A daily newspaper of the Gospel
+        </h1>
+        <EuangelionShellHeader />
+
+        {/* Founder direction 2026-08-14: the church-year line was removed from
+            every devotional (it bogged down the reading) and belongs here
+            instead — on the home page, unobtrusively. One quiet line under the
+            masthead, above the banner: present for anyone who keeps the
+            calendar, invisible to anyone who doesn't. SA-037 / F-088. */}
+        <section
+          className="homepage-church-year text-label"
+          aria-label="Today in the church year"
+        >
+          <ChurchYearOverline />
+        </section>
+
+        {/* Founder direction 2026-05-13: split the prior single hero
+            into three blocks — full-bleed banner image, a "What is
+            this place?" intro section, then the featured devotional
+            with image-left / text-right (2/3 + 1/3). */}
+        <section
+          className="homepage-hero-banner"
+          aria-label="Euangelion home banner"
+        >
+          {/* Parse-time draw (SA-113): the script runs synchronously as
+              the parser reaches it and puts the chosen plate on <html> as
+              --hero-rot, plus a fetchpriority=high preload for the LCP
+              contract. The banner div below is static markup that paints
+              the variable as its background (globals.css), with the tomb
+              as the CSS fallback for JS-off readers — nothing here for
+              hydration to reconcile away, and no render-time randomness
+              to freeze into the year-long edge cache (see the featured
+              rotation note above). */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: heroDrawScript(HERO_ROTATION),
+            }}
+          />
+          <div className="homepage-hero-banner-art" />
+        </section>
+
+        {/* Active-plan resume banner — sits BELOW the hero image (founder
+            direction 2026-06-20): a returning reader's "continue" prompt
+            comes after the header image, not above it. */}
+        {resumeRoute && (
+          <section
+            className="homepage-resume-banner"
+            aria-label="Your active devotional plan"
+          >
+            <p className="text-label mock-kicker">YOUR PLAN</p>
+            <p className="mock-body">
+              You have a devotional waiting. Pick up where you left off.
+            </p>
+            <Link
+              href={resumeRoute}
+              className="mock-btn mock-btn-inline text-label"
+            >
+              CONTINUE MY DEVOTIONAL
+            </Link>
+          </section>
+        )}
+
+        {/* THE WORD — founder-directed 2026-08-20: the page leads with
+            Scripture itself, not a pitch. Today's saying from the Daily
+            Bread (the edition's daily proverb, BSB verbatim), fetched
+            server-side each hour by page.tsx. Rule 1: when the row is
+            missing the block SAYS so — broken looks broken. */}
+        <section
+          className="homepage-word-of-day"
+          aria-label="The Word for today"
+        >
+          <p className="text-label mock-kicker">THE WORD · TODAY</p>
+          {word ? (
+            <>
+              <blockquote className="homepage-word-text">
+                {typographer(word.text)}
+              </blockquote>
+              <p className="text-label homepage-word-ref">
+                {word.reference} · {word.translation}
+              </p>
+            </>
+          ) : (
+            <p className="mock-footnote">Today&rsquo;s verse is unavailable.</p>
+          )}
+        </section>
+
+        {/* SOUL AUDIT — moved to the second decision on the page
+            (the-Word-leads rebuild, 2026-08-20): the one thing no other
+            site has, directly under the Word it answers to. The condition
+            line above the question is the approved "echoed feelings"
+            pattern, drafted by the devotional-writer. */}
+        <section className="homepage-soul-audit" id="start-audit">
+          <p className="text-label mock-kicker">SOUL AUDIT</p>
+          <p className="mock-subcopy homepage-condition-line">
+            {typographer(
+              'Maybe faith went quiet. Maybe it never started. Maybe you’re just worn out.',
+            )}
+          </p>
+          <h2 className="mock-title mock-homepage-prompt-title">
+            A 7-day plan, written for what you actually carry.
+          </h2>
+          <p className="mock-subcopy">
+            {typographer(
+              "Tell us — in one honest sentence — what you're wrestling with. The Soul Audit reads that, then assembles a personalized seven-day path: real scripture, ancient voices, no canned answers, no signup, no engagement bait. About three minutes to set up; five to seven minutes a day to walk.",
+            )}
+          </p>
+
+          {/* While the options compose is in flight, swap the input cluster
+              for the SAME Phase A "Building your paths..." gather-dots loader
+              the standalone /soul-audit page shows — so submitting here is no
+              longer an abrupt button-label change. The kicker/title/subcopy
+              above stay put; only the interactive body swaps, which keeps the
+              section height stable (no layout shift). After this completes the
+              flow routes to /soul-audit/results, where Phase B ("SETTING YOUR
+              EDITION") is already identical for both entry points. */}
+          {isSubmitting ? (
+            <ComposingPaths />
+          ) : (
+            <>
+              <textarea
+                value={auditText}
+                onChange={(e) => {
+                  setAuditText(e.target.value)
+                  setError(null)
+                }}
+                placeholder="Lately, I've been..."
+                rows={3}
+                maxLength={2000}
+                disabled={isSubmitting}
+                className="mock-textarea"
+                aria-label="What are you wrestling with today?"
+              />
+
+              {/* Founder 2026-08-16: "remove the pills on the homepage version
+                  as well." The four sample-prompt buttons that sat under the
+                  field are gone — the placeholder already models what to
+                  write, and the pills were answering the question for the
+                  reader. */}
+
+              {showLowContextHint && (
+                <p className="mock-footnote">
+                  Say a little more. Even one sentence helps.
+                </p>
+              )}
+
+              <button
+                type="button"
+                className="mock-btn mock-btn-inline text-label"
+                onClick={() => void submitAudit(auditText)}
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
+              >
+                GET MATCHED
+              </button>
+              <p className="mock-footnote">
+                Read to compose your edition, then kept with your anonymous
+                session for 30 days and deleted — never sold, never shared,
+                never used to train AI. No account required.
+              </p>
+              {/* No proactive "X of N" counter — it reads as a metered trial.
+              The cap still applies; we only surface it once it's reached. */}
+              {hydrated && limitReached && (
+                <p className="mock-footnote">
+                  You’ve explored a few directions already — start a fresh audit
+                  whenever you’re ready.
+                </p>
+              )}
+              {hydrated && auditCount > 0 && (
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void handleResetAudit()}
+                >
+                  Start a new audit
+                </button>
+              )}
+              {error && <p className="mock-error">{error}</p>}
+              {lastFailedSubmission && !isSubmitting && (
+                <button
+                  type="button"
+                  className="mock-reset-btn text-label"
+                  onClick={() => void submitAudit(lastFailedSubmission)}
+                >
+                  Retry Last Submit
+                </button>
+              )}
+            </>
+          )}
+        </section>
+
+        {/* THE GRACE LINE — every clause inverts a documented category
+            complaint from the last-30-days research (streak guilt, paywalls,
+            account walls, the falling-behind spiral). Each clause must stay
+            literally true of the product, forever. */}
+        <section className="homepage-grace-line" aria-label="What this costs">
+          <p className="text-label">
+            FREE. NO ACCOUNT. NO ADS. NO STREAKS. NOTHING TO FALL BEHIND ON.
+          </p>
+        </section>
+
+        <section
+          className="homepage-featured-devotional"
+          id="today-devotional"
+          aria-label="Today's featured devotional"
+        >
+          <div
+            className="homepage-featured-devotional-art"
+            data-parallax="0.55"
+          >
+            <Image
+              src={HOMEPAGE_TODAY.featuredArt}
+              alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
+              fill
+              sizes="(max-width: 900px) 100vw, 66vw"
+            />
+          </div>
+
+          <div className="homepage-featured-devotional-main">
+            <p className="text-label mock-kicker">{HOMEPAGE_TODAY.kicker}</p>
+            <p
+              className="text-label"
+              style={{ opacity: 0.7, margin: '0 0 0.2rem' }}
+            >
+              {HOMEPAGE_TODAY.scripture}
+            </p>
+            {/* Audit T3: demoted from H1 to H2. The stable H1 lives at
+                the top of <main> (screen-reader-only). */}
+            <h2 className="mock-title mock-homepage-prompt-title">
+              {typographer(HOMEPAGE_TODAY.title)}
+            </h2>
+            <p className="mock-subcopy">{typographer(HOMEPAGE_TODAY.teaser)}</p>
+
+            <Link
+              href={`/series/${HOMEPAGE_TODAY.series}`}
+              className="mock-btn mock-btn-inline text-label"
+            >
+              BEGIN THIS SERIES
+            </Link>
+            {/* The Bible-365 secondary link was cut 2026-08-16 (founder:
+                "The CTA to the Bible 365 should be removed."). The featured
+                slot now makes one offer instead of two — Bible 365 is still
+                one tap away in Series. */}
+            {/* the-Word-leads rebuild: one quiet line saying this arrives
+                daily, with no habit demand — the anti-pressure work already
+                happened in the Grace Line above. Writer-drafted. */}
+            <p className="mock-footnote homepage-featured-caption">
+              Today&rsquo;s reading. Tomorrow brings another.
+            </p>
+          </div>
+        </section>
+
+        {/* SA-107 — the audio callout.
+            Audio was tucked deliberately (the drawer is a handle, not a bar),
+            and tucked with no announcement is just hidden. This is the one
+            place the site says out loud that it can be listened to, and it
+            leads with the occasion rather than the feature: what a listener
+            wants to know is that this works while their hands are busy.
+            (the-Word-leads rebuild: moved to sit directly under the reading
+            it offers to speak.) */}
+        <section className="homepage-audio-callout" aria-label="Listen">
+          <p className="text-label mock-kicker">ALSO A LISTENING APP</p>
+          <h2 className="homepage-audio-title">
+            Hands full? It reads itself to you.
+          </h2>
+          <p className="homepage-audio-copy">
+            Every reading is narrated — {AUDIO_HOURS} hours of it, from a
+            two-minute prayer to the whole year in Scripture. Queue a series for
+            the commute, save it for the flight, and pick up where you stopped
+            on any device.
+          </p>
+          <div className="homepage-audio-actions">
+            {/* Opens the audio sidebar rather than navigating. Discovery used
+                to sit above the series shelves and the founder called that
+                placement intrusive, so it moved into audio's own area — which
+                means this is now the way in. */}
+            <button
+              type="button"
+              className="mock-btn text-label"
+              onClick={() => setAudioPanelOpen(true)}
+            >
+              FIND SOMETHING TO LISTEN TO
+            </button>
+            <Link href="/library" className="text-label homepage-audio-link">
+              Your queue &rarr;
+            </Link>
+          </div>
+        </section>
+
+        {/* THE SCALE LINE — the measured library, stated once. Every number
+            is computed from data, never hand-typed (the old "32 series"
+            figure went stale exactly this way). */}
+        <section className="homepage-scale-line" aria-label="What is here">
+          <p className="text-label">
+            {`${Object.keys(DEVOTIONAL_TEASERS).length} READINGS · ${AUDIO_HOURS} HOURS NARRATED · ${SERIES_COUNT} SERIES · ANCHORED IN THE APOSTLES’ AND NICENE CREEDS`}
+          </p>
+        </section>
+
+        {/* Audit Manus §2 — Zone 2 Featured Series rail moved UP so the
+            strongest headlines on the site (Identity Crisis, Too Busy
+            for God, Why Jesus?) sit above the Soul Audit / How-It-Works
+            block, not buried below it. */}
+        <SeriesRailSection
+          label="Featured Series"
+          subtitle="Plans for what people actually wrestle with."
+          slugs={featuredSlugs}
+          layout="rail"
+          cardVariant="large"
+        />
+
+        {/* Phase 1.4: demoted from a full mock-btn to a quiet "see all"
+            link so the rail's browse affordance doesn't compete as a
+            third primary CTA. The library is already the tertiary action
+            in the top action ladder. */}
+        <section className="mock-more-row mock-series-more-row">
+          <Link href="/series" className="homepage-see-all-link text-label">
+            Browse every plan →
+          </Link>
+          <p className="mock-footnote">
+            No account required. Start immediately.
+          </p>
+        </section>
+
+        {/* (the-Word-leads rebuild, 2026-08-20: the Soul Audit that lived
+            here moved up to the second decision on the page.) */}
+        <section className="homepage-howitworks">
+          <p className="text-label mock-kicker">HERE&rsquo;S HOW IT WORKS</p>
+          <h2 className="mock-title-center">
+            Three steps. Five minutes a day.
+          </h2>
+          <p className="mock-subcopy-center">
+            Honest input. Focused output that meets where you are.
+          </p>
+        </section>
+
+        <section className="mock-steps-grid homepage-howitworks-grid">
+          {HOW_STEPS.map((step) => {
+            // Strip the leading "1. " from the title to produce a clean alt.
+            const altText = step.title
+              .replace(/^\d+\.\s*/, '')
+              .replace(/\.$/, '')
+            return (
+              <article key={step.title} className="mock-step-card" data-reveal>
+                <div className="mock-step-image-wrap">
+                  <div className="mock-step-image">
+                    <Image
+                      src={step.image}
+                      alt={altText}
+                      fill
+                      sizes="(max-width: 900px) 100vw, 320px"
+                    />
+                  </div>
+                </div>
+                <div className="mock-step-copy">
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </div>
+              </article>
+            )
+          })}
+        </section>
+
+        {/* THE ONE ACTION — the-Word-leads rebuild (2026-08-20): the
+            closing block makes exactly one offer. The old block held a
+            button plus a competing link; the research's finding is that
+            multiple decisions at the moment of zero read as clutter.
+            Resume-aware: a returning reader continues instead. */}
+        <section className="mock-cta homepage-one-action" data-reveal>
+          {resumeRoute ? (
+            <>
+              <h2 className="mock-cta-headline">
+                Your devotional is ready to continue.
+              </h2>
+              <p className="mock-subcopy-center">
+                Jump back into your current day and keep your rhythm.
+              </p>
+              <Link href={resumeRoute} className="mock-btn text-label">
+                CONTINUE MY DEVOTIONAL
+              </Link>
+            </>
+          ) : (
+            <>
+              <h2 className="mock-cta-headline">
+                You do not need certainty before you begin.
+              </h2>
+              <p className="mock-subcopy-center">
+                You need a next step. You need grace.
+              </p>
+              <a href="#start-audit" className="mock-btn text-label">
+                START WHERE YOU ARE
+              </a>
+            </>
+          )}
+        </section>
+
+        {/* R41: FAQ now follows the CTA, so the framing shifts
+            from "before you begin" (pre-decision) to "still
+            wondering" (post-CTA reassurance for readers who
+            haven't clicked through yet). */}
+        <section className="mock-faq-row">
+          <article className="mock-faq-lead">
+            <h3>Still wondering?</h3>
+            <p>The questions readers ask before they start.</p>
+          </article>
+
+          {!isMobileViewport && (
+            <button
+              type="button"
+              className="mock-arrow"
+              aria-label="Previous question"
+              onClick={() =>
+                setFaqIndex(
+                  (prev) => (prev - 1 + FAQ_ITEMS.length) % FAQ_ITEMS.length,
+                )
+              }
+            >
+              &lt;
+            </button>
+          )}
+
+          {faqItemsToRender.map((item, idx) => {
+            const cardId = `faq-card-${idx}`
+            const answerId = `faq-answer-${idx}`
+            const isActive =
+              isMobileViewport && activeFaqQuestion === item.question
+
+            if (isMobileViewport) {
+              return (
+                <button
+                  type="button"
+                  key={`${item.question}-${idx}`}
+                  id={cardId}
+                  className={`mock-faq-card ${isActive ? 'is-active' : ''}`}
+                  aria-expanded={isActive}
+                  aria-controls={answerId}
+                  onClick={() =>
+                    setActiveFaqQuestion((previous) =>
+                      previous === item.question ? null : item.question,
+                    )
+                  }
+                >
+                  <p className="mock-faq-question">{item.question}</p>
+                  <p id={answerId} className="mock-faq-answer">
+                    {item.answer}
+                  </p>
+                </button>
+              )
+            }
+
+            // Desktop: auto-rotate highlight across the 3 visible cards.
+            // Hover takes precedence — when the user hovers any card, that
+            // one is highlighted instead. Releasing hover resumes rotation.
+            const highlightIdx = faqHoverIndex ?? faqAutoIndex
+            const isHighlighted = idx === highlightIdx
+            return (
+              <button
+                type="button"
+                key={`${item.question}-${idx}`}
+                id={cardId}
+                className={`mock-faq-card ${isHighlighted ? 'is-active' : ''}`}
+                aria-expanded={isHighlighted}
+                aria-controls={answerId}
+                onMouseEnter={() => setFaqHoverIndex(idx)}
+                onMouseLeave={() => setFaqHoverIndex(null)}
+                onFocus={() => setFaqHoverIndex(idx)}
+                onBlur={() => setFaqHoverIndex(null)}
+              >
+                <p className="mock-faq-question">{item.question}</p>
+                <p id={answerId} className="mock-faq-answer">
+                  {item.answer}
+                </p>
+              </button>
+            )
+          })}
+
+          {!isMobileViewport && (
+            <button
+              type="button"
+              className="mock-arrow"
+              aria-label="Next question"
+              onClick={() =>
+                setFaqIndex((prev) => (prev + 1) % FAQ_ITEMS.length)
+              }
+            >
+              &gt;
+            </button>
+          )}
+        </section>
+        <section className="mock-more-row">
+          <Link href="/help#faq" className="mock-btn text-label">
+            VIEW FULL FAQ
+          </Link>
+        </section>
+
+        <SiteBottom />
+      </main>
+    </div>
+  )
+}

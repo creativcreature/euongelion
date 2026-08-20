@@ -19,7 +19,7 @@ import { HERO_ROTATION, heroDrawScript } from '@/lib/home/hero-rotation'
  */
 describe('hero rotation contract (SA-113)', () => {
   const home = fs.readFileSync(
-    path.join(process.cwd(), 'src', 'app', 'page.tsx'),
+    path.join(process.cwd(), 'src', 'app', 'HomeClient.tsx'),
     'utf8',
   )
   const css = fs.readFileSync(
