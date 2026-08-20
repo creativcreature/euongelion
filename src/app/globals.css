@@ -431,13 +431,35 @@ h3 {
      the tomb is the CSS fallback so a JS-off reader still gets a plate.
      Painting via background (not an injected <img>) keeps the drawn plate
      outside React hydration's reach — this page is a client component. */
+  /* Responsive by breakpoint, because a CSS background gets none of the
+     negotiation an <img srcset> would. The draw script publishes the chosen
+     plate at all three widths and preloads the one these queries will paint;
+     the literal fallbacks keep a JS-off reader on a correctly-sized tomb.
+     A phone was pulling the full 2400px plate — 381-618 KB for a band ~103px
+     tall, and it is the LCP element. */
   background-image: var(
-    --hero-rot,
-    url('/images/site/homepage/hero/header-v2.webp')
+    --hero-rot-sm,
+    url('/images/site/homepage/hero/header-v2-960.webp')
   );
   background-size: cover;
   background-position: center;
   filter: contrast(1.05);
+}
+@media (min-width: 600px) {
+  .homepage-hero-banner-art {
+    background-image: var(
+      --hero-rot-md,
+      url('/images/site/homepage/hero/header-v2-1600.webp')
+    );
+  }
+}
+@media (min-width: 1100px) {
+  .homepage-hero-banner-art {
+    background-image: var(
+      --hero-rot,
+      url('/images/site/homepage/hero/header-v2.webp')
+    );
+  }
 }
 .homepage-hero-banner-art img {
   object-fit: cover;
@@ -14023,13 +14045,40 @@ html[data-held-moment] .mobile-tab-bar {
   /* Inert from the first frame. A reader who wants to start never waits. */
   pointer-events: none;
   overflow: hidden;
+
+  /* OWN TOKENS, not the masthead's.
+     MastheadIntro mounts in layout.tsx as a direct child of <body>, OUTSIDE
+     the `.mock-home` wrapper that defines --mock-blue / --mock-paper. Those
+     properties simply do not resolve here, so the old rules were silently
+     riding their literal fallbacks — the intro was hard-wired to light mode in
+     both themes. And where a token DID resolve (--color-crimson, which lives
+     on :root) it brightened to #e25868 in dark, which is why the register
+     ghost read as a red word there and merely as ink slip in light.
+     Declared locally so the sequence is explicit in both themes. */
+  --press-ink: #1f2a8d; /* cobalt sheet — the same in both themes */
+  --press-paper: #f5eee3; /* the knockout: paper showing through */
+  --press-land: #1f2a8d; /* what the word BECOMES on landing (light masthead) */
+  --press-slip: rgba(
+    196,
+    25,
+    46,
+    0.85
+  ); /* register ghost, fixed across themes */
+}
+
+/* Dark mode changes exactly one thing: the real masthead's wordmark is cream,
+   not cobalt (--mock-blue-text resolves to --mock-ink there), so the flying
+   word has to land cream or it vanishes into the page at the last frame. */
+.dark .press,
+:root[data-theme='dark'] .press {
+  --press-land: #efe5d8;
 }
 
 /* The ink field. Retracts on a HARD edge — a squeegee coming off the sheet. */
 .press-ink {
   position: absolute;
   inset: 0;
-  background: var(--mock-blue, #1f2a8d);
+  background: var(--press-ink);
   transform-origin: top center;
   transition: transform 900ms cubic-bezier(0.83, 0, 0.17, 1);
 }
@@ -14055,42 +14104,63 @@ html[data-held-moment] .mobile-tab-bar {
   font-size: clamp(1.5rem, 7vw, 5.75rem);
   line-height: 1;
   white-space: nowrap;
-  /* Set wide, then tightened — type going into the stick. */
-  letter-spacing: 0.2em;
-  /* Indent by the tracking so the word stays optically centred as it tightens
-     (letter-spacing adds a trailing space to the last glyph). */
-  text-indent: 0.2em;
-  animation: press-set 1000ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  /* Final tracking, held. The tightening is done with transform, NOT by
+     animating letter-spacing.
+     WHY: letter-spacing and text-indent are layout properties. Animating them
+     re-runs layout and paint for the whole line on every frame, on the main
+     thread, competing with hydration on the heaviest page of the site — which
+     is what made the open read as chippy. transform: scaleX composites on the
+     GPU and never touches layout. At 6% the glyph widening is imperceptible
+     for the 500ms it is visible, and it reads as the same movement: type
+     tightening into the stick. */
+  letter-spacing: 0.02em;
+  text-indent: 0.02em;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  animation: press-set 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
 /* The key plate: paper showing through the ink. */
 .press-word--key {
-  color: var(--mock-paper, #f2ebd8);
+  color: var(--press-paper);
   z-index: 2;
-  /* THE FADE MUST FINISH BEFORE THE INK DOES.
-     Founder 2026-08-18: "It is white overlayed over the blue masthead breifly
-     for a frame or so and it looks like a mistake."
+  /* THE HAND-OFF IS A COLOUR CHANGE, NOT A FADE.
+     Founder 2026-08-20: "the transition from white euangelion to blue doesn't
+     work well."
 
-     Both timelines start together when `.is-lifting` lands. The ink retracts in
-     900ms; this used to fade over 260ms after an 820ms delay, so it was still
-     painted until 1080ms — 180ms AFTER the ink had cleared and exposed the real
-     cobalt masthead underneath. A cream wordmark over a cobalt one is exactly
-     the flash that reads as a bug.
+     It didn't, for two reasons. The word flew to the masthead's measured
+     position and faded to nothing on the way, so it never visibly ARRIVED —
+     the sequence promised a hand-off and delivered a disappearance. And in
+     light mode a cream wordmark crosses a cream page to reach a cobalt
+     masthead, so for most of the flight it was invisible against the paper it
+     was flying over.
 
-     `.press-ink` collapses toward `top center`, so the masthead band is the
-     LAST thing it uncovers — which is why the overlap landed precisely on the
-     wordmark rather than anywhere harmless. The fade now completes at 840ms,
-     60ms before the ink finishes, so the cream word is already gone when the
-     real one appears and the two never share a frame. */
+     Now it changes colour instead: paper-cream while it is knocked out of the
+     ink, resolving to --press-land — cobalt in light, cream in dark — timed to
+     complete just as it lands. It stops being the intro's word and becomes the
+     masthead's, which is what the sequence was always describing.
+
+     The old opacity fade is gone entirely, so the earlier flash bug it was
+     tuned around (a cream word sharing a frame with the real cobalt one)
+     cannot recur: by the time the ink clears, this word is already the
+     masthead's colour and sits exactly on top of it. */
   transition:
-    transform 1000ms cubic-bezier(0.76, 0, 0.24, 1),
-    opacity 240ms ease 600ms;
+    transform 900ms cubic-bezier(0.76, 0, 0.24, 1),
+    color 620ms cubic-bezier(0.4, 0, 0.2, 1) 120ms;
 }
 
 .press.is-lifting .press-word--key {
-  /* If the hand-off could not be measured the word lifts with the ink instead,
-     which still reads as finished rather than as a dropped frame. */
+  color: var(--press-land);
+}
+
+/* Fallback ONLY when the real masthead could not be measured. Without a
+   destination the word has nowhere to become, so it leaves with the ink
+   rather than sitting on the page in a colour that means nothing. */
+.press.is-lifting.is-unmeasured .press-word--key {
   opacity: 0;
+  transition:
+    opacity 240ms ease 380ms,
+    color 620ms cubic-bezier(0.4, 0, 0.2, 1) 120ms;
 }
 
 /* The crimson plate, offset and a beat late. Kept FAINT: real misregistration
@@ -14098,11 +14168,18 @@ html[data-held-moment] .mobile-tab-bar {
    word competing with it. `multiply` was worse than nothing here — crimson
    multiplied over cobalt goes muddy brown rather than reading as ink slip. */
 .press-word--slip {
-  color: var(--color-crimson, #8b1f2e);
+  /* Fixed colour, not --color-crimson: that token brightens to #e25868 in dark
+     mode, where this stops reading as ink slip and starts reading as a red
+     word sitting behind the logo. */
+  color: var(--press-slip);
   z-index: 1;
+  /* Composited like the key plate. Without this the ghost repaints on the main
+     thread beside a GPU-composited sibling and the two visibly disagree. */
+  transform-origin: center center;
+  will-change: transform, opacity;
   animation:
-    press-set 1000ms cubic-bezier(0.22, 0.61, 0.36, 1) both,
-    press-register 900ms cubic-bezier(0.22, 0.61, 0.36, 1) 120ms both;
+    press-set 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both,
+    press-register 760ms cubic-bezier(0.22, 0.61, 0.36, 1) 90ms both;
 }
 
 .press.is-lifting .press-word--slip {
@@ -14112,16 +14189,14 @@ html[data-held-moment] .mobile-tab-bar {
 
 @keyframes press-set {
   from {
-    letter-spacing: 0.2em;
-    text-indent: 0.2em;
+    transform: scaleX(1.06);
     opacity: 0;
   }
-  12% {
+  18% {
     opacity: 1;
   }
   to {
-    letter-spacing: 0.02em;
-    text-indent: 0.02em;
+    transform: scaleX(1);
     opacity: 1;
   }
 }
@@ -14130,17 +14205,28 @@ html[data-held-moment] .mobile-tab-bar {
    opacity keyframes override press-set's fade for this element, so if it
    starts at full strength the crimson arrives before the cream and the whole
    thing reads as a red word — which is what the first pass did. */
+/* Misregistration is a MOMENT, not a resting state.
+   It used to settle at translate(1.5px, 1px) / opacity 0.18 and stay there —
+   a second word parked permanently beside the first, which is exactly what
+   "the logo overlays itself" describes. A real press slip is visible while the
+   sheet is moving and gone once it registers, so this now resolves to zero
+   offset and zero opacity: the ghost separates, slides in, and disappears into
+   the key plate. Peak is lower too (0.26), because at 0.34 the crimson was
+   competing with the cream rather than edging it. */
 @keyframes press-register {
   from {
     transform: translate3d(7px, 5px, 0);
     opacity: 0;
   }
-  30% {
-    opacity: 0.34;
+  26% {
+    opacity: 0.26;
+  }
+  70% {
+    opacity: 0.16;
   }
   to {
-    transform: translate3d(1.5px, 1px, 0);
-    opacity: 0.18;
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
   }
 }
 
@@ -16610,4 +16696,205 @@ html.dark .edition-quote-text--red {
   :root {
     --mobile-tab-bar-h: calc(44px + 0.68rem);
   }
+}
+
+/* ═══ Wave A — the founder's morning critique (SA-114 / F-158) ═══════════
+   1. Compartments read SOLIDLY distinct: every box is a complete bordered
+      rectangle with visible gutters — no half-rules, ever.
+   2. The strip prints full-format at its own ratio, breaking the box plane.
+   3. Red-letter voice is crimson wherever it speaks.
+   4. Found words in the search wear a red marker circle.
+   5. Feature headlines go display-size with color — editorial, not static. */
+
+/* 1 — solid compartments */
+.paper-sheet {
+  gap: 6px;
+  border: none;
+  background: transparent;
+}
+
+.paper-box {
+  border: var(--ed-hair);
+  background: var(--mock-paper, transparent);
+}
+
+/* 2 — the strip, full and responsive, leaning out of its box */
+.edition-strip-plate--intrinsic {
+  aspect-ratio: auto;
+  display: block;
+  width: 100%;
+  border: var(--ed-hair);
+  overflow: visible;
+}
+
+.edition-strip-img--intrinsic {
+  position: static !important;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: unset;
+}
+
+@media (min-width: 900px) {
+  .paper-box--strip .edition-strip-plate--intrinsic {
+    /* Break the plane: the comic leans out of its compartment. */
+    width: calc(100% + 2.4rem);
+    margin-left: -1.2rem;
+    transform: rotate(-0.35deg);
+    box-shadow: 4px 5px 0 color-mix(in srgb, var(--mock-ink) 12%, transparent);
+  }
+}
+
+/* 3 — the red letters are red */
+.red-letter-voice {
+  color: var(--color-crimson, #c4192e);
+}
+
+/* 4 — found words get circled in red */
+.puzzle-ws-grid {
+  position: relative;
+}
+
+.puzzle-ws-circles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.puzzle-ws-circle {
+  stroke: var(--color-crimson, #c4192e);
+  stroke-width: 0.86;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0.5;
+}
+
+/* Crossword: the active word wears the same red ring */
+.puzzle-cw-word {
+  background: color-mix(
+    in srgb,
+    var(--color-crimson, #c4192e) 12%,
+    transparent
+  );
+}
+
+.puzzle-cw-active {
+  outline-color: var(--color-crimson, #c4192e);
+}
+
+/* 5 — editorial type: feature heads go display-size, with color */
+.paper-box--strip .edition-section-head,
+.paper-box--gallery .edition-section-head {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-crimson, #c4192e);
+}
+
+.edition-season .edition-section-head {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.edition-lead-head {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.edition-quiz-explainer {
+  margin: 0.35rem 0 0.8rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: var(--type-body-s, 0.9rem);
+  color: var(--mock-muted, currentColor);
+}
+
+/* Gallery plates overlap their headline a breath — type meets image. */
+@media (min-width: 900px) {
+  .paper-box--gallery .edition-gallery-plate,
+  .edition-lead-plate {
+    margin-top: -0.45rem;
+  }
+}
+
+/* ── The Daily Bread archive (SA-114 / F-158) ─────────────────────────── */
+.edition-archive-main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.5rem clamp(1rem, 4vw, 2.5rem) 4rem;
+}
+
+.edition-archive-title {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  margin: 0 0 0.6rem;
+}
+
+.edition-archive-stand {
+  font-style: italic;
+  color: var(--mock-muted, currentColor);
+  margin: 0 0 2rem;
+}
+
+.edition-archive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: var(--ed-hair);
+}
+
+.edition-archive-link {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0.2rem;
+  border-bottom: var(--ed-hair);
+  text-decoration: none;
+  color: inherit;
+  min-height: 44px;
+  align-items: baseline;
+}
+
+.edition-archive-link:hover .edition-archive-day {
+  color: var(--color-crimson, #c4192e);
+}
+
+.edition-archive-day {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1.15rem;
+}
+
+.edition-archive-iso {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.12em;
+  color: var(--mock-muted, currentColor);
+}
+
+.edition-archive-band {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: var(--mock-blue, #1f2a8d);
+  color: var(--mock-paper, #f6f1e7);
+  text-align: center;
+  padding: 0.45rem 1rem;
+}
+
+.edition-archive-band p {
+  margin: 0;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.edition-archive-band a {
+  color: inherit;
+  text-decoration: underline;
 }

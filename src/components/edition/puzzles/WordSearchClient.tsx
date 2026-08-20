@@ -10,8 +10,15 @@
  * Everything is local state — no network, no persistence, no timer. It is
  * a newspaper puzzle: you do it with your coffee and it lets you go.
  */
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { WordSearchPuzzle } from '@/lib/edition/wordsearch'
+import { readPuzzleState, writePuzzleState } from '@/lib/puzzle-store'
+
+interface StoredSearch {
+  found: string[]
+  cells: string[]
+  runs: { r0: number; c0: number; r1: number; c1: number }[]
+}
 
 interface Cell {
   row: number
@@ -44,8 +51,27 @@ export default function WordSearchClient({
 
   const [anchor, setAnchor] = useState<Cell | null>(null)
   const [cursor, setCursor] = useState<Cell | null>(null)
-  const [found, setFound] = useState<string[]>([])
-  const [foundCells, setFoundCells] = useState<ReadonlySet<string>>(new Set())
+  // Progress survives a reload (founder lost a half-finished search).
+  const storeKey = `euangelion-puzzle:ws:${theme}:${words.join('|')}`
+  const [found, setFound] = useState<string[]>(
+    () => readPuzzleState<StoredSearch>(storeKey)?.found ?? [],
+  )
+  const [foundCells, setFoundCells] = useState<ReadonlySet<string>>(
+    () => new Set(readPuzzleState<StoredSearch>(storeKey)?.cells ?? []),
+  )
+  // Each found word's run, for the red marker circle drawn over it
+  // (founder: "look like someone circled the words upon selection").
+  const [foundRuns, setFoundRuns] = useState<
+    { r0: number; c0: number; r1: number; c1: number }[]
+  >(() => readPuzzleState<StoredSearch>(storeKey)?.runs ?? [])
+
+  useEffect(() => {
+    writePuzzleState(storeKey, {
+      found,
+      cells: [...foundCells],
+      runs: foundRuns,
+    } satisfies StoredSearch)
+  }, [storeKey, found, foundCells, foundRuns])
   const [missCells, setMissCells] = useState<ReadonlySet<string> | null>(null)
 
   // Drag bookkeeping lives in refs: it never drives a render on its own,
@@ -80,6 +106,12 @@ export default function WordSearchClient({
         for (const { row, col } of path) next.add(keyOf(row, col))
         return next
       })
+      const first = path[0]
+      const last = path[path.length - 1]
+      setFoundRuns((prev) => [
+        ...prev,
+        { r0: first.row, c0: first.col, r1: last.row, c1: last.col },
+      ])
     } else {
       flashMiss(path)
     }
@@ -176,6 +208,25 @@ export default function WordSearchClient({
             onPointerLeave={handlePointerUp}
             onPointerCancel={handlePointerCancel}
           >
+            {foundRuns.length > 0 && (
+              <svg
+                className="puzzle-ws-circles"
+                viewBox={`0 0 ${grid[0].length} ${grid.length}`}
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                {foundRuns.map((run, i) => (
+                  <line
+                    key={i}
+                    className="puzzle-ws-circle"
+                    x1={run.c0 + 0.5}
+                    y1={run.r0 + 0.5}
+                    x2={run.c1 + 0.5}
+                    y2={run.r1 + 0.5}
+                  />
+                ))}
+              </svg>
+            )}
             {grid.map((rowLetters, row) =>
               rowLetters.map((letter, col) => {
                 const k = keyOf(row, col)

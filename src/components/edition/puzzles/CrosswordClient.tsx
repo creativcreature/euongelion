@@ -11,8 +11,9 @@
  * No persistence, no timer, no streak. It is a newspaper puzzle: you do it
  * with your coffee and it lets you go.
  */
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useEffect, useCallback, useMemo, useRef, useState } from 'react'
 import type { CrosswordPayload } from '@/lib/edition/kinds'
+import { readPuzzleState, writePuzzleState } from '@/lib/puzzle-store'
 
 type Dir = 'across' | 'down'
 
@@ -29,9 +30,25 @@ export default function CrosswordClient({
   const { size, grid, clues } = puzzle
 
   // entries[r][c] — what the reader has typed.
-  const [entries, setEntries] = useState<string[][]>(() =>
-    grid.map((row) => row.map(() => '')),
-  )
+  // Typed letters survive a reload (SA-114 — same contract as the search).
+  const storeKey = `euangelion-puzzle:cw:${size}:${clues.across
+    .map((c) => c.answer)
+    .join('|')}`
+  const [entries, setEntries] = useState<string[][]>(() => {
+    const stored = readPuzzleState<string[][]>(storeKey)
+    if (
+      stored &&
+      stored.length === grid.length &&
+      stored.every((row, r) => row.length === grid[r].length)
+    ) {
+      return stored
+    }
+    return grid.map((row) => row.map(() => ''))
+  })
+
+  useEffect(() => {
+    writePuzzleState(storeKey, entries)
+  }, [storeKey, entries])
   const [active, setActive] = useState<CellRef | null>(null)
   const [dir, setDir] = useState<Dir>('across')
   const [checked, setChecked] = useState(false)

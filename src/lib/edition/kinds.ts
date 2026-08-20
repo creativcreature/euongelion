@@ -118,6 +118,12 @@ export interface StripPayload {
   caption: string
   /** Panel number within the bank, for "no repeat within 30 days" checks. */
   panelId: string
+  /** Native pixel dimensions — when present the strip prints at its OWN
+   *  aspect ratio, full and uncropped (founder: "the comic is the wrong
+   *  format and is being cropped"). Older rows without dims fall back to
+   *  the legacy fill rendering. */
+  width?: number
+  height?: number
 }
 
 /** A crossword cell: letter for a fillable cell, null for a block. */
@@ -387,7 +393,9 @@ export const PAYLOAD_GUARDS: Record<EditionKind, Guard> = {
     isStr(p.image) &&
     isStr(p.alt) &&
     isStr(p.caption) &&
-    isStr(p.panelId),
+    isStr(p.panelId) &&
+    (p.width === undefined || typeof p.width === 'number') &&
+    (p.height === undefined || typeof p.height === 'number'),
   crossword: (p) => {
     if (!rec(p) || typeof p.size !== 'number' || !Array.isArray(p.grid))
       return false

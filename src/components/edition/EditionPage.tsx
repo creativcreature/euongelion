@@ -599,8 +599,12 @@ export default async function EditionPage({
             <section aria-label="Where is this from?">
               <div className="edition-section-bar">
                 <h2 className="edition-section-head">Where is this from?</h2>
-                <p className="edition-section-note">1 of 3</p>
+                <p className="edition-section-note">Question 1 of 3</p>
               </div>
+              <p className="edition-quiz-explainer">
+                A verse from Scripture — tap the reference you think it comes
+                from.
+              </p>
               <QuizClient questions={[edQuiz[0]]} />
             </section>
           </div>
@@ -818,8 +822,12 @@ export default async function EditionPage({
             <section aria-label="Where is this from? Question two">
               <div className="edition-section-bar">
                 <h2 className="edition-section-head">Where is this from?</h2>
-                <p className="edition-section-note">2 of 3</p>
+                <p className="edition-section-note">Question 2 of 3</p>
               </div>
+              <p className="edition-quiz-explainer">
+                A verse from Scripture — tap the reference you think it comes
+                from.
+              </p>
               <QuizClient questions={[edQuiz[1]]} />
             </section>
           </div>
@@ -873,8 +881,12 @@ export default async function EditionPage({
             <section aria-label="Where is this from? Question three">
               <div className="edition-section-bar">
                 <h2 className="edition-section-head">Where is this from?</h2>
-                <p className="edition-section-note">3 of 3</p>
+                <p className="edition-section-note">Question 3 of 3</p>
               </div>
+              <p className="edition-quiz-explainer">
+                A verse from Scripture — tap the reference you think it comes
+                from.
+              </p>
               <QuizClient questions={[edQuiz[2]]} />
             </section>
           </div>
@@ -1199,6 +1211,13 @@ export default async function EditionPage({
               View all of {seriesTitle} &rarr;
             </Link>
           )}
+          {/* SA-114: every past paper stays readable. */}
+          <Link
+            href="/daily-bread/archive"
+            className="text-label today-series-link"
+          >
+            The archive &rarr;
+          </Link>
         </nav>
 
         {/* Colophon */}

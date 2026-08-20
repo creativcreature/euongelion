@@ -68,16 +68,32 @@ export function PrayerColumn({ prayer }: { prayer: PrayerPayload }) {
 /* ── The Funnies — the daily strip (Echo & Dust since 2026-08-20) ────── */
 
 export function StripPanel({ strip }: { strip: StripPayload }) {
+  const intrinsic = Boolean(strip.width && strip.height)
   return (
     <figure className="edition-strip" aria-label="Echo & Dust">
-      <span className="edition-strip-plate">
-        <Image
-          src={strip.image}
-          alt={strip.alt}
-          fill
-          sizes="(max-width: 900px) 100vw, 62vw"
-          className="edition-strip-img"
-        />
+      <span
+        className={`edition-strip-plate${intrinsic ? ' edition-strip-plate--intrinsic' : ''}`}
+      >
+        {intrinsic ? (
+          /* Full, uncropped, responsive — the strip's own aspect ratio
+             (founder: "It needs to be shown in full and be responsive"). */
+          <Image
+            src={strip.image}
+            alt={strip.alt}
+            width={strip.width}
+            height={strip.height}
+            sizes="(max-width: 900px) 100vw, 62vw"
+            className="edition-strip-img edition-strip-img--intrinsic"
+          />
+        ) : (
+          <Image
+            src={strip.image}
+            alt={strip.alt}
+            fill
+            sizes="(max-width: 900px) 100vw, 62vw"
+            className="edition-strip-img"
+          />
+        )}
       </span>
       <figcaption className="edition-strip-caption">
         <span className="edition-strip-title">Echo &amp; Dust</span>
@@ -273,7 +289,9 @@ export function RedLetterColumn({ saying }: { saying: RedLetterPayload }) {
         <h2 className="edition-section-head">The red letters</h2>
         <p className="edition-section-note">A saying of Jesus, verbatim</p>
       </div>
-      <blockquote className="edition-redletter-text">{saying.text}</blockquote>
+      <blockquote className="edition-redletter-text red-letter-voice">
+        {saying.text}
+      </blockquote>
       <p className="edition-redletter-cite">
         {saying.reference} ({saying.translation})
       </p>

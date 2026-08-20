@@ -5,6 +5,54 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The morning critique, wave one — format, compartments, color, memory, the archive (SA-114, F-158)
+
+**2026-08-20**
+
+The founder's daylight review, worked through systematically:
+
+**The comic prints in full.** The strip was being cover-cropped into a fixed
+3:2 box; it now renders at its own aspect ratio, full and responsive
+(payload carries width/height), and on desktop it leans a half-degree out of
+its compartment with a print-shadow — the first of the plane-breakers.
+
+**Compartments are solidly distinct.** Every paper box is now a complete
+bordered rectangle with visible gutters — no more half-rules stopping
+mid-column ("the sectioning between elements makes areas look confusing").
+
+**The red letters are red.** Jesus' words in The Red Letters render in the
+site's crimson.
+
+**Found words get circled.** The word search draws a red marker capsule over
+each found word — and the crossword's active word wears the same red.
+
+**Puzzles remember.** The founder filled the word search, refreshed, and
+lost it. Word search and crossword progress now persist per-puzzle in
+localStorage (device-local, like clippings) and survive any reload.
+
+**"Question 3 of 3" explains itself.** Every Where-is-this-from instance
+carries one italic line: a verse from Scripture — tap the reference you
+think it comes from.
+
+**Editorial type.** The Funnies and The Gallery go display-size in crimson
+italic serif; the lead headline steps up to clamp(2.2rem–3.6rem); the season
+head drops its label uppercase.
+
+**The archive.** /daily-bread/archive lists every past edition
+(newest-first, capped at a month per view) and
+/daily-bread/archive/[date] renders the identical EditionPage for any past
+date — history reads exactly as it printed. Linked from the paper's foot.
+
+**A strip every day.** scripts/edition/strip/generate-strip.mjs writes a new
+Echo & Dust daily (claude writes against the canon + a Storage scenario log,
+codex draws with the locked anchors, claude inspects the render, one redraw
+on FAIL, then Storage asset + draft row). Wired into daily-edition.yml for
+every day of the weekly window, gated loudly on both subscription secrets.
+Strips No. 2 ("The Pocket God") and No. 3 ("The Quarter") are drawn and
+slotted as Friday/Saturday drafts.
+
+---
+
 ## The player, measured against real ones (SA-122, F-167)
 
 **2026-08-20**

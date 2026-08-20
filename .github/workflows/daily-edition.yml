@@ -127,3 +127,35 @@ jobs:
           else
             node scripts/edition/build.mjs --days="$EDITION_DAYS" $FROM_FLAG
           fi
+
+      # SA-114 (F-158): Echo & Dust — one NEW strip per edition day, written
+      # by Claude (subscription), drawn by Codex image_generation
+      # (subscription), inspected, and installed as a DRAFT row + Storage
+      # asset. Needs BOTH subscription credentials; skips LOUDLY otherwise.
+      - name: Draw the strips (Echo & Dust)
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+          HAS_CODEX: ${{ secrets.CODEX_AUTH_JSON != '' }}
+          CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
+          EDITION_FROM: ${{ inputs.from }}
+          EDITION_DAYS: ${{ inputs.days || 8 }}
+        run: |
+          set -euo pipefail
+          if [ "$HAS_TOKEN" != "true" ] || [ "$HAS_CODEX" != "true" ]; then
+            echo "::warning::Echo & Dust SKIPPED — needs CLAUDE_CODE_OAUTH_TOKEN and CODEX_AUTH_JSON secrets."
+            echo "The paper will show the placeholder frame for days with no strip drawn."
+            exit 0
+          fi
+          sudo apt-get update -q && sudo apt-get install -y -q imagemagick
+          npm install -g @openai/codex
+          mkdir -p ~/.codex && printf '%s' "$CODEX_AUTH_JSON" > ~/.codex/auth.json
+          unset ANTHROPIC_API_KEY || true
+          START=$(date -u -d "${EDITION_FROM:-tomorrow}" +%Y-%m-%d)
+          for i in $(seq 0 $((EDITION_DAYS - 1))); do
+            DAY=$(date -u -d "$START + $i day" +%Y-%m-%d)
+            echo "── strip for $DAY ──"
+            node scripts/edition/strip/generate-strip.mjs --date="$DAY"
+          done
