@@ -36,6 +36,13 @@ forwards `className`, so the anchor shipped without the scope class and the rule
 could never match. Two of those. Reached now via `:global()` under a scoped
 parent, with a second test that fails if any class on a child component isn't.
 
+**And the queue now calls readings by their names.** It was showing "Day 2,
+Day 3, Day 4" — placeholders that live in the series data — where the readings
+are actually called things like "Finding the Secret Place". Every player
+surveyed shows the real title. No new index was needed: a `getDevotionalTitle`
+helper has existed since May for precisely this, and the queue had simply never
+asked. One lookup fixes the player, Up Next, the header and the offer at once.
+
 **Then the cover and the empty state.** The player now leads with the
 devotional's artwork — seven of eight surveyed players do, and ours was the only
 surface on the page showing nothing. It resolves the image exactly the way the
@@ -11547,7 +11554,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.14
+**Version:** 0.8.15
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync

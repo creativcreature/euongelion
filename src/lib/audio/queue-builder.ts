@@ -1,5 +1,6 @@
 import { SERIES_DATA } from '@/data/series'
 import { getNarrationTrack } from '@/lib/audio/tracks'
+import { getDevotionalTitle } from '@/data/devotional-teasers'
 import { DEVOTIONAL_ARTWORKS, type ArtworkEntry } from '@/data/artwork-manifest'
 import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
 import { getSeriesHero } from '@/lib/series-hero'
@@ -24,7 +25,18 @@ export function itemForSlug(
   if (!track) return null
   return {
     slug,
-    title,
+    /**
+     * The headline, not the slot.
+     *
+     * SERIES_DATA generates days as `Day ${n}` placeholders, so a queue built
+     * straight from it reads "Day 2, Day 3, Day 4" while the readings are
+     * called things like "Finding the Secret Place". getDevotionalTitle has
+     * existed since 2026-05-13 for exactly this — its generator header says so
+     * — and the queue simply never asked. The caller's value stays as the
+     * fallback: a reading with no generated title is still better labelled
+     * "Day 4" than blank.
+     */
+    title: getDevotionalTitle(slug) ?? title,
     src: track.src,
     duration: track.duration,
     href: `/devotional/${slug}`,

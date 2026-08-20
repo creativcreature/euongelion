@@ -176,3 +176,38 @@ describe('coverForReading', () => {
     expect(coverForReading('not-a-real-devotional-day-1')).toBeNull()
   })
 })
+
+/**
+ * The queue shows what a reading is called, not which slot it occupies.
+ *
+ * SERIES_DATA generates its days as `title: \`Day ${i + 1}\`` — placeholders.
+ * So the player, Up Next and the header all read "Day 2" while the devotional
+ * is actually called "Finding the Secret Place". Every player surveyed on
+ * Mobbin shows the real title: Spotify "Opening Credits", Headway "A tide that
+ * lifts all boats".
+ *
+ * `getDevotionalTitle()` has existed since 2026-05-13 and says why in its own
+ * generator header — "so article page titles can use the headline instead of
+ * the bare 'Day N' placeholder stored in series.ts". The queue simply never
+ * used it. The placeholder stays as the fallback: a day with no generated
+ * title is still better labelled "Day 4" than left blank.
+ */
+describe('queue titles', () => {
+  it('uses the devotional’s real headline, not the Day N placeholder', () => {
+    const items = queueFromDay(
+      'abiding-in-his-presence',
+      'abiding-in-his-presence-day-2',
+    )
+    expect(items.length).toBeGreaterThan(0)
+    expect(items[0].slug).toBe('abiding-in-his-presence-day-2')
+    expect(items[0].title).not.toMatch(/^Day \d+$/)
+  })
+
+  it('keeps the series name as the context line', () => {
+    const items = queueFromDay(
+      'abiding-in-his-presence',
+      'abiding-in-his-presence-day-2',
+    )
+    expect(items[0].context).toBe('Abiding in His Presence')
+  })
+})
