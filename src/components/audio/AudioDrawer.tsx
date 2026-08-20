@@ -378,6 +378,10 @@ export default function AudioDrawer() {
         .lsn-handle-wrap {
           position: fixed;
           inset-inline: 0;
+          /* Docks ABOVE the mobile tab bar. The --mobile-tab-bar-h variable
+             is declared in globals.css inside the bar's own breakpoint
+             (SA-112); before that it was undefined, fell back to 0px, and the
+             handle sat underneath the bar on every phone. */
           bottom: calc(
             var(--mobile-tab-bar-h, 0px) + env(safe-area-inset-bottom, 0px)
           );

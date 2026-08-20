@@ -5,6 +5,93 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The paper previews finished, flips at 7am, and the founder can edit it (SA-114, F-158)
+
+**2026-08-19**
+
+Founder: _"I need to be able to preview both the next days Daily Bread, as
+well as Next weeks devotional as browser drafts... in the 'finished state' on
+the browser so I can see exactly what it will look like - but with approve and
+reject still around each piece needing approval. I want a link in my settings
+to all the admin backend stuff. Go ahead and give me a backend so I can easily
+make edits myself."_ Constraints: _"only I should be able to see drafts"_, and
+the corrected go-live rule: _"the new daily bread goes live at 7 everyday. the
+weekly devotional goes live 7 am monday."_
+
+**One component renders the paper twice.** The whole edition moved out of
+`/daily-bread` into `src/components/edition/EditionPage.tsx`; the live route
+and `/admin/preview/daily-bread` render the identical component, so the
+preview cannot drift from what readers see. Preview wraps the lead, strip, and
+practice in approve/reject chrome posting to the existing verdict API, with a
+prev/next datebar (default: tomorrow). The route re-asserts
+`ADMIN_EMAIL_ALLOWLIST` itself and 404s everyone who is not the founder.
+
+**The 7am flip** (`src/lib/edition/deadline.ts`): `effectiveEditionDate()`
+computes the current edition in America/New_York — before 7am ET the site
+serves yesterday's paper; at 7am the new edition prints and its unrejected
+drafts print with it. Read-time, DST-safe, no cron to fail. Silence publishes;
+rejection is the veto.
+
+**Monday 7am series release** (`.github/workflows/monday-release.yml`): dual
+UTC crons (11:05/12:05) with an ET-hour guard so exactly one fires at 7am ET
+Monday year-round; merges the newest open reading-gate PR on `series/auto-*`
+(the founder's veto = closing the PR) and deploys itself — merges by
+`GITHUB_TOKEN` never trigger other workflows, so the deploy lives here, gated
+loudly on `CLOUDFLARE_API_TOKEN`.
+
+**A real backend.** `/admin` rewritten from a mockup (fake "12 pending
+submissions", fake "$2,140") into an honest hub: live draft count from the
+store, visible `role="alert"` failure state, links to preview/queue/next-series
+override/reading-gate PRs; moderation, audit-logs, and transparency are
+labeled NOT YET WIRED instead of faking data. `PATCH /api/admin/edition` edits
+a draft in place (real `validateEditionItem` validation, 409 on non-draft
+including the compare-and-set race, 404 on missing row); the queue gets an
+Edit button per card — prose fields for authored leads, validated JSON for
+everything else. Settings shows an ADMIN card only when the admin probe
+returns 200.
+
+**Weekly series browser preview.** The Wednesday build now uploads a preview
+version of the Worker (production untouched) and comments the rendered URL on
+the reading-gate PR, so next week's devotional is readable in a real browser
+before Monday. Gated on the same optional `CLOUDFLARE_API_TOKEN`, loud when
+absent (see FOUNDER-ACTIONS.md).
+
+Renumbering note: built as SA-111/F-157, renumbered twice in one night as
+parallel sessions recorded SA-111 (unmark) and SA-113 (hero rotation); the
+three "SA-111 intermediate" wip commits belong to this decision.
+
+---
+
+## One gospel, seven frames (SA-113, F-159)
+
+**2026-08-20**
+
+Founder: _"I want the main header image, to be a differnt image evrytime the
+page loads... various biblical representations of The Gospel."_
+
+The homepage banner now rotates per page load across **seven gospel plates** —
+the empty tomb plus six new scenes the founder chose from a 26-candidate
+illustrated proposal: the Passover doorframe, the fourth man in the furnace,
+the Jordan baptism under a torn sky, the finished cross, the true vine, and
+Christ carrying his cross on the Seventh Seal's ridge. Supersedes R38's
+static-tomb ruling.
+
+Every plate holds the tomb's exact register — cobalt/cream duotone, crimson
+misregistration, dense ink, one light source that behaves — with its subject
+dead center, and derives its composition from a named, verified FILMGRAB
+cinema still (the baptism is a literal restage of O Brother's river scene).
+Generated through the imagen pipeline at a forced 3:1, cropped and
+Photoshop-upscaled to exactly 2400×658. Zero generation credits spent.
+
+The draw is a **parse-time inline script**, so the page stays statically
+renderable and cacheable while every load lands a fresh plate — one fetch,
+no flash, no hydration surface, `fetchpriority="high"` preserving the LCP
+contract. JS-off readers get the tomb.
+
+The 20 unchosen candidates are **pinned as a future pool**
+(`docs/HERO-ROTATION-CANDIDATE-POOL.md`), with reference stills and masters
+archived in the reference library.
+
 ## A completion you can take back (SA-111, F-157)
 
 **2026-08-19**
@@ -51,6 +138,12 @@ Measured in Chrome against production: a bare div appended to `body` computes
 one string on a filter list.
 
 Every class in the component is now prefixed `lsn-`.
+
+**Also found while checking mobile:** the handle read `--mobile-tab-bar-h` to
+dock above the tab bar, and nothing anywhere declared that variable — so it fell
+back to `0px` and the handle sat _underneath_ the bar on every phone. It is now
+declared in `globals.css` beside the bar itself, inside the bar's own 900px
+breakpoint.
 
 **The lesson is bigger than the bug.** 24 unit tests passed against this
 component, including one asserting the drawer opens on click. jsdom has no ad

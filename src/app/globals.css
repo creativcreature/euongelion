@@ -16394,7 +16394,7 @@ html.dark .edition-quote-text--red {
   }
 }
 
-/* ── Finished-state preview chrome (SA-111) ───────────────────────────── */
+/* ── Finished-state preview chrome (SA-114) ───────────────────────────── */
 
 .preview-chrome--draft {
   outline: 2px dashed var(--mock-blue, #1f2a8d);
@@ -16465,4 +16465,19 @@ html.dark .edition-quote-text--red {
   margin: 0 auto;
   padding: 0.8rem clamp(1rem, 4vw, 2.5rem);
   border-bottom: var(--ed-hair, 1.5px solid currentColor);
+}
+
+/* SA-112 — the mobile tab bar's height, as a contract.
+   The audio handle docks above the tab bar and was reading
+   `--mobile-tab-bar-h`, which nothing defined — so it fell back to 0px and sat
+   underneath the bar on every phone. Declared here, next to the bar itself, so
+   the two cannot drift: 44px of touch target plus the bar's own 0.34rem of
+   padding top and bottom. The safe-area inset is NOT included, because the
+   handle adds it separately and the bar's padding already carries it.
+   Defined only inside the bar's own breakpoint, so above it the handle
+   correctly falls back to 0. */
+@media (max-width: 900px) {
+  :root {
+    --mobile-tab-bar-h: calc(44px + 0.68rem);
+  }
 }
