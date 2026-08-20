@@ -5,7 +5,9 @@ import { describe, expect, it } from 'vitest'
 describe('Screen-reader landmark contract', () => {
   const files = [
     'src/app/page.tsx',
-    'src/app/daily-bread/page.tsx',
+    // SA-111: /daily-bread is a thin route; the paper (and its
+    // main-content landmark) renders from the shared EditionPage.
+    'src/components/edition/EditionPage.tsx',
     'src/app/soul-audit/results/page.tsx',
     'src/app/series/[slug]/SeriesPageClient.tsx',
     'src/app/devotional/[slug]/DevotionalPageClient.tsx',
