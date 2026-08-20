@@ -122,6 +122,7 @@ jobs:
             # UNSET for both so nothing silently bills the API.
             unset ANTHROPIC_API_KEY
             node scripts/edition/compose-lead-claude.mjs --days="$EDITION_DAYS" $FROM_FLAG
+            node scripts/edition/compose-guides-claude.mjs --days="$EDITION_DAYS" $FROM_FLAG
             node scripts/edition/build.mjs --days="$EDITION_DAYS" $FROM_FLAG \
               --kinds=rail,season,word,practice,strip,crossword,unscramble,quiz,gallery,prayer
           else

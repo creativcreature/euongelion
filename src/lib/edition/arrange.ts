@@ -31,12 +31,18 @@ export const SHEET_ROW_KEYS = [
   'hymnal', // the hymnal beside the proverb
   'memory', // memory verse, the question, quiz 3 of 3
   'prayer', // the daily prayer, voices, and the minis
+  'coloring', // the coloring corner — the paper's back-page art game (GAME)
 ] as const
 
 export type SheetRowKey = (typeof SHEET_ROW_KEYS)[number]
 
 /** Rows containing an interactive game — never adjacent, any variant. */
-export const GAME_ROWS = ['crossword', 'verse', 'wordsearch'] as const
+export const GAME_ROWS = [
+  'crossword',
+  'verse',
+  'wordsearch',
+  'coloring',
+] as const
 
 /** The funnies' fixed position in every variant (0-based). */
 export const FUNNIES_INDEX = 3
@@ -58,6 +64,7 @@ const WEEK_VARIANTS: readonly (readonly SheetRowKey[])[] = [
     'hymnal',
     'memory',
     'prayer',
+    'coloring',
   ],
   // Monday — the hymnal opens the week; games drift later.
   [
@@ -72,6 +79,7 @@ const WEEK_VARIANTS: readonly (readonly SheetRowKey[])[] = [
     'howtoread',
     'memory',
     'prayer',
+    'coloring',
   ],
   // Tuesday — the gallery leads; the word search comes up early.
   [
@@ -86,6 +94,7 @@ const WEEK_VARIANTS: readonly (readonly SheetRowKey[])[] = [
     'howtoread',
     'memory',
     'prayer',
+    'coloring',
   ],
   // Wednesday — the guides lead; memory row sits high.
   [
@@ -100,6 +109,7 @@ const WEEK_VARIANTS: readonly (readonly SheetRowKey[])[] = [
     'gallery',
     'desk',
     'prayer',
+    'coloring',
   ],
   // Thursday — the desk holds, the verse game comes early.
   [
@@ -114,6 +124,7 @@ const WEEK_VARIANTS: readonly (readonly SheetRowKey[])[] = [
     'thirds1',
     'howtoread',
     'prayer',
+    'coloring',
   ],
   // Friday — thirds lead into an early word search.
   [
@@ -128,6 +139,7 @@ const WEEK_VARIANTS: readonly (readonly SheetRowKey[])[] = [
     'memory',
     'hymnal',
     'prayer',
+    'coloring',
   ],
   // Saturday — a slow morning: guides and hymnal high, games spaced late.
   [
@@ -142,6 +154,7 @@ const WEEK_VARIANTS: readonly (readonly SheetRowKey[])[] = [
     'hymnal',
     'thirds1',
     'prayer',
+    'coloring',
   ],
 ]
 

@@ -108,6 +108,10 @@ export interface GuidePayload {
   image: string
   alt: string
   minutes: string
+  /** SA-114: the full article, as paragraphs — daily-written guides are
+   *  real reads at /guides/daily/[date], not just step cards. Bank guides
+   *  without a body keep linking to their static /guides/[slug] page. */
+  body?: string[]
 }
 
 /** One panel of The Ninety-Nine. Caption is invented voice → review queue. */
@@ -385,6 +389,7 @@ export const PAYLOAD_GUARDS: Record<EditionKind, Guard> = {
     isStr(p.image) &&
     isStr(p.alt) &&
     isStr(p.minutes) &&
+    (p.body === undefined || isStrArr(p.body)) &&
     ['Method', 'Practice', 'Tools', 'Getting started'].includes(
       p.kicker as string,
     ),

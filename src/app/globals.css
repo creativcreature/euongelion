@@ -16898,3 +16898,109 @@ html.dark .edition-quote-text--red {
   color: inherit;
   text-decoration: underline;
 }
+
+/* ── The day's guides, in full (SA-114 / F-158) ───────────────────────── */
+.edition-dailyguide-kicker {
+  color: var(--color-crimson, #c4192e);
+  margin: 0 0 0.4rem;
+}
+
+.edition-dailyguide {
+  border-top: var(--ed-hair);
+  padding: 1.6rem 0 2rem;
+}
+
+.edition-dailyguide-head {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  margin: 0 0 0.4rem;
+}
+
+.edition-dailyguide-stand {
+  font-style: italic;
+  color: var(--mock-muted, currentColor);
+  margin: 0 0 1rem;
+}
+
+.edition-dailyguide-plate {
+  display: block;
+  margin: 0 0 1.1rem;
+  border: var(--ed-hair);
+}
+
+.edition-dailyguide-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.edition-dailyguide-para {
+  line-height: 1.65;
+  margin: 0 0 0.9rem;
+}
+
+/* ── The Coloring Corner (SA-114 / F-158) ─────────────────────────────── */
+.puzzle-coloring {
+  max-width: 620px;
+}
+
+.puzzle-coloring-crayons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.2rem 0 0.9rem;
+}
+
+.puzzle-coloring-crayon,
+.puzzle-coloring-dropper {
+  min-width: 44px;
+  min-height: 44px;
+  border: 2px solid var(--mock-ink, #10152b);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+}
+
+.puzzle-coloring-dropper {
+  background: transparent;
+  font-size: 1.2rem;
+}
+
+.puzzle-coloring-crayon--held {
+  outline: 3px solid var(--color-crimson, #c4192e);
+  outline-offset: 2px;
+}
+
+.puzzle-coloring-crayon-n {
+  position: absolute;
+  right: 3px;
+  bottom: 1px;
+  font-size: 0.6rem;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.puzzle-coloring-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: var(--ed-hair);
+  background: var(--mock-paper, #f6f1e7);
+  touch-action: manipulation;
+}
+
+.puzzle-coloring-number {
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 13px;
+  fill: var(--mock-muted, #6b7280);
+  text-anchor: middle;
+}
+
+.puzzle-coloring-caption {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: var(--type-body-s, 0.9rem);
+  color: var(--mock-muted, currentColor);
+}

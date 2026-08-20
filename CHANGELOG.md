@@ -51,6 +51,25 @@ every day of the weekly window, gated loudly on both subscription secrets.
 Strips No. 2 ("The Pocket God") and No. 3 ("The Quarter") are drawn and
 slotted as Friday/Saturday drafts.
 
+**Wave two — the daily engines.** The LEAD IMAGE now changes daily,
+representing the day's verse: chosen manifest-first from the 145
+Vasari-captioned prints by scoring each print's title+description against
+the day's own words (title, teaser, passage, memory verse, red letters,
+proverb) with a small hand-written biblical theme expansion — today's
+provision reading hangs Millet's Sower; when nothing genuinely matches,
+the series art stays (no arbitrary pictures). HOW TO READ is new every
+day: compose-guides-claude.mjs writes three fresh articles per edition
+(subscription, draft rows, Storage topic log against repeats); full reads
+at /guides/daily/[date]; the paper's cards prefer the day's articles over
+the bank; Friday and Saturday are already written ("The Whole of Mark, in
+One Sitting", "The Psalms, Out Loud"...). And THE COLORING CORNER: a
+color-by-number mini art game — hand-authored line-art scenes (loaf,
+dove, lamp — the bank grows), eight crayons that fill regions with a
+scribble pattern, a dropper that lifts a color back off the page,
+suggested numbers nobody is graded on, progress persisted like the
+puzzles. It closes the paper as the back-page game, in every weekday
+arrangement, never adjacent to another game.
+
 ---
 
 ## The player, measured against real ones (SA-122, F-167)

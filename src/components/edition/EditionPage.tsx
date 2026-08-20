@@ -49,6 +49,7 @@ import {
 } from '@/components/edition/EditionSections'
 import GallerySpread from '@/components/edition/GallerySpread'
 import { pageArchive, pageB365, pageProverb } from '@/lib/edition/page-modules'
+import { pickLeadArt } from '@/lib/edition/lead-art'
 import { generateRedLetter } from '@/lib/edition/generators/redletter'
 import { generateVerse } from '@/lib/edition/generators/verse'
 import { generateQuestion } from '@/lib/edition/generators/question'
@@ -59,6 +60,8 @@ import WordSearchClient from '@/components/edition/puzzles/WordSearchClient'
 import { pickCatechismForDay } from '@/data/catechism-bank'
 import { pickHymnForDay } from '@/data/hymn-bank'
 import CrosswordClient from '@/components/edition/puzzles/CrosswordClient'
+import ColoringClient from '@/components/edition/puzzles/ColoringClient'
+import { pickColoringForDay } from '@/data/coloring-bank'
 import UnscrambleClient from '@/components/edition/puzzles/UnscrambleClient'
 import QuizClient from '@/components/edition/puzzles/QuizClient'
 import { ALL_SERIES_ORDER, SERIES_DATA } from '@/data/series'
@@ -376,7 +379,7 @@ export default async function EditionPage({
   )
   // The rest of the paper, all keyed to the same day so the edition is one
   // thing rather than a set of independently-rotating widgets.
-  const guides = pickManyForDay(GUIDES, dayOfYear, 3)
+  const bankGuides = pickManyForDay(GUIDES, dayOfYear, 3)
 
   // The DB-fed edition (SA-090). A failed read renders a VISIBLE failure band
   // in place of the editorial sections — never a silently thinner paper. The
@@ -385,8 +388,8 @@ export default async function EditionPage({
   let edition: Edition | null = null
   let editionFailed = false
   try {
-    // Live reads obey the 3am rule (SA-114): published rows always, and any
-    // draft whose posting day has passed 3:00am Eastern — silence publishes,
+    // Live reads obey the 7am rule (SA-114): published rows always, and any
+    // draft whose edition has reached its 7am ET flip — silence publishes,
     // rejection vetoes.
     edition = preview
       ? ((await getEditionPreview(editionKey)) as Edition)
@@ -394,6 +397,18 @@ export default async function EditionPage({
   } catch {
     editionFailed = true
   }
+
+  // SA-114: "How to read should be something new every day" — daily-written
+  // guide articles (DB rows, founder-reviewed) replace the bank rotation
+  // whenever the day has them; their full reads live at /guides/daily/[date].
+  const edGuideRows = (edition?.guide ?? []).map((g) => g.payload)
+  const guides =
+    edGuideRows.length > 0
+      ? edGuideRows.map((g, i) => ({
+          ...g,
+          slug: `daily/${editionKey}#g${i + 1}`,
+        }))
+      : bankGuides
   // A published authored lead (the Sunday feature) REPLACES the rotation
   // front page and the reading body. Rotation is the norm, not a fallback.
   const edLeadItem = edition?.lead?.[0]
@@ -459,6 +474,37 @@ export default async function EditionPage({
     DEVOTIONAL_TEASERS[slug] ??
     meta?.series.question ??
     ''
+
+  // SA-114: "The lead image should change daily — representing the verse of
+  // the day." Manifest-first: scored from the Vasari-captioned print pool
+  // against the day's own words; series art stays when nothing truly fits.
+  const galleryFiles = (edition?.gallery ?? [])
+    .map((g) => (g.payload as { image?: string }).image ?? '')
+    .map((img) => img.split('/').pop() ?? '')
+  const passageText = (
+    (devotional as { modules?: unknown[] } | null)?.modules ?? []
+  )
+    .map((m) =>
+      typeof (m as { passage?: unknown }).passage === 'string'
+        ? (m as { passage: string }).passage
+        : '',
+    )
+    .join(' ')
+  const dailyArt = authoredLead
+    ? null
+    : pickLeadArt(
+        editionKey,
+        [
+          dayTitle,
+          teaser ?? '',
+          scriptureRef,
+          passageText,
+          edVerse?.text ?? '',
+          edRedletter?.text ?? '',
+          edProverb?.text ?? '',
+        ].join(' '),
+        galleryFiles,
+      )
 
   // Modules-format (Substack/rich) vs. panels-format (Wake-Up / legacy)
   const hasModules =
@@ -939,6 +985,25 @@ export default async function EditionPage({
         )}
       </>
     ),
+    coloring: (
+      <>
+        {/* The coloring corner — the back-page art game (SA-114). */}
+        <section
+          className="edition-section paper-box paper-box--wide"
+          data-reveal
+          aria-label="The coloring corner"
+        >
+          <div className="edition-section-bar">
+            <h2 className="edition-section-head">The coloring corner</h2>
+            <p className="edition-section-note">
+              {pickColoringForDay(now).title} · crayons or the dropper — no
+              grades
+            </p>
+          </div>
+          <ColoringClient art={pickColoringForDay(now)} />
+        </section>
+      </>
+    ),
   }
 
   return (
@@ -1006,11 +1071,11 @@ export default async function EditionPage({
         <div className="edition-front">
           <Chromed preview={preview} item={edLeadItem}>
             <section className="edition-lead" aria-label="Today's reading">
-              {leadHero && (
+              {(dailyArt || leadHero) && (
                 <span className="edition-lead-plate">
                   <Image
-                    src={leadHero.src}
-                    alt=""
+                    src={dailyArt?.image ?? leadHero!.src}
+                    alt={dailyArt ? dailyArt.shown.slice(0, 140) : ''}
                     fill
                     sizes="(max-width: 900px) 100vw, 60vw"
                     className="edition-lead-img"
