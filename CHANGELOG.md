@@ -30,10 +30,15 @@ violation. Media was falling back to `default-src 'self'`, which doesn't cover
 this was fixed; it wasn't. The old CSP tests assert against a _copy_ of the
 header, so they could never have caught it. The new one reads the real config.
 
-**A correction:** I told you last night the browser couldn't decode AAC. That
-was wrong — the blob I tested was blocked by this CSP. Withdrawn. The
-same-origin track still stalls in that browser with no violation and no error,
-and I don't know why.
+**A correction, and then the answer.** I told you the browser couldn't decode
+AAC. Wrong — the blob I tested was blocked by this very CSP. With the fix
+deployed I re-ran it properly: service worker off, caches cleared, no
+violations. A blob built from bytes already in memory _also_ times out,
+identically to the URL. A blob touches no network, so that clears network,
+ranges, the R2 route, the service worker and CSP in one move. The media element
+in that browser never leaves `readyState 0` for anything at all — it is the test
+environment, not the site. Which still means nobody has watched a reading play.
+That needs your phone.
 
 ---
 
