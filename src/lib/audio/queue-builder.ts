@@ -85,3 +85,30 @@ export function queueFromDay(seriesSlug: string, slug: string): QueueItem[] {
   const from = all.findIndex((item) => item.slug === slug)
   return from === -1 ? all : all.slice(from)
 }
+
+/**
+ * The queue for a reading opened on its own page.
+ *
+ * Founder: "The sidebar (universal player) should also que other devotionals,
+ * not just the chapters." Registering only the reading you pressed play on left
+ * Up Next permanently empty — a queue of one. This finds the series the reading
+ * belongs to and queues it FROM that day, so day three does not offer to replay
+ * days one and two.
+ *
+ * Falls back to the reading alone when it belongs to no series in `SERIES_DATA`
+ * (a generated day, an archive piece), because a lone reading is still a valid
+ * thing to be playing.
+ */
+export function queueForReading(
+  slug: string,
+  title: string,
+): { items: QueueItem[]; label: string | null } {
+  for (const seriesSlug of Object.keys(SERIES_DATA)) {
+    const series = SERIES_DATA[seriesSlug]
+    if (!series?.days?.some((day) => day.slug === slug)) continue
+    const items = queueFromDay(seriesSlug, slug)
+    if (items.length) return { items, label: series.title }
+  }
+  const solo = itemForSlug(slug, title)
+  return { items: solo ? [solo] : [], label: null }
+}

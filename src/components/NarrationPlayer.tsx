@@ -18,6 +18,7 @@ import {
   subscribeAudioElement,
 } from '@/lib/audio/audio-element'
 import { useAudioStore } from '@/stores/audioStore'
+import { queueForReading } from '@/lib/audio/queue-builder'
 import NarrationChapters from '@/components/NarrationChapters'
 import NarrationMiniBar from '@/components/NarrationMiniBar'
 import SpeedSheet, {
@@ -609,18 +610,23 @@ export default function NarrationPlayer({
        */
       const store = useAudioStore.getState()
       if (store.queue[store.index]?.slug !== slug) {
+        // The rest of the series comes with it, so Up Next is not a queue of
+        // one. Falls back to the reading alone when it belongs to no series.
+        const { items, label } = queueForReading(slug, title)
         store.start({
-          items: [
-            {
-              slug,
-              title,
-              src: track.src,
-              duration: track.duration,
-              href: `/devotional/${slug}`,
-            },
-          ],
-          source: 'single',
-          label: title,
+          items: items.length
+            ? items
+            : [
+                {
+                  slug,
+                  title,
+                  src: track.src,
+                  duration: track.duration,
+                  href: `/devotional/${slug}`,
+                },
+              ],
+          source: label ? 'series' : 'single',
+          label: label ?? title,
         })
       }
     }

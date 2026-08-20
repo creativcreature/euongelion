@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The sidebar is the player (SA-119, F-164)
+
+**2026-08-19**
+
+You picked option A from the mockups, having noticed the sidebar and the
+reader's panel were "basically redundant" — then clarified that the sidebar
+should queue _other devotionals_, not just chapters.
+
+**The sidebar now carries the whole player**: drag-to-position with elapsed and
+remaining, a previous step, and speed, sleep timer and chapters — reusing the
+existing sheets rather than rebuilding them. The sheets actually open; a button
+that opens nothing is worse than no button.
+
+**Playing a reading now queues its series behind it**, from that day rather than
+from day one, so day three doesn't offer to replay days one and two. A reading
+belonging to no series still plays alone.
+
+Both written test-first. RED for the queue was `expected 1 to be greater than 1`.
+
+**Half done, honestly:** the reader's panel is not yet slimmed to the single row
+option A calls for, so both surfaces still carry controls — the redundancy you
+objected to. Nothing is lost in this state, but it isn't finished.
+
+---
+
 ## A reading registers itself, so it can be paused from anywhere (SA-117, F-162)
 
 **2026-08-19**

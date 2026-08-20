@@ -323,3 +323,64 @@ describe('clicking the header button slides the drawer out', () => {
     expect(screen.queryByRole('dialog')).toBeNull()
   })
 })
+
+/**
+ * The sidebar is the player — SA-118 / option A.
+ *
+ * Founder: "desktop sidebar should contain universal player", after observing
+ * that the sidebar and the reader's own panel were "basically redundant". The
+ * agreed shape is that the sidebar carries the FULL player and the page keeps
+ * only a slim row, so nothing is drawn twice.
+ *
+ * These are the pieces the sidebar was missing: somewhere to drag to a
+ * position, and the three controls a listener reaches for on a long reading.
+ */
+describe('the sidebar carries the whole player', () => {
+  const startPlaying = () => {
+    useAudioStore.getState().start({
+      items: [
+        item('a', 'The Fruit of Lies'),
+        item('b', 'Like a Morning Cloud'),
+      ],
+      source: 'series',
+      label: 'He Cannot Deny Himself',
+    })
+    useAudioStore.getState().setPanelOpen(true)
+  }
+
+  it('lets you drag to a position in the reading', () => {
+    startPlaying()
+    render(<AudioDrawer />)
+    const panel = screen.getByRole('dialog')
+    expect(within(panel).getByRole('slider', { name: /seek/i })).toBeTruthy()
+  })
+
+  it('shows elapsed as well as remaining', () => {
+    startPlaying()
+    const { container } = render(<AudioDrawer />)
+    // Scoped to the times row: a bare /0:00/ also matches the speed chip.
+    const times = container.querySelector('.lsn-times')
+    expect(times).not.toBeNull()
+    expect(times?.textContent).toContain('0:00')
+  })
+
+  it('offers speed, sleep and chapters', () => {
+    startPlaying()
+    render(<AudioDrawer />)
+    const panel = screen.getByRole('dialog')
+    expect(within(panel).getByRole('button', { name: /speed/i })).toBeTruthy()
+    expect(within(panel).getByRole('button', { name: /sleep/i })).toBeTruthy()
+    expect(
+      within(panel).getByRole('button', { name: /chapters/i }),
+    ).toBeTruthy()
+  })
+
+  it('can step back to the previous reading', () => {
+    startPlaying()
+    render(<AudioDrawer />)
+    const panel = screen.getByRole('dialog')
+    expect(
+      within(panel).getByRole('button', { name: /previous/i }),
+    ).toBeTruthy()
+  })
+})

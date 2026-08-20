@@ -1467,3 +1467,11 @@ features:
     prd: docs/feature-prds/F-162.md
     methodology_refs:
       - M00
+  - id: F-164
+    title: The sidebar is the player
+    slug: sidebar-is-the-player
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-164.md
+    methodology_refs:
+      - M00

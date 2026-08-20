@@ -8,7 +8,16 @@ import {
   subscribeAudioElement,
 } from '@/lib/audio/audio-element'
 import { formatRuntime, queueDuration } from '@/lib/audio/queue-builder'
-import { formatTime } from '@/lib/audio/tracks'
+import { formatTime, getNarrationTrack } from '@/lib/audio/tracks'
+import SpeedSheet, {
+  type Speed,
+  type SkipSeconds,
+} from '@/components/audio/SpeedSheet'
+import SleepTimer, {
+  type SleepMode,
+  type SleepSelection,
+} from '@/components/audio/SleepTimer'
+import NarrationChapters from '@/components/NarrationChapters'
 import { currentItem, useAudioStore } from '@/stores/audioStore'
 import { usePlaylistsStore } from '@/stores/playlistsStore'
 import OccasionPicker from '@/components/audio/OccasionPicker'
@@ -61,6 +70,7 @@ export default function AudioDrawer() {
   const remove = useAudioStore((s) => s.remove)
   const reorder = useAudioStore((s) => s.reorder)
   const goNext = useAudioStore((s) => s.next)
+  const goPrev = useAudioStore((s) => s.previous)
   const savePlaylist = usePlaylistsStore((s) => s.save)
 
   const open = useAudioStore((s) => s.panelOpen)
@@ -69,6 +79,14 @@ export default function AudioDrawer() {
   // Computed once per open, not per render — it walks the whole manifest.
   const listenPool = useMemo(() => (open ? allListenable() : []), [open])
   const [remaining, setRemaining] = useState<number | null>(null)
+  const [elapsed, setElapsed] = useState(0)
+  const [total, setTotal] = useState(0)
+  const [speedOpen, setSpeedOpen] = useState(false)
+  const [sleepOpen, setSleepOpen] = useState(false)
+  const [chaptersOpen, setChaptersOpen] = useState(false)
+  const [speed, setSpeed] = useState(1)
+  const [skipSeconds, setSkipSeconds] = useState<SkipSeconds>(15)
+  const [sleepMode, setSleepMode] = useState<SleepMode | null>(null)
 
   const element = useSyncExternalStore(
     subscribeAudioElement,
@@ -80,8 +98,10 @@ export default function AudioDrawer() {
   useEffect(() => {
     if (!element) return
     const tick = () => {
-      const total = element.duration || item?.duration || 0
-      setRemaining(total ? Math.max(0, total - element.currentTime) : null)
+      const length = element.duration || item?.duration || 0
+      setTotal(length)
+      setElapsed(element.currentTime)
+      setRemaining(length ? Math.max(0, length - element.currentTime) : null)
     }
     tick()
     element.addEventListener('timeupdate', tick)
@@ -264,6 +284,67 @@ export default function AudioDrawer() {
                     <path d="M6 6l10 6-10 6V6zM16 6h2v12h-2z" />
                   </svg>
                 </button>
+                <button
+                  type="button"
+                  className="lsn-btn"
+                  aria-label="Previous in queue"
+                  disabled={index === 0}
+                  onClick={() => goPrev()}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 6 8 12l10 6V6zM6 6h2v12H6z" />
+                  </svg>
+                </button>
+              </div>
+            )}
+
+            {/* Drag to a position. The page keeps only a slim row now, so this
+                is the one place a listener can move within a reading. */}
+            {item && (
+              <div className="lsn-seek">
+                <label className="lsn-seek-label">
+                  <span className="sr-only">Seek within the reading</span>
+                  <input
+                    type="range"
+                    min={0}
+                    max={Math.max(1, Math.round(total || item.duration))}
+                    value={Math.round(elapsed)}
+                    onChange={(e) => {
+                      const a = audio()
+                      if (a) a.currentTime = Number(e.target.value)
+                      setElapsed(Number(e.target.value))
+                    }}
+                  />
+                </label>
+                <div className="lsn-times oldstyle-nums">
+                  <span>{formatTime(elapsed)}</span>
+                  <span>
+                    {remaining !== null ? `${formatTime(remaining)} left` : ''}
+                  </span>
+                </div>
+                <div className="lsn-extras">
+                  <button
+                    type="button"
+                    className="lsn-chip"
+                    onClick={() => setSpeedOpen(true)}
+                  >
+                    {speed}× speed
+                  </button>
+                  <button
+                    type="button"
+                    className="lsn-chip"
+                    onClick={() => setSleepOpen(true)}
+                  >
+                    Sleep timer
+                  </button>
+                  <button
+                    type="button"
+                    className="lsn-chip"
+                    onClick={() => setChaptersOpen(true)}
+                  >
+                    Chapters
+                  </button>
+                </div>
               </div>
             )}
 
@@ -372,6 +453,58 @@ export default function AudioDrawer() {
             )}
           </div>
         </div>
+      )}
+
+      {speedOpen && item && (
+        <SpeedSheet
+          speed={speed}
+          skipSeconds={skipSeconds}
+          onSelectSpeed={(next: Speed) => {
+            setSpeed(next)
+            const a = audio()
+            if (a) {
+              a.playbackRate = next
+              a.preservesPitch = true
+            }
+            try {
+              window.localStorage.setItem(
+                'euangelion:narration-speed',
+                String(next),
+              )
+            } catch {
+              // Private mode. The rate still applies for this session.
+            }
+          }}
+          onSelectSkip={(secs: SkipSeconds) => setSkipSeconds(secs)}
+          onClose={() => setSpeedOpen(false)}
+        />
+      )}
+
+      {sleepOpen && item && (
+        <SleepTimer
+          active={sleepMode}
+          remainingMs={null}
+          onSelect={(selection: SleepSelection) => {
+            // 'off' clears it; anything else IS the mode.
+            setSleepMode(selection === 'off' ? null : selection)
+            setSleepOpen(false)
+          }}
+          onClose={() => setSleepOpen(false)}
+        />
+      )}
+
+      {chaptersOpen && item && (
+        <NarrationChapters
+          title={item.title}
+          chapters={getNarrationTrack(item.slug)?.chapters ?? []}
+          currentTime={elapsed}
+          onSeek={(seconds) => {
+            const a = audio()
+            if (a) a.currentTime = seconds
+            setElapsed(seconds)
+          }}
+          onClose={() => setChaptersOpen(false)}
+        />
       )}
 
       <style jsx>{`
