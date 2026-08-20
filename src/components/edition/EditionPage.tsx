@@ -27,6 +27,8 @@ import { liturgicalDay } from '@/lib/liturgical'
 import { GUIDES, pickManyForDay } from '@/data/daily-edition'
 import type { Edition } from '@/lib/edition/store'
 import { effectiveEditionDate, getLiveEdition } from '@/lib/edition/deadline'
+import { arrangeSheetRows, type SheetRowKey } from '@/lib/edition/arrange'
+import { Fragment, type ReactNode } from 'react'
 import { getEditionPreview } from '@/lib/edition/preview'
 import PreviewChrome from '@/components/edition/PreviewChrome'
 import {
@@ -535,6 +537,398 @@ export default async function EditionPage({
     ],
   }
 
+  // SA-114: the sheet's rows keyed for the day's arrangement (three
+  // anchors: lead above, funnies pinned, reading below; the rest rotate
+  // by weekday — src/lib/edition/arrange.ts).
+  const sheetRows: Record<SheetRowKey, ReactNode> = {
+    desk: (
+      <>
+        {/* Row 1 — the standing desk: practice beside the word. */}
+        {(edPractice || edWord) && (
+          <div className="edition-band paper-box paper-box--wide" data-reveal>
+            {edPractice && (
+              <Chromed preview={preview} item={edPracticeItem}>
+                <section
+                  className="edition-practice"
+                  aria-label="Today's practice"
+                >
+                  <p className="edition-kicker">
+                    <PracticeIcon />
+                    The practice
+                  </p>
+                  <p className="edition-practice-do">
+                    {edPractice.instruction}
+                  </p>
+                  <p className="edition-practice-why">{edPractice.reason}</p>
+                  <p className="edition-practice-time">{edPractice.duration}</p>
+                </section>
+              </Chromed>
+            )}
+            {edWord && (
+              <section
+                id="word-of-the-day"
+                className="edition-word"
+                aria-label="Word of the day"
+              >
+                <p className="edition-kicker">
+                  <WordIcon />
+                  {edWord.language} today
+                </p>
+                <p
+                  className="edition-word-original"
+                  lang={edWord.language === 'Greek' ? 'el' : 'he'}
+                >
+                  {edWord.word}
+                </p>
+                <p className="edition-word-translit">{edWord.translit}</p>
+                <p className="edition-word-gloss">{edWord.gloss}</p>
+                <p className="edition-word-note">{edWord.source}</p>
+                <p className="edition-word-ref">{edWord.reference}</p>
+              </section>
+            )}
+          </div>
+        )}
+      </>
+    ),
+    thirds1: (
+      <>
+        {/* Row 2 — thirds: the first quiz question, the red letters, and
+              today in the year-long plan. Games start BREAKING UP here. */}
+        {edQuiz[0] && (
+          <div className="paper-box paper-box--third" data-reveal>
+            <section aria-label="Where is this from?">
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">Where is this from?</h2>
+                <p className="edition-section-note">1 of 3</p>
+              </div>
+              <QuizClient questions={[edQuiz[0]]} />
+            </section>
+          </div>
+        )}
+        {edRedletter && (
+          <div className="paper-box paper-box--third" data-reveal>
+            <RedLetterColumn saying={edRedletter} />
+          </div>
+        )}
+        {edB365 && (
+          <div className="paper-box paper-box--third" data-reveal>
+            <B365Box b365={edB365} />
+          </div>
+        )}
+      </>
+    ),
+    crossword: (
+      <>
+        {/* Row 3 — the crossword, with real content beside it (founder:
+              "a huge blank area next to it that could easily be content"). */}
+        {edCrossword && (
+          <section
+            className="edition-section paper-box paper-box--crossword"
+            data-reveal
+            aria-label="The crossword"
+            id="the-crossword"
+          >
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">The crossword</h2>
+              <p className="edition-section-note">
+                Answers from scripture &middot; no timer, no streak
+              </p>
+            </div>
+            <CrosswordClient puzzle={edCrossword} />
+          </section>
+        )}
+        {/* The Catechism Corner — beside the crossword, so the puzzle
+              always sits next to prose (founder: the blank was wasted). */}
+        <div
+          className={`paper-box ${edCrossword ? 'paper-box--wordgames' : 'paper-box--wide'}`}
+          data-reveal
+        >
+          <section aria-label="The catechism corner">
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">The catechism corner</h2>
+              <p className="edition-section-note">
+                Heidelberg, Q{catechism.number}
+              </p>
+            </div>
+            <p className="edition-catechism-q">{catechism.question}</p>
+            <p className="edition-catechism-a">{catechism.answer}</p>
+            <p className="edition-quote-cite">
+              {catechism.source} &middot; {catechism.scriptures.join(' · ')}
+            </p>
+          </section>
+        </div>
+      </>
+    ),
+    funnies: (
+      <>
+        {/* Row 4 — the funnies' reserved frame beside the season. */}
+        <section
+          className="edition-section paper-box paper-box--strip"
+          data-reveal
+          aria-label="The funnies"
+        >
+          <div className="edition-section-bar">
+            <h2 className="edition-section-head">The funnies</h2>
+            <p className="edition-section-note">The comic strip</p>
+          </div>
+          {edStrip ? (
+            <Chromed preview={preview} item={edStripItem}>
+              <StripPanel strip={edStrip} />
+            </Chromed>
+          ) : (
+            <div className="edition-funnies-frame">
+              <p className="edition-funnies-title">The strip is being drawn.</p>
+              <p className="edition-funnies-note">
+                A daily comic premieres in this space
+              </p>
+            </div>
+          )}
+        </section>
+        {/* The season, elaborate — founder: "no one will know what it is."
+              Color band, plain name, span, a real essay, and the week
+              explained through the season's own pattern. */}
+        <div className="paper-box paper-box--season" data-reveal>
+          <section className="edition-season" aria-label="The season">
+            <div
+              className="edition-season-band"
+              style={{ ['--season-color' as string]: seasonEssay.colorHex }}
+              aria-hidden="true"
+            />
+            <p className="edition-kicker">The season</p>
+            <p className="edition-season-plain">{seasonEssay.plainName}</p>
+            <p className="edition-season-span">{seasonEssay.span}</p>
+            <p className="edition-season-essay">{seasonEssay.essay}</p>
+            <p className="edition-season-week">{seasonEssay.weekLine}</p>
+            <p className="edition-season-colorline">{seasonEssay.color}</p>
+          </section>
+        </div>
+      </>
+    ),
+    gallery: (
+      <>
+        {/* Row 5 — the gallery spread. */}
+        {edGalleryPlates.length > 0 && (
+          <div
+            id="the-gallery"
+            className="paper-box paper-box--wide"
+            data-reveal
+          >
+            <GallerySpread plates={edGalleryPlates} />
+          </div>
+        )}
+      </>
+    ),
+    verse: (
+      <>
+        {/* Row 6 — the verse rebuilt, beside the archive pull. */}
+        {edUnscramble && (
+          <div
+            id="word-games"
+            className="paper-box paper-box--wordgames"
+            data-reveal
+          >
+            <section aria-label="The verse, rebuilt">
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">The verse, rebuilt</h2>
+              </div>
+              <UnscrambleClient puzzle={edUnscramble} />
+            </section>
+          </div>
+        )}
+        {edArchive && (
+          <div className="paper-box paper-box--panel" data-reveal>
+            <ArchiveBox archive={edArchive} />
+          </div>
+        )}
+      </>
+    ),
+    howtoread: (
+      <>
+        {/* Row 7 — how to read. */}
+        {guides.length > 0 && (
+          <section
+            className="edition-section paper-box paper-box--wide"
+            data-reveal
+            aria-label="How to read"
+            id="how-to-read"
+          >
+            <div className="edition-section-bar">
+              <h2 className="edition-section-head">How to read</h2>
+              <p className="edition-section-note">
+                Practical guides to reading and studying the Bible. A new set
+                each day.
+              </p>
+            </div>
+            <div className="edition-guides">
+              {guides.map((g) => (
+                <article key={g.title} className="edition-guide">
+                  <Link
+                    href={`/guides/${g.slug}`}
+                    className="edition-guide-platelink"
+                  >
+                    <span className="edition-guide-plate" data-parallax="0.35">
+                      <Image
+                        src={g.image}
+                        alt={g.alt}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 30vw"
+                        className="edition-guide-img"
+                      />
+                    </span>
+                  </Link>
+                  <p className="edition-guide-kicker">{g.kicker}</p>
+                  <h3 className="edition-guide-head">{g.title}</h3>
+                  <p className="edition-guide-stand">{g.standfirst}</p>
+                  <ol className="edition-guide-steps">
+                    {g.steps.map((step) => (
+                      <li key={step}>{step}</li>
+                    ))}
+                  </ol>
+                  <p className="edition-guide-time">{g.minutes}</p>
+                  <Link
+                    href={`/guides/${g.slug}`}
+                    className="edition-rail-more"
+                  >
+                    Read the full guide &rarr;
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* The word search — founder ask, 2026-08-19. */}
+      </>
+    ),
+    wordsearch: (
+      <>
+        <section
+          className="edition-section paper-box paper-box--panel"
+          data-reveal
+          aria-label="The word search"
+        >
+          <div className="edition-section-bar">
+            <h2 className="edition-section-head">The word search</h2>
+            <p className="edition-section-note">{wordSearch.theme}</p>
+          </div>
+          <WordSearchClient puzzle={wordSearch} />
+        </section>
+        {edQuiz[1] && (
+          <div className="paper-box paper-box--wordgames" data-reveal>
+            <section aria-label="Where is this from? Question two">
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">Where is this from?</h2>
+                <p className="edition-section-note">2 of 3</p>
+              </div>
+              <QuizClient questions={[edQuiz[1]]} />
+            </section>
+          </div>
+        )}
+      </>
+    ),
+    hymnal: (
+      <>
+        {/* The Hymnal — one hymn a day, received text from the 1890
+              Otterbein Hymnal. */}
+        <section
+          className="edition-section paper-box paper-box--gallery"
+          data-reveal
+          aria-label="The hymnal"
+        >
+          <div className="edition-section-bar">
+            <h2 className="edition-section-head">The hymnal</h2>
+            <p className="edition-section-note">
+              {hymn.author}, {hymn.year}
+            </p>
+          </div>
+          <p className="edition-mini-title">{hymn.title}</p>
+          {hymn.verses.map((v, i) => (
+            <p key={i} className="edition-hymn-verse">
+              {v.join('\n')}
+            </p>
+          ))}
+        </section>
+        {edProverb && (
+          <div className="paper-box paper-box--prayercol" data-reveal>
+            <ProverbBox proverb={edProverb} />
+          </div>
+        )}
+      </>
+    ),
+    memory: (
+      <>
+        {/* Row 9 — thirds: memory verse, the question, quiz 3. */}
+        {edVerse && (
+          <div className="paper-box paper-box--third" data-reveal>
+            <VerseBox verse={edVerse} />
+          </div>
+        )}
+        {edQuestion && (
+          <div className="paper-box paper-box--third" data-reveal>
+            <QuestionBox question={edQuestion} />
+          </div>
+        )}
+        {edQuiz[2] && (
+          <div className="paper-box paper-box--third" data-reveal>
+            <section aria-label="Where is this from? Question three">
+              <div className="edition-section-bar">
+                <h2 className="edition-section-head">Where is this from?</h2>
+                <p className="edition-section-note">3 of 3</p>
+              </div>
+              <QuizClient questions={[edQuiz[2]]} />
+            </section>
+          </div>
+        )}
+      </>
+    ),
+    prayer: (
+      <>
+        {/* Row 10 — the daily prayer, full measure, beside voices when
+              present. SLOT:VOICES */}
+        {edPrayer && (
+          <div
+            className={`paper-box ${edVoices ? 'paper-box--gallery' : 'paper-box--wide'}`}
+            data-reveal
+          >
+            <span
+              id="the-daily-prayer"
+              className="sr-only"
+              aria-hidden="true"
+            />
+            <PrayerColumn prayer={edPrayer} />
+          </div>
+        )}
+        {edVoices && (
+          <div className="paper-box paper-box--prayercol" data-reveal>
+            <VoicesColumn voice={edVoices} />
+          </div>
+        )}
+
+        {/* Reported sections — render only when real entries exist. */}
+        {edWitness && (
+          <div className="paper-box paper-box--wide" data-reveal>
+            <WitnessColumn witness={edWitness} />
+          </div>
+        )}
+        {edScreening.length > 0 && (
+          <div className="paper-box paper-box--wide" data-reveal>
+            <ScreeningRoom items={edScreening} />
+          </div>
+        )}
+        {edLetters.length > 0 && (
+          <div className="paper-box paper-box--wide" data-reveal>
+            <LettersColumn letters={edLetters} />
+          </div>
+        )}
+        {edNotices.length > 0 && (
+          <div className="paper-box paper-box--wide" data-reveal>
+            <NoticesColumn notices={edNotices} />
+          </div>
+        )}
+      </>
+    ),
+  }
+
   return (
     <div className="mock-home">
       <script
@@ -697,363 +1091,9 @@ export default async function EditionPage({
         {editionFailed && <EditionUnavailable />}
 
         <div className="paper-sheet">
-          {/* Row 1 — the standing desk: practice beside the word. */}
-          {(edPractice || edWord) && (
-            <div className="edition-band paper-box paper-box--wide" data-reveal>
-              {edPractice && (
-                <Chromed preview={preview} item={edPracticeItem}>
-                  <section
-                    className="edition-practice"
-                    aria-label="Today's practice"
-                  >
-                    <p className="edition-kicker">
-                      <PracticeIcon />
-                      The practice
-                    </p>
-                    <p className="edition-practice-do">
-                      {edPractice.instruction}
-                    </p>
-                    <p className="edition-practice-why">{edPractice.reason}</p>
-                    <p className="edition-practice-time">
-                      {edPractice.duration}
-                    </p>
-                  </section>
-                </Chromed>
-              )}
-              {edWord && (
-                <section
-                  id="word-of-the-day"
-                  className="edition-word"
-                  aria-label="Word of the day"
-                >
-                  <p className="edition-kicker">
-                    <WordIcon />
-                    {edWord.language} today
-                  </p>
-                  <p
-                    className="edition-word-original"
-                    lang={edWord.language === 'Greek' ? 'el' : 'he'}
-                  >
-                    {edWord.word}
-                  </p>
-                  <p className="edition-word-translit">{edWord.translit}</p>
-                  <p className="edition-word-gloss">{edWord.gloss}</p>
-                  <p className="edition-word-note">{edWord.source}</p>
-                  <p className="edition-word-ref">{edWord.reference}</p>
-                </section>
-              )}
-            </div>
-          )}
-
-          {/* Row 2 — thirds: the first quiz question, the red letters, and
-              today in the year-long plan. Games start BREAKING UP here. */}
-          {edQuiz[0] && (
-            <div className="paper-box paper-box--third" data-reveal>
-              <section aria-label="Where is this from?">
-                <div className="edition-section-bar">
-                  <h2 className="edition-section-head">Where is this from?</h2>
-                  <p className="edition-section-note">1 of 3</p>
-                </div>
-                <QuizClient questions={[edQuiz[0]]} />
-              </section>
-            </div>
-          )}
-          {edRedletter && (
-            <div className="paper-box paper-box--third" data-reveal>
-              <RedLetterColumn saying={edRedletter} />
-            </div>
-          )}
-          {edB365 && (
-            <div className="paper-box paper-box--third" data-reveal>
-              <B365Box b365={edB365} />
-            </div>
-          )}
-
-          {/* Row 3 — the crossword, with real content beside it (founder:
-              "a huge blank area next to it that could easily be content"). */}
-          {edCrossword && (
-            <section
-              className="edition-section paper-box paper-box--crossword"
-              data-reveal
-              aria-label="The crossword"
-              id="the-crossword"
-            >
-              <div className="edition-section-bar">
-                <h2 className="edition-section-head">The crossword</h2>
-                <p className="edition-section-note">
-                  Answers from scripture &middot; no timer, no streak
-                </p>
-              </div>
-              <CrosswordClient puzzle={edCrossword} />
-            </section>
-          )}
-          {/* The Catechism Corner — beside the crossword, so the puzzle
-              always sits next to prose (founder: the blank was wasted). */}
-          <div
-            className={`paper-box ${edCrossword ? 'paper-box--wordgames' : 'paper-box--wide'}`}
-            data-reveal
-          >
-            <section aria-label="The catechism corner">
-              <div className="edition-section-bar">
-                <h2 className="edition-section-head">The catechism corner</h2>
-                <p className="edition-section-note">
-                  Heidelberg, Q{catechism.number}
-                </p>
-              </div>
-              <p className="edition-catechism-q">{catechism.question}</p>
-              <p className="edition-catechism-a">{catechism.answer}</p>
-              <p className="edition-quote-cite">
-                {catechism.source} &middot; {catechism.scriptures.join(' · ')}
-              </p>
-            </section>
-          </div>
-
-          {/* Row 4 — the funnies' reserved frame beside the season. */}
-          <section
-            className="edition-section paper-box paper-box--strip"
-            data-reveal
-            aria-label="The funnies"
-          >
-            <div className="edition-section-bar">
-              <h2 className="edition-section-head">The funnies</h2>
-              <p className="edition-section-note">The comic strip</p>
-            </div>
-            {edStrip ? (
-              <Chromed preview={preview} item={edStripItem}>
-                <StripPanel strip={edStrip} />
-              </Chromed>
-            ) : (
-              <div className="edition-funnies-frame">
-                <p className="edition-funnies-title">
-                  The strip is being drawn.
-                </p>
-                <p className="edition-funnies-note">
-                  A daily comic premieres in this space
-                </p>
-              </div>
-            )}
-          </section>
-          {/* The season, elaborate — founder: "no one will know what it is."
-              Color band, plain name, span, a real essay, and the week
-              explained through the season's own pattern. */}
-          <div className="paper-box paper-box--season" data-reveal>
-            <section className="edition-season" aria-label="The season">
-              <div
-                className="edition-season-band"
-                style={{ ['--season-color' as string]: seasonEssay.colorHex }}
-                aria-hidden="true"
-              />
-              <p className="edition-kicker">The season</p>
-              <p className="edition-season-plain">{seasonEssay.plainName}</p>
-              <p className="edition-season-span">{seasonEssay.span}</p>
-              <p className="edition-season-essay">{seasonEssay.essay}</p>
-              <p className="edition-season-week">{seasonEssay.weekLine}</p>
-              <p className="edition-season-colorline">{seasonEssay.color}</p>
-            </section>
-          </div>
-
-          {/* Row 5 — the gallery spread. */}
-          {edGalleryPlates.length > 0 && (
-            <div
-              id="the-gallery"
-              className="paper-box paper-box--wide"
-              data-reveal
-            >
-              <GallerySpread plates={edGalleryPlates} />
-            </div>
-          )}
-
-          {/* Row 6 — the verse rebuilt, beside the archive pull. */}
-          {edUnscramble && (
-            <div
-              id="word-games"
-              className="paper-box paper-box--wordgames"
-              data-reveal
-            >
-              <section aria-label="The verse, rebuilt">
-                <div className="edition-section-bar">
-                  <h2 className="edition-section-head">The verse, rebuilt</h2>
-                </div>
-                <UnscrambleClient puzzle={edUnscramble} />
-              </section>
-            </div>
-          )}
-          {edArchive && (
-            <div className="paper-box paper-box--panel" data-reveal>
-              <ArchiveBox archive={edArchive} />
-            </div>
-          )}
-
-          {/* Row 7 — how to read. */}
-          {guides.length > 0 && (
-            <section
-              className="edition-section paper-box paper-box--wide"
-              data-reveal
-              aria-label="How to read"
-              id="how-to-read"
-            >
-              <div className="edition-section-bar">
-                <h2 className="edition-section-head">How to read</h2>
-                <p className="edition-section-note">
-                  Practical guides to reading and studying the Bible. A new set
-                  each day.
-                </p>
-              </div>
-              <div className="edition-guides">
-                {guides.map((g) => (
-                  <article key={g.title} className="edition-guide">
-                    <Link
-                      href={`/guides/${g.slug}`}
-                      className="edition-guide-platelink"
-                    >
-                      <span
-                        className="edition-guide-plate"
-                        data-parallax="0.35"
-                      >
-                        <Image
-                          src={g.image}
-                          alt={g.alt}
-                          fill
-                          sizes="(max-width: 900px) 100vw, 30vw"
-                          className="edition-guide-img"
-                        />
-                      </span>
-                    </Link>
-                    <p className="edition-guide-kicker">{g.kicker}</p>
-                    <h3 className="edition-guide-head">{g.title}</h3>
-                    <p className="edition-guide-stand">{g.standfirst}</p>
-                    <ol className="edition-guide-steps">
-                      {g.steps.map((step) => (
-                        <li key={step}>{step}</li>
-                      ))}
-                    </ol>
-                    <p className="edition-guide-time">{g.minutes}</p>
-                    <Link
-                      href={`/guides/${g.slug}`}
-                      className="edition-rail-more"
-                    >
-                      Read the full guide &rarr;
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* The word search — founder ask, 2026-08-19. */}
-          <section
-            className="edition-section paper-box paper-box--panel"
-            data-reveal
-            aria-label="The word search"
-          >
-            <div className="edition-section-bar">
-              <h2 className="edition-section-head">The word search</h2>
-              <p className="edition-section-note">{wordSearch.theme}</p>
-            </div>
-            <WordSearchClient puzzle={wordSearch} />
-          </section>
-          {edQuiz[1] && (
-            <div className="paper-box paper-box--wordgames" data-reveal>
-              <section aria-label="Where is this from? Question two">
-                <div className="edition-section-bar">
-                  <h2 className="edition-section-head">Where is this from?</h2>
-                  <p className="edition-section-note">2 of 3</p>
-                </div>
-                <QuizClient questions={[edQuiz[1]]} />
-              </section>
-            </div>
-          )}
-          {/* The Hymnal — one hymn a day, received text from the 1890
-              Otterbein Hymnal. */}
-          <section
-            className="edition-section paper-box paper-box--gallery"
-            data-reveal
-            aria-label="The hymnal"
-          >
-            <div className="edition-section-bar">
-              <h2 className="edition-section-head">The hymnal</h2>
-              <p className="edition-section-note">
-                {hymn.author}, {hymn.year}
-              </p>
-            </div>
-            <p className="edition-mini-title">{hymn.title}</p>
-            {hymn.verses.map((v, i) => (
-              <p key={i} className="edition-hymn-verse">
-                {v.join('\n')}
-              </p>
-            ))}
-          </section>
-          {edProverb && (
-            <div className="paper-box paper-box--prayercol" data-reveal>
-              <ProverbBox proverb={edProverb} />
-            </div>
-          )}
-
-          {/* Row 9 — thirds: memory verse, the question, quiz 3. */}
-          {edVerse && (
-            <div className="paper-box paper-box--third" data-reveal>
-              <VerseBox verse={edVerse} />
-            </div>
-          )}
-          {edQuestion && (
-            <div className="paper-box paper-box--third" data-reveal>
-              <QuestionBox question={edQuestion} />
-            </div>
-          )}
-          {edQuiz[2] && (
-            <div className="paper-box paper-box--third" data-reveal>
-              <section aria-label="Where is this from? Question three">
-                <div className="edition-section-bar">
-                  <h2 className="edition-section-head">Where is this from?</h2>
-                  <p className="edition-section-note">3 of 3</p>
-                </div>
-                <QuizClient questions={[edQuiz[2]]} />
-              </section>
-            </div>
-          )}
-
-          {/* Row 10 — the daily prayer, full measure, beside voices when
-              present. SLOT:VOICES */}
-          {edPrayer && (
-            <div
-              className={`paper-box ${edVoices ? 'paper-box--gallery' : 'paper-box--wide'}`}
-              data-reveal
-            >
-              <span
-                id="the-daily-prayer"
-                className="sr-only"
-                aria-hidden="true"
-              />
-              <PrayerColumn prayer={edPrayer} />
-            </div>
-          )}
-          {edVoices && (
-            <div className="paper-box paper-box--prayercol" data-reveal>
-              <VoicesColumn voice={edVoices} />
-            </div>
-          )}
-
-          {/* Reported sections — render only when real entries exist. */}
-          {edWitness && (
-            <div className="paper-box paper-box--wide" data-reveal>
-              <WitnessColumn witness={edWitness} />
-            </div>
-          )}
-          {edScreening.length > 0 && (
-            <div className="paper-box paper-box--wide" data-reveal>
-              <ScreeningRoom items={edScreening} />
-            </div>
-          )}
-          {edLetters.length > 0 && (
-            <div className="paper-box paper-box--wide" data-reveal>
-              <LettersColumn letters={edLetters} />
-            </div>
-          )}
-          {edNotices.length > 0 && (
-            <div className="paper-box paper-box--wide" data-reveal>
-              <NoticesColumn notices={edNotices} />
-            </div>
-          )}
+          {arrangeSheetRows(now).map((rowKey) => (
+            <Fragment key={rowKey}>{sheetRows[rowKey]}</Fragment>
+          ))}
         </div>
 
         <h2 className="edition-section-head" id="the-reading">

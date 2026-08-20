@@ -296,6 +296,16 @@ passes the founder's NEEDS YOUR EYE gate before its first print. Daily
 automation (claude -p writes, codex draws, inspection gate, draft row)
 wires into daily-edition.yml AFTER the founder approves the look.
 
+The paper's layout now varies daily (founder: "same modules but slightly
+altered layouts, but staple things staying anchored daily. 3 anchors.").
+Three anchors: the lead opens the paper, the funnies hold the same
+mid-paper spot, the reading closes it. The nine other sheet rows rotate
+through seven HAND-COMPOSED weekday arrangements (src/lib/edition/
+arrange.ts) — not a random shuffle, because free permutation could
+recreate the games clustering the founder rejected; a test pins that no
+two game rows ever sit adjacent in any variant. Deterministic from the
+effective edition date, so the arrangement flips with the 7am boundary.
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)
