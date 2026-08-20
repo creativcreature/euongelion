@@ -1,35 +1,43 @@
-# ECHO & DUST — canon (LOCKED, founder brief 2026-08-20)
+# ECHO & DUST — canon (LOCKED, founder brief 2026-08-20; art rulings amended by founder the same night)
 
-The Daily Bread's daily strip. An adult philosophical comic disguised as a
-simple vintage cartoon. Funny first, thoughtful immediately after,
-occasionally devastating seconds later. Never lecture. Trust the reader.
+The Daily Bread's daily strip. An adult philosophical comic. Funny first,
+thoughtful immediately after, occasionally devastating seconds later. Never
+lecture. Trust the reader.
 
-## The trio
+**SETTING: modern times.** The world of the strip is today, not the 1920s.
 
-- **THEO — the question.** The human center; the reader who wandered in.
+## The trio (art rulings, founder 2026-08-20 ~12:37-12:43am, supersede the original brief's vintage styling)
+
+- **TEDDY — the question.** (Named THEO in the original written brief; the
+  founder consistently says Teddy — use Teddy.) The human lead: a
+  contemporary Black kid — current hair (textured taper / twists), modern
+  oversized streetwear and cargos, current sneakers. HIS NOSE IS A REAL
+  ILLUSTRATED NOSE with bridge and nostrils — never a cartoon button.
   Curious, earnest, optimistic nihilist; asks ordinary questions without
-  noticing how enormous they are. Black male, rubber-hose design, white
-  gloves, simple clothing, expressive eyes, strong silhouette. Age may shift
-  15–50 (small afro → fuller afro → grey locs). NO chest symbol, NO flame.
-- **ECHO — the constant.** Tallest. What stays true regardless of what we
-  want: cause, consequence, inevitability, meaning. Lively, warm, playful,
-  cheerfully comfortable with death/God/eternity — never a grim-reaper
-  stereotype. Extremely simple rubber-hose silhouette, black hoodie with an
-  ANATOMICAL HUMAN HEART on the chest, white gloves, long expressive limbs.
-- **DUST — the variable.** Shortest. Chance, entropy, circumstance.
-  Confident, dry, pessimistic, sometimes petty; usually the funniest line.
-  Small round body with a cosmic/galaxy interior, tiny particles drifting
-  off, rubber-hose limbs, white gloves, baseball-style cap. HIS HAT MAY
-  CHANGE BETWEEN STRIPS (circumstance shifting) — never explained.
+  noticing how enormous they are. The only race-specific character. No chest
+  symbol.
+- **ECHO — the constant.** Tallest by far. HOOD UP IN EVERY PANEL; his face
+  is a fully blacked-out, featureless void — no eyes, no mouth, no racial
+  identifiers. Wears a modern black hoodie whose ANATOMICAL HEART reads like
+  a distressed BAND-MERCH screen print (bold, worn, integrated into the
+  garment — never clinical linework floating on the chest). White gloves,
+  long expressive limbs. Warm, lively, cheerfully comfortable with death/
+  God/eternity — never a grim-reaper stereotype, even faceless.
+- **DUST — the variable.** Shortest. A GALAXY WEARING CLOTHES: small round
+  cosmic body (stars, swirls, particles drifting off) dressed in a generic
+  modern ZIP-FRONT WARM-UP JACKET (athletic, geometric paneling, no team
+  names), a TRUCKER HAT, and SNEAKERS. Dry, pessimistic, usually the
+  funniest line. His hat may still change between strips — never explained.
 
-## Visual law (every generation, verbatim intent)
+## Visual law (every generation, verbatim intent — AMENDED)
 
-1920s rubber-hose / early black-and-white theatrical cartoon / vintage
-newspaper comic. Black and white on warm off-white paper; heavy black ink;
-film grain; slight print imperfections; bold silhouettes; minimal
-backgrounds; strong facial acting; slightly imperfect hand-drawn linework.
-FORBIDDEN: modern digital polish, glossy 3D, anime, Pixar-style rendering,
-photorealism, color (beyond the warm paper tone).
+MODERN-DAY setting and styling, drawn as a hand-inked comic strip in the
+SITE'S OWN PALETTE: strict risograph duotone — deep cobalt/ultramarine ink
+on warm cream paper with ONE sparing crimson accent, halftone-dot shading in
+the site's poster style (see public/images/site/series/ anchors). Heavy
+confident linework, print imperfections, bold silhouettes, minimal
+backgrounds, strong facial acting. FORBIDDEN: glossy 3D, anime, Pixar-style
+rendering, photorealism, full-color palettes, corporate flat-vector style.
 
 ## Format
 

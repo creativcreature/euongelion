@@ -341,6 +341,18 @@ effective edition date, so the arrangement flips with the 7am boundary.
 The strip panel is retitled Echo & Dust (the hardcoded Ninety-Nine label
 predated the founder's strip concept).
 
+Echo & Dust, take two — the founder art-directed live: "cartoon is def
+wrong." The canon is AMENDED (content/strip-reference/ECHO-AND-DUST-
+CANON.md): modern-day setting; the strip prints in the SITE'S riso palette
+(cobalt on cream, halftone, crimson reserved for the heart); Echo keeps his
+hood up with a featureless void face and a distressed band-merch heart
+print; the human lead is TEDDY (the founder's name for him), a contemporary
+Black kid with a real illustrated nose — never a button; Dust's galaxy
+wears a zip-front warm-up jacket, trucker hat, and sneakers. Character
+sheet v3 + strip 001 v4 generated to the new canon; the Friday draft row
+now points at the new strip (echo-dust-001b.jpg); the old black-and-white
+asset is removed.
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)
