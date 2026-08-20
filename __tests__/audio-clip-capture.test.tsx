@@ -14,6 +14,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import AudioPlayer from '@/components/AudioPlayer'
+import GlobalAudioHost from '@/components/audio/GlobalAudioHost'
 import { __resetSessionProbe } from '@/components/reader/ReaderContext'
 import { useAuthStore } from '@/stores/authStore'
 
@@ -73,7 +74,12 @@ afterEach(() => {
 })
 
 const renderPlayer = () =>
-  render(<AudioPlayer title="Clip Day" segments={[]} slug="clip-day-1" />)
+  render(
+    <>
+      <GlobalAudioHost />
+      <AudioPlayer title="Clip Day" segments={[]} slug="clip-day-1" />
+    </>,
+  )
 
 const setTime = (container: HTMLElement, seconds: number) => {
   const audio = container.querySelector('audio') as HTMLAudioElement

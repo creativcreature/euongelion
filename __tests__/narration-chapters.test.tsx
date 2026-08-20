@@ -8,6 +8,7 @@ import {
   within,
 } from '@testing-library/react'
 import AudioPlayer from '@/components/AudioPlayer'
+import GlobalAudioHost from '@/components/audio/GlobalAudioHost'
 import { chapterAt, type NarrationChapter } from '@/lib/audio/tracks'
 
 /**
@@ -101,7 +102,10 @@ afterEach(cleanup)
 
 const renderPlayer = (slug = 'has-track-day-1') =>
   render(
-    <AudioPlayer title="The Fruit of Lies" segments={SEGMENTS} slug={slug} />,
+    <>
+      <GlobalAudioHost />
+      <AudioPlayer title="The Fruit of Lies" segments={SEGMENTS} slug={slug} />
+    </>,
   )
 
 const setTime = (container: HTMLElement, seconds: number) => {

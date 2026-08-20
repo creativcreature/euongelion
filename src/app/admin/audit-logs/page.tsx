@@ -1,4 +1,5 @@
 import AdminShell from '@/components/AdminShell'
+import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 
 /**
  * SA-114 / F-158: the fabricated entries (LOG-9012 "Moderation approved"…)
@@ -12,7 +13,10 @@ export const metadata = {
   description: 'Admin action history — not yet wired.',
 }
 
-export default function AdminAuditLogsPage() {
+export default async function AdminAuditLogsPage() {
+  // Page-level gate — the layout gate alone leaks streamed markup (SA-114).
+  await assertAdminOr404()
+
   return (
     <AdminShell
       title="Audit Logs"

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import AdminShell from '@/components/AdminShell'
+import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 
 /**
  * SA-114 / F-158: the fabricated queue (PUB-2081 "Identity in Exile"…) and
@@ -12,7 +13,10 @@ export const metadata = {
   description: 'Reader-submission moderation — not yet wired.',
 }
 
-export default function AdminModerationPage() {
+export default async function AdminModerationPage() {
+  // Page-level gate — the layout gate alone leaks streamed markup (SA-114).
+  await assertAdminOr404()
+
   return (
     <AdminShell
       title="Moderation Queue"

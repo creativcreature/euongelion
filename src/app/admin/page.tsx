@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import AdminShell from '@/components/AdminShell'
 import { getReviewQueue } from '@/lib/edition/store'
+import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 
 /**
  * SA-114 / F-158 — the real admin hub.
@@ -35,6 +36,9 @@ function cardClass(strong = false) {
 }
 
 export default async function AdminDashboardPage() {
+  // Page-level gate — the layout gate alone leaks streamed markup (SA-114).
+  await assertAdminOr404()
+
   // Real count, or a visible failure — never a plausible zero (Rule 1).
   let draftCount: number | null = null
   let queueReadError: string | null = null

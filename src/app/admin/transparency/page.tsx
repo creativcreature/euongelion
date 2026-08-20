@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import AdminShell from '@/components/AdminShell'
+import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 
 /**
  * SA-114 / F-158: the dollars-this-cycle figure was invented and the
@@ -21,7 +22,10 @@ const COMMITTED_SPLIT = [
   { label: 'Labor', percent: 15 },
 ]
 
-export default function AdminTransparencyPage() {
+export default async function AdminTransparencyPage() {
+  // Page-level gate — the layout gate alone leaks streamed markup (SA-114).
+  await assertAdminOr404()
+
   return (
     <AdminShell
       title="Transparency Metrics"

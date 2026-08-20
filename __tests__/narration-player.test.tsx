@@ -1,6 +1,7 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest'
 import { render, screen, cleanup, act, within } from '@testing-library/react'
 import AudioPlayer from '@/components/AudioPlayer'
+import GlobalAudioHost from '@/components/audio/GlobalAudioHost'
 import { formatTime } from '@/lib/audio/tracks'
 
 /**
@@ -61,11 +62,14 @@ afterEach(cleanup)
 describe('AudioPlayer reader selection', () => {
   it('plays the pre-rendered track through a real audio element', () => {
     const { container } = render(
-      <AudioPlayer
-        title="The Fruit of Lies"
-        segments={SEGMENTS}
-        slug="has-track-day-1"
-      />,
+      <>
+        <GlobalAudioHost />
+        <AudioPlayer
+          title="The Fruit of Lies"
+          segments={SEGMENTS}
+          slug="has-track-day-1"
+        />
+      </>,
     )
     const audio = container.querySelector('audio')
     expect(audio).not.toBeNull()
@@ -86,11 +90,14 @@ describe('AudioPlayer reader selection', () => {
 
   it('shows the track duration before playback starts', () => {
     render(
-      <AudioPlayer
-        title="The Fruit of Lies"
-        segments={SEGMENTS}
-        slug="has-track-day-1"
-      />,
+      <>
+        <GlobalAudioHost />
+        <AudioPlayer
+          title="The Fruit of Lies"
+          segments={SEGMENTS}
+          slug="has-track-day-1"
+        />
+      </>,
     )
     // 1299.9s → 21:39. Since F-131 the meta leads with what is LEFT rather
     // than elapsed/total, so before playback the whole track is still to go and
@@ -100,20 +107,41 @@ describe('AudioPlayer reader selection', () => {
 
   it('falls back to synthesised speech when no track exists yet', () => {
     const { container } = render(
-      <AudioPlayer
-        title="Not Rendered"
-        segments={SEGMENTS}
-        slug="no-track-day-9"
-      />,
+      <>
+        <GlobalAudioHost />
+        <AudioPlayer
+          title="Not Rendered"
+          segments={SEGMENTS}
+          slug="no-track-day-9"
+        />
+      </>,
     )
-    expect(container.querySelector('audio')).toBeNull()
+    // Asserting on WHICH TRANSPORT rendered, not on the absence of an <audio>
+    // element. The element belongs to the layout now and is always present, so
+    // counting elements proves nothing about which player was chosen. Both
+    // players label their region "Audio edition"; only narration has a seek
+    // slider, and only the speech fallback steps by section.
+    // A player rendered (the region is there) but it is NOT the narration
+    // transport — only narration has a seek slider. Asserting on the absence
+    // of an <audio> element would prove nothing now: the element belongs to
+    // the layout and is always present.
+    expect(screen.getByRole('region', { name: 'Audio edition' })).toBeTruthy()
+    expect(screen.queryByRole('slider', { name: /seek/i })).toBeNull()
   })
 
   it('falls back when no slug is supplied at all', () => {
-    const { container } = render(
-      <AudioPlayer title="No Slug" segments={SEGMENTS} />,
+    render(
+      <>
+        <GlobalAudioHost />
+        <AudioPlayer title="No Slug" segments={SEGMENTS} />
+      </>,
     )
-    expect(container.querySelector('audio')).toBeNull()
+    // A player rendered (the region is there) but it is NOT the narration
+    // transport — only narration has a seek slider. Asserting on the absence
+    // of an <audio> element would prove nothing now: the element belongs to
+    // the layout and is always present.
+    expect(screen.getByRole('region', { name: 'Audio edition' })).toBeTruthy()
+    expect(screen.queryByRole('slider', { name: /seek/i })).toBeNull()
   })
 })
 
@@ -154,11 +182,14 @@ describe('NarrationMiniBar — appearance rules', () => {
 
   const renderPlayer = () =>
     render(
-      <AudioPlayer
-        title="The Fruit of Lies"
-        segments={SEGMENTS}
-        slug="has-track-day-1"
-      />,
+      <>
+        <GlobalAudioHost />
+        <AudioPlayer
+          title="The Fruit of Lies"
+          segments={SEGMENTS}
+          slug="has-track-day-1"
+        />
+      </>,
     )
 
   const scrollPanelAway = () => {
@@ -275,11 +306,14 @@ describe('NarrationPlayer — soft navigation', () => {
     vi.stubGlobal('navigator', { ...navigator, sendBeacon: beacon })
 
     const { container, unmount } = render(
-      <AudioPlayer
-        title="The Fruit of Lies"
-        segments={SEGMENTS}
-        slug="has-track-day-1"
-      />,
+      <>
+        <GlobalAudioHost />
+        <AudioPlayer
+          title="The Fruit of Lies"
+          segments={SEGMENTS}
+          slug="has-track-day-1"
+        />
+      </>,
     )
     const audio = container.querySelector('audio') as HTMLAudioElement
     act(() => {
@@ -300,11 +334,14 @@ describe('NarrationPlayer — soft navigation', () => {
     vi.stubGlobal('navigator', { ...navigator, sendBeacon: beacon })
 
     const { unmount } = render(
-      <AudioPlayer
-        title="The Fruit of Lies"
-        segments={SEGMENTS}
-        slug="has-track-day-1"
-      />,
+      <>
+        <GlobalAudioHost />
+        <AudioPlayer
+          title="The Fruit of Lies"
+          segments={SEGMENTS}
+          slug="has-track-day-1"
+        />
+      </>,
     )
     // Never played. Opening a devotional must not count as listening — four
     // such rows reached production once and would have made opens look like

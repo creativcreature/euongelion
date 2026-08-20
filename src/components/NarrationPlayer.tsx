@@ -13,6 +13,10 @@ import {
   formatTime,
   type NarrationTrack,
 } from '@/lib/audio/tracks'
+import {
+  getAudioElement,
+  subscribeAudioElement,
+} from '@/lib/audio/audio-element'
 import NarrationChapters from '@/components/NarrationChapters'
 import NarrationMiniBar from '@/components/NarrationMiniBar'
 import SpeedSheet, {
@@ -98,7 +102,24 @@ export default function NarrationPlayer({
   artworkSrc,
   className,
 }: NarrationPlayerProps) {
+  /**
+   * The ONE audio element, adopted rather than created.
+   *
+   * This panel used to render its own `<audio>`. With `GlobalAudioHost` also
+   * mounting one in the layout, a devotional page carried TWO playback engines:
+   * whichever a control happened to hold was the one that answered, and a queue
+   * sounding through the global element kept playing when the reader pressed
+   * play on its own. There is no arrangement of two media elements that behaves
+   * correctly, so the panel drives the global one and every existing
+   * `audioRef.current` call site keeps working unchanged.
+   */
+  const globalAudio = useSyncExternalStore(
+    subscribeAudioElement,
+    getAudioElement,
+    () => null,
+  )
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  audioRef.current = globalAudio
   const panelRef = useRef<HTMLElement | null>(null)
   const [playing, setPlaying] = useState(false)
   /**
@@ -544,6 +565,72 @@ export default function NarrationPlayer({
     [sleepMode, fadeOutAndPause, track.duration],
   )
 
+  /**
+   * Load this reading into the shared element, and wire the panel's own state
+   * to it.
+   *
+   * These were JSX props on the element this panel used to own. They are
+   * listeners now because the element belongs to the layout — the panel is a
+   * view onto it, not its owner. `src` is only assigned when it differs, so
+   * arriving on a reading already sounding does not restart it.
+   */
+  useEffect(() => {
+    const audio = globalAudio
+    if (!audio) return
+
+    if (audio.getAttribute('src') !== track.src) {
+      audio.setAttribute('src', track.src)
+      audio.load()
+    }
+
+    const onPlay = () => {
+      setPlaying(true)
+      setHasStarted(true)
+      setError(null)
+    }
+    const onPause = () => setPlaying(false)
+    const onTime = () => handleTimeUpdate(audio.currentTime)
+    const onLoaded = () => {
+      if (Number.isFinite(audio.duration)) setDuration(audio.duration)
+      // Apply the remembered rate BEFORE the first play, or the opening
+      // seconds run at 1x and then jump.
+      audio.playbackRate = speed
+      audio.preservesPitch = true
+      restorePosition(audio)
+    }
+    const onEnded = () => {
+      setPlaying(false)
+      flushProgress({ flush: true, ended: true })
+    }
+    const onError = () => setError('This reading could not be loaded.')
+
+    audio.addEventListener('play', onPlay)
+    audio.addEventListener('pause', onPause)
+    audio.addEventListener('timeupdate', onTime)
+    audio.addEventListener('loadedmetadata', onLoaded)
+    audio.addEventListener('ended', onEnded)
+    audio.addEventListener('error', onError)
+    // Metadata may already be there when the element is adopted mid-life, in
+    // which case `loadedmetadata` will never fire again.
+    if (audio.readyState >= 1) onLoaded()
+
+    return () => {
+      audio.removeEventListener('play', onPlay)
+      audio.removeEventListener('pause', onPause)
+      audio.removeEventListener('timeupdate', onTime)
+      audio.removeEventListener('loadedmetadata', onLoaded)
+      audio.removeEventListener('ended', onEnded)
+      audio.removeEventListener('error', onError)
+    }
+  }, [
+    globalAudio,
+    track.src,
+    speed,
+    handleTimeUpdate,
+    restorePosition,
+    flushProgress,
+  ])
+
   // Media Session: lock-screen metadata and OS transport handlers. This is the
   // whole point of using a media element rather than speechSynthesis.
   useEffect(() => {
@@ -750,35 +837,9 @@ export default function NarrationPlayer({
         className={`narration-player ${className ?? ''}`}
         aria-label="Audio edition"
       >
-        <audio
-          ref={audioRef}
-          src={track.src}
-          preload="metadata"
-          onPlay={() => {
-            setPlaying(true)
-            setHasStarted(true)
-            setError(null)
-          }}
-          onPause={() => setPlaying(false)}
-          onTimeUpdate={(e) => handleTimeUpdate(e.currentTarget.currentTime)}
-          onLoadedMetadata={(e) => {
-            if (Number.isFinite(e.currentTarget.duration)) {
-              setDuration(e.currentTarget.duration)
-            }
-            // Apply the remembered rate BEFORE the first play, or the opening
-            // seconds run at 1× and then jump. The VALUE comes from
-            // useSyncExternalStore above, so it is already correct on first
-            // render even when this event never fires.
-            e.currentTarget.playbackRate = speed
-            e.currentTarget.preservesPitch = true
-            restorePosition(e.currentTarget)
-          }}
-          onEnded={() => {
-            setPlaying(false)
-            flushProgress({ flush: true, ended: true })
-          }}
-          onError={() => setError('This reading could not be loaded.')}
-        />
+        {/* No <audio> here: the panel drives the global element (see
+            `globalAudio` above). Two media elements on one page is the bug
+            this removes. */}
 
         {/* The caption. Founder-chosen 2026-08-16 from five mocked directions:
             Spotify Audiobooks and The Atlantic independently arrived at the

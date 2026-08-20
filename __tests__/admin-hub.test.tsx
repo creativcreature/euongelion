@@ -23,6 +23,17 @@ import React from 'react'
 import AdminDashboardPage from '@/app/admin/page'
 import SettingsPage from '@/app/settings/page'
 
+// The page-level admin gate (SA-114): the layout gate alone leaks streamed
+// markup, so every admin page asserts the allowlist itself. In these tests
+// the gate resolves (we are testing the hub's own contract); the gate's
+// fail-closed behavior is proven in the Workers runtime, where an anonymous
+// request gets no page markup at all.
+const assertAdminOr404 = vi.fn(async () => {})
+vi.mock('@/lib/admin/assert-admin', () => ({
+  assertAdminOr404: () => assertAdminOr404(),
+  adminAllowlist: () => ['c.parker3@me.com'],
+}))
+
 vi.mock('@/components/EuangelionShellHeader', () => ({
   default: () => <div data-testid="shell-header" />,
 }))
@@ -66,6 +77,12 @@ describe('admin hub (SA-114 / F-158)', () => {
 
   afterEach(() => {
     cleanup()
+  })
+
+  it('calls the page-level admin gate before rendering anything', async () => {
+    getReviewQueue.mockResolvedValueOnce([])
+    render(await AdminDashboardPage())
+    expect(assertAdminOr404).toHaveBeenCalledTimes(1)
   })
 
   it('renders link cards for the edition queue, preview, next-series box, and reading gate', async () => {

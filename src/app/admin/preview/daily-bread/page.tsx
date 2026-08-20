@@ -11,19 +11,11 @@
  * rejected GOES LIVE at 3am Eastern on its posting day. This page is where
  * that window is exercised.
  */
-import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/server'
+import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 import EditionPage from '@/components/edition/EditionPage'
 
 export const dynamic = 'force-dynamic'
-
-function adminAllowlist(): string[] {
-  return (process.env.ADMIN_EMAIL_ALLOWLIST || '')
-    .split(',')
-    .map((e) => e.trim().toLowerCase())
-    .filter(Boolean)
-}
 
 function dateOrTomorrow(raw: string | undefined): Date {
   if (raw && /^\d{4}-\d{2}-\d{2}$/.test(raw)) {
@@ -38,14 +30,7 @@ export default async function DailyBreadPreview({
 }: {
   searchParams: Promise<{ date?: string }>
 }) {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-  const email = user?.email?.toLowerCase() ?? ''
-  if (!email || !adminAllowlist().includes(email)) {
-    notFound()
-  }
+  await assertAdminOr404()
 
   const { date: rawDate } = await searchParams
   const date = dateOrTomorrow(rawDate)

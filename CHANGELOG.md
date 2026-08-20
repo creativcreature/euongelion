@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## One audio element, site-wide (SA-115, F-160)
+
+**2026-08-19**
+
+Written test-first, and the process caught what review had not.
+
+`GlobalAudioHost` mounts an `<audio>` in the layout so playback survives a route
+change. `NarrationPlayer` rendered its own as well — so a devotional page
+carried **two independent playback engines**. Whichever element a control
+happened to hold was the one that answered, and a queue sounding through the
+global element kept playing when the reader pressed play on its own. This was
+logged open at SA-097 and stayed open through five decisions.
+
+**RED:** a test rendering host and reader together, asserting one `<audio>`.
+Failed with `expected …(2) to have a length of 1 but got 2`.
+
+**GREEN:** the reader adopts the layout's element and keeps `audioRef` pointed
+at it, so all thirty-odd existing call sites work unchanged.
+
+**What the all-tests-pass gate caught, and this is the useful part:** fifteen
+existing tests broke. They rendered the reader alone, and with no host there was
+nothing to adopt. Their _setup_ was updated to mount the host; their assertions
+were not touched — except two, which proved "fell back to speech" by asserting
+no `<audio>` existed. That proxy is dead now the element is always present, so
+they assert the real thing: a player rendered, without the seek slider only
+narration has.
+
+---
+
 ## The undo, finished on the other reader (SA-111, F-157)
 
 **2026-08-19**

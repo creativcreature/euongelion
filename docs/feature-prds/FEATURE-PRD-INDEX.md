@@ -162,3 +162,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-157 | Platform          | Undo a completion; one day-source in the Library          | 0/10     | wip     | [F-157.md](./F-157.md) |
 | F-158 | Platform          | Finished-state preview; 7am flip; admin backend           | 0/10     | wip     | [F-158.md](./F-158.md) |
 | F-159 | Homepage          | Rotating hero: seven gospel plates, per-load draw         | 0/10     | wip     | [F-159.md](./F-159.md) |
+| F-160 | Reading surfaces  | One audio element site-wide; reader adopts the host       | 0/10     | shipped | [F-160.md](./F-160.md) |
