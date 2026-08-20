@@ -20,7 +20,7 @@ export const HERO_ROTATION = [
   '/images/site/homepage/hero/hero-passover.webp', // Exodus 12 — blood on the doorframe
   '/images/site/homepage/hero/hero-furnace.webp', // Daniel 3 — the fourth man in the fire
   '/images/site/homepage/hero/hero-baptism.webp', // Mark 1 — the torn-open sky
-  '/images/site/homepage/hero/hero-finished.webp', // John 19:30 — it is finished
+  '/images/site/homepage/hero/hero-red-sea.webp', // Exodus 14 — Moses parts the sea
   '/images/site/homepage/hero/hero-vines.webp', // John 15 — the true vine
   '/images/site/homepage/hero/hero-via-dolorosa.webp', // John 19:17 — carrying his cross
 ] as const

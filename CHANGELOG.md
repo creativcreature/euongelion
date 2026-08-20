@@ -5,6 +5,106 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## A reading registers itself, so it can be paused from anywhere (SA-117, F-162)
+
+**2026-08-19**
+
+Founder, from live use: _"the site should not be autoplaying.... and ther is no
+way to turn pause right now. the player didnt even detect the audio was
+playing."_
+
+Reproduced in Chrome against production: press play in a reading, navigate to
+`/series`, and it is still sounding at 30 seconds in with **no pause control
+anywhere on the page**.
+
+Two causes, both mine. **The reader told the store nothing** — it drove the
+shared element directly, and the drawer handle carries the only pause control
+outside the reader's own panel, appearing only when the store holds something.
+And **the stale shell** — anyone on a cached build still had the pre-SA-115
+reader rendering its own `<audio>` beside the host's, so the visible controls
+drove one element while the other sounded. That is precisely "the player didn't
+detect the audio was playing".
+
+It reads as autoplay because audio continues across navigation — the intended
+feature — while nothing on screen admits it is playing.
+
+**A reading now registers itself on play**, so the handle appears and carries a
+pause control on every route. Only when it is not already the cursor: pressing
+play inside a queue must not collapse that queue to one item. The host also
+learned to adopt an already-loaded `src`, or registering would restart the
+reading under the listener.
+
+Written test-first. RED was `expected [] to deeply equal ['has-track-day-1']`.
+
+The suite was fully green while this bug was live, because no test navigated
+away mid-playback. It was found by driving a real browser.
+
+---
+
+## The breadth axis, and the continuity bug that moved (SA-116, F-161)
+
+**2026-08-19**
+
+The founder handed "The Listening Plan" to the executing-plans skill. The
+skill's review step is the reason this entry is not a rebuild.
+
+**The plan was stale, and saying so was the work.** Dated 19 August, second
+draft, _"Nothing built yet"_ — while **eight of its nine stages had shipped that
+same day** under SA-098 and SA-104..SA-115: R2, the global element, the bar,
+queues, the library, the voiced Edition, the occasion picker, downloads. Two of
+its three named continuity bugs were already fixed — the throttle is per-track,
+and the finish handler's `seconds: 0` is deliberate because it carries
+`ended: true` alongside.
+
+**The third bug survived by moving, not by being missed.** `NarrationPlayer` has
+saved on `pagehide` and `visibilitychange` since it owned the element. SA-115
+hoisted playback into `GlobalAudioHost` and the handler did not come with it, so
+everything played outside the reader panel — the drawer queue, the picker,
+/today, the Edition — could lose up to 30 seconds of position on tab close or a
+phone being locked. Now fixed, guarded so that merely loading the site cannot
+write a row at position 0 and count an open as a listen.
+
+**Two more defects surfaced while fixing it.** `listenedDelta` was hard-coded
+`0` at both of the host's push sites, so that listening accumulated no total at
+all. And `pushPosition` returned nothing, so callers cleared their accumulator
+whether or not the account had taken the write — against a 5s interval and a 30s
+throttle, the listening total was discarding roughly **five of every six ticks**.
+It now reports whether the server took it, and both callers clear only on true.
+
+**The breadth axis.** `formats.ts` introduces the missing noun. The system knew
+two shapes of audio — a devotional read aloud and a scripture day read aloud,
+both about eleven minutes — and modelled neither. A format declares its length
+band, the activities it suits, and whether it is audio-native.
+
+**The Office, Night and Lectio are declared and deliberately empty.** They are
+new writing and new recording; `AUDIO_NATIVE_PIECES` is `[]` and every surface
+renders nothing for them. Inventing pieces to close a plan item is the failure
+SA-098 refused, and this repeats the refusal.
+
+**Scripture-whole is real today, and nothing was recorded to make it so.**
+`bible-365` is 365 delivered tracks in canonical order, so grouped by book it is
+long-form already: **45 consecutive runs across 31 books, 31 over 40 minutes, 26
+inside the 40–90 band, 46.1 hours** — longest Revelation at 93 minutes. The
+occasion picker's "an hour or more" returned nothing and now offers whole books,
+shortest first. Book identity comes from `parseReference`, the site's only
+scripture parser, because the corpus carries thematic headings — `Sabbath`,
+`Selected`, `Amos, Hosea, Micah` — that a naive split would offer as books.
+
+The queue is the long-form unit, not the track: each item is still an
+eleven-minute reading, so it still resumes per track and survives being stopped
+halfway. One 90-minute file would do none of that.
+
+**Docs.** `AUDIO-FORWARD-STRATEGY.md` and `NARRATION-SITEWIDE-PLAN.md` are
+marked superseded with a stage-by-stage state table, so no future session
+re-executes them. The measured current state is `docs/plans/AUDIO-STATE-2026-08-19.md`.
+
+**Still open, and not pretended:** the Office, Night and Lectio need the founder
+in front of a microphone. Decision 04 (where the founder's voice goes) and
+Decision 06 (whether narration is disclosed as synthesised) are unanswered; 06
+is a trust posture, not an engineering call.
+
+---
+
 ## One audio element, site-wide (SA-115, F-160)
 
 **2026-08-19**
@@ -168,6 +268,13 @@ preload, and the banner paints the variable as its CSS background with the
 tomb as the `var()` fallback for JS-off readers. TDD per the invoked skill:
 `__tests__/hero-rotation-contract.test.ts` reproduces the innerHTML-reset
 failure and pins the survival contract — watched red, then green.
+
+**Plate swap (founder, same day):** It Is Finished (the crucifixion) leaves
+the rotation for **Moses parting the sea** — the pinned pool's Road Through
+the Sea concept, generated through the same pipeline (Arrival still as the
+composition reference, subject dead center, pillar of fire carrying the
+crimson core) and installed as a file-plus-array swap, exactly as designed.
+The crucifixion master stays archived in the reference library.
 
 ## A completion you can take back (SA-111, F-157)
 
