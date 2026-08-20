@@ -17106,3 +17106,10 @@ html.dark .edition-quote-text--red {
   border-top: var(--ed-hair);
   margin: 1.4em 0;
 }
+
+.pitch-demo-frame {
+  width: 100%;
+  height: 82vh;
+  border: var(--ed-hair);
+  background: var(--mock-paper, #f6f1e7);
+}

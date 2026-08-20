@@ -13,7 +13,12 @@
  *
  * Usage:
  *   node scripts/pitches/publish-pitch.mjs <body.md|body.html> \
- *     --title="The pitch title" [--slug=custom-slug] [--tags=a,b] [--session=name]
+ *     --title="The pitch title" [--slug=custom-slug] [--tags=a,b] [--session=name] [--mode=document|demo]
+ *
+ * --mode=demo: the body is a COMPLETE self-contained HTML document (inline
+ * CSS+JS) rendered in a sandboxed iframe on the pitch page — scripts RUN, so
+ * working feature demos are reviewable in place. Default mode renders
+ * markdown/html inline as prose.
  *
  * Markdown is rendered to HTML at publish time (marked). Re-publishing the
  * same slug REPLACES the pitch body and bumps updatedAt (revisions are the
@@ -56,9 +61,12 @@ let existing = null
   const r = await fetch(`${URL_}/storage/v1/object/pitches/items/${slug}.json`, { headers: H })
   if (r.ok) existing = await r.json()
 }
+const mode = flag('mode', existing?.mode ?? 'document') // 'document' | 'demo'
+if (!['document', 'demo'].includes(mode)) throw new Error(`bad --mode: ${mode}`)
 const entry = {
   slug,
   title,
+  mode,
   tags: flag('tags') ? flag('tags').split(',').map((t) => t.trim()) : (existing?.tags ?? []),
   session: flag('session', existing?.session ?? 'unnamed-session'),
   createdAt: existing?.createdAt ?? now,

@@ -51,6 +51,7 @@ import {
 import GallerySpread from '@/components/edition/GallerySpread'
 import { pageArchive, pageB365, pageProverb } from '@/lib/edition/page-modules'
 import { pickLeadArt } from '@/lib/edition/lead-art'
+import { getGeneratedLeadArt } from '@/lib/edition/lead-art-generated'
 import { generateRedLetter } from '@/lib/edition/generators/redletter'
 import { generateVerse } from '@/lib/edition/generators/verse'
 import { generateQuestion } from '@/lib/edition/generators/question'
@@ -506,6 +507,12 @@ export default async function EditionPage({
         : '',
     )
     .join(' ')
+  // SA-114 (founder, 2026-08-20): the lead plate is GENERATED daily via
+  // /imagen in the house style — the library pick and series art are the
+  // fallback chain for days the generator has not run.
+  const generatedArt = authoredLead
+    ? null
+    : await getGeneratedLeadArt(editionKey)
   const dailyArt = authoredLead
     ? null
     : pickLeadArt(
@@ -1087,11 +1094,17 @@ export default async function EditionPage({
         <div className="edition-front">
           <Chromed preview={preview} item={edLeadItem}>
             <section className="edition-lead" aria-label="Today's reading">
-              {(dailyArt || leadHero) && (
+              {(generatedArt || dailyArt || leadHero) && (
                 <span className="edition-lead-plate">
                   <Image
-                    src={dailyArt?.image ?? leadHero!.src}
-                    alt={dailyArt ? dailyArt.shown.slice(0, 140) : ''}
+                    src={generatedArt?.src ?? dailyArt?.image ?? leadHero!.src}
+                    alt={
+                      generatedArt
+                        ? generatedArt.alt.slice(0, 140)
+                        : dailyArt
+                          ? dailyArt.shown.slice(0, 140)
+                          : ''
+                    }
                     fill
                     sizes="(max-width: 900px) 100vw, 60vw"
                     className="edition-lead-img"

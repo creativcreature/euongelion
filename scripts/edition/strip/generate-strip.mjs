@@ -23,7 +23,7 @@
  * strip is the failure mode this repo exists to prevent (Dev Rule 1).
  */
 import { execFileSync, execSync } from 'node:child_process'
-import { mkdtempSync, readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { tmpdir, platform } from 'node:os'
 import path from 'node:path'
 
@@ -121,10 +121,13 @@ if (!script) throw new Error('the writer could not produce a valid strip script'
 console.log(`[strip] No. ${nextNumber}: "${script.title}" (${script.topic}) — Dust wears ${script.dustHat}`)
 
 // 3 — DRAW via codex (anchors mandatory)
-const work = mkdtempSync(path.join(tmpdir(), 'echo-dust-'))
+// codex exec only runs in a trusted project dir — work happens inside the
+// repo's gitignored .cache, never a bare tmpdir.
+mkdirSync('.cache/strip', { recursive: true })
+const work = mkdtempSync(path.resolve('.cache/strip/run-'))
 const outPng = path.join(work, 'strip.png')
-const sheet = 'content/strip-reference/workshop/character-sheet-v3.png'
-const styleAnchor = 'content/strip-reference/workshop/strip-001-v4.png'
+const sheet = path.resolve('content/strip-reference/workshop/character-sheet-v3.png')
+const styleAnchor = path.resolve('content/strip-reference/workshop/strip-001-v4.png')
 if (!existsSync(sheet) || !existsSync(styleAnchor)) throw new Error('anchor images missing from the checkout')
 
 const panelText = script.panels
@@ -145,11 +148,13 @@ ${panelText}
 The dialogue must be lettered EXACTLY as written, correctly spelled. Verify the file exists and report its dimensions.`
 
 function draw() {
-  execFileSync(CODEX, ['exec', '-s', 'workspace-write', '-i', sheet, '-i', styleAnchor, drawPrompt], {
+  // -i is variadic: the prompt must ride STDIN or it is read as an image.
+  execFileSync(CODEX, ['exec', '-s', 'workspace-write', '-i', sheet, '-i', styleAnchor], {
     encoding: 'utf8',
     timeout: 600_000,
     maxBuffer: 10 * 1024 * 1024,
     cwd: work,
+    input: drawPrompt,
   })
   if (!existsSync(outPng)) throw new Error('codex reported success but the png is missing')
 }

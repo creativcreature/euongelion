@@ -33,6 +33,17 @@ can write to it simultaneously."_
   with the honest diagnosis of why the first strips failed, and a ranked
   engagement menu), awaiting three verdicts.
 
+And two founder rulings landed together: the LEAD PLATE is now GENERATED
+daily via codex image_generation in the locked house style (never picked
+from file — generate-lead-art.mjs; subject written from the day's verse;
+today's plate: a sparrow, the lilies, and the barn turned away from, for
+Matthew 6); and PITCHES MUST SHOW, NOT DESCRIBE — the pitch site gained a
+demo mode (--mode=demo renders a complete HTML document in a sandboxed
+iframe, scripts running, so working features are reviewable in place) and
+the first working demo is live: the Daily Bread as a feed, with the seam,
+tap-to-keep clippings, the merciful streak, the remembering poll, and the
+amen tap all functioning.
+
 ---
 
 ## The morning critique, wave one — format, compartments, color, memory, the archive (SA-114, F-158)
