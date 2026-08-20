@@ -54,6 +54,25 @@ describe('word of the day resolver', () => {
     expect(word.text).toBe(paperRow.payload.text)
   })
 
+  it('the default loader is bundled — no fs, no network at runtime', async () => {
+    // Production truth (2026-08-20): on Workers, fs does not exist and a
+    // self-fetch of the page's own zone re-enters the same Worker, which
+    // Cloudflare blocks as recursion — so BOTH runtime strategies fail and
+    // the live Word block rendered its Rule-1 fallback. The corpus is
+    // committed; the only loader that works everywhere is a static import
+    // bundled at build time.
+    const src = fs.readFileSync(
+      path.join(process.cwd(), 'src', 'lib', 'home', 'word-of-the-day.ts'),
+      'utf8',
+    )
+    expect(src).not.toContain('node:fs')
+    expect(src).not.toContain('fetch(')
+    const now = new Date('2026-08-20T15:00:00Z')
+    const viaDefault = await getWordOfTheDay(undefined, now)
+    const viaRealFile = await getWordOfTheDay(loadRealBook, now)
+    expect(viaDefault).toEqual(viaRealFile)
+  })
+
   it('throws when the corpus cannot be loaded — never silently empty', async () => {
     await expect(
       getWordOfTheDay(async () => {
