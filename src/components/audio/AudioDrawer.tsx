@@ -1087,6 +1087,72 @@ export default function AudioDrawer() {
         .lsn-clear {
           color: var(--color-text-muted, var(--color-text-secondary));
         }
+        /* The seek control, the time readout and the chips.
+           These five classes shipped with no rules at all: the markup landed
+           in SA-119 and the CSS did not, so the player rendered
+           "0:0011:18 left" and "1x speedSleep timerChaptersShare" — every
+           element still display:block. Unit tests query by role and could not
+           see it. audio-drawer-styles.test.ts now fails if any lsn- class in
+           the markup has no rule here. */
+        .lsn-seek {
+          margin-top: 0.9rem;
+        }
+        .lsn-seek-label {
+          display: block;
+        }
+        .lsn-seek-label input[type='range'] {
+          display: block;
+          width: 100%;
+          height: 24px;
+          accent-color: var(--color-gold);
+          cursor: pointer;
+        }
+        .lsn-times {
+          display: flex;
+          justify-content: space-between;
+          gap: 1rem;
+          margin-top: 0.2rem;
+          font-size: 0.62rem;
+          letter-spacing: 0.04em;
+          color: var(--color-text-muted, var(--color-text-secondary));
+        }
+
+        .lsn-extras {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.4rem;
+          margin-top: 0.85rem;
+        }
+        .lsn-chip {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 34px;
+          padding: 0 0.7rem;
+          background: transparent;
+          border: 1px solid
+            var(--color-rule, var(--color-text-muted, currentColor));
+          border-radius: 999px;
+          font-size: 0.6rem;
+          letter-spacing: 0.11em;
+          text-transform: uppercase;
+          color: var(--color-text-secondary, var(--color-text-primary));
+          cursor: pointer;
+        }
+        .lsn-chip:hover {
+          color: var(--color-text-primary, var(--color-fg));
+          border-color: currentColor;
+        }
+        .lsn-chip.is-armed {
+          color: var(--color-gold);
+          border-color: var(--color-gold);
+        }
+        .lsn-chip:focus-visible,
+        .lsn-seek-label input:focus-visible {
+          outline: 2px solid var(--color-gold);
+          outline-offset: 2px;
+        }
+
         /* Volume. Hidden where the pointer is coarse: iOS Safari ignores
            the volume property entirely, and a control that moves but changes
            nothing is worse than no control. */

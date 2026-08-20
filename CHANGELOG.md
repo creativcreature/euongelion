@@ -19,6 +19,15 @@ The Atlantic, SCMP and Speechify all dock a slim bar over the text and keep the
 full player elsewhere — option A exactly. The problem was never the shape; it
 was that our full player was under-furnished.
 
+**And opening the deployed player found a second defect: half the sidebar had
+no CSS.** Five classes — the seek control, the time readout and the chips —
+were in the markup and in no rule at all, so it rendered `0:0011:18 left` and
+`1x speedSleep timerChaptersShare`, everything jammed together. All five were
+controls I added the night before to make the sidebar "the full player". The
+markup landed; the styling never did. Thirty-nine unit tests passed against it,
+because they query by role and an unstyled button is still findable. There is
+now a test that fails if any class in the markup has no rule.
+
 **Shipped: volume** (Apple Podcasts and ElevenReader both carry one; desktop had
 none, and it hides on touch because iOS ignores it) **and share** (four of eight
 carry it; system sheet, clipboard fallback that says "Link copied").
