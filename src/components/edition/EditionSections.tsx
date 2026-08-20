@@ -65,11 +65,11 @@ export function PrayerColumn({ prayer }: { prayer: PrayerPayload }) {
   )
 }
 
-/* ── The Funnies — one panel of The Ninety-Nine ──────────────────────── */
+/* ── The Funnies — the daily strip (Echo & Dust since 2026-08-20) ────── */
 
 export function StripPanel({ strip }: { strip: StripPayload }) {
   return (
-    <figure className="edition-strip" aria-label="The Ninety-Nine">
+    <figure className="edition-strip" aria-label="Echo & Dust">
       <span className="edition-strip-plate">
         <Image
           src={strip.image}
@@ -80,7 +80,7 @@ export function StripPanel({ strip }: { strip: StripPayload }) {
         />
       </span>
       <figcaption className="edition-strip-caption">
-        <span className="edition-strip-title">The Ninety-Nine</span>
+        <span className="edition-strip-title">Echo &amp; Dust</span>
         <span className="edition-strip-line">{strip.caption}</span>
       </figcaption>
     </figure>

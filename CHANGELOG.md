@@ -306,6 +306,9 @@ recreate the games clustering the founder rejected; a test pins that no
 two game rows ever sit adjacent in any variant. Deterministic from the
 effective edition date, so the arrangement flips with the 7am boundary.
 
+The strip panel is retitled Echo & Dust (the hardcoded Ninety-Nine label
+predated the founder's strip concept).
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)
