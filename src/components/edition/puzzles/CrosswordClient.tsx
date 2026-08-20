@@ -35,6 +35,8 @@ export default function CrosswordClient({
   const [active, setActive] = useState<CellRef | null>(null)
   const [dir, setDir] = useState<Dir>('across')
   const [checked, setChecked] = useState(false)
+  // Mobile-only collapse; desktop CSS always shows the panel (blank-area fix).
+  const [cluesOpen, setCluesOpen] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   // Which clue starts at (r,c) in a direction — and which clue COVERS a cell.
@@ -153,138 +155,154 @@ export default function CrosswordClient({
 
   return (
     <div className="puzzle-crossword">
-      {/* The active clue bar — pinned above the grid, the mobile survival
-          pattern. Empty until a cell is chosen. */}
-      <p className="puzzle-cw-cluebar" aria-live="polite">
-        {activeClue ? (
-          <>
-            <span className="puzzle-cw-cluenum">
-              {activeClue.number} {dir}
-            </span>{' '}
-            {activeClue.clue}
-          </>
-        ) : (
-          <span className="puzzle-built-empty">Tap a square to begin.</span>
-        )}
-      </p>
+      {/* The blank-area fix (founder: "crossword has a huge blank area"):
+          grid and clue panel are grid siblings — desktop CSS sets the clues
+          into the right half of the compartment that used to print empty. */}
+      <div className="puzzle-cw-layout">
+        <div className="puzzle-cw-main">
+          {/* The active clue bar — pinned above the grid, the mobile survival
+              pattern. Empty until a cell is chosen. */}
+          <p className="puzzle-cw-cluebar" aria-live="polite">
+            {activeClue ? (
+              <>
+                <span className="puzzle-cw-cluenum">
+                  {activeClue.number} {dir}
+                </span>{' '}
+                {activeClue.clue}
+              </>
+            ) : (
+              <span className="puzzle-built-empty">Tap a square to begin.</span>
+            )}
+          </p>
 
-      <div className="puzzle-cw-wrap">
-        <div
-          className="puzzle-cw-grid"
-          role="grid"
-          aria-label="Crossword grid"
-          style={{ gridTemplateColumns: `repeat(${size}, minmax(0, 1fr))` }}
-        >
-          {grid.map((row, r) =>
-            row.map((cell, c) => {
-              if (cell === null) {
-                return (
-                  <span
-                    key={`${r}:${c}`}
-                    className="puzzle-cw-block"
-                    aria-hidden="true"
-                  />
-                )
-              }
-              const num = numberAt.get(`${r}:${c}`)
-              const isActive = active?.row === r && active?.col === c
-              const entry = entries[r][c]
-              const wrong = checked && entry !== '' && entry !== cell
-              const cls = [
-                'puzzle-cw-cell',
-                isActive ? 'puzzle-cw-active' : '',
-                !isActive && inActiveWord(r, c) ? 'puzzle-cw-word' : '',
-                wrong ? 'puzzle-cw-wrongcell' : '',
-              ]
-                .filter(Boolean)
-                .join(' ')
-              return (
-                <button
-                  key={`${r}:${c}`}
-                  type="button"
-                  role="gridcell"
-                  className={cls}
-                  onClick={() => selectCell(r, c)}
-                  aria-label={`Row ${r + 1} column ${c + 1}${entry ? `, ${entry}` : ', empty'}`}
-                >
-                  {num !== undefined && (
-                    <span className="puzzle-cw-num">{num}</span>
-                  )}
-                  <span className="puzzle-cw-letter">{entry}</span>
-                </button>
-              )
-            }),
-          )}
+          <div className="puzzle-cw-wrap">
+            <div
+              className="puzzle-cw-grid"
+              role="grid"
+              aria-label="Crossword grid"
+              style={{ gridTemplateColumns: `repeat(${size}, minmax(0, 1fr))` }}
+            >
+              {grid.map((row, r) =>
+                row.map((cell, c) => {
+                  if (cell === null) {
+                    return (
+                      <span
+                        key={`${r}:${c}`}
+                        className="puzzle-cw-block"
+                        aria-hidden="true"
+                      />
+                    )
+                  }
+                  const num = numberAt.get(`${r}:${c}`)
+                  const isActive = active?.row === r && active?.col === c
+                  const entry = entries[r][c]
+                  const wrong = checked && entry !== '' && entry !== cell
+                  const cls = [
+                    'puzzle-cw-cell',
+                    isActive ? 'puzzle-cw-active' : '',
+                    !isActive && inActiveWord(r, c) ? 'puzzle-cw-word' : '',
+                    wrong ? 'puzzle-cw-wrongcell' : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')
+                  return (
+                    <button
+                      key={`${r}:${c}`}
+                      type="button"
+                      role="gridcell"
+                      className={cls}
+                      onClick={() => selectCell(r, c)}
+                      aria-label={`Row ${r + 1} column ${c + 1}${entry ? `, ${entry}` : ', empty'}`}
+                    >
+                      {num !== undefined && (
+                        <span className="puzzle-cw-num">{num}</span>
+                      )}
+                      <span className="puzzle-cw-letter">{entry}</span>
+                    </button>
+                  )
+                }),
+              )}
+            </div>
+
+            {/* One hidden input carries the keyboard for the whole grid. */}
+            <input
+              ref={inputRef}
+              className="puzzle-cw-input"
+              onKeyDown={handleKey}
+              autoCapitalize="characters"
+              autoComplete="off"
+              autoCorrect="off"
+              spellCheck={false}
+              aria-label="Crossword entry"
+              value=""
+              onChange={(e) => {
+                // Mobile keyboards deliver through onChange rather than key events.
+                const ch = e.target.value.slice(-1)
+                if (/^[a-zA-Z]$/.test(ch) && active) {
+                  setEntries((prev) => {
+                    const next = prev.map((row) => [...row])
+                    next[active.row][active.col] = ch.toUpperCase()
+                    return next
+                  })
+                  setChecked(false)
+                  advance(active, 1)
+                }
+              }}
+            />
+          </div>
+
+          <div className="puzzle-cw-actions">
+            {solved ? (
+              <p className="puzzle-score" aria-live="polite">
+                Finished. Same time tomorrow.
+              </p>
+            ) : (
+              <button
+                type="button"
+                className="puzzle-cw-check"
+                onClick={() => setChecked(true)}
+              >
+                Check my letters
+              </button>
+            )}
+          </div>
         </div>
 
-        {/* One hidden input carries the keyboard for the whole grid. */}
-        <input
-          ref={inputRef}
-          className="puzzle-cw-input"
-          onKeyDown={handleKey}
-          autoCapitalize="characters"
-          autoComplete="off"
-          autoCorrect="off"
-          spellCheck={false}
-          aria-label="Crossword entry"
-          value=""
-          onChange={(e) => {
-            // Mobile keyboards deliver through onChange rather than key events.
-            const ch = e.target.value.slice(-1)
-            if (/^[a-zA-Z]$/.test(ch) && active) {
-              setEntries((prev) => {
-                const next = prev.map((row) => [...row])
-                next[active.row][active.col] = ch.toUpperCase()
-                return next
-              })
-              setChecked(false)
-              advance(active, 1)
-            }
-          }}
-        />
-      </div>
-
-      <div className="puzzle-cw-actions">
-        {solved ? (
-          <p className="puzzle-score" aria-live="polite">
-            Finished. Same time tomorrow.
-          </p>
-        ) : (
+        <div
+          className={`puzzle-cw-cluelists${cluesOpen ? '' : ' puzzle-cw-cluelists--closed'}`}
+        >
           <button
             type="button"
-            className="puzzle-cw-check"
-            onClick={() => setChecked(true)}
+            className="puzzle-cw-cluetoggle"
+            aria-expanded={cluesOpen}
+            onClick={() => setCluesOpen((v) => !v)}
           >
-            Check my letters
+            All clues
           </button>
-        )}
-      </div>
-
-      <details className="puzzle-cw-cluelists">
-        <summary>All clues</summary>
-        <div className="puzzle-cw-cluecols">
-          <div>
-            <p className="puzzle-cw-listhead">Across</p>
-            <ol>
-              {clues.across.map((cl) => (
-                <li key={`a${cl.number}`} value={cl.number}>
-                  {cl.clue}
-                </li>
-              ))}
-            </ol>
-          </div>
-          <div>
-            <p className="puzzle-cw-listhead">Down</p>
-            <ol>
-              {clues.down.map((cl) => (
-                <li key={`d${cl.number}`} value={cl.number}>
-                  {cl.clue}
-                </li>
-              ))}
-            </ol>
+          <div className="puzzle-cw-cluecols">
+            <div>
+              <p className="puzzle-cw-listhead">Across</p>
+              <ol>
+                {clues.across.map((cl) => (
+                  <li key={`a${cl.number}`} value={cl.number}>
+                    {cl.clue}
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div>
+              <p className="puzzle-cw-listhead">Down</p>
+              <ol>
+                {clues.down.map((cl) => (
+                  <li key={`d${cl.number}`} value={cl.number}>
+                    {cl.clue}
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </div>
-      </details>
+      </div>
     </div>
   )
 }

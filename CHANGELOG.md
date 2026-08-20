@@ -224,6 +224,16 @@ asserts the allowlist itself (`assertAdminOr404()`); re-verified against the
 local Workers runtime: zero admin markup for anonymous requests on /admin,
 /admin/edition, and /admin/preview/daily-bread.
 
+The crossword's blank half is finally fixed (founder: "crossword has a huge
+blank area"): the clue lists no longer hide behind a collapsed ALL CLUES
+disclosure — on desktop, Across and Down print beside the grid in the half of
+the compartment that used to run empty; on mobile a toggle collapses them
+(class-driven, the clues never leave the DOM). Written test-first
+(crossword-clues-visible.test.tsx), verified in the Workers runtime at 1440,
+and a headless containment sweep at 375/1440 confirms nothing on the page
+breaks its container (the word search's internal scroll frame is the
+sanctioned pattern, not a break).
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)

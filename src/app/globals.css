@@ -15230,16 +15230,58 @@ html[data-reading-measure='wide'] .vw-body-lg {
   cursor: pointer;
 }
 
+.puzzle-cw-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.4rem;
+}
+
 .puzzle-cw-cluelists {
   margin-top: 1.1rem;
 }
 
-.puzzle-cw-cluelists summary {
+.puzzle-cw-cluetoggle {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: var(--ed-hair);
+  background: transparent;
   font-family: var(--font-family-ui, system-ui), sans-serif;
   font-size: var(--type-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+/* Mobile: the toggle collapses the lists (class-driven, DOM stays). */
+.puzzle-cw-cluelists--closed .puzzle-cw-cluecols {
+  display: none;
+}
+
+/* Desktop: the clues LIVE in the half of the compartment that used to
+   print blank (founder: "crossword has a huge blank area"). The toggle
+   disappears; closed state is overridden — the panel always shows. */
+@media (min-width: 900px) {
+  .puzzle-cw-layout {
+    grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+    gap: 2.2rem;
+    align-items: start;
+  }
+
+  .puzzle-cw-cluelists {
+    margin-top: 0;
+  }
+
+  .puzzle-cw-cluetoggle {
+    display: none;
+  }
+
+  .puzzle-cw-cluelists--closed .puzzle-cw-cluecols {
+    display: grid;
+  }
+
+  .puzzle-cw-cluecols {
+    margin-top: 0.2rem;
+  }
 }
 
 .puzzle-cw-cluecols {
