@@ -1427,3 +1427,19 @@ features:
     prd: docs/feature-prds/F-157.md
     methodology_refs:
       - M00
+  - id: F-158
+    title: Finished-state preview, the 7am flip, and an admin backend
+    slug: preview-7am-flip-admin-backend
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-158.md
+    methodology_refs:
+      - M00
+  - id: F-159
+    title: One gospel, seven frames — the rotating hero
+    slug: homepage-hero-rotation
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-159.md
+    methodology_refs:
+      - M00

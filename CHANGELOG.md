@@ -92,6 +92,11 @@ The 20 unchosen candidates are **pinned as a future pool**
 (`docs/HERO-ROTATION-CANDIDATE-POOL.md`), with reference stills and masters
 archived in the reference library.
 
+Verified in the Workers preview before deploy: the draw script and noscript
+fallback in the served HTML, all seven assets 200, and a jsdom execution of
+the page proving the image injects with `fetchpriority="high"` and the draw
+varies across loads.
+
 ## A completion you can take back (SA-111, F-157)
 
 **2026-08-19**

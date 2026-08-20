@@ -16,12 +16,15 @@ describe('LCP/CLS stability contract', () => {
   })
 
   it('marks hero banner image as high priority for LCP', () => {
-    // The homepage hero is a next/image rendered via pickHomepageHero() inside
-    // the hero banner. The LCP contract is that it carries `priority` — we don't
-    // hard-code the filename, which would re-break on every cache-bust rename.
+    // SA-113: the hero rotates per page load via a parse-time inline script
+    // over HERO_ROTATION. The LCP contract is that the injected <img> carries
+    // fetchpriority="high", and a JS-off reader still gets a plate through
+    // <noscript> — we don't hard-code filenames, which would re-break on every
+    // cache-bust rename.
     expect(home).toContain('homepage-hero-banner-art')
-    expect(home).toContain('pickHomepageHero()')
-    expect(home).toContain('priority')
+    expect(home).toContain('HERO_ROTATION')
+    expect(home).toContain('fetchpriority')
+    expect(home).toContain('<noscript>')
   })
 
   it('uses block font-display for Industry weights to prevent layout shift', () => {

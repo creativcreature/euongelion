@@ -160,3 +160,5 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-155 | Reading surfaces  | Audio moves to a sidebar; off the browse surfaces         | 0/10     | wip     | [F-155.md](./F-155.md) |
 | F-156 | Reading surfaces  | Audio entry in the masthead; reachable everywhere         | 0/10     | wip     | [F-156.md](./F-156.md) |
 | F-157 | Platform          | Undo a completion; one day-source in the Library          | 0/10     | wip     | [F-157.md](./F-157.md) |
+| F-158 | Platform          | Finished-state preview; 7am flip; admin backend           | 0/10     | wip     | [F-158.md](./F-158.md) |
+| F-159 | Homepage          | Rotating hero: seven gospel plates, per-load draw         | 0/10     | wip     | [F-159.md](./F-159.md) |
