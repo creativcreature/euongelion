@@ -1481,5 +1481,11 @@ features:
     baseline_score: 0
     status: shipped
     prd: docs/feature-prds/F-165.md
+  - id: F-166
+    title: The homepage leads with the Word
+    slug: homepage-word-first
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-166.md
     methodology_refs:
       - M00

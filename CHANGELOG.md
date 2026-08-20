@@ -5,6 +5,29 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The homepage leads with the Word (SA-121, F-166)
+
+**2026-08-20**
+
+Founder, overnight: _"we lead with the word... the verse of the day - pulled
+from the daily bread, which changes daily"_ — with authorization to change
+everything below the header area.
+
+The page now opens with **the Word of the Day** — the Daily Bread's daily
+proverb, BSB verbatim, server-rendered through a new hourly-ISR wrapper (the
+/daily-bread cadence; the client body moved to `HomeClient`). Below it, the
+research-backed order: the Soul Audit at the second decision with a
+condition line in the reader's own words, the **Grace Line** ("FREE. NO
+ACCOUNT. NO ADS. NO STREAKS. NOTHING TO FALL BEHIND ON." — every clause the
+inverse of a documented category complaint), the featured reading with its
+quiet daily caption and the audio callout beneath it, a **computed** scale
+line (readings/hours/series counted from data, never hand-typed), one
+closing action, and the FAQ reordered so sign-up and missed-day lead.
+
+Deleted, founder-authorized: the action ladder, both trust rows, "What is
+this place?", and the closing block's competing secondary link. Copy via the
+DEVOTIONAL-WRITER (all alternates preserved for morning swaps). TDD: the
+contract test watched red before any production code.
 ## The reading's panel is one row (SA-120, F-165)
 
 **2026-08-20**
