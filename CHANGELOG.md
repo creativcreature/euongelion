@@ -266,6 +266,16 @@ longer existed. It is back (same thematic API), rendered in both the queue and
 empty states, and this time it is pinned by four tests so it cannot vanish
 silently again.
 
+Founder, on the first live preview: "looks very confusing." Once scrolled,
+the preview was indistinguishable from the paper. Now a fixed preview
+command bar carries the edition date, prev/next day, a LIVE count of pieces
+awaiting a verdict, and REVIEW NEXT which jumps between them; each
+reviewable piece is framed NEEDS YOUR EYE with its plain-English name (the
+lead devotional, the comic strip) instead of a kind slug. Test-first
+(preview-command-bar.test.tsx, 4 tests). And the funnies placeholder now
+fills its compartment instead of leaving a dead zone beneath a fixed-ratio
+frame (founder screenshot, 2026-08-20).
+
 ---
 
 ## One gospel, seven frames (SA-113, F-159)

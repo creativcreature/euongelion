@@ -11,7 +11,7 @@
  * rejected GOES LIVE at 3am Eastern on its posting day. This page is where
  * that window is exercised.
  */
-import Link from 'next/link'
+import PreviewCommandBar from '@/components/edition/PreviewCommandBar'
 import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 import EditionPage from '@/components/edition/EditionPage'
 
@@ -40,25 +40,10 @@ export default async function DailyBreadPreview({
 
   return (
     <div>
-      <div className="preview-datebar">
-        <Link
-          href={`/admin/preview/daily-bread?date=${prev}`}
-          className="preview-ribbon"
-        >
-          ← {prev}
-        </Link>
-        <span className="preview-ribbon">
-          PREVIEW — {iso} — this edition goes live at 7am ET; unrejected drafts
-          print with it
-        </span>
-        <Link
-          href={`/admin/preview/daily-bread?date=${next}`}
-          className="preview-ribbon"
-        >
-          {next} →
-        </Link>
-      </div>
       <EditionPage date={date} preview />
+      {/* One control surface, always visible (founder: the old top-only
+          datebar left the scrolled preview "very confusing"). */}
+      <PreviewCommandBar date={iso} prev={prev} next={next} />
     </div>
   )
 }

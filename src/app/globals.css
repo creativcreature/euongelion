@@ -15315,6 +15315,8 @@ html[data-reading-measure='wide'] .vw-body-lg {
 /* The funnies take two columns; the season box takes the third. */
 .paper-box--strip {
   grid-column: span 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .paper-box--season {
@@ -16057,7 +16059,11 @@ html[data-reading-measure='wide'] .vw-body-lg {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  aspect-ratio: 3 / 1;
+  /* Fill the compartment: the strip box shares a row with the (tall) season
+     essay, and a fixed-ratio frame left a dead zone under it (founder,
+     2026-08-20 screenshot). Grow to the row, keep a strip-like floor. */
+  flex: 1;
+  min-height: clamp(220px, 22vw, 360px);
   border: var(--ed-hair);
   background-image: repeating-linear-gradient(
     -45deg,
@@ -16507,6 +16513,77 @@ html.dark .edition-quote-text--red {
   margin: 0 0 0.5rem;
   font-size: var(--type-meta, 0.72rem);
   color: #8c1d18;
+}
+
+/* The preview command bar — fixed, one control surface (SA-114 / F-158).
+   Founder: the scrolled preview was "very confusing" with top-only context. */
+.preview-commandbar {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.55rem clamp(0.8rem, 3vw, 1.6rem);
+  padding-bottom: calc(0.55rem + env(safe-area-inset-bottom, 0px));
+  background: var(--mock-paper, #f6f1e7);
+  border-top: 2px solid var(--mock-blue, #1f2a8d);
+}
+
+.preview-cb-center {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.preview-cb-date {
+  margin: 0;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.preview-cb-count {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: var(--type-body-s, 0.9rem);
+  color: var(--mock-muted, currentColor);
+}
+
+.preview-cb-nav,
+.preview-cb-jump {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--mock-blue, #1f2a8d);
+  background: transparent;
+  color: var(--mock-blue, #1f2a8d);
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.preview-cb-jump {
+  background: var(--mock-blue, #1f2a8d);
+  color: var(--mock-paper, #f6f1e7);
+}
+
+@media (max-width: 640px) {
+  .preview-cb-date {
+    font-size: 0.56rem;
+  }
+  .preview-cb-count {
+    font-size: 0.78rem;
+  }
 }
 
 .preview-datebar {
