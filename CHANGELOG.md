@@ -82,6 +82,15 @@ stated not hidden: Voicebox runs only on the founder's Mac, so daily
 paper audio renders when that machine runs the script; the cloud cannot
 produce it under the Voicebox-only ruling.
 
+Follow-up from the founder's 12:26 screenshot: the Practice/Greek desk
+band still printed naked — a pre-compartment rule (border:0/padding:0,
+written for the old shared-hairline sheet) was stripping the box wave one
+gave everything else; it now carries the full compartment treatment with a
+full-height center divider (stacking on mobile). And the sheet itself
+never had the front page's width constraint — it now sits in max-width
+78rem with clamped gutters, so no compartment edge ever runs flush to the
+viewport.
+
 ---
 
 ## The player, measured against real ones (SA-122, F-167)

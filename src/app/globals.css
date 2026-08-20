@@ -17004,3 +17004,42 @@ html.dark .edition-quote-text--red {
   font-size: var(--type-body-s, 0.9rem);
   color: var(--mock-muted, currentColor);
 }
+
+/* ═══ Wave A follow-up (SA-114 / F-158): the desk box + the sheet gutter ══
+   Founder screenshot, 12:26pm: the Practice/Greek band still printed naked
+   — a pre-compartment rule (`.paper-sheet .edition-band { border:0; ... }`,
+   written for the shared-hairline sheet) was stripping the box the wave-A
+   treatment gave everything else. And the sheet ran flush to the viewport:
+   it never had the front page's width constraint. */
+
+.paper-sheet {
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+.paper-sheet .edition-band {
+  border: var(--ed-hair);
+  padding: 1.9rem 2rem 2.1rem;
+  background: var(--mock-paper, transparent);
+}
+
+.paper-sheet .edition-band .edition-practice {
+  border-right: var(--ed-hair);
+  padding: 0 2rem 0 0;
+}
+
+.paper-sheet .edition-band .edition-word {
+  padding: 0 0 0 2rem;
+}
+
+@media (max-width: 900px) {
+  .paper-sheet .edition-band .edition-practice {
+    border-right: 0;
+    border-bottom: var(--ed-hair);
+    padding: 0 0 1.2rem 0;
+  }
+  .paper-sheet .edition-band .edition-word {
+    padding: 1.2rem 0 0 0;
+  }
+}
