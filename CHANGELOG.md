@@ -5,6 +5,51 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Homepage rebuild reverted (SA-121, F-166)
+
+**2026-08-20**
+
+Founder, morning after: _"revert the homepage your flow just doesnt make
+sense."_ The below-header rebuild is rolled back in full — the Word block,
+the reorder, the deletions, the writer copy, and the FAQ order all return
+to their pre-SA-121 state (`git revert` of #38 and #39). The hero rotation
+(SA-113) is untouched; it shipped separately and was separately approved.
+Kept from the rebuild: the pure-function extraction in the proverb
+generator (behavior-neutral, tested) and all tracking records — F-166 is
+marked `reverted`, the SA-121 note carries the ruling. SW pair v143.
+
+## The homepage leads with the Word (SA-121, F-166)
+
+**2026-08-20**
+
+Founder, overnight: _"we lead with the word... the verse of the day - pulled
+from the daily bread, which changes daily"_ — with authorization to change
+everything below the header area.
+
+The page now opens with **the Word of the Day** — the Daily Bread's daily
+proverb, BSB verbatim, server-rendered through a new hourly-ISR wrapper (the
+/daily-bread cadence; the client body moved to `HomeClient`). Below it, the
+research-backed order: the Soul Audit at the second decision with a
+condition line in the reader's own words, the **Grace Line** ("FREE. NO
+ACCOUNT. NO ADS. NO STREAKS. NOTHING TO FALL BEHIND ON." — every clause the
+inverse of a documented category complaint), the featured reading with its
+quiet daily caption and the audio callout beneath it, a **computed** scale
+line (readings/hours/series counted from data, never hand-typed), one
+closing action, and the FAQ reordered so sign-up and missed-day lead.
+
+Deleted, founder-authorized: the action ladder, both trust rows, "What is
+this place?", and the closing block's competing secondary link. Copy via the
+DEVOTIONAL-WRITER (all alternates preserved for morning swaps). TDD: the
+contract test watched red before any production code.
+
+**Same-night fix:** the first deploy's Word block rendered its Rule-1
+fallback in production — on Workers, fs does not exist and the resolver's
+self-fetch of the page's own zone re-enters the same Worker, which
+Cloudflare blocks as recursion. The corpus is committed, so the resolver
+now BUNDLES it as a static import (the one loader that works at build, in
+dev, and inside ISR revalidation alike). A new contract test pins the
+resolver to no-fs, no-fetch, and to byte parity with the on-disk corpus.
+
 ## The reading's panel is one row (SA-120, F-165)
 
 **2026-08-20**
