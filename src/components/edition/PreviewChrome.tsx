@@ -29,7 +29,7 @@ export default function PreviewChrome({
     return (
       <div className="preview-chrome preview-chrome--approved">
         {verdict === 'published' && (
-          <p className="preview-ribbon">APPROVED — will print</p>
+          <p className="preview-ribbon">APPROVED — prints regardless of the clock</p>
         )}
         {children}
       </div>
@@ -66,7 +66,7 @@ export default function PreviewChrome({
     <div className="preview-chrome preview-chrome--draft">
       <div className="preview-bar">
         <span className="preview-ribbon">
-          DRAFT — {kind} — needs your ruling
+          DRAFT — {kind} — goes live at 3am unless you reject
         </span>
         <span className="preview-actions">
           <button

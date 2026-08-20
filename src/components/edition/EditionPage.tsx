@@ -25,7 +25,8 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
 import { liturgicalDay } from '@/lib/liturgical'
 import { GUIDES, pickManyForDay } from '@/data/daily-edition'
-import { getEdition, type Edition } from '@/lib/edition/store'
+import type { Edition } from '@/lib/edition/store'
+import { getLiveEdition } from '@/lib/edition/deadline'
 import { getEditionPreview } from '@/lib/edition/preview'
 import PreviewChrome from '@/components/edition/PreviewChrome'
 import {
@@ -376,9 +377,12 @@ export default async function EditionPage({
   let edition: Edition | null = null
   let editionFailed = false
   try {
+    // Live reads obey the 3am rule (SA-111): published rows always, and any
+    // draft whose posting day has passed 3:00am Eastern — silence publishes,
+    // rejection vetoes.
     edition = preview
       ? ((await getEditionPreview(editionKey)) as Edition)
-      : await getEdition(editionKey)
+      : await getLiveEdition(editionKey)
   } catch {
     editionFailed = true
   }
