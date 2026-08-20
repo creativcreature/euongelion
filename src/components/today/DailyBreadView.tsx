@@ -918,6 +918,14 @@ export default function DailyBreadView({
   // Track days completed in this session so the reader can advance without a
   // full page reload (server state remains authoritative on next load).
   const [localCompleted, setLocalCompleted] = useState<Set<number>>(new Set())
+  // The mirror of `localCompleted`. Un-completing writes `completed_at = null`
+  // server-side, but `dayRecord` came down with the plan and still carries the
+  // old timestamp, so without this the UI would keep insisting the day is done
+  // until a reload — and this component avoids reloads on purpose, because they
+  // lose scroll position and motion.
+  const [localUncompleted, setLocalUncompleted] = useState<Set<number>>(
+    new Set(),
+  )
   // Deep Dives generated this session — overrides the server-provided day
   // content so the new long-form lands without a reload.
   const [deepDives, setDeepDives] = useState<Record<number, DayContent>>({})
@@ -953,6 +961,10 @@ export default function DailyBreadView({
       .sort((a, b) => a - b)
     const firstIncomplete = unlockedDays.find((day) => {
       const record = getDayRecord(plan, day)
+      // A day un-completed this session counts as incomplete even though the
+      // record still carries its old timestamp — otherwise the reader's
+      // position chip would keep pointing past a day they just took back.
+      if (localUncompleted.has(day)) return true
       return !record?.completed_at && !localCompleted.has(day)
     })
     if (firstIncomplete !== undefined) return firstIncomplete
@@ -960,7 +972,7 @@ export default function DailyBreadView({
     return unlockedDays.length > 0
       ? unlockedDays[unlockedDays.length - 1]
       : currentDay
-  }, [schedule, plan, currentDay, localCompleted])
+  }, [schedule, plan, currentDay, localCompleted, localUncompleted])
 
   const dayRecord = useMemo(
     () => getDayRecord(plan, selectedDay),
@@ -984,7 +996,8 @@ export default function DailyBreadView({
   const isCurrentDayUnlocked = selectedEntry ? isUnlocked(selectedEntry) : false
   const isSabbath = selectedEntry?.status === 'sabbath'
   const isCompleted =
-    !!dayRecord?.completed_at || localCompleted.has(selectedDay)
+    (!!dayRecord?.completed_at || localCompleted.has(selectedDay)) &&
+    !localUncompleted.has(selectedDay)
   const content: DayContent | null =
     deepDives[selectedDay] ?? dayRecord?.content ?? null
 
@@ -1036,6 +1049,11 @@ export default function DailyBreadView({
       // continue via the "Continue to Day N" affordance; we don't push more
       // reading on them. Server state reconciles on the next natural load.
       setLocalCompleted((prev) => new Set(prev).add(selectedDay))
+      setLocalUncompleted((prev) => {
+        const next = new Set(prev)
+        next.delete(selectedDay)
+        return next
+      })
       // F-066 (SA-025): mark today as a present day (local, ambient — plan
       // completion is server-side and leaves no wakeup_progress entry) and
       // offer the quiet completion beat with this day's scripture reference.
@@ -1060,6 +1078,49 @@ export default function DailyBreadView({
       setCompleting(false)
     }
   }, [completing, isCompleted, dayRecord, plan.plan_token, selectedDay])
+
+  /**
+   * Undo a completion.
+   *
+   * The curated reader gained this in SA-111; the plan path had the same gap.
+   * Completion here is a `completed_at` timestamp on the plan day rather than a
+   * progress row, so the inverse is nulling it — the day itself must survive
+   * because it carries the generated content, and absence of a timestamp is
+   * already how every reader of that table spells "not finished".
+   *
+   * The local set has to be cleared too. It exists so completing does not force
+   * a reload, which means it would otherwise keep asserting "complete" for the
+   * rest of the visit and quietly contradict the server we just corrected.
+   */
+  const handleUncomplete = useCallback(async () => {
+    if (completing || !isCompleted) return
+    setCompleting(true)
+    setCompleteError(null)
+    try {
+      const res = await fetch(
+        `/api/soul-audit/complete-day?planId=${encodeURIComponent(
+          plan.plan_token,
+        )}&dayNumber=${selectedDay}`,
+        { method: 'DELETE' },
+      )
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(data.error || `Server returned ${res.status}`)
+      }
+      setLocalCompleted((prev) => {
+        const next = new Set(prev)
+        next.delete(selectedDay)
+        return next
+      })
+      setLocalUncompleted((prev) => new Set(prev).add(selectedDay))
+    } catch (err) {
+      setCompleteError(
+        err instanceof Error ? err.message : 'Failed to mark day as unread.',
+      )
+    } finally {
+      setCompleting(false)
+    }
+  }, [completing, isCompleted, plan.plan_token, selectedDay])
 
   // Two-step arm/confirm instead of a native confirm() dialog.
   const [clearPlanArmed, setClearPlanArmed] = useState(false)
@@ -1271,6 +1332,16 @@ export default function DailyBreadView({
               <p className="text-label vw-small text-gold">
                 DAY {selectedDay} COMPLETE
               </p>
+              {/* Quiet, not a competing CTA — undo should be findable without
+                  arguing with CONTINUE. */}
+              <button
+                type="button"
+                className="text-label vw-small link-highlight mt-2"
+                disabled={completing}
+                onClick={() => void handleUncomplete()}
+              >
+                MARK AS UNREAD
+              </button>
               {nextDay !== null ? (
                 <>
                   <p className="vw-small mt-1 text-muted">

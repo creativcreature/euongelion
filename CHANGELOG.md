@@ -5,6 +5,26 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The undo, finished on the other reader (SA-111, F-157)
+
+**2026-08-19**
+
+`/today` has two readers and the first pass only fixed one. The Soul Audit plan
+reader had the identical gap — MARK DAY COMPLETE with no way back. Leaving it
+would have repeated the exact failure this project already made once: half a fix
+landing and looking finished.
+
+Completion there is a `completed_at` timestamp on the plan day, so the inverse is
+nulling it rather than deleting a row — the day must survive because it carries
+the generated content, and an absent timestamp is already how that table spells
+"not finished".
+
+The subtle half is local state. Completing avoids a reload on purpose, so the
+component keeps a session-local set; the record it was given still carries the old
+timestamp, which means clearing that set alone would leave the UI insisting the
+day is done. A symmetric override now mirrors it — and the reader's position chip
+respects it too, or it would keep pointing past a day they just took back.
+
 ## The paper previews finished, flips at 7am, and the founder can edit it (SA-114, F-158)
 
 **2026-08-19**
