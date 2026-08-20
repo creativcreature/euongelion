@@ -1,6 +1,10 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { useAudioStore, currentItem, type QueueItem } from '@/stores/audioStore'
-import { formatRuntime, queueDuration } from '@/lib/audio/queue-builder'
+import {
+  formatRuntime,
+  queueDuration,
+  queueFromDay,
+} from '@/lib/audio/queue-builder'
 
 /**
  * The listening queue — SA-096.
@@ -101,5 +105,39 @@ describe('runtime, stated up front', () => {
     expect(formatRuntime(1800)).toBe('30 min')
     expect(formatRuntime(3600)).toBe('1 hr')
     expect(formatRuntime(4320)).toBe('1 hr 12 min')
+  })
+})
+
+/**
+ * SA-108 — /today means your PLACE in a series.
+ *
+ * `queueFromDay` drops the days already behind the reader rather than skipping
+ * past them with a cursor. Offering to replay day one when someone is on day
+ * four is a different product from the one /today describes.
+ *
+ * These run against the real catalogue, so they assert shape rather than exact
+ * titles — the manifest changes whenever anything is re-rendered.
+ */
+describe('listening from where you are', () => {
+  const SERIES = 'he-cannot-deny-himself'
+
+  it('starts at the day asked for and keeps everything after it', () => {
+    const all = queueFromDay(SERIES, `${SERIES}-day-1`)
+    const fromFour = queueFromDay(SERIES, `${SERIES}-day-4`)
+    expect(all.length).toBeGreaterThan(0)
+    expect(fromFour[0].slug).toBe(`${SERIES}-day-4`)
+    // Strictly shorter: the earlier days are dropped, not reordered.
+    expect(fromFour.length).toBeLessThan(all.length)
+    expect(fromFour.some((i) => i.slug === `${SERIES}-day-1`)).toBe(false)
+  })
+
+  it('keeps the whole series when the day itself has no track', () => {
+    // An unnarrated day mid-series must not silence everything after it.
+    const all = queueFromDay(SERIES, `${SERIES}-day-1`)
+    expect(queueFromDay(SERIES, 'not-a-real-slug')).toHaveLength(all.length)
+  })
+
+  it('returns nothing for a series that does not exist', () => {
+    expect(queueFromDay('no-such-series', 'whatever')).toHaveLength(0)
   })
 })

@@ -9,6 +9,9 @@ import Toast from '@/components/Toast'
 import { useDevotionalLibraryStore } from '@/stores/devotionalLibraryStore'
 import { useProgress } from '@/hooks/useProgress'
 import { SERIES_DATA } from '@/data/series'
+import ListenButton from '@/components/audio/ListenButton'
+import { queueFromDay } from '@/lib/audio/queue-builder'
+import type { QueueItem } from '@/stores/audioStore'
 import { isSeriesSaved, savedSlugsForSeries } from '@/lib/library/series-save'
 import { getSeriesHero } from '@/lib/series-hero'
 import { SITE_DEVOTIONAL_ART } from '@/data/site-devotional-art'
@@ -100,6 +103,16 @@ export default function CuratedActiveView({
     [activeDay, totalDays],
   )
   const day = series?.days[safeDay - 1] ?? series?.days[0] ?? null
+  /**
+   * The queue for "Listen from here": this series from the day on screen
+   * onward, filtered to days that actually have a track. Built here rather
+   * than in the button so the button can be absent entirely when nothing
+   * remaining is narrated.
+   */
+  const listenQueue = useMemo<QueueItem[]>(
+    () => (series && day ? queueFromDay(seriesSlug, day.slug) : []),
+    [series, day, seriesSlug],
+  )
   const prevDay = safeDay > 1 ? series?.days[safeDay - 2] : null
   const nextDay =
     safeDay < (series?.days.length ?? 0) ? series?.days[safeDay] : null
@@ -294,6 +307,20 @@ export default function CuratedActiveView({
         )}
 
         <div className="mt-4 flex flex-wrap items-center gap-3">
+          {/* SA-108: listening starts from where you ARE, not from day one.
+              /today means your place in a series, so the queue begins at the
+              day on screen and runs to the end — offering to replay days
+              already behind you would be a different, worse product. Renders
+              nothing when no remaining day has a track. */}
+          {listenQueue.length > 0 && (
+            <ListenButton
+              items={listenQueue}
+              source="series"
+              label={series.title}
+            >
+              Listen from here
+            </ListenButton>
+          )}
           <button
             type="button"
             className="text-label vw-small link-highlight"

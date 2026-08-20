@@ -1395,3 +1395,11 @@ features:
     prd: docs/feature-prds/F-153.md
     methodology_refs:
       - M00
+  - id: F-154
+    title: Listening from where you are, on /today
+    slug: today-listen-from-here
+    baseline_score: 0
+    status: wip
+    prd: docs/feature-prds/F-154.md
+    methodology_refs:
+      - M00

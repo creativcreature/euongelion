@@ -5,6 +5,31 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Listening from where you are, on /today (SA-108, F-154)
+
+**2026-08-19**
+
+`/today` was the last reading surface with no way to listen. It has one now —
+**Listen from here** — and the queue begins at the day on screen rather than the
+top of the series. `/today` means your _place_ in something, so offering to
+replay day one when you are on day four is a different product.
+
+Two behaviours are deliberate: an unnarrated day mid-series returns the whole
+series rather than nothing, so one gap cannot silence everything after it; and
+the control renders nothing at all when no remaining day is narrated, rather
+than offering a button that plays silence.
+
+**The plan path gets no Listen control, and that is a finding rather than an
+omission.** A Soul Audit plan day is generated per reader out of the curation
+engine and reference volumes. It carries no devotional slug, is not lifted from
+any file in `public/devotionals/`, and has never been narrated — there is no
+track. Offering the audio of the series the plan was _drawn from_ would play
+different words than the ones on the screen, which is worse than no button.
+
+Service worker v129 → v130: `/today` is a cache-first reading route.
+
+---
+
 ## The queue is a drawer, not a bar (SA-107, F-153)
 
 **2026-08-19**

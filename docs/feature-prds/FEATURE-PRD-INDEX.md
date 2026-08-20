@@ -156,3 +156,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-151 | Platform          | Rename components/daily-bread -> components/today         | 0/10     | wip     | [F-151.md](./F-151.md) |
 | F-152 | Platform          | Pipeline manifest schema + Part E firewall                | 0/10     | wip     | [F-152.md](./F-152.md) |
 | F-153 | Reading surfaces  | Tucked audio drawer; add-to-queue; saved playlists        | 0/10     | wip     | [F-153.md](./F-153.md) |
+| F-154 | Reading surfaces  | /today listens from where you are; plan path exempt       | 0/10     | wip     | [F-154.md](./F-154.md) |
