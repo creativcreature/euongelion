@@ -5,6 +5,38 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The player, measured against real ones (SA-122, F-167)
+
+**2026-08-20**
+
+You asked for the player to be reworked from Mobbin research and not half-assed.
+Eight players surveyed — Spotify Audiobooks, Apple Podcasts, ElevenReader,
+Headway, Blinkist, Finimize, Patreon, The Atlantic. Written up with citations in
+`docs/audio/PLAYER-GAP-ANALYSIS-2026-08-20.md`.
+
+**The research settled the shape first, and it backs what we shipped.** Blinkist,
+The Atlantic, SCMP and Speechify all dock a slim bar over the text and keep the
+full player elsewhere — option A exactly. The problem was never the shape; it
+was that our full player was under-furnished.
+
+**Shipped: volume** (Apple Podcasts and ElevenReader both carry one; desktop had
+none, and it hides on touch because iOS ignores it) **and share** (four of eight
+carry it; system sheet, clipboard fallback that says "Link copied").
+
+**And it turned up a real defect: the CSP had no `media-src`.** Confirmed on the
+live site — loading narration from a blob fires an enforced `media-src`
+violation. Media was falling back to `default-src 'self'`, which doesn't cover
+`blob:`, so the offline path was blocked outright. The CHANGELOG already claimed
+this was fixed; it wasn't. The old CSP tests assert against a _copy_ of the
+header, so they could never have caught it. The new one reads the real config.
+
+**A correction:** I told you last night the browser couldn't decode AAC. That
+was wrong — the blob I tested was blocked by this CSP. Withdrawn. The
+same-origin track still stalls in that browser with no violation and no error,
+and I don't know why.
+
+---
+
 ## Homepage rebuild reverted (SA-121, F-166)
 
 **2026-08-20**

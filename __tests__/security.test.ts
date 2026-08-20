@@ -184,9 +184,16 @@ interface RolePermission {
 // Contract stubs
 // ---------------------------------------------------------------------------
 
+/**
+ * NOTE: this is a COPY of the header, not the header. Nothing here can catch a
+ * drift in next.config.ts — the missing `media-src` found on 2026-08-20 sat
+ * behind these passing tests for as long as it existed. The directives that
+ * must hold are asserted against the real config in csp-media.test.ts; keep
+ * this fixture in step so the two do not contradict each other.
+ */
 const REQUIRED_SECURITY_HEADERS: SecurityHeaders = {
   'content-security-policy':
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://api.anthropic.com",
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; media-src 'self' blob: data:; connect-src 'self' https://*.supabase.co https://api.anthropic.com",
   'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
   'x-content-type-options': 'nosniff',
   'x-frame-options': 'DENY',

@@ -71,6 +71,12 @@ const nextConfig: NextConfig = {
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
+      // Narration. Without this, media falls back to `default-src 'self'`,
+      // which does NOT cover blob: — confirmed on the live site by a
+      // securitypolicyviolation event naming media-src and an enforced block.
+      // `blob:` is the offline path: the service worker synthesises 206
+      // responses for downloaded readings out of cached bytes.
+      "media-src 'self' blob: data:",
       "connect-src 'self' https://*.supabase.co https://api.anthropic.com https://generativelanguage.googleapis.com https://api.minimax.chat https://integrate.api.nvidia.com https://api.stripe.com https://cloudflareinsights.com",
       "frame-src 'self' https://challenges.cloudflare.com https://js.stripe.com https://hooks.stripe.com https://www.youtube-nocookie.com",
       "form-action 'self' https://checkout.stripe.com",

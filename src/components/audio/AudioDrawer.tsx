@@ -158,6 +158,8 @@ export default function AudioDrawer() {
     () => (readStored(SKIP_PREF, 15) === 30 ? 30 : 15),
     () => 15,
   )
+  const [volume, setVolume] = useState(1)
+  const [shared, setShared] = useState(false)
   const [chosenSpeed, setChosenSpeed] = useState<number | null>(null)
   const [chosenSkip, setChosenSkip] = useState<SkipSeconds | null>(null)
   const speed = chosenSpeed ?? storedSpeed
@@ -484,7 +486,58 @@ export default function AudioDrawer() {
                   >
                     Chapters
                   </button>
+                  {/* Four of the eight players surveyed carry share; a
+                      devotional is a thing people send to someone. The system
+                      sheet where there is one, the clipboard where there is
+                      not — doing nothing on Firefox is not a fallback. */}
+                  <button
+                    type="button"
+                    className="lsn-chip"
+                    onClick={() => {
+                      const url = new URL(item.href, window.location.origin)
+                        .href
+                      const nav = window.navigator as Navigator & {
+                        share?: (data: ShareData) => Promise<void>
+                      }
+                      if (typeof nav.share === 'function') {
+                        void nav
+                          .share({ title: item.title, url })
+                          .catch(() => {})
+                        return
+                      }
+                      void nav.clipboard?.writeText(url).then(() => {
+                        setShared(true)
+                        setTimeout(() => setShared(false), 2000)
+                      })
+                    }}
+                  >
+                    {shared ? 'Link copied' : 'Share'}
+                  </button>
                 </div>
+
+                {/* Volume, as Apple Podcasts and ElevenReader carry it. Hidden
+                    on coarse pointers: iOS Safari ignores `audio.volume`
+                    outright, so a slider there would move and do nothing. */}
+                <label className="lsn-volume">
+                  <span className="sr-only">Volume</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 9v6h4l5 4V5L8 9H4z" />
+                  </svg>
+                  <input
+                    type="range"
+                    min={0}
+                    max={1}
+                    step={0.05}
+                    value={volume}
+                    aria-label="Volume"
+                    onChange={(event) => {
+                      const next = Number(event.target.value)
+                      setVolume(next)
+                      const a = audio()
+                      if (a) a.volume = next
+                    }}
+                  />
+                </label>
               </div>
             )}
 
@@ -1034,6 +1087,36 @@ export default function AudioDrawer() {
         .lsn-clear {
           color: var(--color-text-muted, var(--color-text-secondary));
         }
+        /* Volume. Hidden where the pointer is coarse: iOS Safari ignores
+           the volume property entirely, and a control that moves but changes
+           nothing is worse than no control. */
+        .lsn-volume {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-top: 0.75rem;
+          color: var(--color-text-muted, var(--color-text-secondary));
+        }
+        .lsn-volume svg {
+          width: 16px;
+          height: 16px;
+          fill: currentColor;
+          flex: none;
+        }
+        .lsn-volume input[type='range'] {
+          flex: 1;
+          min-width: 0;
+          height: 24px;
+          accent-color: var(--color-gold);
+          cursor: pointer;
+        }
+        @media (pointer: coarse) {
+          .lsn-volume {
+            display: none;
+          }
+        }
+
+        .lsn-volume input:focus-visible,
         .lsn-play:focus-visible,
         .lsn-icon:focus-visible,
         .lsn-btn:focus-visible,

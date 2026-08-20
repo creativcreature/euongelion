@@ -1,5 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { act, cleanup, render, screen, within } from '@testing-library/react'
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  within,
+} from '@testing-library/react'
 import AudioDrawer from '@/components/audio/AudioDrawer'
 import AddToQueue from '@/components/audio/AddToQueue'
 import SavedPlaylists from '@/components/audio/SavedPlaylists'
@@ -517,5 +524,76 @@ describe('the sidebar remembers the speed', () => {
     render(<AudioDrawer />)
 
     expect(screen.getByRole('button', { name: /1\.5× speed/i })).toBeTruthy()
+  })
+})
+
+/**
+ * The furniture every real player has and ours did not.
+ *
+ * Founder: "you have a lotta missing features that are fairly standard for
+ * audio. players needs to be reworked based on research from mobbin." Counted
+ * across eight players on Mobbin — Spotify Audiobooks, Apple Podcasts,
+ * ElevenReader, Headway, Blinkist, Finimize, Patreon, The Atlantic — the two
+ * things carried by real players and missing here were volume and share.
+ * See docs/audio/PLAYER-GAP-ANALYSIS-2026-08-20.md.
+ */
+describe('the player carries what real players carry', () => {
+  const openPlaying = () => {
+    act(() =>
+      useAudioStore.getState().start({
+        items: [item('day-1', 'The Fruit of Lies')],
+        source: 'single',
+        label: 'The Fruit of Lies',
+      }),
+    )
+    act(() => useAudioStore.getState().setPanelOpen(true))
+    render(<AudioDrawer />)
+  }
+
+  it('offers a volume control, and it drives the element', () => {
+    // Apple Podcasts and ElevenReader both carry one. On the web a desktop
+    // listener otherwise has no in-page volume at all.
+    openPlaying()
+    const slider = screen.getByRole('slider', { name: /volume/i })
+    act(() => {
+      fireEvent.change(slider, { target: { value: '0.4' } })
+    })
+    expect(audioEl.volume).toBeCloseTo(0.4, 2)
+  })
+
+  it('shares the reading through the system sheet when there is one', async () => {
+    const share = vi.fn((_data: ShareData) => Promise.resolve())
+    vi.stubGlobal('navigator', { ...navigator, share })
+    openPlaying()
+
+    await act(async () => {
+      screen.getByRole('button', { name: /share/i }).click()
+    })
+
+    expect(share).toHaveBeenCalledTimes(1)
+    const payload = share.mock.calls[0][0]
+    expect(payload.title).toContain('The Fruit of Lies')
+    expect(payload.url).toContain('/devotional/day-1')
+    vi.unstubAllGlobals()
+  })
+
+  it('falls back to the clipboard where there is no share sheet', async () => {
+    // Desktop Firefox and older Chrome have no navigator.share. Copying the
+    // link is the honest fallback; doing nothing is not.
+    const writeText = vi.fn((_text: string) => Promise.resolve())
+    vi.stubGlobal('navigator', {
+      ...navigator,
+      share: undefined,
+      clipboard: { writeText },
+    })
+    openPlaying()
+
+    await act(async () => {
+      screen.getByRole('button', { name: /share/i }).click()
+    })
+
+    expect(writeText).toHaveBeenCalledTimes(1)
+    expect(String(writeText.mock.calls[0][0])).toContain('/devotional/day-1')
+    vi.unstubAllGlobals()
   })
 })

@@ -168,3 +168,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-164 | Reading surfaces  | Sidebar is the player; playing queues the series          | 0/10     | shipped  | [F-164.md](./F-164.md) |
 | F-165 | Reading surfaces  | The reading's panel is one row; sleep timer really stops  | 0/10     | shipped  | [F-165.md](./F-165.md) |
 | F-166 | Homepage          | The Word leads: daily verse, audit second, one action     | 0/10     | reverted | [F-166.md](./F-166.md) |
+| F-167 | Reading surfaces  | Volume + share, from Mobbin research; CSP media-src fix   | 0/10     | shipped  | [F-167.md](./F-167.md) |
