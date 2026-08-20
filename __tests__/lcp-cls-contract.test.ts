@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 
 describe('LCP/CLS stability contract', () => {
   const layoutPath = path.join(process.cwd(), 'src', 'app', 'layout.tsx')
-  const homePath = path.join(process.cwd(), 'src', 'app', 'HomeClient.tsx')
+  const homePath = path.join(process.cwd(), 'src', 'app', 'page.tsx')
   const cssPath = path.join(process.cwd(), 'src', 'app', 'globals.css')
 
   const layout = fs.readFileSync(layoutPath, 'utf8')
