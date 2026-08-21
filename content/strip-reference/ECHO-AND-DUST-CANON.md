@@ -56,6 +56,25 @@ P1 THE QUESTION (Theo notices something ordinary) → P2 THE ARGUMENT (Echo
 interprets; Dust complicates or destroys) → P3 THE TURN (punchline /
 reversal / sincerity / gut-punch / unanswered question — NEVER a summary).
 
+## THE VOICE (RULED — founder verdict 2026-08-20: A+C)
+
+The approved voice fuses two registers, proven by the drawn voice tests:
+
+- **A — Peanuts melancholy (the spine):** humor comes from smallness and
+  character friction; warmth arrives BY AMBUSH (Echo's sincerity lands
+  where a punchline was expected: "Show me."). Teddy WANTS something in
+  every strip. Dust's line must be a LAUGH, not a wisdom — test: is it
+  still funny with the theology deleted? ("You're cc'd." passes;
+  "Eternity practices on you in small doses" fails.)
+- **C — Dry absurdist restraint (the seasoning):** silent panels are legal
+  and encouraged (aim ~weekly); props carry the sermon (the funeral
+  bouquet); deadpan over exclamation; nobody explains.
+- Voice B (big visual-gag energy) was NOT chosen — no prop-cascade
+  spectacle strips.
+- BANNED FOREVER (the terrible-era tells): aphorism-dispenser Dust,
+  question→quip→sentiment formula, turns that summarize, all three
+  agreeing, Teddy as a passive asker with no want.
+
 ## Writing law
 
 3–15 words per balloon. No speeches, no therapy-speak, no motivational
