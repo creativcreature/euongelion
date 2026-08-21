@@ -36,23 +36,14 @@ export default async function PitchPage({
         </Link>
       </p>
 
-      {/* Session-authored, admin-only, private-bucket content. Demo-mode
-          pitches run their own scripts inside a sandboxed iframe so the
-          founder reviews WORKING features, not descriptions (founder ruling
-          2026-08-20: "build working features on the pitch site"). */}
-      {(pitch as { mode?: string }).mode === 'demo' ? (
-        <iframe
-          srcDoc={pitch.html}
-          sandbox="allow-scripts"
-          className="pitch-demo-frame"
-          title={pitch.title}
-        />
-      ) : (
-        <article
-          className="pitch-body"
-          dangerouslySetInnerHTML={{ __html: pitch.html }}
-        />
-      )}
+      {/* Session-authored, admin-only content — rendered INLINE, never in
+          an iframe (founder ruling 2026-08-20: no fake framing layers).
+          Working features live as real /admin/lab routes in the real site;
+          the pitch links to them. */}
+      <article
+        className="pitch-body"
+        dangerouslySetInnerHTML={{ __html: pitch.html }}
+      />
 
       <PitchRespondClient slug={slug} initialResponses={responses} />
     </AdminShell>

@@ -17107,9 +17107,236 @@ html.dark .edition-quote-text--red {
   margin: 1.4em 0;
 }
 
-.pitch-demo-frame {
-  width: 100%;
-  height: 82vh;
-  border: var(--ed-hair);
+/* ── LAB (SA-114 / F-158): experiments in literal context ─────────────── */
+.lab-main {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 4vw, 2.5rem) 3rem;
+}
+
+.lab-well {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 6px 2rem;
+}
+
+.lab-seam {
+  margin: 2.4rem 0 1.2rem;
+  text-align: center;
+  position: relative;
+}
+
+.lab-seam::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 2px dashed var(--mock-blue, #1f2a8d);
+}
+
+.lab-seam b {
+  position: relative;
   background: var(--mock-paper, #f6f1e7);
+  padding: 0 14px;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: normal;
+  color: var(--mock-blue, #1f2a8d);
+}
+
+.lab-sheethead {
+  text-align: center;
+  border-top: 3px double var(--mock-ink, #10152b);
+  padding: 1rem 0 0.2rem;
+  margin-top: 1rem;
+}
+
+.lab-sheet-n {
+  color: var(--mock-muted, currentColor);
+  margin: 0;
+}
+
+.lab-sheet-t {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  margin: 0.1rem 0 0;
+}
+
+.lab-sheet {
+  margin-top: 0.8rem;
+}
+
+.lab-box-body {
+  line-height: 1.55;
+  white-space: pre-line;
+}
+
+.lab-plate {
+  display: block;
+  border: var(--ed-hair);
+  margin: 0 0 0.7rem;
+}
+
+.lab-plate-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lab-wellnote {
+  text-align: center;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.14em;
+  color: var(--mock-muted, currentColor);
+  padding: 1.6rem 0;
+}
+
+.lab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.8rem;
+}
+
+.lab-btn {
+  min-height: 44px;
+  padding: 0.45rem 0.9rem;
+  border: var(--ed-hair);
+  background: transparent;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-label, 0.64rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.lab-btn--on {
+  background: var(--mock-blue, #1f2a8d);
+  color: var(--mock-paper, #f6f1e7);
+}
+
+.lab-verse {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0.4rem 0;
+}
+
+.lab-input {
+  width: 100%;
+  border: var(--ed-hair);
+  background: transparent;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: 1rem;
+  padding: 0.6rem;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.lab-breathe-wrap {
+  text-align: center;
+  padding: 0.6rem 0;
+}
+.lab-center {
+  text-align: center;
+}
+
+.lab-breathe {
+  width: 84px;
+  height: 84px;
+  border: 2.5px solid var(--mock-blue, #1f2a8d);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--mock-blue, #1f2a8d);
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: transform 4s ease-in-out;
+  margin: 0 auto 0.5rem;
+  display: block;
+}
+
+.lab-breathe--in {
+  transform: scale(1.45);
+}
+
+.lab-copy-target {
+  font-style: italic;
+  color: var(--mock-muted, currentColor);
+}
+.lab-copy-out {
+  font-size: 1.05rem;
+  min-height: 1.4rem;
+  margin: 0.2rem 0;
+}
+.lab-ok {
+  color: var(--mock-blue, #1f2a8d);
+}
+.lab-bad {
+  color: var(--color-crimson, #c4192e);
+  text-decoration: underline;
+}
+
+.lab-manuscript {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--mock-blue, #1f2a8d);
+}
+
+.lab-selah {
+  position: relative;
+  overflow: hidden;
+}
+.lab-selah-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--mock-blue, #1f2a8d);
+  transform: translateY(101%);
+  transition: transform 10s linear;
+}
+.lab-selah--going .lab-selah-fill {
+  transform: translateY(0);
+}
+.lab-selah-text {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s;
+}
+.lab-selah--going .lab-selah-text {
+  color: var(--mock-paper, #f6f1e7);
+}
+.lab-selah--going .lab-selah-text .edition-section-head {
+  color: inherit;
+}
+
+.lab-marginwrap {
+  display: grid;
+  grid-template-columns: 1fr 7rem;
+  gap: 0.7rem;
+}
+.lab-margin-para {
+  cursor: pointer;
+  line-height: 1.55;
+  margin: 0 0 0.6rem;
+}
+.lab-margin-para:hover {
+  background: color-mix(in srgb, var(--mock-blue, #1f2a8d) 6%, transparent);
+}
+.lab-margincol {
+  border-left: 1.5px dashed var(--mock-blue, #1f2a8d);
+  padding-left: 0.5rem;
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--color-crimson, #c4192e);
+  line-height: 1.4;
+}
+
+.lab-q {
+  margin: 0.5rem 0 0.2rem;
 }

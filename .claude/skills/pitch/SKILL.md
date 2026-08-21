@@ -11,16 +11,19 @@ ALL euangelion pitches land from ANY session."
 
 ## The contract
 
-0. **SHOW, don't describe (founder ruling 2026-08-20):** "I need to see
-   LITERAL representations of the things, not just written out. if
-   something can be shown visually show it visually." Every pitch that
-   proposes anything visual or interactive MUST carry the literal thing:
-   generated images for visuals (embed with absolute URLs — upload media to
-   the public `edition-assets` bucket under `pitch-media/`), and for
-   features a WORKING demo — publish a complete self-contained HTML
-   document (inline CSS+JS) with `--mode=demo`; it runs live in a sandboxed
-   iframe on the pitch page. Prose-only pitches for visual/interactive
-   ideas are a defect.
+0. **SHOW, don't describe — IN LITERAL CONTEXT (founder rulings
+   2026-08-20):** "I need to see LITERAL representations of the things" and
+   "stop embedding pitches in iframes and such, they need to actually exist
+   in the page as actual content... I need to see the designs in literal
+   context." The rules:
+   - Visuals: generate the real image and embed it (upload media to the
+     public `edition-assets` bucket under `pitch-media/`).
+   - Interactive/feature pitches: build a REAL admin-gated route in the
+     site under `/admin/lab/<experiment>` using the site's actual shell,
+     styles, and (where possible) real content — commit + deploy it — and
+     link it from the pitch. NO iframes, NO phone-frame chrome, NO
+     `--mode=demo` (deprecated), NO simulated design layers.
+   - The pitch page itself stays the discussion + verdict surface.
 
 1. **Never** deliver a Euangelion pitch, proposal, or visual illustration as
    a Claude artifact, a bare chat wall-of-text, or a loose HTML file. It

@@ -13,12 +13,13 @@
  *
  * Usage:
  *   node scripts/pitches/publish-pitch.mjs <body.md|body.html> \
- *     --title="The pitch title" [--slug=custom-slug] [--tags=a,b] [--session=name] [--mode=document|demo]
+ *     --title="The pitch title" [--slug=custom-slug] [--tags=a,b] [--session=name]
  *
- * --mode=demo: the body is a COMPLETE self-contained HTML document (inline
- * CSS+JS) rendered in a sandboxed iframe on the pitch page — scripts RUN, so
- * working feature demos are reviewable in place. Default mode renders
- * markdown/html inline as prose.
+ * --mode=demo is DEPRECATED (founder ruling 2026-08-20: "stop embedding
+ * pitches in iframes... they need to actually exist in the page as actual
+ * content"). Interactive proposals are built as real admin-gated routes
+ * under /admin/lab/<experiment> and LINKED from the pitch. The pitch body
+ * renders inline as prose — never in an iframe.
  *
  * Markdown is rendered to HTML at publish time (marked). Re-publishing the
  * same slug REPLACES the pitch body and bumps updatedAt (revisions are the

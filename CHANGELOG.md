@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The lab — experiments live in the real site, iframes banned (SA-114, F-158)
+
+**2026-08-20**
+
+Founder: _"stop embedding pitches in iframes and such, they need to
+actually exist in the page as actual content on page... its adding
+unnecessary layers of fake design when I need to see the designs in
+literal context."_
+
+- **/admin/lab/scroll-hole** (admin-gated): today's REAL `/daily-bread`
+  paper rendered whole, continuing past a seam into the proposed
+  post-edition well — SHEET TWO (yesterday's voice, the archive shelf, a
+  Vasari print) and SHEET THREE (hymn, catechism, an older paper) print as
+  the reader approaches, using the paper's own `.paper-sheet`/`.paper-box`
+  compartments and real rotation data.
+- **/admin/lab/practices** (admin-gated): the eight round-two mechanics as
+  working compartments in the site's real shell — micro-lectio (approved),
+  memorization ladder, copywork, selah ink-flood, the margin, examen,
+  breath prayer, one act — persistence via the same local puzzle store.
+- **Iframe demos removed**: the pitch page now renders every pitch inline;
+  `--mode=demo` is deprecated in the publish script and the pitch skill —
+  interactive proposals are built as real `/admin/lab/*` routes and linked.
+  Both demo pitches republished in place pointing at the lab routes.
+
+---
+
 ## The pitch site — every idea, one archive, founder-respondable (SA-114, F-158)
 
 **2026-08-20**
