@@ -5,6 +5,82 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Seeking Help — Georgia (outreach page)
+
+**2026-08-24**
+
+- **New route `/seeking-help-georgia`** — a vetted directory of Georgia help
+  lines a person in trouble can be sent to directly. 82 entries across 16
+  categories: crisis, shelter, food, rent and utilities, safety at home,
+  healthcare, ongoing mental health, addiction and recovery, pregnancy and
+  children, veterans, legal aid, reentry, immigrants and refugees, aging and
+  disability, work and ID, and faith communities.
+- **Nothing shipped unverified.** Every phone number and URL was checked against
+  the provider's own site or the responsible state agency on 2026-08-24, and the
+  page carries that date. Anything that could not be confirmed was left out.
+  `src/data/georgia-help.ts` is the single source of truth for both the web page
+  and the PDF, so the printed sheet cannot drift from the URL printed on it.
+- **Two kinds of honesty, visually distinct.** `barrier` carries neutral access
+  friction (LIHEAP is first-come until funds run out; Gateway Center assessment
+  slots start at 7am; legal aid is income-qualified). `caution` carries
+  know-before-you-go facts: Georgia Pathways' documented enrollment failures,
+  pregnancy centers that are not licensed medical facilities, residential
+  programs structured as work rather than treatment, and faith-based help that
+  requires attendance. Founder direction: flag them, do not editorialize.
+- **Help first, not theology first.** Faith-based providers carry a
+  `Faith-based` badge and sit inside the practical categories alongside everyone
+  else, never as the preferred door. The single scripture (Psalm 34:18) is at
+  the very bottom of the page, deliberately — nobody looking for a shelter bed
+  should have to scroll past a devotional to reach a phone number.
+- **Built for a stressed reader on a bad phone.** Server component, zero client
+  JavaScript — every interaction is a native anchor or a `tel:` link, so it
+  works with JS disabled. 52 tap-to-call links, a first-person triage grid
+  ("I need somewhere to sleep tonight"), no tap target under 44px, and a
+  hand-authored ~3KB SVG hero instead of a raster.
+- **Printable PDF** at `public/seeking-help-georgia.pdf` via
+  `npm run build:georgia-help-pdf` (Playwright → `page.pdf()`, following the
+  wakeup-handout pattern). Seven pages, pure black on white to survive a
+  photocopier, with 988 and 211 in the running footer of every page so a
+  torn-off sheet still carries them. Linked above the fold — measured at 778px
+  on a 375×812 phone, which drove the title → action → standfirst ordering.
+- **Linked from** the site footer, `/help` (above the product walkthrough), the
+  homepage below the Soul Audit block, `sitemap.ts` at priority 0.9, and the
+  Soul Audit crisis interstitial as a quiet line _below_ the 988 CTA — additive
+  only, the existing gate behaviour is untouched.
+- Guards in `__tests__/seeking-help-georgia.test.tsx`: every display phone must
+  have dialable digits, anchors must be unique and resolve, external links must
+  carry `noopener`, and 988 must stay first in the emergency block.
+
+---
+
+## Hooks that lock down devotional accuracy (SA-124, F-168)
+
+**2026-08-24**
+
+- Founder: _"Set up hooks on the skill to lock down accuracy and devotional
+  consistency. This is a massive issue."_ Two hooks now enforce mechanically
+  what was previously enforced by memory, both running
+  `scripts/check-devotional-consistency.mjs`.
+- **Claude Code PostToolUse hook** fires on every Write/Edit and checks the file
+  immediately if it was a devotional JSON — a failed production build forty
+  minutes later becomes a two-second correction. **husky pre-commit** runs the
+  same checker over staged devotional JSONs only.
+- **Blocking (correctness):** field-type drift against the catalogue (the
+  `.map is not a function` bug that killed two builds, visible only at
+  prerender); an image inserted inside the two-minute open; images with no
+  caption, no alt, or no file on disk; unresolved red letter; audio that no
+  longer speaks the page.
+- **Non-blocking notes (completeness):** fewer than three images, missing
+  cross-testament link. The back catalogue predates these standards and
+  SA-030/SA-032/SA-053 are forward-only — a gate that fires on 582 existing
+  files gets switched off and protects nothing. `--strict` promotes them, and
+  devo-go passes `--strict` for new series.
+- Red letter and textHash **delegate to the real resolver and the real python
+  extractor** rather than lookalike reimplementations, which would drift.
+- **The gate found a real defect on its first full run:** Revelation 22:13 —
+  "I am the Alpha and the Omega" — was shipping in black in `bible-365-day-1`,
+  Christ's own words on the most-read day in the catalogue. Fixed.
+
 ## All These Things — seeking first, and the silence after (SA-123, F-168)
 
 **2026-08-24**

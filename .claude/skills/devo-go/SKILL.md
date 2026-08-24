@@ -81,10 +81,49 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 - Stage commits by explicit file list (parallel sessions share this working tree); never `git add -A`.
 - Deploy proceeds without a pause (SA-031), but ONLY after preview evidence is green; all evidence is reported to the founder in the final summary.
 
+## Automated Gates (SA-124 — founder: "lock down accuracy and devotional consistency")
+
+Two hooks now enforce mechanically what was previously enforced by memory. Both
+run `scripts/check-devotional-consistency.mjs`.
+
+1. **Claude Code PostToolUse hook** — `.claude/settings.json` fires
+   `scripts/hooks/devotional-consistency-hook.sh` on every Write/Edit. If the
+   file written was a `public/devotionals/*.json`, it checks it immediately and
+   reports. This is the one that matters: it turns a failed production build
+   forty minutes later into a two-second correction.
+2. **husky pre-commit** — runs the same checker over STAGED devotional JSONs
+   only, so ordinary commits pay nothing.
+
+**What it catches, and why each one is there:**
+
+| Check                               | Severity | The failure it exists for                                                                                                                                                                                                                                                                          |
+| ----------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `field_type`                        | FAIL     | `wordByWord`/`relatedWords` authored as strings where the catalogue uses arrays. Killed TWO production builds with `.map is not a function`, and only at prerender. Learns expected shapes from the catalogue (min 8 samples).                                                                     |
+| `open_sequence`                     | FAIL     | An `inline-image` inserted INSIDE the two-minute open, breaking the required scripture/vocab/teaching/reflection/prayer/cta order. Happened on day 6.                                                                                                                                              |
+| `image_missing`                     | FAIL     | An `inlineImageSrc` pointing at a file not on disk.                                                                                                                                                                                                                                                |
+| `image_no_caption` / `image_no_alt` | FAIL     | The caption IS the contextual justification for the slot; without it the image is arbitrary.                                                                                                                                                                                                       |
+| `red-letter`                        | FAIL     | Delegates to the REAL SA-051 resolver via `apply-to-days.ts --check`, which now EXITS 1 if it would add attribution to a module that has none. On its first full run this caught Revelation 22:13 shipping black in `bible-365-day-1` — Christ's own words, on the most-read day in the catalogue. |
+| `audio-texthash`                    | FAIL     | Delegates to the python narration extractor. Catches a track that no longer speaks the page — the "stale track survives a text edit" trap.                                                                                                                                                         |
+| `too_few_images`                    | warn     | Fewer than 3 plates per day.                                                                                                                                                                                                                                                                       |
+| `no_cross_testament`                | warn     | SA-032's OT↔NT link.                                                                                                                                                                                                                                                                               |
+
+**Severity is deliberate.** Correctness blocks; completeness warns. The back
+catalogue predates these standards and SA-030 / SA-032 / SA-053 are all
+explicitly forward-only — a gate that fires on 582 existing files gets switched
+off and then protects nothing. **`--strict` promotes warnings to failures, and
+devo-go passes `--strict` for every NEW series.**
+
+Delegation is also deliberate: red letter and textHash call the real resolver
+and the real extractor rather than lookalike reimplementations, which would
+drift from them and be worse than no check at all.
+
 ## Validation
 
 ```bash
 node scripts/validate-devotional.mjs public/devotionals/<slug>-day-*.json
+
+# SA-124 — accuracy + consistency. --strict because this is NEW work.
+node scripts/check-devotional-consistency.mjs --strict --series <slug>
 
 # Narration: cost gate FIRST, then render, then score (the score costs nothing —
 # it rebuilds the narration from the chunk cache).

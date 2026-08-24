@@ -67,3 +67,16 @@ for (const file of files) {
 console.log(
   `\n${checkOnly ? 'CHECK' : 'WROTE'}: ${marked} module(s) marked red, ${leftBlack} left black, ${touched} file(s) rewritten.`,
 )
+
+// In --check mode this is a GATE, not a report. If the resolver would have
+// added attribution to a module that currently carries none, the file on disk
+// is missing red letter and must not ship: a missing red word is a typographic
+// omission, but shipping Christ's words in black when the resolver knows better
+// is a silent regression nobody notices. SA-051 / SA-124.
+if (checkOnly && marked > 0) {
+  console.error(
+    `\n[red-letter] ${marked} scripture module(s) would gain attribution but have none on disk.`,
+  )
+  console.error('  Fix: npx tsx scripts/red-letter/apply-to-days.ts <files>\n')
+  process.exit(1)
+}

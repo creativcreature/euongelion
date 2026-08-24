@@ -14,6 +14,7 @@
     "edition:audit-prints": "node scripts/edition/audit-prints.mjs",
     "build:voice-bank": "node scripts/build-voice-bank.mjs",
     "build:wordnote-bank": "node scripts/build-wordnote-bank.mjs",
+    "build:georgia-help-pdf": "tsx scripts/render-georgia-help-pdf.mts",
     "render:wakeup-handout": "node wakeup-mag/print/handouts/scripts/render-pocket-handout.mjs --input wakeup-mag/reference/HANDOUT.md",
     "expand:reference-index": "tsx scripts/expand-reference-index.ts",
     "build": "node scripts/check-node-version.mjs && node scripts/check-public-config.mjs && node scripts/generate-artwork-manifest.mjs && node scripts/generate-devotional-teasers.mjs && next build --webpack",
@@ -49,7 +50,8 @@
     "prepare": "husky",
     "build:edge-function": "node scripts/build-edge-function.mjs",
     "test:e2e:signed-in": "node scripts/e2e-signed-in.mjs",
-    "strip:audio-assets": "node scripts/strip-audio-from-assets.mjs"
+    "strip:audio-assets": "node scripts/strip-audio-from-assets.mjs",
+    "verify:devotional-consistency": "node scripts/check-devotional-consistency.mjs"
   },
   "dependencies": {
     "@capacitor/cli": "^8.1.0",

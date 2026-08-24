@@ -23,6 +23,15 @@ npm run verify:appstore-gate
 npm run verify:publish-dates
 npm run verify:pipeline
 
+# SA-124: devotional accuracy + consistency. Only runs when a devotional JSON is
+# staged, so ordinary commits pay nothing. Catches field-type drift that only
+# surfaces at prerender, missing/uncaptioned imagery, missing cross-testament
+# links, unresolved red letter, and audio that no longer speaks the page.
+STAGED_DEVOTIONALS=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^public/devotionals/.+\.json$' || true)
+if [ -n "$STAGED_DEVOTIONALS" ]; then
+  echo "$STAGED_DEVOTIONALS" | xargs node scripts/check-devotional-consistency.mjs
+fi
+
 # Enforce CHANGELOG update when code files change
 CODE_CHANGED=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx)$' | head -1)
 CHANGELOG_STAGED=$(git diff --cached --name-only | grep -c 'CHANGELOG.md' || true)
