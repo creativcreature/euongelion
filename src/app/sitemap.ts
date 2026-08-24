@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
+import { AUTHOR_SLUGS } from '@/data/authors'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://euangelion.app'
@@ -11,6 +12,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 1,
+    },
+    {
+      // Outreach page — indexed deliberately and at high priority so someone
+      // searching "help in Georgia" can find it without knowing about us.
+      url: `${baseUrl}/seeking-help-georgia`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/soul-audit`,
@@ -148,5 +157,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })),
   )
 
-  return [...staticPages, ...seriesPages, ...devotionalPages]
+  // The masthead's author pages (SA-089 follow-on).
+  const authorPages: MetadataRoute.Sitemap = AUTHOR_SLUGS.map((slug) => ({
+    url: `${baseUrl}/authors/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.4,
+  }))
+
+  return [...staticPages, ...seriesPages, ...devotionalPages, ...authorPages]
 }

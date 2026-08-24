@@ -698,6 +698,34 @@ export default function Home() {
           )}
         </section>
 
+        {/* Outreach. Deliberately quiet and deliberately low — someone who
+            needs it will read the whole page, and someone who does not should
+            not have a crisis banner shouted at them. Founder direction
+            2026-08-24: "low on the homepage please. maybe under soul audit." */}
+        <section
+          className="homepage-outreach"
+          aria-labelledby="homepage-outreach-heading"
+        >
+          <p className="text-label mock-kicker">GEORGIA</p>
+          <h2
+            id="homepage-outreach-heading"
+            className="homepage-outreach-title"
+          >
+            If what you need right now is a phone number, not a devotional.
+          </h2>
+          <p className="homepage-outreach-copy">
+            We keep a checked list of Georgia help lines — crisis support, a bed
+            tonight, food, rent and power, a doctor, a lawyer. Free, printable,
+            no sign-up, and no requirement to believe anything.
+          </p>
+          <Link
+            href="/seeking-help-georgia"
+            className="homepage-outreach-link text-label"
+          >
+            Seeking help in Georgia →
+          </Link>
+        </section>
+
         <section className="homepage-howitworks">
           <p className="text-label mock-kicker">HERE&rsquo;S HOW IT WORKS</p>
           <h2 className="mock-title-center">

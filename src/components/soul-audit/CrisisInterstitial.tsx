@@ -230,6 +230,26 @@ export default function CrisisInterstitial({
             Call or text 988 now
           </a>
 
+          {/* Georgia outreach. Added below the 988 CTA, never above it:
+              a person in acute crisis should reach a human before they reach
+              a directory. Purely additive to the existing gate behaviour. */}
+          <a
+            href="/seeking-help-georgia"
+            className="vw-small"
+            style={{
+              display: 'block',
+              width: '100%',
+              padding: '0.5rem',
+              textAlign: 'center',
+              color: 'var(--mock-ink, #11182a)',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+              marginBottom: '0.25rem',
+            }}
+          >
+            In Georgia? See shelter, food, and other help
+          </a>
+
           {/* Secondary — quiet continue path */}
           <button
             type="button"

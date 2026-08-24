@@ -17340,3 +17340,601 @@ html.dark .edition-quote-text--red {
 .lab-q {
   margin: 0.5rem 0 0.2rem;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   /seeking-help-georgia — the Georgia outreach page.
+
+   TYPE SCALE IS DELIBERATELY LARGER THAN THE REST OF THE SITE.
+   Founder direction 2026-08-24: "the type is very hard to read and an
+   older person definitely can't read it. this specific page should have
+   larger type."
+
+   The site's shared --type-meta (0.72rem ≈ 11.5px) and --type-micro
+   (0.56rem ≈ 9px) tokens are fine for editorial furniture on a devotional
+   page. They are NOT fine here. A person reading this is older, or
+   stressed, or squinting at a cracked phone in bad light, and the thing
+   they need to read is a phone number. So this page defines its own
+   ladder on .gahelp-root — nothing below 16px, body copy at 18–21px,
+   phone numbers set like headlines — and every rule below draws from it
+   rather than from the shared tokens.
+
+   Palette stays inside the mock-* vocabulary so the page inherits
+   light/dark correctly. The two exceptions are the emergency crimson and
+   the caution amber, both pinned to literal hex for the same reason
+   CrisisInterstitial pins its CTA: --color-crimson lightens in dark mode
+   and drops white text under the 4.5:1 floor.
+   ══════════════════════════════════════════════════════════════════ */
+
+.gahelp-root {
+  /* Nothing on this page renders below --gahelp-label (14px floor), and
+     almost nothing renders below --gahelp-meta (16px). */
+  /* Nothing lands under 15px, badges included — they carry real
+     information (FREE, 24/7, NO ID NEEDED), not decoration. */
+  --gahelp-badge: clamp(0.96rem, 1.05vw, 1.02rem);
+  --gahelp-label: clamp(0.98rem, 1.12vw, 1.06rem);
+  --gahelp-meta: clamp(1.05rem, 1.3vw, 1.18rem);
+  --gahelp-body: clamp(1.18rem, 1.55vw, 1.35rem);
+  --gahelp-lead: clamp(1.3rem, 1.85vw, 1.55rem);
+  --gahelp-card-name: clamp(1.5rem, 2vw, 1.85rem);
+  --gahelp-phone: clamp(1.55rem, 2.3vw, 2rem);
+  --gahelp-tile: clamp(1.18rem, 1.5vw, 1.34rem);
+}
+
+/* The shared breadcrumb is 15.3px site-wide. Left alone everywhere else,
+   nudged up here only — this page has one job and squinting is not it. */
+.gahelp-root .app-breadcrumbs {
+  font-size: var(--gahelp-label);
+}
+
+/* ── Emergency band ───────────────────────────────────────────────── */
+.gahelp-emergency {
+  background: #c4192e;
+  color: #fff;
+  padding: 1.4rem 1.4rem 1.25rem;
+  margin: 0 0 2.6rem;
+}
+.gahelp-emergency-kicker {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #fff;
+}
+.gahelp-emergency-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+}
+.gahelp-emergency-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #fff;
+  color: #c4192e;
+  padding: 1rem 1.15rem;
+  text-decoration: none;
+  min-height: 72px;
+  justify-content: center;
+  transition: transform 120ms ease;
+}
+.gahelp-emergency-btn:hover,
+.gahelp-emergency-btn:focus-visible {
+  transform: translateY(-1px);
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+.gahelp-emergency-btn-num {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: clamp(2.1rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+.gahelp-emergency-btn-label {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-meta);
+  line-height: 1.35;
+  color: #11182a;
+}
+.gahelp-emergency-foot {
+  margin: 1.05rem 0 0;
+  font-size: var(--gahelp-meta);
+  line-height: 1.5;
+  color: #fff;
+}
+@media (min-width: 760px) {
+  .gahelp-emergency-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Masthead ─────────────────────────────────────────────────────── */
+.gahelp-header {
+  margin: 0 0 2rem;
+}
+.gahelp-kicker {
+  color: var(--mock-blue-text);
+  margin: 0 0 0.7rem;
+  font-size: var(--gahelp-label) !important;
+  letter-spacing: 0.13em;
+}
+.gahelp-title {
+  margin: 0 0 1.2rem;
+}
+.gahelp-standfirst {
+  max-width: 40ch;
+  margin: 0;
+  color: var(--mock-ink);
+  font-size: var(--gahelp-lead) !important;
+  line-height: 1.6 !important;
+}
+
+.gahelp-hero {
+  margin: 0 0 2.6rem;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+  overflow: hidden;
+}
+.gahelp-hero-svg {
+  display: block;
+  width: 100%;
+  height: clamp(150px, 22vw, 280px);
+  --gahelp-hero-bg: #ece5d8;
+  --gahelp-hero-ink: #171b69;
+  --gahelp-hero-gold: #c8a56a;
+}
+.dark .gahelp-hero-svg {
+  --gahelp-hero-bg: #12163f;
+  --gahelp-hero-ink: #efe5d8;
+  --gahelp-hero-gold: #c8a56a;
+}
+
+/* ── PDF action ───────────────────────────────────────────────────── */
+.gahelp-actions {
+  margin: 0 0 1.6rem;
+}
+.gahelp-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.15rem 1.9rem;
+  min-height: 60px;
+  font-size: var(--gahelp-meta) !important;
+  letter-spacing: 0.09em;
+}
+.gahelp-actions-note {
+  margin: 0.85rem 0 0;
+  font-size: var(--gahelp-meta);
+  line-height: 1.5;
+  color: var(--mock-muted);
+  max-width: 46ch;
+}
+
+/* ── Triage grid ──────────────────────────────────────────────────── */
+.gahelp-section-kicker {
+  color: var(--mock-blue-text);
+  margin: 0 0 1.1rem;
+  font-size: var(--gahelp-label) !important;
+  letter-spacing: 0.13em;
+}
+.gahelp-triage {
+  margin: 0 0 3.2rem;
+  padding: 1.6rem 0 0;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  scroll-margin-top: 1rem;
+}
+.gahelp-triage-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.gahelp-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  min-height: 72px;
+  padding: 1rem 1.15rem;
+  border: var(--mock-stroke) solid var(--mock-line);
+  text-decoration: none;
+  color: var(--mock-ink);
+  background: var(--color-surface);
+  transition:
+    background 140ms ease,
+    transform 120ms ease;
+}
+.gahelp-tile:hover,
+.gahelp-tile:focus-visible {
+  background: color-mix(in srgb, var(--mock-line) 12%, transparent);
+  transform: translateY(-1px);
+}
+.gahelp-tile-label {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--gahelp-tile);
+  line-height: 1.3;
+}
+.gahelp-tile-arrow {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-meta);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+@media (min-width: 680px) {
+  .gahelp-triage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1060px) {
+  .gahelp-triage-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Sections ─────────────────────────────────────────────────────── */
+.gahelp-section {
+  margin: 0 0 3.6rem;
+  padding-top: 1.8rem;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  scroll-margin-top: 1rem;
+}
+.gahelp-section-title {
+  margin: 0 0 0.7rem;
+}
+.gahelp-section-intro {
+  margin: 0 0 1.6rem;
+  max-width: 46ch;
+  color: var(--mock-ink);
+  font-size: var(--gahelp-lead) !important;
+  line-height: 1.6 !important;
+}
+
+/* Section plate — one image per section (founder direction 2026-08-24). */
+.gahelp-plate {
+  margin: 0 0 1.8rem;
+  border: var(--mock-stroke) solid var(--mock-line);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.gahelp-plate img {
+  display: block;
+  width: 100%;
+  /* Banded, not full-bleed. At the content column's full width a 3:2 plate
+     runs ~680px tall and pushes every phone number below the fold — the
+     illustration would be burying the thing the page exists for. Cropping
+     to a band keeps it as punctuation. */
+  height: clamp(170px, 25vw, 330px);
+  object-fit: cover;
+  /* Subjects sit centre-to-lower in these plates; a straight centre crop
+     keeps the most of each one. */
+  object-position: center 50%;
+}
+
+.gahelp-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+@media (min-width: 960px) {
+  .gahelp-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.gahelp-back {
+  display: inline-block;
+  margin-top: 1.6rem;
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-meta);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--mock-blue-text);
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 2px;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+/* ── Resource card ────────────────────────────────────────────────── */
+.gahelp-card {
+  border: var(--mock-stroke) solid var(--mock-line);
+  padding: 1.3rem 1.35rem 1.4rem;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+}
+.gahelp-card-name {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--gahelp-card-name);
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+  color: var(--mock-ink);
+}
+.gahelp-card-what {
+  margin: 0 0 1.05rem;
+  font-size: var(--gahelp-body);
+  line-height: 1.55;
+  color: var(--mock-ink);
+}
+
+/* The number is the action. Biggest thing in the card, by a wide margin. */
+.gahelp-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  align-self: flex-start;
+  padding: 0.85rem 1.25rem;
+  margin: 0 0 0.65rem;
+  min-height: 64px;
+  background: var(--mock-ink);
+  color: var(--mock-paper);
+  text-decoration: none;
+  transition: opacity 120ms ease;
+}
+.gahelp-call:hover,
+.gahelp-call:focus-visible {
+  opacity: 0.86;
+}
+.gahelp-call--alt {
+  background: transparent;
+  color: var(--mock-ink);
+  border: 2px solid var(--mock-line);
+  min-height: 52px;
+  padding: 0.6rem 1rem;
+}
+.gahelp-call-icon {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+.gahelp-call-number {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-phone);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+.gahelp-call--alt .gahelp-call-number {
+  font-size: calc(var(--gahelp-phone) * 0.72);
+}
+.gahelp-call-alt-label {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  opacity: 0.75;
+}
+.gahelp-card-text-line {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-meta);
+  line-height: 1.45;
+  color: var(--mock-ink);
+  font-weight: 600;
+}
+
+.gahelp-meta {
+  margin: 0.5rem 0 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+.gahelp-meta-row {
+  display: grid;
+  grid-template-columns: 5.2rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+.gahelp-meta-row dt {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--mock-muted);
+  font-weight: 600;
+}
+.gahelp-meta-row dd {
+  margin: 0;
+  font-size: var(--gahelp-meta);
+  line-height: 1.45;
+  color: var(--mock-ink);
+  overflow-wrap: anywhere;
+}
+
+.gahelp-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0 0 0.2rem;
+  padding: 0;
+}
+.gahelp-badge {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-badge);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.35rem 0.6rem;
+  border: 1.5px solid currentColor;
+  line-height: 1;
+  font-weight: 600;
+}
+.gahelp-badge--good {
+  color: #2b6038;
+}
+.gahelp-badge--faith {
+  color: #6d5018;
+}
+.gahelp-badge--neutral {
+  color: var(--mock-muted);
+}
+.dark .gahelp-badge--good {
+  color: #9dc07a;
+}
+.dark .gahelp-badge--faith {
+  color: #d3b174;
+}
+
+/* The two kinds of honesty. Visually distinct on purpose: gray friction
+   you will probably still push through, amber for something you should
+   know before you walk in the door. */
+.gahelp-note {
+  margin: 0.9rem 0 0;
+  padding: 0.8rem 0.95rem;
+  font-size: var(--gahelp-meta);
+  line-height: 1.5;
+}
+.gahelp-note-label {
+  display: block;
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.gahelp-note--barrier {
+  background: color-mix(in srgb, var(--mock-line) 9%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--mock-line) 50%, transparent);
+  color: var(--mock-ink);
+}
+.gahelp-note--caution {
+  background: rgba(180, 130, 20, 0.12);
+  border-left: 3px solid #b48214;
+  color: var(--mock-ink);
+}
+.gahelp-note--caution .gahelp-note-label {
+  color: #7d5809;
+}
+.dark .gahelp-note--caution .gahelp-note-label {
+  color: #ddb35c;
+}
+
+/* ── Colophon + benediction ───────────────────────────────────────── */
+.gahelp-colophon {
+  margin: 0 0 3rem;
+  padding-top: 1.8rem;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  max-width: 46ch;
+}
+.gahelp-colophon .vw-body {
+  margin: 0 0 1.05rem;
+}
+.gahelp-disclaimer {
+  font-size: var(--gahelp-meta) !important;
+  color: var(--mock-muted) !important;
+}
+.gahelp-benediction {
+  margin: 0 0 3.2rem;
+  padding: 1.9rem 0 0;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  text-align: center;
+}
+.gahelp-verse {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: var(--gahelp-lead);
+  line-height: 1.45;
+  margin: 0 auto 0.5rem;
+  max-width: 40ch;
+  color: var(--mock-ink);
+}
+.gahelp-verse-ref {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--mock-blue-text);
+  margin: 0 0 1.3rem;
+}
+.gahelp-benediction-note {
+  font-size: var(--gahelp-meta);
+  line-height: 1.6;
+  color: var(--mock-muted);
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+/* ── Print ────────────────────────────────────────────────────────── */
+@media print {
+  .gahelp-hero,
+  .gahelp-actions,
+  .gahelp-back,
+  .gahelp-plate,
+  .gahelp-tile-arrow {
+    display: none !important;
+  }
+  .gahelp-emergency {
+    background: #fff !important;
+    color: #000 !important;
+    border: 3px solid #000;
+  }
+  .gahelp-emergency-kicker,
+  .gahelp-emergency-foot {
+    color: #000 !important;
+  }
+  .gahelp-emergency-btn {
+    border: 1px solid #000;
+    color: #000 !important;
+  }
+  .gahelp-card,
+  .gahelp-section {
+    break-inside: avoid;
+  }
+  .gahelp-call {
+    background: transparent !important;
+    color: #000 !important;
+    border: 1px solid #000;
+  }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .gahelp-tile,
+  .gahelp-emergency-btn,
+  .gahelp-call {
+    transition: none;
+  }
+  .gahelp-tile:hover,
+  .gahelp-emergency-btn:hover {
+    transform: none;
+  }
+}
+
+/* ── Homepage outreach band (links to /seeking-help-georgia) ───────
+   Low on the page and visually quiet by founder direction. It should
+   read as a door left open, not an alarm. */
+.homepage-outreach {
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  padding: 1.6rem var(--mock-pad-x) 1.8rem;
+  max-width: var(--mock-frame-max);
+  margin: 0 auto;
+}
+.homepage-outreach-title {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--mock-type-2);
+  line-height: 1.24;
+  margin: 0.5rem 0 0.6rem;
+  max-width: 34ch;
+  color: var(--mock-ink);
+}
+.homepage-outreach-copy {
+  font-size: var(--type-body-s);
+  line-height: 1.55;
+  color: var(--mock-muted);
+  max-width: 56ch;
+  margin: 0 0 0.9rem;
+}
+.homepage-outreach-link {
+  display: inline-block;
+  color: var(--mock-blue-text);
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 2px;
+}
+.homepage-outreach-link:hover,
+.homepage-outreach-link:focus-visible {
+  opacity: 0.75;
+}

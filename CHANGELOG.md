@@ -5,6 +5,49 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Seeking Help — Georgia: larger type, section plates, wider coverage
+
+**2026-08-24**
+
+- **The page now sets its own type ladder.** Founder: "the type is very hard to
+  read and an older person definitely can't read it. this specific page should
+  have larger type." The shared `--type-meta` (0.72rem ≈ 11.5px) and
+  `--type-micro` (0.56rem ≈ 9px) tokens are fine for editorial furniture on a
+  devotional page and wrong for this one. `.gahelp-root` now defines its own
+  scale and every rule draws from it. Measured on a 375px viewport: card body
+  14.4 → 20.1px, phone numbers 17.6 → 26.4px, hours/coverage and the barrier and
+  caution notes 11.5 → 17.9px, badges 9 → 16.3px, section intros 18.9 → 22.1px,
+  the emergency numbers 25.6 → 35.7px. Nothing on the page renders below 16.3px,
+  including the shared breadcrumb, which gets a scoped bump here only.
+- **One illustration per section — 16 plates.** Generated through Codex's
+  built-in `image_gen` (subscription, no per-image billing) per the repo's
+  imagery ruling, at 3:2 and downscaled to 1000×667 so nothing is upscaled.
+  Riso duotone to the house spec: cobalt on cream, Ben-Day halftone, a single
+  crimson accent each, no grays. Deliberately no people, no faces, no hands —
+  a page about people in trouble should not decorate itself with pictures of
+  people in trouble, so each plate is an object that means provision: a made
+  bed, a full grocery bag, a lit window, a ring of folding chairs, an open gate.
+  Banded rather than full-bleed, because at the content column's full width a
+  3:2 plate ran ~680px tall and pushed every phone number below the fold.
+- **14 more organizations, 82 → 96 entries.** Help Inn Folk (founder-flagged) —
+  co-living rooms in Fulton and DeKalb for seniors, veterans, and people leaving
+  incarceration, flagged as rented housing rather than free emergency shelter.
+  Plus HOPE Atlanta, Atlanta Mission, Chatham Savannah Authority for the
+  Homeless, Project SHARE, Georgia Power's income-qualified discount, Good
+  Samaritan Health Center, Mercy Care, the Georgia Advocacy Office, Center for
+  the Visually Impaired, Georgia Relay, Goodwill of North Georgia, GVRA, and the
+  CSRA's regional 211 — the last partly to thin out the metro-Atlanta lean.
+- Atlanta Mission carries a caution: shelter and meals are unconditional, the
+  residential recovery track is explicitly Christian in structure. Ask which
+  one you are being placed in.
+- PDF regenerated: 96 entries, 8 pages. Plates are print-suppressed — this
+  sheet gets photocopied and halftone dots turn to mud.
+- Test guards extended: every section must ship a plate, and all 16 plate
+  hashes must be distinct (a collection bug briefly produced ten copies of one
+  image; the check exists so that cannot ship).
+
+---
+
 ## Seeking Help — Georgia (outreach page)
 
 **2026-08-24**

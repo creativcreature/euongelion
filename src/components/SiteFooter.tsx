@@ -28,6 +28,7 @@ const COMPANY_LINKS = [
   { href: '/donation-disclosure', label: 'Donation Transparency' },
   { href: '/support', label: 'Contact & Support' },
   { href: '/help', label: 'Help Center' },
+  { href: '/seeking-help-georgia', label: 'Seeking Help — Georgia' },
 ]
 
 const RESOURCES_LINKS = [

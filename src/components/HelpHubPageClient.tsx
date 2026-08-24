@@ -95,6 +95,26 @@ export default function HelpHubPageClient() {
             </p>
           </header>
 
+          {/* Sits above the product walkthrough on purpose: this hub is
+              titled "Help", and some fraction of the people who search that
+              word are not looking for a tutorial. */}
+          <section className="mb-10 border-b border-[var(--color-border)] pb-8">
+            <p className="text-label vw-small mb-3 text-gold">
+              IF YOU NEED REAL-WORLD HELP
+            </p>
+            <p className="vw-body text-secondary mb-4">
+              This page is about using the app. If you need a crisis line, a bed
+              tonight, food, help with rent or power, a doctor, or a lawyer in
+              Georgia, we keep a checked list of those numbers.
+            </p>
+            <Link
+              href="/seeking-help-georgia"
+              className="text-label vw-small link-highlight"
+            >
+              Seeking help in Georgia →
+            </Link>
+          </section>
+
           <section className="mb-10 border-b border-[var(--color-border)] pb-8">
             <p className="text-label vw-small mb-3 text-gold">WALKTHROUGH</p>
             <div className="flex flex-wrap items-center gap-4">
