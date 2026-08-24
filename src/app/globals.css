@@ -17477,18 +17477,12 @@ html.dark .edition-quote-text--red {
   border-bottom: var(--mock-stroke) solid var(--mock-line);
   overflow: hidden;
 }
-.gahelp-hero-svg {
+.gahelp-hero img {
   display: block;
   width: 100%;
   height: clamp(150px, 22vw, 280px);
-  --gahelp-hero-bg: #ece5d8;
-  --gahelp-hero-ink: #171b69;
-  --gahelp-hero-gold: #c8a56a;
-}
-.dark .gahelp-hero-svg {
-  --gahelp-hero-bg: #12163f;
-  --gahelp-hero-ink: #efe5d8;
-  --gahelp-hero-gold: #c8a56a;
+  object-fit: cover;
+  object-position: center 55%;
 }
 
 /* ── PDF action ───────────────────────────────────────────────────── */

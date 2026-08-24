@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
-import HelpHero from '@/components/seeking-help/HelpHero'
 import ResourceCard from '@/components/seeking-help/ResourceCard'
 import { CATEGORIES, EMERGENCY, LAST_VERIFIED } from '@/data/georgia-help'
 
@@ -152,7 +151,13 @@ export default function SeekingHelpGeorgia() {
           </nav>
 
           <div className="gahelp-hero">
-            <HelpHero />
+            <Image
+              src="/images/site/seeking-help/hero.webp"
+              alt=""
+              width={1400}
+              height={467}
+              priority
+            />
           </div>
 
           {/* ── The list ───────────────────────────────────────────── */}

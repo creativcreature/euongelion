@@ -108,6 +108,12 @@ describe('georgia-help data integrity', () => {
     }
   })
 
+  it('ships the hero plate', () => {
+    // Not lazy-loaded — its absence is visible immediately.
+    const dir = join(process.cwd(), 'public', 'images', 'site', 'seeking-help')
+    expect(existsSync(join(dir, 'hero.webp'))).toBe(true)
+  })
+
   it('keeps every plate distinct', () => {
     // A collection bug once produced ten copies of the same image. Hash them.
     const dir = join(process.cwd(), 'public', 'images', 'site', 'seeking-help')

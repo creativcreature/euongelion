@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Seeking Help — Georgia: the hero is a generated plate now
+
+**2026-08-24**
+
+- **The hand-authored SVG hero is gone**, replaced with a real generated plate
+  like the sixteen section images. Founder direction. Made through Codex's
+  built-in `image_gen` at 3:1 — 2172×724, the full pixel budget at that ratio —
+  and downscaled to 1400×467, so nothing is upscaled.
+- **Two passes, and the first one is worth recording.** Asking for the spilling
+  light in crimson produced a frame where red owned the lower half: it read as
+  alarm rather than welcome, which is precisely wrong for this page, and it
+  broke the house rule that the spot colour is used sparingly. The second pass
+  pins crimson to a single object — the chair cushion — and renders the light
+  as bare cream paper, the absence of blue ink rather than the presence of red.
+- Subject is the room the page is trying to be: a door standing open, a chair
+  waiting just inside, light falling across the floor toward a far window. No
+  people, per SA-125.
+- 261KB at q68. This is the one plate that is not lazy-loaded, so it is sized
+  to the widest layout it will ever occupy (~1024px) rather than to whatever
+  the generator handed back.
+- `HelpHero.tsx` deleted along with its CSS custom properties. A test now
+  asserts the hero file exists, since its absence would be visible instantly
+  rather than on scroll.
+
+---
+
 ## Seeking Help — Georgia: larger type, section plates, wider coverage
 
 **2026-08-24**
