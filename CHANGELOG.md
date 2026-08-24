@@ -53,6 +53,21 @@ Format: Reverse chronological, grouped by sprint/date.
   zero sentences over 45 words.
 - Series takes the homepage main feature slot; `rekindled` moves into the
   featured cards.
+- **Imagery corrected after founder review.** The first master omitted Moses'
+  staff because the subject line carried a "no staff or rod" constraint written
+  for composition — but Exodus 17:9 names the rod of God explicitly. Regenerated
+  from behind, over the shoulder, with the battle in the valley below and the
+  sun going down (v12). A negative constraint had silently deleted a
+  load-bearing textual fact; every exclusion is now checked against the passage
+  before generating.
+- **devo-go updated across the board (SA-124).** Textual accuracy now precedes
+  composition: build the subject line from the verse clause by clause, and audit
+  every negative constraint against the passage before generating. And camera is
+  now a FOURTH set-level axis alongside archetype, coverage band and conceptual
+  device — every subject states shot distance, camera height and relationship to
+  subject, named FIRST in the line, because that is what stops the model
+  defaulting. Medium/frontal/eye-level is rationed to about a third of a set and
+  the set-level report includes camera distribution.
 
 ## Quota failover — the content pipeline survives a capped subscription
 

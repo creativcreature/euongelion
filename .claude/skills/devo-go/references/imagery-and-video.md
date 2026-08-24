@@ -53,7 +53,7 @@ write-once so a second run cannot clobber the archive with its own output.
 
 Minimum 3 generated images per devotional, up to 5 where the content needs them.
 
-## The three axes that make a SET work
+## The four axes that make a SET work
 
 A plate can be beautiful and the set still fail. The founder's rejection was
 _"all the images feel like they are depicting the same devotional."_ Assign every
@@ -70,6 +70,39 @@ No two plates adjacent on the series page share one.
 
 **3. One conceptual device** — the surreal move, named outright. This is what makes
 a plate legible as a thumbnail; a detailed landscape is not.
+
+**4. Camera — shot type, height and relationship** (added 2026-08-24, founder
+ruling). State all three in the subject line. Founder: _"I want the images to be
+slightly more varied in Camera/Shot type. Not just always medium front. Needs
+some flexibility in Shot composition."_
+
+| Sub-axis         | Options                                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Distance**     | extreme close / close / medium / wide / extreme wide vista                                                   |
+| **Height**       | ground-level looking up · eye-level · high vantage looking down · straight-down overhead plan                |
+| **Relationship** | frontal · three-quarter · profile · **from behind (over-the-shoulder)** · POV through the subject's own eyes |
+| **Depth**        | flat and compressed (long-lens feel) vs deep foreshortening with a large near element (wide-lens feel)       |
+
+**Medium + frontal + eye-level is the default the model falls into, and it is
+the one to ration.** Use it for at most a third of a set. No two plates adjacent
+on the series page share a distance AND a relationship.
+
+**Over-the-shoulder earns its own note.** The `all-these-things` master was
+rejected frontal and approved as an over-the-shoulder rear view — three men seen
+from behind on a hilltop, the battle they are affecting visible past the
+subject's shoulder in the valley below. It fixed three problems at once:
+
+- it put the viewer **behind** the subject, which is where a reader stands in a
+  reading (watching, not being watched);
+- it created **deep space** — a large near element and a distant consequence —
+  which is inherently more dynamic than a flat frontal tableau;
+- and it **hid the faces by pose and simplified the hands**, because hands seen
+  from behind grip an object rather than presenting open palms to camera. The
+  most common founder rejection got easier by changing the camera.
+
+A plate whose subject is a person DOING something to a wider situation should
+almost always show the situation in the same frame. Put the consequence in the
+shot.
 
 Measured outcome: rejected set mean 78% ink / sd 9.7; shipped set mean 53% / sd
 26.8 / range 7–100%. The founder's four approved plates span 22–85%. **Spread is
@@ -116,6 +149,19 @@ Then **PEOPLE**, **SUBJECT**, and the orientation-matched **CROP_CLAUSE**.
 
 ### Subject lines
 
+**Open every subject line with the camera, then the coverage band, then the
+subject** (SA-124). Naming the camera first is what stops the model reverting to
+its medium/frontal/eye-level default:
+
+> `"<DISTANCE> <RELATIONSHIP> from <HEIGHT>: <BAND> coverage, NN% ink: <subject>…"`
+
+e.g. `"MID-DENSE coverage, 55-65% ink: a dynamic over-the-shoulder view from
+BEHIND and slightly above three men on a rocky hilltop, looking past them and
+steeply DOWN into the valley…"`
+
+Do not leave the camera implicit. A subject line that only describes WHAT is in
+the frame will be rendered as a medium frontal tableau every time.
+
 - One small warm golden-yellow spot accent per image, named concretely (a sun, a lantern, a lit window, a shaft of light) — the light must have a story (founder-locked "luminous scenes with light behavior").
 - Drawn from the day's actual content — the caption must justify the slot in one sentence. Subjects worth imitating: rows of identical figures with one stepped out; a tiny figure knocking at an enormous door; a bounded field with corners left standing; a house in rain with flames bending away.
 - Prompt-safety: "newborn baby" trips the filter (`status: "nsfw"`) — use "swaddled bundle". If a result drifts photographic, regenerate with harder poster language.
@@ -136,6 +182,46 @@ homepage**. This is part of publishing, not a follow-up task:
 - `HOMEPAGE_TODAY` in `src/app/page.tsx` — hardcoded; the homepage main feature does not derive itself.
 - `NEW_SERIES_ORDER` and `FEATURED_SERIES` — update so the new series surfaces in browse.
 - Bump `CACHE_NAME` in `public/sw.js`, or the founder loads the old shell and reports the change as missing.
+
+## Textual accuracy comes BEFORE composition (founder ruling 2026-08-24)
+
+A plate is wrong if it contradicts or omits what the passage says, no matter how
+well it is composed. Two rules, both learned the hard way on `all-these-things`.
+
+### 1. Audit every NEGATIVE constraint against the passage before generating
+
+The first `all-these-things` master was rejected because its subject line said
+**"no staff or rod."** That exclusion was written to keep the frame uncluttered.
+But Exodus 17:9 reads _"I will stand on the top of the hill with the rod of God
+in mine hand"_ — so the constraint deleted the single object the text puts in
+Moses' hand. The plate was style-perfect and biblically wrong.
+
+Founder: _"the main image is incorrect as moses should have a staff in his
+hands... Images have to be more accurate and precise."_
+
+**Negative constraints are the dangerous half of a subject line.** They are
+written for composition and they silently override Scripture. Before generating:
+
+- List every **named object, actor, action and time-of-day** in the passage.
+- Confirm each is either IN the frame, or deliberately out for a stated reason.
+- Then re-read your own exclusions and check none of them cancels an item on
+  that list.
+
+### 2. Build the subject FROM the verse, clause by clause
+
+The approved v2 master maps to the text line by line, and that is why it is
+right — not because it looks better:
+
+| Element in the plate           | Verse it comes from                                                   |
+| ------------------------------ | --------------------------------------------------------------------- |
+| the raised staff               | Ex 17:9 — "the rod of God in mine hand"                               |
+| the battle in the valley below | Ex 17:10 — Joshua fought while the three went up the hill             |
+| Moses seated on a stone        | Ex 17:12 — "they took a stone, and put it under him"                  |
+| one supporter on each side     | Ex 17:12 — "the one on the one side, and the other on the other side" |
+| the low sun on the horizon     | Ex 17:12 — "until the going down of the sun"                          |
+
+If a plate's elements cannot be traced back to specific clauses like this, the
+subject line is decoration, not illustration. Write the table first.
 
 ## Accuracy Gate (SA-032, extended by SA-052 — MANDATORY before placement)
 
@@ -161,7 +247,8 @@ exists **across** the set. Before any full-set sign-off, report:
 - ink coverage per plate against its assigned band, and the count out of band
 - distribution against the 12/14/7 target
 - **standard deviation** — under ~15 means the set has collapsed toward one register
-- any two series-page neighbours sharing archetype or band
+- any two series-page neighbours sharing archetype, band, or camera (distance + relationship)
+- **the camera distribution**, and what share of the set is medium/frontal/eye-level — over roughly a third means the set has collapsed to the model's default (SA-124)
 - a contact-sheet panel at **true series-card size**: if the plates cannot be told
   apart in that grid, the round has failed regardless of how they look large
 
