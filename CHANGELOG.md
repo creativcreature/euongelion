@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Echo & Dust recrafted — handmade hand, real craft, machine paused — SA-114 (F-158)
+
+**2026-08-24**
+
+Founder: _"the comics are terrible. The situations make no sense... nothing
+like Peanuts... that art still looks like AI... look at popular sunday comic
+strips and how they are written... use real world examples to measure
+against."_ (branch: `feat/strip-recraft-handmade`, per the founder's
+no-more-overwriting ruling)
+
+- **Machine paused** (`STRIP_MACHINE=paused`) and the two unpublished
+  drafts (Aug 25/26) vetoed so nothing at the old standard can
+  silence-publish.
+- **THE CRAFT STANDARD** added to the canon: six named engines from real
+  strips (the football pull, the five-cent booth, the wall, the pounce,
+  the snowman escalation, the reaction panel), a photographable-panel-1
+  law, dialogue-as-status-moves, voice cards with a swap test, and a
+  seven-point measured gate every strip must pass before it ships.
+- **THE HANDMADE LAW** replaces the riso/halftone art direction for the
+  strip: loose brush-pen wobble on warm cream, measured against the
+  founder's café reference (`style-north-star-cafe.png`); halftone,
+  duotone dressing, and digital slickness are forbidden.
+- New handmade character sheet + three candidate strips (The Block /
+  Exact Change / Five Minutes) drawn to the standard and pitched for
+  verdict; the generator's writer and draw prompts now enforce the
+  standard structurally (engine + gate fields required in the script
+  JSON).
+
+---
+
 ## The intro opens in the reader's own mode (SA-127, F-171)
 
 **2026-08-24**

@@ -77,10 +77,17 @@ ${canon}
 ALREADY-USED topics/titles (do NOT reuse or closely echo any):
 ${log.map((e) => `- ${e.title} (${e.topic})`).join('\n') || '- The Bakery Question (daily provision)\n- The Pocket God (prayer vs the phone)\n- The Quarter (luck vs providence)'}
 
-Write ONE new strip for the ${date} edition. Find a SMALL modern observation (the enormous idea sneaks in). Vary the setting (not another living room or cafe if recent strips used one). Decide Dust's hat for today.
+Write ONE new strip for the ${date} edition, following THE CRAFT STANDARD section of the canon TO THE LETTER:
+1. Pick ONE engine from the engine list and name it.
+2. Panel 1 must be photographable — a real place, a real activity, real physics.
+3. Give Teddy a CONCRETE want (a dollar, a ride, a bucket, a snack — never a concept).
+4. Balloons ≤10 words, ≤2 balloons per panel; at least one silent or near-silent panel is strongly preferred.
+5. The last panel RECONTEXTUALIZES. It never summarizes, never consoles, never agrees.
+6. Run the measured gate before answering: theology deleted → still funny; dialogue deleted → the drawing still carries a gag; every line fails to fit any other mouth (swap test). If any check fails, rewrite before answering.
+Vary the setting from the already-used list. Decide Dust's hat for today.
 
 Answer with ONLY this JSON (no markdown fence, no commentary):
-{"title":"...","topic":"...","dustHat":"...","panels":[{"scene":"one-sentence visual description naming character placement and expressions","balloons":[{"speaker":"TEDDY|ECHO|DUST","text":"..."}]},{...},{...}]}`
+{"title":"...","topic":"...","engine":"football pull|five-cent booth|the wall|the pounce|snowman escalation|reaction panel","gate":"one sentence proving the theology-deleted and swap tests passed","dustHat":"...","panels":[{"scene":"one-sentence visual description naming character placement and expressions","balloons":[{"speaker":"TEDDY|ECHO|DUST","text":"..."}]},{...},{...}]}`
 
 function runClaude(prompt) {
   return execFileSync('claude', ['-p', prompt, '--output-format', 'text'], {
@@ -126,8 +133,8 @@ console.log(`[strip] No. ${nextNumber}: "${script.title}" (${script.topic}) — 
 mkdirSync('.cache/strip', { recursive: true })
 const work = mkdtempSync(path.resolve('.cache/strip/run-'))
 const outPng = path.join(work, 'strip.png')
-const sheet = path.resolve('content/strip-reference/workshop/character-sheet-v3.png')
-const styleAnchor = path.resolve('content/strip-reference/workshop/strip-001-v4.png')
+const sheet = path.resolve('content/strip-reference/workshop/character-sheet-handmade-v2.png')
+const styleAnchor = path.resolve('content/strip-reference/style-north-star-cafe.png')
 if (!existsSync(sheet) || !existsSync(styleAnchor)) throw new Error('anchor images missing from the checkout')
 
 const panelText = script.panels
@@ -139,9 +146,9 @@ const panelText = script.panels
   )
   .join('\n\n')
 
-const drawPrompt = `The first attached image is the LOCKED character model sheet for "ECHO & DUST"; the second is an approved strip — match its exact style, palette (riso duotone: cobalt ink on warm cream paper, halftone shading, crimson ONLY for Echo's heart print), line weight, hand lettering, and character designs. Modern-day setting. Do not redesign anyone. Today Dust wears: ${script.dustHat} CONTINUITY LAW: every character present in the scene appears in EVERY panel — same relative positions, wardrobe, and environment across all three, unless a scripted beat moves them.
+const drawPrompt = `The first attached image is the LOCKED character model sheet for "ECHO & DUST"; the second is the style north star — a loose handmade café sketch. Draw EXACTLY in that handmade brush-pen style: one soft charcoal-black wobbly brush line with varying pressure, lines that overshoot corners, warm cream paper, flat brushy fills, tiny blush accents, hand-ruled slightly imperfect panel borders, hand-lettered wobbly all-caps balloons, generous empty space. Crimson ONLY for Echo's heart print. NO halftone dots, NO duotone dressing, NO gradients, NO digital slickness — it must look drawn by hand with a brush pen. Modern-day setting. Do not redesign anyone. Today Dust wears: ${script.dustHat} CONTINUITY LAW: every character present in the scene appears in EVERY panel — same relative positions, wardrobe, and environment across all panels, unless a scripted beat moves them.
 
-Use your built-in image generation tool to generate ONE image saved to ${outPng} . Landscape 3:2, a complete 3-panel comic strip across the middle of the canvas: three equal panels, thin cobalt gutters and border, minimal modern backgrounds. Hand-lettered cobalt balloons that never cover faces.
+Use your built-in image generation tool to generate ONE image saved to ${outPng} . Landscape, wide 2:1 if possible, otherwise 3:2 — a complete comic strip of the scripted panel count, equal panels, minimal modern backgrounds. Hand-lettered balloons that never cover faces.
 
 ${panelText}
 

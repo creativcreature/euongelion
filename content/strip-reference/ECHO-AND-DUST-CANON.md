@@ -29,15 +29,30 @@ lecture. Trust the reader.
   names), a TRUCKER HAT, and SNEAKERS. Dry, pessimistic, usually the
   funniest line. His hat may still change between strips — never explained.
 
-## Visual law (every generation, verbatim intent — AMENDED)
+## Visual law v2 — THE HANDMADE LAW (founder ruling 2026-08-24, supersedes the riso/halftone direction for the strip)
 
-MODERN-DAY setting and styling, drawn as a hand-inked comic strip in the
-SITE'S OWN PALETTE: strict risograph duotone — deep cobalt/ultramarine ink
-on warm cream paper with ONE sparing crimson accent, halftone-dot shading in
-the site's poster style (see public/images/site/series/ anchors). Heavy
-confident linework, print imperfections, bold silhouettes, minimal
-backgrounds, strong facial acting. FORBIDDEN: glossy 3D, anime, Pixar-style
-rendering, photorealism, full-color palettes, corporate flat-vector style.
+Founder: "needs to feel more handdrawn and handmade. Currently feels way
+too AI made." The measure is the founder's reference,
+`content/strip-reference/style-north-star-cafe.png` — a loose brush-pen
+café sketch: confident wobbly line, warm cream, tiny blush accents,
+generous emptiness.
+
+- ONE loose brush-pen line: visible wobble, weight that varies like hand
+  pressure, drawn-fast energy. Lines may overshoot corners and gap at
+  joins — KEEP those flaws.
+- Warm cream paper, flat. Ink is soft charcoal-black. NO halftone dots,
+  NO risograph machinery, NO gradients, NO texture filters, NO "print
+  effects" — those read as AI dressing now.
+- Color is almost nothing: Teddy's warm brown skin, small blush marks,
+  and crimson ONLY for Echo's heart print. Dust's galaxy is ink with a
+  few white flecks — never a rendered nebula.
+- Panel borders hand-ruled and visibly imperfect. Lettering hand-wobbled,
+  all-caps, small. Backgrounds: one or two props, then emptiness.
+- Faces Peanuts-simple — dot/line eyes, economy of marks (Teddy keeps his
+  real illustrated nose per the trio rulings).
+- FORBIDDEN: halftone shading, duotone dressing, dense rendering,
+  symmetric digital-clean curves, glossy 3D, anime, Pixar, photorealism,
+  full-color palettes, corporate flat-vector.
 
 ## Panel continuity (LAW — founder, 2026-08-20)
 
@@ -75,6 +90,72 @@ The approved voice fuses two registers, proven by the drawn voice tests:
   question→quip→sentiment formula, turns that summarize, all three
   agreeing, Teddy as a passive asker with no want.
 
+## THE CRAFT STANDARD (founder ruling 2026-08-24: measure against real strips, never design from vibes)
+
+Founder: "look at popular sunday comic strips and how they are written...
+Its way too 'AI doesnt understand how the actual world works, how people
+talk, or how comedy works'... use real world examples to measure against."
+
+### The engine list — every strip NAMES one before it is written
+
+1. **The football pull** (Peanuts): the reader is certain of the outcome;
+   the character hopes anyway. Comedy = certainty vs hope. End on the
+   wound, understated — never on a consolation.
+2. **The five-cent booth** (Peanuts): enormous pain processed through a
+   mundane transaction. The vessel stays small; the gap does the work.
+3. **The wall** (Peanuts): two characters lean and talk; the LAST line
+   reframes everything before it. Needs a silent beat before the turn.
+4. **The pounce** (Calvin & Hobbes): an established ritual; the variation
+   IS the joke. Repetition turned one degree.
+5. **The snowman escalation** (Calvin & Hobbes): kid-logic followed
+   rigorously past where an adult would stop. Internal consistency taken
+   to absurdity — the logic never breaks, the world does.
+6. **The reaction panel** (classic gag craft): dialogue sets, the DRAWING
+   spikes. The punch is a face or a stare, not a line.
+
+### The scenario law — panel 1 must be photographable
+
+Every strip starts in a REAL situation with observable physics: driveway
+hoop, corner store counter, bus stop, lunch table, homework at the
+kitchen table, vending machine, laundromat, waiting for a ride, left on
+read. Test: could you photograph panel 1 in any neighborhood this
+afternoon? If not, rewrite. (Dust being a galaxy is CHARACTER; the world
+around the trio is real. The surreal walks into the ordinary — never the
+reverse.)
+
+### How people actually talk (the dialogue law)
+
+- Contractions, interruptions, sideways answers. A question is answered
+  UNDER or NEXT TO itself, never straight: "Did you do the reading?" /
+  "I read the back."
+- Lines are STATUS MOVES, not information moves. Nobody names the theme.
+  Nobody summarizes anybody.
+- ≤10 words per balloon, ≤2 balloons per panel. Vernacular beats crafted
+  wit: real playground speech ("that one's between you and God") outranks
+  any invented cleverness.
+
+### Voice cards (the swap test: if a line could move to another mouth unchanged, rewrite it)
+
+- **TEDDY** wants something CONCRETE every strip — a dollar, a ride, a
+  bucket, a snack, an answer. He complains in specifics, never concepts.
+  Zero philosophical vocabulary.
+- **ECHO** ≤6 words, literal, kind. Answers the question under the
+  question. Never jokes on purpose — his sincerity IS the timing.
+- **DUST** deadpan, scale-shifted (cosmic answer to a small question,
+  small answer to a cosmic one), and PETTY about small things — his hat,
+  seating, snacks. The laugh line. Never wise. Never quippy-sentimental.
+
+### The measured gate — a strip ships only if EVERY box checks
+
+1. Engine named from the list above.
+2. Panel 1 photographable.
+3. The turn RECONTEXTUALIZES (never summarizes, never consoles).
+4. Theology deleted → still funny.
+5. Dialogue deleted → something in the DRAWING is still funny.
+6. Every line passes the swap test.
+7. Balloons ≤10 words; at least one silent or near-silent panel per week
+   of strips.
+
 ## Writing law
 
 3–15 words per balloon. No speeches, no therapy-speak, no motivational
@@ -93,9 +174,10 @@ matter-of-fact to the characters.
    v1 deviation from the brief's letter-separately rule, accepted because
    balloons are ≤15 words and every render is INSPECTED (typo = regenerate);
    move to programmatic lettering only if typos prove chronic.
-3. ANCHORS MANDATORY: attach the founder-approved character sheet (and the
-   most recent approved strip) as reference images on EVERY generation.
-   Character consistency outranks visual novelty. Do not redesign.
+3. ANCHORS MANDATORY: attach the handmade-era character sheet AND
+   `style-north-star-cafe.png` (the founder's handmade reference) on EVERY
+   generation. Character consistency outranks visual novelty. Do not
+   redesign.
 4. The render lands as a `strip` DRAFT row → the founder's preview frames it
    NEEDS YOUR EYE → unrejected drafts print at the 7am flip (SA-114 rules).
 5. Codex built-in image_gen ONLY (subscription). Nano Banana and Higgsfield
