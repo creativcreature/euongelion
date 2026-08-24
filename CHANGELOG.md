@@ -16,6 +16,12 @@ Format: Reverse chronological, grouped by sprint/date.
 - A pre-flight probe picks the first tier with headroom before any expensive
   work starts, so a capped tier costs one cheap call rather than a dead
   25-minute run.
+- Both content workflows now select a tier instead of branching on whether a
+  token merely exists. Fixed a latent bug this exposed: the old
+  `unset ANTHROPIC_API_KEY` inside the subscription branch would have killed
+  tier 3, which legitimately needs that variable. The Codex imagery steps are
+  tier-aware too, so a capped tier 1 no longer silently drops the paper to
+  placeholder art. A failed run opens a GitHub issue.
 - Added a voice-parity judge so tier-3 output is scored against committed
   subscription-path series before it reaches the reading gate. Scoped to
   voice, cadence and register only — factual accuracy stays with the BSB

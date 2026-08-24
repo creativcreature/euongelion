@@ -107,6 +107,10 @@ jobs:
       - name: Build the week's series
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Tier ladder (quota failover, 2026-08-24): ci-orchestrate.sh
+          # calls select_tier and picks the first tier with headroom.
+          CLAUDE_CODE_OAUTH_TOKEN_2: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_2 }}
+          CONTENT_PIPELINE_API_KEY: ${{ secrets.CONTENT_PIPELINE_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
@@ -196,3 +200,13 @@ jobs:
             BODY="Read it rendered: $PREVIEW_URL"$'\n\n'"(Could not derive the series slug from the branch diff — open $PREVIEW_URL/series and pick the new series. Production traffic is untouched.)"
           fi
           gh pr comment "$PR_NUMBER" --body "$BODY"
+
+      - name: Report exhausted tier ladder
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Weekly series: run failed or tier ladder exhausted ($(date -u +%F))" \
+            --body "The weekly-series run failed. Check the [tier] lines in the job log to see which credentials were tried." \
+            || true

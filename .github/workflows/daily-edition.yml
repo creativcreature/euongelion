@@ -106,6 +106,8 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          CLAUDE_CODE_OAUTH_TOKEN_2: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_2 }}
+          CONTENT_PIPELINE_API_KEY: ${{ secrets.CONTENT_PIPELINE_API_KEY }}
           EDITION_FROM: ${{ inputs.from }}
           # Scheduled runs build the next 8 days (Thu → next Thu), which
           # always contains exactly one Sunday. Manual dispatches choose.
@@ -116,11 +118,16 @@ jobs:
           if [ -n "${EDITION_FROM:-}" ]; then
             FROM_FLAG="--from=$EDITION_FROM"
           fi
-          if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
-            # Subscription path: Claude Code composes Sundays; the runner
-            # writes everything else. ANTHROPIC_API_KEY is deliberately
-            # UNSET for both so nothing silently bills the API.
-            unset ANTHROPIC_API_KEY
+          # Tier ladder: probe each credential for headroom instead of
+          # branching on mere presence. Falls through to the API path
+          # only when no tier is usable at all.
+          . scripts/lib/claude-tier.sh
+          if select_tier; then
+            # Claude Code composes Sundays; the runner writes everything else.
+            # select_tier leaves EXACTLY ONE credential set, so ANTHROPIC_API_KEY
+            # is unset on tiers 1-2 (nothing silently bills the API) and set on
+            # tier 3, where the metered floor is the deliberate choice. Do NOT
+            # unset it here — that would break tier 3.
             node scripts/edition/compose-lead-claude.mjs --days="$EDITION_DAYS" $FROM_FLAG
             node scripts/edition/compose-guides-claude.mjs --days="$EDITION_DAYS" $FROM_FLAG
             node scripts/edition/build.mjs --days="$EDITION_DAYS" $FROM_FLAG \
@@ -137,6 +144,8 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          CLAUDE_CODE_OAUTH_TOKEN_2: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_2 }}
+          CONTENT_PIPELINE_API_KEY: ${{ secrets.CONTENT_PIPELINE_API_KEY }}
           HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
           HAS_CODEX: ${{ secrets.CODEX_AUTH_JSON != '' }}
           CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
@@ -144,14 +153,17 @@ jobs:
           EDITION_DAYS: ${{ inputs.days || 8 }}
         run: |
           set -euo pipefail
-          if [ "$HAS_TOKEN" != "true" ] || [ "$HAS_CODEX" != "true" ]; then
-            echo "::warning::Lead plates SKIPPED — needs CLAUDE_CODE_OAUTH_TOKEN and CODEX_AUTH_JSON secrets. The paper falls back to the Vasari pick, then series art."
+          . scripts/lib/claude-tier.sh
+          select_tier || true
+          if [ -z "${CLAUDE_TIER:-}" ] || [ "$HAS_CODEX" != "true" ]; then
+            echo "::warning::Lead plates SKIPPED — no usable Claude credential tier, or missing CODEX_AUTH_JSON. The paper falls back to the Vasari pick, then series art."
             exit 0
           fi
           sudo apt-get update -q && sudo apt-get install -y -q imagemagick
           npm install -g @openai/codex
           mkdir -p ~/.codex && printf '%s' "$CODEX_AUTH_JSON" > ~/.codex/auth.json
-          unset ANTHROPIC_API_KEY || true
+          # select_tier leaves exactly one credential set; do not clobber it.
+          # Codex authenticates separately via ~/.codex/auth.json.
           START=$(date -u -d "${EDITION_FROM:-tomorrow}" +%Y-%m-%d)
           for i in $(seq 0 $((EDITION_DAYS - 1))); do
             DAY=$(date -u -d "$START + $i day" +%Y-%m-%d)
@@ -168,6 +180,8 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          CLAUDE_CODE_OAUTH_TOKEN_2: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_2 }}
+          CONTENT_PIPELINE_API_KEY: ${{ secrets.CONTENT_PIPELINE_API_KEY }}
           HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
           HAS_CODEX: ${{ secrets.CODEX_AUTH_JSON != '' }}
           CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
@@ -183,18 +197,31 @@ jobs:
             echo "::notice::Echo & Dust generation PAUSED by founder ruling (2026-08-20) — set repo variable STRIP_MACHINE=enabled after the voice is approved."
             exit 0
           fi
-          if [ "$HAS_TOKEN" != "true" ] || [ "$HAS_CODEX" != "true" ]; then
-            echo "::warning::Echo & Dust SKIPPED — needs CLAUDE_CODE_OAUTH_TOKEN and CODEX_AUTH_JSON secrets."
+          . scripts/lib/claude-tier.sh
+          select_tier || true
+          if [ -z "${CLAUDE_TIER:-}" ] || [ "$HAS_CODEX" != "true" ]; then
+            echo "::warning::Echo & Dust SKIPPED — no usable Claude credential tier, or missing CODEX_AUTH_JSON."
             echo "The paper will show the placeholder frame for days with no strip drawn."
             exit 0
           fi
           sudo apt-get update -q && sudo apt-get install -y -q imagemagick
           npm install -g @openai/codex
           mkdir -p ~/.codex && printf '%s' "$CODEX_AUTH_JSON" > ~/.codex/auth.json
-          unset ANTHROPIC_API_KEY || true
+          # select_tier leaves exactly one credential set; do not clobber it.
+          # Codex authenticates separately via ~/.codex/auth.json.
           START=$(date -u -d "${EDITION_FROM:-tomorrow}" +%Y-%m-%d)
           for i in $(seq 0 $((EDITION_DAYS - 1))); do
             DAY=$(date -u -d "$START + $i day" +%Y-%m-%d)
             echo "── strip for $DAY ──"
             node scripts/edition/strip/generate-strip.mjs --date="$DAY"
           done
+
+      - name: Report exhausted tier ladder
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Content pipeline: run failed or tier ladder exhausted ($(date -u +%F))" \
+            --body "The daily-edition run failed. Check the [tier] lines in the job log to see which credentials were tried." \
+            || true
