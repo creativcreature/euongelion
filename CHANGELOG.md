@@ -65,7 +65,14 @@ Format: Reverse chronological, grouped by sprint/date.
   service worker and `CACHE_NAME` had not been bumped in the correction commit —
   so returning readers kept the old image. Hash-matching the origin proves the
   file is right; it says nothing about what a reader is shown.
-- Day plates shipped for all seven days, three each.
+- **Day plates shipped for all seven days, three each — 21 in total.** Every
+  plate built from a specific clause per SA-124, and every one given a distinct
+  camera. Set-level measurement: mean 55.5% ink, **sd 24.5**, range 8.4-95.6% —
+  against the rejected set's sd 9.7 and the approved reference set's 26.8.
+- One plate was rejected in review and regenerated: the torn-veil image first
+  came back reading as drapes drawn apart rather than a tear, which loses the
+  point Matthew 27:51 turns on. Re-prompted for a single curtain with one rip
+  widest at the top and tapering down, frayed threads on both edges.
 - **devo-go updated across the board (SA-124).** Textual accuracy now precedes
   composition: build the subject line from the verse clause by clause, and audit
   every negative constraint against the passage before generating. And camera is
