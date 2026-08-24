@@ -16,6 +16,12 @@ Format: Reverse chronological, grouped by sprint/date.
 - A pre-flight probe picks the first tier with headroom before any expensive
   work starts, so a capped tier costs one cheap call rather than a dead
   25-minute run.
+- Tier 3 composes through the API using the SAME committed devo-go skill
+  text as the subscription path — the skill files and standing brief become
+  the system prompt, so editing devo-go moves both runtimes together and the
+  two cannot drift into different voices. Capability gaps (WebSearch has no
+  raw-API substitute) are enumerated in `docs/run/TIER3-TOOL-SURFACE.md` and
+  surfaced to the model and the reading gate.
 - The weekly series run is now checkpointed: thematic, compose and assemble
   record completion under `.devo-run/`, so a quota death mid-run resumes on
   the next tier rather than starting over. Narration and imagery happen
