@@ -53,6 +53,24 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Service worker v153 — the cache bump the day plates needed (SA-124, F-168)
+
+**2026-08-24**
+
+- The 21 day plates were live on the origin and every day page referenced all
+  three of its images, verified with cache-busting — but readers still saw pages
+  without them. The service worker caches **pages**, not only assets.
+  `CACHE_NAME` was bumped to v152 in the deploy that shipped days 6-7, and days
+  1 and 4 then shipped in a LATER deploy with no further bump, so an installed
+  worker kept serving day pages it had cached before those images existed.
+- This is the same failure as the main-plate cache miss earlier the same day,
+  repeated after it had been documented. The rule is now unconditional and
+  recorded in F-168: **any deploy that changes what a reader sees — page or
+  asset — bumps the service-worker pair.** Not "shell changes". Any change.
+- Added edge-cache warming to the ship step. Pages carry
+  `s-maxage=3600, stale-while-revalidate`, so an un-warmed URL serves the
+  previous version until someone happens to request it.
+
 ## Hooks that lock down devotional accuracy (SA-124, F-168)
 
 **2026-08-24**
