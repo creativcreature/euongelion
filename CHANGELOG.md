@@ -48,7 +48,9 @@ Check mobile version of daily bread site for consistency."_
   forever. Worse, `generate-strip.mjs` was committed with a split
   template literal (SyntaxError), so even Wednesday's run would have
   crashed. Script fixed; the four missing strips drawn and installed.
-- **daily-gapfill.yml** — the dailiness backstop: every morning at 08:00
+- **daily-gapfill.yml** — the dailiness backstop (credential check made
+  branch-agnostic same day — the tier helper only exists on the failover
+  branch, so main falls back to the plain subscription token): every morning at 08:00
   UTC (before the 7am flip) CI checks today + two days ahead for a
   missing strip, lead plate, or guide set and generates only what is
   missing. All three generators are idempotent, so overlap with the

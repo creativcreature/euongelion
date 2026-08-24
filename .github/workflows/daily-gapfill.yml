@@ -52,9 +52,16 @@ jobs:
         run: |
           set -euo pipefail
           npm ci --ignore-scripts
-          . scripts/lib/claude-tier.sh
-          if ! select_tier; then
-            echo "::warning::gapfill SKIPPED — no usable Claude credential tier this morning."
+          # The tier ladder (select_tier) ships on the failover branch; use
+          # it when merged, else the plain subscription token carries the day.
+          if [ -f scripts/lib/claude-tier.sh ]; then
+            . scripts/lib/claude-tier.sh
+            if ! select_tier; then
+              echo "::warning::gapfill SKIPPED — no usable Claude credential tier this morning."
+              exit 0
+            fi
+          elif [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+            echo "::warning::gapfill SKIPPED — no CLAUDE_CODE_OAUTH_TOKEN."
             exit 0
           fi
           TODAY=$(date -u +%Y-%m-%d)
