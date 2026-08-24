@@ -5130,11 +5130,53 @@ html.reduce-motion *::after {
   text-underline-offset: 0.22em;
 }
 
-.mock-nav-item:is(:hover, :focus-visible) {
-  text-decoration: underline;
-  text-decoration-color: var(--color-gold);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.22em;
+/* THE ROLLOVER (SA-124). Founder 2026-08-24: "I also want the subtle text
+   rollover", pointing at telhaclarke.com.au.
+
+   Theirs is a rule that WIPES rather than one that appears: a 1px line scaled
+   from 0, its transform-origin flipped between states so it enters from the
+   left and leaves to the right — it never retracts back the way it came, which
+   is the whole reason it reads as a wipe and not a toggle. 0.7s on
+   cubic-bezier(.23,1,.32,1) is their exact timing and it is slower than a
+   hover usually dares to be; that unhurriedness IS the subtlety.
+
+   ::before, NEVER ::after — EditorialMotionSystem claims ::after on every
+   .mock-paper link at runtime, and any ::after geometry here un-collapses its
+   hidden underline into a painted slab. */
+.mock-nav-item {
+  position: relative;
+}
+
+.mock-nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 2px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  /* Resting origin is the RIGHT edge, so the line that leaves continues in the
+     direction it entered instead of rewinding. */
+  transform-origin: 100% 50%;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+}
+
+.mock-nav-item:is(:hover, :focus-visible)::before {
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+}
+
+/* The active item keeps its standing underline; no wipe needed under it. */
+.mock-nav-item.is-active::before {
+  content: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mock-nav-item::before {
+    transition: none;
+  }
 }
 
 .mock-mobile-menu-toggle {
@@ -14026,15 +14068,28 @@ html[data-held-moment] .mobile-tab-bar {
   }
 }
 
-/* ── The press impression (F-108) ───────────────────────────────────────
-   Founder 2026-08-16: the first intro "was half assed" — a panel that faded a
-   word in and slid off, which any site could wear. This is the sequence a
-   PRESS makes: ink, type set into place, a registration slip, then the sheet
-   lifting and handing the wordmark to the real masthead.
+/* ── The press impression (F-108, rebuilt SA-124) ──────────────────────────
+   Founder 2026-08-24: "The homepage animation is not working at all the way it
+   should. This is the intro animation I want [telhaclarke.com.au]. I need 2
+   versions - one for Darkmode, one for Light Mode. The Color of the euangelion
+   needs to match the mode color. If Light Mode, Euangelion should be Blue, if
+   Dark Mode it should be white."
 
-   The wordmark is KNOCKED OUT of the ink (background-clip: text) rather than
-   painted white on top, because that is how the real thing prints — the
-   letters are the paper showing through. */
+   WHAT WAS WRONG: there was only ever ONE version. The sheet was cobalt in both
+   themes and the wordmark was KNOCKED OUT of it — so in light mode you watched
+   a cream word on blue for the whole intro, and it became blue only in the last
+   frame as it flew away. The mode never had its own opening.
+
+   NOW: the ground is the mode's own paper (light) or deep blue (dark), and the
+   word is drawn in the mode's own wordmark colour from the first frame —
+   cobalt on paper, cream on blue. Two openings, one sequence.
+
+   THE SEQUENCE, after the reference: each letter sits in its own overflow mask
+   with a duplicate stacked beneath it; the top copy rolls up and out while the
+   bottom copy rolls up into place, staggered letter by letter. Then the ground
+   leaves on a hard CLIP edge (the reference opens its page with a clip curtain;
+   a squeegee comes off a sheet the same way) while the wordmark flies to the
+   real masthead and hands over. */
 
 .press {
   position: fixed;
@@ -14049,42 +14104,49 @@ html[data-held-moment] .mobile-tab-bar {
   /* OWN TOKENS, not the masthead's.
      MastheadIntro mounts in layout.tsx as a direct child of <body>, OUTSIDE
      the `.mock-home` wrapper that defines --mock-blue / --mock-paper. Those
-     properties simply do not resolve here, so the old rules were silently
-     riding their literal fallbacks — the intro was hard-wired to light mode in
-     both themes. And where a token DID resolve (--color-crimson, which lives
-     on :root) it brightened to #e25868 in dark, which is why the register
-     ghost read as a red word there and merely as ink slip in light.
-     Declared locally so the sequence is explicit in both themes. */
-  --press-ink: #1f2a8d; /* cobalt sheet — the same in both themes */
-  --press-paper: #f5eee3; /* the knockout: paper showing through */
-  --press-land: #1f2a8d; /* what the word BECOMES on landing (light masthead) */
-  --press-slip: rgba(
-    196,
-    25,
-    46,
-    0.85
-  ); /* register ghost, fixed across themes */
+     properties simply do not resolve here, so rules that reference them ride
+     their literal fallbacks silently. Declared locally, per mode, so each
+     opening is explicit rather than inherited. */
+
+  /* LIGHT: paper ground, cobalt word — the light masthead's own pairing. */
+  --press-ink: #f5eee3;
+  --press-word: #1f2a8d;
+
+  /* One beat for the whole sequence. The founder has called this intro "a bit
+     misstimed" once already; every duration here is this beat or a multiple of
+     it, so nothing lands early and waits. */
+  --press-beat: 720ms;
+  --press-stagger: 36ms;
+  /* expo.out — the reference's letter ease, as a bezier. */
+  --press-ease-roll: cubic-bezier(0.16, 1, 0.3, 1);
+  /* The reference's own `gl.fastInOut`: fast through the middle, long tail. */
+  --press-ease-lift: cubic-bezier(0.83, 0, 0.17, 1);
 }
 
-/* Dark mode changes exactly one thing: the real masthead's wordmark is cream,
-   not cobalt (--mock-blue-text resolves to --mock-ink there), so the flying
-   word has to land cream or it vanishes into the page at the last frame. */
+/* DARK: the deep blue ground, cream word — the dark masthead's own pairing.
+   --mock-blue-text resolves to --mock-ink (#efe5d8) there, so this is the same
+   colour the real wordmark is wearing when the flight lands on it. */
 .dark .press,
 :root[data-theme='dark'] .press {
-  --press-land: #efe5d8;
+  --press-ink: #171b69;
+  --press-word: #efe5d8;
 }
 
-/* The ink field. Retracts on a HARD edge — a squeegee coming off the sheet. */
+/* The ground. Leaves on a hard clip edge rather than a fade: the bottom edge
+   rises to meet the top, so the page is uncovered rather than dissolved.
+   clip-path, not scaleY — a scaled panel drags its own texture upward with it
+   and the edge softens; an inset clip edge stays exactly as hard as a blade. */
 .press-ink {
   position: absolute;
   inset: 0;
   background: var(--press-ink);
-  transform-origin: top center;
-  transition: transform 900ms cubic-bezier(0.83, 0, 0.17, 1);
+  clip-path: inset(0 0 0 0);
+  transition: clip-path calc(var(--press-beat) + 180ms) var(--press-ease-lift);
+  will-change: clip-path;
 }
 
 .press.is-lifting .press-ink {
-  transform: scaleY(0);
+  clip-path: inset(0 0 100% 0);
 }
 
 .press-stage {
@@ -14096,137 +14158,98 @@ html[data-held-moment] .mobile-tab-bar {
 
 .press-word {
   grid-area: 1 / 1;
+  display: flex;
+  align-items: baseline;
   font-family: var(--font-family-ui);
   font-weight: 700;
-  /* Sized so the OVER-TRACKED first frame still fits the viewport. At 10.5vw
-     with 0.34em of tracking the word ran off both edges — the widest moment of
-     the animation is the one that has to fit, not the final one. */
+  /* Sized so the whole word fits the narrowest viewport the intro plays on. */
   font-size: clamp(1.5rem, 7vw, 5.75rem);
   line-height: 1;
   white-space: nowrap;
-  /* Final tracking, held. The tightening is done with transform, NOT by
-     animating letter-spacing.
-     WHY: letter-spacing and text-indent are layout properties. Animating them
-     re-runs layout and paint for the whole line on every frame, on the main
-     thread, competing with hydration on the heaviest page of the site — which
-     is what made the open read as chippy. transform: scaleX composites on the
-     GPU and never touches layout. At 6% the glyph widening is imperceptible
-     for the 500ms it is visible, and it reads as the same movement: type
-     tightening into the stick. */
   letter-spacing: 0.02em;
-  text-indent: 0.02em;
+  color: var(--press-word);
   transform-origin: center center;
-  will-change: transform, opacity;
-  animation: press-set 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  will-change: transform;
 }
 
-/* The key plate: paper showing through the ink. */
+/* THE HAND-OFF IS A MOVE, NOT A FADE OR A COLOUR CHANGE.
+   Founder 2026-08-20: "the transition from white euangelion to blue doesn't
+   work well." It doesn't have to any more — the word has been the masthead's
+   colour since the first frame, so the flight is pure position and scale and
+   the word simply arrives as the thing it already was. */
 .press-word--key {
-  color: var(--press-paper);
   z-index: 2;
-  /* THE HAND-OFF IS A COLOUR CHANGE, NOT A FADE.
-     Founder 2026-08-20: "the transition from white euangelion to blue doesn't
-     work well."
-
-     It didn't, for two reasons. The word flew to the masthead's measured
-     position and faded to nothing on the way, so it never visibly ARRIVED —
-     the sequence promised a hand-off and delivered a disappearance. And in
-     light mode a cream wordmark crosses a cream page to reach a cobalt
-     masthead, so for most of the flight it was invisible against the paper it
-     was flying over.
-
-     Now it changes colour instead: paper-cream while it is knocked out of the
-     ink, resolving to --press-land — cobalt in light, cream in dark — timed to
-     complete just as it lands. It stops being the intro's word and becomes the
-     masthead's, which is what the sequence was always describing.
-
-     The old opacity fade is gone entirely, so the earlier flash bug it was
-     tuned around (a cream word sharing a frame with the real cobalt one)
-     cannot recur: by the time the ink clears, this word is already the
-     masthead's colour and sits exactly on top of it. */
-  transition:
-    transform 900ms cubic-bezier(0.76, 0, 0.24, 1),
-    color 620ms cubic-bezier(0.4, 0, 0.2, 1) 120ms;
-}
-
-.press.is-lifting .press-word--key {
-  color: var(--press-land);
+  transition: transform 900ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 /* Fallback ONLY when the real masthead could not be measured. Without a
-   destination the word has nowhere to become, so it leaves with the ink
-   rather than sitting on the page in a colour that means nothing. */
+   destination the word has nowhere to become, so it leaves with the ground
+   rather than parking on the page. */
 .press.is-lifting.is-unmeasured .press-word--key {
   opacity: 0;
-  transition:
-    opacity 240ms ease 380ms,
-    color 620ms cubic-bezier(0.4, 0, 0.2, 1) 120ms;
+  transition: opacity 240ms ease 380ms;
 }
 
-/* The crimson plate, offset and a beat late. Kept FAINT: real misregistration
-   is a thin coloured edge escaping from behind the key plate, not a second
-   word competing with it. `multiply` was worse than nothing here — crimson
-   multiplied over cobalt goes muddy brown rather than reading as ink slip. */
-.press-word--slip {
-  /* Fixed colour, not --color-crimson: that token brightens to #e25868 in dark
-     mode, where this stops reading as ink slip and starts reading as a red
-     word sitting behind the logo. */
-  color: var(--press-slip);
-  z-index: 1;
-  /* Composited like the key plate. Without this the ghost repaints on the main
-     thread beside a GPU-composited sibling and the two visibly disagree. */
-  transform-origin: center center;
-  will-change: transform, opacity;
-  animation:
-    press-set 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both,
-    press-register 760ms cubic-bezier(0.22, 0.61, 0.36, 1) 90ms both;
+/* One mask per letter. `overflow: hidden` is what makes the roll a roll: the
+   outgoing copy is cut off at the letter's own edges instead of sliding across
+   its neighbours. */
+.press-letter {
+  display: inline-block;
+  overflow: hidden;
+  /* EXACTLY ONE FACE TALL. This is the whole mask, and getting it wrong is
+     silent: left to size itself the wrapper is two faces tall (it holds two
+     copies), the window shows both at once, and the column rolls clean past
+     it — the word appears doubled and then vanishes entirely. */
+  height: 1em;
+  line-height: 1;
+  vertical-align: bottom;
 }
 
-.press.is-lifting .press-word--slip {
-  opacity: 0;
-  transition: opacity 200ms ease;
+/* The two stacked copies travel as one column: from showing the TOP copy to
+   showing the BOTTOM copy is exactly one letter-height of travel. */
+.press-letter-roll {
+  display: block;
+  transform: translate3d(0, 0, 0);
+  animation: press-roll var(--press-beat) var(--press-ease-roll) both;
+  /* The reference staggers 47.5ms per letter over a 2s roll; this is the same
+     ratio against a 720ms roll. */
+  animation-delay: calc(var(--i) * var(--press-stagger));
+  will-change: transform;
 }
 
-@keyframes press-set {
+.press-letter-face {
+  display: block;
+  height: 1em;
+  line-height: 1;
+}
+
+/* PERCENTAGES HERE ARE OF THE COLUMN, AND THE COLUMN IS TWO FACES TALL —
+   so one face of travel is 50%, not 100%.
+   Start at +50%: the column sits one face low and the mask is empty, so the
+   letter ARRIVES rather than simply being there. End at -50%: the column has
+   risen by exactly one face, the top copy has left through the top of the
+   mask and the duplicate beneath it now fills the window. */
+@keyframes press-roll {
   from {
-    transform: scaleX(1.06);
-    opacity: 0;
-  }
-  18% {
-    opacity: 1;
+    transform: translate3d(0, 50%, 0);
   }
   to {
-    transform: scaleX(1);
-    opacity: 1;
+    transform: translate3d(0, -50%, 0);
   }
 }
 
-/* The slip fades in FROM ZERO and never out-reads the key plate. Its own
-   opacity keyframes override press-set's fade for this element, so if it
-   starts at full strength the crimson arrives before the cream and the whole
-   thing reads as a red word — which is what the first pass did. */
-/* Misregistration is a MOMENT, not a resting state.
-   It used to settle at translate(1.5px, 1px) / opacity 0.18 and stay there —
-   a second word parked permanently beside the first, which is exactly what
-   "the logo overlays itself" describes. A real press slip is visible while the
-   sheet is moving and gone once it registers, so this now resolves to zero
-   offset and zero opacity: the ghost separates, slides in, and disappears into
-   the key plate. Peak is lower too (0.26), because at 0.34 the crimson was
-   competing with the cream rather than edging it. */
-@keyframes press-register {
-  from {
-    transform: translate3d(7px, 5px, 0);
-    opacity: 0;
+/* Belt and braces: the component already refuses to mount under reduced
+   motion, but if the class ever paints for any other reason it must not
+   animate. */
+@media (prefers-reduced-motion: reduce) {
+  .press-ink,
+  .press-word--key {
+    transition: none;
   }
-  26% {
-    opacity: 0.26;
-  }
-  70% {
-    opacity: 0.16;
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 0;
+
+  .press-letter-roll {
+    animation: none;
+    transform: translate3d(0, -50%, 0);
   }
 }
 
@@ -17351,4 +17374,596 @@ html.dark .edition-quote-text--red {
 
 .lab-q {
   margin: 0.5rem 0 0.2rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   /seeking-help-georgia — the Georgia outreach page.
+
+   TYPE SCALE IS DELIBERATELY LARGER THAN THE REST OF THE SITE.
+   Founder direction 2026-08-24: "the type is very hard to read and an
+   older person definitely can't read it. this specific page should have
+   larger type."
+
+   The site's shared --type-meta (0.72rem ≈ 11.5px) and --type-micro
+   (0.56rem ≈ 9px) tokens are fine for editorial furniture on a devotional
+   page. They are NOT fine here. A person reading this is older, or
+   stressed, or squinting at a cracked phone in bad light, and the thing
+   they need to read is a phone number. So this page defines its own
+   ladder on .gahelp-root — nothing below 16px, body copy at 18–21px,
+   phone numbers set like headlines — and every rule below draws from it
+   rather than from the shared tokens.
+
+   Palette stays inside the mock-* vocabulary so the page inherits
+   light/dark correctly. The two exceptions are the emergency crimson and
+   the caution amber, both pinned to literal hex for the same reason
+   CrisisInterstitial pins its CTA: --color-crimson lightens in dark mode
+   and drops white text under the 4.5:1 floor.
+   ══════════════════════════════════════════════════════════════════ */
+
+.gahelp-root {
+  /* Nothing on this page renders below --gahelp-label (14px floor), and
+     almost nothing renders below --gahelp-meta (16px). */
+  /* Nothing lands under 15px, badges included — they carry real
+     information (FREE, 24/7, NO ID NEEDED), not decoration. */
+  --gahelp-badge: clamp(0.96rem, 1.05vw, 1.02rem);
+  --gahelp-label: clamp(0.98rem, 1.12vw, 1.06rem);
+  --gahelp-meta: clamp(1.05rem, 1.3vw, 1.18rem);
+  --gahelp-body: clamp(1.18rem, 1.55vw, 1.35rem);
+  --gahelp-lead: clamp(1.3rem, 1.85vw, 1.55rem);
+  --gahelp-card-name: clamp(1.5rem, 2vw, 1.85rem);
+  --gahelp-phone: clamp(1.55rem, 2.3vw, 2rem);
+  --gahelp-tile: clamp(1.18rem, 1.5vw, 1.34rem);
+}
+
+/* The shared breadcrumb is 15.3px site-wide. Left alone everywhere else,
+   nudged up here only — this page has one job and squinting is not it. */
+.gahelp-root .app-breadcrumbs {
+  font-size: var(--gahelp-label);
+}
+
+/* ── Emergency band ───────────────────────────────────────────────── */
+.gahelp-emergency {
+  background: #c4192e;
+  color: #fff;
+  padding: 1.4rem 1.4rem 1.25rem;
+  margin: 0 0 2.6rem;
+}
+.gahelp-emergency-kicker {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #fff;
+}
+.gahelp-emergency-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+}
+.gahelp-emergency-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #fff;
+  color: #c4192e;
+  padding: 1rem 1.15rem;
+  text-decoration: none;
+  min-height: 72px;
+  justify-content: center;
+  transition: transform 120ms ease;
+}
+.gahelp-emergency-btn:hover,
+.gahelp-emergency-btn:focus-visible {
+  transform: translateY(-1px);
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+.gahelp-emergency-btn-num {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: clamp(2.1rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+.gahelp-emergency-btn-label {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-meta);
+  line-height: 1.35;
+  color: #11182a;
+}
+.gahelp-emergency-foot {
+  margin: 1.05rem 0 0;
+  font-size: var(--gahelp-meta);
+  line-height: 1.5;
+  color: #fff;
+}
+@media (min-width: 760px) {
+  .gahelp-emergency-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Masthead ─────────────────────────────────────────────────────── */
+.gahelp-header {
+  margin: 0 0 2rem;
+}
+.gahelp-kicker {
+  color: var(--mock-blue-text);
+  margin: 0 0 0.7rem;
+  font-size: var(--gahelp-label) !important;
+  letter-spacing: 0.13em;
+}
+.gahelp-title {
+  margin: 0 0 1.2rem;
+}
+.gahelp-standfirst {
+  max-width: 40ch;
+  margin: 0;
+  color: var(--mock-ink);
+  font-size: var(--gahelp-lead) !important;
+  line-height: 1.6 !important;
+}
+
+.gahelp-hero {
+  margin: 0 0 2.6rem;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  border-bottom: var(--mock-stroke) solid var(--mock-line);
+  overflow: hidden;
+}
+.gahelp-hero img {
+  display: block;
+  width: 100%;
+  height: clamp(150px, 22vw, 280px);
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+/* ── PDF action ───────────────────────────────────────────────────── */
+.gahelp-actions {
+  margin: 0 0 1.6rem;
+}
+.gahelp-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.15rem 1.9rem;
+  min-height: 60px;
+  font-size: var(--gahelp-meta) !important;
+  letter-spacing: 0.09em;
+}
+.gahelp-actions-note {
+  margin: 0.85rem 0 0;
+  font-size: var(--gahelp-meta);
+  line-height: 1.5;
+  color: var(--mock-muted);
+  max-width: 46ch;
+}
+
+/* ── Triage grid ──────────────────────────────────────────────────── */
+.gahelp-section-kicker {
+  color: var(--mock-blue-text);
+  margin: 0 0 1.1rem;
+  font-size: var(--gahelp-label) !important;
+  letter-spacing: 0.13em;
+}
+.gahelp-triage {
+  margin: 0 0 3.2rem;
+  padding: 1.6rem 0 0;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  scroll-margin-top: 1rem;
+}
+.gahelp-triage-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.gahelp-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  min-height: 72px;
+  padding: 1rem 1.15rem;
+  border: var(--mock-stroke) solid var(--mock-line);
+  text-decoration: none;
+  color: var(--mock-ink);
+  background: var(--color-surface);
+  transition:
+    background 140ms ease,
+    transform 120ms ease;
+}
+.gahelp-tile:hover,
+.gahelp-tile:focus-visible {
+  background: color-mix(in srgb, var(--mock-line) 12%, transparent);
+  transform: translateY(-1px);
+}
+.gahelp-tile-label {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--gahelp-tile);
+  line-height: 1.3;
+}
+.gahelp-tile-arrow {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-meta);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+@media (min-width: 680px) {
+  .gahelp-triage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1060px) {
+  .gahelp-triage-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Sections ─────────────────────────────────────────────────────── */
+.gahelp-section {
+  margin: 0 0 3.6rem;
+  padding-top: 1.8rem;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  scroll-margin-top: 1rem;
+}
+.gahelp-section-title {
+  margin: 0 0 0.7rem;
+}
+.gahelp-section-intro {
+  margin: 0 0 1.6rem;
+  max-width: 46ch;
+  color: var(--mock-ink);
+  font-size: var(--gahelp-lead) !important;
+  line-height: 1.6 !important;
+}
+
+/* Section plate — one image per section (founder direction 2026-08-24). */
+.gahelp-plate {
+  margin: 0 0 1.8rem;
+  border: var(--mock-stroke) solid var(--mock-line);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.gahelp-plate img {
+  display: block;
+  width: 100%;
+  /* Banded, not full-bleed. At the content column's full width a 3:2 plate
+     runs ~680px tall and pushes every phone number below the fold — the
+     illustration would be burying the thing the page exists for. Cropping
+     to a band keeps it as punctuation. */
+  height: clamp(170px, 25vw, 330px);
+  object-fit: cover;
+  /* Subjects sit centre-to-lower in these plates; a straight centre crop
+     keeps the most of each one. */
+  object-position: center 50%;
+}
+
+.gahelp-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+@media (min-width: 960px) {
+  .gahelp-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.gahelp-back {
+  display: inline-block;
+  margin-top: 1.6rem;
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-meta);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--mock-blue-text);
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 2px;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+/* ── Resource card ────────────────────────────────────────────────── */
+.gahelp-card {
+  border: var(--mock-stroke) solid var(--mock-line);
+  padding: 1.3rem 1.35rem 1.4rem;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+}
+.gahelp-card-name {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--gahelp-card-name);
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+  color: var(--mock-ink);
+}
+.gahelp-card-what {
+  margin: 0 0 1.05rem;
+  font-size: var(--gahelp-body);
+  line-height: 1.55;
+  color: var(--mock-ink);
+}
+
+/* The number is the action. Biggest thing in the card, by a wide margin. */
+.gahelp-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  align-self: flex-start;
+  padding: 0.85rem 1.25rem;
+  margin: 0 0 0.65rem;
+  min-height: 64px;
+  background: var(--mock-ink);
+  color: var(--mock-paper);
+  text-decoration: none;
+  transition: opacity 120ms ease;
+}
+.gahelp-call:hover,
+.gahelp-call:focus-visible {
+  opacity: 0.86;
+}
+.gahelp-call--alt {
+  background: transparent;
+  color: var(--mock-ink);
+  border: 2px solid var(--mock-line);
+  min-height: 52px;
+  padding: 0.6rem 1rem;
+}
+.gahelp-call-icon {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+.gahelp-call-number {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-phone);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+.gahelp-call--alt .gahelp-call-number {
+  font-size: calc(var(--gahelp-phone) * 0.72);
+}
+.gahelp-call-alt-label {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  opacity: 0.75;
+}
+.gahelp-card-text-line {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-meta);
+  line-height: 1.45;
+  color: var(--mock-ink);
+  font-weight: 600;
+}
+
+.gahelp-meta {
+  margin: 0.5rem 0 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+.gahelp-meta-row {
+  display: grid;
+  grid-template-columns: 5.2rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+.gahelp-meta-row dt {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--mock-muted);
+  font-weight: 600;
+}
+.gahelp-meta-row dd {
+  margin: 0;
+  font-size: var(--gahelp-meta);
+  line-height: 1.45;
+  color: var(--mock-ink);
+  overflow-wrap: anywhere;
+}
+
+.gahelp-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0 0 0.2rem;
+  padding: 0;
+}
+.gahelp-badge {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-badge);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.35rem 0.6rem;
+  border: 1.5px solid currentColor;
+  line-height: 1;
+  font-weight: 600;
+}
+.gahelp-badge--good {
+  color: #2b6038;
+}
+.gahelp-badge--faith {
+  color: #6d5018;
+}
+.gahelp-badge--neutral {
+  color: var(--mock-muted);
+}
+.dark .gahelp-badge--good {
+  color: #9dc07a;
+}
+.dark .gahelp-badge--faith {
+  color: #d3b174;
+}
+
+/* The two kinds of honesty. Visually distinct on purpose: gray friction
+   you will probably still push through, amber for something you should
+   know before you walk in the door. */
+.gahelp-note {
+  margin: 0.9rem 0 0;
+  padding: 0.8rem 0.95rem;
+  font-size: var(--gahelp-meta);
+  line-height: 1.5;
+}
+.gahelp-note-label {
+  display: block;
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.gahelp-note--barrier {
+  background: color-mix(in srgb, var(--mock-line) 9%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--mock-line) 50%, transparent);
+  color: var(--mock-ink);
+}
+.gahelp-note--caution {
+  background: rgba(180, 130, 20, 0.12);
+  border-left: 3px solid #b48214;
+  color: var(--mock-ink);
+}
+.gahelp-note--caution .gahelp-note-label {
+  color: #7d5809;
+}
+.dark .gahelp-note--caution .gahelp-note-label {
+  color: #ddb35c;
+}
+
+/* ── Colophon + benediction ───────────────────────────────────────── */
+.gahelp-colophon {
+  margin: 0 0 3rem;
+  padding-top: 1.8rem;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  max-width: 46ch;
+}
+.gahelp-colophon .vw-body {
+  margin: 0 0 1.05rem;
+}
+.gahelp-disclaimer {
+  font-size: var(--gahelp-meta) !important;
+  color: var(--mock-muted) !important;
+}
+.gahelp-benediction {
+  margin: 0 0 3.2rem;
+  padding: 1.9rem 0 0;
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  text-align: center;
+}
+.gahelp-verse {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-size: var(--gahelp-lead);
+  line-height: 1.45;
+  margin: 0 auto 0.5rem;
+  max-width: 40ch;
+  color: var(--mock-ink);
+}
+.gahelp-verse-ref {
+  font-family: var(--font-industry), system-ui, sans-serif;
+  font-size: var(--gahelp-label);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--mock-blue-text);
+  margin: 0 0 1.3rem;
+}
+.gahelp-benediction-note {
+  font-size: var(--gahelp-meta);
+  line-height: 1.6;
+  color: var(--mock-muted);
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+/* ── Print ────────────────────────────────────────────────────────── */
+@media print {
+  .gahelp-hero,
+  .gahelp-actions,
+  .gahelp-back,
+  .gahelp-plate,
+  .gahelp-tile-arrow {
+    display: none !important;
+  }
+  .gahelp-emergency {
+    background: #fff !important;
+    color: #000 !important;
+    border: 3px solid #000;
+  }
+  .gahelp-emergency-kicker,
+  .gahelp-emergency-foot {
+    color: #000 !important;
+  }
+  .gahelp-emergency-btn {
+    border: 1px solid #000;
+    color: #000 !important;
+  }
+  .gahelp-card,
+  .gahelp-section {
+    break-inside: avoid;
+  }
+  .gahelp-call {
+    background: transparent !important;
+    color: #000 !important;
+    border: 1px solid #000;
+  }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .gahelp-tile,
+  .gahelp-emergency-btn,
+  .gahelp-call {
+    transition: none;
+  }
+  .gahelp-tile:hover,
+  .gahelp-emergency-btn:hover {
+    transform: none;
+  }
+}
+
+/* ── Homepage outreach band (links to /seeking-help-georgia) ───────
+   Low on the page and visually quiet by founder direction. It should
+   read as a door left open, not an alarm. */
+.homepage-outreach {
+  border-top: var(--mock-stroke) solid var(--mock-line);
+  padding: 1.6rem var(--mock-pad-x) 1.8rem;
+  max-width: var(--mock-frame-max);
+  margin: 0 auto;
+}
+.homepage-outreach-title {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: var(--mock-type-2);
+  line-height: 1.24;
+  margin: 0.5rem 0 0.6rem;
+  max-width: 34ch;
+  color: var(--mock-ink);
+}
+.homepage-outreach-copy {
+  font-size: var(--type-body-s);
+  line-height: 1.55;
+  color: var(--mock-muted);
+  max-width: 56ch;
+  margin: 0 0 0.9rem;
+}
+.homepage-outreach-link {
+  display: inline-block;
+  color: var(--mock-blue-text);
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 2px;
+}
+.homepage-outreach-link:hover,
+.homepage-outreach-link:focus-visible {
+  opacity: 0.75;
 }

@@ -1,51 +1,65 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import type { CSSProperties } from 'react'
 
 /**
- * The press impression (F-108).
+ * The press impression (F-108, rebuilt SA-124).
  *
  * Founder 2026-08-16: "Show euangelion first white on blue, then animate to
- * system setting background (or user set background mode) and to normal site
- * state… I like how the logo animates small on scroll as well." Then, of the
- * first attempt: "The open animation is needing much more attention. It was
- * half assed."
+ * system setting background… I like how the logo animates small on scroll."
+ * Founder 2026-08-24: "The homepage animation is not working at all the way it
+ * should. This is the intro animation I want [https://telhaclarke.com.au/].
+ * I need 2 versions - one for Darkmode, one for Light Mode. The Color of the
+ * euangelion needs to match the mode color. If Light Mode, Euangelion should be
+ * Blue, if Dark Mode it should be white."
  *
- * It was — a solid panel that faded a word in and slid away. That is a curtain,
- * and any site could wear it. This is the sequence a PRESS makes, which is the
- * one thing only this masthead can do:
+ * WHAT WAS WRONG: there was only ever ONE version. The sheet was cobalt and the
+ * wordmark was knocked out of it in BOTH themes, resolving to the mode's colour
+ * only in the final frame of the hand-off. In light mode you watched a cream
+ * word for the whole intro and it turned blue as it left.
  *
- *   1. INK      The sheet is solid cobalt and the wordmark is KNOCKED OUT of
- *               it — the letters are the paper showing through, not white type
- *               laid on top. That is how the real thing is printed.
- *   2. SET      The word arrives over-tracked and tightens to its final
- *               letter-spacing, the way type is set into a stick.
- *   3. REGISTER A crimson ghost of the wordmark sits a few pixels off and
- *               slides into alignment. Misregistration is this brand's actual
- *               signature — it is on every plate on the site — so the intro is
- *               made out of the identity rather than decorated with it.
- *   4. HAND OFF The ink lifts on a hard horizontal edge, and the wordmark does
- *               NOT fade: it flies to the exact position and size of the real
- *               masthead, measured at runtime, and hands over. The intro
- *               BECOMES the site instead of getting out of its way.
+ * THE REFERENCE, and what is taken from it (its sequence, our materials):
+ *   1. LETTER ROLL  Each letter sits in its own overflow mask with a duplicate
+ *                   stacked beneath. The top copy rolls up and out while the
+ *                   bottom copy rolls up into place, staggered letter by letter.
+ *                   Telha Clarke does this with GSAP over SVG paths at 2s /
+ *                   47.5ms stagger; this is CSS over real text at 720ms / 36ms,
+ *                   because the founder has already called this intro "a bit
+ *                   misstimed" once and the page underneath is the heaviest on
+ *                   the site.
+ *   2. CURTAIN      The ground leaves on a clip-path inset, not an opacity
+ *                   fade — the reference reveals its page by opening a clip
+ *                   curtain, and a hard edge is also how a squeegee comes off
+ *                   a sheet.
+ *   3. HAND OFF     Ours, kept: the wordmark flies to the exact position and
+ *                   size of the real masthead. It no longer needs to change
+ *                   colour on the way, because it was the mode's colour from
+ *                   the first frame — which is the founder's actual ask.
  *
- * SAFETY — unchanged from the first version and non-negotiable:
- * the overlay paints ON TOP of a fully rendered page, is `pointer-events: none`
- * and `aria-hidden` from the first frame, plays once per session on `/` only,
- * is skipped entirely under `prefers-reduced-motion`, and is torn down by a
- * hard timeout even if an animation never resolves. Nothing on the page is ever
- * hidden waiting for it.
+ * The crimson register ghost is gone. It was the old sequence's argument for
+ * itself (misregistration as identity), but it only ever read against a solid
+ * cobalt sheet; over paper, in light mode, a red word sitting behind a blue one
+ * is just a red word, and the founder asked for the reference's sequence.
+ *
+ * SAFETY — non-negotiable, unchanged: the overlay paints ON TOP of a fully
+ * rendered page, is `pointer-events: none` and `aria-hidden` from the first
+ * frame, plays once per session on `/` only, is skipped entirely under
+ * `prefers-reduced-motion` (the reference ships no reduced-motion handling at
+ * all; we do not copy that), and is torn down by a hard timeout even if an
+ * animation never resolves. Nothing on the page is ever hidden waiting for it.
  */
 
 const SEEN_KEY = 'euangelion:masthead-intro'
-/** Longest the curtain may ever remain, whatever else happens.
- *
- * The sequence finishes at ~2050ms: hand-off begins at 1050ms and the flight
- * runs 1000ms. 3200ms left roughly 1.15s of an inert, fully transparent overlay
- * sitting over a finished page — invisible, but it is the difference between an
- * intro that ends and one that lingers. Trimmed to just past the flight.
- * (Founder 2026-08-18: "The intro animation is a bit misstimed.") */
-const HARD_STOP_MS = 2250
+
+const WORD = 'EUANGELION'
+
+/** The roll runs 720ms with a 36ms stagger, so the last of ten letters lands at
+ * ~1044ms. The hand-off begins at 1080ms and the flight runs 900ms — the same
+ * 900ms beat the rest of the sequence is cut to — finishing at ~1980ms. */
+const HANDOFF_AT_MS = 1080
+/** Longest the curtain may ever remain, whatever else happens. */
+const HARD_STOP_MS = 2050
 
 interface Handoff {
   /** Translation from the intro wordmark's centre to the real one's. */
@@ -88,7 +102,7 @@ export default function MastheadIntro() {
 
     // Measure the real masthead and fly to it. If it cannot be found — a
     // layout change, a different shell — the wordmark simply lifts with the
-    // ink instead, which still reads as finished.
+    // ground instead, which still reads as finished.
     const toHandoff = window.setTimeout(() => {
       const real = document.querySelector<HTMLElement>('.js-shell-masthead-fit')
       const mine = wordRef.current
@@ -104,7 +118,7 @@ export default function MastheadIntro() {
         }
       }
       setPhase('handoff')
-    }, 1050)
+    }, HANDOFF_AT_MS)
 
     const done = window.setTimeout(() => setPhase('idle'), HARD_STOP_MS)
 
@@ -121,19 +135,23 @@ export default function MastheadIntro() {
 
   return (
     <div
-      className={`press ${phase === 'handoff' ? 'is-lifting' : ''}`}
+      className={[
+        'press',
+        phase === 'handoff' ? 'is-lifting' : '',
+        // No measured destination ⇒ the word has nowhere to BECOME, so CSS
+        // falls back to lifting it with the ground rather than parking it on
+        // the page in a position that means nothing.
+        phase === 'handoff' && handoff === null ? 'is-unmeasured' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
       aria-hidden="true"
     >
-      {/* The ink. A hard-edged field that retracts upward — a squeegee pulling
-          off the sheet, not a panel sliding away. */}
+      {/* The ground. Painted in the MODE's own colour — paper in light, the
+          deep blue in dark — and it leaves on a hard clip edge. */}
       <span className="press-ink" />
 
       <span className="press-stage">
-        {/* The crimson plate, offset and slightly late — the misregistration
-            this whole brand is printed with. */}
-        <span className="press-word press-word--slip" aria-hidden="true">
-          EUANGELION
-        </span>
         <span
           ref={wordRef}
           className="press-word press-word--key"
@@ -145,7 +163,22 @@ export default function MastheadIntro() {
               : undefined
           }
         >
-          EUANGELION
+          {WORD.split('').map((letter, i) => (
+            <span
+              // The word is fixed and never reorders, so the index IS the
+              // identity here — and it is also the stagger position.
+              key={`${letter}-${i}`}
+              className="press-letter"
+              style={{ '--i': i } as CSSProperties}
+            >
+              {/* Two stacked copies inside one mask: the top rolls up and out
+                  as the bottom rolls up into place. */}
+              <span className="press-letter-roll">
+                <span className="press-letter-face">{letter}</span>
+                <span className="press-letter-face">{letter}</span>
+              </span>
+            </span>
+          ))}
         </span>
       </span>
     </div>

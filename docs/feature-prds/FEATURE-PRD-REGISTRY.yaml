@@ -1503,3 +1503,9 @@ features:
     baseline_score: 0
     status: shipped
     prd: docs/feature-prds/F-168.md
+  - id: F-171
+    title: The intro opens in the reader's own mode
+    slug: intro-two-modes
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-171.md

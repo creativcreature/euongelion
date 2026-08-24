@@ -5,6 +5,34 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The intro opens in the reader's own mode (SA-127, F-171)
+
+**2026-08-24**
+
+Founder: _"The homepage animation is not working at all the way it should.
+This is the intro animation I want [telhaclarke.com.au]. I need 2 versions -
+one for Darkmode, one for Light Mode. The Color of the euangelion needs to
+match the mode color... I also want the subtle text rollover."_
+
+There was only ever ONE version. The sheet was cobalt in both themes with the
+wordmark knocked out of it, so a light-mode reader watched a cream word on
+blue for the entire intro and it turned blue only in the last frame as it flew
+away. Now the ground is the mode's own — paper in light, deep blue in dark —
+and the word is drawn in the mode's own masthead colour from the first frame,
+cobalt or cream. The hand-off is pure position and scale; the word needs no
+colour change because it already is what it is becoming.
+
+The sequence is the reference's, in our materials: each letter in a one-face
+mask with a duplicate stacked beneath, the top copy rolling out as the
+duplicate rolls in, staggered letter by letter; then the ground leaves on a
+hard clip edge rather than a fade. Built in CSS — GSAP, CustomEase and
+SplitText is a large dependency for one ten-letter wordmark.
+
+The rollover is their origin-flip wipe: a rule that enters from the left and
+leaves to the right, never rewinding, 0.7s on their own easing curve.
+
+SW pair v154. Test-first, nine contract tests; both modes verified frame by
+frame in real Chrome.
 ## The paper heals: comics every day, clues in hand — SA-114 (F-158)
 
 **2026-08-24**
