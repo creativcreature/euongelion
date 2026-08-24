@@ -170,4 +170,5 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-166 | Homepage          | The Word leads: daily verse, audit second, one action     | 0/10     | reverted | [F-166.md](./F-166.md) |
 | F-167 | Reading surfaces  | Volume + share, from Mobbin research; CSP media-src fix   | 0/10     | shipped  | [F-167.md](./F-167.md) |
 | F-168 | Homepage          | Mobile images survive one bad network moment              | 0/10     | shipped  | [F-168.md](./F-168.md) |
+| F-170 | Soul Audit        | Day 0 can be marked complete — weekend starters unblocked | 0/10     | shipped  | [F-170.md](./F-170.md) |
 | F-171 | Homepage          | The intro opens in the reader's own mode                  | 0/10     | shipped  | [F-171.md](./F-171.md) |

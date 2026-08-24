@@ -5,6 +5,45 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The onboarding day could never be marked complete — SA-126 (F-170)
+
+**2026-08-24**
+
+- **Reported by a real reader, not a test.** A week-one user pressed MARK DAY
+  COMPLETE on his first day and got a parameter contract back:
+  _"planId (string) and dayNumber (1-7) are required."_ printed under the
+  button in red.
+- **Root cause: day 0 is a real day, and the route did not think so.** A
+  Wed–Sun starter's plan is prepended with an immediately-unlocked day-0
+  primer ("Before You Begin", SOURCE-OF-TRUTH #22). It is persisted as a
+  `devotional_plan_days` row and the reader renders it with the same
+  completion control as any cycle day — but `/api/soul-audit/complete-day`
+  bounded `dayNumber` at 1–7 on both POST and DELETE, so that button could
+  only ever fail. Every weekend starter hit it.
+- **Confirmed in production before touching anything:** every day-0 row ever
+  written carries `completed_at = null`. Not one has ever been completed. The
+  column and the row were both fine; only the bound was wrong.
+- **The bound is now 0–7 on both verbs** — and the widened floor is guarded.
+  `Number(null)`, `Number('')` and `Number(false)` are all `0`, so accepting 0
+  would have quietly turned an _omitted_ day number into a valid day 0.
+  Presence is checked before coercion and the value must be a whole number:
+  this widened the floor by one, it did not open the field. Days 8, −1,
+  non-numeric and missing input are still 400; session (401) and
+  plan-ownership (403) checks are untouched.
+- **Day 0 now confirms as ONBOARDING COMPLETE**, matching the "Onboarding"
+  vocabulary the day chips already use. "DAY 0 COMPLETE" named an index the
+  reader never sees.
+- **Deliberately unchanged:** the `deepen` route's `dayNumber < 1` bound (day 0
+  renders through `OnboardingEditorial`, never the tiered path, so it never
+  reaches that route) and `/today`'s plan-completion accounting (counts
+  `day >= 1`, so finishing day 0 cannot falsely complete a plan).
+- **Verified in the Workers runtime, not from build output.** Against a
+  synthetic plan on `npm run preview`: day 0 POST → 200 and `completed_at`
+  actually written to the database; DELETE → 200 and cleared; day 1 still
+  200; missing/null/8/−1 → 400; no cookie → 401; wrong session → 403. Fixture
+  rows deleted afterwards, residue re-checked as empty.
+- 17 tests across two new files (`soul-audit-complete-onboarding-day`,
+  `daily-bread-onboarding-day-complete`); both were written failing first.
 ## The intro opens in the reader's own mode (SA-127, F-171)
 
 **2026-08-24**
