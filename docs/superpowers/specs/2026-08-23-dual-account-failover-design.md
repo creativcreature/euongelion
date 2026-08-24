@@ -191,10 +191,26 @@ requirement and it is met by construction, not by policing.
 
 `claude --1` cannot be a real CLI flag; the binary would reject it. A shell
 function named `claude` intercepts `--1` / `--2` as the first argument, sets
-`CLAUDE_CONFIG_DIR` accordingly, appends
-`--mcp-config ~/.claude-shared/mcp.json --strict-mcp-config`, and execs the
-real binary with the remaining arguments. Bare `claude` defaults to account
-#1. The requested ergonomics are preserved without patching anything.
+`CLAUDE_CONFIG_DIR`, and execs the real binary with the remaining arguments.
+Bare `claude` defaults to account #1.
+
+**Corrected 2026-08-24 during implementation.** An earlier draft passed the
+shared MCP list via `--mcp-config ... --strict-mcp-config`. That does not
+work: **when `CLAUDE_CONFIG_DIR` is set, `--mcp-config` is silently ignored**
+— no error, the servers simply do not load. Verified by holding everything
+else constant and setting `CLAUDE_CONFIG_DIR` to its own default value.
+
+The launcher therefore _projects_ the shared list into the target
+`.claude.json` before exec, via `~/.claude-shared/bin/seed-mcp.py`. The
+guarantee is unchanged: `~/.claude-shared/mcp.json` remains the single source
+of truth, the projection is one-directional, it skips the write when the
+target already matches, and it writes atomically. A server present in
+`.claude.json` but absent from the shared file is reported on stderr before
+being dropped — which is the one real silent-failure mode, since a future
+`claude mcp add` writes there and would otherwise vanish at next launch.
+
+`~/.claude/secrets.env` is also symlinked, so both accounts share the same
+environment values.
 
 ### SessionStart guard
 
@@ -246,17 +262,24 @@ token — so they are built together:
   neither corrupts the other's credentials.
 - **Existing suite** — 2097 tests, type-check and lint must stay clean.
 
-## Resolved by empirical check (2026-08-23)
+## Resolved by empirical check
 
-`CLAUDE_CONFIG_DIR` was exercised against a scratch directory:
+**2026-08-23 — config dir scoping.**
 
-- `.claude.json` is created **inside** the config dir, not at `$HOME`. The
-  symlink map in Part B is therefore correct as written.
-- `claude mcp list` under the alt config dir reported _"No MCP servers
-  configured"_ — it did not see the four servers in `~/.claude.json`. MCP
-  config is config-dir scoped, which both confirms isolation and confirms the
-  need for the shared `--mcp-config` file.
+- `.claude.json` is created **inside** the config dir, not at `$HOME`.
+- `claude mcp list` under an alt config dir did not see account #1's servers.
 - `$HOME/.claude.json` mtime was unchanged by the run: full isolation.
+
+**2026-08-24 — credential isolation (was open question 2).** Both accounts
+were logged in simultaneously and both identities survived:
+`~/.claude.json` → `chrisatmelt@gmail.com`, `~/.claude-2/.claude.json` →
+`wokegod3@gmail.com`. The Keychain namespaces itself by config dir — three
+entries now exist, suffixed by hash (`Claude Code-credentials`,
+`Claude Code-credentials-8f0068c4`, `Claude Code-credentials-9cdef2c1`).
+`CLAUDE_SECURESTORAGE_CONFIG_DIR` is **not** required and the file-based
+credential fallback is unnecessary.
+
+**2026-08-24 — `--mcp-config` incompatibility.** See the Launcher section.
 
 ## Open questions
 
@@ -264,12 +287,5 @@ token — so they are built together:
    how it differs from an expired token. To be captured empirically against a
    known-bad token during implementation of the probe — never guessed from a
    `strings` dump.
-2. Whether `CLAUDE_SECURESTORAGE_CONFIG_DIR` must be set explicitly, or
-   whether `CLAUDE_CONFIG_DIR` alone namespaces the Keychain entry. The
-   current entry is `svce="Claude Code-credentials"`, `acct="jamesparker"` —
-   neither obviously varies with the config dir. If the Keychain entry proves
-   shared between the two installs, force file-based credentials per config
-   dir as the fallback. This is the last feasibility risk in Part B and is
-   settled by the first task of that half.
-3. The enumeration of devo-go's tool surface (`references/workflow.md`) that
+2. The enumeration of devo-go's tool surface (`references/workflow.md`) that
    the tier-3 arm must reproduce. Required first task of the tier-3 work.
