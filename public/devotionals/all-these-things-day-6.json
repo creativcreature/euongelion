@@ -95,6 +95,13 @@
       ]
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/all-these-things/day6-tray.webp",
+      "inlineImageAlt": "A shallow compartmented wooden tray seen from directly above, holding a piece of wooden staff, a clay jar, a rough stone, torn woven cloth and a flat loaf.",
+      "inlineImageCaption": "The week reduced to five ordinary objects: a length of staff, a jar, a stone, a piece of torn cloth, and one day's bread.",
+      "inlineImageWidth": "bleed"
+    },
+    {
       "type": "pullquote",
       "content": "You seek. He adds. He already knows what you need — and the verse says so two lines before the part everybody quotes."
     },
@@ -124,6 +131,13 @@
       ]
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/all-these-things/day6-road.webp",
+      "inlineImageAlt": "A single robed figure seen from behind at the crest of a low rise at dusk, a worn track running back past him and on ahead into open country.",
+      "inlineImageCaption": "The road behind and the road ahead, from the same rise. Six days in, this is where the reader is standing.",
+      "inlineImageWidth": "wide"
+    },
+    {
       "type": "reflection",
       "prompt": "On Tuesday you were asked to write a list of everything you were anxious about, turn each item into a request, and keep the page. Go and get it. What has changed on that list, and what has not?",
       "additionalQuestions": [
@@ -146,6 +160,13 @@
         "A word for faith that means firmness",
         "One day, with the word sufficient attached to it"
       ]
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/all-these-things/day6-book.webp",
+      "inlineImageAlt": "A close view from low of one hand closing a heavy bound book on a plain wooden table, an oil lamp burning beside it.",
+      "inlineImageCaption": "Closing the book on the week — finished with for today rather than finished with.",
+      "inlineImageWidth": "narrow"
     },
     {
       "type": "video",

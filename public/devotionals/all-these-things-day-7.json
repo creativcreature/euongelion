@@ -36,6 +36,13 @@
       "prayerText": "Father, all things come of Thee. I am not going to ask for tomorrow's portion today. Amen."
     },
     {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/all-these-things/day7-bread.webp",
+      "inlineImageAlt": "A single flat loaf of bread on bare wooden boards, alone in a quiet, almost empty frame.",
+      "inlineImageCaption": "One day's portion, and nothing stored beside it. That was always the arrangement.",
+      "inlineImageWidth": "bleed"
+    },
+    {
       "type": "reflection",
       "prompt": "Stay for the ten minutes. Then, if you want a question: what would change this week if you genuinely believed the adding was not your job?",
       "invitationType": "quiet"
@@ -53,6 +60,20 @@
       "videoTitle": "SABBATH: Learn Why the Number 7 Is Used So Much in the Bible",
       "videoCaption": "If you want one thing to watch on a day with nothing else in it — on rest, and why Scripture keeps counting to seven.",
       "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/all-these-things/day7-hillside.webp",
+      "inlineImageAlt": "A broad quiet hillside at dusk seen from above, one robed figure sitting still on the slope with his back to the viewer, hands empty.",
+      "inlineImageCaption": "Ten minutes of sitting still, wanting something you have not been given, without leaving. That is the whole practice.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/all-these-things/day7-lamp.webp",
+      "inlineImageAlt": "The corner of a plain room at day's end: an unlit clay lamp on a low ledge, a made-up sleeping mat beneath it, and one small window of last daylight.",
+      "inlineImageCaption": "The lamp left unlit and the bed made. The day is being let go rather than extended.",
+      "inlineImageWidth": "narrow"
     },
     {
       "type": "resource",

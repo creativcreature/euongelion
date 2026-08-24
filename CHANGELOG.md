@@ -60,6 +60,12 @@ Format: Reverse chronological, grouped by sprint/date.
   sun going down (v12). A negative constraint had silently deleted a
   load-bearing textual fact; every exclusion is now checked against the passage
   before generating.
+- **Service-worker cache bump (v151 → v152).** The corrected plate was live on
+  the origin and byte-verified, but `/images/` is served cache-first by the
+  service worker and `CACHE_NAME` had not been bumped in the correction commit —
+  so returning readers kept the old image. Hash-matching the origin proves the
+  file is right; it says nothing about what a reader is shown.
+- Day plates shipped for all seven days, three each.
 - **devo-go updated across the board (SA-124).** Textual accuracy now precedes
   composition: build the subject line from the verse clause by clause, and audit
   every negative constraint against the passage before generating. And camera is
