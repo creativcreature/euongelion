@@ -89,7 +89,7 @@
 // mismatched stored version it unregisters + clears caches before
 // re-registering, so users on the old build pick up the new one without a
 // manual hard-refresh.
-const CACHE_NAME = 'euangelion-v150'
+const CACHE_NAME = 'euangelion-v151'
 
 /**
  * Downloaded readings. SA-101.
@@ -368,7 +368,10 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
-  // Images: cache-first
+  // Images: cache-first. On a failed fetch, retry once before giving up,
+  // and give up with a REAL network error — never a fabricated empty 404,
+  // which an installed PWA's long-lived page keeps painting as a broken
+  // image for days after one bad network moment (SA-123).
   if (
     url.pathname.startsWith('/images/') ||
     url.pathname.match(/\.(png|jpg|jpeg|webp|svg)$/)
@@ -376,15 +379,17 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached
-        return fetch(request)
-          .then((response) => {
+        const attempt = () =>
+          fetch(request).then((response) => {
             if (response.ok) {
               const clone = response.clone()
               caches.open(CACHE_NAME).then((cache) => cache.put(request, clone))
             }
             return response
           })
-          .catch(() => new Response('', { status: 404 }))
+        return attempt()
+          .catch(() => attempt())
+          .catch(() => Response.error())
       }),
     )
     return

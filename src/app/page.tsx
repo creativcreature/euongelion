@@ -533,6 +533,7 @@ export default function Home() {
               src={HOMEPAGE_TODAY.featuredArt}
               alt={`Illustration accompanying ${HOMEPAGE_TODAY.title}`}
               fill
+              priority
               sizes="(max-width: 900px) 100vw, 66vw"
             />
           </div>

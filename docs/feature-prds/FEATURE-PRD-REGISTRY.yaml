@@ -1497,3 +1497,9 @@ features:
     prd: docs/feature-prds/F-167.md
     methodology_refs:
       - M00
+  - id: F-168
+    title: Mobile images survive one bad network moment
+    slug: mobile-image-reliability
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-168.md
