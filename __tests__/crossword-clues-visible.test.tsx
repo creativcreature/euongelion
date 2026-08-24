@@ -74,16 +74,21 @@ describe('the crossword clue panel (the blank-area fix)', () => {
     expect(container.querySelector('details')).toBeNull()
   })
 
-  it('the mobile toggle drives a class, not unmounting: clues stay in the DOM either way', async () => {
+  it('clues print OPEN by default — a paper prints its clues (founder, 2026-08-21: mobile showed a bare grid)', async () => {
     const user = userEvent.setup()
     const { container } = render(<CrosswordClient puzzle={puzzle} />)
-    const toggle = screen.getByRole('button', { name: /all clues/i })
-    expect(toggle.getAttribute('aria-expanded')).toBe('false')
-    const panel = container.querySelector('.puzzle-cw-cluelists')
-    expect(panel?.className).toContain('puzzle-cw-cluelists--closed')
-    await user.click(toggle)
+    const toggle = screen.getByRole('button', { name: /hide clues/i })
     expect(toggle.getAttribute('aria-expanded')).toBe('true')
+    const panel = container.querySelector('.puzzle-cw-cluelists')
     expect(panel?.className).not.toContain('puzzle-cw-cluelists--closed')
+    // the toggle collapses them class-driven, not unmounting
+    await user.click(toggle)
+    expect(
+      screen
+        .getByRole('button', { name: /all clues/i })
+        .getAttribute('aria-expanded'),
+    ).toBe('false')
+    expect(panel?.className).toContain('puzzle-cw-cluelists--closed')
     // clue text never left the DOM
     expect(screen.getByText('A small lion of the house')).toBeTruthy()
   })

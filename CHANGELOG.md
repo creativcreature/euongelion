@@ -5,6 +5,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The paper heals: comics every day, clues in hand — SA-114 (F-158)
+
+**2026-08-24**
+
+Founder: _"the comics don't seem to load daily. Literally comics dont
+show... Crossword doesnt show properly on mobile - cant see the clues.
+Check mobile version of daily bread site for consistency."_
+
+- **Why the comics stopped**: the weekly Wednesday build ran Aug 19 while
+  the strip machine was still PAUSED (the voice ruling), so it drew
+  nothing; the hand-drawn strips covered only Aug 20–22, and the next
+  weekly run would start from Aug 27 — leaving Aug 23–26 stripless
+  forever. Worse, `generate-strip.mjs` was committed with a split
+  template literal (SyntaxError), so even Wednesday's run would have
+  crashed. Script fixed; the four missing strips drawn and installed.
+- **daily-gapfill.yml** — the dailiness backstop: every morning at 08:00
+  UTC (before the 7am flip) CI checks today + two days ahead for a
+  missing strip, lead plate, or guide set and generates only what is
+  missing. All three generators are idempotent, so overlap with the
+  weekly build is harmless.
+- **Crossword mobile**: clue lists now print OPEN by default — a paper
+  prints its clues; the founder hit a bare grid. The toggle collapses
+  ("Hide clues"), never hides them from a fresh reader. Test re-pinned.
+- **Word search mobile**: under 420px the 34px cell floor clipped two
+  columns behind an inner scroll with no affordance — cells now go
+  fluid, matching the crossword; the circle overlay is cell-unit-scaled
+  and follows. Guard test added.
+
+---
+
+## Seeking Help — Georgia: the hero is a generated plate now
 ## Mobile images survive one bad network moment (SA-123, F-168)
 
 **2026-08-24**

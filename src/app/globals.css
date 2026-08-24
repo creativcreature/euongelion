@@ -16367,6 +16367,18 @@ html.dark .edition-quote-text--red {
   -webkit-user-select: none;
 }
 
+/* Phones: the 34px floor would clip two columns behind an inner scroll
+   with no affordance (founder mobile pass, 2026-08-21). Below 420px the
+   cells go fluid — same treatment the crossword grid already gets — and
+   the circle overlay scales with them (cell-unit viewBox). */
+@media (max-width: 419px) {
+  .puzzle-ws-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+    min-width: 0;
+  }
+}
+
 .puzzle-ws-cell {
   position: relative;
   min-width: 0;
