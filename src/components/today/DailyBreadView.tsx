@@ -1329,8 +1329,13 @@ export default function DailyBreadView({
               className="border-t pt-6 text-center"
               style={{ borderColor: 'var(--color-border)' }}
             >
+              {/* The onboarding day is "Onboarding" everywhere else in this
+                  reader (day chips, aria labels) — "DAY 0 COMPLETE" is a
+                  phrase the reader has no referent for. */}
               <p className="text-label vw-small text-gold">
-                DAY {selectedDay} COMPLETE
+                {selectedDay === 0
+                  ? 'ONBOARDING COMPLETE'
+                  : `DAY ${selectedDay} COMPLETE`}
               </p>
               {/* Quiet, not a competing CTA — undo should be findable without
                   arguing with CONTINUE. */}

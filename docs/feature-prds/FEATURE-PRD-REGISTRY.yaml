@@ -1513,3 +1513,11 @@ features:
     prd: docs/feature-prds/F-169.md
     methodology_refs:
       - M00
+  - id: F-170
+    title: The onboarding day can be completed
+    slug: onboarding-day-complete
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-170.md
+    methodology_refs:
+      - M00

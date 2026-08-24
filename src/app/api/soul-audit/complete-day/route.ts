@@ -10,6 +10,38 @@ interface CompleteBody {
   dayNumber: number
 }
 
+/**
+ * The inclusive bounds of a plan day.
+ *
+ * The floor is 0, not 1. A Wed-Sun starter's plan is prepended with a real,
+ * immediately-unlocked day-0 primer ("Before You Begin") — persisted as a
+ * `devotional_plan_days` row and rendered by the reader with the same MARK DAY
+ * COMPLETE button as any cycle day. Bounding at 1 meant that button could only
+ * ever fail, so every weekend starter was locked out of recording the one day
+ * they were able to read.
+ */
+const MIN_PLAN_DAY = 0
+const MAX_PLAN_DAY = 7
+
+/**
+ * Parse a day number from untrusted input, or null if it is not one.
+ *
+ * Widening the floor to 0 makes the coercion itself load-bearing: `Number(null)`,
+ * `Number('')` and `Number(false)` are all 0, so a request that omits the field
+ * would otherwise read as a valid day 0 rather than as junk. Presence is checked
+ * before coercion, and the value must be a whole number — 0-7 means the eight
+ * days themselves, not anything that rounds into them.
+ */
+function parsePlanDayNumber(raw: unknown): number | null {
+  if (raw === null || raw === undefined) return null
+  if (typeof raw !== 'number' && typeof raw !== 'string') return null
+  if (typeof raw === 'string' && raw.trim() === '') return null
+  const dayNumber = Number(raw)
+  if (!Number.isInteger(dayNumber)) return null
+  if (dayNumber < MIN_PLAN_DAY || dayNumber > MAX_PLAN_DAY) return null
+  return dayNumber
+}
+
 export async function POST(request: NextRequest) {
   const requestId = createRequestId()
   // ─── Session check ────────────────────────────────────────────────
@@ -45,16 +77,11 @@ export async function POST(request: NextRequest) {
   }
 
   const planId = String(body.planId || '').trim()
-  const dayNumber = Number(body.dayNumber)
+  const dayNumber = parsePlanDayNumber(body.dayNumber)
 
-  if (
-    !planId ||
-    !Number.isFinite(dayNumber) ||
-    dayNumber < 1 ||
-    dayNumber > 7
-  ) {
+  if (!planId || dayNumber === null) {
     return jsonError({
-      error: 'planId (string) and dayNumber (1-7) are required.',
+      error: 'planId (string) and dayNumber (0-7) are required.',
       status: 400,
       requestId,
       code: 'INVALID_FIELDS',
@@ -136,7 +163,7 @@ export async function POST(request: NextRequest) {
  * carries the day's generated content. Absence of a timestamp is exactly how
  * every reader of this table already spells "not finished".
  *
- * Same session check, same plan-ownership verification and same 1-7 bound as
+ * Same session check, same plan-ownership verification and same 0-7 bound as
  * POST. An undo is a write, and removing rather than adding does not make it
  * cheaper to abuse.
  */
@@ -150,16 +177,11 @@ export async function DELETE(request: NextRequest) {
 
   const url = new URL(request.url)
   const planId = String(url.searchParams.get('planId') || '').trim()
-  const dayNumber = Number(url.searchParams.get('dayNumber'))
+  const dayNumber = parsePlanDayNumber(url.searchParams.get('dayNumber'))
 
-  if (
-    !planId ||
-    !Number.isFinite(dayNumber) ||
-    dayNumber < 1 ||
-    dayNumber > 7
-  ) {
+  if (!planId || dayNumber === null) {
     return jsonError({
-      error: 'planId (string) and dayNumber (1-7) are required.',
+      error: 'planId (string) and dayNumber (0-7) are required.',
       status: 400,
       requestId,
       code: 'INVALID_FIELDS',
