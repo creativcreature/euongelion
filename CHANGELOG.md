@@ -16,6 +16,11 @@ Format: Reverse chronological, grouped by sprint/date.
 - A pre-flight probe picks the first tier with headroom before any expensive
   work starts, so a capped tier costs one cheap call rather than a dead
   25-minute run.
+- The weekly series run is now checkpointed: thematic, compose and assemble
+  record completion under `.devo-run/`, so a quota death mid-run resumes on
+  the next tier rather than starting over. Narration and imagery happen
+  inside the single devo-go call, so `compose` is the finest seam available
+  without restructuring the skill itself — recorded rather than hidden.
 - The classifier distinguishes an exhausted subscription from an invalid or
   expired token. Exhaustion advances the ladder; a bad credential alerts
   loudly, because it needs a human rather than the next tier. Anything

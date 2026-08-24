@@ -9,6 +9,25 @@ STAMP="$(date -u +%Y-%m-%d)"
 BRANCH="series/auto-$STAMP"
 THEMATIC_FILE="/tmp/thematic-$STAMP.md"
 
+# ── Tier ladder + checkpointing (quota failover, 2026-08-24) ─────────────
+# Picks the first credential tier with headroom BEFORE any expensive work,
+# and records stage completion so a quota death mid-run resumes on the next
+# tier instead of starting over. See
+# docs/superpowers/specs/2026-08-23-dual-account-failover-design.md
+_DEVO_LIB="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$_DEVO_LIB/lib/stages.sh"
+. "$_DEVO_LIB/../lib/claude-tier.sh"
+RUN_DIR="${RUN_DIR:-.devo-run/$STAMP}"
+mkdir -p "$RUN_DIR"
+select_tier || { echo "[fatal] no usable credential tier"; exit 78; }
+
+# Resume shortcut: a completed thematic is restored rather than re-derived.
+if stage_done "$RUN_DIR" thematic && [ -s "$RUN_DIR/thematic.md" ]; then
+  echo "[stage] skip thematic (resuming)"
+  cp "$RUN_DIR/thematic.md" "$THEMATIC_FILE"
+fi
+
+
 # ── 1. Thematic: founder override (committed to the repo from any device),
 #      or derived from research + last week's thread ──────────────────────
 # The EASY override: the box on /admin/edition writes to Supabase Storage
@@ -19,6 +38,7 @@ STORAGE_URL="$NEXT_PUBLIC_SUPABASE_URL/storage/v1/object/pipeline/next-series-th
 STORAGE_BODY="$(curl -s -f -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" "$STORAGE_URL" || true)"
 OVERRIDE_BODY="$(sed '/^<!--/,/^-->/d' content/next-series-thematic.md | sed '/^[[:space:]]*$/d' || true)"
 
+if [ ! -s "$THEMATIC_FILE" ]; then
 if [ -n "$STORAGE_BODY" ]; then
   echo "[thematic] founder override present (admin box)"
   printf '%s\n' "$STORAGE_BODY" > "$THEMATIC_FILE"
@@ -34,8 +54,11 @@ else
   claude -p "Derive next week's devotional series thematic. METHOD: (1) Use WebSearch to survey what people are actually wrestling with in faith, church culture and spiritual life over roughly the last 30 days — communities, commentary, conversation; 4-6 searches, look for the human condition under the noise, not the news itself. (2) Read docs/run/ for the most recent SERIES-THEMATIC-*.md files and the newest entries in src/data/series.ts to know what LAST week's series was about. (3) Choose ONE thematic that is topical per the research AND continues last week's underlying human thread WITHOUT referencing it (series stand alone). Scripture-anchorable, pastoral not newsy — the news is the doorway, never the content. (4) Write to $THEMATIC_FILE exactly: the thematic in one sentence, a scripture spine candidate, the human condition it speaks to, and 3 sentences of rationale citing what the research surfaced. Write NOTHING else anywhere." \
     --allowedTools "WebSearch,WebFetch,Read,Write,Grep,Glob" --permission-mode acceptEdits
 fi
+fi
 
 [ -s "$THEMATIC_FILE" ] || { echo "[fatal] no thematic produced"; exit 1; }
+mark_stage "$RUN_DIR" thematic
+cp "$THEMATIC_FILE" "$RUN_DIR/thematic.md"
 echo "── thematic ──"; cat "$THEMATIC_FILE"; echo "──────────────"
 
 if [ "${RUN_MODE:-full}" = "thematic-only" ]; then
@@ -44,7 +67,8 @@ if [ "${RUN_MODE:-full}" = "thematic-only" ]; then
 fi
 
 # ── 2. The build: full devo-go on a branch, PR as the reading gate ───────
-git checkout -b "$BRANCH"
+# Resuming after a tier switch: the branch already exists.
+git checkout -b "$BRANCH" 2>/dev/null || git checkout "$BRANCH"
 mkdir -p docs/run
 cp "$THEMATIC_FILE" "docs/run/SERIES-THEMATIC-$STAMP.md"
 # Reset the override file so next week starts clean (no-op when unused).
@@ -65,6 +89,9 @@ if [ "${AUTO_PUBLISH:-}" = "true" ]; then
   AUTOPUB_NOTE="The founder's AUTO_PUBLISH repo variable is set: after the reading-gate artifact, continue through devo-go's remaining phases INCLUDING merge to main. Do not push to main directly — merge the branch via 'gh pr merge --merge --admin' after opening the PR."
 fi
 
+if stage_done "$RUN_DIR" compose; then
+  echo "[stage] skip compose (already complete, resuming on tier ${CLAUDE_TIER:-?})"
+else
 claude -p "Invoke the devo-go skill and execute it for next week's series, CLOUD CONSTRAINTS EDITION. THE THEMATIC is in $THEMATIC_FILE — read it first. THE FOUNDER'S STANDING ANSWERS to devo-go's Required Inputs are in scripts/devo-weekly/STANDING-BRIEF.md — read them; this run is unattended and those answers govern; never use AskUserQuestion. You are ALREADY on branch $BRANCH.
 
 CLOUD CONSTRAINTS (these adapt the skill, they do not relax it):
@@ -80,6 +107,8 @@ FINISH by: (1) writing the reading-gate artifact the skill prescribes, (2) pushi
 # SA-114 (F-158): plumbing-layer guarantee, independent of what the model
 # did above — the reading-gate PR must exist and must carry the label.
 # --state all because AUTO_PUBLISH runs merge the PR before we get here.
+  mark_stage "$RUN_DIR" compose
+fi
 PR_NUMBER="$(gh pr list --head "$BRANCH" --state all --json number --jq '.[0].number // empty' || true)"
 if [ -z "$PR_NUMBER" ]; then
   echo "[fatal] no PR found for head branch $BRANCH — the reading gate never opened"
@@ -88,3 +117,4 @@ fi
 gh pr edit "$PR_NUMBER" --add-label "reading gate"
 
 echo "[done] branch $BRANCH pushed; reading-gate PR #$PR_NUMBER opened and labeled"
+mark_stage "$RUN_DIR" assemble
