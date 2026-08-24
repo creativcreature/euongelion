@@ -322,6 +322,92 @@ export async function scoreLlmVoice(
   }
 }
 
+// ─── Tier-3 voice parity (quota failover) ────────────────────────────────────
+
+/**
+ * Committed series used as the voice reference for tier-3 output. These are
+ * canonical subscription-path builds, referenced in place rather than copied,
+ * so the exemplars follow the house voice as it evolves.
+ */
+export const EXEMPLAR_SERIES = [
+  'content/series-json/in-the-beginning-week-1.json',
+  'content/series-json/the-work-of-god.json',
+  'content/series-json/surrender-to-gods-will.json',
+]
+
+/**
+ * Judge prompt for voice parity. Deliberately scoped to voice, cadence and
+ * pastoral register ONLY — factual accuracy is already owned by the 12-word
+ * contiguous BSB verbatim gate, and asking one judge to do both produces
+ * muddy verdicts.
+ */
+export function buildVoiceParityPrompt(
+  candidate: string,
+  exemplars: string[],
+): string {
+  return [
+    'You are judging VOICE ONLY: cadence, register, and pastoral tone.',
+    'Do not comment on theology, scripture selection, or subject matter.',
+    '',
+    'These are the reference devotionals. Learn their voice:',
+    ...exemplars.map((e, i) => `--- EXEMPLAR ${i + 1} ---\n${e}`),
+    '',
+    '--- CANDIDATE ---',
+    candidate,
+    '',
+    'Does the candidate read as the same writer as the exemplars?',
+    'Reply PASS or FAIL, then one sentence of evidence.',
+  ].join('\n')
+}
+
+/**
+ * Score a tier-3 composition against committed exemplars.
+ * Returns null when the rubric flag or API key is absent, preserving the
+ * CI-safe skip contract used by scoreLlmVoice.
+ */
+export async function scoreVoiceParity(
+  candidate: string,
+  exemplars: string[],
+): Promise<DimensionResult | null> {
+  const flagSet = process.env.RUN_SOULAUDIT_LLM_RUBRIC === '1'
+  const apiKey = process.env.ANTHROPIC_API_KEY
+  if (!flagSet || !apiKey || apiKey.trim().length === 0) return null
+
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: process.env.TIER3_JUDGE_MODEL ?? 'claude-sonnet-5',
+      max_tokens: 300,
+      messages: [
+        { role: 'user', content: buildVoiceParityPrompt(candidate, exemplars) },
+      ],
+    }),
+  })
+
+  if (!res.ok) {
+    return {
+      pass: false,
+      detail: `voice-parity judge failed: ${res.status} ${res.statusText}`,
+    }
+  }
+
+  const data = (await res.json()) as {
+    content?: Array<{ type: string; text?: string }>
+  }
+  const verdict = (data.content ?? [])
+    .filter((b) => b.type === 'text')
+    .map((b) => b.text ?? '')
+    .join('')
+    .trim()
+
+  return { pass: verdict.toUpperCase().startsWith('PASS'), detail: verdict }
+}
+
 // ─── Main scorer ──────────────────────────────────────────────────────────────
 
 /**

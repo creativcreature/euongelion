@@ -2,7 +2,11 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { JSDOM } from 'jsdom'
 import { describe, expect, it } from 'vitest'
-import { HERO_ROTATION, heroDrawScript } from '@/lib/home/hero-rotation'
+import {
+  HERO_ROTATION,
+  heroDrawScript,
+  heroVariant,
+} from '@/lib/home/hero-rotation'
 
 /**
  * SA-113 hero rotation — hydration-survival contract.
@@ -41,17 +45,41 @@ describe('hero rotation contract (SA-113)', () => {
     })
     dom.window.eval(heroDrawScript(HERO_ROTATION))
 
-    const drawn =
-      dom.window.document.documentElement.style.getPropertyValue('--hero-rot')
+    const style = dom.window.document.documentElement.style
+    const drawn = style.getPropertyValue('--hero-rot')
     const match = HERO_ROTATION.filter((src) => drawn.includes(src))
     expect(match).toHaveLength(1)
+    const plate = match[0]
+
+    // All three widths are published for the SAME plate. A CSS background
+    // cannot pick by viewport on its own, so globals.css switches between
+    // these at 600/1100px; publishing different plates per width would let a
+    // reader see the banner change image as they resize.
+    expect(style.getPropertyValue('--hero-rot-sm')).toBe(
+      `url(${heroVariant(plate, 960)})`,
+    )
+    expect(style.getPropertyValue('--hero-rot-md')).toBe(
+      `url(${heroVariant(plate, 1600)})`,
+    )
+    expect(drawn).toBe(`url(${plate})`)
 
     const preload = dom.window.document.head.querySelector(
       'link[rel="preload"][as="image"]',
     )
     expect(preload).not.toBeNull()
-    expect(preload?.getAttribute('href')).toBe(match[0])
     expect(preload?.getAttribute('fetchpriority')).toBe('high')
+
+    // THE PRELOAD MUST MATCH WHAT CSS WILL PAINT. Preloading a width the page
+    // never renders is worse than preloading nothing: it spends the LCP budget
+    // on a file that is then fetched again at the right size.
+    const w = dom.window.innerWidth
+    const expected =
+      w >= 1100
+        ? heroVariant(plate, 2400)
+        : w >= 600
+          ? heroVariant(plate, 1600)
+          : heroVariant(plate, 960)
+    expect(preload?.getAttribute('href')).toBe(expected)
   })
 
   it('the drawn plate survives a React client re-render of the banner', () => {
