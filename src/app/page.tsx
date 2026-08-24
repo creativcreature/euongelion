@@ -34,28 +34,28 @@ import { isScrollLocked } from '@/lib/use-scroll-lock'
 // replaces the-harvest, which rotates back into the six FEATURED_SERIES
 // cards below it.
 const HOMEPAGE_TODAY = {
-  series: 'rekindled',
-  daySlug: 'rekindled-day-1',
-  dayTitle: 'Look What Sits in This Word',
-  kicker: 'FEATURED SERIES · 7 DAYS · 2 TIMOTHY 1:6',
-  title: 'Rekindled',
+  series: 'all-these-things',
+  daySlug: 'all-these-things-day-1',
+  dayTitle: 'Seek Ye First',
+  kicker: 'FEATURED SERIES · 7 DAYS · MATTHEW 6:33',
+  title: 'All These Things',
   // Series-level scripture anchor (the framework verse).
-  scripture: '2 Timothy 1:6 · Genesis 15:17 · Leviticus 6:13',
+  scripture: 'Matthew 6:25-34 · Philippians 4:4-7 · Habakkuk 2:4',
   // Surfaces the series QUESTION (what the reader actually carries),
   // then one beat of the introduction. Series-level copy, not Day 1's.
   // Founder 2026-08-16: "the text on the right should not have soo much —
   // 10-14 words max." A featured slot is a headline and a line, not a
   // paragraph; the full introduction is one tap away on the series page.
-  teaser: 'The fire was lit before you got here. Seven days on keeping it.',
+  teaser: 'You seek. He adds. Seven days on the half that was never yours.',
   // Homepage hero banner (full-bleed at top of page). SA-113
   // (2026-08-20) supersedes R38: the banner now ROTATES per page load
   // across seven gospel plates (HERO_ROTATION below). heroSrc stays
   // pointed at the tomb — it is the JS-off/noscript fallback plate.
   heroSrc: '/images/site/homepage/hero/header-v2.webp',
-  // Featured-card art: the rekindled day-3 lamp handoff (3:2 landscape to
-  // match the container's landscape aspect; the 1:1 series card
-  // would crop badly under object-fit: cover).
-  featuredArt: '/images/series/rekindled/day3-end.webp',
+  // Featured-card art: the all-these-things series master, which is already a
+  // 3:2 landscape crop and so matches the container's landscape aspect (the
+  // 1:1 series card would crop badly under object-fit: cover).
+  featuredArt: '/images/site/series/all-these-things.webp',
 }
 
 const HOW_STEPS = [

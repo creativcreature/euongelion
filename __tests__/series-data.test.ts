@@ -8,7 +8,7 @@ import {
 } from '@/data/series'
 
 describe('Series Data', () => {
-  it('has 35 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
+  it('has 36 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
     // 1 Bible-365 + 7 Wake-Up + 18 Substack + 11 new = 37
     // (prayer-of-jabez 2026-07-12 SA-029/F-081; the-harvest 2026-07-26 SA-031/F-082;
     //  he-cannot-deny-himself 2026-08-10 SA-034/F-085;

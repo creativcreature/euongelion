@@ -1159,6 +1159,63 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     ],
   },
 
+  'all-these-things': {
+    title: 'All These Things',
+    heroImage: '/images/site/series/all-these-things.webp',
+    question:
+      'What do you do in the stretch after you have sought first, and nothing has arrived yet?',
+    introduction:
+      'Two passages that get quoted at frightened people, read slowly enough to find out what they actually say. The command in Matthew 6:33 is continuous and plural. The promise attached to it is in the passive voice, which means the supplying was never your job. And the Hebrew word for the faith you are asked to live by turns out to mean firmness — its plainest use in Scripture describes a pair of tired arms held up by two other men until sunset.',
+    context:
+      'For anyone lying awake running numbers they cannot change tonight. This week does not promise that the thing you are waiting for is coming, and it does not explain the silence. It names once, and plainly, how these verses have been used to shame people for being afraid — then spends five days on what they are really doing. It ends on a garrison rather than a rescue.',
+    framework:
+      'Matthew 6:25-34 and Philippians 4:4-7 - but seek ye first the kingdom of God',
+    pathway: 'Awake',
+    keywords: [
+      'anxiety',
+      'worry',
+      'money',
+      'provision',
+      'fear of the future',
+      'unanswered prayer',
+      "God's silence",
+      'doubt',
+      'trust',
+      'peace',
+      'cannot sleep',
+      'scarcity',
+      'control',
+      'waiting',
+      'burnout',
+      'priorities',
+      'seek first',
+    ],
+    days: [
+      { day: 1, title: 'Seek Ye First', slug: 'all-these-things-day-1' },
+      {
+        day: 2,
+        title: 'The Word That Means Pulled Apart',
+        slug: 'all-these-things-day-2',
+      },
+      { day: 3, title: 'When He Says Nothing', slug: 'all-these-things-day-3' },
+      {
+        day: 4,
+        title: 'A Rock You Do Not Need An Appointment To Reach',
+        slug: 'all-these-things-day-4',
+      },
+      {
+        day: 5,
+        title: 'All Things Come Of Thee',
+        slug: 'all-these-things-day-5',
+      },
+      {
+        day: 6,
+        title: 'Sufficient Unto The Day',
+        slug: 'all-these-things-day-6',
+      },
+      { day: 7, title: 'Enough For Today', slug: 'all-these-things-day-7' },
+    ],
+  },
   rekindled: {
     title: 'Rekindled',
     heroImage: '/images/site/series/rekindled.webp',
@@ -1323,6 +1380,7 @@ export const NEW_SERIES_ORDER = [
   'he-cannot-deny-himself',
   'looking-at-the-sun',
   'rekindled',
+  'all-these-things',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.
@@ -1367,14 +1425,14 @@ export const DEVOTIONAL_SERIES = WAKEUP_SERIES_ORDER.map((slug, i) => ({
 // the MOST RECENT series takes the main feature slot; too-busy-for-god
 // rotated out. Supersedes the 2026-05-08 Bible-365-first direction.
 export const FEATURED_SERIES = [
+  'rekindled',
   'the-harvest',
   'bible-365',
   'prayer-of-jabez',
   'identity',
   'why-jesus',
-  'hope',
 ] as const
-// SA-072 (2026-08-17): `rekindled` is the most recent series and
+// SA-123 (2026-08-24): `all-these-things` is now the most recent series and
 // therefore holds the homepage MAIN feature slot via HOMEPAGE_TODAY in
 // src/app/page.tsx — the six cards above complete the seven the featured-area
 // policy calls for (SA-031(1)). Do not add it here as well or the homepage

@@ -377,6 +377,788 @@
     "mix": "scored-stereo-v1",
     "sha": "15188ae46b"
   },
+  "all-these-things-day-1": {
+    "src": "/audio/all-these-things-day-1.m4a",
+    "duration": 1178.7,
+    "words": 3283,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 9706221,
+    "textHash": "1768f6e3d127",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 20.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 54.3,
+        "label": "There Is An Order In The Sentence",
+        "module": 3
+      },
+      {
+        "t": 123.7,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 130.9,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 142.2,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 178.6,
+        "label": "What \"All These Things\" Actually Means",
+        "module": 8
+      },
+      {
+        "t": 278.4,
+        "label": "The Argument From The Greater",
+        "module": 9
+      },
+      {
+        "t": 330.1,
+        "label": "Word study",
+        "module": 10
+      },
+      {
+        "t": 371.0,
+        "label": "Scripture",
+        "module": 12
+      },
+      {
+        "t": 416.8,
+        "label": "The King Who Was Offered Anything",
+        "module": 13
+      },
+      {
+        "t": 530.1,
+        "label": "Where This Week Sits in the Story",
+        "module": 15
+      },
+      {
+        "t": 597.3,
+        "label": "Scripture",
+        "module": 16
+      },
+      {
+        "t": 623.3,
+        "label": "And Then He Names Solomon",
+        "module": 17
+      },
+      {
+        "t": 728.3,
+        "label": "The Man Who Turned Down Both Offers",
+        "module": 18
+      },
+      {
+        "t": 842.8,
+        "label": "What Edwards Left In",
+        "module": 19
+      },
+      {
+        "t": 910.1,
+        "label": "Reflect",
+        "module": 20
+      },
+      {
+        "t": 920.5,
+        "label": "A Practice for Today",
+        "module": 21
+      },
+      {
+        "t": 933.8,
+        "label": "Starting Where You Are",
+        "module": 22
+      },
+      {
+        "t": 1058.4,
+        "label": "Prayer",
+        "module": 23
+      },
+      {
+        "t": 1092.9,
+        "label": "Today's Commitment",
+        "module": 24
+      },
+      {
+        "t": 1102.3,
+        "label": "One Question",
+        "module": 25
+      },
+      {
+        "t": 1128.4,
+        "label": "The Voice Behind Today",
+        "module": 26
+      }
+    ]
+  },
+  "all-these-things-day-2": {
+    "src": "/audio/all-these-things-day-2.m4a",
+    "duration": 1333.6,
+    "words": 3567,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 10971072,
+    "textHash": "998077e6cea3",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 9.0,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 43.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 77.6,
+        "label": "Before Anything Else, One Thing Said Plainly",
+        "module": 3
+      },
+      {
+        "t": 157.6,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 164.9,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 176.1,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 197.5,
+        "label": "The Verb Paul Uses As A Compliment",
+        "module": 8
+      },
+      {
+        "t": 317.6,
+        "label": "Word study",
+        "module": 9
+      },
+      {
+        "t": 367.7,
+        "label": "Scripture",
+        "module": 11
+      },
+      {
+        "t": 413.7,
+        "label": "An Argument, Not An Order",
+        "module": 12
+      },
+      {
+        "t": 517.6,
+        "label": "He Did Not Abolish The Work",
+        "module": 13
+      },
+      {
+        "t": 572.3,
+        "label": "Where This Day Sits in the Story",
+        "module": 14
+      },
+      {
+        "t": 637.9,
+        "label": "Scripture",
+        "module": 15
+      },
+      {
+        "t": 669.0,
+        "label": "Bread That Would Not Keep",
+        "module": 16
+      },
+      {
+        "t": 791.2,
+        "label": "What He Was Actually Afraid Of",
+        "module": 18
+      },
+      {
+        "t": 896.7,
+        "label": "What Paul Actually Instructs",
+        "module": 19
+      },
+      {
+        "t": 1008.7,
+        "label": "Reflect",
+        "module": 20
+      },
+      {
+        "t": 1018.0,
+        "label": "A Practice for Today",
+        "module": 21
+      },
+      {
+        "t": 1027.1,
+        "label": "You Are Allowed To Still Be Afraid Tonight",
+        "module": 22
+      },
+      {
+        "t": 1089.6,
+        "label": "What Worry Actually Empties",
+        "module": 23
+      },
+      {
+        "t": 1194.8,
+        "label": "Prayer",
+        "module": 24
+      },
+      {
+        "t": 1232.3,
+        "label": "Today's Commitment",
+        "module": 25
+      },
+      {
+        "t": 1242.2,
+        "label": "One Question",
+        "module": 26
+      },
+      {
+        "t": 1275.1,
+        "label": "The Voice Behind Today",
+        "module": 27
+      }
+    ]
+  },
+  "all-these-things-day-3": {
+    "src": "/audio/all-these-things-day-3.m4a",
+    "duration": 1713.5,
+    "words": 4520,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 14090320,
+    "textHash": "e627c235cf6b",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 30.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 58.0,
+        "label": "The Prayer That Was Kept",
+        "module": 3
+      },
+      {
+        "t": 137.0,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 141.9,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 153.3,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 184.1,
+        "label": "The Prophet Who Filed a Complaint",
+        "module": 8
+      },
+      {
+        "t": 291.2,
+        "label": "Word study",
+        "module": 9
+      },
+      {
+        "t": 345.6,
+        "label": "Scripture",
+        "module": 11
+      },
+      {
+        "t": 383.0,
+        "label": "The Answer That Is Not An Answer",
+        "module": 12
+      },
+      {
+        "t": 534.5,
+        "label": "Delay Is The Test, Not The Failure",
+        "module": 14
+      },
+      {
+        "t": 590.1,
+        "label": "But It Says They Will Be Added",
+        "module": 15
+      },
+      {
+        "t": 750.3,
+        "label": "Where This Day Sits in the Story",
+        "module": 16
+      },
+      {
+        "t": 818.4,
+        "label": "Where Else The Silence Shows Up",
+        "module": 17
+      },
+      {
+        "t": 918.4,
+        "label": "Eleven Weeks Before Oslo",
+        "module": 18
+      },
+      {
+        "t": 1044.8,
+        "label": "She Told Someone",
+        "module": 19
+      },
+      {
+        "t": 1096.0,
+        "label": "Scripture",
+        "module": 20
+      },
+      {
+        "t": 1129.0,
+        "label": "The Rock and the Steadiness Are the Same Verse",
+        "module": 21
+      },
+      {
+        "t": 1220.0,
+        "label": "Reflect",
+        "module": 22
+      },
+      {
+        "t": 1231.0,
+        "label": "A Practice for Today",
+        "module": 23
+      },
+      {
+        "t": 1241.3,
+        "label": "Scripture",
+        "module": 24
+      },
+      {
+        "t": 1269.6,
+        "label": "He Said It Too",
+        "module": 25
+      },
+      {
+        "t": 1378.7,
+        "label": "The Novel The Silence Is Named For",
+        "module": 26
+      },
+      {
+        "t": 1517.7,
+        "label": "A Note On The Translation",
+        "module": 27
+      },
+      {
+        "t": 1583.2,
+        "label": "Prayer",
+        "module": 28
+      },
+      {
+        "t": 1619.5,
+        "label": "Today's Commitment",
+        "module": 29
+      },
+      {
+        "t": 1628.8,
+        "label": "One Question",
+        "module": 30
+      },
+      {
+        "t": 1656.0,
+        "label": "The Voice Behind Today",
+        "module": 31
+      }
+    ]
+  },
+  "all-these-things-day-4": {
+    "src": "/audio/all-these-things-day-4.m4a",
+    "duration": 1239.3,
+    "words": 3318,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 10178478,
+    "textHash": "7c340f310b89",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 9.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 23.6,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 55.0,
+        "label": "Near In Which Sense",
+        "module": 3
+      },
+      {
+        "t": 131.3,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 136.3,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 146.5,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 168.0,
+        "label": "One Verse Holds Both Halves",
+        "module": 8
+      },
+      {
+        "t": 301.8,
+        "label": "Word study",
+        "module": 9
+      },
+      {
+        "t": 344.4,
+        "label": "Scripture",
+        "module": 11
+      },
+      {
+        "t": 372.2,
+        "label": "The Curtain Tore From The Top",
+        "module": 12
+      },
+      {
+        "t": 479.2,
+        "label": "Where This Day Sits in the Story",
+        "module": 13
+      },
+      {
+        "t": 549.7,
+        "label": "No Intermediary, One Mediator",
+        "module": 14
+      },
+      {
+        "t": 676.1,
+        "label": "Five Men Who Could Not Help",
+        "module": 16
+      },
+      {
+        "t": 798.4,
+        "label": "A Caveat Worth Keeping",
+        "module": 17
+      },
+      {
+        "t": 862.2,
+        "label": "Scripture",
+        "module": 18
+      },
+      {
+        "t": 897.6,
+        "label": "Pour Out Your Hearts Before Him",
+        "module": 19
+      },
+      {
+        "t": 996.0,
+        "label": "Reflect",
+        "module": 20
+      },
+      {
+        "t": 1004.7,
+        "label": "A Practice for Today",
+        "module": 21
+      },
+      {
+        "t": 1023.3,
+        "label": "At Hand",
+        "module": 22
+      },
+      {
+        "t": 1097.4,
+        "label": "Prayer",
+        "module": 23
+      },
+      {
+        "t": 1136.4,
+        "label": "Today's Commitment",
+        "module": 24
+      },
+      {
+        "t": 1146.9,
+        "label": "One Question",
+        "module": 25
+      },
+      {
+        "t": 1173.2,
+        "label": "The Voice Behind Today",
+        "module": 26
+      }
+    ]
+  },
+  "all-these-things-day-5": {
+    "src": "/audio/all-these-things-day-5.m4a",
+    "duration": 1174.2,
+    "words": 3077,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 9664625,
+    "textHash": "0a02c9b1c12c",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 7.2,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 23.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 54.0,
+        "label": "Not Calm. Whole.",
+        "module": 3
+      },
+      {
+        "t": 131.6,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 135.9,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 148.1,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 178.8,
+        "label": "What Is Actually Promised",
+        "module": 8
+      },
+      {
+        "t": 267.2,
+        "label": "Word study",
+        "module": 9
+      },
+      {
+        "t": 305.6,
+        "label": "The Guard That Faces Inward",
+        "module": 11
+      },
+      {
+        "t": 403.9,
+        "label": "Where This Day Sits in the Story",
+        "module": 13
+      },
+      {
+        "t": 475.1,
+        "label": "Scripture",
+        "module": 14
+      },
+      {
+        "t": 512.0,
+        "label": "All Things Come Of Thee",
+        "module": 15
+      },
+      {
+        "t": 659.1,
+        "label": "Sufficient For Us Left",
+        "module": 16
+      },
+      {
+        "t": 770.9,
+        "label": "Scripture",
+        "module": 17
+      },
+      {
+        "t": 805.2,
+        "label": "In Him All Things Hold Together",
+        "module": 18
+      },
+      {
+        "t": 923.5,
+        "label": "Reflect",
+        "module": 19
+      },
+      {
+        "t": 931.7,
+        "label": "A Practice for Today",
+        "module": 20
+      },
+      {
+        "t": 943.0,
+        "label": "Sufficient Unto The Day",
+        "module": 21
+      },
+      {
+        "t": 1033.2,
+        "label": "Prayer",
+        "module": 22
+      },
+      {
+        "t": 1077.9,
+        "label": "Today's Commitment",
+        "module": 23
+      },
+      {
+        "t": 1087.7,
+        "label": "One Question",
+        "module": 24
+      },
+      {
+        "t": 1118.2,
+        "label": "The Voice Behind Today",
+        "module": 25
+      }
+    ]
+  },
+  "all-these-things-day-6": {
+    "src": "/audio/all-these-things-day-6.m4a",
+    "duration": 251.9,
+    "words": 702,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 2071126,
+    "textHash": "4d14d2c2afe9",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 7.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 27.1,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 57.5,
+        "label": "The Week In One Word",
+        "module": 3
+      },
+      {
+        "t": 179.7,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 184.3,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 194.7,
+        "label": "The Week in One View",
+        "module": 7
+      },
+      {
+        "t": 207.7,
+        "label": "What Held The Week Together",
+        "module": 9
+      },
+      {
+        "t": 216.2,
+        "label": "Reflect",
+        "module": 10
+      },
+      {
+        "t": 227.9,
+        "label": "Carrying The Week Forward",
+        "module": 11
+      },
+      {
+        "t": 238.2,
+        "label": "If You Only Keep One Thing",
+        "module": 14
+      }
+    ]
+  },
+  "all-these-things-day-7": {
+    "src": "/audio/all-these-things-day-7.m4a",
+    "duration": 132.9,
+    "words": 349,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 1097289,
+    "textHash": "7bc4f028c178",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 22.9,
+        "label": "Sabbath",
+        "module": 2
+      },
+      {
+        "t": 114.4,
+        "label": "Reflect",
+        "module": 3
+      },
+      {
+        "t": 124.3,
+        "label": "Prayer",
+        "module": 4
+      }
+    ]
+  },
   "anointed-day-1": {
     "src": "/audio/anointed-day-1-8e401e5d3d.m4a",
     "duration": 396.9,

@@ -5,6 +5,55 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## All These Things — seeking first, and the silence after (SA-123, F-168)
+
+**2026-08-24**
+
+- New 7-day prefab series on Matthew 6:25-34 and Philippians 4:4-7, built
+  end-to-end through the `/devo-go` pipeline and shipped live.
+- **Monday-start week shape (SA-123).** The SA-029 sabbath-first order inverts:
+  Days 1-5 carry the chiasm, Day 6 is the recap, Day 7 is the sabbath. All three
+  SA-029 shapes are preserved; only the order changes. The anchor passage
+  supplies the rationale — "sufficient unto the day" makes a week that ends in
+  rest the text's own logic.
+- **The misuse is named once, then the text is taught.** "Be anxious for
+  nothing" is routinely handed to frightened people as a rebuke. Day 2 says so
+  plainly, once, and then dismantles it on the Greek: Paul uses the same verb
+  approvingly of Timothy (Phil 2:20) and of the church (1 Cor 12:25), and Jesus
+  says it gently to Martha by name (Luke 10:41).
+- **Two lexical finds shaped the week.** Deuteronomy 32:4 carries both `tsur`
+  (H6697, "the Rock") and `emunah` (H530, "faithfulness") four words apart —
+  interlinear-verified — so Day 3's steadiness and Day 4's rock are one verse.
+  And `emunah` means firmness before it means belief: its plainest occurrence is
+  Exodus 17:12, Moses' hands held steady by two other men until sunset.
+- `phroureō` (Phil 4:7) is a garrison term, and the lexicon gives it two jobs:
+  keep the enemy out, and keep the besieged city's own people from fleeing. Day 5
+  is built on the second half.
+- **Honest downgrades.** The popular "merimnaō = divide" etymology ships
+  attributed to HELPS Word-studies rather than as bare fact, and a `tsur`/`sela`
+  contrast was cut entirely because the source did not support it.
+- **Five stories, each verified against a fetched primary text** — Brainerd,
+  Bunyan, Mother Teresa, George Fox, Anne Bradstreet — with their caveats shipped
+  (Fox's Journal flagged as retrospective; Mother Teresa cited by recipient and
+  date because the pagination could not be confirmed; Bunyan's daughter left
+  unnamed because the primary text never names her).
+- **Four folklore items killed and documented rather than used:** Luther's "Here
+  I stand" (the famous clause only), the "People are often unreasonable" text
+  attributed to Mother Teresa (on the Missionaries of Charity's own
+  false-attribution register — actually Kent M. Keith), Francis of Assisi's
+  "preach the gospel… use words" (zero grep hits in the complete _Writings_), and
+  a Brainerd/Jerusha Edwards betrothal (zero hits in Edwards' memoir).
+- Endō's _Silence_ — the founder's own reference — was researched but did **not**
+  ship: verbatim verification of a named translation did not land in time, and
+  unverifiable material is cut rather than hedged.
+- Red letter baked via the real SA-051 resolver: 9 modules red, 14 correctly
+  black. Matthew 27:45-46 carries both the Aramaic and its translation; the
+  veil-tearing narration in 27:50-51 correctly stays black.
+- Validator 0 BLOCKING / 0 NEEDS-FIX across all 7 days; readability FK 5.8 with
+  zero sentences over 45 words.
+- Series takes the homepage main feature slot; `rekindled` moves into the
+  featured cards.
+
 ## Quota failover — the content pipeline survives a capped subscription
 
 **2026-08-24**

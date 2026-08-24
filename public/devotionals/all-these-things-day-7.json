@@ -1,0 +1,82 @@
+{
+  "day": 7,
+  "chiasm_position": "sabbath",
+  "title": "Enough For Today",
+  "subtitle": "A day with nothing added to it",
+  "teaser": "No teaching today. One verse, ten minutes of sitting still, and a week's worth of asking left where it is.",
+  "anchorVerse": "Matthew 6:34",
+  "theme": "Rest as the practice the passage itself ends on.",
+  "framework": "Matthew 6:34 — sufficient unto the day",
+  "scriptureReference": "Matthew 6:34; Lamentations 3:26",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Matthew 6:34",
+      "translation": "KJV",
+      "passage": "Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof.",
+      "emphasis": [
+        "Sufficient unto the day"
+      ],
+      "scriptureContext": "One verse. Nothing is going to be added to it today.",
+      "redLetter": [
+        "Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof."
+      ]
+    },
+    {
+      "type": "sabbath",
+      "heading": "Sabbath",
+      "scripture_anchor": {
+        "reference": "Lamentations 3:26",
+        "translation": "BSB",
+        "text": "It is good to wait quietly for the salvation of the LORD."
+      },
+      "invitation": "There is no teaching today. The week said what it had to say.\n\nSit somewhere quiet for ten unhurried minutes. No reading, no phone, no working out what any of it meant. If a request comes, let it come and do not dress it up. If nothing comes, stay anyway.\n\nThe man who wrote that line about waiting quietly was looking at a destroyed city at the time. He was not describing a mood. He was describing what he had decided to do.\n\nThis week asked for firmness rather than certainty. Ten minutes of sitting still, wanting something you have not been given, without leaving — that is the whole practice, and it is not a small one.\n\nThe morrow will take thought for the things of itself. It does not need you tonight.\n\nIf the ten minutes are hard, that is not a sign you are doing it wrong. Stillness is where the week's material tends to surface, and the surfacing is not an interruption of the practice.\n\nAnd if nothing comes at all — no words, no sense of anything — remember what Wednesday established. Silence has never been reliable evidence about God. It was in the songbook. It was on the cross.\n\nSufficient unto the day. You have been given today, and only today. That was always the arrangement, and it has been enough for everyone who ever tried it.",
+      "prayerText": "Father, all things come of Thee. I am not going to ask for tomorrow's portion today. Amen."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Stay for the ten minutes. Then, if you want a question: what would change this week if you genuinely believed the adding was not your job?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Lord, sufficient unto the day. I have today, and You have the rest of it. Keep me steady. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "PFTLvkB3JLM",
+      "videoTitle": "SABBATH: Learn Why the Number 7 Is Used So Much in the Bible",
+      "videoCaption": "If you want one thing to watch on a day with nothing else in it — on rest, and why Scripture keeps counting to seven.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "resource",
+      "heading": "If You Want To Keep Going",
+      "relatedScriptures": [
+        {
+          "reference": "Lamentations 3:22-26 (BSB)",
+          "text": "“They are new every morning; great is Your faithfulness.” Written by someone in the ruins, which is why it can be trusted."
+        },
+        {
+          "reference": "Psalm 131 (KJV)",
+          "text": "Three verses, and the shortest description in Scripture of a settled soul. Worth having by heart."
+        },
+        {
+          "reference": "Matthew 11:28-30 (BSB)",
+          "text": "“Come to Me, all you who are weary and burdened, and I will give you rest.” The invitation that stands behind a sabbath."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Next week",
+          "description": "If this week helped, the natural next step is to read Philippians whole — it is four pages, written from custody by a man who had learned contentment the hard way, and chapter 4 lands differently once you have read the three chapters in front of it."
+        }
+      ]
+    }
+  ]
+}

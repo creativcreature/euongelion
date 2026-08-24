@@ -14,6 +14,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     "Maintaining connection to Jesus when life's pressures threaten to overwhelm",
   'abiding-in-his-presence-day-6':
     'Integrating continuous communion with God into every aspect of daily life',
+  'all-these-things-day-1':
+    'The famous verse has an order in it and a passive verb at the end. One of those tells you what to do. The other tells you what was never your job — and most of what goes wrong with this promise comes from confusing the two.',
+  'all-these-things-day-2':
+    'The verb in “be anxious for nothing” is the same verb Paul uses two chapters earlier as a compliment, and the same one Jesus says gently to Martha by name. Whatever these verses forbid, it is not caring — and it was never handed to you as a rebuke.',
+  'all-these-things-day-3':
+    'A prophet accused God of not listening, climbed a tower, and waited for the reply. What he got back was not an explanation. It was a word that means firmness — the same word used for a pair of tired arms held up by two other men until sunset.',
+  'all-these-things-day-4':
+    "Immovable things are usually far away. A cliff does not know your name. The New Testament's claim is that the rock became approachable without a broker — and that the barrier was opened from the inside, downward, by someone who was dying at the time.",
+  'all-these-things-day-5':
+    "The verb in “shall keep your hearts and minds” describes a garrison. And the lexicon gives a garrison two jobs: keep the enemy out, and keep the people inside from fleeing in the night. Part of what God's peace is doing is standing in front of the gate you keep looking at.",
+  'all-these-things-day-6':
+    'Five days, two passages, and one adjective at the end of it: enough. Not abundant, not resolved — the exact amount required for one day, which is the only unit anybody was ever given.',
+  'all-these-things-day-7':
+    "No teaching today. One verse, ten minutes of sitting still, and a week's worth of asking left where it is.",
   'anointed-day-1': "Your anointing isn't about position — it's about calling",
   'anointed-day-2':
     'The Holy Spirit empowers you for witness — not just words, but presence',
@@ -1092,6 +1106,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'abiding-in-his-presence-day-4': 'The Fruit of Abiding',
   'abiding-in-his-presence-day-5': 'Abiding in the Storms',
   'abiding-in-his-presence-day-6': 'Living the Abiding Life',
+  'all-these-things-day-1': 'Seek Ye First',
+  'all-these-things-day-2': 'The Word That Means Pulled Apart',
+  'all-these-things-day-3': 'When He Says Nothing',
+  'all-these-things-day-4': 'A Rock You Do Not Need An Appointment To Reach',
+  'all-these-things-day-5': 'All Things Come Of Thee',
+  'all-these-things-day-6': 'Sufficient Unto The Day',
+  'all-these-things-day-7': 'Enough For Today',
   'anointed-day-1': 'Anointed with Purpose',
   'anointed-day-2': 'Anointed with Power',
   'anointed-day-3': 'Anointed in Obscurity',

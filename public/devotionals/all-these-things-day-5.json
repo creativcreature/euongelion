@@ -1,0 +1,296 @@
+{
+  "day": 5,
+  "chiasm_position": "A-prime",
+  "format": "two-minute-open-v2",
+  "title": "All Things Come Of Thee",
+  "subtitle": "On peace that means wholeness, and a guard that faces both ways",
+  "teaser": "The verb in “shall keep your hearts and minds” describes a garrison. And the lexicon gives a garrison two jobs: keep the enemy out, and keep the people inside from fleeing in the night. Part of what God's peace is doing is standing in front of the gate you keep looking at.",
+  "anchorVerse": "Philippians 4:7",
+  "theme": "God's peace is wholeness rather than calm, it guards against our flight as much as against attack, and everything we have was His before it was ours.",
+  "framework": "Philippians 4:7 — shall keep your hearts and minds",
+  "scriptureReference": "Philippians 4:6-7; 1 Chronicles 29:11-14; Colossians 1:16-17",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Philippians 4:7",
+      "translation": "KJV",
+      "passage": "And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.",
+      "emphasis": [
+        "shall keep your hearts and minds"
+      ],
+      "scriptureContext": "Two minutes with a promise whose central verb is a military one."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "εἰρήνη",
+      "transliteration": "eirēnē",
+      "pronunciation": "ay-RAY-nay",
+      "strongsNumber": "G1515",
+      "definition": "peace — and underneath it, wholeness: when all the essential parts are joined together",
+      "usage": "One lexicon gives the root sense as wholeness, from a verb meaning to join or tie together into a whole. The Greek Old Testament uses this word to translate the Hebrew shalom, which covers completeness, welfare and right relationship. It is not built on the idea of conflict being absent. It is built on the idea of nothing being missing."
+    },
+    {
+      "type": "teaching",
+      "heading": "Not Calm. Whole.",
+      "content": "Most people read this verse as a promise of calm, and then measure themselves against it and fail.\n\nThe word underneath it is pointing somewhere else. The root sense is wholeness — all the essential parts joined together — and the Greek Old Testament uses this same word wherever the Hebrew says shalom, which is a word about completeness and welfare rather than quiet.\n\nThat changes what is being offered. Calm is a feeling, and feelings cannot be commanded or maintained. Wholeness is a condition. It describes something being held together rather than something being felt.\n\nAnd the verse says where it comes from. It is the peace of God, not peace about your situation. It is His own wholeness, extended to you, and the sentence says plainly that it passes understanding — meaning it does not arrive because your circumstances finally added up.\n\nSo it is possible, and the verse assumes it, for a person to be held together while still frightened. Those are not contradictory states. One is about what you feel. The other is about what is happening to you.\n\nThat distinction is the whole of today, and it lands at the end of a week that has not pretended anything was easy."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Have you been waiting to feel calm before you would believe you were held?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "God, I have measured Your peace by whether I felt settled, and by that measure I have never had it. Show me the difference between calm and whole. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: a verb that means soldiers posted around a city, a definition of that verb which explains why the guard faces inward as well as out, and an old king's prayer that says in six words what this whole week has been circling."
+    },
+    {
+      "type": "scripture",
+      "reference": "Philippians 4:6-7",
+      "translation": "KJV",
+      "passage": "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.",
+      "emphasis": [
+        "in every thing",
+        "shall keep your hearts and minds"
+      ],
+      "scriptureContext": "The instruction and the consequence, in one sentence. Tuesday took the first half. Today takes the second."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "What Is Actually Promised",
+      "content": "Read the two verses as the single sentence they are, and notice what is promised and what is not.\n\nPaul gives an instruction: bring everything to God, specifically, with thanks. Then he states what follows. The peace of God will keep your hearts and minds.\n\nHe does not promise that the situation will resolve. He does not promise the feeling will change. He does not say the requests will be granted, which is a remarkable thing to leave out of a sentence about prayer.\n\nWhat he promises is that something will hold.\n\nAnd the qualifier attached is doing more work than it looks. Which passeth all understanding. That phrase gets read as a compliment — a peace so wonderful you cannot describe it. It is more likely doing something plainer and more useful. It means this peace does not come from your understanding. It is not the result of working the problem until it makes sense.\n\nWhich matters enormously to anyone who has tried to think their way to steadiness at three in the morning. The peace on offer is not downstream of your analysis. It does not require you to have solved anything, and it does not evaporate when the analysis comes out badly.\n\nThat is why the verse can sit at the end of this particular week. Wednesday's reader is still waiting and still has no explanation. This promise was never contingent on getting one."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "φρουρέω",
+      "transliteration": "phroureō",
+      "pronunciation": "froo-REH-oh",
+      "strongsNumber": "G5432",
+      "definition": "to guard, to protect by a military guard; to post sentries",
+      "usage": "This is the verb behind “shall keep your hearts and minds.” It comes from a noun meaning a sentinel, and it describes soldiers stationed at gates and walls. Paul uses the language of a garrison, not of a blanket.",
+      "usageNote": "The lexicon definition has two halves, and the second is easy to miss: to guard a city “either in order to prevent hostile invasion, or to keep inhabitants of a besieged city from flight.” A garrison faces both ways. It stops things getting in, and it stops the people inside running out.",
+      "relatedWords": [
+        {
+          "word": "φρουρέω (phroureō) — 2 Corinthians 11:32",
+          "reference": "Literal military use: a governor garrisons the gates of Damascus to arrest Paul."
+        },
+        {
+          "word": "φρουρέω (phroureō) — Galatians 3:23",
+          "reference": "The Law described as holding people in protective custody until Christ came."
+        },
+        {
+          "word": "φρουρέω (phroureō) — 1 Peter 1:5",
+          "reference": "Believers guarded by God's power — the same verb, with the timescale attached: for a salvation ready to be revealed."
+        }
+      ]
+    },
+    {
+      "type": "pullquote",
+      "content": "A garrison faces both ways. It keeps the enemy out, and it keeps the people inside from bolting."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "derash",
+      "heading": "The Guard That Faces Inward",
+      "content": "The second half of that definition is the most practically useful thing in this week's readings.\n\nA garrison in a besieged city has two jobs. It holds the walls against what is outside. It also stops the people inside from panicking out through the gates in the night, which in a siege is how a city is usually lost.\n\nPaul chose that verb for what God's peace does to a heart.\n\nSo one of the things this peace is doing, according to the word Paul actually used, is preventing your flight. Not the enemy's advance — yours. It is posted against the impulse to run. To bolt from the marriage. To abandon the calling. To stop praying because nothing has come back. To conclude at four in the morning that the whole thing was a mistake, and to act on that conclusion before breakfast.\n\nAnyone who has been under sustained pressure knows that impulse. It rarely feels like unbelief while it is happening. It feels like clarity. It feels like finally being realistic.\n\nAnd what the verse describes is not an argument against that impulse. It is a guard standing in front of the gate.\n\nWhich reframes what it means to have been kept. A person may look back on a hard year and find no evidence of dramatic rescue, no explanation, no obvious answer to prayer — and still find that they did not leave. That they are still here, still asking, still in it.\n\nThat is not a small outcome dressed up as a large one. On the word Paul used, that is precisely the thing promised."
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "HCLuq_5o7_o",
+      "videoTitle": "The Reason You Can Trust God (Even When It Seems Risky)",
+      "videoCaption": "On trusting a God whose provision you cannot yet see — which is the position this whole week has been describing.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Where This Day Sits in the Story",
+      "ancientTruth": "Paul writes this from custody, to a church in a Roman colony full of retired soldiers. Philippi's residents knew exactly what a garrison was and what it did. The image would have landed as a piece of ordinary civic experience, not a poetic flourish.",
+      "modernApplication": "The siege metaphor still holds because the experience does. Most people under long pressure are not primarily fighting an enemy. They are resisting the urge to abandon the position.",
+      "connectionPoint": "This week began with an order — seek first, and the adding is God's. It went through the word for anxiety, through the silence, through the torn curtain. It ends here, on what is actually promised to a person who does all of that and still has no answers: not resolution, but a guard.",
+      "newTestamentEcho": "Peter uses the same verb for the same reassurance, and adds the timescale: believers are guarded by God's power through faith for a salvation ready to be revealed in the last time. The garrison is posted for the duration."
+    },
+    {
+      "type": "scripture",
+      "reference": "Matthew 6:32-34",
+      "translation": "KJV",
+      "passage": "(For after all these things do the Gentiles seek:) for your heavenly Father knoweth that ye have need of all these things. But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you. Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof.",
+      "emphasis": [
+        "your heavenly Father knoweth",
+        "Sufficient unto the day"
+      ],
+      "scriptureContext": "Where the passage ends: not with a resolution, but with a boundary drawn around one day.",
+      "redLetter": [
+        "(For after all these things do the Gentiles seek:) for your heavenly Father knoweth that ye have need of all these things. But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you. Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof."
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "heading": "All Things Come Of Thee",
+      "content": "There is an old prayer that says this week's conclusion better than a summary could, and it was prayed by a man at the end of a long life, in public, over a building he would never see finished.\n\nDavid has collected the materials for the temple. His son will build it. He prays in front of the whole assembly, and the prayer keeps handing things back.\n\nThine, O Lord, is the greatness, and the power, and the glory, and the victory, and the majesty. All that is in the heaven and in the earth is thine. Thine is the kingdom.\n\nAnd then, after listing what the people have given, he says the line that undoes the arithmetic. But who am I, and what is my people, that we should be able to offer so willingly after this sort? For all things come of thee, and of thine own have we given thee.\n\nAll things come of thee. He is looking at a genuinely impressive act of generosity — his own, and his people's — and pointing out that every item in it had arrived from somewhere else first. The giving was real. It was also, from start to finish, a redistribution of what had already been given.\n\nThat is the resolution of the week's central anxiety, and it works from an unexpected direction.\n\nThe fear this week has been about supply — whether there will be enough, and whether God will come through. David's prayer does not answer that fear by promising more. It relocates the question. If all things come of Him, then the supply was never a separate stream running alongside your effort, occasionally failing to arrive. Everything you have ever had came from there. Including the strength you have been using to worry about whether more will come.\n\nJames says it in one line. Every good and perfect gift is from above, coming down from the Father of the heavenly lights.\n\nAnd Paul puts the whole argument in a single sentence about the cross. He who did not spare His own Son, but gave Him up for us all — how will He not also, along with Him, freely give us all things?\n\nThat is the strongest form of the case. Not that God will probably provide, on the evidence of past provision. That the largest possible thing has already been given, and everything else is a smaller question than that one."
+    },
+    {
+      "type": "story",
+      "heading": "Sufficient For Us Left",
+      "content": "In July 1666 the Bradstreet house at Andover, Massachusetts burned to the ground. Anne Bradstreet lost her papers, her books, and years of work on a long poem she had been preparing.\n\nThe fire is unusually well attested for something this old. Her son Simon, away at New London, recorded it in his own diary on 12 July 1666. He put numbers to it. His own loss of books and papers he reckoned at fifty or sixty pounds at least. His father's, he wrote, was far more, being about eight hundred.\n\nHis mother wrote a poem about it that was not published in her lifetime.\n\nIt does not tidy the loss up. She keeps going back to the ruin — \"When by the Ruines oft I past, / My sorrowing eyes aside did cast\" — and takes an inventory of what is gone. \"Here stood that Trunk and there that chest; / There lay that store I counted best.\"\n\nThen she argues with her own heart, and the argument turns on ownership:\n\n\"It was his own; it was not mine / ffar be it that I should repine. / He might of All justly bereft / But yet sufficient for us left.\"\n\nThe spelling is hers.",
+      "connectionToTheme": "Bradstreet reaches David's conclusion from the opposite direction. He prayed “all things come of thee” while looking at gathered wealth; she wrote “it was his own; it was not mine” while looking at the ashes of hers. And the word she lands on is the same word the passage this week ends on — sufficient. Not restored, not replaced. Enough left."
+    },
+    {
+      "type": "scripture",
+      "reference": "1 Chronicles 29:11, 14",
+      "translation": "KJV",
+      "passage": "Thine, O Lord, is the greatness, and the power, and the glory, and the victory, and the majesty: for all that is in the heaven and in the earth is thine; thine is the kingdom, O Lord, and thou art exalted as head above all… But who am I, and what is my people, that we should be able to offer so willingly after this sort? for all things come of thee, and of thine own have we given thee.",
+      "emphasis": [
+        "for all things come of thee",
+        "of thine own have we given thee"
+      ],
+      "scriptureContext": "A king's public prayer over materials for a building he would not live to see."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "sod",
+      "heading": "In Him All Things Hold Together",
+      "content": "One more step, and it is the one that gives the week a name rather than a conclusion.\n\nThe word for peace means wholeness — all the essential parts joined together. That was the definition this day opened with.\n\nPaul writes to the Colossians about Christ and uses almost the same shape of language. For in Him all things were created, things in heaven and on earth, visible and invisible. All things were created through Him and for Him. He is before all things, and in Him all things hold together.\n\nHold together. The wholeness is not an atmosphere or a spiritual commodity that God dispenses. It is a person, and the parts are joined in Him.\n\nWhich pulls the week's threads into one place. All things come of Him, David prayed. In Him all things hold together, Paul wrote. The peace that guards your heart is not a substance sent from a distance — it is the wholeness of the One who is already holding everything, extended to a heart that has been coming apart.\n\nAnd it is worth naming what that does to the anxious question. The fear underneath most anxiety is not really about the specific item. It is that things are coming apart and that the holding-together depends on you noticing everything in time.\n\nThe claim of this passage is that the holding-together does not depend on your attention, has never depended on it, and did not lapse during the years you were not watching.\n\nThat is why the promise in Philippians can be as unconditional as it is. He is not offering to help you hold your life together. He is telling you who has been doing it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "“All things come of thee, and of thine own have we given thee.” What are you currently guarding as though you produced it?",
+      "additionalQuestions": [
+        "The garrison also stops people running. What have you been on the edge of walking away from this year?",
+        "If being kept looks like still being here rather than being rescued — have you been kept, and not counted it?"
+      ],
+      "invitationType": "searching"
+    },
+    {
+      "type": "interactive",
+      "heading": "A Practice for Today",
+      "interaction_type": "art",
+      "instruction": "A response in images rather than words. Fifteen minutes, and no skill required — nobody is going to see it.",
+      "steps": [
+        {
+          "title": "Find the wall",
+          "description": "Draw, badly, a simple walled shape. A box with a line around it is fine. Inside it, write one word for what you have been trying to keep from falling apart this year."
+        },
+        {
+          "title": "Post the guard",
+          "description": "Draw small marks along the wall — dots, ticks, whatever. As you make each one, name something that has in fact held: a person who stayed, a bill that got paid, a morning you got up when you did not want to."
+        },
+        {
+          "title": "Mark the gate",
+          "description": "Draw one gap in the wall. That is the place you have been tempted to leave through. Put a mark in front of it. Paul's verb says the guard stands there too."
+        },
+        {
+          "title": "Look at it",
+          "description": "Sit with the finished thing for a minute. You have just drawn a year you probably remember as a failure, and it has more marks on it than you expected."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "Sufficient Unto The Day",
+      "content": "The passage this week began in does not end on a triumphant note. It ends with a boundary.\n\nTake therefore no thought for the morrow, for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof.\n\nThat last line is unusually honest for a verse people put on walls. It does not say tomorrow will be fine. It says today has enough trouble in it already, and that this is reason enough not to import more.\n\nSo the week closes where it started, with an ordering. Seek first. And now with a limit attached: one day at a time, which is the same arrangement as the manna, and the same request as give us this day our daily bread.\n\nNothing here promised that the difficulty would lift. What has been promised is narrower and sturdier. A Father who knows what you need before you ask. A word for faith that means firmness rather than certainty, and that shows up in Scripture as arms held by other people. A rock that is also at hand. A curtain torn from the far side. A guard posted at the gate, facing both ways.\n\nAnd underneath all of it, the sentence from the old king's prayer, which is the shortest form of the whole week.\n\nAll things come of thee.\n\nTomorrow this reading gathers the week up. Then Sunday stops, because the passage itself ends by telling you that one day is all you were ever given, and that it is enough."
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Father, all things come of Thee, and of Thine own have I given Thee. I have been holding my life together with both hands and calling it faithfulness, and I am tired. You have been holding it the whole time. Post Your guard at the gate I keep looking at. Keep me from leaving. And where I have measured Your peace by whether I felt calm, teach me to measure it by whether I am still here, still asking, still Yours. That is enough for today, and today is what I was given. Amen.",
+      "breathPrayer": "In: all things come of Thee — Out: and of Thine own have I given Thee"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will count what has held this year instead of only what has failed, and I will stop treating calm as the test of whether God is keeping me.",
+      "leavingAtCross": [
+        "The belief that peace means feeling settled",
+        "The arithmetic in which what I have is mine and what I lack is God's failure",
+        "The gate I have been standing near"
+      ],
+      "receivingFromCross": [
+        "A word for peace that means wholeness, not quiet",
+        "A guard that faces inward as well as out",
+        "One day at a time, and the word sufficient attached to it"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "Paul says God's peace “shall keep” your hearts and minds. What does the Greek verb actually describe?",
+      "options": [
+        "A blanket or covering laid over the heart",
+        "A soldier's garrison posted around a city — which both keeps enemies out and keeps the inhabitants from fleeing",
+        "A seal placed on a document",
+        "A shepherd watching over sheep"
+      ],
+      "answer": 1,
+      "explanation": "Phroureō is a military term from a noun meaning sentinel. The lexicon definition names both functions: to prevent hostile invasion, or to keep the inhabitants of a besieged city from flight. The second half is the pastoral point — part of what God's peace does is stand in front of the gate you keep considering."
+    },
+    {
+      "type": "profile",
+      "heading": "The Voice Behind Today",
+      "name": "Paul, writing from custody",
+      "era": "first century; the letter to Philippi is generally dated to one of Paul's imprisonments",
+      "bio": "Philippi was a Roman colony settled with army veterans, which is worth knowing when Paul reaches for the image of a garrison. He is writing to people who had watched real sentries on real walls. He writes about peace while himself under guard, which is either an odd choice of metaphor or a deliberate one.",
+      "keyQuote": "And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.",
+      "lessonForUs": "The man promising a guarded heart was, at the time of writing, a man with guards. He does not offer the Philippians release from their circumstances, because he has not been given release from his. He offers them the thing he evidently had."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Further Study",
+      "relatedScriptures": [
+        {
+          "reference": "1 Chronicles 29:11-14 (KJV)",
+          "text": "David's prayer in full. “For all things come of thee, and of thine own have we given thee” is the sentence this week has been circling."
+        },
+        {
+          "reference": "Colossians 1:16-17 (BSB)",
+          "text": "“In Him all things hold together.” The wholeness has a name, and the name is a person."
+        },
+        {
+          "reference": "James 1:17 (BSB)",
+          "text": "“Every good and perfect gift is from above.” The same claim in one line."
+        },
+        {
+          "reference": "Romans 8:32 (BSB)",
+          "text": "The argument from the greater to the lesser: if the Son was given, the rest is a smaller question."
+        },
+        {
+          "reference": "1 Peter 1:5 (BSB)",
+          "text": "The same garrison verb, applied to believers kept by God's power — with the timescale attached."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Greek: phroureō, Strong's G5432",
+          "description": "Verified at BibleHub. The definition quoted in today's reading is verbatim: “to guard, protect by a military guard, either in order to prevent hostile invasion, or to keep inhabitants of a besieged city from flight.” Four New Testament occurrences, including the literal garrisoning of Damascus in 2 Corinthians 11:32."
+        },
+        {
+          "title": "Greek: eirēnē, Strong's G1515",
+          "description": "Verified at BibleHub. HELPS Word-studies gives the root sense as “wholeness, i.e. when all essential parts are joined together,” from a verb meaning to join or tie together into a whole. Thayer's notes that the Septuagint uses it chiefly for the Hebrew shalom."
+        },
+        {
+          "title": "Scripture texts",
+          "description": "Philippians, Matthew and 1 Chronicles quoted from the King James Version — chosen here for cadence and because “for all things come of thee” is not improved by any modern rendering. Colossians, James and Romans from the Berean Standard Bible."
+        }
+      ]
+    }
+  ]
+}

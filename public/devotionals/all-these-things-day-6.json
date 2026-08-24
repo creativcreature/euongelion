@@ -1,0 +1,232 @@
+{
+  "day": 6,
+  "chiasm_position": "recap",
+  "format": "two-minute-open-v2",
+  "title": "Sufficient Unto The Day",
+  "subtitle": "The week in one view, and where to go from here",
+  "teaser": "Five days, two passages, and one adjective at the end of it: enough. Not abundant, not resolved — the exact amount required for one day, which is the only unit anybody was ever given.",
+  "anchorVerse": "Matthew 6:34",
+  "theme": "The week gathered: the division of labour, faith as firmness rather than certainty, and everything coming from Him.",
+  "framework": "Matthew 6:34 — sufficient unto the day",
+  "scriptureReference": "Matthew 6:34",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Matthew 6:34",
+      "translation": "KJV",
+      "passage": "Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof.",
+      "emphasis": [
+        "Sufficient unto the day"
+      ],
+      "scriptureContext": "The last verse of the passage this week has been reading, and the one it has been walking toward.",
+      "redLetter": [
+        "Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof."
+      ]
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀρκετός",
+      "transliteration": "arketos",
+      "pronunciation": "ar-ke-TOS",
+      "strongsNumber": "G713",
+      "definition": "sufficient, enough, adequate — from a root meaning to content",
+      "usage": "It appears three times in the New Testament. Here it describes the amount of trouble in a single day. In Matthew 10:25 it is used of a disciple being like his teacher — it is enough for him to be that. Thayer's glosses it as satisfactory, which carries the sense of a thing meeting its requirement rather than merely being available."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Week In One Word",
+      "content": "Six days ago this reading started with an order — seek first — and a promise in the passive voice.\n\nIt has gone through a word for anxiety that Paul uses as a compliment. Through a prophet on a wall who was given a timetable with no dates. Through a curtain torn from the far side. Through a garrison that faces inward as well as out.\n\nAnd the passage itself ends on this adjective. Sufficient. Enough.\n\nNot abundant, and not resolved. Enough — the exact amount required, and no more, for one day.\n\nThat is a strange note for a promise to end on, and it is the honest one. Jesus does not close this teaching by saying tomorrow will be good. He says today already contains its full allocation of trouble, and that this is the reason not to go and collect tomorrow's as well.\n\nWhich is a limit, and limits are a kindness when you are carrying too much. You were given one day. It has enough in it. It also, by the same arithmetic, has enough provision in it, which is the point of the manna and the point of the prayer for daily bread.\n\nToday gathers the week up. Tomorrow the reading stops entirely, which is the last thing this passage has to teach.\n\nIt is worth saying what this week did not do, because that is part of what it was.\n\nIt did not explain suffering. It did not promise that the thing you are waiting for is coming, and it did not put a date on anything. Wednesday stood in the gap and stayed there rather than talking its way out.\n\nWhat it did instead was smaller and, hopefully, more durable. It took four words that get quoted at anxious people and showed what they actually say. It found the word for faith and discovered it means firmness. It followed a torn curtain to an open door. And it ended on a garrison rather than a rescue."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which day of this week did you most need, and did you actually let it land?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "God, I have been carrying today and tomorrow at once. Give me back the limit You set. Sufficient unto the day. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below: the week laid out in one view, and a set of things to read, watch and follow if you want to keep going past Sunday."
+    },
+    {
+      "type": "recap",
+      "heading": "The Week in One View",
+      "intro": "Five days ago this was two passages you could read in a minute. Here is what they turned out to be carrying, in the order the week unfolded. One of these rows is probably the reason this series found you.",
+      "days": [
+        {
+          "day": 1,
+          "title": "Seek Ye First",
+          "key_insight": "The command is a present imperative and it is plural — keep seeking, together. The promise is passive: it will be added, by someone who is not you. Most of what goes wrong with this verse comes from taking on both halves.",
+          "anchor_verse": "Matthew 6:33 (KJV)"
+        },
+        {
+          "day": 2,
+          "title": "The Word That Means Pulled Apart",
+          "key_insight": "The verb in “be anxious for nothing” is the same one Paul uses as a compliment about Timothy, and the same one Jesus says gently to Martha by name. It was never handed to you as a rebuke. Paul's sentence has a “but” in the middle, and everything after it is the instruction.",
+          "anchor_verse": "Matthew 6:25 (ASV); Philippians 4:6 (KJV)"
+        },
+        {
+          "day": 3,
+          "title": "When He Says Nothing",
+          "key_insight": "Habakkuk accused God of not listening, climbed a tower, and was given a timetable with no dates on it — and one assurance: though it lingers, it is not lying to you. The word for faith there is emunah, firmness, the same word used for Moses' arms held up by two men until sunset.",
+          "anchor_verse": "Psalm 22:1-2 (BSB); Habakkuk 2:2-4 (BSB)"
+        },
+        {
+          "day": 4,
+          "title": "A Rock You Do Not Need An Appointment To Reach",
+          "key_insight": "Immovable things are normally far away. Deuteronomy 32:4 calls God a rock and faithful in the same sentence, and the temple curtain was torn from the top down — from the end no one could reach. Direct access, because of one Mediator rather than instead of one.",
+          "anchor_verse": "Philippians 4:5 (KJV); Deuteronomy 32:4 (BSB)"
+        },
+        {
+          "day": 5,
+          "title": "All Things Come Of Thee",
+          "key_insight": "Peace here means wholeness, not calm — all the essential parts joined together. And the verb is a garrison, which both keeps the enemy out and keeps the people inside from fleeing. You may have been kept without being rescued, and not counted it.",
+          "anchor_verse": "Philippians 4:7 (KJV); 1 Chronicles 29:14 (KJV)"
+        }
+      ]
+    },
+    {
+      "type": "pullquote",
+      "content": "You seek. He adds. He already knows what you need — and the verse says so two lines before the part everybody quotes."
+    },
+    {
+      "type": "recap",
+      "heading": "What Held The Week Together",
+      "intro": "Three threads ran under all five days. They are worth naming, because they are the part that survives the week.",
+      "days": [
+        {
+          "day": 1,
+          "title": "The division of labour",
+          "key_insight": "Seeking is yours and continuous. Adding is God's and passive. Nearly every anxious reading of Matthew 6:33 comes from a person quietly taking on both jobs and then grading themselves on the one that was never theirs.",
+          "anchor_verse": "Matthew 6:33 (KJV)"
+        },
+        {
+          "day": 2,
+          "title": "Faith is firmness, not certainty",
+          "key_insight": "Emunah means steadiness before it means belief, and its plainest occurrence is a pair of tired arms held up by two other people. Which means faith was never a feeling you generate alone against the evidence. It is a position held, often by being held.",
+          "anchor_verse": "Habakkuk 2:4; Exodus 17:12"
+        },
+        {
+          "day": 3,
+          "title": "All things come of thee",
+          "key_insight": "The fear was about supply. David's prayer relocates the question rather than answering it: everything you have ever had already came from there, including the strength you have been using to worry about whether more will come.",
+          "anchor_verse": "1 Chronicles 29:14 (KJV)"
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "prompt": "On Tuesday you were asked to write a list of everything you were anxious about, turn each item into a request, and keep the page. Go and get it. What has changed on that list, and what has not?",
+      "additionalQuestions": [
+        "Which of the five days did you resist most? That is usually the one aimed at you.",
+        "Who could hold your arms up, and have you asked them yet?"
+      ],
+      "invitationType": "searching"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carrying The Week Forward",
+      "commitment": "I will keep the division of labour: I will seek first, I will bring every request in words, and I will stop auditing God on a schedule He never agreed to.",
+      "leavingAtCross": [
+        "Both halves of a job that was only ever half mine",
+        "The verse used as a rebuke, by others and by me",
+        "Tomorrow's trouble, collected early"
+      ],
+      "receivingFromCross": [
+        "A promise about bread, at its real size, which is large enough",
+        "A word for faith that means firmness",
+        "One day, with the word sufficient attached to it"
+      ]
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "3Dv4-n6OYGI",
+      "videoTitle": "Gospel of Matthew Summary: A Complete Animated Overview (Part 1)",
+      "videoCaption": "The whole first half of Matthew in about nine minutes, so the Sermon on the Mount sits inside the book it belongs to.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "resource",
+      "heading": "Further Your Learning",
+      "relatedScriptures": [
+        {
+          "reference": "Luke 12:22-34 (BSB)",
+          "text": "Luke's version of the same teaching, given in a different setting and ending with “where your treasure is, there your heart will be also.” Read it beside Matthew 6 and notice what each writer keeps."
+        },
+        {
+          "reference": "Habakkuk 1-3 (BSB)",
+          "text": "The whole book is three short chapters and takes about ten minutes. Read it in one sitting to see the complaint and the final song as one movement."
+        },
+        {
+          "reference": "Philippians 4 (KJV)",
+          "text": "The whole chapter, including verses 11-13 where Paul says plainly that he has learned contentment, and that he has known what it is to be in need."
+        },
+        {
+          "reference": "Exodus 16 (BSB)",
+          "text": "The manna arrangement in full, including the sabbath provision — the one day the rules were deliberately different."
+        },
+        {
+          "reference": "1 Chronicles 29:10-19 (KJV)",
+          "text": "David's prayer entire. It is short, and it is one of the great prayers of the Old Testament."
+        },
+        {
+          "reference": "Psalm 22 (BSB)",
+          "text": "Read the whole psalm, not only the first two verses. Where it ends is as important as where it starts."
+        }
+      ],
+      "resources": [
+        {
+          "title": "A passage trail if you want to keep going",
+          "description": "Follow the Habakkuk 2:4 line through the New Testament: Romans 1:17, then Galatians 3:11, then Hebrews 10:38. One sentence given to a man on a wall, picked up three times by writers building the gospel on it. Read each in its own context and watch what each writer does with the word."
+        },
+        {
+          "title": "A guided read for next week",
+          "description": "Take Philippians in seven days, one short section a day: 1:1-11, 1:12-30, 2:1-18, 2:19-30, 3:1-14, 3:15-4:9, 4:10-23. It is a four-page letter written from custody by a man who says he has learned to be content, and reading it whole makes chapter 4 land differently than reading verses 6 and 7 alone."
+        },
+        {
+          "title": "Free primary texts",
+          "description": "The lexicon entries used all week are open at biblehub.com — look up Strong's G3309 (merimnaō), G5432 (phroureō), G1515 (eirēnē), H530 (emunah) and H6697 (tsur) and read the full entries. The interlinear tab shows the parsing this week's claims about tense and voice were checked against. Nothing in this series asked you to take a Greek or Hebrew claim on trust."
+        },
+        {
+          "title": "On the translation seam",
+          "description": "Matthew 6:27 is a good place to see honest translators disagree. Compare the King James (“one cubit unto his stature”), the American Standard (“one cubit unto the measure of his life”) and the Berean Standard (“a single hour to his life”) side by side. The Greek word hēlikia genuinely carries both height and lifespan — this is not a case of one version being wrong."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "If You Only Keep One Thing",
+      "intro": "Five days is a lot to carry. If everything else goes, these three sentences are the week, and each one is anchored in a word that was checked rather than assumed.",
+      "days": [
+        {
+          "day": 1,
+          "title": "The adding is not your job",
+          "key_insight": "“Shall be added” is a passive verb with an unnamed actor, and in a sermon about a Father who already knows what you need, the actor is obvious. You were given the seeking. You were never given the supplying, and grading yourself on it has only made you tired.",
+          "anchor_verse": "Matthew 6:33 (KJV)"
+        },
+        {
+          "day": 2,
+          "title": "Faith means firmness, and firmness can be borrowed",
+          "key_insight": "Emunah is steadiness before it is belief, and its plainest use in Scripture describes Moses' arms being held up by Aaron and Hur. You are not required to manufacture certainty against the evidence. You are required to stay in place, and you are allowed to be held there.",
+          "anchor_verse": "Exodus 17:12; Habakkuk 2:4"
+        },
+        {
+          "day": 3,
+          "title": "Being kept can look like still being here",
+          "key_insight": "The peace that guards is a garrison, and a garrison stops the people inside from fleeing as well as stopping the enemy getting in. If you look back on a hard stretch and find no rescue but discover you did not leave — that is the promise, delivered, in the form the text actually describes.",
+          "anchor_verse": "Philippians 4:7 (KJV)"
+        }
+      ]
+    }
+  ]
+}
