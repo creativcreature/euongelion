@@ -5,6 +5,20 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Mobile images survive one bad network moment (SA-123, F-168)
+
+**2026-08-24**
+
+Founder: _"The mobile version of the homepage doesnt load the images."_
+Production would not fail on demand — real Chrome and real WebKit probes at
+375px painted every image, and all 21 hero variants returned 200. The break
+lives on the device: the service worker answered any failed image fetch
+with a fabricated EMPTY 404, and an installed PWA keeps the same page alive
+for days, so one dead spot blanked images until the page itself reloaded.
+The handler now retries once and otherwise fails with a REAL network error
+(`Response.error()`), and the featured devotional art — the page's LCP
+candidate — drops `lazy` for `priority`. SW pair v151. Test-first.
+
 ## The lab — experiments live in the real site, iframes banned (SA-114, F-158)
 
 **2026-08-20**
