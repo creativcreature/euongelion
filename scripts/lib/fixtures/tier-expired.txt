@@ -1,0 +1,2 @@
+EXIT=1
+Failed to authenticate. API Error: 401 OAuth access token is invalid.

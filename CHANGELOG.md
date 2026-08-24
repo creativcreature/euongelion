@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Quota failover — the content pipeline survives a capped subscription
+
+**2026-08-24**
+
+- Added a tier ladder for subscription-billed composition: account 1, then
+  account 2, then a dedicated metered API key with a console spend cap. The
+  site's own `ANTHROPIC_API_KEY` is deliberately not reused, so SA-100's
+  separation between the content pipeline and the Worker's visitor AI holds.
+- A pre-flight probe picks the first tier with headroom before any expensive
+  work starts, so a capped tier costs one cheap call rather than a dead
+  25-minute run.
+- The classifier distinguishes an exhausted subscription from an invalid or
+  expired token. Exhaustion advances the ladder; a bad credential alerts
+  loudly, because it needs a human rather than the next tier. Anything
+  unrecognised fails safe and advances.
+
+## Rekindled Day 2 — devotional video plates
+
+**2026-08-21**
+
+- Added six tightly framed 3:2 close-up plates for Day 2: weathered hands
+  with a blade, bare feet on cracked earth, closing eyes, a dying lamp wick,
+  oil poured into a lamp, and an intergenerational lamp handoff.
+- Regenerated the Day 2 flame and smoke animation cycles as six-frame 3x2
+  risograph contact sheets on exact black screen-blend backgrounds, using
+  amber halftone flame and cobalt halftone smoke.
+- Added three 3:2 animation contact sheets for Day 2: six-state flame,
+  smoke, and pulsing-coals cycles in cobalt/cream risograph halftone with
+  amber reserved for flame and ember glow.
+- Added four 3:2 risograph plates for the Day 2 devotional video: the
+  lampstand, altar at dawn, overhead scorch line, and two women with a lamp.
+- Art direction uses cobalt/cream halftone printing with amber restricted to
+  active flame and lamplight.
+
+---
+
 ## The lab — experiments live in the real site, iframes banned (SA-114, F-158)
 
 **2026-08-20**
