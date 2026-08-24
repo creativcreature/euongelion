@@ -53,6 +53,19 @@ export interface OgCardProps {
   url?: string
   /** Card dimensions. Default: 'landscape' (1200×630). */
   format?: 'landscape' | 'portrait'
+  /**
+   * The page's lead artwork, as a data URI or an absolute URL.
+   *
+   * When present the card becomes picture-led: the artwork takes the top of
+   * the frame and the type drops into a panel beneath it. Without it the card
+   * renders exactly as it always has, so every existing caller is unaffected.
+   *
+   * Prefer a data URI. Satori fetches remote URLs at render time, and on
+   * Workers a cold fetch of our own asset is both slower and one more thing
+   * that can fail; `loadLeadImage()` below does the fetch once and hands back
+   * a data URI, falling back to the text card if the asset is missing.
+   */
+  image?: string
 }
 
 export const OG_SIZES = {
@@ -80,13 +93,18 @@ export function renderOgCard({
   kicker,
   url = 'EUANGELION.APP',
   format = 'landscape',
+  image,
 }: OgCardProps): React.ReactElement {
   const { width, height } = OG_SIZES[format]
   const isPortrait = format === 'portrait'
 
   // Layout constants that scale with dimension
   const paddingH = isPortrait ? 72 : 80
-  const paddingV = isPortrait ? 80 : 60
+  // With artwork above it the panel is short, so the type sits tighter and the
+  // verse is dropped — a two-line title plus a URL is all that fits legibly at
+  // the size these cards are actually previewed.
+  const paddingV = image ? (isPortrait ? 44 : 38) : isPortrait ? 80 : 60
+  const imageBandHeight = isPortrait ? 760 : 348
 
   return (
     <div
@@ -127,6 +145,28 @@ export function renderOgCard({
           display: 'flex',
         }}
       />
+
+      {/* ── Lead artwork ──────────────────────────────────────────── */}
+      {image && (
+        <div
+          style={{
+            display: 'flex',
+            width,
+            height: imageBandHeight,
+            overflow: 'hidden',
+            backgroundColor: NAVY,
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image}
+            alt=""
+            width={width}
+            height={imageBandHeight}
+            style={{ objectFit: 'cover', width, height: imageBandHeight }}
+          />
+        </div>
+      )}
 
       {/* ── Main content area ─────────────────────────────────────── */}
       <div
@@ -202,8 +242,8 @@ export function renderOgCard({
           </div>
         </div>
 
-        {/* Middle block: verse */}
-        {verse && (
+        {/* Middle block: verse — omitted on picture-led cards, no room */}
+        {verse && !image && (
           <div
             style={{
               display: 'flex',
@@ -301,4 +341,68 @@ export function makeOgImageResponse(props: OgCardProps): ImageResponse {
   const format = props.format ?? 'landscape'
   const size = OG_SIZES[format]
   return new ImageResponse(renderOgCard(props), { ...size })
+}
+
+// ---------------------------------------------------------------------------
+// Lead-artwork loading
+// ---------------------------------------------------------------------------
+
+/**
+ * Where our own assets live at render time.
+ *
+ * Satori has no filesystem, so a lead image has to arrive over HTTP even when
+ * it is our own file sitting in `public/`. In production that is the canonical
+ * origin; locally it is whatever the dev server is on.
+ */
+function assetOrigin(): string {
+  return (
+    process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, '') ||
+    'https://euangelion.app'
+  )
+}
+
+/**
+ * Fetch a `public/` asset and return it as a data URI for Satori.
+ *
+ * Returns undefined rather than throwing. That matters: an OG route that
+ * throws serves no card at all, and a link with no preview is a worse outcome
+ * than a link with the old text-only preview. Every failure here degrades to
+ * the typographic card instead.
+ */
+export async function loadLeadImage(
+  publicPath: string,
+): Promise<string | undefined> {
+  try {
+    const url = publicPath.startsWith('http')
+      ? publicPath
+      : `${assetOrigin()}${publicPath.startsWith('/') ? '' : '/'}${publicPath}`
+    const res = await fetch(url, { signal: AbortSignal.timeout(4000) })
+    if (!res.ok) return undefined
+    const type = res.headers.get('content-type') ?? 'image/png'
+    // Satori renders png/jpeg reliably. It does NOT decode webp, which is what
+    // most of our artwork is stored as — so a webp lead image must be declared
+    // unsupported here rather than handed over to produce a blank band.
+    if (!/image\/(png|jpe?g)/.test(type)) return undefined
+    const buf = await res.arrayBuffer()
+    let binary = ''
+    const bytes = new Uint8Array(buf)
+    for (let i = 0; i < bytes.length; i++)
+      binary += String.fromCharCode(bytes[i])
+    return `data:${type};base64,${btoa(binary)}`
+  } catch {
+    return undefined
+  }
+}
+
+/**
+ * Picture-led card factory: loads the artwork, then renders. Falls back to the
+ * text card whenever the artwork cannot be loaded or decoded.
+ */
+export async function makeOgImageResponseWithLead(
+  props: OgCardProps & { imagePath?: string },
+): Promise<ImageResponse> {
+  const { imagePath, ...rest } = props
+  const image = imagePath ? await loadLeadImage(imagePath) : undefined
+  const size = OG_SIZES[rest.format ?? 'landscape']
+  return new ImageResponse(renderOgCard({ ...rest, image }), { ...size })
 }

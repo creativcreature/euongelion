@@ -14,6 +14,7 @@
     "edition:audit-prints": "node scripts/edition/audit-prints.mjs",
     "build:voice-bank": "node scripts/build-voice-bank.mjs",
     "build:wordnote-bank": "node scripts/build-wordnote-bank.mjs",
+    "build:og-leads": "python3 scripts/build_og_leads.py",
     "build:georgia-help-pdf": "tsx scripts/render-georgia-help-pdf.mts",
     "render:wakeup-handout": "node wakeup-mag/print/handouts/scripts/render-pocket-handout.mjs --input wakeup-mag/reference/HANDOUT.md",
     "expand:reference-index": "tsx scripts/expand-reference-index.ts",

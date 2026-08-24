@@ -47,6 +47,47 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The tab and the link now say Euangelion (SA-127, F-171)
+
+**2026-08-24**
+
+- **The site was shipping the stock Next.js favicon.** `src/app/favicon.ico`
+  was the scaffolded triangle, and App Router serves that at `/favicon.ico`
+  ahead of anything in `public/`. A brand `icon.svg` did exist — carrying an E
+  on the **retired brown palette** (`#1a1612`/`#c19a6b`) — but it was wired only
+  to the PWA manifest and never to the browser.
+- **New mark: a cream slab E on a cobalt field.** Chosen by the founder from
+  four candidates rendered at the sizes browsers actually use, on the grounds
+  that it is the only one whose counters survive 16px in a real tab. Drawn as
+  geometry rather than typeset, so it never depends on a font resolving at
+  render time. Shipped as `.ico` (16→256), `icon.svg`, a 180px apple-touch
+  icon, and 192/512/512-maskable PWA rasters with the maskable inset to the
+  safe circle. The manifest moves off the brown palette.
+- **A favicon is the one asset that must be hand-drawn vector rather than
+  generated raster** — at 16×16 a generated image is mush. Flagging that
+  explicitly since the house rule elsewhere is now generate-don't-draw.
+- **Link previews were text-only, which reads as no preview.** The `og:image`
+  tags were present and returning valid PNGs the entire time; the cards were
+  simply typographic, and `OgCardProps` had no image field at all. It now takes
+  an optional lead: the artwork takes the top of the frame, the type drops into
+  a panel beneath, and the verse is suppressed because it does not fit legibly
+  at preview size.
+- **Satori cannot decode webp, and nearly all site artwork is webp.** Handing a
+  page's hero straight to `next/og` renders an _empty band_ — a silent failure
+  that looks fine in review and only surfaces when someone shares a link. So
+  `scripts/build_og_leads.py` (`npm run build:og-leads`) writes JPEG twins into
+  `public/images/og-lead/`, sized to the exact band the card paints. 40 leads,
+  5MB, server-side only. `loadLeadImage()` refuses any content-type that is not
+  png/jpeg, and every failure degrades to the typographic card rather than
+  throwing — a link with the old preview beats a link with none.
+- Picture-led cards now on `/`, `/series/[slug]`, `/devotional/[slug]` and
+  `/seeking-help-georgia`. `/sunday` and `/soul-audit` stay typographic.
+- Caught in passing: writing the `.ico` as RGB makes Next's decoder throw
+  `Format error decoding Ico` on every request. It has to be RGBA even though
+  nothing in it is transparent.
+
+---
+
 ## Seeking Help — Georgia: the hero is a generated plate now
 
 **2026-08-24**

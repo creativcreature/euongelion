@@ -4,11 +4,19 @@
   "description": "Daily bread for the cluttered, hungry soul.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1a1612",
-  "theme_color": "#1a1612",
+  "background_color": "#0b1420",
+  "theme_color": "#0b1420",
   "orientation": "portrait-primary",
-  "categories": ["lifestyle", "education"],
+  "categories": [
+    "lifestyle",
+    "education"
+  ],
   "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
     {
       "src": "/icons/icon-192.png",
       "sizes": "192x192",
