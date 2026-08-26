@@ -8,14 +8,15 @@ import {
 } from '@/data/series'
 
 describe('Series Data', () => {
-  it('has 35 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
-    // 1 Bible-365 + 7 Wake-Up + 18 Substack + 11 new = 37
+  it('has 36 series in SERIES_ORDER (ALL_SERIES_ORDER)', () => {
+    // 1 Bible-365 + 7 Wake-Up + 18 Substack + 12 new = 38
     // (prayer-of-jabez 2026-07-12 SA-029/F-081; the-harvest 2026-07-26 SA-031/F-082;
     //  he-cannot-deny-himself 2026-08-10 SA-034/F-085;
     //  looking-at-the-sun 2026-08-14 SA-036/F-087;
-    //  rekindled 2026-08-17 SA-075/F-119)
-    expect(SERIES_ORDER).toHaveLength(38)
-    expect(ALL_SERIES_ORDER).toHaveLength(38)
+    //  rekindled 2026-08-17 SA-075/F-119;
+    //  consider-the-lilies 2026-08-26 SA-128/F-172)
+    expect(SERIES_ORDER).toHaveLength(39)
+    expect(ALL_SERIES_ORDER).toHaveLength(39)
   })
 
   it('has 7 Wake-Up series', () => {

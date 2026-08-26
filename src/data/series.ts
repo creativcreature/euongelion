@@ -1089,6 +1089,78 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     ],
   },
 
+  'consider-the-lilies': {
+    title: 'Consider the Lilies',
+    heroImage: '/images/site/series/consider-the-lilies.webp',
+    question: 'Is the God who feeds the birds distant from your grocery bill?',
+    introduction:
+      'Jesus points at birds that do not farm and flowers that do not spin, and argues from the lesser to the greater: if God provisions them, He has not forgotten you. Paul, writing from custody, adds the practice — anxious for nothing, but in everything, by prayer and thanksgiving. Seven days across Matthew 6:25-34 and Philippians 4:4-7, on provision, priority, and a peace that stands guard.',
+    context:
+      'For the 2 a.m. math, the bills that do not add up, the quiet fear that there will not be enough. This series confronts two real misreadings head-on — the prosperity-gospel transaction hiding inside "seek first the kingdom," and the shaming use of "be anxious for nothing" against people already anxious — and teaches the text straight underneath both.',
+    framework:
+      'Matthew 6:33 - Seek first the kingdom of God and His righteousness',
+    pathway: 'Sleep',
+    keywords: [
+      'anxiety',
+      'worry',
+      'anxious',
+      'worried',
+      'financial stress',
+      'money anxiety',
+      'no money',
+      'scared about the future',
+      'overwhelmed',
+      'cant sleep',
+      'panic',
+      'fear of not enough',
+      'provision',
+      'tomorrow',
+      'uncertainty',
+      'control',
+      'burnout',
+      'trust issues',
+      'layoff',
+      'bills',
+    ],
+    days: [
+      {
+        day: 1,
+        title: 'Sufficient Unto the Day',
+        slug: 'consider-the-lilies-day-1',
+      },
+      {
+        day: 2,
+        title: 'Fed at the Brook',
+        slug: 'consider-the-lilies-day-2',
+      },
+      {
+        day: 3,
+        title: 'Not Even Solomon',
+        slug: 'consider-the-lilies-day-3',
+      },
+      {
+        day: 4,
+        title: 'Ask, and Ask Rightly',
+        slug: 'consider-the-lilies-day-4',
+      },
+      {
+        day: 5,
+        title: 'The Peace That Guards',
+        slug: 'consider-the-lilies-day-5',
+      },
+      {
+        day: 6,
+        title: 'The Joy That Is Strength',
+        slug: 'consider-the-lilies-day-6',
+      },
+      {
+        day: 7,
+        title: 'The Ledger of the Week',
+        slug: 'consider-the-lilies-day-7',
+      },
+    ],
+  },
+
   'he-cannot-deny-himself': {
     title: 'He Cannot Deny Himself',
     heroImage: '/images/site/series/he-cannot-deny-himself.webp',
@@ -1323,6 +1395,7 @@ export const NEW_SERIES_ORDER = [
   'he-cannot-deny-himself',
   'looking-at-the-sun',
   'rekindled',
+  'consider-the-lilies',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.

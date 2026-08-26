@@ -23,6 +23,7 @@ export interface SeriesRail {
 // SA-031 (2026-07-26): the most recent series leads the featured rail.
 // devotional surface (per founder direction 2026-05-08).
 export const FEATURED_SERIES_SLUGS = [
+  'consider-the-lilies',
   'rekindled',
   'he-cannot-deny-himself',
   'the-harvest',
@@ -39,6 +40,7 @@ export const SERIES_RAILS: SeriesRail[] = [
     subtitle: 'Too much, too fast, too loud — and the invitation to stop.',
     layout: 'rail',
     slugs: [
+      'consider-the-lilies',
       'looking-at-the-sun',
       'too-busy-for-god',
       'hearing-god-in-the-noise',

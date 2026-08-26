@@ -5,6 +5,72 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Consider the Lilies — a new 7-day series on worry and provision (SA-128, F-172)
+
+**2026-08-26**
+
+Unattended Wednesday weekly-series build (SA-100), cloud constraints edition.
+Thematic supplied by the founder verbatim: Matthew 6:25-34 (do not worry;
+birds of the air; lilies of the field; seek first the kingdom) and
+Philippians 4:4-7 (rejoice always; anxious for nothing; peace that surpasses
+understanding). Week: Sunday 2026-09-06 through Saturday 2026-09-12.
+
+- **The spine is the thematic's own honest human angle** — money and
+  provision anxiety, close to universal, needing no borrowed founder story.
+  Two cultural scars named plainly once, then taught straight underneath, per
+  the Jabez precedent: the prosperity-gospel misreading of "seek first...added
+  unto you" as a transaction (Day 4, answered by Solomon's own unrequested
+  wealth and C.T. Studd's inheritance gift that ended in poverty, not
+  riches), and the shaming misuse of "be anxious for nothing" against people
+  already in crisis (Day 5, answered by the verse's own grammar — a
+  practice, not a precondition for prayer).
+- **Cross-testament thread (SA-032)** runs 1 Kings 17 (Elijah fed by ravens —
+  the one bird Leviticus 11:15 names unclean) through Isaiah 40:6-8
+  (grass/word), 1 Kings 3:5-13 (Solomon's dream at Gibeon), Isaiah 26:3
+  (perfect peace), to Nehemiah 8:10 (the joy of the LORD is your strength).
+- **Verified research, four parallel agents**: stories (Hudson Taylor, David
+  Brainerd, C.T. Studd, Corrie ten Boom, Dietrich Bonhoeffer — two explicitly
+  anti-prosperity-gospel), quotes (Spurgeon, Matthew Henry, C.S. Lewis, all
+  fetched against primary text), videos (7 BibleProject/Gospel in Life IDs,
+  oEmbed-verified), and lexicon — merimnao's popular "divided mind" etymology
+  checked against Beekes and downgraded to metaphor-only, since the
+  scholarly root is closer to "care-full remembering."
+- **Readability required a full re-punctuation pass**: first draft measured
+  FK 9.3 / 30w+ sentences 20.6%; series-wide gate (SA-053) needs FK ≤ 8.5 and
+  30w+ ≤ 8%. Fixed by splitting at existing clause boundaries, never by
+  cutting content — final: FK 8.0, 30w+ 7.7%, zero sentences over the 45-word
+  hard cap. Along the way, found and worked around a `check-readability.mjs`
+  quirk where a period immediately followed by a closing quotation mark does
+  not register as a sentence boundary, silently merging adjacent quoted
+  sentences for scoring.
+- **devotional-editor two-pass review**: first pass NOT YET (3 BLOCKING — a
+  missing Day 1 meta-story line, no explicit Christological connection by
+  Day 5, an over-extended Bonhoeffer quote — plus 5 NEEDS-FIX); all fixed;
+  re-review verdict READY FOR FOUNDER, with one disclosed non-blocking
+  residual (a recurring "Not X. It is Y." sentence pattern, partially
+  thinned, left for the founder to judge).
+- **Imagery FAILED loudly, per instruction, not silently skipped**: `codex
+exec` returned `HTTP 401 token_expired` — the Codex CLI auth in this
+  environment is stale. 13 riso-style subject lines (series hero + 12 day
+  plates, SA-052 archetype/coverage-band/device assigned) are staged in
+  `scripts/imagery/series-image-subjects.json` and prompt-assemble cleanly;
+  zero images generated; no `inline-image` modules were added to the day
+  JSONs, so nothing references a file that doesn't exist.
+- **Narration ABORTED loudly, same principle**: no `.env.local` exists in
+  this environment, so the ElevenLabs key is entirely absent (not merely
+  over budget) — the dry-run cost-gate script failed before any cost could
+  be shown, and per the standing rule, nothing renders without the cost
+  shown first.
+- Wired into `src/data/series.ts` (SERIES_DATA + NEW_SERIES_ORDER) and
+  `src/data/series-rails.ts` (leads `FEATURED_SERIES_SLUGS` per SA-031, leads
+  the "overwhelmed" rail); `__tests__/series-data.test.ts` count bumped 38 to 39. Red-letter (SA-051) applied via `withRedLetter` and independently
+  verified to exactly match `resolveRedLetter()` output on every Matthew
+  scripture module — not hand-eyeballed.
+- Branch `series/auto-2026-08-26`, reading-gate PR opened, NOT merged, NOT
+  deployed. Imagery and narration resume from the staged prompts and
+  finished, editor-approved prose in the next session with valid Codex auth
+  and an ElevenLabs key.
+
 ## The intro opens in the reader's own mode (SA-127, F-171)
 
 **2026-08-24**
@@ -33,6 +99,7 @@ leaves to the right, never rewinding, 0.7s on their own easing curve.
 
 SW pair v154. Test-first, nine contract tests; both modes verified frame by
 frame in real Chrome.
+
 ## The paper heals: comics every day, clues in hand — SA-114 (F-158)
 
 **2026-08-24**

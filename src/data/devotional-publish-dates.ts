@@ -442,6 +442,34 @@ export const DEVOTIONAL_PUBLISH_DATES: Record<string, DevotionalPublishDate> = {
   'community-day-3': { publishedAt: '2026-02-06', source: 'first-seen' },
   'community-day-4': { publishedAt: '2026-02-06', source: 'first-seen' },
   'community-day-5': { publishedAt: '2026-02-06', source: 'first-seen' },
+  'consider-the-lilies-day-1': {
+    publishedAt: '2026-08-26',
+    source: 'series-ship',
+  },
+  'consider-the-lilies-day-2': {
+    publishedAt: '2026-08-26',
+    source: 'series-ship',
+  },
+  'consider-the-lilies-day-3': {
+    publishedAt: '2026-08-26',
+    source: 'series-ship',
+  },
+  'consider-the-lilies-day-4': {
+    publishedAt: '2026-08-26',
+    source: 'series-ship',
+  },
+  'consider-the-lilies-day-5': {
+    publishedAt: '2026-08-26',
+    source: 'series-ship',
+  },
+  'consider-the-lilies-day-6': {
+    publishedAt: '2026-08-26',
+    source: 'series-ship',
+  },
+  'consider-the-lilies-day-7': {
+    publishedAt: '2026-08-26',
+    source: 'series-ship',
+  },
   'genesis-two-stories-of-creation-day-1': {
     publishedAt: '2026-01-11',
     source: 'substack',

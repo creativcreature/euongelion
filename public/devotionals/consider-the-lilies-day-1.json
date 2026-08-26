@@ -1,0 +1,51 @@
+{
+  "day": 1,
+  "chiasm_position": "sabbath",
+  "title": "Sufficient Unto the Day",
+  "subtitle": "Before we take the argument apart, we rest inside its last line",
+  "teaser": "This week has a whole argument to make — birds, flowers, a king, a garrison, a joy that doesn't wait. Today we don't make any of it. We sit inside where it lands.",
+  "anchorVerse": "Matthew 6:34",
+  "theme": "The last line of a bigger argument, held alone before the argument begins",
+  "framework": "Matthew 6:34 - Today has enough trouble of its own",
+  "scriptureReference": "Matthew 6:34",
+  "totalWords": 430,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Matthew 6:34",
+      "translation": "BSB",
+      "passage": "Therefore do not worry about tomorrow, for tomorrow will worry about itself. Today has enough trouble of its own.",
+      "redLetter": [
+        "Therefore do not worry about tomorrow, for tomorrow will worry about itself. Today has enough trouble of its own."
+      ],
+      "emphasis": [
+        "Today has enough trouble of its own"
+      ],
+      "scriptureContext": "The closing line of a much longer teaching — the only line we sit with today."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "sabbath",
+      "pardes_layer": "peshat",
+      "heading": "One Line, Held Alone",
+      "content": "This sentence is the last note of a much longer argument — ten verses about birds that don't farm, flowers that don't spin, a Father who already knows what His children need before they ask. The King James rendering gave it a phrase that outlived the sermon it came from: sufficient unto the day is the evil thereof. Whatever tomorrow holds, it is not today's to carry yet.\n\nWe're in the part of God's story called MINISTRY — Jesus, mid-sermon on a Galilean hillside, teaching kingdom life to ordinary people before the cross that would secure it. He taught this to people whose worry was not abstract — day laborers and small farmers, close enough to the edge that a bad harvest was a real threat, not a mood. He was not telling them nothing was wrong. He was telling them where the line falls: today's trouble belongs to today. Tomorrow's has not arrived, and will bring its own portion when it does, no earlier.\n\nThis week will take the fuller argument apart — a prophet fed by an unclean bird, a wildflower that outdresses a king, a peace that stands guard like a sentry, a joy commanded before the good news arrives. Today, none of that yet. It is Sunday. Sit inside the last line before the argument that built it begins."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What piece of tomorrow have you already been carrying today, uninvited?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "sabbath",
+      "heading": "Sabbath",
+      "scripture_anchor": {
+        "reference": "Matthew 6:34",
+        "translation": "BSB",
+        "text": "Today has enough trouble of its own."
+      },
+      "invitation": "Sit somewhere quiet for five unhurried minutes. No study, no fixing, no rehearsing tomorrow. If a worry about tomorrow surfaces, name it once, and set it back down outside today's boundary. The silence is the practice.",
+      "prayerText": "Father, today is enough. I hand tomorrow back to You, unopened. Amen."
+    }
+  ]
+}

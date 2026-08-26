@@ -727,6 +727,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     'Not theory. Practice. The early church pooled resources, shared meals, and stayed when empire collapsed. Can we?',
   'community-day-5':
     'Systems are failing. Networks scatter. But covenant people stay. These are your people. And you are theirs.',
+  'consider-the-lilies-day-1':
+    "This week has a whole argument to make — birds, flowers, a king, a garrison, a joy that doesn't wait. Today we don't make any of it. We sit inside where it lands.",
+  'consider-the-lilies-day-2':
+    'Jesus does not ask His hearers to take His word for it. He points overhead, at birds they can see, and asks them to draw the obvious conclusion. Centuries earlier a fugitive prophet had already lived the conclusion out — fed, in hiding, by the one bird the Law called unclean.',
+  'consider-the-lilies-day-3':
+    'The argument sharpens. Birds at least fly and forage. A wildflower does nothing at all — and outdresses the most decorated king Israel ever had. Brevity was never the insult. The anxiety about brevity is what actually wastes the bloom.',
+  'consider-the-lilies-day-4':
+    'A sentence that has been read as a formula for three centuries — obey, then collect. Read slowly, it is not a formula at all. It is an order of operations, and a king who got it right is the proof.',
+  'consider-the-lilies-day-5':
+    'This verse has been used to shame anxious people into pretending. Read the Greek and the man who wrote it, and the shame reads backward: a prisoner, chained to a guard, promising his readers a guard of their own.',
+  'consider-the-lilies-day-6':
+    "The week began with a bird that stores nothing for tomorrow. It ends with a command to rejoice that doesn't wait for good news first. A newly literate, grieving nation is told the same thing Paul tells a shrinking, worried church: the joy is the strength, not the reward for having none left to worry about.",
+  'consider-the-lilies-day-7':
+    "A bird fed without storing, a flower dressed without striving, a king who asked for the wrong thing on purpose, a peace that stands guard, a joy that doesn't wait for good news. Here is the week in one view.",
   'genesis-two-stories-of-creation-day-1':
     "God's creative power revealed as both cosmic King and personal Potter",
   'genesis-two-stories-of-creation-day-2':
@@ -1475,6 +1489,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'community-day-3': "What if you're not meant to be alone?",
   'community-day-4': 'What does covenant community actually look like?',
   'community-day-5': 'Who will remain when everything collapses?',
+  'consider-the-lilies-day-1': 'Sufficient Unto the Day',
+  'consider-the-lilies-day-2': 'Fed at the Brook',
+  'consider-the-lilies-day-3': 'Not Even Solomon',
+  'consider-the-lilies-day-4': 'Ask, and Ask Rightly',
+  'consider-the-lilies-day-5': 'The Peace That Guards',
+  'consider-the-lilies-day-6': 'The Joy That Is Strength',
+  'consider-the-lilies-day-7': 'The Ledger of the Week',
   'genesis-two-stories-of-creation-day-1': 'The Divine Zoom Lens',
   'genesis-two-stories-of-creation-day-2': 'Made in His Image',
   'genesis-two-stories-of-creation-day-3': 'The Breath of Life',
