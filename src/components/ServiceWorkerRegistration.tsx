@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 // reloading. v50 corresponds to the R37 deploy.
 // R38 (Phase 2.2 + 2.3): v51 — offline reading-route caching + web-push
 // handlers in /sw.js. Must match CACHE_NAME there.
-const SW_VERSION = 'v154'
+const SW_VERSION = 'v155'
 /** Must match DOWNLOADS_CACHE in public/sw.js. Never versioned. */
 const DOWNLOADS_CACHE = 'euangelion-downloads'
 const SW_VERSION_KEY = 'euangelion-sw-version'
