@@ -14066,6 +14066,24 @@ html[data-held-moment] .mobile-tab-bar {
   background-color: #1f2a8d;
 }
 
+/* The arming sheet hands over to the live overlay mid-sequence; if the two
+   grounds disagree the swap shows as a one-frame colour pop. Keep them equal
+   in both themes. */
+:root.dark[data-press='armed'],
+:root[data-theme='dark'][data-press='armed'] {
+  background-color: #2236a2;
+}
+
+:root.dark[data-press='armed']::before,
+:root[data-theme='dark'][data-press='armed']::before {
+  background-color: #2236a2;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(9, 14, 66, 0.62) 0.9px,
+    transparent 1.1px
+  );
+}
+
 :root[data-press='armed']::before {
   content: '';
   position: fixed;
@@ -14081,10 +14099,53 @@ html[data-held-moment] .mobile-tab-bar {
     transparent 1.1px
   );
   background-size: 4px 4px;
+  background-repeat: repeat;
   /* FAILSAFE 1 of 3 — zero-JS. If hydration never happens at all, the sheet
      still leaves. (2 = the head script's 3000ms self-disarm; 3 = the
      component's HARD_STOP_MS.) */
-  animation: press-disarm 260ms cubic-bezier(0.22, 0.61, 0.36, 1) 2600ms both;
+  /* BEAT 0 — THE PRESS INKS UP.
+     The arm is hydration-bound and measured at ~429ms in dev AND production
+     (EuangelionShellHeader fits the masthead from its own effect, so it cannot
+     run sooner; a synthetic resize was tried and measured as no help). That
+     was 429ms of a dead cobalt screen — the single most "janky" thing left.
+     The plate now registers instead: the Ben-Day field jumps in DISCRETE
+     steps, which is both the house texture rule (grain steps, never glides —
+     grain-drift is `9s steps(6)`) and cheap: four repaints across the whole
+     arm rather than sixty, so it cannot compete with hydration the way a
+     smooth background-position tween would. */
+  animation:
+    press-ink-register 520ms steps(1, end) infinite,
+    press-disarm 260ms cubic-bezier(0.22, 0.61, 0.36, 1) 2600ms both;
+}
+
+/* Four registrations, held then jumped. Deliberately tiny — this is a plate
+   settling on the bed, not a wobble. */
+@keyframes press-ink-register {
+  0% {
+    background-position:
+      0 0,
+      0 0;
+  }
+  25% {
+    background-position:
+      2px 1px,
+      0 0;
+  }
+  50% {
+    background-position:
+      1px 2px,
+      0 0;
+  }
+  75% {
+    background-position:
+      2px 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      0 0,
+      0 0;
+  }
 }
 
 @keyframes press-disarm {
@@ -14144,6 +14205,19 @@ html[data-held-moment] .mobile-tab-bar {
 :root[data-theme='dark'] .press {
   --press-paper: #efe5d8; /* the dark masthead's own cream (--mock-ink) */
   --press-land: #efe5d8;
+  /* THE DARK SHEET IS LIFTED COBALT, NOT THE LIGHT SHEET'S COBALT.
+     In dark the figure cannot carry the print: the knockout is cream and the
+     masthead's wordmark is also cream, so the word looks identical either side
+     of the edge and only the GROUND can change. Against the dark page ground
+     (#171b69) the light sheet (#1f2a8d) measures 1.28:1 — photographed at the
+     print stroke, the edge was very nearly invisible and dark mode effectively
+     had no fourth beat, which is the exact criticism the previous version
+     earned. Lifted cobalt is 1.53:1 and is the documented dark-mode accent
+     (--color-cobalt-lifted), so this is the brand's own dark blue rather than
+     an invented one. The dots are pushed harder too: above the edge there is
+     no dot field at all, so the texture step reinforces the luminance step. */
+  --press-ink: #2236a2;
+  --press-dot: rgba(9, 14, 66, 0.62);
 }
 
 /* THE INK. A printed plate, not a UI panel. */

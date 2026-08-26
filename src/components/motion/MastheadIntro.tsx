@@ -73,14 +73,22 @@ const E_SQUEEGEE = 'cubic-bezier(0.83, 0, 0.17, 1)' // the sheet-only exit — g
 const E_IN = 'cubic-bezier(0.4, 0, 1, 1)' // --ease-in, globals.css:1102
 const E_SWAP = 'cubic-bezier(0.4, 0, 0.6, 1)'
 
-const T_SLIP = 120
-const T_KEY = 220
-const T_SET_END = 560
-const T_FLIGHT_END = 1260
-const T_WIPE = 1140
-const T_PRINT = 1280
-const T_RELEASE = 1520
-const T_END = 1720
+/* COMPRESSED 2026-08-26. The sequence ran 1720ms on top of a hydration-bound
+ * arm measured at ~430ms, so the reader waited ~2.15s — and the founder has
+ * now called the timing wrong three times across three versions. The arm is
+ * not removable (see Effect A), so the sequence gives the time back: 1720 ->
+ * 1240ms, which lands the whole open at ~1.7s. Every beat keeps its shape and
+ * its easing; only the clock is tighter. The print stroke is deliberately NOT
+ * scaled with the rest — it stays 220ms, because it is the payoff and it is
+ * the one beat the eye has to read rather than merely register. */
+const T_SLIP = 80
+const T_KEY = 150
+const T_SET_END = 380
+const T_FLIGHT_END = 880
+const T_WIPE = 800
+const T_PRINT = 900
+const T_RELEASE = 1120
+const T_END = 1240
 const D_WIPE = T_END - T_WIPE // 580
 const OFF_PRINT = (T_PRINT - T_WIPE) / D_WIPE // 0.241379
 const OFF_RELEASE = (T_RELEASE - T_WIPE) / D_WIPE // 0.655172
@@ -302,6 +310,25 @@ export default function MastheadIntro() {
         if (!heading || !heading.clientWidth) return false
         return el.getBoundingClientRect().width / heading.clientWidth >= 0.95
       }
+      // WHY THE ARM CANNOT BE SHORTENED, so nobody spends another hour on it.
+      // Measured 2026-08-26, dev and production alike: Industry is preloaded
+      // and resolves at ~0ms, document.fonts.ready lands at 89ms (dev) /
+      // 174ms (prod) — but the masthead is not FITTED until ~429ms in BOTH,
+      // because EuangelionShellHeader's fitAll() is scheduled from its own
+      // effect and therefore waits on React hydration.
+      //
+      // Dispatching a synthetic `resize` to trigger the header's own
+      // rafFit listener was tried and measured: no effect (fitted stayed
+      // 432ms), because that listener is itself registered inside the effect
+      // that hydration is gating. There is nothing to nudge yet.
+      //
+      // Re-deriving the fit ourselves would mean predicting a post-fit rect
+      // from pre-fit metrics — the height and baseline shift with font-size,
+      // and this design's whole value is that the landing is exact rather
+      // than nearly right. So the arm stays, and the SHEET carries it: the
+      // Ben-Day field registers in discrete steps from the first painted
+      // frame (globals.css, press-register-jitter), which is beat 0 — the
+      // press inking up — rather than a dead cobalt hold.
       let stable = 0
       while (performance.now() - t0 < ARM_DEADLINE_MS && stable < 2) {
         stable = fitted(target()) ? stable + 1 : 0
@@ -438,13 +465,15 @@ export default function MastheadIntro() {
             easing: E_STRIKE,
           },
           {
-            offset: 40 / 440,
+            // Fractions of (T_SET_END - T_SLIP), not absolute ms — they follow
+            // the compression instead of drifting out of phase with it.
+            offset: 0.13,
             transform: 'translate3d(0.0437em, 0.0309em, 0)',
             opacity: 0.68,
             easing: E_TYPE,
           },
           {
-            offset: 360 / 440,
+            offset: 0.8,
             transform: 'translate3d(0.0022em, 0.0016em, 0)',
             opacity: 0.68,
             easing: E_TYPE,

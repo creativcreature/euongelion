@@ -5,6 +5,43 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The intro open, polished — SA-064 (F-108)
+
+**2026-08-26**
+
+- **Founder: "Its still a bit janky."** Measured before changing anything: the
+  motion was already clean — **zero frames over 24ms during the flight or the
+  wipe**, frame gaps 4.7-11.6ms. The jank was structural, in three parts.
+- **~430ms of dead air.** The sheet painted at 0ms and nothing moved until
+  434ms. Instrumented the arm: Industry resolves at 0ms (preloaded) and
+  `document.fonts.ready` at 89ms dev / 174ms prod — but the masthead is not
+  FITTED until ~429ms in both, because `EuangelionShellHeader.fitAll()` is
+  scheduled from its own effect and waits on React hydration. Dispatching a
+  synthetic `resize` was tried and **measured as no help** (432ms), because
+  that listener lives inside the effect hydration is gating. The arm is not
+  removable without predicting a post-fit rect from pre-fit metrics, which
+  would trade an exact landing for a nearly-right one. So the **sheet now
+  carries the arm**: the Ben-Day field registers in four discrete steps from
+  the first painted frame — beat 0, the press inking up — obeying the house
+  rule that grain steps rather than glides. Four repaints, not sixty.
+- **Dark mode still had no fourth beat.** At the print stroke the wordmark is
+  cream on both sides of the edge (the knockout is cream; so is the dark
+  masthead's wordmark), so only the ground could carry it — and `#1f2a8d`
+  against the dark page `#171b69` measures **1.28:1**. The edge was nearly
+  invisible. The dark sheet is now **lifted cobalt `#2236a2`** at 1.53:1, which
+  is the brand's documented dark-mode accent rather than an invented colour,
+  with dot alpha raised to 0.62 so the texture step reinforces the luminance
+  step. The arming sheet takes the same dark ground so the hand-over cannot pop.
+- **Too long.** 1720ms of sequence on a ~430ms arm meant ~2.15s. Compressed to
+  1240ms — the whole open now lands at **~1.67s**. Beats keep their shape and
+  easing; only the clock is tighter. The 220ms print stroke is deliberately not
+  scaled, because it is the payoff.
+- **Verified:** totals 2153/2120/2105ms → **1682/1674/1671ms** (light/dark/
+  mobile); invariants **6/6** on all three; safety gates **7/7**; degraded paths
+  **3/3**; still zero long frames during the sequence.
+
+---
+
 ## Production was ahead of git — reconciled — SA-113 (F-159), SA-092 (F-138)
 
 **2026-08-26**
@@ -12209,7 +12246,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.21
+**Version:** 0.8.22
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync
