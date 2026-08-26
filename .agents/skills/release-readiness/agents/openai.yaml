@@ -1,0 +1,7 @@
+interface:
+  display_name: "Release Readiness"
+  short_description: "Run launch-quality verification and gates"
+  default_prompt: "Use $release-readiness to run the complete release verification matrix and close blockers."
+
+policy:
+  allow_implicit_invocation: true

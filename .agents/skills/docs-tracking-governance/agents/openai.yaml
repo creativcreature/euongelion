@@ -1,0 +1,7 @@
+interface:
+  display_name: "Docs Tracking Governance"
+  short_description: "Keep changelog, PRDs, and contracts aligned"
+  default_prompt: "Use $docs-tracking-governance to update tracking docs and verify traceability after this feature pass."
+
+policy:
+  allow_implicit_invocation: true

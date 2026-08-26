@@ -105,6 +105,15 @@ def norm_words(t):
     t = re.sub(r"[^a-z0-9' ]", " ", t)
     words = []
     for w in t.split():
+        # The apostrophe survives the strip above so contractions stay whole
+        # ("don't" must not become "don t"). But that also keeps the QUOTE
+        # marks around a quoted word: Genesis 2:23's "she shall be called
+        # 'woman'" tokenises as "'woman'", which can never match the ASR's
+        # "woman", and the segment fails on correct audio. Strip only the
+        # OUTER apostrophes — internal ones are contractions and stay.
+        w = w.strip("'")
+        if not w:
+            continue
         m = _ORDINAL.match(w)
         if m and int(m.group(1)) in _ORD_WORD:
             words.append(_ORD_WORD[int(m.group(1))])

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Euangelion Platform"
+  short_description: "Implement platform logic and data contracts"
+  default_prompt: "Use $euangelion-platform to implement this platform feature with contract-safe API and data changes."
+
+policy:
+  allow_implicit_invocation: true
