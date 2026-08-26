@@ -26,20 +26,50 @@ export const HERO_ROTATION = [
 ] as const
 
 /**
- * The inline draw script: picks one plate, sets --hero-rot on <html>, and
- * appends a fetchpriority=high image preload so the banner keeps its LCP
- * priority (the old next/image `priority` contract).
+ * Hero widths on disk. Every plate is 2400px wide natively; 960 and 1600
+ * derivatives sit beside it as `<base>-960.webp` / `<base>-1600.webp`.
+ *
+ * WHY: the banner paints via CSS `background-image`, which gets none of the
+ * responsive negotiation an `<img srcset>` would. A phone was pulling the full
+ * 2400px plate — 381-618 KB for a decorative band ~103px tall, and it is the
+ * LCP element. The 960 derivative is 70-128 KB, about 81% smaller, and is still
+ * 2x the widest phone the banner renders on.
+ */
+export const HERO_WIDTHS = [960, 1600, 2400] as const
+
+/** `/…/hero-vines.webp` + 960 → `/…/hero-vines-960.webp` (2400 is the base). */
+export function heroVariant(src: string, width: number): string {
+  return width >= 2400 ? src : src.replace(/\.webp$/, `-${width}.webp`)
+}
+
+/**
+ * The inline draw script: picks one plate, publishes it at all three widths as
+ * CSS custom properties, and preloads ONLY the width this viewport will paint.
+ *
+ * Three properties rather than one because a CSS background cannot choose by
+ * viewport on its own — globals.css switches between them at the same
+ * breakpoints used here. The preload has to agree with that choice or the
+ * browser fetches a plate the page never paints, which is worse than no
+ * preload at all: it spends the LCP budget twice.
  */
 export function heroDrawScript(sources: readonly string[]): string {
   return (
     '(function(){' +
     `var h=${JSON.stringify(sources)};` +
     'var s=h[Math.floor(Math.random()*h.length)];' +
-    "document.documentElement.style.setProperty('--hero-rot','url('+s+')');" +
+    "var v=function(w){return w>=2400?s:s.replace(/\\.webp$/,'-'+w+'.webp')};" +
+    'var d=document.documentElement;' +
+    "d.style.setProperty('--hero-rot-sm','url('+v(960)+')');" +
+    "d.style.setProperty('--hero-rot-md','url('+v(1600)+')');" +
+    "d.style.setProperty('--hero-rot','url('+v(2400)+')');" +
+    // Match the CSS breakpoints below. Uses the DPR-aware CSS width the
+    // banner is actually laid out at, not the device pixel count.
+    'var w=window.innerWidth||960;' +
+    'var pick=w>=1100?v(2400):(w>=600?v(1600):v(960));' +
     "var l=document.createElement('link');" +
     "l.setAttribute('rel','preload');" +
     "l.setAttribute('as','image');" +
-    "l.setAttribute('href',s);" +
+    "l.setAttribute('href',pick);" +
     "l.setAttribute('fetchpriority','high');" +
     'document.head.appendChild(l);' +
     '})()'

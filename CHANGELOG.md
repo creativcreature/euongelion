@@ -5,6 +5,46 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Production was ahead of git — reconciled — SA-113 (F-159), SA-092 (F-138)
+
+**2026-08-26**
+
+- **The working tree held live production code that had never been committed.**
+  `npm run deploy` builds the WORKING TREE, not a clean checkout, so work that
+  was never committed had been shipping to euangelion.app for days. Git and
+  production had silently diverged.
+- **Verified against the live site, not assumed.** `hero-rot-sm` is present in
+  the served homepage HTML and `author-colophon-name-link` in the served
+  devotional HTML, while both source files were untracked. The hero derivatives
+  served 200 with real bytes from euangelion.app — `header-v2-960.webp`
+  (71,724 B), `header-v2-1600.webp` (222,294 B), `hero-vines-960.webp`
+  (131,248 B), `hero-red-sea-1600.webp` (303,672 B) — yet none appeared in
+  `git ls-files`.
+- **The latent failure.** `globals.css` (already committed) falls back to
+  `header-v2-960.webp` / `header-v2-1600.webp` below 1100px. Those files existed
+  only in the working tree, so **any clean-checkout deploy would have 404'd every
+  hero background on phone and tablet** — the LCP element — while desktop kept
+  working. The bug would have looked like a mobile-only regression with no
+  matching commit.
+- **Committed to close the gap:** `src/lib/home/hero-rotation.ts` (responsive
+  draw script publishing the plate at three widths and preloading only the one
+  the media query paints), all 14 hero derivatives (7 plates x 960/1600), and
+  `src/components/devotional/AuthorColophon.tsx` (bylines link to author pages;
+  an unmatched byline stays plain text). Dependencies verified present in git
+  first: `findAuthorByName`, the `/authors/[slug]` route, the
+  `author-colophon-name-link` rule, and all 7 base plates.
+- **Why the derivatives matter:** a CSS background gets none of the negotiation
+  an `<img srcset>` would, so phones were pulling the full 2400px plate —
+  381-618 KB for a band ~103px tall. The 960 derivative is ~81% smaller and
+  still 2x the widest phone the banner renders on.
+- **86 workbench files gitignored rather than committed:** 6.3 GB of video
+  renders, 349 MB of voice-prototype logs and intermediate audio, the strip
+  workshop crops, reference stills, and Midjourney sources. None are served or
+  imported. Ignoring them also stops `npm run deploy` sweeping them into a
+  Workers build. Untracked count went 121 → 34.
+
+---
+
 ## The intro's signature beat had never run once — SA-064 (F-108)
 
 **2026-08-26**

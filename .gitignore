@@ -158,3 +158,38 @@ public/audio-normalized/
 .r2-upload-ledger.txt
 logs/devo-weekly/
 .cache/
+
+# ── Workbench artifacts, 2026-08-26 reconciliation ─────────────────────────
+# These accumulated untracked in the shared working tree. None of them are
+# served or imported; they are render logs, intermediate audio, and reference
+# stills. Ignored rather than committed so `npm run deploy` (which builds the
+# WORKING TREE, not a clean checkout) cannot sweep 6+ GB into a Workers build.
+
+# 6.3 GB of video renders.
+devotional-rekindled-video/
+
+# Voice-prototype bench output: render logs, intermediate m4a/mp3, manifests.
+euangelion-voice-prototype/*.log
+euangelion-voice-prototype/*.m4a
+euangelion-voice-prototype/*.mp3
+euangelion-voice-prototype/*.manifest.json
+euangelion-voice-prototype/upload-*.txt
+euangelion-voice-prototype/progress.log
+
+# Strip recraft workshop: codex logs and intermediate crops.
+content/strip-reference/workshop/
+
+# The reference library is ALWAYS gitignored (CLAUDE.md). These two joined it
+# after the per-subfolder rules above were written.
+content/reference/hero-rotation-finals/
+content/reference/hero-rotation-stills/
+
+# Midjourney source plates, kept locally.
+_ref/
+
+# Research scratch.
+collinson_hits.txt
+content/market-research/*.db
+
+# Python bytecode from the voice-prototype spec scripts.
+euangelion-voice-prototype/spec/__pycache__/

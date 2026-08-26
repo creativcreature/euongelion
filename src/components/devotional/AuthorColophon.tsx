@@ -1,7 +1,9 @@
+import Link from 'next/link'
 import {
   formatPublished,
   DEVOTIONAL_PUBLISH_DATES,
 } from '@/data/devotional-publish-dates'
+import { findAuthorByName } from '@/data/authors'
 
 /**
  * Author colophon — the credit that closes every reading.
@@ -25,6 +27,24 @@ import {
  * Every field is optional; with nothing supplied it renders the ornament and
  * the wordmark line alone.
  */
+/** A byline name. The masthead's authors (Milo, James Parker) link to their
+ * author pages; an overridden byline that matches no author page stays plain
+ * text — never linked to a page about someone else. */
+function CreditName({ name }: { name: string }) {
+  const author = findAuthorByName(name)
+  if (!author) return <strong>{name}</strong>
+  return (
+    <strong>
+      <Link
+        href={`/authors/${author.slug}`}
+        className="author-colophon-name-link"
+      >
+        {name}
+      </Link>
+    </strong>
+  )
+}
+
 export default function AuthorColophon({
   slug,
   writer = 'Milo',
@@ -51,12 +71,12 @@ export default function AuthorColophon({
       </p>
       {writer && (
         <p className="author-colophon-line">
-          Written by <strong>{writer}</strong>
+          Written by <CreditName name={writer} />
         </p>
       )}
       {editor && (
         <p className="author-colophon-line">
-          Edited by <strong>{editor}</strong>
+          Edited by <CreditName name={editor} />
         </p>
       )}
       {translation && (
