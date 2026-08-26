@@ -14026,228 +14026,264 @@ html[data-held-moment] .mobile-tab-bar {
   }
 }
 
-/* ── The press impression (F-108) ───────────────────────────────────────
-   Founder 2026-08-16: the first intro "was half assed" — a panel that faded a
-   word in and slid off, which any site could wear. This is the sequence a
-   PRESS makes: ink, type set into place, a registration slip, then the sheet
-   lifting and handing the wordmark to the real masthead.
+/* ═══ THE PRESS IMPRESSION — F-108 r2 ═══════════════════════════════════
+   REPLACES globals.css lines ~14029-14257 IN FULL (the whole .press block,
+   @keyframes press-set, @keyframes press-register, and the stale
+   .masthead-intro reduced-motion selectors). The .mock-masthead-block dock
+   rules at the bottom are carried over unchanged.
 
-   The wordmark is KNOCKED OUT of the ink (background-clip: text) rather than
-   painted white on top, because that is how the real thing prints — the
-   letters are the paper showing through. */
+   CASCADE CONTRACT — READ BEFORE EDITING.
+   No `.press*` rule may declare `animation`, `transition`, `transform`,
+   `clip-path` or `opacity`, other than the four static base latches tagged
+   with a BASE marker comment below. Every beat is a SCRIPT-CREATED Web
+   Animations API animation built in MastheadIntro.tsx.
+   (Do NOT write the marker's own delimiters inside this comment — CSS
+   comments do not nest, and doing so terminated this block early and threw
+   "CssSyntaxError: Unknown word Every" on first build.)
+
+   Why that ordering matters, precisely: in the Web Animations cascade,
+   script-created animations sort ABOVE CSS animations, which sort above all
+   author declarations. r1 had it exactly inverted — `.press-word` carried
+   `animation: press-set 900ms … both`, and a running fill:both CSS animation
+   outranks that element's own style attribute, so the component's inline
+   hand-off transform was computed correctly on every single run and then
+   silently discarded. Proven by live DOM probe: inline attr read
+   "translate3d(-300px,-350px,0) scale(1.8)" while computed transform stayed
+   "matrix(1.05846,0,0,1,0,0)"; cancelling press-set made computed become
+   "matrix(1.8,0,0,1.8,-300,-350)" immediately. Moving every beat to script
+   WAAPI puts this sequence at the TOP of the cascade, so even a future stray
+   CSS animation loses instead of winning.
+
+   __tests__/press-intro-contract.test.ts fails the build on any violation.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Beat 0 begins before React. The head script in layout.tsx stamps
+   data-press="armed" synchronously, before <body> is parsed, so the first
+   painted frame is the sheet — not the finished homepage (light) and not a
+   black void (dark). The background-color covers the pre-paint frame; the
+   ::before covers everything after it until the live overlay takes over. */
+:root[data-press='armed'] {
+  background-color: #1f2a8d;
+}
+
+:root[data-press='armed']::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  background-color: #1f2a8d;
+  /* Identical dot field to .press-grain, so the hand-over from the arming
+     sheet to the live overlay cannot show a one-frame texture pop. */
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(9, 14, 66, 0.5) 0.9px,
+    transparent 1.1px
+  );
+  background-size: 4px 4px;
+  /* FAILSAFE 1 of 3 — zero-JS. If hydration never happens at all, the sheet
+     still leaves. (2 = the head script's 3000ms self-disarm; 3 = the
+     component's HARD_STOP_MS.) */
+  animation: press-disarm 260ms cubic-bezier(0.22, 0.61, 0.36, 1) 2600ms both;
+}
+
+@keyframes press-disarm {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 
 .press {
   position: fixed;
   inset: 0;
   z-index: 900;
-  display: grid;
-  place-items: center;
-  /* Inert from the first frame. A reader who wants to start never waits. */
+  /* Inert from the first frame. A reader who wants to start never waits —
+     and the first wheel/touch/key/pointer/scroll event aborts the sequence
+     outright. */
   pointer-events: none;
   overflow: hidden;
+  /* NOT `contain: strict` and NOT `transform` — either would make .press the
+     containing block for positioned descendants. Harmless here (its box IS
+     the viewport) but leaving them out removes a trap for the next editor. */
 
-  /* OWN TOKENS, not the masthead's.
-     MastheadIntro mounts in layout.tsx as a direct child of <body>, OUTSIDE
-     the `.mock-home` wrapper that defines --mock-blue / --mock-paper. Those
-     properties simply do not resolve here, so the old rules were silently
-     riding their literal fallbacks — the intro was hard-wired to light mode in
-     both themes. And where a token DID resolve (--color-crimson, which lives
-     on :root) it brightened to #e25868 in dark, which is why the register
-     ghost read as a red word there and merely as ink slip in light.
-     Declared locally so the sequence is explicit in both themes. */
-  --press-ink: #1f2a8d; /* cobalt sheet — the same in both themes */
+  /* OWN TOKENS. MastheadIntro mounts as a direct child of <body>, OUTSIDE the
+     .mock-home wrapper that defines --mock-blue / --mock-paper / --mock-ink,
+     so those simply do not resolve here — r1's first pass silently rode its
+     literal fallbacks and was hard-wired to light mode in both themes.
+     Declared locally, in full, for both themes. */
+  --press-ink: #1f2a8d; /* the sheet — the SAME cobalt in both themes */
+  --press-dot: rgba(
+    9,
+    14,
+    66,
+    0.5
+  ); /* Ben-Day structure; no greys, dot density only */
   --press-paper: #f5eee3; /* the knockout: paper showing through */
-  --press-land: #1f2a8d; /* what the word BECOMES on landing (light masthead) */
-  --press-slip: rgba(
-    196,
-    25,
-    46,
-    0.85
-  ); /* register ghost, fixed across themes */
+  /* HARDCODED, never --color-crimson: that token lifts to #e25868 in dark,
+     where it stops reading as ink slip and starts reading as a red word
+     sitting behind the logo. */
+  --press-slip: rgba(196, 25, 46, 0.68);
+  /* Fallback ONLY. JS overwrites this inline with the masthead's own computed
+     colour, so a future restyle of the masthead cannot desync the landing. */
+  --press-land: #1f2a8d;
+
+  /* Geometry, written inline by MastheadIntro from the live masthead rect. */
+  --press-l: 0px;
+  --press-t: 0px;
+  --press-w: 0px;
+  --press-h: 0px;
 }
 
-/* Dark mode changes exactly one thing: the real masthead's wordmark is cream,
-   not cobalt (--mock-blue-text resolves to --mock-ink there), so the flying
-   word has to land cream or it vanishes into the page at the last frame. */
+/* Dark changes the knockout and the fallback landing colour only. The sheet
+   stays cobalt: dark's print event is carried by the GROUND changing (dotted
+   #1f2a8d giving way to flat #171b69) while the FIGURE stays cream, which is
+   legible at 9.51:1 below the edge and 12.07:1 above it and does not put a
+   full-bleed cream flash in front of a night reader. */
 .dark .press,
 :root[data-theme='dark'] .press {
+  --press-paper: #efe5d8; /* the dark masthead's own cream (--mock-ink) */
   --press-land: #efe5d8;
 }
 
-/* The ink field. Retracts on a HARD edge — a squeegee coming off the sheet. */
+/* THE INK. A printed plate, not a UI panel. */
 .press-ink {
   position: absolute;
+  inset: -1px; /* 1px overscan: no subpixel seam at the frame edge */
+  background-color: var(--press-ink);
+  clip-path: inset(0px 0px 0px 0px); /* BASE */
+}
+
+/* The dot field is a SEPARATE layer so the registration jolt can be a
+   compositor transform instead of a full-viewport background-position
+   repaint at the exact moment hydration is finishing. */
+.press-grain {
+  position: absolute;
+  inset: -8px; /* the 2px jolt can never expose an edge */
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    var(--press-dot) 0.9px,
+    transparent 1.1px
+  );
+  background-size: 4px 4px;
+}
+
+/* THE PLATES. Full-viewport and UNTRANSFORMED, so their clip insets are in
+   plain viewport pixels and can be driven from the same eased scalar as the
+   ink's. That is what pixel-locks the colour split to the squeegee edge at any
+   frame rate, and it is why this design needs no @property and never clips a
+   child inside a transformed ancestor. NEVER give a plate a transform. */
+.press-plate {
+  position: absolute;
   inset: 0;
-  background: var(--press-ink);
-  transform-origin: top center;
-  transition: transform 900ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+.press-plate--paper {
+  z-index: 2;
+  clip-path: inset(0px 0px 0px 0px); /* BASE — everything BELOW the edge */
+}
+.press-plate--print {
+  z-index: 3;
+  clip-path: inset(0px 0px 100% 0px); /* BASE — everything ABOVE the edge */
 }
 
-.press.is-lifting .press-ink {
-  transform: scaleY(0);
-}
-
-.press-stage {
-  position: relative;
+/* THE FLIGHT BOX and THE LANDED BOX. Both sit at the real masthead's measured
+   rect, so `transform: none` IS the masthead. `position: absolute` rather than
+   `fixed` on purpose: .press is already fixed at inset 0, so absolute gives
+   identical viewport coordinates with no containing-block ambiguity when an
+   ancestor carries a clip-path. */
+.press-flight,
+.press-land-box {
+  position: absolute;
+  left: var(--press-l);
+  top: var(--press-t);
+  width: var(--press-w);
+  height: var(--press-h);
   display: grid;
   place-items: center;
-  isolation: isolate;
+  transform-origin: 50% 50%;
 }
 
+/* The set carries the over-track ONLY, on its own element, so the set and the
+   flight can never contend for one `transform`. */
+.press-set {
+  display: grid;
+  place-items: center;
+  transform-origin: 50% 50%;
+}
+
+/* TYPE PROPERTIES ARE NOT DECLARED HERE, DELIBERATELY.
+   font-family, font-size, font-weight, font-style, font-stretch, font-kerning,
+   font-feature-settings, font-variation-settings, font-optical-sizing,
+   letter-spacing, line-height, text-transform, text-rendering and
+   -webkit-font-smoothing are all copied inline from getComputedStyle of
+   '.mock-shell-header .js-shell-masthead-fit' at measure time.
+
+   Restating the masthead's contract by hand is exactly what broke r1's
+   landing: .press-word ran letter-spacing 0.02em / line-height 1 / default
+   kerning against the target's -0.006em / line-height 0.9 (overridden from
+   0.96 by .mock-masthead-block .mock-masthead-text) / font-kerning: none
+   inherited from .mock-home .text-masthead. Over ten glyphs that is 0.26em of
+   cumulative width on a ~6.7em word, so forcing the two total widths to match
+   made the glyphs ~4% too small. Clone the contract; never retype it.
+
+   NOTE: the target's own `transform: translateY(-0.015em)` is deliberately NOT
+   copied. getBoundingClientRect() already contains it and we position from the
+   rect, so the baseline nudge is baked in for free — copying it would double
+   the shift. */
 .press-word {
   grid-area: 1 / 1;
-  font-family: var(--font-family-ui);
-  font-weight: 700;
-  /* Sized so the OVER-TRACKED first frame still fits the viewport. At 10.5vw
-     with 0.34em of tracking the word ran off both edges — the widest moment of
-     the animation is the one that has to fit, not the final one. */
-  font-size: clamp(1.5rem, 7vw, 5.75rem);
-  line-height: 1;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
   white-space: nowrap;
-  /* Final tracking, held. The tightening is done with transform, NOT by
-     animating letter-spacing.
-     WHY: letter-spacing and text-indent are layout properties. Animating them
-     re-runs layout and paint for the whole line on every frame, on the main
-     thread, competing with hydration on the heaviest page of the site — which
-     is what made the open read as chippy. transform: scaleX composites on the
-     GPU and never touches layout. At 6% the glyph widening is imperceptible
-     for the 500ms it is visible, and it reads as the same movement: type
-     tightening into the stick. */
-  letter-spacing: 0.02em;
-  text-indent: 0.02em;
-  transform-origin: center center;
-  will-change: transform, opacity;
-  animation: press-set 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
-/* The key plate: paper showing through the ink. */
-.press-word--key {
+/* The two opacity latches are BASE values: a plate is invisible until a WAAPI
+   keyframe turns it on, so a frame rendered before the animations exist can
+   never be seen. A script animation always outranks these. */
+.press-word--slip {
+  color: var(--press-slip);
+  z-index: 1;
+  opacity: 0; /* BASE */
+}
+.press-word--paper {
   color: var(--press-paper);
   z-index: 2;
-  /* THE HAND-OFF IS A COLOUR CHANGE, NOT A FADE.
-     Founder 2026-08-20: "the transition from white euangelion to blue doesn't
-     work well."
-
-     It didn't, for two reasons. The word flew to the masthead's measured
-     position and faded to nothing on the way, so it never visibly ARRIVED —
-     the sequence promised a hand-off and delivered a disappearance. And in
-     light mode a cream wordmark crosses a cream page to reach a cobalt
-     masthead, so for most of the flight it was invisible against the paper it
-     was flying over.
-
-     Now it changes colour instead: paper-cream while it is knocked out of the
-     ink, resolving to --press-land — cobalt in light, cream in dark — timed to
-     complete just as it lands. It stops being the intro's word and becomes the
-     masthead's, which is what the sequence was always describing.
-
-     The old opacity fade is gone entirely, so the earlier flash bug it was
-     tuned around (a cream word sharing a frame with the real cobalt one)
-     cannot recur: by the time the ink clears, this word is already the
-     masthead's colour and sits exactly on top of it. */
-  transition:
-    transform 900ms cubic-bezier(0.76, 0, 0.24, 1),
-    color 620ms cubic-bezier(0.4, 0, 0.2, 1) 120ms;
+  opacity: 0; /* BASE */
 }
-
-.press.is-lifting .press-word--key {
+.press-word--land {
   color: var(--press-land);
 }
 
-/* Fallback ONLY when the real masthead could not be measured. Without a
-   destination the word has nowhere to become, so it leaves with the ink
-   rather than sitting on the page in a colour that means nothing. */
-.press.is-lifting.is-unmeasured .press-word--key {
-  opacity: 0;
-  transition:
-    opacity 240ms ease 380ms,
-    color 620ms cubic-bezier(0.4, 0, 0.2, 1) 120ms;
-}
-
-/* The crimson plate, offset and a beat late. Kept FAINT: real misregistration
-   is a thin coloured edge escaping from behind the key plate, not a second
-   word competing with it. `multiply` was worse than nothing here — crimson
-   multiplied over cobalt goes muddy brown rather than reading as ink slip. */
-.press-word--slip {
-  /* Fixed colour, not --color-crimson: that token brightens to #e25868 in dark
-     mode, where this stops reading as ink slip and starts reading as a red
-     word sitting behind the logo. */
-  color: var(--press-slip);
-  z-index: 1;
-  /* Composited like the key plate. Without this the ghost repaints on the main
-     thread beside a GPU-composited sibling and the two visibly disagree. */
-  transform-origin: center center;
-  will-change: transform, opacity;
-  animation:
-    press-set 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both,
-    press-register 760ms cubic-bezier(0.22, 0.61, 0.36, 1) 90ms both;
-}
-
-.press.is-lifting .press-word--slip {
-  opacity: 0;
-  transition: opacity 200ms ease;
-}
-
-@keyframes press-set {
-  from {
-    transform: scaleX(1.06);
-    opacity: 0;
-  }
-  18% {
-    opacity: 1;
-  }
-  to {
-    transform: scaleX(1);
-    opacity: 1;
+/* REDUCED MOTION — BOTH SIGNALS, and pointed at classes that actually exist.
+   The old block targeted .masthead-intro / .masthead-intro-word, which have
+   had no consumers since the F-108 rename: grep the repo and they appear
+   nowhere but in that block. The JS bails on both signals before anything
+   mounts; these are the braces to that belt. */
+@media (prefers-reduced-motion: reduce) {
+  .press,
+  :root[data-press='armed']::before {
+    display: none !important;
   }
 }
-
-/* The slip fades in FROM ZERO and never out-reads the key plate. Its own
-   opacity keyframes override press-set's fade for this element, so if it
-   starts at full strength the crimson arrives before the cream and the whole
-   thing reads as a red word — which is what the first pass did. */
-/* Misregistration is a MOMENT, not a resting state.
-   It used to settle at translate(1.5px, 1px) / opacity 0.18 and stay there —
-   a second word parked permanently beside the first, which is exactly what
-   "the logo overlays itself" describes. A real press slip is visible while the
-   sheet is moving and gone once it registers, so this now resolves to zero
-   offset and zero opacity: the ghost separates, slides in, and disappears into
-   the key plate. Peak is lower too (0.26), because at 0.34 the crimson was
-   competing with the cream rather than edging it. */
-@keyframes press-register {
-  from {
-    transform: translate3d(7px, 5px, 0);
-    opacity: 0;
-  }
-  26% {
-    opacity: 0.26;
-  }
-  70% {
-    opacity: 0.16;
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 0;
-  }
+html.reduce-motion .press,
+html.reduce-motion[data-press='armed']::before {
+  display: none !important;
 }
 
-/* The wordmark shrinks as the page scrolls under it. Driven by the same
-   is-docked state the nav already uses, so there is no second scroll
-   listener — the header was already measuring this. */
+/* ── Unchanged: the masthead's own dock fold. This is the 0.86 ratio the
+      flight's set pose is deliberately a squared version of. ── */
 .mock-masthead-block {
   transition:
     transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
     opacity 320ms ease;
   transform-origin: top center;
 }
-
 .mock-shell-header:has(.mock-nav.is-docked) .mock-masthead-block {
   transform: scale(0.86) translate3d(0, -6px, 0);
   opacity: 0.9;
 }
-
 @media (prefers-reduced-motion: reduce) {
-  .masthead-intro,
-  .masthead-intro-word,
   .mock-masthead-block {
     transition: none;
     animation: none;

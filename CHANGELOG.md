@@ -5,6 +5,62 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The intro's signature beat had never run once — SA-064 (F-108)
+
+**2026-08-26**
+
+- **Founder:** "currently is stripped down basic and the colors aren['t]
+  working… the transition is currently choppy and ends awkwardly. Mine[] is
+  like 2/10." Correct on every count, and the cause was a cascade rule, not
+  taste.
+- **Root cause, proven by live DOM probe.** `.press-word` carried
+  `animation: press-set 900ms … both`. A running `fill: both` CSS animation
+  outranks that element's own style attribute, and the hand-off flight was
+  applied as an inline transform. The inline attribute read
+  `translate3d(-300px,-350px,0) scale(1.8)` while the computed transform stayed
+  `matrix(1.05846,0,0,1,0,0)`; cancelling the animation made the computed value
+  become `matrix(1.8,0,0,1.8,-300,-350)` instantly. **The wordmark never moved a
+  pixel after t=888ms of a 1972ms sequence.** The same cascade class also killed
+  the `.is-unmeasured` fallback and the crimson plate's tightening.
+- **What that produced.** The finished page flashed before the curtain dropped
+  (black in dark mode); 430ms of dead hold where frames 391ms apart were
+  pixel-identical; the word desaturating to 1.69:1 contrast; the curtain
+  retracting upward so the **cookie dialog was revealed before the masthead**;
+  then **two EUANGELION wordmarks on screen at once** for up to 560ms — on
+  mobile the orphan landed on "A daily newspaper of the Gospel." — ending in a
+  hard DOM removal at full opacity.
+- **Two more bugs found on the way.** The in-app Reduce Motion setting was never
+  checked (JS gated only on the OS media query), turning that setting into a
+  ~950ms full-screen cobalt slab. And the flight target reflows 1128.7 →
+  1372.9px when Industry loads, so the fixed 950ms measurement was lucky rather
+  than correct — the timing of that reflow is not even stable across themes
+  (60ms light, 296ms dark, 280ms mobile).
+- **The fix makes the bug unrepresentable, not merely absent.** Every beat is a
+  script-created Web Animations API animation — script animations sort above CSS
+  animations in the cascade, so a future stray `animation:` now loses instead of
+  winning. The wordmark is a runtime **clone** of `.js-shell-masthead-fit`
+  wearing its computed type contract, so `transform: none` _is_ the masthead and
+  there is no landing number left to get wrong. The colour change is spatial
+  (two plates clipped by one shared edge scalar) rather than a time-based tween,
+  so the muddy mid-frames cannot exist. The wipe runs downward in reading order.
+  The word lands congruent while the sheet still hides the real masthead, so two
+  wordmarks cannot compose, and the exit dissolves onto a pixel-identical twin.
+- **Sheet armed in `<head>`,** so the first painted pixel is the sheet and both
+  reduced-motion signals are honoured before first paint. Three failsafes: a CSS
+  `press-disarm` keyframe (zero-JS), the head script's 3000ms self-disarm, and
+  the component's `HARD_STOP_MS`.
+- **Measured, not asserted.** Invariants light 2/6 → **6/6**, dark 3/6 → **6/6**,
+  mobile 1/6 → **6/6**. Safety gates 5/7 → **7/7**. Landing accuracy dx 0.5px,
+  dy 0.3px, width delta **0.0%**. **Zero** long frames during the sequence on all
+  three viewports (the two that remain are first paint and hydration, unchanged
+  from baseline). Console errors back to the 1 pre-existing hydration warning.
+- **New guard:** `__tests__/press-intro-contract.test.ts` (7 assertions) pins the
+  cascade contract, the cloned type contract, and both reduced-motion signals. It
+  was validated by re-introducing the r1 bug and confirming it fails.
+- **The lesson:** slow-motion viewing said the hand-off landed; a DOM probe said
+  it had never started. The r1 acceptance box was ticked on appearance. Verify
+  state, not appearance.
+
 ## The onboarding day could never be marked complete — SA-126 (F-170)
 
 **2026-08-24**

@@ -77,6 +77,39 @@ export default function RootLayout({
               "(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);}catch(e){}})();",
           }}
         />
+        {/* F-108 r2 — ARM THE PRESS SHEET BEFORE <body> IS PARSED.
+            Runs AFTER the theme script on purpose: html.dark must already be
+            resolved or the arming sheet paints the wrong ground on frame 0.
+
+            This is what makes the first painted pixel the cobalt sheet instead
+            of a flash of the finished homepage (light) or a black void (dark),
+            and it is where BOTH reduced-motion signals are honoured. The
+            in-app toggle lives in the zustand persist blob
+            'euangelion-settings' (src/stores/settingsStore.ts:229, reduceMotion
+            is in its partialize at :243), so it is readable synchronously here
+            — r1 could only see it after hydration, which is why that setting
+            turned the intro into a ~950ms opaque cobalt block.
+
+            The 3000ms self-disarm is FAILSAFE 2 of 3: if the bundle never
+            hydrates, the sheet still leaves. (1 = the CSS press-disarm
+            keyframe, 3 = the component's HARD_STOP_MS.) */}
+        <script
+          id="press-arm"
+          dangerouslySetInnerHTML={{
+            __html:
+              '(function(){var d=document.documentElement;try{' +
+              "if(location.pathname!=='/')return;" +
+              "if(sessionStorage.getItem('euangelion:masthead-intro')==='1')return;" +
+              "if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;" +
+              "var s=localStorage.getItem('euangelion-settings');" +
+              'if(s){var p=JSON.parse(s);if(p&&p.state&&p.state.reduceMotion)return;}' +
+              "d.setAttribute('data-press','armed');" +
+              "if(document.fonts&&document.fonts.load){document.fonts.load('700 100px Industry');}" +
+              "setTimeout(function(){if(d.getAttribute('data-press')==='armed')" +
+              "d.removeAttribute('data-press');},3000);" +
+              "}catch(e){d.removeAttribute('data-press');}})()",
+          }}
+        />
         <link
           rel="preload"
           href="/fonts/InstrumentSerif-Regular.woff2"
