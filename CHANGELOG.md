@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The intro shows the wordmark once, where it belongs — SA-064 (F-108)
+
+**2026-08-26**
+
+- **Founder: "you see the word twice during the animation. Its already there
+  before animations... extremely amature."** Correct, and it was NOT a rendering
+  fault: photographed at 2x, the print stroke's letterforms are pixel-continuous
+  across the ink edge, and the two plates measured `dy = 0.0px, dh = 0.0px`
+  against each other, 0.3px against the real masthead.
+- **The fault was the concept.** The masthead is a permanent element of the
+  page. Flying a second, centre-screen copy of it in and parking it on the first
+  means the reader does see the wordmark twice — and "logo flies in and becomes
+  the header" is a dated trope however well executed. Polish cannot fix a
+  redundant idea.
+- **The original brief never asked for the duplicate.** Founder 2026-08-16:
+  "Show euangelion first white on blue, then animate to system setting
+  background… and to normal site state." That is better satisfied by printing
+  the masthead where it already lives.
+- **The flight is gone.** The wordmark is knocked out of the ink at the
+  masthead's own measured rect and stays there — the plate meets the paper
+  fractionally oversize (1.035) and 10px high and settles into exact register.
+  Travel is 10px, inside the site's own ±28px cap. Removing the flight leg also
+  removed the clock it needed: 1240ms → 980ms of sequence, **~1.42s end to end**
+  against 2.15s before today.
+- **The invariant that was missing.** The old suite asserted "no two SEPARATED
+  visible wordmarks" and passed, because it only compared the clone to the real
+  masthead and never asked whether the clone belonged where it was. Replaced
+  with a guarantee: **INV7 — the wordmark's centre never leaves the real
+  masthead's band (±40px) on any frame.** Run against the earlier designs it
+  fails loudly, which is the complaint in numbers: r1 strays **311px**, this
+  morning's r2.1 strays **240px**, r3 passes.
+- **Verified:** invariants 7/7 on light, dark and mobile; safety gates 7/7;
+  degraded paths 3/3; zero frames over 24ms during the sequence.
+
+---
+
 ## The intro open, polished — SA-064 (F-108)
 
 **2026-08-26**
@@ -12246,7 +12282,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.22
+**Version:** 0.8.23
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync

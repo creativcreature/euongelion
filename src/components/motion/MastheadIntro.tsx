@@ -56,15 +56,31 @@ const ARM_DEADLINE_MS = 600
  *  duplicate sitting on the page before it blinked out. */
 const HARD_STOP_MS = 2600
 
-/** 0.86 is the site's ONE masthead scale ratio — the docked fold
- *  (globals.css:14244) and the scroll-driven fold
- *  (design-system/edition-scroll-motion.css:113) both use it. The type is set
- *  two folds below full measure; the flight unfolds it twice. Nothing here is
- *  a new number. */
-const SET_RATIO = 0.86 * 0.86 // 0.7396
-
-/** Optical centre of a single element in a full-bleed field. */
-const SET_CENTRE_VH = 0.44
+/** THE WORD NEVER LEAVES THE MASTHEAD'S OWN POSITION.
+ *
+ *  Founder 2026-08-26: "you see the word twice during the animation. Its
+ *  already there before animations... currently its still looking extremely
+ *  amature."
+ *
+ *  He is right, and it was never a rendering fault — the print stroke is
+ *  pixel-continuous and the landing was exact to 0.0px. The fault was the
+ *  CONCEPT. The masthead is a permanent element of this page. Flying a second,
+ *  centre-screen copy of it in and parking it on top of the first means the
+ *  reader genuinely sees the wordmark twice, and "logo flies in and becomes
+ *  the header" is a dated trope besides.
+ *
+ *  The original brief never asked for the duplicate. Founder 2026-08-16:
+ *  "Show euangelion first white on blue, then animate to system setting
+ *  background... and to normal site state." That is satisfied — better —
+ *  by printing the masthead where it already lives: cream knocked out of the
+ *  ink, then the sheet pulled off it to leave the printed page behind.
+ *
+ *  So the impression is now a PRESS, not a flight: the plate meets the paper
+ *  fractionally oversize and high, and settles into exact register. Total
+ *  travel 10px against the site's own +/-28px cap, and a 3.5% uniform scale
+ *  (not a distortion — the dock already scales the masthead to 0.86). */
+const IMPRESSION_SCALE = 1.035
+const IMPRESSION_RISE = 10
 
 const E_STRIKE = 'cubic-bezier(0.2, 0, 0, 1)'
 const E_TYPE = 'cubic-bezier(0.22, 0.61, 0.36, 1)' // content/press curve (F-104, dock, menu)
@@ -84,11 +100,13 @@ const E_SWAP = 'cubic-bezier(0.4, 0, 0.6, 1)'
 const T_SLIP = 80
 const T_KEY = 150
 const T_SET_END = 380
-const T_FLIGHT_END = 880
-const T_WIPE = 800
-const T_PRINT = 900
-const T_RELEASE = 1120
-const T_END = 1240
+/** The impression settling into register — the old flight's slot, now a 10px
+ *  move instead of a 239px one, so it costs far less clock. */
+const T_FLIGHT_END = 560
+const T_WIPE = 520
+const T_PRINT = 640
+const T_RELEASE = 860
+const T_END = 980
 const D_WIPE = T_END - T_WIPE // 580
 const OFF_PRINT = (T_PRINT - T_WIPE) / D_WIPE // 0.241379
 const OFF_RELEASE = (T_RELEASE - T_WIPE) / D_WIPE // 0.655172
@@ -236,19 +254,14 @@ export default function MastheadIntro() {
         if (v) type[camel(p)] = v
       }
 
-      // Set pose. Guarded so the widest frame (set pose x the 1.06 over-track)
-      // can never be cropped by the viewport.
+      // Impression pose. The word sits at the masthead's own rect and only
+      // presses into it, so there is no second position to get wrong and
+      // nothing for the reader to see twice. Guarded so the widest frame
+      // (impression scale x the 1.06 over-track) still cannot be cropped.
       const kMax = (vw - 32) / (r.width * 1.06)
-      const k = Math.min(SET_RATIO, kMax)
-      const half = (r.height * k) / 2
-      const centre = Math.min(
-        Math.max(vh * SET_CENTRE_VH, half + 24),
-        vh - half - 24,
-      )
-      // dx is 0 at every viewport: both boxes are horizontally centred. This is
-      // measured, not assumed — telemetry gives +0.05px at 1440 and -0.05px at
-      // 390. The move is a pure rise.
-      const dy = centre - (r.top + r.height / 2)
+      const k = Math.min(IMPRESSION_SCALE, kMax)
+      const dy = -IMPRESSION_RISE
+      void vh
 
       return {
         left: snap(r.left),
@@ -523,7 +536,10 @@ export default function MastheadIntro() {
         easing: E_TYPE,
       })
 
-      // 5 — THE FLIGHT. The beat that has never run.
+      // 5 — THE IMPRESSION. Was a 239px flight from centre screen; now a 10px
+      //     settle in place. The plate meets the paper a touch oversize and
+      //     high and presses into exact register — which is what a press does,
+      //     and which never puts a second wordmark on the screen.
       A(
         flight,
         [
