@@ -5130,6 +5130,55 @@ html.reduce-motion *::after {
   text-underline-offset: 0.22em;
 }
 
+/* THE ROLLOVER (SA-124). Founder 2026-08-24: "I also want the subtle text
+   rollover", pointing at telhaclarke.com.au.
+
+   Theirs is a rule that WIPES rather than one that appears: a 1px line scaled
+   from 0, its transform-origin flipped between states so it enters from the
+   left and leaves to the right — it never retracts back the way it came, which
+   is the whole reason it reads as a wipe and not a toggle. 0.7s on
+   cubic-bezier(.23,1,.32,1) is their exact timing and it is slower than a
+   hover usually dares to be; that unhurriedness IS the subtlety.
+
+   ::before, NEVER ::after — EditorialMotionSystem claims ::after on every
+   .mock-paper link at runtime, and any ::after geometry here un-collapses its
+   hidden underline into a painted slab. */
+.mock-nav-item {
+  position: relative;
+}
+
+.mock-nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 2px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  /* Resting origin is the RIGHT edge, so the line that leaves continues in the
+     direction it entered instead of rewinding. */
+  transform-origin: 100% 50%;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+}
+
+.mock-nav-item:is(:hover, :focus-visible)::before {
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+}
+
+/* The active item keeps its standing underline; no wipe needed under it. */
+.mock-nav-item.is-active::before {
+  content: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mock-nav-item::before {
+    transition: none;
+  }
+}
+
 .mock-nav-item:is(:hover, :focus-visible) {
   text-decoration: underline;
   text-decoration-color: var(--color-gold);
@@ -14184,10 +14233,9 @@ html[data-held-moment] .mobile-tab-bar {
      two-plate colour split is no longer needed. */
   --press-ink: #f0ece6; /* light: the page's own paper (--color-newspaper-cream) */
   --press-dot: rgba(31, 42, 141, 0.12); /* Ben-Day, cobalt on paper */
-  --press-paper: #f5eee3; /* the knockout: paper showing through */
   /* Fallback ONLY. JS overwrites this inline with the masthead's own computed
      colour, so a future restyle of the masthead cannot desync the landing. */
-  --press-land: #1f2a8d;
+  --press-word: #1f2a8d;
 
   /* Geometry, written inline by MastheadIntro from the live masthead rect. */
   --press-l: 0px;
@@ -14203,8 +14251,7 @@ html[data-held-moment] .mobile-tab-bar {
    full-bleed cream flash in front of a night reader. */
 .dark .press,
 :root[data-theme='dark'] .press {
-  --press-paper: #efe5d8;
-  --press-land: #efe5d8; /* dark: the masthead's cream — the word IS this */
+  --press-word: #efe5d8; /* dark: the masthead's cream — the word IS this */
   --press-ink: #171b69; /* dark: the page's own deep navy (--mock-bg) */
   --press-dot: rgba(239, 229, 216, 0.1);
 }
@@ -14294,6 +14341,12 @@ html[data-held-moment] .mobile-tab-bar {
    rect, so the baseline nudge is baked in for free — copying it would double
    the shift. */
 .press-word {
+  /* THE MODE'S OWN COLOUR, ON THE WORD ITSELF — not a knockout that resolves
+     later. Founder 2026-08-24: "If Light Mode, Euangelion should be Blue, if
+     Dark Mode it should be white." JS overwrites --press-word inline with the
+     real masthead's own computed colour, so a future restyle of the masthead
+     cannot desync the intro from it. */
+  color: var(--press-word);
   grid-area: 1 / 1;
   display: inline-block;
   margin: 0;
@@ -14352,12 +14405,12 @@ html[data-held-moment] .mobile-tab-bar {
   /* The mode's own masthead colour, from the first frame — not a knockout that
      resolves later. Both plates are this colour, so the curtain edge is
      invisible ON the word and the two plates read as one continuous wordmark. */
-  color: var(--press-land);
+  color: var(--press-word);
   z-index: 2;
   opacity: 0; /* BASE */
 }
 .press-word--land {
-  color: var(--press-land);
+  color: var(--press-word);
 }
 
 /* REDUCED MOTION — BOTH SIGNALS, and pointed at classes that actually exist.
@@ -16506,6 +16559,18 @@ html.dark .edition-quote-text--red {
   touch-action: manipulation;
   user-select: none;
   -webkit-user-select: none;
+}
+
+/* Phones: the 34px floor would clip two columns behind an inner scroll
+   with no affordance (founder mobile pass, 2026-08-21). Below 420px the
+   cells go fluid — same treatment the crossword grid already gets — and
+   the circle overlay scales with them (cell-unit viewBox). */
+@media (max-width: 419px) {
+  .puzzle-ws-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+    min-width: 0;
+  }
 }
 
 .puzzle-ws-cell {

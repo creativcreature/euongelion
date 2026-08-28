@@ -729,7 +729,7 @@ export default function MastheadIntro() {
         '--press-t': `${geo.top}px`,
         '--press-w': `${geo.width}px`,
         '--press-h': `${geo.height}px`,
-        '--press-land': geo.land,
+        '--press-word': geo.land,
       } as React.CSSProperties)
     : undefined
 

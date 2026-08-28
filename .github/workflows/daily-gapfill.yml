@@ -1,0 +1,88 @@
+name: daily-gapfill
+
+# The dailiness backstop (SA-114 / F-158). The weekly Wednesday build
+# (daily-edition.yml) writes the coming week in one run — but a paused
+# machine, a failed step, or a mid-week enablement leaves HOLES the next
+# weekly run never revisits (it starts "from tomorrow"). Founder, 2026-08-24:
+# "the comics don't seem to load daily. Literally comics dont show." That
+# outage was exactly this class: strips existed only where a session drew
+# them by hand.
+#
+# Every morning this job checks TODAY + the next two days for a missing
+# strip, lead plate, or guide set, and generates ONLY what is missing.
+# All three generators are idempotent (they skip dates that already have
+# content), so overlap with the weekly build is harmless by construction.
+#
+# 08:00 UTC = 4am EDT / 3am EST — always before the 7am ET flip, so a
+# gap found today is filled before today's paper goes live.
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'How many days forward to check (default 3)'
+        required: false
+
+concurrency:
+  group: edition-content
+  cancel-in-progress: false
+
+jobs:
+  gapfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fill the gaps (guides, lead plates, strips)
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          CLAUDE_CODE_OAUTH_TOKEN_2: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_2 }}
+          HAS_CODEX: ${{ secrets.CODEX_AUTH_JSON != '' }}
+          CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
+          STRIP_MACHINE: ${{ vars.STRIP_MACHINE || 'paused' }}
+          GAP_DAYS: ${{ inputs.days || 3 }}
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts
+          # The tier ladder (select_tier) ships on the failover branch; use
+          # it when merged, else the plain subscription token carries the day.
+          if [ -f scripts/lib/claude-tier.sh ]; then
+            . scripts/lib/claude-tier.sh
+            if ! select_tier; then
+              echo "::warning::gapfill SKIPPED — no usable Claude credential tier this morning."
+              exit 0
+            fi
+          elif [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then
+            echo "::warning::gapfill SKIPPED — no CLAUDE_CODE_OAUTH_TOKEN."
+            exit 0
+          fi
+          TODAY=$(date -u +%Y-%m-%d)
+
+          # Guides: idempotent per date — composes only missing days.
+          node scripts/edition/compose-guides-claude.mjs --from="$TODAY" --days="$GAP_DAYS"
+
+          if [ "$HAS_CODEX" != "true" ]; then
+            echo "::warning::no CODEX_AUTH_JSON — lead plates and strips not drawable this run."
+            exit 0
+          fi
+          sudo apt-get update -q && sudo apt-get install -y -q imagemagick
+          npm install -g @openai/codex
+          mkdir -p ~/.codex && printf '%s' "$CODEX_AUTH_JSON" > ~/.codex/auth.json
+
+          for i in $(seq 0 $((GAP_DAYS - 1))); do
+            DAY=$(date -u -d "$TODAY + $i day" +%Y-%m-%d)
+            # Lead plate: skips when the manifest already carries the date.
+            node scripts/edition/generate-lead-art.mjs --date="$DAY" || echo "::warning::lead plate failed for $DAY — the Vasari fallback prints"
+            # Strip: honors the founder's machine switch; skips existing rows.
+            if [ "$STRIP_MACHINE" = "enabled" ]; then
+              node scripts/edition/strip/generate-strip.mjs --date="$DAY" || echo "::warning::strip failed for $DAY — the placeholder frame prints"
+            fi
+          done

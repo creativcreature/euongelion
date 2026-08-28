@@ -53,7 +53,10 @@ export default function CrosswordClient({
   const [dir, setDir] = useState<Dir>('across')
   const [checked, setChecked] = useState(false)
   // Mobile-only collapse; desktop CSS always shows the panel (blank-area fix).
-  const [cluesOpen, setCluesOpen] = useState(false)
+  // OPEN by default — a newspaper prints its clues beside the grid. The
+  // founder hit a bare grid on mobile (2026-08-21); the toggle now only
+  // offers to collapse, never hides the clues from a fresh reader.
+  const [cluesOpen, setCluesOpen] = useState(true)
   const inputRef = useRef<HTMLInputElement>(null)
 
   // Which clue starts at (r,c) in a direction — and which clue COVERS a cell.
@@ -294,7 +297,7 @@ export default function CrosswordClient({
             aria-expanded={cluesOpen}
             onClick={() => setCluesOpen((v) => !v)}
           >
-            All clues
+            {cluesOpen ? 'Hide clues' : 'All clues'}
           </button>
           <div className="puzzle-cw-cluecols">
             <div>

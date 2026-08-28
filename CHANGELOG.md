@@ -289,6 +289,63 @@ Format: Reverse chronological, grouped by sprint/date.
 - Caught in passing: writing the `.ico` as RGB makes Next's decoder throw
   `Format error decoding Ico` on every request. It has to be RGBA even though
   nothing in it is transparent.
+## The intro opens in the reader's own mode (SA-127, F-171)
+
+**2026-08-24**
+
+Founder: _"The homepage animation is not working at all the way it should.
+This is the intro animation I want [telhaclarke.com.au]. I need 2 versions -
+one for Darkmode, one for Light Mode. The Color of the euangelion needs to
+match the mode color... I also want the subtle text rollover."_
+
+There was only ever ONE version. The sheet was cobalt in both themes with the
+wordmark knocked out of it, so a light-mode reader watched a cream word on
+blue for the entire intro and it turned blue only in the last frame as it flew
+away. Now the ground is the mode's own — paper in light, deep blue in dark —
+and the word is drawn in the mode's own masthead colour from the first frame,
+cobalt or cream. The hand-off is pure position and scale; the word needs no
+colour change because it already is what it is becoming.
+
+The sequence is the reference's, in our materials: each letter in a one-face
+mask with a duplicate stacked beneath, the top copy rolling out as the
+duplicate rolls in, staggered letter by letter; then the ground leaves on a
+hard clip edge rather than a fade. Built in CSS — GSAP, CustomEase and
+SplitText is a large dependency for one ten-letter wordmark.
+
+The rollover is their origin-flip wipe: a rule that enters from the left and
+leaves to the right, never rewinding, 0.7s on their own easing curve.
+
+SW pair v154. Test-first, nine contract tests; both modes verified frame by
+frame in real Chrome.
+## The paper heals: comics every day, clues in hand — SA-114 (F-158)
+
+**2026-08-24**
+
+Founder: _"the comics don't seem to load daily. Literally comics dont
+show... Crossword doesnt show properly on mobile - cant see the clues.
+Check mobile version of daily bread site for consistency."_
+
+- **Why the comics stopped**: the weekly Wednesday build ran Aug 19 while
+  the strip machine was still PAUSED (the voice ruling), so it drew
+  nothing; the hand-drawn strips covered only Aug 20–22, and the next
+  weekly run would start from Aug 27 — leaving Aug 23–26 stripless
+  forever. Worse, `generate-strip.mjs` was committed with a split
+  template literal (SyntaxError), so even Wednesday's run would have
+  crashed. Script fixed; the four missing strips drawn and installed.
+- **daily-gapfill.yml** — the dailiness backstop (credential check made
+  branch-agnostic same day — the tier helper only exists on the failover
+  branch, so main falls back to the plain subscription token): every morning at 08:00
+  UTC (before the 7am flip) CI checks today + two days ahead for a
+  missing strip, lead plate, or guide set and generates only what is
+  missing. All three generators are idempotent, so overlap with the
+  weekly build is harmless.
+- **Crossword mobile**: clue lists now print OPEN by default — a paper
+  prints its clues; the founder hit a bare grid. The toggle collapses
+  ("Hide clues"), never hides them from a fresh reader. Test re-pinned.
+- **Word search mobile**: under 420px the 34px cell floor clipped two
+  columns behind an inner scroll with no affordance — cells now go
+  fluid, matching the crossword; the circle overlay is cell-unit-scaled
+  and follows. Guard test added.
 
 ---
 
@@ -588,6 +645,19 @@ Format: Reverse chronological, grouped by sprint/date.
   active flame and lamplight.
 
 ---
+## Mobile images survive one bad network moment (SA-123, F-168)
+
+**2026-08-24**
+
+Founder: _"The mobile version of the homepage doesnt load the images."_
+Production would not fail on demand — real Chrome and real WebKit probes at
+375px painted every image, and all 21 hero variants returned 200. The break
+lives on the device: the service worker answered any failed image fetch
+with a fabricated EMPTY 404, and an installed PWA keeps the same page alive
+for days, so one dead spot blanked images until the page itself reloaded.
+The handler now retries once and otherwise fails with a REAL network error
+(`Response.error()`), and the featured devotional art — the page's LCP
+candidate — drops `lazy` for `priority`. SW pair v151. Test-first.
 
 ## The lab — experiments live in the real site, iframes banned (SA-114, F-158)
 
@@ -12318,6 +12388,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 ## Current Status
 
 **Version:** 0.8.24
+**Version:** 0.8.19
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync
