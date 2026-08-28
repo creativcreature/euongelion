@@ -5,6 +5,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Seven futures — an exploration lab on the real surfaces — SA-114 (F-158)
+
+**2026-08-28**
+
+- **Founder asked for seven explorable, interactive concepts across both the
+  devotional and the Daily Bread — 14 looks.** Built at `/admin/lab/futures`,
+  admin-gated, each treatment running over TODAY'S REAL EDITION and a REAL
+  devotional rather than mockups, per this feature's standing rule that
+  interactive proposals exist as real content in the real page.
+- **The seven are claims, not filters:** Bayer (dither as the continuous made
+  receivable), Phosphor (the page is a lit display), Hologram (presence at a
+  distance), Transmission (_euangelion_ means a message received), The Press
+  (the paper is genuinely machine-made — show it), The Grid (finite form as the
+  point), Diorama (the sheet has depth). Each is interactive: scrub the dither
+  matrix and levels, detune the signal, scrub the impression, toggle the grid,
+  degauss, tilt the foil.
+- **One rule across all seven: the Word is never treated.** Scripture and
+  devotional prose are exempted from every filter, transform and overlay.
+- **Isolated:** `futures.css` is imported by the futures layout alone; the
+  layout asserts the admin allowlist before rendering. Verified an anonymous
+  request returns the not-found body with zero edition markers and zero lab
+  chrome.
+- **Three failures found by photographing rather than reasoning:** blending the
+  document at `color-dodge` dodged cream to white and emptied the page;
+  transforming the page made it the containing block for every fixed/sticky
+  descendant and collapsed the layout; wrapping each `<img>` collapsed every
+  `fill` image into a black box. The foil is now a sibling overlay and only the
+  image is transformed.
+- Correction to the 2026-08-27 state report: `ADMIN_EMAIL_ALLOWLIST` **is**
+  configured (locally and as a Worker secret) — the note calling it
+  founder-blocked was stale.
+
+---
+
 ## The intro, built to the reference at last — SA-064 (F-108), SA-127 (F-171)
 
 **2026-08-27**
@@ -289,6 +323,7 @@ Format: Reverse chronological, grouped by sprint/date.
 - Caught in passing: writing the `.ico` as RGB makes Next's decoder throw
   `Format error decoding Ico` on every request. It has to be RGBA even though
   nothing in it is transparent.
+
 ## The intro opens in the reader's own mode (SA-127, F-171)
 
 **2026-08-24**
@@ -317,6 +352,7 @@ leaves to the right, never rewinding, 0.7s on their own easing curve.
 
 SW pair v154. Test-first, nine contract tests; both modes verified frame by
 frame in real Chrome.
+
 ## The paper heals: comics every day, clues in hand — SA-114 (F-158)
 
 **2026-08-24**
@@ -645,6 +681,7 @@ Check mobile version of daily bread site for consistency."_
   active flame and lamplight.
 
 ---
+
 ## Mobile images survive one bad network moment (SA-123, F-168)
 
 **2026-08-24**

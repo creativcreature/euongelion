@@ -1,0 +1,408 @@
+/* ═══ LAB — FUTURES ═══════════════════════════════════════════════════════
+   Seven treatments, each applied over the REAL surface (today's actual
+   edition, a real devotional). Founder-only, admin-gated, never imported by
+   the live shell — this file is imported by the futures layout ALONE, so
+   nothing here can reach a reader by accident.
+
+   THE ONE RULE ALL SEVEN OBEY: the Word is never treated. `.devotional-prose`
+   and `.devotional-headline-scripture` are explicitly exempted from every
+   filter, transform and overlay below. The machine carries you to the page;
+   the page is then a page. Where a treatment needed the reading to change to
+   work, the treatment was cut instead.
+
+   Every effect here also has to carry meaning or state. Ambient decoration is
+   a skin. A scanline that IS the loading progress, a dot ramp that IS depth —
+   that is the thing itself.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.fut-stage {
+  position: relative;
+  isolation: isolate;
+}
+
+/* THE EXEMPTION, stated once and inherited by every concept. Filters do not
+   pass through to these; transforms do not move them. */
+.fut-stage .devotional-prose,
+.fut-stage .devotional-headline-scripture {
+  filter: none !important;
+  transform: none !important;
+  text-shadow: none !important;
+  image-rendering: auto !important;
+}
+
+/* ── 1 · BAYER ───────────────────────────────────────────────────────────
+   Dither as incarnation: the continuous forced into a finite palette so it
+   can be carried. The canvas island does the real per-pixel quantisation; CSS
+   only handles what the canvas cannot reach. Plates go hard-edged because a
+   dithered image that is then smoothly scaled is no longer dithered. */
+[data-future='bayer'] .devotional-artwork-img,
+[data-future='bayer'] img {
+  image-rendering: pixelated;
+}
+
+[data-future='bayer'] .fut-dither-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* The dot field is the page's own ground, not an overlay tint — the house
+   rule is that shadow IS dot density, never grey. */
+[data-future='bayer'] .fut-stage::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(31, 42, 141, 0.16) 0.9px,
+    transparent 1.1px
+  );
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+}
+
+/* ── 2 · PHOSPHOR ────────────────────────────────────────────────────────
+   The page admits it is a lit display. Scanline + bloom + a faint curve.
+   The scanline is spaced off the baseline token so it agrees with the type
+   rather than beating against it. */
+[data-future='phosphor'] .fut-stage {
+  --fut-scan: 3px;
+}
+
+[data-future='phosphor'] .fut-stage::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(9, 14, 66, 0.055) 0 1px,
+    transparent 1px var(--fut-scan)
+  );
+}
+
+/* Bloom, and the barrel hint. Kept far below the threshold where text starts
+   to feel warped — this is a suggestion of glass, not a fisheye. */
+[data-future='phosphor'] .fut-bloom {
+  filter: drop-shadow(0 0 0.6px rgba(31, 42, 141, 0.5))
+    drop-shadow(0 0 6px rgba(31, 42, 141, 0.14));
+}
+
+[data-future='phosphor'] .fut-stage::after {
+  content: '';
+  position: fixed;
+  inset: -2%;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 42% / 36%;
+  box-shadow: inset 0 0 120px rgba(9, 14, 66, 0.22);
+}
+
+/* Persistence: what leaves the screen leaves a trace before it goes. */
+@keyframes fut-degauss {
+  0% {
+    transform: translate3d(0, 0, 0) skewX(0deg);
+    filter: saturate(1);
+  }
+  18% {
+    transform: translate3d(-3px, 1px, 0) skewX(0.5deg);
+    filter: saturate(1.8);
+  }
+  46% {
+    transform: translate3d(2px, -1px, 0) skewX(-0.35deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) skewX(0deg);
+    filter: saturate(1);
+  }
+}
+
+[data-future='phosphor'] .fut-stage.is-degaussing {
+  animation: fut-degauss 520ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ── 3 · HOLOGRAM ───────────────────────────────────────────────────────
+   Presence at a distance. The foil is CONSTRAINED TO THE PALETTE on purpose:
+   a full rainbow is the default holographic look and it would stop being this
+   brand instantly. Cobalt, cream and the crimson spot only.
+
+   THE FOIL GOES ON THE PLATES, NOT ON THE PAGE. The first pass wrapped the
+   whole document and blended it at color-dodge; dodging cream (#f0ece6)
+   blows every pixel to white and the page rendered EMPTY. Photographed and
+   fixed. Foil is a material that sits on an object — so it is attached to
+   each plate, which is also where it means something. */
+/* NO TRANSFORM ON THE PAGE. Twice now this concept has been broken by the
+   same rule: a transformed ancestor becomes the containing block for every
+   `fixed` and `sticky` descendant, and this shell is full of them — the
+   topbar, the nav, the audio bar. Wrapping the document in a tilt collapsed
+   the layout and rendered the page nearly empty. Photographed both times.
+
+   So the page never tilts. Only the plates do, which is also what a foil
+   actually is: a material on an object. */
+
+/* One plate. The foil is an OVERLAY inside the plate's own container — it
+   never becomes an ancestor of the image, so no `fill` image loses its box. */
+[data-future='hologram'] .fut-foil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  /* `overlay`, not `color-dodge`: overlay preserves the plate's darks and
+     lifts only midtones, so the artwork survives the foil. */
+  mix-blend-mode: overlay;
+  opacity: 0.66;
+  background:
+    linear-gradient(
+      calc(var(--fut-gx, 50) * 1.6deg + 15deg),
+      rgba(31, 42, 141, 0) 18%,
+      rgba(34, 54, 162, 0.9) 40%,
+      rgba(245, 238, 227, 0.98) 50%,
+      rgba(196, 25, 46, 0.6) 60%,
+      rgba(31, 42, 141, 0) 82%
+    ),
+    radial-gradient(
+      circle at var(--fut-gx, 50%) var(--fut-gy, 50%),
+      rgba(245, 238, 227, 0.55),
+      transparent 62%
+    );
+  transition: background 90ms linear;
+}
+
+/* The plate itself takes the tilt. An <img> is safe to transform; the PAGE is
+   not (see above). */
+[data-future='hologram'] .fut-stage img {
+  transform: perspective(1200px) rotateX(calc(var(--fut-ry, 0deg) * 0.6))
+    rotateY(calc(var(--fut-rx, 0deg) * 0.6));
+  transition: transform 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+
+/* The mark: one slow wireframe, held. Not a particle field — this brand does
+   not do glow or shimmer, so the hologram reads through GEOMETRY and edge. */
+[data-future='hologram'] .fut-mark {
+  animation: fut-spin 18s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes fut-spin {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* ── 4 · TRANSMISSION ────────────────────────────────────────────────────
+   Euangelion means good message. The page ARRIVES. Degradation is driven by
+   the dial the reader holds — never faked, because fake noise on a devotional
+   is theatre. --fut-lock runs 0 (detuned) to 1 (locked). */
+[data-future='transmission'] .fut-stage {
+  --fut-lock: 1;
+}
+
+[data-future='transmission'] .fut-tune {
+  filter: blur(calc((1 - var(--fut-lock)) * 3.5px))
+    contrast(calc(1 + (1 - var(--fut-lock)) * 0.4));
+  transform: translate3d(calc((1 - var(--fut-lock)) * -4px), 0, 0);
+  transition: filter 90ms linear;
+}
+
+[data-future='transmission'] .fut-stage::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: calc((1 - var(--fut-lock)) * 0.55);
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(9, 14, 66, 0.12) 0 1px,
+      transparent 1px 2px
+    ),
+    radial-gradient(
+      circle at 1px 1px,
+      rgba(9, 14, 66, 0.3) 0.7px,
+      transparent 1px
+    );
+  background-size:
+    100% 2px,
+    3px 3px;
+}
+
+/* ── 5 · THE PRESS ───────────────────────────────────────────────────────
+   The paper really is composed by machine each morning. Registration marks
+   live in the margin where a real proof carries them, and the impression
+   builds rather than fades in. */
+[data-future='press'] .fut-plate {
+  --fut-ink: 1;
+  filter: contrast(calc(0.7 + var(--fut-ink) * 0.3))
+    brightness(calc(1.12 - var(--fut-ink) * 0.12));
+  clip-path: inset(0 0 calc((1 - var(--fut-ink)) * 100%) 0);
+  transition:
+    filter 120ms linear,
+    clip-path 120ms linear;
+}
+
+[data-future='press'] .fut-regmark {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: auto;
+  cursor: grab;
+  opacity: 0.55;
+}
+
+[data-future='press'] .fut-regmark::before,
+[data-future='press'] .fut-regmark::after {
+  content: '';
+  position: absolute;
+  background: var(--color-crimson, #c4192e);
+}
+
+[data-future='press'] .fut-regmark::before {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+
+[data-future='press'] .fut-regmark::after {
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+}
+
+/* ── 6 · THE GRID ────────────────────────────────────────────────────────
+   Finite form as the point. The grid is the site's own 8px baseline token, so
+   turning it on reveals a system that was always there rather than imposing
+   a new one. */
+[data-future='grid'] .fut-stage::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: var(--fut-grid, 0);
+  transition: opacity 220ms ease;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(31, 42, 141, 0.16) 0 1px,
+      transparent 1px 8px
+    ),
+    repeating-linear-gradient(
+      to right,
+      rgba(31, 42, 141, 0.08) 0 1px,
+      transparent 1px 8px
+    );
+}
+
+[data-future='grid'] .fut-meta {
+  font-family: var(--font-family-ui, ui-monospace), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+/* Motion snaps between cells rather than easing through them — the whole
+   argument of this concept in one timing function. */
+[data-future='grid'] .fut-snap {
+  transition: transform 160ms steps(4, end);
+}
+
+/* ── 7 · DIORAMA ─────────────────────────────────────────────────────────
+   The sheet has depth. Travel stays inside the site's own ±28px parallax cap
+   ("depth, not drift") so a reading surface never feels unstable. */
+[data-future='diorama'] .fut-layer {
+  will-change: transform;
+  transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+[data-future='diorama'] .fut-scene {
+  perspective: 1100px;
+  transform-style: preserve-3d;
+}
+
+[data-future='diorama'] .fut-scene > * {
+  transform: translate3d(
+    calc(var(--fut-px, 0) * var(--fut-depth, 0) * 1px),
+    calc(var(--fut-py, 0) * var(--fut-depth, 0) * 1px),
+    0
+  );
+}
+
+/* ── LAB CHROME (not part of any concept) ───────────────────────────────── */
+.fut-bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  background: #0e0e11;
+  color: #eceaf0;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12.5px;
+  border-bottom: 1px solid #26262e;
+}
+
+.fut-bar a,
+.fut-bar button {
+  color: inherit;
+  background: #1a1a20;
+  border: 1px solid #2e2e38;
+  border-radius: 6px;
+  padding: 5px 11px;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.fut-bar a:hover,
+.fut-bar button:hover {
+  border-color: #4a4a58;
+}
+
+.fut-bar a.on,
+.fut-bar button.on {
+  background: #7fd1ff;
+  border-color: #7fd1ff;
+  color: #06131c;
+  font-weight: 600;
+}
+
+.fut-bar .sp {
+  flex: 1;
+}
+
+.fut-note {
+  color: #8b8b96;
+}
+
+.fut-ctl {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.fut-ctl input[type='range'] {
+  width: 120px;
+  accent-color: #7fd1ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-future] .fut-holo,
+  [data-future] .fut-layer,
+  [data-future] .fut-snap {
+    transition: none;
+  }
+  [data-future] .fut-mark,
+  [data-future='phosphor'] .fut-stage.is-degaussing {
+    animation: none;
+  }
+}
