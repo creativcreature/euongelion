@@ -6,11 +6,21 @@
  * card so no option is flattered — including the ones that are more work.
  */
 import Link from 'next/link'
+import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 import { FUTURES, SURFACES } from '@/lib/lab/futures'
 
 export const dynamic = 'force-dynamic'
 
-export default function FuturesIndex() {
+/**
+ * THE PAGE ASSERTS THE ALLOWLIST ITSELF. The layout gate alone is NOT enough,
+ * and this was proved in production on 2026-08-28: with the gate only in the
+ * layout, an anonymous GET of this route returned the lab chrome AND the
+ * concept copy. React renders layout and page concurrently, so the page's
+ * markup is flushed into the stream before the layout's notFound() aborts it —
+ * exactly the failure documented in assert-admin.ts, walked into anyway.
+ */
+export default async function FuturesIndex() {
+  await assertAdminOr404()
   return (
     <div
       style={{ background: '#0e0e11', minHeight: '100vh', color: '#eceaf0' }}

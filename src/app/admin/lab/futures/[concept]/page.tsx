@@ -16,6 +16,7 @@ import EditionPage from '@/components/edition/EditionPage'
 import DevotionalPageClient from '@/app/devotional/[slug]/DevotionalPageClient'
 import FutureLens from '@/components/lab/FutureLens'
 import { fetchTodayDevotional } from '@/lib/today-devotional'
+import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 import { getConcept, type SurfaceId } from '@/lib/lab/futures'
 
 export const dynamic = 'force-dynamic'
@@ -31,6 +32,9 @@ export default async function FuturePage({
   params: Promise<{ concept: string }>
   searchParams: Promise<{ s?: string; slug?: string }>
 }) {
+  // Asserted HERE as well as in the layout — a layout gate alone lets the
+  // page's markup reach the stream first (see the index page's note).
+  await assertAdminOr404()
   const { concept: id } = await params
   const sp = await searchParams
   const concept = getConcept(id)
