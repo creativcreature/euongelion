@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The intro, built to the reference at last — SA-064 (F-108), SA-127 (F-171)
+
+**2026-08-27**
+
+- **The brief existed and this session never had it.** The founder's 2026-08-24
+  instruction — "This is the intro animation I want [telhaclarke.com.au]... If
+  Light Mode, Euangelion should be Blue, if Dark Mode it should be white" — lived
+  in a commit message on `main`, which the deployed branch had never merged. Two
+  implementations existed, each with half the answer: main's SA-127 had the
+  letter roll and the mode colour but kept the flight the founder rejected on
+  2026-08-26; this branch had print-in-place but no roll and a cream word in both
+  themes. Founder chose the synthesis.
+- **Captured the reference.** Black field, corner meta with a live `Loading NN%`,
+  the wordmark assembling by a per-letter vertical roll, then the page arriving
+  beneath it — the word never moves. ~4s.
+- **r4 takes:** the letter roll (ported from SA-127, re-expressed as script
+  animations so it sits ABOVE CSS animations in the cascade), the mode's own
+  colours from frame one, and print-in-place. Because the intro's ground already
+  equals the page's ground and the word already equals the masthead's colour, the
+  curtain has nothing to reconcile — so the two-plate colour split and the crimson
+  register ghost were both retired. Founder ruled no loading counter. ~1.6s.
+- **Two things only measurement caught.** The letter mask must be one LINE BOX,
+  not one em: `1em` is the font size, and at `line-height: 0.9` an em-tall mask
+  stands 22.7px proud — the parity gate reported `dw: 0, dh: 23` and dropped the
+  sequence to the sheet-only exit. `height: 1lh` fixed it, parity back to
+  1373x204. And a settled roll column sits at −50%, not 0 — the first INV1 would
+  have asserted the roll was half finished.
+- **The contract test earned itself again:** it failed on `press-word--slip`
+  surviving in CSS after the crimson ghost was retired — the same dead-selector
+  class of bug it was written to catch.
+- **Verified:** invariants 7/7 on light, dark and mobile; safety gates 7/7;
+  degraded paths 3/3; suite unchanged at its 3 known pre-existing failures.
+
+---
+
 ## The intro shows the wordmark once, where it belongs — SA-064 (F-108)
 
 **2026-08-26**
@@ -12282,7 +12317,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.23
+**Version:** 0.8.24
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
 **Next:** Content generation (real images, additional module content), Supabase progress sync

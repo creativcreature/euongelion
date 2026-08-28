@@ -82,9 +82,6 @@ const HARD_STOP_MS = 2600
 const IMPRESSION_SCALE = 1.035
 const IMPRESSION_RISE = 10
 
-const E_STRIKE = 'cubic-bezier(0.2, 0, 0, 1)'
-const E_TYPE = 'cubic-bezier(0.22, 0.61, 0.36, 1)' // content/press curve (F-104, dock, menu)
-const E_MACHINE = 'cubic-bezier(0.76, 0, 0.24, 1)' // the flight — globals.css:14148
 const E_SQUEEGEE = 'cubic-bezier(0.83, 0, 0.17, 1)' // the sheet-only exit — globals.css:14083
 const E_IN = 'cubic-bezier(0.4, 0, 1, 1)' // --ease-in, globals.css:1102
 const E_SWAP = 'cubic-bezier(0.4, 0, 0.6, 1)'
@@ -97,16 +94,24 @@ const E_SWAP = 'cubic-bezier(0.4, 0, 0.6, 1)'
  * its easing; only the clock is tighter. The print stroke is deliberately NOT
  * scaled with the rest — it stays 220ms, because it is the payoff and it is
  * the one beat the eye has to read rather than merely register. */
-const T_SLIP = 80
-const T_KEY = 150
-const T_SET_END = 380
+/** THE ROLL. The reference runs 2s with a 47.5ms stagger over SVG paths; this
+ *  is the same shape at 460ms / 26ms over real text, because the founder has
+ *  called this intro mistimed three times and every complaint was that it
+ *  dragged. Ten letters: the last starts at 60 + 9x26 = 294ms and lands at
+ *  754ms. */
+const T_ROLL = 60
+const ROLL_MS = 460
+const ROLL_STAGGER = 26
+/** Out-expo. The roll should decelerate into register like a flap settling,
+ *  not ease symmetrically like a machine part. */
+const E_ROLL = 'cubic-bezier(0.16, 1, 0.3, 1)'
+
 /** The impression settling into register — the old flight's slot, now a 10px
  *  move instead of a 239px one, so it costs far less clock. */
-const T_FLIGHT_END = 560
-const T_WIPE = 520
-const T_PRINT = 640
-const T_RELEASE = 860
-const T_END = 980
+const T_WIPE = 780
+const T_PRINT = 880
+const T_RELEASE = 1080
+const T_END = 1180
 const D_WIPE = T_END - T_WIPE // 580
 const OFF_PRINT = (T_PRINT - T_WIPE) / D_WIPE // 0.241379
 const OFF_RELEASE = (T_RELEASE - T_WIPE) / D_WIPE // 0.655172
@@ -153,6 +158,35 @@ interface Geo {
 
 type Mode = 'boot' | 'sheet' | 'full' | 'gone'
 
+/** THE ROLL MARKUP. One mask per letter, two stacked copies inside it; the
+ *  column travels exactly one face so the top copy leaves as the duplicate
+ *  rises into the window. Spaces are rendered as plain spans — masking a space
+ *  would collapse it and close the word up.
+ *
+ *  Splitting the word into inline-blocks is safe for THIS masthead because it
+ *  inherits `font-kerning: none` from `.mock-home .text-masthead`, so there are
+ *  no pair kerns to lose; letter-spacing applies per character either way. The
+ *  type-parity gate re-measures anyway and drops to the sheet-only exit if the
+ *  split word disagrees with the masthead by more than 2px. */
+function RolledWord({ text }: { text: string }) {
+  return (
+    <>
+      {Array.from(text).map((ch, i) =>
+        ch === ' ' ? (
+          <span key={`sp-${i}`}> </span>
+        ) : (
+          <span className="press-letter" key={`${ch}-${i}`} data-i={i}>
+            <span className="press-letter-roll">
+              <span className="press-letter-face">{ch}</span>
+              <span className="press-letter-face">{ch}</span>
+            </span>
+          </span>
+        ),
+      )}
+    </>
+  )
+}
+
 const snap = (v: number) => {
   const dpr = window.devicePixelRatio || 1
   return Math.round(v * dpr) / dpr
@@ -165,12 +199,9 @@ export default function MastheadIntro() {
 
   const rootRef = useRef<HTMLDivElement | null>(null)
   const inkRef = useRef<HTMLSpanElement | null>(null)
-  const grainRef = useRef<HTMLSpanElement | null>(null)
   const paperPlateRef = useRef<HTMLSpanElement | null>(null)
   const printPlateRef = useRef<HTMLSpanElement | null>(null)
   const flightRef = useRef<HTMLSpanElement | null>(null)
-  const setRef = useRef<HTMLSpanElement | null>(null)
-  const slipRef = useRef<HTMLSpanElement | null>(null)
   const paperRef = useRef<HTMLSpanElement | null>(null)
 
   // ── EFFECT A: gate, wait, measure, decide. Never animates. ──────────────
@@ -424,12 +455,9 @@ export default function MastheadIntro() {
       )
     } else {
       const flight = flightRef.current!
-      const setEl = setRef.current!
-      const slip = slipRef.current!
       const paper = paperRef.current!
       const paperPlate = paperPlateRef.current!
       const printPlate = printPlateRef.current!
-      const grain = grainRef.current!
 
       // ── TYPE PARITY GATE. For the whole 240ms print stroke the reader sees
       //    half the word rendered by our span and half by the site's, so a
@@ -458,102 +486,49 @@ export default function MastheadIntro() {
       promote(paperPlate, 'clip-path')
       promote(printPlate, 'clip-path, opacity')
       promote(flight, 'transform')
-      promote(setEl, 'transform')
-      promote(slip, 'transform, opacity')
       promote(paper, 'opacity')
-      promote(grain, 'transform')
 
-      // 1 — SLIP STRIKE + REGISTER. ONE animation owning BOTH properties.
-      //     r1 ran press-set and press-register as two animations both
-      //     touching `transform` on this element; per CSS animation cascade
-      //     order the later one won, so press-set's tightening was silently
-      //     discarded on the crimson plate.
-      A(
-        slip,
-        [
-          {
-            offset: 0,
-            transform: 'translate3d(0.048em, 0.034em, 0)',
-            opacity: 0,
-            easing: E_STRIKE,
-          },
-          {
-            // Fractions of (T_SET_END - T_SLIP), not absolute ms — they follow
-            // the compression instead of drifting out of phase with it.
-            offset: 0.13,
-            transform: 'translate3d(0.0437em, 0.0309em, 0)',
-            opacity: 0.68,
-            easing: E_TYPE,
-          },
-          {
-            offset: 0.8,
-            transform: 'translate3d(0.0022em, 0.0016em, 0)',
-            opacity: 0.68,
-            easing: E_TYPE,
-          },
-          {
-            offset: 1,
-            transform: 'translate3d(0em, 0em, 0)',
-            opacity: 0,
-          },
-        ],
-        { duration: T_SET_END - T_SLIP, delay: T_SLIP },
+      // 1 — THE LETTER ROLL. The reference's signature move and the founder's
+      //     "subtle text rollover" (telhaclarke.com.au, 2026-08-24). Each
+      //     letter's column travels exactly one face, staggered left to right,
+      //     so the word assembles rather than appearing. Driven from the shared
+      //     script clock — a CSS animation here would sort BELOW the script
+      //     animations and is the exact class of bug that left the hand-off
+      //     dead for two releases.
+      //
+      //     Both plates roll in lockstep. They are the same colour and the same
+      //     position, so together they read as one wordmark whichever side of
+      //     the curtain edge a given letter is on.
+      const rolls = Array.from(
+        root.querySelectorAll<HTMLElement>('.press-letter-roll'),
       )
+      const perPlate = rolls.length / 2
+      rolls.forEach((el, idx) => {
+        // Index WITHIN a plate, so the two plates stagger identically instead
+        // of the second plate continuing the first plate's count.
+        const i = perPlate > 0 ? idx % perPlate : idx
+        A(
+          el,
+          [
+            { transform: 'translate3d(0, 50%, 0)' },
+            { transform: 'translate3d(0, -50%, 0)' },
+          ],
+          {
+            duration: ROLL_MS,
+            delay: T_ROLL + i * ROLL_STAGGER,
+            easing: E_ROLL,
+          },
+        )
+      })
 
-      // 2 — KEY STRIKE. A strike, not a fade.
+      // 2 — THE PLATES ARRIVE. A strike, not a fade — the masks are already
+      //     empty (each column sits one face low), so this only makes the
+      //     stage live before the first letter rises into it.
       A(paper, [{ opacity: 0 }, { opacity: 1 }], {
-        duration: 40,
-        delay: T_KEY,
-        easing: E_STRIKE,
+        duration: 1,
+        delay: T_ROLL,
+        easing: 'linear',
       })
-
-      // 3 — HALFTONE JOLT: the platen hits the bed. A compositor transform on
-      //     a dedicated dot layer, NOT background-position — a full-viewport
-      //     repaint here would land in the same window as hydration's single
-      //     114ms long frame.
-      A(
-        grain,
-        [
-          {
-            offset: 0,
-            transform: 'translate3d(0px, 0px, 0)',
-            easing: 'steps(1, end)',
-          },
-          {
-            offset: 0.5,
-            transform: 'translate3d(2px, 1px, 0)',
-            easing: 'steps(1, end)',
-          },
-          { offset: 1, transform: 'translate3d(0px, 0px, 0)' },
-        ],
-        { duration: 140, delay: T_KEY },
-      )
-
-      // 4 — THE SET. scaleX only, on its own element.
-      A(setEl, [{ transform: 'scaleX(1.06)' }, { transform: 'scaleX(1)' }], {
-        duration: T_SET_END - T_KEY,
-        delay: T_KEY,
-        easing: E_TYPE,
-      })
-
-      // 5 — THE IMPRESSION. Was a 239px flight from centre screen; now a 10px
-      //     settle in place. The plate meets the paper a touch oversize and
-      //     high and presses into exact register — which is what a press does,
-      //     and which never puts a second wordmark on the screen.
-      A(
-        flight,
-        [
-          {
-            transform: `translate3d(0px, ${geo.dy.toFixed(2)}px, 0) scale(${geo.k.toFixed(5)})`,
-          },
-          { transform: 'translate3d(0px, 0px, 0) scale(1)' },
-        ],
-        {
-          duration: T_FLIGHT_END - T_SET_END,
-          delay: T_SET_END,
-          easing: E_MACHINE,
-        },
-      )
 
       // 6 — THE WIPE. One eased scalar, three consumers. Identical duration,
       //     delay, offsets and easings on all three; all three get the same
@@ -767,7 +742,7 @@ export default function MastheadIntro() {
   return (
     <div className="press" ref={rootRef} aria-hidden="true" style={vars}>
       <span className="press-ink" ref={inkRef}>
-        <span className="press-grain" ref={grainRef} />
+        <span className="press-grain" />
       </span>
 
       {mode === 'full' && geo && (
@@ -775,20 +750,13 @@ export default function MastheadIntro() {
           {/* Everything BELOW the squeegee edge: the knockout, on the ink. */}
           <span className="press-plate press-plate--paper" ref={paperPlateRef}>
             <span className="press-flight" ref={flightRef}>
-              <span className="press-set" ref={setRef}>
-                <span
-                  className="press-word press-word--slip"
-                  ref={slipRef}
-                  style={typeStyle}
-                >
-                  {geo.text}
-                </span>
+              <span className="press-set">
                 <span
                   className="press-word press-word--paper"
                   ref={paperRef}
                   style={typeStyle}
                 >
-                  {geo.text}
+                  <RolledWord text={geo.text} />
                 </span>
               </span>
             </span>
@@ -804,7 +772,7 @@ export default function MastheadIntro() {
           <span className="press-plate press-plate--print" ref={printPlateRef}>
             <span className="press-land-box">
               <span className="press-word press-word--land" style={typeStyle}>
-                {geo.text}
+                <RolledWord text={geo.text} />
               </span>
             </span>
           </span>

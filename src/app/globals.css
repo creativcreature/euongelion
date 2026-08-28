@@ -14063,7 +14063,7 @@ html[data-held-moment] .mobile-tab-bar {
    black void (dark). The background-color covers the pre-paint frame; the
    ::before covers everything after it until the live overlay takes over. */
 :root[data-press='armed'] {
-  background-color: #1f2a8d;
+  background-color: #f0ece6;
 }
 
 /* The arming sheet hands over to the live overlay mid-sequence; if the two
@@ -14071,15 +14071,15 @@ html[data-held-moment] .mobile-tab-bar {
    in both themes. */
 :root.dark[data-press='armed'],
 :root[data-theme='dark'][data-press='armed'] {
-  background-color: #2236a2;
+  background-color: #171b69;
 }
 
 :root.dark[data-press='armed']::before,
 :root[data-theme='dark'][data-press='armed']::before {
-  background-color: #2236a2;
+  background-color: #171b69;
   background-image: radial-gradient(
     circle at 1px 1px,
-    rgba(9, 14, 66, 0.62) 0.9px,
+    rgba(239, 229, 216, 0.1) 0.9px,
     transparent 1.1px
   );
 }
@@ -14090,12 +14090,12 @@ html[data-held-moment] .mobile-tab-bar {
   inset: 0;
   z-index: 900;
   pointer-events: none;
-  background-color: #1f2a8d;
+  background-color: #f0ece6;
   /* Identical dot field to .press-grain, so the hand-over from the arming
      sheet to the live overlay cannot show a one-frame texture pop. */
   background-image: radial-gradient(
     circle at 1px 1px,
-    rgba(9, 14, 66, 0.5) 0.9px,
+    rgba(31, 42, 141, 0.12) 0.9px,
     transparent 1.1px
   );
   background-size: 4px 4px;
@@ -14173,18 +14173,18 @@ html[data-held-moment] .mobile-tab-bar {
      so those simply do not resolve here — r1's first pass silently rode its
      literal fallbacks and was hard-wired to light mode in both themes.
      Declared locally, in full, for both themes. */
-  --press-ink: #1f2a8d; /* the sheet — the SAME cobalt in both themes */
-  --press-dot: rgba(
-    9,
-    14,
-    66,
-    0.5
-  ); /* Ben-Day structure; no greys, dot density only */
+  /* THE GROUND IS THE MODE'S OWN GROUND, AND THE WORD THE MODE'S OWN COLOUR.
+     Founder 2026-08-24: "The Color of the euangelion needs to match the mode
+     color. If Light Mode, Euangelion should be Blue, if Dark Mode it should be
+     white." That supersedes the 2026-08-16 "white on blue" framing.
+     The consequence is the good one: the intro's ground already equals the
+     page's ground and the word already equals the masthead's colour, so the
+     curtain has nothing to reconcile — passing the masthead produces no
+     visible change at all, the hand-off cannot show a seam, and the old
+     two-plate colour split is no longer needed. */
+  --press-ink: #f0ece6; /* light: the page's own paper (--color-newspaper-cream) */
+  --press-dot: rgba(31, 42, 141, 0.12); /* Ben-Day, cobalt on paper */
   --press-paper: #f5eee3; /* the knockout: paper showing through */
-  /* HARDCODED, never --color-crimson: that token lifts to #e25868 in dark,
-     where it stops reading as ink slip and starts reading as a red word
-     sitting behind the logo. */
-  --press-slip: rgba(196, 25, 46, 0.68);
   /* Fallback ONLY. JS overwrites this inline with the masthead's own computed
      colour, so a future restyle of the masthead cannot desync the landing. */
   --press-land: #1f2a8d;
@@ -14203,21 +14203,10 @@ html[data-held-moment] .mobile-tab-bar {
    full-bleed cream flash in front of a night reader. */
 .dark .press,
 :root[data-theme='dark'] .press {
-  --press-paper: #efe5d8; /* the dark masthead's own cream (--mock-ink) */
-  --press-land: #efe5d8;
-  /* THE DARK SHEET IS LIFTED COBALT, NOT THE LIGHT SHEET'S COBALT.
-     In dark the figure cannot carry the print: the knockout is cream and the
-     masthead's wordmark is also cream, so the word looks identical either side
-     of the edge and only the GROUND can change. Against the dark page ground
-     (#171b69) the light sheet (#1f2a8d) measures 1.28:1 — photographed at the
-     print stroke, the edge was very nearly invisible and dark mode effectively
-     had no fourth beat, which is the exact criticism the previous version
-     earned. Lifted cobalt is 1.53:1 and is the documented dark-mode accent
-     (--color-cobalt-lifted), so this is the brand's own dark blue rather than
-     an invented one. The dots are pushed harder too: above the edge there is
-     no dot field at all, so the texture step reinforces the luminance step. */
-  --press-ink: #2236a2;
-  --press-dot: rgba(9, 14, 66, 0.62);
+  --press-paper: #efe5d8;
+  --press-land: #efe5d8; /* dark: the masthead's cream — the word IS this */
+  --press-ink: #171b69; /* dark: the page's own deep navy (--mock-bg) */
+  --press-dot: rgba(239, 229, 216, 0.1);
 }
 
 /* THE INK. A printed plate, not a UI panel. */
@@ -14312,16 +14301,58 @@ html[data-held-moment] .mobile-tab-bar {
   white-space: nowrap;
 }
 
+/* ── THE LETTER ROLL ─────────────────────────────────────────────────────
+   The reference's signature move (telhaclarke.com.au, founder-specified
+   2026-08-24: "I also want the subtle text rollover"). Ported from the
+   SA-127 implementation on main, re-expressed to be driven by the script
+   clock rather than a CSS animation — a CSS animation here would sit BELOW
+   the script animations in the cascade and is exactly the class of bug that
+   left the hand-off dead for two releases.
+
+   One mask per letter, two stacked copies inside it. The column travels
+   exactly one face: the top copy leaves through the top of the mask as the
+   duplicate beneath rises into the window. Staggered per letter, so the word
+   assembles left to right. */
+.press-letter {
+  display: inline-block;
+  /* THE MASK. Without overflow:hidden the outgoing copy slides across its
+     neighbours instead of being cut at the letter's own edges. */
+  overflow: hidden;
+  /* EXACTLY ONE FACE TALL — and the face is ONE LINE BOX, not one em.
+     `1em` is the font SIZE; this masthead runs `line-height: 0.9`, so at the
+     fitted 226.6px size an em-tall mask is 22.7px taller than the real line
+     box. Measured: the type-parity gate reported `dw: 0, dh: 23` and dropped
+     the whole sequence to the sheet-only exit — width exact, height wrong.
+     `lh` is the line-height unit, so this tracks whatever line-height was
+     cloned from the masthead. Where `lh` is unsupported the parity gate simply
+     degrades to the sheet-only exit, which is invisible rather than wrong. */
+  height: 1lh;
+  line-height: inherit;
+  vertical-align: bottom;
+}
+
+.press-letter-roll {
+  display: block;
+  /* BASE — the column starts one face low, so the mask is empty and each
+     letter ARRIVES rather than simply being present. The script animates it
+     to -50%, one face of travel. */
+  transform: translate3d(0, 50%, 0);
+}
+
+.press-letter-face {
+  display: block;
+  height: 1lh;
+  line-height: inherit;
+}
+
 /* The two opacity latches are BASE values: a plate is invisible until a WAAPI
    keyframe turns it on, so a frame rendered before the animations exist can
    never be seen. A script animation always outranks these. */
-.press-word--slip {
-  color: var(--press-slip);
-  z-index: 1;
-  opacity: 0; /* BASE */
-}
 .press-word--paper {
-  color: var(--press-paper);
+  /* The mode's own masthead colour, from the first frame — not a knockout that
+     resolves later. Both plates are this colour, so the curtain edge is
+     invisible ON the word and the two plates read as one continuous wordmark. */
+  color: var(--press-land);
   z-index: 2;
   opacity: 0; /* BASE */
 }
