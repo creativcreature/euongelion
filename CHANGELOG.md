@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## The proof — nine futurize moves you can actually use (2026-08-28) — SA-128 (F-172)
+
+Founder: _"I need literal working examples of features designs, interactions
+animations, updates to daily bread etc... a comprehensive page that shows
+actual live elements I can test."_ So `/admin/lab/futures` is now nine running
+features rather than seven CSS films over an unchanged page.
+
+**The miss that started it.** The founder pointed out the Nous imagery is
+animated. It is: their hero is `portal-figure-orb.webm`, 1284x1590, looping.
+A first frame-diff had reported the page static — headless Chromium blocks
+autoplay and the element is below the fold. Forcing `play()` and reading
+`currentTime` showed it running.
+
+**Nine moves, all interactive:** the living halftone (animated imagery, four
+modes, dot-size and ink-gain sliders, compare-to-source), the plate as a
+diagram (anchored callouts on leader lines), radiating hairline geometry,
+the ghosted wordmark with parallax, the dotted-leader index (keyboard 1-6),
+the live edition readout, the Daily Bread as a panelled desk, the word that
+unfolds with a typed transliteration and haptics, and the hand-rolled cross
+pile you can shove.
+
+**The moire fix.** The earlier dither pass re-quantised already-riso plates
+per pixel, beating the new grid against the source grid. The engine now
+averages the plate into coarse cells before drawing one dot per cell, so
+there is no source grid left to beat against.
+
+**Verdicts go where they always go.** Each move POSTs to `/api/admin/pitches`
+against its own slug, so a ruling here and a ruling at `/admin/pitches` are
+the same record.
+
+**Four bugs found by looking, not reasoning:** leader lines invisible at 0.28
+user units, cross bodies drawn as plus signs and spreading into a row rather
+than a heap, a pane that could not collapse because its body had two grid
+children, and a wordmark cropped to "EU...ON" by viewport-relative sizing.
+
+Verified: anonymous GET leaks no move copy; light and dark screenshot-checked;
+390px shows no horizontal overflow.
+
 ## Seven futures — an exploration lab on the real surfaces — SA-114 (F-158)
 
 **2026-08-28**

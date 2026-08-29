@@ -1,408 +1,953 @@
-/* ═══ LAB — FUTURES ═══════════════════════════════════════════════════════
-   Seven treatments, each applied over the REAL surface (today's actual
-   edition, a real devotional). Founder-only, admin-gated, never imported by
-   the live shell — this file is imported by the futures layout ALONE, so
-   nothing here can reach a reader by accident.
+/*
+  THE PROOF — lab styling.
 
-   THE ONE RULE ALL SEVEN OBEY: the Word is never treated. `.devotional-prose`
-   and `.devotional-headline-scripture` are explicitly exempted from every
-   filter, transform and overlay below. The machine carries you to the page;
-   the page is then a page. Where a treatment needed the reading to change to
-   work, the treatment was cut instead.
+  Imported ONLY by the futures layout, so nothing here can reach a reader.
 
-   Every effect here also has to carry meaning or state. Ambient decoration is
-   a skin. A scanline that IS the loading progress, a dot ramp that IS depth —
-   that is the thing itself.
-   ══════════════════════════════════════════════════════════════════════ */
+  The two inks are exposed as custom properties because the canvas demos READ
+  them (getComputedStyle) rather than hard-coding hex — that is what makes the
+  halftone and the cross pile obey light and dark mode without a second code
+  path. Change them here and the canvases follow.
+*/
 
-.fut-stage {
-  position: relative;
-  isolation: isolate;
+.lab-root {
+  --lab-ink: #1f2a8d;
+  --lab-paper: #f0ece6;
+  --lab-paper2: #e2dbcf;
+  --lab-accent: #c4192e;
+
+  --lab-bg: #f4f1eb;
+  --lab-card: #fffdf9;
+  --lab-line: #d9d2c6;
+  --lab-text: #14161f;
+  --lab-dim: #5f6470;
+
+  background: var(--lab-bg);
+  color: var(--lab-text);
+  min-height: 100vh;
+  font-family: ui-monospace, Menlo, 'SF Mono', monospace;
+  padding-bottom: 90px;
 }
 
-/* THE EXEMPTION, stated once and inherited by every concept. Filters do not
-   pass through to these; transforms do not move them. */
-.fut-stage .devotional-prose,
-.fut-stage .devotional-headline-scripture {
-  filter: none !important;
-  transform: none !important;
-  text-shadow: none !important;
-  image-rendering: auto !important;
-}
+/* Dark is the site's own ground, not an inverted grey. */
+@media (prefers-color-scheme: dark) {
+  .lab-root {
+    --lab-ink: #8fb4ff;
+    --lab-paper: #10132f;
+    --lab-paper2: #1b2050;
+    --lab-accent: #ff6b7d;
 
-/* ── 1 · BAYER ───────────────────────────────────────────────────────────
-   Dither as incarnation: the continuous forced into a finite palette so it
-   can be carried. The canvas island does the real per-pixel quantisation; CSS
-   only handles what the canvas cannot reach. Plates go hard-edged because a
-   dithered image that is then smoothly scaled is no longer dithered. */
-[data-future='bayer'] .devotional-artwork-img,
-[data-future='bayer'] img {
-  image-rendering: pixelated;
-}
-
-[data-future='bayer'] .fut-dither-canvas {
-  display: block;
-  width: 100%;
-  height: auto;
-  image-rendering: pixelated;
-}
-
-/* The dot field is the page's own ground, not an overlay tint — the house
-   rule is that shadow IS dot density, never grey. */
-[data-future='bayer'] .fut-stage::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(31, 42, 141, 0.16) 0.9px,
-    transparent 1.1px
-  );
-  background-size: 3px 3px;
-  mix-blend-mode: multiply;
-}
-
-/* ── 2 · PHOSPHOR ────────────────────────────────────────────────────────
-   The page admits it is a lit display. Scanline + bloom + a faint curve.
-   The scanline is spaced off the baseline token so it agrees with the type
-   rather than beating against it. */
-[data-future='phosphor'] .fut-stage {
-  --fut-scan: 3px;
-}
-
-[data-future='phosphor'] .fut-stage::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(9, 14, 66, 0.055) 0 1px,
-    transparent 1px var(--fut-scan)
-  );
-}
-
-/* Bloom, and the barrel hint. Kept far below the threshold where text starts
-   to feel warped — this is a suggestion of glass, not a fisheye. */
-[data-future='phosphor'] .fut-bloom {
-  filter: drop-shadow(0 0 0.6px rgba(31, 42, 141, 0.5))
-    drop-shadow(0 0 6px rgba(31, 42, 141, 0.14));
-}
-
-[data-future='phosphor'] .fut-stage::after {
-  content: '';
-  position: fixed;
-  inset: -2%;
-  z-index: 3;
-  pointer-events: none;
-  border-radius: 42% / 36%;
-  box-shadow: inset 0 0 120px rgba(9, 14, 66, 0.22);
-}
-
-/* Persistence: what leaves the screen leaves a trace before it goes. */
-@keyframes fut-degauss {
-  0% {
-    transform: translate3d(0, 0, 0) skewX(0deg);
-    filter: saturate(1);
-  }
-  18% {
-    transform: translate3d(-3px, 1px, 0) skewX(0.5deg);
-    filter: saturate(1.8);
-  }
-  46% {
-    transform: translate3d(2px, -1px, 0) skewX(-0.35deg);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) skewX(0deg);
-    filter: saturate(1);
+    --lab-bg: #0c0e1c;
+    --lab-card: #121530;
+    --lab-line: #262b52;
+    --lab-text: #e8e9f2;
+    --lab-dim: #8f95ad;
   }
 }
-
-[data-future='phosphor'] .fut-stage.is-degaussing {
-  animation: fut-degauss 520ms cubic-bezier(0.22, 0.61, 0.36, 1);
+:root.dark .lab-root {
+  --lab-ink: #8fb4ff;
+  --lab-paper: #10132f;
+  --lab-paper2: #1b2050;
+  --lab-accent: #ff6b7d;
+  --lab-bg: #0c0e1c;
+  --lab-card: #121530;
+  --lab-line: #262b52;
+  --lab-text: #e8e9f2;
+  --lab-dim: #8f95ad;
 }
 
-/* ── 3 · HOLOGRAM ───────────────────────────────────────────────────────
-   Presence at a distance. The foil is CONSTRAINED TO THE PALETTE on purpose:
-   a full rainbow is the default holographic look and it would stop being this
-   brand instantly. Cobalt, cream and the crimson spot only.
-
-   THE FOIL GOES ON THE PLATES, NOT ON THE PAGE. The first pass wrapped the
-   whole document and blended it at color-dodge; dodging cream (#f0ece6)
-   blows every pixel to white and the page rendered EMPTY. Photographed and
-   fixed. Foil is a material that sits on an object — so it is attached to
-   each plate, which is also where it means something. */
-/* NO TRANSFORM ON THE PAGE. Twice now this concept has been broken by the
-   same rule: a transformed ancestor becomes the containing block for every
-   `fixed` and `sticky` descendant, and this shell is full of them — the
-   topbar, the nav, the audio bar. Wrapping the document in a tilt collapsed
-   the layout and rendered the page nearly empty. Photographed both times.
-
-   So the page never tilts. Only the plates do, which is also what a foil
-   actually is: a material on an object. */
-
-/* One plate. The foil is an OVERLAY inside the plate's own container — it
-   never becomes an ancestor of the image, so no `fill` image loses its box. */
-[data-future='hologram'] .fut-foil {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  /* `overlay`, not `color-dodge`: overlay preserves the plate's darks and
-     lifts only midtones, so the artwork survives the foil. */
-  mix-blend-mode: overlay;
-  opacity: 0.66;
-  background:
-    linear-gradient(
-      calc(var(--fut-gx, 50) * 1.6deg + 15deg),
-      rgba(31, 42, 141, 0) 18%,
-      rgba(34, 54, 162, 0.9) 40%,
-      rgba(245, 238, 227, 0.98) 50%,
-      rgba(196, 25, 46, 0.6) 60%,
-      rgba(31, 42, 141, 0) 82%
-    ),
-    radial-gradient(
-      circle at var(--fut-gx, 50%) var(--fut-gy, 50%),
-      rgba(245, 238, 227, 0.55),
-      transparent 62%
-    );
-  transition: background 90ms linear;
-}
-
-/* The plate itself takes the tilt. An <img> is safe to transform; the PAGE is
-   not (see above). */
-[data-future='hologram'] .fut-stage img {
-  transform: perspective(1200px) rotateX(calc(var(--fut-ry, 0deg) * 0.6))
-    rotateY(calc(var(--fut-rx, 0deg) * 0.6));
-  transition: transform 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  will-change: transform;
-}
-
-/* The mark: one slow wireframe, held. Not a particle field — this brand does
-   not do glow or shimmer, so the hologram reads through GEOMETRY and edge. */
-[data-future='hologram'] .fut-mark {
-  animation: fut-spin 18s linear infinite;
-  transform-style: preserve-3d;
-}
-
-@keyframes fut-spin {
-  to {
-    transform: rotateY(360deg);
-  }
-}
-
-/* ── 4 · TRANSMISSION ────────────────────────────────────────────────────
-   Euangelion means good message. The page ARRIVES. Degradation is driven by
-   the dial the reader holds — never faked, because fake noise on a devotional
-   is theatre. --fut-lock runs 0 (detuned) to 1 (locked). */
-[data-future='transmission'] .fut-stage {
-  --fut-lock: 1;
-}
-
-[data-future='transmission'] .fut-tune {
-  filter: blur(calc((1 - var(--fut-lock)) * 3.5px))
-    contrast(calc(1 + (1 - var(--fut-lock)) * 0.4));
-  transform: translate3d(calc((1 - var(--fut-lock)) * -4px), 0, 0);
-  transition: filter 90ms linear;
-}
-
-[data-future='transmission'] .fut-stage::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  opacity: calc((1 - var(--fut-lock)) * 0.55);
-  background-image:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(9, 14, 66, 0.12) 0 1px,
-      transparent 1px 2px
-    ),
-    radial-gradient(
-      circle at 1px 1px,
-      rgba(9, 14, 66, 0.3) 0.7px,
-      transparent 1px
-    );
-  background-size:
-    100% 2px,
-    3px 3px;
-}
-
-/* ── 5 · THE PRESS ───────────────────────────────────────────────────────
-   The paper really is composed by machine each morning. Registration marks
-   live in the margin where a real proof carries them, and the impression
-   builds rather than fades in. */
-[data-future='press'] .fut-plate {
-  --fut-ink: 1;
-  filter: contrast(calc(0.7 + var(--fut-ink) * 0.3))
-    brightness(calc(1.12 - var(--fut-ink) * 0.12));
-  clip-path: inset(0 0 calc((1 - var(--fut-ink)) * 100%) 0);
-  transition:
-    filter 120ms linear,
-    clip-path 120ms linear;
-}
-
-[data-future='press'] .fut-regmark {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  pointer-events: auto;
-  cursor: grab;
-  opacity: 0.55;
-}
-
-[data-future='press'] .fut-regmark::before,
-[data-future='press'] .fut-regmark::after {
-  content: '';
-  position: absolute;
-  background: var(--color-crimson, #c4192e);
-}
-
-[data-future='press'] .fut-regmark::before {
-  left: 50%;
-  top: 0;
-  width: 1px;
-  height: 100%;
-}
-
-[data-future='press'] .fut-regmark::after {
-  top: 50%;
-  left: 0;
-  height: 1px;
-  width: 100%;
-}
-
-/* ── 6 · THE GRID ────────────────────────────────────────────────────────
-   Finite form as the point. The grid is the site's own 8px baseline token, so
-   turning it on reveals a system that was always there rather than imposing
-   a new one. */
-[data-future='grid'] .fut-stage::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  opacity: var(--fut-grid, 0);
-  transition: opacity 220ms ease;
-  background-image:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(31, 42, 141, 0.16) 0 1px,
-      transparent 1px 8px
-    ),
-    repeating-linear-gradient(
-      to right,
-      rgba(31, 42, 141, 0.08) 0 1px,
-      transparent 1px 8px
-    );
-}
-
-[data-future='grid'] .fut-meta {
-  font-family: var(--font-family-ui, ui-monospace), ui-monospace, monospace;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.06em;
-}
-
-/* Motion snaps between cells rather than easing through them — the whole
-   argument of this concept in one timing function. */
-[data-future='grid'] .fut-snap {
-  transition: transform 160ms steps(4, end);
-}
-
-/* ── 7 · DIORAMA ─────────────────────────────────────────────────────────
-   The sheet has depth. Travel stays inside the site's own ±28px parallax cap
-   ("depth, not drift") so a reading surface never feels unstable. */
-[data-future='diorama'] .fut-layer {
-  will-change: transform;
-  transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-[data-future='diorama'] .fut-scene {
-  perspective: 1100px;
-  transform-style: preserve-3d;
-}
-
-[data-future='diorama'] .fut-scene > * {
-  transform: translate3d(
-    calc(var(--fut-px, 0) * var(--fut-depth, 0) * 1px),
-    calc(var(--fut-py, 0) * var(--fut-depth, 0) * 1px),
-    0
-  );
-}
-
-/* ── LAB CHROME (not part of any concept) ───────────────────────────────── */
-.fut-bar {
+/* ── chrome ─────────────────────────────────────────────────────────── */
+.lab-bar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--lab-line);
+  background: var(--lab-card);
   position: sticky;
   top: 0;
   z-index: 40;
+  font-size: 12px;
+}
+.lab-bar a {
+  color: var(--lab-ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.lab-bar a:hover {
+  border-bottom-color: currentColor;
+}
+.lab-bar-note {
+  color: var(--lab-dim);
+  margin-left: auto;
+  letter-spacing: 0.04em;
+}
+
+.lab-hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 10px;
+}
+.lab-hero h1 {
+  font-size: clamp(24px, 4vw, 38px);
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+.lab-lede {
+  color: var(--lab-dim);
+  line-height: 1.7;
+  font-size: 14px;
+  margin: 0 0 14px;
+}
+.lab-lede strong {
+  color: var(--lab-text);
+}
+.lab-lede-2 {
+  border-left: 2px solid var(--lab-ink);
+  padding-left: 14px;
+}
+
+.lab-jump {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  padding: 10px 14px;
-  background: #0e0e11;
-  color: #eceaf0;
-  font-family: ui-monospace, Menlo, monospace;
-  font-size: 12.5px;
-  border-bottom: 1px solid #26262e;
+  gap: 8px;
+  margin: 22px 0 10px;
 }
-
-.fut-bar a,
-.fut-bar button {
-  color: inherit;
-  background: #1a1a20;
-  border: 1px solid #2e2e38;
-  border-radius: 6px;
-  padding: 5px 11px;
-  font: inherit;
-  cursor: pointer;
+.lab-jump a {
+  color: var(--lab-text);
   text-decoration: none;
+  border: 1px solid var(--lab-line);
+  padding: 5px 10px;
+  font-size: 11.5px;
+  background: var(--lab-card);
+}
+.lab-jump a span {
+  color: var(--lab-ink);
+}
+.lab-jump a:hover {
+  border-color: var(--lab-ink);
 }
 
-.fut-bar a:hover,
-.fut-bar button:hover {
-  border-color: #4a4a58;
+/* ── a move ─────────────────────────────────────────────────────────── */
+.lab-moves {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  gap: 40px;
 }
-
-.fut-bar a.on,
-.fut-bar button.on {
-  background: #7fd1ff;
-  border-color: #7fd1ff;
-  color: #06131c;
+.lab-move {
+  border: 1px solid var(--lab-line);
+  background: var(--lab-card);
+  padding: 20px;
+  scroll-margin-top: 60px;
+}
+.lab-move-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.lab-move-n {
+  color: var(--lab-dim);
+  font-size: 12px;
+}
+.lab-move-head h2 {
+  margin: 0;
+  font-size: 19px;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+}
+.lab-move-what {
+  color: var(--lab-dim);
+  line-height: 1.65;
+  font-size: 13.5px;
+  margin: 12px 0 8px;
+}
+.lab-move-look {
+  line-height: 1.65;
+  font-size: 13.5px;
+  margin: 0 0 18px;
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--lab-ink) 7%, transparent);
+  border-left: 2px solid var(--lab-ink);
+}
+.lab-move-look strong {
+  color: var(--lab-ink);
+}
+.lab-move-cost {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: var(--lab-dim);
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--lab-line);
+}
+.lab-move-cost b {
+  color: var(--lab-text);
   font-weight: 600;
 }
 
-.fut-bar .sp {
-  flex: 1;
+/* ── demo shell + controls ──────────────────────────────────────────── */
+.lab-demo {
+  margin: 4px 0 0;
 }
-
-.fut-note {
-  color: #8b8b96;
-}
-
-.fut-ctl {
+.lab-ctls {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+.lab-ctls button,
+.lab-respond-btns button {
+  font: inherit;
+  font-size: 11.5px;
+  padding: 6px 11px;
+  background: transparent;
+  color: var(--lab-text);
+  border: 1px solid var(--lab-line);
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+.lab-ctls button:hover {
+  border-color: var(--lab-ink);
+}
+.lab-ctls button.on {
+  background: var(--lab-ink);
+  border-color: var(--lab-ink);
+  color: var(--lab-paper);
+}
+.lab-slider {
+  display: inline-flex;
   align-items: center;
   gap: 7px;
+  font-size: 11px;
+  color: var(--lab-dim);
+  border: 1px solid var(--lab-line);
+  padding: 4px 9px;
+}
+.lab-slider input {
+  width: 88px;
+  accent-color: var(--lab-ink);
+}
+.lab-hint {
+  font-size: 12px;
+  color: var(--lab-dim);
+  line-height: 1.65;
+  margin: 12px 0 0;
+}
+.lab-hint strong {
+  color: var(--lab-text);
 }
 
-.fut-ctl input[type='range'] {
-  width: 120px;
-  accent-color: #7fd1ff;
+/* ── 01 living plate ────────────────────────────────────────────────── */
+.lab-plate-wrap {
+  position: relative;
+  width: 100%;
+  background: var(--lab-paper);
+  overflow: hidden;
+  border: 1px solid var(--lab-line);
+}
+.lab-plate-src,
+.lab-plate-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.22s ease;
+}
+.lab-plate-canvas {
+  display: block;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  [data-future] .fut-holo,
-  [data-future] .fut-layer,
-  [data-future] .fut-snap {
-    transition: none;
+/* ── 02 diagram ─────────────────────────────────────────────────────── */
+.lab-diagram {
+  position: relative;
+}
+.lab-leaders {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+.lab-leaders line,
+.lab-leaders circle {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.lab-leader.in line,
+.lab-leader.in circle {
+  opacity: 1;
+}
+
+/* The pale casing: a wider stroke under the dark one, so the leader reads
+   over dark artwork and over bare paper alike. */
+.lab-leaders line.case {
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 3.2;
+}
+.lab-leaders line.ink {
+  stroke: #10132f;
+  stroke-width: 1.1;
+}
+.lab-leaders circle.case {
+  fill: rgba(255, 255, 255, 0.95);
+}
+.lab-leaders circle.ink {
+  fill: #10132f;
+  transition:
+    fill 0.15s,
+    opacity 0.4s ease;
+}
+
+.lab-leader.hot line.ink {
+  stroke: var(--lab-accent);
+  stroke-width: 1.8;
+}
+.lab-leader.hot circle.ink {
+  fill: var(--lab-accent);
+}
+
+.lab-callout {
+  position: absolute;
+  z-index: 3;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(8, 10, 24, 0.82);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 4px 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    background 0.15s;
+  white-space: nowrap;
+}
+.lab-callout.l {
+  left: 8px;
+  transform: translateX(-8px);
+}
+.lab-callout.r {
+  right: 8px;
+  transform: translateX(8px);
+}
+.lab-callout.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+.lab-callout.hot {
+  background: var(--lab-accent);
+  border-color: var(--lab-accent);
+}
+.lab-callout-i {
+  opacity: 0.6;
+}
+
+/* ── 03 radiant ─────────────────────────────────────────────────────── */
+/* An explicit height, NOT aspect-ratio + max-height: with a percentage
+   width the ratio wins and max-height is ignored, which rendered this box
+   890px tall. */
+.lab-radiant {
+  position: relative;
+  height: 460px;
+  background: var(--lab-paper);
+  border: 1px solid var(--lab-line);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+/* Bounded by max-* with auto sizing, so the intrinsic square resolves to a
+   predictable box. A percentage height on a replaced grid item did not hold
+   here and the plate filled the frame, hiding the rays it is meant to sit in
+   front of. */
+.lab-radiant-plate {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  height: auto;
+  max-height: 290px;
+  max-width: 55%;
+  object-fit: contain;
+}
+.lab-rays {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.lab-rays line {
+  stroke: var(--lab-ink);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.72;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: lab-ray 0.62s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.lab-ring {
+  fill: none;
+  stroke: var(--lab-ink);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.28;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: lab-ray 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes lab-ray {
+  to {
+    stroke-dashoffset: 0;
   }
-  [data-future] .fut-mark,
-  [data-future='phosphor'] .fut-stage.is-degaussing {
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-rays line,
+  .lab-ring {
     animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ── 04 ghost wordmark ──────────────────────────────────────────────── */
+/* Container units, not viewport units: the wordmark must fit THIS box, and
+   sizing it in vw cropped it to "EU…ON" at every width. */
+.lab-ghost {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--lab-paper);
+  border: 1px solid var(--lab-line);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  --gx: 0px;
+  --gy: 0px;
+  --px: 0px;
+  --py: 0px;
+}
+.lab-ghost-mark {
+  position: absolute;
+  z-index: 1;
+  font-family: 'Instrument Serif', Georgia, serif;
+  color: var(--lab-ink);
+  opacity: 0.16;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  transform: translate3d(var(--gx), var(--gy), 0);
+  transition: transform 0.12s linear;
+  user-select: none;
+}
+.lab-ghost-plate {
+  position: relative;
+  z-index: 2;
+  width: 46%;
+  object-fit: contain;
+  transform: translate3d(var(--px), var(--py), 0);
+  transition: transform 0.12s linear;
+}
+
+/* ── 05 leader index ────────────────────────────────────────────────── */
+.lab-index {
+  border: 1px solid var(--lab-line);
+  background: var(--lab-paper);
+  padding: 6px;
+}
+.lab-index:focus-visible {
+  outline: 2px solid var(--lab-ink);
+}
+.lab-index-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  font: inherit;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  background: transparent;
+  border: 0;
+  color: var(--lab-ink);
+  padding: 9px 10px;
+  cursor: pointer;
+  text-align: left;
+}
+.lab-index-row:hover {
+  background: color-mix(in srgb, var(--lab-ink) 9%, transparent);
+}
+.lab-index-row.hit {
+  background: var(--lab-ink);
+  color: var(--lab-paper);
+}
+.lab-index-label {
+  flex: none;
+}
+/* The leaders are generated: a repeating dot that fills whatever is left. */
+.lab-index-dots {
+  flex: 1;
+  height: 1em;
+  background-image: radial-gradient(currentColor 0.8px, transparent 0.8px);
+  background-size: 6px 6px;
+  background-position: 0 bottom 0.32em;
+  background-repeat: repeat-x;
+  opacity: 0.5;
+}
+.lab-index-meta {
+  flex: none;
+  opacity: 0.62;
+  font-size: 11px;
+}
+.lab-index-num {
+  flex: none;
+  opacity: 0.85;
+}
+
+/* ── 06 edition readout ─────────────────────────────────────────────── */
+.lab-readout {
+  position: relative;
+  background: var(--lab-paper);
+  border: 1px solid var(--lab-line);
+  min-height: 250px;
+  display: grid;
+  place-items: center;
+  padding: 42px 20px;
+}
+.lab-readout-skel {
+  min-height: 250px;
+}
+.lab-readout-page {
+  text-align: center;
+}
+.lab-readout-word {
+  display: block;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(28px, 6vw, 52px);
+  color: var(--lab-ink);
+  letter-spacing: -0.01em;
+}
+.lab-readout-sub {
+  display: block;
+  color: var(--lab-dim);
+  font-size: 12px;
+  margin-top: 6px;
+}
+.lab-ro {
+  position: absolute;
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
+  color: var(--lab-ink);
+  opacity: 0.75;
+  font-variant-numeric: tabular-nums;
+}
+.lab-ro em {
+  font-style: normal;
+  opacity: 1;
+  font-weight: 600;
+}
+.lab-ro.tl {
+  top: 10px;
+  left: 12px;
+}
+.lab-ro.tr {
+  top: 10px;
+  right: 12px;
+}
+.lab-ro.bl {
+  bottom: 10px;
+  left: 12px;
+}
+.lab-ro.br {
+  bottom: 10px;
+  right: 12px;
+}
+.lab-ro-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 9px 12px;
+  border-top: 1px solid var(--lab-line);
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
+  color: var(--lab-ink);
+  font-variant-numeric: tabular-nums;
+}
+.lab-ro-strip .dot {
+  opacity: 0.4;
+}
+.lab-ro-strip em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ── 07 panelled desk ───────────────────────────────────────────────── */
+.lab-desk {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 12px;
+  border: 1px solid var(--lab-line);
+  background: var(--lab-paper);
+  padding: 12px;
+  min-height: 340px;
+}
+.lab-desk.no-rail {
+  grid-template-columns: 1fr;
+}
+.lab-desk-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.lab-desk-railhead {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--lab-dim);
+  padding: 4px 6px;
+}
+.lab-desk-rail button {
+  font: inherit;
+  font-size: 11px;
+  text-align: left;
+  background: transparent;
+  border: 1px solid var(--lab-line);
+  color: var(--lab-dim);
+  padding: 7px 9px;
+  cursor: pointer;
+}
+.lab-desk-rail button span {
+  color: var(--lab-ink);
+}
+.lab-desk-rail button.on {
+  color: var(--lab-text);
+  border-color: var(--lab-ink);
+}
+.lab-desk-main {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.lab-pane {
+  border: 1px solid var(--lab-line);
+  background: var(--lab-card);
+  transition: opacity 0.2s ease;
+}
+.lab-pane header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+.lab-pane.open header {
+  border-bottom-color: var(--lab-line);
+}
+.lab-pane-t {
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  color: var(--lab-ink);
+}
+.lab-pane-m {
+  font-size: 10.5px;
+  color: var(--lab-dim);
+  margin-left: auto;
+}
+.lab-pane-x {
+  font: inherit;
+  background: transparent;
+  border: 0;
+  color: var(--lab-dim);
+  cursor: pointer;
+  padding: 0 2px;
+}
+.lab-pane-body {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition:
+    grid-template-rows 0.26s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.2s;
+  overflow: hidden;
+  padding: 0 10px;
+}
+.lab-pane.shut .lab-pane-body {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+.lab-pane-body > * {
+  min-height: 0;
+}
+.lab-pane-inner {
+  overflow: hidden;
+}
+.lab-pane-body p {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+.lab-pane-focus {
+  font: inherit;
+  font-size: 10.5px;
+  background: transparent;
+  border: 1px solid var(--lab-line);
+  color: var(--lab-dim);
+  padding: 4px 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+/* Focus dims the siblings — the move that makes a desk beat a scroll. */
+.lab-desk-main:has(.lab-pane.focus) .lab-pane:not(.focus) {
+  opacity: 0.28;
+}
+.lab-pane.focus {
+  border-color: var(--lab-ink);
+}
+
+@media (max-width: 640px) {
+  .lab-desk {
+    grid-template-columns: 1fr;
+  }
+  .lab-desk-rail {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .lab-desk-rail button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .lab-desk-railhead {
+    display: none;
+  }
+}
+
+/* ── 08 word unfold ─────────────────────────────────────────────────── */
+.lab-prose {
+  background: var(--lab-paper);
+  border: 1px solid var(--lab-line);
+  /* Room beneath the last line so an open lexical card has somewhere to go. */
+  padding: 26px 24px 120px;
+}
+.lab-prose p {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(17px, 2.3vw, 21px);
+  line-height: 1.75;
+  margin: 0;
+  color: var(--lab-text);
+}
+.lab-lex {
+  position: relative;
+  display: inline-block;
+}
+.lab-lex > button {
+  font: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  border-bottom: 1px dotted var(--lab-ink);
+}
+.lab-lex.open > button {
+  color: var(--lab-ink);
+  border-bottom-style: solid;
+}
+.lab-lex-card {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 7px);
+  left: 0;
+  min-width: 190px;
+  display: grid;
+  gap: 3px;
+  background: var(--lab-card);
+  border: 1px solid var(--lab-ink);
+  padding: 10px 12px;
+  font-family: ui-monospace, Menlo, monospace;
+  animation: lab-pop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes lab-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.lab-lex-gk {
+  font-family: 'SBL Hebrew', Georgia, serif;
+  font-size: 20px;
+  color: var(--lab-ink);
+}
+.lab-lex-tr {
+  font-size: 12px;
+  color: var(--lab-text);
+}
+.lab-lex-gloss {
+  font-size: 11.5px;
+  color: var(--lab-dim);
+}
+.lab-lex-uses {
+  font-size: 10.5px;
+  color: var(--lab-accent);
+  letter-spacing: 0.05em;
+  margin-top: 3px;
+}
+.lab-caret {
+  display: inline-block;
+  width: 6px;
+  height: 1em;
+  background: var(--lab-ink);
+  vertical-align: -2px;
+  animation: lab-blink 0.8s steps(2) infinite;
+}
+@keyframes lab-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── 09 cross pile ──────────────────────────────────────────────────── */
+.lab-pile {
+  display: block;
+  width: 100%;
+  height: 320px;
+  border: 1px solid var(--lab-line);
+  background: var(--lab-paper);
+  touch-action: none;
+  cursor: grab;
+}
+.lab-pile:active {
+  cursor: grabbing;
+}
+
+/* ── verdict box ────────────────────────────────────────────────────── */
+.lab-respond {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--lab-line);
+}
+.lab-respond textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 12.5px;
+  background: var(--lab-paper);
+  color: var(--lab-text);
+  border: 1px solid var(--lab-line);
+  padding: 9px 10px;
+  resize: vertical;
+}
+.lab-respond textarea:focus-visible {
+  outline: 2px solid var(--lab-ink);
+}
+.lab-respond-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 9px;
+  align-items: center;
+}
+.lab-respond-btns button.ok {
+  border-color: #1c7a4a;
+  color: #1c7a4a;
+  font-weight: 600;
+}
+.lab-respond-btns button.ok:hover {
+  background: #1c7a4a;
+  color: #fff;
+}
+.lab-respond-btns button.no {
+  border-color: var(--lab-accent);
+  color: var(--lab-accent);
+  font-weight: 600;
+}
+.lab-respond-btns button.no:hover {
+  background: var(--lab-accent);
+  color: #fff;
+}
+.lab-respond-btns button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.lab-busy {
+  font-size: 11px;
+  color: var(--lab-dim);
+}
+.lab-err {
+  font-size: 11px;
+  color: var(--lab-accent);
+}
+
+.lab-thread {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+.lab-thread-row {
+  border: 1px solid var(--lab-line);
+  padding: 7px 9px;
+  font-size: 12px;
+}
+.lab-thread-row p {
+  margin: 5px 0 0;
+  line-height: 1.55;
+}
+.lab-thread-at {
+  font-size: 10.5px;
+  color: var(--lab-dim);
+  margin-left: 7px;
+}
+.lab-verdict-chip {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  padding: 2px 7px;
+  border: 1px solid currentColor;
+}
+.lab-verdict-chip.v-approved {
+  color: #1c7a4a;
+}
+.lab-verdict-chip.v-rejected {
+  color: var(--lab-accent);
+}
+.lab-verdict-chip.v-parked {
+  color: #9a7b1f;
+}
+.lab-verdict-chip.v-comment {
+  color: var(--lab-dim);
+}
+
+.lab-foot {
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  font-size: 12px;
+  color: var(--lab-dim);
+  line-height: 1.7;
+}
+.lab-foot a {
+  color: var(--lab-ink);
+}
+
+@media (max-width: 560px) {
+  .lab-move {
+    padding: 14px;
+  }
+  .lab-slider input {
+    width: 66px;
   }
 }

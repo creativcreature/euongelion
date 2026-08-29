@@ -7,7 +7,7 @@ import { assertAdminOr404 } from '@/lib/admin/assert-admin'
 import './futures.css'
 
 export const metadata: Metadata = {
-  title: 'Lab — seven futures | Euangelion',
+  title: 'Lab — the proof | Euangelion',
   robots: { index: false, follow: false },
 }
 

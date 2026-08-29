@@ -1534,3 +1534,11 @@ features:
     baseline_score: 0
     status: shipped
     prd: docs/feature-prds/F-168.md
+  - id: F-172
+    title: The proof — nine futurize moves you can actually use
+    slug: futurize-proof-lab
+    baseline_score: 0
+    status: shipped
+    prd: docs/feature-prds/F-172.md
+    methodology_refs:
+      - M00
