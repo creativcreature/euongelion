@@ -116,6 +116,33 @@ The same field also appears on each `teaching` module (so the renderer can vary 
 "it's not X, it's Y"          (rhetorical question → immediate answer pattern)
 ```
 
+### AI tells (avoidable constructions)
+
+Founder ruling 2026-08-28 (SA-128). These are the dead giveaways of machine
+prose. Every one of them has a fix, and you lose nothing by taking it.
+
+**The one exemption:** direct quotation — Scripture, or an actual human-written
+piece you are citing. Inside quotation marks these are content. In your own
+voice they are always avoidable, so avoid them.
+
+| #   | Tell                         | Example                                                                                  | Write this instead                                      |
+| --- | ---------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| 1   | The seesaw                   | "That's not compliance. That's stalling."                                                | Say the second half only — "They're stalling."          |
+| 2   | Two fragments stuck together | "Fast. Simple." / "No fluff. Just answers."                                              | Pick one and write it like a person                     |
+| 3   | Two pictures, no advice      | "Less a hammer, more a scalpel."                                                         | Say what to do                                          |
+| 4   | Clapping for itself          | "And that matters." / "That's the part everyone misses." / "Which is exactly the point." | Delete it. You lose nothing                             |
+| 5   | The X-of-Y analogy           | "It's the Excel of AI agents."                                                           | Only lands if the reader knows both. Usually they don't |
+| 6   | Warming up before talking    | "Here's the thing." / "Let me be clear." / "The truth is…"                               | Start one sentence later                                |
+| 7   | Always three                 | "Faster, cheaper, smarter."                                                              | Real reasons come in twos and fives. Never always three |
+| 8   | The range                    | "5 to 10 minutes."                                                                       | A range means you never did it. Say 7 minutes           |
+| 9   | The recap ending             | "In short…" / "At the end of the day…"                                                   | Stop typing. End on the high note                       |
+
+Tells 1, 4, 6, 8, and 9 are caught mechanically by `scripts/validate-devotional.mjs`
+at NEEDS-FIX. Tells 2, 3, 5, and 7 fire on legitimate prose when automated —
+a short line is often a real beat, "the God of Israel" is not an analogy, and
+"Holy, holy, holy" is a quoted triad — so they are enforced at editorial review
+instead. The scan skips quoted spans, per the exemption above.
+
 ### Forbidden user-facing labels (for in-text references to the experience)
 
 The reader inside a devotional should not see:

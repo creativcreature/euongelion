@@ -5,6 +5,30 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## AI tells — nine banned constructions, enforced (2026-08-29) — SA-130 (F-174)
+
+Founder listed nine constructions that read as machine-written: the seesaw,
+fragment pairs, two-picture metaphors, self-applause, the X-of-Y analogy,
+throat-clearing, forced triads, hedged ranges, the recap ending.
+
+Documented in `content/AUTHORING-SPEC.md` §2 with the fix for each, mirrored
+into `docs/AI-CONTENT-CONSTRAINTS.md`, and enforced by a new `AI_TELLS` tier in
+`scripts/validate-devotional.mjs` at NEEDS-FIX.
+
+The founder's exemption drives the implementation: quoted Scripture and cited
+human writing are content, not tells — so the scan runs against quote-stripped
+prose. Antithetical parallelism and triads are everywhere in Scripture.
+
+Measured against 582 shipped devotionals before landing: 11 of 13 regexes come
+back clean or near-clean, and 28 files across four reference series validate at
+0 BLOCKING / 0 NEEDS-FIX. Forward-only in practice — the validator runs
+per-slug on the series just written.
+
+Also lands the Drawing Near thematic (`content/next-series-thematic.md`) and its
+imagery prompt subjects.
+
+---
+
 ## Runtime defect sweep — fewer crashes, less thrash, no volume ratchet (2026-08-29) — SA-129 (F-173)
 
 Measured, not guessed: a real browser over ten production routes capturing

@@ -83,6 +83,45 @@ const FORBIDDEN_LABELS = [
   /\bon this amazing journey\b/i,
 ]
 
+// AI tells (SA-128, founder ruling 2026-08-28). Reported at NEEDS-FIX, not
+// BLOCKING: these are rewrites, not build breaks. FORWARD-ONLY in practice —
+// devo-go invokes this validator per-slug on the series it just wrote, so the
+// back catalogue is never in scope.
+//
+// Every one of these is scanned against QUOTE-STRIPPED prose. The founder's
+// exemption: "Unless you are directly quoting scripture or an actual human
+// written piece, then it's avoidable." Antithetical parallelism and triads are
+// everywhere in Scripture ("I am not come to destroy, but to fulfil"; "Holy,
+// holy, holy") — quoted they are content, in the author's own voice they are tells.
+//
+// Only mechanically-safe tells live here. Fragment pairs, the two-picture
+// metaphor, the X-of-Y analogy and manufactured triads fire on legitimate
+// devotional prose, so AUTHORING-SPEC §2 enforces those at editorial review.
+const AI_TELLS = [
+  [/\b(?:that|this|it)'s not\b[^.!?]{1,70}[.!?]\s+(?:that|this|it)'s\b/i, 'the seesaw — say the second half only'],
+  [/\b(?:that|this|it) isn'?t\b[^.!?]{1,70}[.!?]\s+(?:that|this|it)'s\b/i, 'the seesaw — say the second half only'],
+  [/\band that matters\b/i, 'self-applause — delete it'],
+  [/\bthat'?s the part (?:everyone|most people|we all) miss(?:es)?\b/i, 'self-applause — delete it'],
+  [/\b(?:which|and that)'?s (?:exactly )?the point\b/i, 'self-applause — delete it'],
+  [/\bhere'?s the thing\b/i, 'throat-clearing — start one sentence later'],
+  [/\blet me be clear\b/i, 'throat-clearing — start one sentence later'],
+  [/\bthe truth is,/i, 'throat-clearing — start one sentence later'],
+  [/\bthe truth is that\b/i, 'throat-clearing — start one sentence later'],
+  [/\b\d+\s*(?:to|–|—|-)\s*\d+\s*(?:minutes?|hours?|days?|weeks?|years?)\b/i, 'a hedged range means it was never done — give one number'],
+  [/\bin short,/i, 'recap ending — stop typing'],
+  [/\bin summary,/i, 'recap ending — stop typing'],
+  [/\bto sum(?: it)? up\b/i, 'recap ending — stop typing'],
+]
+
+// Strip quoted spans before the AI-tell scan so cited Scripture and quoted
+// human authors are exempt. Straight and typographic double quotes only —
+// apostrophes are far too common in prose to treat as delimiters.
+function stripQuoted(text) {
+  return text
+    .replace(/“[^”]{0,800}”/g, ' ')
+    .replace(/"[^"]{0,800}"/g, ' ')
+}
+
 // Word-count targets per chiasm position. ±25% tolerance.
 // Sabbath is intentionally minimal — most of its "content" is one verse and
 // a short invitation. Recap is a distillation of the prior 5 days, not new
@@ -313,6 +352,18 @@ function scanForbiddenPhrases(file, text) {
         'NEEDS-FIX',
         'forbidden_label',
         `user-facing forbidden label "${m[0]}" found in prose`,
+      )
+    }
+  }
+  const unquoted = stripQuoted(text)
+  for (const [re, fix] of AI_TELLS) {
+    const m = unquoted.match(re)
+    if (m) {
+      record(
+        file,
+        'NEEDS-FIX',
+        'ai_tell',
+        `AI tell "${m[0].replace(/\s+/g, ' ').trim()}" — ${fix} (AUTHORING-SPEC §2)`,
       )
     }
   }

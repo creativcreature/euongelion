@@ -301,18 +301,26 @@ _(No context, no explanation of relevance, incomplete citation)_
 
 These phrases/patterns are **banned or heavily restricted**:
 
-| Pattern                                | Problem       | Instead                       |
-| -------------------------------------- | ------------- | ----------------------------- |
-| "In today's world..."                  | AI cliché     | Be specific about the context |
-| "Let's unpack..."                      | Overused      | "Consider..." / "Notice..."   |
-| "It's important to note..."            | Filler        | Just say the thing            |
-| "This begs the question..."            | Often misused | "This raises the question..." |
-| "It's not X, it's Y"                   | AI formula    | More nuanced framing          |
-| "At the end of the day..."             | Cliché        | Cut entirely                  |
-| "In essence..."                        | Filler        | Cut or rephrase               |
-| "Embark on a journey..."               | AI favorite   | Specific language             |
-| Rhetorical question → immediate answer | AI pattern    | Let questions breathe         |
-| Three-part lists                       | Overused      | Vary structure                |
+| Pattern                                            | Problem                 | Instead                       |
+| -------------------------------------------------- | ----------------------- | ----------------------------- |
+| "In today's world..."                              | AI cliché               | Be specific about the context |
+| "Let's unpack..."                                  | Overused                | "Consider..." / "Notice..."   |
+| "It's important to note..."                        | Filler                  | Just say the thing            |
+| "This begs the question..."                        | Often misused           | "This raises the question..." |
+| "It's not X, it's Y"                               | AI formula              | More nuanced framing          |
+| "At the end of the day..."                         | Cliché                  | Cut entirely                  |
+| "In essence..."                                    | Filler                  | Cut or rephrase               |
+| "Embark on a journey..."                           | AI favorite             | Specific language             |
+| Rhetorical question → immediate answer             | AI pattern              | Let questions breathe         |
+| Three-part lists                                   | Overused                | Vary structure                |
+| "That's not X. That's Y." (seesaw)                 | AI formula              | Say the second half only      |
+| "Fast. Simple." (fragment pairs)                   | AI cadence              | Pick one, write it out        |
+| "Less a hammer, more a scalpel"                    | Two pictures, no advice | Say what to do                |
+| "And that matters." / "which is exactly the point" | Self-applause           | Delete entirely               |
+| "It's the Excel of X" (X-of-Y analogy)             | Assumes both referents  | Describe it plainly           |
+| "Here's the thing." / "Let me be clear."           | Throat-clearing         | Start one sentence later      |
+| "5 to 10 minutes" (hedged range)                   | Means it was never done | Give one number               |
+| "In short…" (recap ending)                         | Repeats the piece       | Stop typing                   |
 
 ### 4.3 REQUIRED Authenticity Markers
 
@@ -582,6 +590,20 @@ _To be expanded as patterns are identified_
 - "It's not about X, it's about Y"
 - "In our modern context"
 - "Take a moment to consider"
+
+**Added 2026-08-28 (SA-128) — AI tells, forward-only, quoted material exempt:**
+
+- "That's not X. That's Y." / "This isn't X. It's Y." (seesaw, including the period-split form)
+- "And that matters"
+- "That's the part everyone misses"
+- "Which is exactly the point"
+- "Here's the thing"
+- "Let me be clear"
+- "The truth is," / "The truth is that"
+- Hedged duration ranges ("5 to 10 minutes", "3-4 weeks")
+- "In short," / "In summary," / "To sum up"
+
+Full table with fixes: `content/AUTHORING-SPEC.md` §2, "AI tells (avoidable constructions)".
 
 ### Appendix B: Approved Source Authors
 
