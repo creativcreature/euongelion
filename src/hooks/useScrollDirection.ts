@@ -30,15 +30,25 @@ export function useScrollDirection(threshold = 10) {
       ticking.current = false
     }
 
+    let frame = 0
     const onScroll = () => {
       if (!ticking.current) {
-        requestAnimationFrame(updateDirection)
+        frame = requestAnimationFrame(() => {
+          frame = 0
+          updateDirection()
+        })
         ticking.current = true
       }
     }
 
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      // A frame queued at unmount would otherwise still run and set state on
+      // a component that no longer exists.
+      if (frame) cancelAnimationFrame(frame)
+      ticking.current = false
+    }
   }, [threshold])
 
   return { direction, atTop }

@@ -76,6 +76,17 @@ const FADE_MS = 5000
  * where the only sleep timer lives now. Volume is restored after pausing so
  * the next play does not start silent.
  */
+/**
+ * In-flight fades, keyed by element. Both triggers that call this — the sleep
+ * timer and the chapter-end `timeupdate` handler — can fire while a fade is
+ * already running, and `timeupdate` fires about four times a second with a
+ * condition that stays true once crossed. Without this guard each re-entry
+ * captured `audio.volume` AFTER the previous fade had already lowered it, and
+ * the last one to finish restored that reduced value as if it were the
+ * reader's setting. The volume ratcheted down and stayed down.
+ */
+const fadesInFlight = new WeakMap<HTMLAudioElement, number>()
+
 function fadeOutAndPause(audio: HTMLAudioElement) {
   const reduced =
     typeof window !== 'undefined' &&
@@ -84,19 +95,28 @@ function fadeOutAndPause(audio: HTMLAudioElement) {
     audio.pause()
     return
   }
+  // Already fading: the running fade owns the true starting volume.
+  if (fadesInFlight.has(audio)) return
+
   const startVolume = audio.volume
   const startedAt = performance.now()
+  const finish = () => {
+    const frame = fadesInFlight.get(audio)
+    if (frame) cancelAnimationFrame(frame)
+    fadesInFlight.delete(audio)
+    audio.pause()
+    audio.volume = startVolume
+  }
   const tick = () => {
     const ratio = Math.min((performance.now() - startedAt) / FADE_MS, 1)
     audio.volume = startVolume * (1 - ratio)
     if (ratio < 1) {
-      requestAnimationFrame(tick)
+      fadesInFlight.set(audio, requestAnimationFrame(tick))
       return
     }
-    audio.pause()
-    audio.volume = startVolume
+    finish()
   }
-  requestAnimationFrame(tick)
+  fadesInFlight.set(audio, requestAnimationFrame(tick))
 }
 
 /**

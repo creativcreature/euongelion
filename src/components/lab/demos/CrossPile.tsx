@@ -270,18 +270,20 @@ export default function CrossPile() {
     const leave = () => {
       pointer.current.on = false
     }
-    cv.addEventListener('pointermove', move, { passive: true })
-    cv.addEventListener('pointerleave', leave)
-    cv.addEventListener('pointerdown', (e) => {
+    const down = (e: PointerEvent) => {
       move(e)
       if ('vibrate' in navigator) navigator.vibrate?.(12)
-    })
+    }
+    cv.addEventListener('pointermove', move, { passive: true })
+    cv.addEventListener('pointerleave', leave)
+    cv.addEventListener('pointerdown', down)
 
     return () => {
       cancelAnimationFrame(raf.current)
       ro.disconnect()
       cv.removeEventListener('pointermove', move)
       cv.removeEventListener('pointerleave', leave)
+      cv.removeEventListener('pointerdown', down)
     }
   }, [gravity])
 

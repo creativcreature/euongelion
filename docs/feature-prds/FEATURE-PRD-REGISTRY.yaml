@@ -1542,3 +1542,11 @@ features:
     prd: docs/feature-prds/F-172.md
     methodology_refs:
       - M00
+  - id: F-173
+    title: Runtime defect sweep — fewer crashes, less thrash, no volume ratchet
+    slug: runtime-defect-sweep
+    baseline_score: 6
+    status: shipped
+    prd: docs/feature-prds/F-173.md
+    methodology_refs:
+      - M00

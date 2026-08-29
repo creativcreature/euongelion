@@ -106,11 +106,25 @@ export default function PrintRail({
       setActiveIndex(nearestIndex)
     }
 
-    const onScroll = () => window.requestAnimationFrame(updateNearest)
+    // Coalesce to ONE measurement per frame. Without the guard every scroll
+    // event queued its own rAF, and each one walks every item calling
+    // getBoundingClientRect — so a fast scroll ran the same layout read a
+    // dozen times per frame. The guard makes the cost per frame constant.
+    let frame = 0
+    const onScroll = () => {
+      if (frame) return
+      frame = window.requestAnimationFrame(() => {
+        frame = 0
+        updateNearest()
+      })
+    }
     viewport.addEventListener('scroll', onScroll, { passive: true })
     updateNearest()
 
-    return () => viewport.removeEventListener('scroll', onScroll)
+    return () => {
+      viewport.removeEventListener('scroll', onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
   }, [total])
 
   if (!total) return null

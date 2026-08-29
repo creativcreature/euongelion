@@ -176,3 +176,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-168 | Homepage          | Mobile images survive one bad network moment              | 0/10     | shipped  | [F-168.md](./F-168.md) |
 | F-171 | Homepage          | The intro opens in the reader's own mode                  | 0/10     | shipped  | [F-171.md](./F-171.md) |
 | F-172 | Design Lab        | The proof — nine futurize moves you can actually use      | 0/10     | shipped  | [F-172.md](./F-172.md) |
+| F-173 | Reliability       | Runtime defect sweep — thrash, fades, crash sites         | 6/10     | shipped  | [F-173.md](./F-173.md) |

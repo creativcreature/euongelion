@@ -529,6 +529,20 @@ export default async function EditionPage({
         galleryFiles,
       )
 
+  /**
+   * ONE resolved source for the lead plate.
+   *
+   * The guard tested the three OBJECTS while the src read `leadHero!.src`, so
+   * a truthy generatedArt or dailyArt carrying no usable path fell straight
+   * through to a non-null assertion on a leadHero that is `undefined`
+   * whenever the series has no registered plate — a throw on the heaviest
+   * reader surface. Resolving the string once makes the guard and the value
+   * the same test, so the plate is rendered exactly when there is something
+   * to render.
+   */
+  const leadPlateSrc: string | undefined =
+    generatedArt?.src ?? dailyArt?.image ?? leadHero?.src
+
   // Modules-format (Substack/rich) vs. panels-format (Wake-Up / legacy)
   const hasModules =
     Array.isArray(
@@ -1094,10 +1108,10 @@ export default async function EditionPage({
         <div className="edition-front">
           <Chromed preview={preview} item={edLeadItem}>
             <section className="edition-lead" aria-label="Today's reading">
-              {(generatedArt || dailyArt || leadHero) && (
+              {leadPlateSrc && (
                 <span className="edition-lead-plate">
                   <Image
-                    src={generatedArt?.src ?? dailyArt?.image ?? leadHero!.src}
+                    src={leadPlateSrc}
                     alt={
                       generatedArt
                         ? generatedArt.alt.slice(0, 140)

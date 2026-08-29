@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Runtime defect sweep — fewer crashes, less thrash, no volume ratchet (2026-08-29) — SA-129 (F-173)
+
+Measured, not guessed: a real browser over ten production routes capturing
+console errors, page errors, failed requests, DOM size, transfer weight and
+image natural-vs-displayed size, plus a static sweep for unbalanced listeners,
+timers and animation frames.
+
+**Fixed**
+
+- **Audio volume ratcheted down and stayed down.** `fadeOutAndPause` is called
+  by both the sleep timer and a `timeupdate` handler whose condition stays
+  true once crossed — and `timeupdate` fires ~4x/sec. Each re-entry captured
+  `audio.volume` _after_ the previous fade had lowered it, then restored that
+  reduced value as if it were the reader's setting. Fades are now keyed per
+  element in a `WeakMap`; a second call while one is in flight is a no-op.
+- **Print rail thrashed layout while scrolling.** It scheduled a fresh
+  `requestAnimationFrame` on every scroll event, each walking every item with
+  `getBoundingClientRect()`. Coalesced to one measurement per frame.
+- **Daily Bread could throw on the lead plate.** The guard tested three lead-art
+  objects while the src read `leadHero!.src`, so a truthy source with no usable
+  path fell through to a non-null assertion on an absent value. The source is
+  resolved once and the guard now tests that string.
+- **Two listeners/frames outlived their components** — `useScrollDirection`'s
+  pending frame and the lab pile's `pointerdown` handler.
+
+**Investigated and deliberately left alone** — three flagged items turned out
+to be intentional: the `console.log` in `current-reading.ts` is structured
+observability added because a six-month Daily Bread bug left no trace; the
+missing try/catch in `/api/soul-audit/current` is NO SILENT FALLBACKS working
+as designed; and the 401s from the devotional library store are how it learns a
+session has no account state.
+
+**Reported, not fixed** — `/series` ships **14 MB**: 1600px masters rendered
+into 272px thumbnails, because `images.unoptimized` is on and Cloudflare image
+resizing is not available on this plan. At 640w the 39 series plates go from
+16.49 MB to 2.75 MB (83% smaller). Needs a ruling because the fix adds
+generated assets to the repo.
+
 ## The proof — nine futurize moves you can actually use (2026-08-28) — SA-128 (F-172)
 
 Founder: _"I need literal working examples of features designs, interactions
