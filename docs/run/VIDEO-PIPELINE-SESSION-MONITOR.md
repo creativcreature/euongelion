@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:13 EDT — **Report #7**
+**Last updated:** 2026-08-29 20:17 EDT — **Report #8**
 **Status:** research phase complete. Layer-1 (**the eye**) offered at 17:13, **still not started**.
 Four consecutive founder messages have been about local video generation instead — the layer the
 session itself called _"the slowest and least controllable part of the whole thing."_ One verdict
@@ -500,6 +500,66 @@ of which _"None of it is written"_ — is roughly **28 hours away** if it lands 
 message in that window has been about video tooling. This monitor takes no view on the right
 call; it records that the call has not been made.
 
+### 6.14 ✅ §6.12 resolved — the guess was wrong, the guardrail held, and the answer got better
+
+Sequence, 20:11–20:12:
+
+1. Session: _"dead voice-cloning models… You didn't put those there on purpose."_ — the wrong
+   provenance this monitor flagged in §6.12.
+2. **But it did not act on it.** It closed with _"I'm not touching them without your say-so —
+   some may still back a working Whisper path,"_ and asked before offering to delete.
+3. Founder: _"I added those models, I have been working on voice cloning."_
+4. Session: _"Understood — my mistake, and I'll drop the delete offer. Those are live working
+   files, not debris."_
+
+**No harm done, and the failure mode was caught by a guardrail the session set itself.** It made
+a confident wrong guess about provenance, but gated the destructive step behind a question. That
+is the correct shape: guess freely, ask before deleting.
+
+**The correction improved the advice rather than merely retracting it.** The reframing:
+
+> _"The real risk isn't forgetting — it's mixing."_
+
+LTX's 19 GB text encoder would land in the same `~/.cache/huggingface/hub` blob store as the
+voice models, sharing a symlink structure — after which video cannot be removed without risking
+a blob the TTS work depends on. So the goal is **separation, not deletion.**
+
+**And it caught a trap worth the whole exchange:** do **not** put `export HF_HOME=…` in
+`.zshrc`. That repoints the cache globally, the voice tooling stops seeing its existing 28 GB,
+and it silently re-downloads Hume, Qwen and chatterbox from scratch. Per-project only. This
+monitor rates that the single most valuable thing found in the disk thread.
+
+**One stale-source note.** The session cited _"per your own notes the local clone stack was
+measured and exhausted back in August."_ The project's own record does say that — and the
+founder's live answer contradicts it. **The notes are stale; the work is active.** Worth fixing
+at the source, since the next session to read those notes will make the same wrong call.
+
+**Partial correction to this monitor's §6.12.** The inventory and the "do not delete" conclusion
+were right. The attribution was looser than stated: this document tied the models to
+`euangelion-voice-prototype` specifically, on the strength of that directory existing. The
+founder's own account is the authority — active voice-cloning work — and that is the record.
+
+### 6.15 The session is now reporting repo state it has not re-checked
+
+Its last two messages both close with:
+
+> _"1 uncommitted file (`docs/run/VIDEO-PIPELINE-SESSION-MONITOR.md`) and 1 unpushed commit
+> (`7c62e38b`), both from other sessions, still outstanding."_
+
+**Both halves are false as of 20:17.** Verified against a fresh fetch of origin:
+
+```
+local:   feat/seeking-help-georgia ... origin/…   (no ahead/behind, tree clean)
+origin:  25239f59 docs(run): monitor report #7 — HF cache provenance risk
+         3a784c0d docs(run): live monitor log for the video pipeline session
+         7c62e38b feat(content): AI tells banned… — SA-130 (F-174)
+```
+
+The monitor file was committed and pushed at 19:5x; `7c62e38b` went up with it. Nothing is
+outstanding. The session is repeating a state it established earlier and has not re-run `git`
+on — a small error, but precisely the class this document exists to catch: **an assertion about
+current state that was true when first checked and has not been checked since.**
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -534,6 +594,14 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #8 — 20:17 EDT.** **§6.12 resolved.** The session's provenance guess was wrong, but it
+  gated deletion behind a question, the founder corrected it (_"I added those models, I have been
+  working on voice cloning"_), and it accepted cleanly. Added §6.14 — the correction **improved**
+  the advice: risk is _mixing_, not forgetting; goal is separation; and **never put `HF_HOME` in
+  `.zshrc`** or the voice stack silently re-downloads. Flagged that the project's own notes
+  ("local clone stack measured and exhausted") are **stale** against live work. Partially
+  corrected this monitor's own §6.12 attribution. Added §6.15 — the session is now reporting
+  loose-ends state it has not re-checked; both halves are false, verified against origin.
 - **Report #7 — 20:13 EDT.** Session found **28 GB in `~/.cache/huggingface`** (confirmed
   independently) but framed it as _"something you probably don't remember installing."_ This
   monitor inventoried it: it is **the voice/TTS/Whisper narration stack**, belonging to
