@@ -64,6 +64,104 @@ Use with the 1800×2400 (3:4) master.
 
 COMPOSITION FOR CROPPING — this is a TALL 3:4 portrait frame, compose it as one. The whole conceptual device must survive a centre crop to a narrow 1:2 and to a 3:5. In practice: keep everything essential inside the central 66% of the width, using the full height freely. This frame is where a vertical idea belongs — let it run tall. The outer margin stays printed and quiet — toned, never blank, never filled with added scenery.
 
+## INTENSITY_SCALE
+
+Five rungs, 1 (current site register) to 5 (cinematic baroque). Calibrated 2026-08-29
+against a 28-generation run on a single subject; each rung below is the VERBATIM
+wording that produced its founder-approved plate, held in `imagery-staging/intensity-spectrum/scale-5/`.
+Do not paraphrase a rung. The requested percentages inside these blocks do NOT track
+linearly with the result — asking for more deep ink produced a lighter plate at one
+point — so the wording is the asset, not the numbers in it. Verify by measuring the
+output (`verify-masters.mjs --intensity=N`), never by trusting the request.
+
+| Rung | Register                     | Measured deep (<64) | Measured lit (>200) | Plate        |
+| ---- | ---------------------------- | ------------------- | ------------------- | ------------ |
+| 1    | airy — current site register | 2%                  | 79.4%               | `1-of-5.png` |
+| 2    | lit                          | 24%                 | 36.2%               | `2-of-5.png` |
+| 3    | balanced                     | 39.7%               | 23.3%               | `3-of-5.png` |
+| 4    | dramatic                     | 49.1%               | 7%                  | `4-of-5.png` |
+| 5    | tenebrist — motion register  | 78.8%               | 1.2%                | `5-of-5.png` |
+
+## INTENSITY_1
+
+INTENSITY 1 OF 5 — this is the single most important instruction in this prompt.
+
+THE REFERENCE IMAGE IS FOR PALETTE, INK TEXTURE AND DRAWING STYLE ONLY. It is a maximum-intensity plate. DO NOT copy its darkness, its tonal balance or its lighting — this plate is deliberately LIGHTER than the reference.
+
+COVERAGE — a HARD budget: 65-70% of this frame MUST remain QUIET WARM CREAM PAPER carrying only faint tone and halftone texture. Render the subject and then STOP. Do not fill the cream with scenery, shadow or atmosphere.
+
+LIGHT: Lighting is BROAD and AMBIENT — open daylight. There is no single dramatic source and no deep shadow anywhere. The gate glows gently but does not light the scene.
+
+STAGING: figures modest in the frame, calm placement, slight off-centre.
+
+## INTENSITY_2
+
+INTENSITY 2 OF 5 — this is the single most important instruction in this prompt.
+
+THE REFERENCE IMAGE IS FOR PALETTE, INK TEXTURE AND DRAWING STYLE ONLY. It is a maximum-darkness plate. DO NOT copy its tonal balance or its lighting.
+
+TWO HARD BUDGETS, BOTH MUST HOLD:
+
+1. about 28% of the frame is DEEP NEAR-BLACK ink.
+2. about 36% of the frame remains QUIET WARM CREAM PAPER carrying only faint tone.
+   The rest is mid-tone blue.
+
+This sits at the MIDDLE of the scale — clearly lighter than a tenebrist plate and clearly darker than an airy one.
+
+FORBIDDEN, BOTH DIRECTIONS: do NOT let the frame fall mostly to deep blue-black. Do NOT leave it pale and washed out with no deep passage. BOTH a genuine deep passage and a generous quiet cream passage must be present in the same picture.
+
+LIGHT: open ambient daylight fills most of the frame; the gate glows and casts one readable direction, but it is not the only source.
+
+STAGING: mid-distance figures at readable size, a gentle diagonal, a soft darker mass at one edge.
+
+## INTENSITY_3
+
+INTENSITY 3 OF 5 — this is the single most important instruction in this prompt.
+
+THE REFERENCE IMAGE IS FOR PALETTE, INK TEXTURE AND DRAWING STYLE ONLY. It is a maximum-darkness plate. DO NOT copy its tonal balance or its lighting.
+
+TWO HARD BUDGETS, BOTH MUST HOLD:
+
+1. about 20% of the frame is DEEP NEAR-BLACK ink.
+2. about 40% of the frame remains QUIET WARM CREAM PAPER carrying only faint tone.
+   The rest is mid-tone blue.
+
+A quiet plate that has begun to gain weight. Still clearly light overall.
+
+FORBIDDEN, BOTH DIRECTIONS: do NOT let the frame fall mostly to deep blue-black. Do NOT leave it pale and washed out with no deep passage. BOTH a genuine deep passage and a genuine quiet cream passage must be clearly present in the same picture.
+
+LIGHT: the gate casts one readable direction; ambient daylight still survives across part of the frame.
+
+STAGING: mid-distance figures at readable size, a diagonal through the frame, a darker near-plane mass at one edge.
+
+## INTENSITY_4
+
+INTENSITY 4 OF 5 — this is the single most important instruction in this prompt.
+
+THE REFERENCE IMAGE IS FOR PALETTE, INK TEXTURE AND DRAWING STYLE ONLY. It is a maximum-darkness plate. DO NOT copy its tonal balance or its lighting.
+
+TWO HARD BUDGETS, BOTH MUST HOLD:
+
+1. about 28% of the frame is DEEP NEAR-BLACK ink.
+2. about 34% of the frame remains QUIET WARM CREAM PAPER carrying only faint tone.
+   The rest is mid-tone blue.
+
+The exact MIDDLE of the scale. Equally far from an airy plate and a tenebrist one — neither reading should win.
+
+FORBIDDEN, BOTH DIRECTIONS: do NOT let the frame fall mostly to deep blue-black. Do NOT leave it pale and washed out with no deep passage. BOTH a genuine deep passage and a genuine quiet cream passage must be clearly present in the same picture.
+
+LIGHT: the gate casts one readable direction; ambient daylight still survives across part of the frame.
+
+STAGING: mid-distance figures at readable size, a diagonal through the frame, a darker near-plane mass at one edge.
+
+## INTENSITY_5
+
+INTENSITY 5 OF 5 — this is the single most important instruction in this prompt.
+
+TONAL CONTRACT (a HARD budget, not a mood): approximately 52-64% of the frame is dark ink (below mid-grey). About 42% of the frame is DEEP near-black. Lit passages brighter than near-white cover about 24% of the frame. Hit these proportions.
+
+STAGING: mid-shot, figures larger. Committed single light source visible in frame. Strong diagonal. A dark near-plane mass sits at one frame edge and overlaps the scene.
+
 ---
 
 ## Modern-dress variant

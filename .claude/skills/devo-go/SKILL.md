@@ -20,6 +20,12 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 ## Required Inputs
 
 1. Passage/topic + day count + start day (Sunday start ⇒ SA-029 sabbath-first shape).
+   **Image intensity 1–5 (SA-131)** — the tonal register for the series' plates, asked
+   in the same Phase-1 AskUserQuestion. 1 is the current site register (airy, ambient
+   light, quiet cream ground); 5 is cinematic baroque (tenebrist, one hard in-scene
+   source, frame filled). Defaults: **stills 1, motion 5** — the founder's split is that
+   the site's still imagery stays light and video/gif source plates go dark. Record the
+   chosen value in the brief header; pass it as `--intensity=N` to every generation.
 2. The founder's personal/emotional context for the series (becomes the spine — ask if not offered).
 3. Founder answers via AskUserQuestion on: format, editorial stance on any cultural baggage, how personal the spine is, and definition of done. Ask BEFORE writing anything.
 4. Governing docs read in full: `content/AUTHORING-SPEC.md` (governs on conflict), `docs/AI-CONTENT-CONSTRAINTS.md`, `docs/PUBLIC-FACING-LANGUAGE.md`, `.claude/skills/euangelion-platform/references/content-structure.md`, and `docs/production-decisions.yaml` SA-029.
@@ -44,7 +50,16 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 5. Devotional-editor agent review → apply fixes → re-review to READY FOR FOUNDER.
    - **Readability pass (SA-053, 2026-08-16):** run `node scripts/check-readability.mjs <slug>` and fix the tail before the founder reads it. Founder: _"it needs to be 8th grade level reading maybe slightly more elevated… I want the breadth of content to stay the same, but slightly lower reading level."_ **Breadth never shrinks — only punctuation changes.** The editor pass MUST include a cross-day repetition sweep (parallel writers converge on the same phrases — count recurring sentences/refrains across all days and thin them; SA-032).
 6. **Founder reading artifact:** publish a private artifact of the full text in the site's mockup design language. **SA-031 (2026-07-26) amends SA-029(4): the pipeline runs end-to-end WITHOUT pausing here or at the deploy step** — the artifact is still published and every gate still runs and is reported, but they are non-blocking; the founder reviews live output and requests revisions after. Pause only if the founder explicitly asks to read first for a given run.
-7. Imagery (GPT Image 2 at `aspect_ratio: "3:2"`, riso duotone) + inline-image placement; verify videos embeddable.
+7. Imagery (GPT Image 2 at `aspect_ratio: "3:2"`, riso duotone) at the series' chosen
+   **intensity 1–5** + inline-image placement; verify videos embeddable.
+   - **Generate, MEASURE, regenerate what missed.** The SA-131 calibration proved the
+     generator does not track a requested ink percentage linearly — asking for more deep
+     ink produced a _lighter_ plate at one point. So intensity is a closed loop, not a
+     setting: `verify-masters.mjs <dir> --intensity=N` reports what each plate actually
+     measures against what was asked, and anything more than one rung off is regenerated.
+   - **Never paraphrase an intensity block.** `prompt-preamble.md` holds the verbatim
+     wording that produced each founder-approved rung; the wording is the asset, not the
+     numbers inside it.
    - **Build the subject line FROM the passage, clause by clause** — every element traceable to a specific verse — and **audit every NEGATIVE constraint against the text before generating** (founder ruling 2026-08-24). An exclusion written for composition silently deletes Scripture: "no staff or rod" produced a Moses without the rod Exodus 17:9 puts in his hand. See `imagery-and-video.md` §"Textual accuracy comes BEFORE composition".
    - **Assign every plate a composition archetype, a coverage band, one conceptual device AND a camera (shot distance + height + relationship)** before generating, and vary all four across the set. **Medium/frontal/eye-level is the model's default and must be rationed** — founder: _"Not just always medium front."_ Over-the-shoulder rear views hide faces by pose, simplify hands, and put the consequence in the same frame as the subject. A plate can be individually beautiful while the SET fails: the founder rejected 33 plates at mean 78% ink / sd 9.7 with _"all the images feel like they are depicting the same devotional."_ The shipped set measures sd 26.8 across 7–100%.
    - **Never derive every ratio from one square master.** The crop-safe intersection of the site's eight ratios from a square is 16% of the frame, which forces the centred, padded compositions the founder rejects. Two masters, each composed to its own shape.
@@ -121,6 +136,10 @@ drift from them and be worse than no check at all.
 
 ```bash
 node scripts/validate-devotional.mjs public/devotionals/<slug>-day-*.json
+
+# SA-131 — imagery at the series' intensity, then the read-back gate.
+node scripts/imagery/build-prompts.mjs <slug> --intensity=<1-5>      # add --motion for video plates
+node scripts/imagery/verify-masters.mjs <masters-dir> --intensity=<1-5>
 
 # SA-124 — accuracy + consistency. --strict because this is NEW work.
 node scripts/check-devotional-consistency.mjs --strict --series <slug>

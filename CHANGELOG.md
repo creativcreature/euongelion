@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-08-29 — Image intensity: a 1–5 tonal scale for devotional plates — SA-131 (F-175)
+
+Two visual registers now coexist by design. `--intensity=1..5` on
+`build-prompts.mjs` grades a plate from the current site register (1) to
+cinematic baroque (5); defaults are stills 1, motion 5.
+
+- Each rung ships the **verbatim wording that produced its founder-approved
+  plate** as `## INTENSITY_1`…`## INTENSITY_5` in `prompt-preamble.md`. The five
+  approved plates live at `imagery-staging/intensity-spectrum/scale-5/` and are
+  the specification when a rung is ambiguous.
+- **A measured loop, not a setting.** Requested percentages do not track linearly
+  — one prompt asking for more deep ink produced a lighter plate than one asking
+  for less. `verify-masters.mjs --intensity=N` reports measured rung vs requested;
+  more than one rung off is regenerated.
+- Calibrated across 28 generations on a single subject. Ten steps were rejected on
+  measurement: rungs 6 and 7 read 6.8 and 6.9, indistinguishable.
+- The intensity block **outranks** any ink percentage in a subject line, so
+  `series-image-subjects.json` needed no rewrite.
+- Fixed in passing: the SA-052 blank-paper check failed correct rung-5 plates
+  (lit passages are ~1% of frame and legitimately smooth). Now gated on a
+  measurable lit sample.
+
 ## AI tells — nine banned constructions, enforced (2026-08-29) — SA-130 (F-174)
 
 Founder listed nine constructions that read as machine-written: the seesaw,

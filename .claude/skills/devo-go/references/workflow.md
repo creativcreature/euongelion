@@ -8,6 +8,7 @@ Every phase lists what to do, the exact artifacts, and what gates it. Phases 1�
 
 - Read in full: `content/AUTHORING-SPEC.md` (governs), `docs/AI-CONTENT-CONSTRAINTS.md`, `docs/PUBLIC-FACING-LANGUAGE.md`, `.claude/skills/euangelion-platform/references/content-structure.md`, `content/series-briefs/john-3.md` (v1.2 conventions), SA-029 in `docs/production-decisions.yaml`.
 - AskUserQuestion (one call, up to 4 questions): format/depth, editorial stance on any cultural baggage around the passage, how central the founder's personal moment is (it usually becomes the emotional spine, anonymized), and definition of done.
+- **Image intensity 1–5 (SA-131)** — ask it here, with the rest. 1 = current site register, 5 = cinematic baroque; defaults stills 1 / motion 5. It is a series-level setting recorded in the brief header, and every Phase-7 generation carries it as `--intensity=N`.
 - **Week shape (SA-029, Sunday start):** Day 1 = SABBATH (anchor text + small context paragraph + one reflection + silence invitation, ~400 counted words) → Days 2..N-1 = deep dives on the week chiasm A-B-C-B′-A′ → final day = RECAP (~1,500 words, no new teaching, MUST carry a Further-Your-Learning section: verified videos, free primary texts, a passage trail, a guided read).
 - Validator word bands (±25%, counted modules only — teaching/scripture/vocab/bridge/story/insight/recap/sabbath): A 3500, B 3500, C 4000, B′ 3500, A′ 3000, recap 1500, sabbath 400.
 - Create a feature branch; confirm which branch main-relative state you're building on (parallel sessions may be committing to the same tree).
@@ -60,6 +61,8 @@ Meanwhile, pull ALL scripture yourself from `public/bibles/<TRANSLATION>/<BOOK>.
 
 ## Phase 7 — Imagery + Video Finalization
 
+- Build every prompt with `node scripts/imagery/build-prompts.mjs <slug> --intensity=N` (add `--motion` for video source plates). The intensity block is inserted between the preamble and the subject and **outranks any ink percentage still written into the subject line** — which is why adopting this required no rewrite of `series-image-subjects.json`.
+- After generation, run `node scripts/imagery/verify-masters.mjs <dir> --intensity=N`. It reports each plate's measured rung against the requested one; regenerate anything more than one rung off. Intensity is a closed loop because the generator does not track requested percentages linearly (SA-131).
 - See `imagery-and-video.md`. Generate with Higgsfield `gpt_image_2` at **`aspect_ratio: "3:2"`** (→ 2048×1360); process with the repo's `sharp` to webp; series plate installed as a **1600×872 band at q60** to `public/images/site/series/<slug>.webp`; day images at `public/images/series/<slug>/`.
 - **Not 1024×1024.** That square was the previous standard and produced two separate defects: the browser upscaled it ~1.24× in the 1408:768 headline slot (`images.unoptimized` means no srcset), which read as grain; and deriving every site ratio from a square left only 16% of the frame crop-safe, forcing the centred compositions the founder rejected.
 - Assign each plate an archetype + coverage band + conceptual device, and vary them across the set — see `imagery-and-video.md` §"The three axes that make a SET work".

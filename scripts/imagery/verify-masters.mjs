@@ -8,6 +8,13 @@
  * them. A plate can clear both measurements and still be wrong.
  *
  *   node scripts/imagery/verify-masters.mjs [dir]
+ *   node scripts/imagery/verify-masters.mjs [dir] --intensity=3
+ *
+ * INTENSITY READ-BACK (SA-131): with --intensity=N the gate also reports what each
+ * plate ACTUALLY measures on the 1-5 scale against what was asked for. This matters
+ * because the calibration run proved the generator does not track a requested ink
+ * percentage linearly — the only reliable control loop is generate, measure, and
+ * regenerate the rungs that missed. A plate more than 1 rung off target is flagged.
  */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -36,6 +43,13 @@ const isPaper = (r, g, b) => r > 228 && g > 212 && b > 158 && r - b < 112
 const FLAT_VARIANCE = 6
 
 // Sample local variance across the light regions of the image.
+async function litShare(src) {
+  const { data, info } = await sharp(src).resize({ width: 800 }).greyscale().raw().toBuffer({ resolveWithObject: true })
+  let lit = 0
+  for (let i = 0; i < data.length; i++) if (data[i] > 200) lit++
+  return (100 * lit) / (info.width * info.height)
+}
+
 async function flatness(src) {
   // MUST sample at native resolution. Downscaling averages the halftone dots
   // away before they can be measured, so a correctly printed quiet area reads
@@ -82,6 +96,42 @@ async function flatness(src) {
 const HERO_W = 1408
 const HERO_H = 768
 
+const intensityArg = process.argv.find((a) => a.startsWith('--intensity='))
+const WANT = intensityArg ? Number(intensityArg.slice('--intensity='.length)) : null
+if (intensityArg && (!Number.isInteger(WANT) || WANT < 1 || WANT > 5)) {
+  console.error(`--intensity must be a whole number 1-5, got "${intensityArg.slice(12)}"`)
+  process.exit(1)
+}
+
+// Endpoints measured 2026-08-29 (SA-131): rung 1 is the median of the shipped site
+// plates in the light cluster, rung 5 the approved baroque set. Deep mass carries
+// most of the weight because it separated approved from rejected in every round;
+// lit share and ink share agree with it and are kept as corroboration.
+const E_LO = { deep: 3.15, lit: 47.39, ink: 23.67 }
+const E_HI = { deep: 73.61, lit: 5.27, ink: 85.41 }
+const onScale = (v, lo, hi) => 1 + 4 * Math.max(0, Math.min(1, (v - lo) / (hi - lo)))
+
+async function intensityOf(src) {
+  const { data, info } = await sharp(src).resize({ width: 1200 }).raw().toBuffer({ resolveWithObject: true })
+  const ch = info.channels
+  const n = info.width * info.height
+  let deep = 0
+  let lit = 0
+  let ink = 0
+  for (let i = 0; i < n; i++) {
+    const L = 0.2126 * data[i * ch] + 0.7152 * data[i * ch + 1] + 0.0722 * data[i * ch + 2]
+    if (L < 64) deep++
+    if (L > 200) lit++
+    if (L < 128) ink++
+  }
+  const pct = (c) => (100 * c) / n
+  return (
+    onScale(pct(deep), E_LO.deep, E_HI.deep) * 0.5 +
+    onScale(pct(lit), E_LO.lit, E_HI.lit) * 0.3 +
+    onScale(pct(ink), E_LO.ink, E_HI.ink) * 0.2
+  )
+}
+
 async function check(file) {
   const src = path.join(DIR, file)
 
@@ -127,9 +177,19 @@ async function check(file) {
   // Step 2 — is any of the quiet area genuinely UNPRINTED (flat), rather than
   // merely light? Lightness alone rejects correct AIRY plates.
   const flatPct = await flatness(src)
-  const blankOk = flatPct < 25
+  // Below this much lit area there is no cream worth judging: the "light region"
+  // sample is a handful of glow pixels, which are smooth by design. Reporting n/a
+  // is honest; failing would reject every correct high-intensity plate.
+  const lit = await litShare(src)
+  const blankMeasurable = lit >= 5
+  const blankOk = !blankMeasurable || flatPct < 25
 
-  return { file, borderOk, paperEdges, blankPct: flatPct, blankOk, pass: borderOk && blankOk }
+  const intensity = WANT === null ? null : await intensityOf(src)
+  const intensityOk = intensity === null || Math.abs(intensity - WANT) <= 1
+  return {
+    file, borderOk, paperEdges, blankPct: flatPct, blankOk, blankMeasurable, intensity, intensityOk,
+    pass: borderOk && blankOk && intensityOk,
+  }
 }
 
 const files = fs.existsSync(DIR)
@@ -147,10 +207,14 @@ for (const f of files) results.push(await check(f))
 const w = Math.max(...results.map((r) => r.file.length))
 for (const r of results) {
   const border = r.borderOk ? 'ok  ' : `BAD(${r.paperEdges}/6)`
-  const blankTxt = `${r.blankPct.toFixed(0)}%`.padStart(5)
+  const blankTxt = r.blankMeasurable ? `${r.blankPct.toFixed(0)}%`.padStart(5) : '  n/a'
   const verdict = r.pass ? 'pass' : 'FAIL'
+  const intTxt =
+    r.intensity === null
+      ? ''
+      : `  intensity ${r.intensity.toFixed(1)}/5 (asked ${WANT})${r.intensityOk ? '' : ' OFF-TARGET'}`
   console.log(
-    `  ${r.file.padEnd(w)}  border ${border}  flat ${blankTxt}  ${verdict}`,
+    `  ${r.file.padEnd(w)}  border ${border}  flat ${blankTxt}${intTxt}  ${verdict}`,
   )
 }
 

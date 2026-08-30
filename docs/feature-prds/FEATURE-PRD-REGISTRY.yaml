@@ -1550,3 +1550,8 @@ features:
     prd: docs/feature-prds/F-173.md
     methodology_refs:
       - M00
+  - id: F-175
+    title: image-intensity-1-to-5-tonal-scale-for-devotional-plates
+    status: shipped
+    decision: SA-131
+    doc: docs/feature-prds/F-175.md

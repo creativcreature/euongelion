@@ -53,6 +53,57 @@ write-once so a second run cannot clobber the archive with its own output.
 
 Minimum 3 generated images per devotional, up to 5 where the content needs them.
 
+## Image intensity 1-5 (SA-131, founder-chosen 2026-08-29)
+
+The series carries a tonal register, chosen in Phase 1 and passed to every
+generation as `--intensity=N`. It is the founder's two-style split made into one
+control: **1 is the current site register** (airy, ambient light, quiet cream
+ground, subject small in frame) and **5 is cinematic baroque** (tenebrist, one
+hard light source inside the scene, frame filled, bodies mid-event). Defaults are
+**stills 1, motion 5** — the baroque register exists for video, gifs and motion
+source plates; still imagery on the site stays light.
+
+| Rung | Register            | Deep mass (<64) | Lit (>200) |
+| ---- | ------------------- | --------------- | ---------- |
+| 1    | airy — current site | 2%              | 79%        |
+| 2    | lit                 | 24%             | 36%        |
+| 3    | balanced            | 40%             | 23%        |
+| 4    | dramatic            | 49%             | 7%         |
+| 5    | tenebrist — motion  | 79%             | 1%         |
+
+The approved plate for each rung is on disk at
+`imagery-staging/intensity-spectrum/scale-5/`. Those five ARE the specification —
+when a rung is ambiguous, look at its plate.
+
+**Three findings from the 28-generation calibration, each of which cost a round:**
+
+1. **State the CREAM share, not the ink share.** Asking for "18–35% ink" produced a
+   binary result: rungs 1–2 light, rungs 3–10 all maximally dark and
+   indistinguishable. The model steers on _"about 36% of this frame remains quiet
+   warm cream paper"_. The COVERAGE DISCIPLINE block already knew this; the graded
+   blocks had dropped the cream half.
+2. **Say what the reference image is FOR.** The anchor attached to these runs was a
+   maximum-intensity plate, and unqualified it dragged every rung to its own
+   darkness. The clause _"the reference is for palette, ink texture and drawing
+   style only — do NOT copy its tonal balance or lighting"_ is what unlocked the
+   middle of the scale.
+3. **Name both budgets and forbid both failure directions.** State only the deep
+   share or only the cream share and the model runs to whichever end it prefers.
+
+**Intensity is a closed loop, not a setting.** Requested percentages do not track
+linearly with results — one prompt asking for MORE deep ink produced a LIGHTER
+plate than one asking for less. So the control is: generate, measure with
+`verify-masters.mjs <dir> --intensity=N`, regenerate anything more than one rung
+off target. Never paraphrase an intensity block in `prompt-preamble.md`; that
+wording is the validated artifact.
+
+**How this relates to the coverage-band axis below.** Intensity sets the tonal
+register for the SERIES; the AIRY/MID/DENSE coverage band still varies plate to
+plate WITHIN that register, and the archetype, device and camera axes are
+unaffected. The set-level standard-deviation rule was written when tone was the
+only axis being varied and should be read against the series' chosen rung, not
+against the whole 1-5 range.
+
 ## The four axes that make a SET work
 
 A plate can be beautiful and the set still fail. The founder's rejection was
