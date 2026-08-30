@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:41 EDT — **Report #13**
+**Last updated:** 2026-08-29 20:46 EDT — **Report #14**
 **Status:** **THESIS PROVEN, ESTIMATE MISSED BY 3×.** Video generated on-device and the eye read
 it back. This monitor verified the eye by _using_ it (§6.21). Measured benchmark **82.3s for
 4.04s of video** — ~3× worse than the session's scaled estimate (§6.22).
@@ -912,6 +912,67 @@ consistent — the gap is the 24 GB of LTX weights downloaded in between.
 **Three separate observers now agree:** disk was never the constraint, RAM is, and the 2B choice
 rested on a premise that had already been disproven.
 
+### 6.30 ★ Doc/reality gap found: CLAUDE.md's image-library rule cannot be followed on this machine
+
+Testing free alternatives against real brand references, the session hit: _"The poster path from
+CLAUDE.md is empty though."_ **This monitor investigated and it is broader than one path.**
+
+`CLAUDE.md` documents an **Image Library** section headed _"Always Check First
+(NON-NEGOTIABLE)"_, with hard rule #2: _"Manifest first, generation last. Before generating any
+new image: grep `docs/image-library-catalog-2026-05-08.json`… render the top 3-5 candidates; pick
+the best fit."_ Measured at 20:46:
+
+| CLAUDE.md states                                                                      | On disk                                                             |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `public/images/library/` — **1,405 files**                                            | **0 entries**                                                       |
+| `public/images/library/poster/` — **602 files**, _"the gold standard for this style"_ | **0** — no `poster` directory exists anywhere under `public/images` |
+| `public/images/library/devotional/` — ~250                                            | **0**                                                               |
+| `public/images/generated-2026-05-04/` — **803** (the source batch)                    | **0**                                                               |
+| `docs/image-library-catalog-2026-05-08.json` — 1.7 MB                                 | **present, 1,711,626 bytes** ✅                                     |
+
+**The gitignoring is deliberate and is not the problem.** `.gitignore:52` documents it clearly:
+_"Image library staging tree (deduped from generated batches via
+`scripts/consolidate-image-library.mjs` — staging, not served). The catalog … ARE tracked."_ By
+design the catalog travels and the staging tree is regenerated. Confirmed: 0 tracked files, no
+commits ever touched it.
+
+**The problem is that the staging tree _and its source batches_ are both absent here.** The
+catalog describing ~1,404 images is present; not one of the images is. So the NON-NEGOTIABLE rule
+— grep the catalog, render candidates, choose — **cannot be executed on this machine**, and
+cannot be on a fresh clone either. Any session obeying CLAUDE.md hits an empty directory, and the
+rule's own stated purpose (_"generation is the last resort"_) inverts: the only remaining option
+becomes generating.
+
+**What does still work, verified:** the four founder-approved style anchors named in CLAUDE.md's
+imagery section are all present —
+
+```
+public/images/site/series/prayer-of-jabez.webp        308K  ✅
+public/images/site/series/he-cannot-deny-himself.webp 400K  ✅
+public/images/site/series/looking-at-the-sun.webp     340K  ✅
+public/images/site/series/the-harvest.webp            392K  ✅
+```
+
+So CLAUDE.md is internally split: its **imagery/anchor** paths are correct and live; its **image
+library** paths point at an empty tree. Live image directories that do exist:
+`devotional-prints` (80 MB), `site` (50 MB), `substack-cache` (36 MB), `series` (34 MB).
+
+**Recommended, and outside this monitor's remit to do:** either restore the staging tree by
+running `scripts/consolidate-image-library.mjs` (if the source batches can be recovered) or amend
+CLAUDE.md so the rule points at what is actually on disk. Left as a finding, not an action.
+
+### 6.31 Calibration is holding after being wrong
+
+At 20:42, asked to survey free alternatives, the session opened:
+
+> _"Fair — I've been wrong on an estimate already today. Let me verify rather than assert,
+> starting with the one I pushed hardest."_
+
+Recorded because it is the correct response to §6.22 and §6.23 rather than a defensive one: it
+has carried the error forward as a reason to raise its evidence standard, and it chose to start
+by re-testing **its own strongest claim** rather than its weakest. It is now testing candidates
+against real brand anchors instead of describing them from search results.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -946,6 +1007,13 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #14 — 20:46 EDT.** §6.30 ★: **CLAUDE.md's NON-NEGOTIABLE image-library rule is
+  unfollowable on this machine.** The catalog (1.7 MB, ~1,404 entries) is present and tracked;
+  `public/images/library/` and its source batch `generated-2026-05-04/` are **both empty** — 0
+  entries, 0 tracked files, no `poster` dir anywhere. Gitignoring is deliberate and documented;
+  the absence of the regenerable tree _and_ its sources is the gap. The four founder-approved
+  style anchors **do** exist and were verified. §6.31: the session's calibration is holding after
+  being wrong — it opened the alternatives survey by re-testing its own strongest claim first.
 - **Report #13 — 20:41 EDT.** §6.27: session **caught its own unauthorised 28 GB download** and
   stopped it; cleanup verified — back to 24 GB, the leftover "LTX 13B" is a **4 KB scaffold, not
   weights**, HF cache still 28 GB. Decision laid out as three honest options, unanswered.
