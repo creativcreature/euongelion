@@ -13,6 +13,15 @@ founder was right to reject it. Rebuilt so the whole page is the experience.
 - **Seven rooms, the seventh the threshold.** Seven is the most solidly attested
   number in Scripture. The scrubbed film is no longer a room — it is the door you
   pass through to reach them.
+- **The comparison is comprehensive now.** Eighteen attributes, every one said of
+  the Father, the Son and the Spirit, with a verse in all 54 cells — each verified
+  present in `public/bibles/BSB`. Seven show by default and the other eleven sit
+  behind a control that names the count, so nothing is silently withheld. Added:
+  sovereign, just, merciful, faithful, unchanging, self-existent, wise, patient,
+  good, gracious, loving. Four tests cover the split and the cells.
+- **The stage alternates sides** — Hermes Agent alternates its feature image left
+  and right down the page, and pinning it to one side is the monotony that pattern
+  avoids. Three independent references said the same thing about this layout.
 - **The page is climbed, not descended.** Founder direction: you start at the
   bottom and work north. `.wig-main` is `column-reverse`, so the door renders at
   the visual foot and Room 07 at the top; the reader lands at the bottom and

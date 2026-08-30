@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 import { PERSONS, SHARED_ATTRIBUTES } from '@/data/who-is-god-attributes'
 import { V } from '@/data/who-is-god-verses'
 import StickyStepper from './StickyStepper'
@@ -18,8 +20,18 @@ import StickyStepper from './StickyStepper'
  * do not say one person. The steps walk the first, then the second.
  */
 export default function CompareStage() {
+  // COMPREHENSIVE, BUT TUCKED AWAY (founder direction).
+  // All eighteen attributes are here and every one of the 54 cells carries a
+  // verse verified present in public/bibles/BSB. Seven show by default; the
+  // other eleven sit behind a control that says how many are hidden, so nothing
+  // is silently withheld from a reader who wants the whole picture.
+  const [showAll, setShowAll] = useState(false)
+  const core = SHARED_ATTRIBUTES.filter((a) => a.core)
+  const extra = SHARED_ATTRIBUTES.filter((a) => !a.core)
+  const shown = showAll ? SHARED_ATTRIBUTES : core
+
   const steps = [
-    ...SHARED_ATTRIBUTES.map((a, i) => ({
+    ...shown.map((a, i) => ({
       key: a.id,
       node: (
         <article className="wig-compare-step">
@@ -38,7 +50,9 @@ export default function CompareStage() {
       key: 'sent',
       node: (
         <article className="wig-compare-step">
-          <p className="wig-step-n">08</p>
+          <p className="wig-step-n">
+            {String(shown.length + 1).padStart(2, '0')}
+          </p>
           <h3 className="wig-step-title">So why not one person?</h3>
           <p className="wig-step-body">
             Because they talk to each other. One sends. One is sent. One is
@@ -81,7 +95,7 @@ export default function CompareStage() {
             <span>Son</span>
             <span>Spirit</span>
           </div>
-          {SHARED_ATTRIBUTES.map((a, i) => (
+          {shown.map((a, i) => (
             <div
               className="wig-matrix-row"
               key={a.id}
@@ -97,6 +111,15 @@ export default function CompareStage() {
           <p className="wig-matrix-foot" data-on={activeIndex >= 6}>
             Every line is said of all three. That is why Christians say one God.
           </p>
+          {!showAll && (
+            <button
+              type="button"
+              className="wig-matrix-more"
+              onClick={() => setShowAll(true)}
+            >
+              {extra.length} more, all said of all three
+            </button>
+          )}
         </div>
       )}
     />
