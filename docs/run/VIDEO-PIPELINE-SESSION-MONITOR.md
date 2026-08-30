@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 17:36 EDT — **Report #6**
+**Last updated:** 2026-08-29 20:13 EDT — **Report #7**
 **Status:** research phase complete. Layer-1 (**the eye**) offered at 17:13, **still not started**.
 Four consecutive founder messages have been about local video generation instead — the layer the
 session itself called _"the slowest and least controllable part of the whole thing."_ One verdict
@@ -453,6 +453,53 @@ brand rather than from tooling.
 **§6.8 remains open only on the founder's side.** The eye is still unbuilt, and Q2/Q7 are still
 unanswered — but the session is no longer the one drifting.
 
+### 6.12 ⚠️ ACTIVE RISK — the 28 GB is not mystery cruft, it is the voice prototype
+
+At 20:10 the session found 28 GB in `~/.cache/huggingface` and described it as _"from something
+you probably don't remember installing."_ **The 28 GB is real — this monitor confirmed it
+independently.** The characterisation is not. This monitor listed the cache:
+
+| Model                               | Size   | What it is    |
+| ----------------------------------- | ------ | ------------- |
+| `HumeAI/tada-codec`                 | 10 GB  | speech codec  |
+| `mlx-community/Qwen3-TTS-12Hz-1.7B` | 4.2 GB | TTS           |
+| `ResembleAI/chatterbox-turbo`       | 3.8 GB | voice cloning |
+| `HumeAI/tada-1b`                    | 3.7 GB | TTS           |
+| `ResembleAI/chatterbox`             | 3.0 GB | voice cloning |
+| `openai/whisper-large-v3-turbo`     | 1.5 GB | transcription |
+| `YatharthS/LuxTTS`                  | 1.1 GB | TTS           |
+| `hexgrad/Kokoro-82M`                | 317 MB | TTS           |
+| `openai/whisper-base`               | 281 MB | transcription |
+
+**Every significant item is text-to-speech, voice cloning, or transcription.** That is the
+Euangelion narration stack, and its project is still on disk:
+`external/euangelion/euangelion-voice-prototype`. It ties directly to the devotional Audio
+Edition work and to the Whisper transcription used to check shipped narration.
+
+**Why this matters right now.** The founder's question was _how easy is it to get rid of this
+stuff._ He has just been told, in the same breath, that 28 GB he doesn't remember installing is
+sitting in a cache. **If he acts on that framing, he deletes the voice prototype's models** —
+including `whisper-large-v3-turbo`, which is what the narration QA depends on.
+
+The session's _instinct_ was right and worth crediting: asked about uninstalling, it went and
+audited what was already on disk rather than answering in the abstract, and it found a real
+28 GB. It was still inspecting the contents when this was written, so it may well identify them
+correctly. **Recorded here because the guess was published before the check, and the guess
+points at a destructive action.**
+
+**Standing recommendation from this monitor: do not clear `~/.cache/huggingface` wholesale.**
+The LTX models, if ever installed, can be contained separately — which is exactly the containment
+question the founder actually asked.
+
+### 6.13 The clock, restated
+
+It is now **Saturday 20:13 EDT**. The Monday go-live flagged at 17:13 — seven days of devotionals
+of which _"None of it is written"_ — is roughly **28 hours away** if it lands Monday morning.
+
+**Q1 has been open for three hours and eleven minutes and remains unanswered.** Every founder
+message in that window has been about video tooling. This monitor takes no view on the right
+call; it records that the call has not been made.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -487,6 +534,12 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #7 — 20:13 EDT.** Session found **28 GB in `~/.cache/huggingface`** (confirmed
+  independently) but framed it as _"something you probably don't remember installing."_ This
+  monitor inventoried it: it is **the voice/TTS/Whisper narration stack**, belonging to
+  `euangelion-voice-prototype`, still on disk. Added §6.12 as an **active risk** — the founder
+  asked how to delete things and was handed a wrong provenance for 28 GB. Added §6.13: Monday
+  go-live now ~28 hours out, Q1 unanswered for 3h11m.
 - **Report #6 — 17:36 EDT.** **§6.10 PASSED** — session told the founder plainly that the disk
   premise was wrong ("Space is not your constraint here"), and corrected its **own** estimate
   upward on exact HuggingFace figures, finding a 19.05 GB T5-XXL encoder every prior number had
