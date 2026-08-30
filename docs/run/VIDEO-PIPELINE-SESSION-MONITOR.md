@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 21:38 EDT — **Report #23**
+**Last updated:** 2026-08-29 21:46 EDT — **Report #24**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1730,6 +1730,51 @@ not content stuff for you."_ This monitor critiqued the raw dump without having 
 that accompanied it, and repeated caveats their author had already made. §6.58's source-mix
 observation stands; its tone did not deserve to.
 
+### 6.64 ⚠️ This monitor pushed to an abandoned repo — the founder was right, and it compounds §6.37
+
+> _"pushing to an old and incorrect repo, and actually neither repo has been used for sometime as
+> the app is on cloudflare."_
+
+**Verified on all three counts.**
+
+**Git is not in the deploy path.** `package.json:48` — `"deploy": "opennextjs-cloudflare build &&
+npm run strip:audio-assets && opennextjs-cloudflare deploy"`. It builds **the working tree** and
+uploads straight to Cloudflare. Confirmed against the live Worker: every deployment reads
+`Source: Unknown (deployment)`, authored by `chrisparker21@gmail.com` — **direct wrangler uploads,
+no GitHub integration.** Nothing about production passes through GitHub.
+
+**The repo is dormant.** GitHub's own event feed shows push activity on **2026-08-24**, then
+nothing until **2026-08-30 — today**, which is this monitor's own pushes and one other session's.
+
+**And the branch is adrift.** `feat/seeking-help-georgia` is **19 commits ahead of `origin/main`,
+0 behind** — eight of those nineteen are this monitor's reports. The subject session noted
+independently that the branch name _"has nothing to do with either the social plan or the YouTube
+channel work."_
+
+**This monitor's error, stated plainly.** Asked to commit and push, it verified the _account_
+(`gh auth switch`, git email) and the _remote URL_ — exactly what CLAUDE.md's pre-push checklist
+demands — and then pushed. **It never asked whether git was the right destination at all.** The
+checklist answers "am I pushing as the right person to the configured remote," not "is this remote
+still the project." Sixteen versions of this document went to a repo that is **public** (§6.37)
+_and_ **abandoned**. Two failures, one root: taking a documented configuration as current fact
+without testing it against reality — the same failure this document exists to catch, now twice in
+one night.
+
+**What changes, and what does not.**
+
+- **The exposure is unchanged.** Public is public whether or not the repo is operational; an
+  abandoned public repo is arguably worse, since nobody is watching it. The §6.54 finding still
+  holds — content and internal docs, **no live credentials**.
+- **Remediation is now free.** Nothing depends on that repo: no deploy integration, no production
+  path. Making it private, or archiving it, **breaks nothing.**
+- **§6.55's stated cost evaporates.** The "unlimited GitHub Actions on public repos" tradeoff was
+  weighed against a render stage that does not exist yet and a deploy that never used Actions.
+  There is no longer a reason not to make it private.
+
+**Action taken: this monitor has stopped pushing.** Reports continue to be committed locally so
+the working tree stays clean; nothing further goes to that remote until the founder says where
+this document should live.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1764,6 +1809,16 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #24 — 21:46 EDT.** §6.64 ⚠️: **founder was right — this monitor pushed to an abandoned
+  repo.** Verified: `npm run deploy` builds the **working tree** straight to Cloudflare
+  (`package.json:48`), every live deployment reads `Source: Unknown (deployment)` with **no GitHub
+  integration**, the repo had no push activity between **2026-08-24 and today**, and the branch is
+  **19 ahead of `origin/main`, 0 behind**. This monitor ran CLAUDE.md's pre-push checklist —
+  account, email, remote URL — and **never asked whether git was the right destination at all**.
+  Same root cause as §6.37: trusting documented configuration as current fact. Consequence:
+  remediation is now **free** (nothing depends on the repo, §6.55's Actions tradeoff is moot) and
+  **pushing has stopped**; reports commit locally only until the founder says where this document
+  belongs.
 - **Report #23 — 21:38 EDT.** §6.60 ★★★: **the finding of the session — nothing has cleared the
   approval gate in 83 days.** June's Instagram Week 1 was fully built and queued (log dead
   2026-06-07); August's channel spec waits on seven verdicts; REKINDLED scores 11/11 and is
