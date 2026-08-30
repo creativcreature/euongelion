@@ -179,3 +179,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-173 | Reliability       | Runtime defect sweep — thrash, fades, crash sites         | 6/10     | shipped  | [F-173.md](./F-173.md) |
 | F-175 | Imagery           | Image intensity — a 1–5 tonal scale for plates            | 0/10     | shipped  | [F-175.md](./F-175.md) |
 | F-176 | Content           | Drawing Near — seven days on access, at intensity 5       | 0/10     | shipped  | [F-176.md](./F-176.md) |
+| F-177 | Reader            | Drawing Near — scrolling halftone atmosphere              | 0/10     | shipped  | [F-177.md](./F-177.md) |

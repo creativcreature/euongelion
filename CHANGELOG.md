@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-08-30 — Drawing Near: the scrolling halftone atmosphere — SA-133 (F-177)
+
+An experiment scoped hard to one series. Each plate that appears in the page also
+appears behind it as a dithered ground, parallaxing slower than the text, fading
+out, and leaving clean paper before the next one begins.
+
+- **Scope was the first requirement and is verified, not asserted.** In the same
+  build, `all-these-things-day-1` has zero atmosphere nodes and keeps
+  `z-index: auto`. The layer mounts only on a `drawing-near-` slug.
+- **Compress the range, do not clip it.** Intensity-5 plates are ~79% deep ink,
+  so a halftone closed nearly every cell and flooded the page grey — 12,914 of
+  13,360 sampled pixels painted on the first pass. A hard shadow gate fixed the
+  flood and lost the picture; the shipped treatment uses a gamma with a ceiling,
+  so every tone varies and no cell is solid.
+- **Contrast by subtraction:** the texture is erased from behind the reading
+  measure and held at strength in the margins, rather than the layer being faded
+  until it disappears.
+- The shared SA-128 halftone engine is untouched — only its input is shaped.
+- One rasterisation per plate, one rAF per frame (SA-129); parallax off under
+  `prefers-reduced-motion`.
+- **Tuned live with the founder across five passes.** Screen from cell 18 to 5;
+  a hard shadow gate replaced by range compression so the picture survives; the
+  crop abandoned entirely in favour of drawing the WHOLE plate at true
+  proportions at 56% of viewport width; fades moved onto the plate's own four
+  edges; and the first texture held until below the fold (verified: zero ink
+  from scrollY 0 through 900 on an 890px viewport).
+
 ## 2026-08-30 — Drawing Near: seven days on access, at image intensity 5 — SA-132 (F-176)
 
 The founder's own thematic, built end to end. Monday start (SA-123): Mon-Fri

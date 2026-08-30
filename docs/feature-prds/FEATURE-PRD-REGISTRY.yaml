@@ -1561,3 +1561,9 @@ features:
     status: shipped
     decision: SA-132
     doc: docs/feature-prds/F-176.md
+
+  - id: F-177
+    title: drawing-near-scrolling-halftone-atmosphere
+    status: shipped
+    decision: SA-133
+    doc: docs/feature-prds/F-177.md

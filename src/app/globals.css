@@ -18138,3 +18138,49 @@ html.dark .edition-quote-text--red {
 .homepage-outreach-link:focus-visible {
   opacity: 0.75;
 }
+
+/* ── SA-133 / F-177 — Drawing Near atmosphere ─────────────────────────────
+   Scoped to one series by its mount, not by CSS: the class exists only where
+   <DrawingNearAtmosphere> renders, and that component is gated on the slug.
+   No other reading is affected by anything in this block.
+
+   The layer sits BEHIND the reading and takes no pointer events. It is a
+   texture, not an image: the article's own stacking context is lifted above
+   it so type never competes with the dots. Blend mode is set in JS from the
+   measured luminance of the live reader theme (multiply on cream, screen on
+   navy and black), because the reader ships themes at both ends. */
+.drawing-near-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* The canvas carries ink only; the page paints the paper underneath. */
+  background: transparent;
+  /* Never let the texture reach the very top or bottom edge of the viewport —
+     a hard edge reads as a panel, and this has to read as stock. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 12vh,
+    black 88vh,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 12vh,
+    black 88vh,
+    transparent 100%
+  );
+}
+
+/* Lift the reading above the texture. Scoped to the shell that contains the
+   layer, so no other page's stacking order moves. */
+.mock-paper:has(.drawing-near-atmosphere) .devotional-shell-main,
+.mock-paper:has(.drawing-near-atmosphere) .mock-shell-topbar,
+.mock-paper:has(.drawing-near-atmosphere) .reader-theme-control {
+  position: relative;
+  z-index: 1;
+}

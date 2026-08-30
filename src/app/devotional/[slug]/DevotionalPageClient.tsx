@@ -27,6 +27,7 @@ import { ReaderProvider } from '@/components/reader/ReaderContext'
 import JournalField from '@/components/reader/JournalField'
 import PendingIntentReplay from '@/components/reader/PendingIntentReplay'
 import DevotionalStickiesLayer from '@/components/DevotionalStickiesLayer'
+import DrawingNearAtmosphere from '@/components/devotional/DrawingNearAtmosphere'
 import DevotionalArtwork from '@/components/DevotionalArtwork'
 import ArtworkLightbox from '@/components/ArtworkLightbox'
 import SiteBottom from '@/components/SiteBottom'
@@ -450,6 +451,14 @@ export default function DevotionalPageClient({
     <ReaderProvider devotionalSlug={slug}>
       <div className="mock-home">
         <main id="main-content" className="mock-paper">
+          {/* SA-133 / F-177 — scrolling halftone atmosphere, DRAWING NEAR ONLY.
+              Deliberately gated on the slug: this is an experiment on one
+              series, and no other reading's look changes by a pixel. */}
+          {slug.startsWith('drawing-near-') && (
+            <DrawingNearAtmosphere
+              heroSrc={seriesSlug ? getSeriesHero(seriesSlug)?.src : undefined}
+            />
+          )}
           <ScrollProgress />
           {/* F-067: in-reader "Aa" sheet — named reading themes + text size.
             Reader chrome only (this is the reading surface); the fixed
