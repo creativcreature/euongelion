@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:56 EDT — **Report #17**
+**Last updated:** 2026-08-29 21:03 EDT — **Report #18**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1225,6 +1225,97 @@ Let me find documented professional practice."_
 but it was reasoned rather than sourced — and the founder's opening brief had asked for research
 first precisely to avoid that. Third self-correction on evidence today, none defensive.
 
+### 6.43 ★★ The researched pipeline — the best finding of the session
+
+Asked for documented professional practice, the session surveyed four real pipelines (3D
+animation, VFX, motion graphics, AI video studios) and found they converge:
+
+> **Every one of them puts a cheap, viewable proxy in front of expensive commitment. Nobody
+> animates before the animatic is approved.**
+
+And then made the connection that reframes the founder's original complaint:
+
+> _"Your original complaint was that Claude produces 'a random mess because it's just looking at
+> code.' That is precisely the failure the **animatic** was invented to prevent — a century ago.
+> Claude has been going script → final render with no proxy stage. The industry never does that.
+> **The eye skill is not QA. It's the animatic + dailies stage — a mandatory production stage,
+> not a checking step bolted on the end.**"_
+
+**This monitor's assessment: this is the single most valuable output of the session.** It is a
+better answer than the founder's own framing of the ask, it is sourced rather than reasoned, and
+it turns "give Claude eyes" from a tooling problem into a production-stage problem with a century
+of documented practice behind it.
+
+Four practices it lifted, all directly usable:
+
+1. **Blocking before splining** — key poses at wide intervals, then a spline pass. Two-tier
+   review by construction, mirroring the contact-sheet/full-still design of §4.3.
+2. **Dailies return three verdicts, not a score** — **approved / notes / send back.** Better than
+   any 1–10 rubric, and it removes the temptation to have a VLM score aesthetics.
+3. **Front-load references to save credits** — the industry's own answer to the founder's exact
+   constraint. The 869-image library (§6.41) and the four verified style anchors already _are_
+   the reference pack.
+4. **Two rounds of amends, bounded** — caps iteration, and therefore caps the rate-limit spend
+   that §6.40's watch item 2 still leaves uncosted.
+
+It also audited its own previous spec and listed five things it had missed — no styleframe/lookdev
+stage, no animatic, no blocking/spline split, unbounded review, no naming/versioning discipline.
+**Fourth non-defensive self-correction of the session.**
+
+### 6.44 The founder pivots to Vox-style collage — and the instinct is sound
+
+> _"if the goal is to achieve a VOX style animated collage video, using Claude as the Brain, and
+> Codex as the Image Maker, and Remotion to compile the final video. Whats the pipeline then look
+> like?"_
+
+**This monitor's read: this is the most coherent target stated all session**, and it resolves
+several open threads at once. Paper-collage stop-motion is _constructed_, not generated — which
+is exactly what §6.25 concluded the riso brand requires. It uses no video diffusion, so the
+credit ceiling of §6.40 disappears. It plays to Remotion's strengths, where riso is native. And
+it matches "generation is garnish, never substrate."
+
+The founder also supplied a reference: a **"MASTER PROMPT VOX STYLE — VIRAL DOCUMENTARY ENGINE"**
+template. This monitor read the image directly. It is a staged prompt — topics → length → script
+— with per-duration word budgets (1 min = 140–170 words … 20 min = 2,800–3,400) and a fixed
+story spine: **Viral Hook → Quick Introduction → Main Story → Turning Point → Big Picture →
+Powerful Ending.** Its stated output chain is _"handcrafted paper-collage image → 10-second
+stop-motion animation."_
+
+**Two things about that template, and they point in opposite directions.**
+
+**✅ Its process discipline is excellent and worth stealing verbatim:** _"Handle one stage at a
+time, stop after each stage, and wait for my reply. No preambles, no filler, never skip a stage,
+**never continue automatically**."_ That is a human gate at every stage — precisely what §3's
+research said is non-automatable, and precisely what this session failed at three times today
+(§6.32). The template encodes the discipline the session lacked.
+
+**⚠️ Its optimisation target contradicts the product.** The template is a _virality_ engine. Its
+topic list is "billionaires, luxury, crime, brands, money"; its titles must be "highly
+clickable," "curiosity-driven"; its opening "must immediately create curiosity." **Euangelion's
+first line of CLAUDE.md is "Spiritual formation over engagement metrics."** Lifting this engine
+whole would import an engagement-optimised spine into devotional content, against the product's
+founding principle.
+
+**The separation to hold:** take the **staging, the gates, the word budgets and the collage/
+stop-motion output chain**; leave the **viral hook framing and the clickability criteria**. That
+distinction has not been drawn by anyone yet, and a spec written from this template without
+drawing it would inherit the wrong target.
+
+### 6.45 Watch items for the Vox-style spec
+
+1. **Codex is a session boundary, not a tool call.** `CLAUDE.md` is explicit: use Codex's built-in
+   `image_gen`; **never** `~/.codex/skills/.system/imagegen/scripts/image_gen.py` (it bills the
+   founder's API account per image); never Nano Banana. And: _"If you are Claude Code, you do not
+   have the built-in `image_gen` tool… you cannot generate imagery for this project."_ A pipeline
+   naming "Codex as the Image Maker" must therefore hand off across sessions. The spec has to say
+   how, or stage 2 has no executor.
+2. **"Vox style" vs the locked riso spec.** Vox-style collage and two-colour riso halftone are
+   adjacent but not identical. Which governs has not been asked.
+3. **§6.40's watch item 2 remains open** — Claude subscription rate limit is still uncosted, and
+   an animatic pipeline with three eye passes and two amend rounds makes it _more_ load-bearing,
+   not less.
+4. **The virality/formation tension in §6.44** must be resolved explicitly, not inherited.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1259,6 +1350,18 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #18 — 21:03 EDT.** §6.43 ★★: **the researched pipeline is the session's best output.**
+  Four documented pipelines converge on a cheap proxy before expensive commitment; the session
+  connected the founder's "random mess" complaint to the **animatic** and reframed the eye as _"a
+  mandatory production stage, not a checking step bolted on the end."_ Lifted four usable
+  practices (blocking-before-splining, three-verdict dailies, front-loaded references, bounded
+  amends) and audited five gaps in its own prior spec — fourth non-defensive self-correction.
+  §6.44: founder pivoted to **Vox-style collage with Codex as image maker and Remotion compiling**
+  — the most coherent target stated all session, resolving the style, credit and brand threads at
+  once. Read the founder's reference template directly: **its staging discipline is excellent, its
+  virality optimisation contradicts "spiritual formation over engagement metrics."** §6.45: four
+  watch items, chiefly that **Codex is a session boundary, not a tool call** — CLAUDE.md forbids
+  the billing CLI and states Claude Code cannot generate imagery at all.
 - **Report #17 — 20:56 EDT.** Spec delivered and scored against §6.39: **3 of 4 watch items
   passed.** ✅ It tested the "one a day" hypothesis with real credit arithmetic (Seedance 100
   credits = 1–2 clips, not 100) and answered conditionally — one/day generation-first, **4–6/day
