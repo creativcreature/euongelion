@@ -3,8 +3,12 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:24 EDT — **Report #10**
-**Status:** **BUILDING.** Founder authorised the install at 20:14. ffmpeg going into a contained
+**Last updated:** 2026-08-29 20:30 EDT — **Report #11**
+**Status:** **THESIS PROVEN, ESTIMATE MISSED BY 3×.** Video generated on-device and the eye read
+it back. This monitor verified the eye by _using_ it (§6.21). Measured benchmark **82.3s for
+4.04s of video** — ~3× worse than the session's scaled estimate (§6.22).
+
+**Previously: BUILDING.** Founder authorised the install at 20:14. ffmpeg going into a contained
 `~/ai/` tree; LTX to follow. First code of the session. _(Header below predates this — see §6.16.)_
 
 Layer-1 (**the eye**) offered at 17:13, **still not started**.
@@ -678,6 +682,79 @@ the shell config is clean. `UNINSTALL.md` is written and on disk.
 video lives under one directory that `rm -rf` reverses, and the voice-cloning work is provably
 isolated from it.
 
+### 6.21 ✅✅ THE THESIS IS PROVEN — this monitor verified it by using the eye itself
+
+At 20:26 the session generated video on-device, extracted frames, built a contact sheet, and
+looked at it: _"That's the eye loop working end to end — I can see the output, not infer it from
+logs."_
+
+**This monitor did not take that on report. It opened the contact sheet and looked.**
+`~/ai/ltx/out/contact97.png`, 1152×480, a 3×2 grid of six frames sampled from the 97-frame clip.
+
+**What I see, as an entirely separate session with no part in the generation:** a tabby cat
+sitting on a windowsill, hard-backlit by a blown-out golden window — dawn or dusk. Bare tree
+branches beyond the glass. A small potted plant with green leaves on the sill to the cat's left.
+The dark diagonal of a ladder or chair frame at the left edge. Heavy chiaroscuro; the cat reads
+almost as silhouette against the light.
+
+**And I can see the motion.** Across the top row the cat sits upright, head raised. Through the
+bottom row it lowers its head progressively — hunched by frame five, fully head-down and curling
+by frame six. The subject, sill, window and plant stay consistent throughout: **temporally
+coherent, with real movement.**
+
+**That is the founder's brief, satisfied.** _"I need claude to literally be able to see images in
+the way I see them so I can direct it as to what is right or wrong."_ A session that did not
+build the pipeline, did not run the generation, and had no context for the output can describe
+its composition, lighting, subject and motion from a single PNG. The eye is real, and this is the
+independent confirmation.
+
+**What is proven, precisely:** composition, subject, framing, lighting, and coarse motion across
+time. **What is still not proven — exactly as §3 predicted:** easing quality, judder, and precise
+timing are _not_ readable from six frames. The ceiling identified in the research stands
+untouched. Nothing here beats the state of the art on motion; it matches it on stills.
+
+**Three caveats for the record:**
+
+1. **The sheet is under-spec.** The design (§4.3) called for a 4×4 grid at a 1568px long edge —
+   16 frames at 392px cells. This is 6 frames at 384×240 in a 1152px sheet. Cell size is fine
+   (above the 200px floor), but it samples **6 of 97 frames — 6.2% coverage** at roughly a third
+   of the designed frame budget. The eye works; it is not yet running at its own specification.
+2. **The two benchmark files are byte-identical.** `bench_2b_480x768.mp4` and `bench97.mp4` share
+   SHA256 `10b5a940…`. **One generation, two filenames** — not two runs. Any claim of two
+   benchmarks would be wrong.
+3. **It is a cat, not Euangelion.** This proves the loop, on a generic prompt. It does not yet
+   prove the loop on riso/halftone devotional imagery, which is the actual product need.
+
+### 6.22 The measured number — and a scaling method that was wrong by 3×
+
+**82.3 seconds for 4.04 seconds of 480×768 video**, measured on the M4 Pro. Set against every
+estimate this document has carried:
+
+| Source                                 | Claimed                      | Actual                                |
+| -------------------------------------- | ---------------------------- | ------------------------------------- |
+| §6.1 Wan 2.2 GGUF / PyTorch MPS        | 41 min per second of video   | **wrong stack entirely**              |
+| §6.7 session's scaled ltx-mlx estimate | "~4 seconds… ~25–30 seconds" | **82.3s — ~3× optimistic**            |
+| `ltx-mlx` README, M3 Ultra 76-core     | ~7s for the same 97 frames   | real M3 Ultra→M4 Pro factor **11.8×** |
+| Session's assumed scaling factor       | 3.5–4× (GPU cores)           | **off by ~3×**                        |
+
+**Derived reality:** ~20.4× realtime. A 5-second clip is **~1.7 minutes**; a 30-second piece is
+**~10.2 minutes.**
+
+**Two honest conclusions, pointing opposite ways:**
+
+- **The verdict holds.** LTX-MLX is **~121× faster** than the Wan/GGUF/MPS path that produced
+  §6.1's "not feasible." Ten minutes for a 30-second piece is a working tool. Local generation is
+  viable, as the 17:21 reversal claimed.
+- **The estimate was badly wrong, and only measurement caught it.** §6.7 flagged that the session
+  had silently switched from cores-and-bandwidth scaling to **cores-only**. That method
+  underestimated by a factor of three. **Credit where it is due: the session refused to ship the
+  estimate and insisted on measuring on the real machine — which is the only reason the record
+  now contains a fact instead of a number that was 3× wrong.** This is the `/imagen` standard
+  (§4.5) vindicated in the sharpest possible way.
+
+**Standing rule for the plan:** no generation time from a README, a benchmark blog, or a scaled
+estimate belongs in this pipeline's design. Only numbers measured on this machine.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -712,6 +789,16 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #11 — 20:30 EDT.** **THE THESIS IS PROVEN.** §6.21: this monitor **opened
+  `contact97.png` and looked at it** — a backlit tabby on a windowsill, coherent across six
+  frames, visibly lowering its head over the clip. An uninvolved session read composition,
+  lighting, subject and motion from one PNG. The founder's core ask is satisfied for stills;
+  motion quality remains unreadable, exactly as §3 predicted. Caveats: sheet runs at 6 of 97
+  frames in 1152px (spec was 16 at 1568px), the two "benchmarks" are **byte-identical — one
+  generation**, and the subject is a cat, not riso devotional imagery. §6.22: measured **82.3s
+  for 4.04s** = 20.4× realtime, ~10.2 min for a 30s piece. **121× faster than the Wan path, and
+  ~3× worse than the session's own scaled estimate** — the cores-only scaling flagged in §6.7 was
+  off by a factor of three. Measuring is what caught it.
 - **Report #10 — 20:24 EDT.** **First demonstrated capability of the session.** Re-ran every
   ffmpeg claim independently: native arm64 ✅, ffmpeg 9.0 ✅, ad-hoc signed ✅, encodes ✅, probes
   to exactly 60 frames ✅, and **frame extraction — the eye's hot path — produces 4 PNGs from a
