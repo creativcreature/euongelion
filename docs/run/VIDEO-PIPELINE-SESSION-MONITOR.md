@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 21:08 EDT — **Report #19**
+**Last updated:** 2026-08-29 21:12 EDT — **Report #20**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1403,6 +1403,69 @@ slice ending mid-material**, having already produced two false "damaged track" r
 match this project's recorded history. Consequence drawn correctly: narration is _"a batch stage
 with a watchdog, not an inline call the pipeline can just await."_
 
+### 6.51 ★★ The founder's masking correction is right, and it kills the session's fallback
+
+> _"we will need a masking step. The key is **boundary masking and not background subtracting
+> masks**. I have a halftone, so deleting background produces ugly grainy results with holes.
+> The images need solid…"_
+
+**This monitor opened `the-harvest.webp` — one of the four founder-approved style anchors — and
+confirmed it. The point is stronger than stated.**
+
+What the artwork is: a sower walking away into a ploughed field, an enormous halftone sun on the
+horizon with radiating rays, clouds either side. Strict duotone — cobalt blue on cream paper —
+and **every tone in the image is Ben-Day dot density.** The sun is a dot gradient. The sky rays
+are dot density. The furrows are dot patterns.
+
+**Three reasons background subtraction cannot work on this, in order of severity:**
+
+1. **The cream ground is inside every subject as well as outside it.** The sower is blue dots on
+   cream. The sky is cream with sparse blue dots. **No colour distinguishes "inside the figure"
+   from "outside" it** — both contain the same two inks. A key on cream has no way to know which
+   cream it is looking at.
+2. **Highlights _are_ holes.** In halftone, lighter tone = fewer dots = more exposed paper. The
+   sunlit edge of the sower's shoulder, the bright furrows, the centre of the sun are mostly
+   _paper_. Any alpha or chroma subtraction punches straight through them. The founder's _"ugly
+   grainy results with holes"_ is a literal description of the failure, not a loose one.
+3. **Every edge is stochastic.** Boundaries are dot boundaries, not vector edges. Per-pixel
+   matting leaves a fringe of orphaned dots — the "grainy" part.
+
+**Boundary masking is the correct primitive:** resolve the closed outer silhouette once, fill it
+solid, and keep everything inside — dots, paper, highlights — untouched.
+
+**And the session named the wrong tool from a list that contains the right ones.** §6.47 recorded
+its fallback as _"background-removal (you have Photoshop, and the Adobe MCP has
+`image_remove_background`)."_ The available Adobe MCP tools split cleanly:
+
+| Tool                         | Primitive                   | Right for halftone?                        |
+| ---------------------------- | --------------------------- | ------------------------------------------ |
+| `image_remove_background`    | **subtractive** — per-pixel | ❌ this is what the founder just ruled out |
+| **`image_select_subject`**   | **selection = boundary**    | ✅ correct primitive                       |
+| **`image_select_by_prompt`** | selection by description    | ✅ correct primitive                       |
+| `image_invert_selection`     | operate on the outside      | ✅ supporting                              |
+| `image_crop_to_bounds`       | trim to silhouette extents  | ✅ supporting                              |
+
+**So §6.47's fallback path is invalid as written, but a valid path exists in the same toolset** —
+select subject → fill holes in the selection → apply as a solid mask. The distinction the founder
+drew is exactly the distinction between those two families of tool.
+
+**Assessment: this is the founder supplying domain knowledge neither the session nor this monitor
+had.** It is the first correction tonight that came from understanding the medium rather than
+from measuring a machine, and it changes a stage of the pipeline. Recorded prominently because a
+spec written on §6.47's fallback would have produced exactly the holed, grainy cut-outs the
+founder is describing — and would not have discovered why until the first render.
+
+### 6.52 Watch item — does the session take the distinction, or flatten it?
+
+The risk is treating "boundary masking" as a synonym for "better background removal." It is not:
+one resolves a **silhouette** and fills it, the other classifies **pixels**. On duotone halftone
+they give opposite results. The spec's masking stage must name the primitive, not just the
+outcome.
+
+Secondary, and unraised by anyone: **the cut-out edge is part of the Vox/paper-collage aesthetic.**
+Real paper collage has a cut or torn edge. A boundary mask is the natural place to put one — which
+would make the constraint a style asset rather than a problem to solve.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1437,6 +1500,16 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #20 — 21:12 EDT.** §6.51 ★★: **the founder's masking correction is right and kills
+  §6.47's fallback.** Opened `the-harvest.webp` and confirmed it from the artwork — the cream
+  ground exists _inside_ every subject as well as outside, halftone highlights **are** exposed
+  paper, and every edge is a dot boundary; so background subtraction must punch holes and fringe.
+  The session named `image_remove_background` (subtractive, wrong) from an Adobe toolset that also
+  contains `image_select_subject` / `image_select_by_prompt` (**selection = boundary, correct**).
+  First correction tonight sourced from understanding the medium rather than measuring the
+  machine. §6.52: watch that the session takes the primitive distinction rather than flattening it
+  into "better background removal" — and notes the cut edge could be a style asset, which nobody
+  has raised.
 - **Report #19 — 21:08 EDT.** §6.46 ★: **the constraint dissolves** — Vox collage is still
   elements moved by a compositor, so no video generation, no credits, and every hardware limit
   the session fought for four hours becomes irrelevant. Remotion-over-AE argued concretely, and
