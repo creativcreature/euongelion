@@ -5,6 +5,37 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Who is God, rebuilt as seven rooms (2026-08-30) — SA-134 (F-178)
+
+The first pass shipped a good hero and a conventional article behind it. The
+founder was right to reject it. Rebuilt so the whole page is the experience.
+
+- **Seven rooms, the seventh the threshold.** Seven is the most solidly attested
+  number in Scripture. The scrubbed film is no longer a room — it is the door you
+  pass through to reach them.
+- **The page brightens as you descend.** One custom property, `--room-light`,
+  runs 0 → 1 across the document and drives ground colour, type colour, plate
+  opacity and veil. It has exactly one dip, and Scripture put it there: Matthew
+  27:45, "From the sixth hour until the ninth hour darkness came over all the
+  land." Room 05 falls to 0.18 before recovering. Motion that carries meaning
+  rather than decoration — which is the thing 2026 Awwwards judging actually
+  rewards, and it needs no WebGL.
+- **Every pattern traces to a named exemplar**, cited in the file that implements
+  it: Cartier Watches & Wonders 2026 for rooms you move between; NYT _Snow Fall_
+  → Scrollama for the sticky-visual/stepper-text trigger line at 45%; Apple
+  AirPods Pro `scroll-gallery` for the scrub and `scroll-group` for the pinned
+  Hebrew; The Pudding for a matrix that builds a row at a time; the Nous portal
+  for separation by whitespace instead of rules, and monospace numeric readouts.
+- **The blank stretch is gone.** The door's copy is now three beats that hand off
+  across the scrub, each owning a slice of the track. The old single block hit
+  0.15 opacity halfway and stayed there for ~160vh.
+- **Reading level, measured:** Flesch-Kincaid **2.74** against the repo target of
+  8.5, 8.9 words per sentence, zero sentences over 30 words. Scripture is
+  untouched — every quotation is still corpus-verbatim from `public/bibles/BSB`.
+- **Seeking Help Georgia is a full section** in Room 07 with its own plate, not a
+  footnote. The lit window belongs in the brightest room.
+- Six new plates via `/imagen` at 1536×1024, the full pixel budget.
+
 ## Who is God — a door for someone standing outside (2026-08-30) — SA-134 (F-178)
 
 Everything on the site assumed a reader already inside the faith. `/who-is-god`

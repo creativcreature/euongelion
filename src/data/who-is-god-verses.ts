@@ -231,4 +231,61 @@ export const V = {
     ref: 'Psalm 103:8',
     text: 'The LORD is compassionate and gracious, slow to anger, abounding in loving devotion.',
   },
+  mat27_45: {
+    ref: 'Matthew 27:45',
+    text: 'From the sixth hour until the ninth hour darkness came over all the land.',
+  },
+  mat27_46: {
+    ref: 'Matthew 27:46',
+    text: 'About the ninth hour Jesus cried out in a loud voice, “Eli, Eli, lema sabachthani?” which means, “My God, My God, why have You forsaken Me?”',
+  },
+  mrk15_34: {
+    ref: 'Mark 15:34',
+    text: 'At the ninth hour, Jesus cried out in a loud voice, “Eloi, Eloi, lema sabachthani?” which means, “My God, My God, why have You forsaken Me?”',
+  },
+  luk23_44: {
+    ref: 'Luke 23:44',
+    text: 'It was now about the sixth hour, and darkness came over all the land until the ninth hour.',
+  },
+  luk23_46: {
+    ref: 'Luke 23:46',
+    text: 'Then Jesus called out in a loud voice, “Father, into Your hands I commit My Spirit.” And when He had said this, He breathed His last.',
+  },
+  mat28_6: {
+    ref: 'Matthew 28:6',
+    text: 'He is not here; He has risen, just as He said! Come, see the place where He lay.',
+  },
+  jhn20_27: {
+    ref: 'John 20:27',
+    text: 'Then Jesus said to Thomas, “Put your finger here and look at My hands. Reach out your hand and put it into My side. Stop doubting and believe.”',
+  },
+  '1jn4_10': {
+    ref: '1 John 4:10',
+    text: 'And love consists in this: not that we loved God, but that He loved us and sent His Son as the atoning sacrifice for our sins.',
+  },
+  psa34_18: {
+    ref: 'Psalm 34:18',
+    text: 'The LORD is near to the brokenhearted; He saves the contrite in spirit.',
+  },
+  mat11_28: {
+    ref: 'Matthew 11:28',
+    text: 'Come to Me, all you who are weary and burdened, and I will give you rest.',
+  },
+  isa43_1: {
+    ref: 'Isaiah 43:1',
+    text: 'Now this is what the LORD says— He who created you, O Jacob, and He who formed you, O Israel: “Do not fear, for I have redeemed you; I have called you by your name; you are Mine!',
+  },
+  luk15_20: {
+    ref: 'Luke 15:20',
+    text: 'So he got up and went to his father. But while he was still in the distance, his father saw him and was filled with compassion. He ran to his son, embraced him, and kissed him.',
+  },
+  jhn11_35: { ref: 'John 11:35', text: 'Jesus wept.' },
+  rom8_38: {
+    ref: 'Romans 8:38',
+    text: 'For I am convinced that neither death nor life, neither angels nor principalities, neither the present nor the future, nor any powers,',
+  },
+  rom8_39: {
+    ref: 'Romans 8:39',
+    text: 'neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.',
+  },
 } satisfies Record<string, Verse>
