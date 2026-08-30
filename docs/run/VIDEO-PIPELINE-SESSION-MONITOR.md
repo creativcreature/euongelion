@@ -3,8 +3,11 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:17 EDT — **Report #8**
-**Status:** research phase complete. Layer-1 (**the eye**) offered at 17:13, **still not started**.
+**Last updated:** 2026-08-29 20:20 EDT — **Report #9**
+**Status:** **BUILDING.** Founder authorised the install at 20:14. ffmpeg going into a contained
+`~/ai/` tree; LTX to follow. First code of the session. _(Header below predates this — see §6.16.)_
+
+Layer-1 (**the eye**) offered at 17:13, **still not started**.
 Four consecutive founder messages have been about local video generation instead — the layer the
 session itself called _"the slowest and least controllable part of the whole thing."_ One verdict
 issued and then reversed within five minutes. **No plan approved. Nothing built. Nothing
@@ -560,6 +563,65 @@ outstanding. The session is repeating a state it established earlier and has not
 on — a small error, but precisely the class this document exists to catch: **an assertion about
 current state that was true when first checked and has not been checked since.**
 
+### 6.16 Q7 answered — and Q1 answered by conduct, not by statement
+
+At 20:14 the founder said:
+
+> _"install ffmpeg and lets get LTX going as I need to test that to see if it is worth it.
+> Install it as cleanly as possible so we can get rid of it just as easily. we must be able to
+> get rid of it if we need to."_
+
+**Q7 is answered, and the founder went further than the recommendation.** The session advised
+rung 1 only (80 MB, build the eye, decide the 25.6 GB later). The founder took **rungs 1 and 3
+together** — reasonably, since his stated purpose is to find out whether LTX is worth keeping,
+which cannot be settled by more reading. The removability requirement is stated twice in three
+sentences, which makes the §6.14 containment plan a hard requirement rather than a nicety.
+
+**Q1 — the Monday go-live — is now answered by conduct.** By choosing to start the video install
+on Saturday evening with the go-live roughly 28 hours out, the founder has effectively decided
+not to switch. **This was never stated**, and the record should show that the expensive question
+was resolved by proceeding past it rather than by a decision. Recorded without a view on whether
+the call is right.
+
+### 6.17 ✅ The architecture catch — the best engineering judgement of the session
+
+The session downloaded ffmpeg 9.0.1 from evermeet.cx, then **ran `file` on the binary before
+installing it**:
+
+```
+ffmpeg:  Mach-O 64-bit executable x86_64
+ffprobe: Mach-O 64-bit executable x86_64
+```
+
+> _"x86_64 — that'd run under Rosetta. Getting a native arm64 build instead."_
+
+**This matters more than it looks.** Frame extraction is the eye skill's hot path — it is the
+one operation that runs on every verification cycle. Shipping a Rosetta-translated ffmpeg as the
+foundation of the entire pipeline would have been an invisible tax on everything built on top,
+and nothing would have failed loudly enough to catch it later. Most installs would have taken
+the download at its word.
+
+**One tradeoff it should name.** evermeet publishes a detached signature (`.sig`) with its
+builds. The arm64 replacement is coming from `osxexperts.net`, which — per the links the session
+itself fetched — offers bare `.zip` files. So a **signed x86_64 build has been rejected in favour
+of an unsigned arm64 build.** Both are defensible and osxexperts is the standard community source
+for macOS ARM ffmpeg, but it is a real tradeoff and it has not been stated. A checksum or a
+second-source comparison would close it.
+
+### 6.18 Containment verified independently
+
+At 20:20, this monitor checked the founder's stated hard requirement:
+
+```
+~/ai/bin/ffmpeg, ~/ai/bin/ffprobe    ← present, contained as promised
+~/.cache/huggingface                  28 GB — UNTOUCHED
+ffmpeg on PATH                        not found — nothing installed system-wide
+```
+
+Nothing has leaked into system paths, and the voice-cloning cache is intact. The containment
+commitment from §6.14 is holding so far. This monitor will re-check after the LTX step, which is
+where the 19 GB encoder makes containment actually load-bearing.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -594,6 +656,14 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #9 — 20:20 EDT.** **Build started — first code of the session.** Founder authorised
+  ffmpeg + LTX at 20:14 with removability as a stated hard requirement, taking rungs 1+3 rather
+  than the recommended rung 1. Added §6.16 — **Q1 is now answered by conduct, not by statement.**
+  Added §6.17: the session ran `file` on the downloaded ffmpeg, found **x86_64**, and rejected it
+  rather than ship a Rosetta binary on the eye's hot path — the best engineering judgement of the
+  session; flagged the unnamed tradeoff that it swapped a _signed_ Intel build for an _unsigned_
+  ARM one. Added §6.18 — containment verified independently: `~/ai/bin/` only, nothing on PATH,
+  HF cache still 28 GB untouched.
 - **Report #8 — 20:17 EDT.** **§6.12 resolved.** The session's provenance guess was wrong, but it
   gated deletion behind a question, the founder corrected it (_"I added those models, I have been
   working on voice cloning"_), and it accepted cleanly. Added §6.14 — the correction **improved**
