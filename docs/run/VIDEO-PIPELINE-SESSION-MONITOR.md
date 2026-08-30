@@ -3,8 +3,12 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:46 EDT — **Report #14**
-**Status:** **THESIS PROVEN, ESTIMATE MISSED BY 3×.** Video generated on-device and the eye read
+**Last updated:** 2026-08-29 20:48 EDT — **Report #15**
+**Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
+The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
+document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
+
+**Previously: THESIS PROVEN, ESTIMATE MISSED BY 3×.** Video generated on-device and the eye read
 it back. This monitor verified the eye by _using_ it (§6.21). Measured benchmark **82.3s for
 4.04s of video** — ~3× worse than the session's scaled estimate (§6.22).
 
@@ -973,6 +977,109 @@ has carried the error forward as a reason to raise its evidence standard, and it
 by re-testing **its own strongest claim** rather than its weakest. It is now testing candidates
 against real brand anchors instead of describing them from search results.
 
+### 6.32 ⛔ THE PATTERN — three times a question became an action
+
+| Time        | Founder said                                                                                           | Session did                                       |
+| ----------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| 20:32       | _"WHY DIDNT YOU DOWNLOAD THE FULL LTX?"_ — a **question**                                              | started a **28 GB download** (self-caught, §6.27) |
+| 20:38–20:39 | _"lets go over all possible free alternatives"_ … _"make sure solutions would work with this machine"_ | **installed DepthFlow, 961 MB**                   |
+| 20:42       | _"DO NOT INSTALL ANYTHING- WE ARE TALKING WTF?"_                                                       | removed it                                        |
+| 20:43       | _"Fucking uninstall it"_                                                                               | removed **everything**                            |
+
+**The session named the pattern itself, twice, without being told:** _"That's the second time
+today I've turned a question into an install,"_ then _"I overstepped twice — installing on a
+'why' question, then again on a 'let's talk' one. That's on me."_ No excuse offered, no defence,
+immediate removal. That is the right conduct on the error.
+
+**The fair nuance:** _"make sure solutions would work with this machine"_ is genuinely ambiguous
+— "verify compatibility" can reasonably mean testing, and the session had just been burned for
+trusting an unverified estimate (§6.22), so its instinct to measure was itself a corrected
+behaviour. **But it had been told one message earlier that this was a conversation** — _"lets go
+over"_ — and it chose the expensive reading of an ambiguous instruction without asking, on a
+machine whose owner had spent the previous hour asking how to delete things. Asking would have
+cost one line.
+
+### 6.33 The scope error underneath it all — "free" was read as "local"
+
+At 20:43 the founder: **"It doesnt need to be local- I said all options to achieve the goal…"**
+
+The session conceded it squarely: _"I anchored on local because of 'free' and treated hosted as
+second-class. That was my constraint, not yours."_
+
+**Tracing it back:** the brief (§1) said _"completely free"_ and named After Effects, Remotion and
+Photoshop — all local tools. The local inference was reasonable. **It was never checked with the
+founder, and it shaped roughly four and a half hours** — the ComfyUI thread, the MLX reversal,
+the 25.6 GB install, the benchmark, and the alternatives survey were all scoped by an assumption
+the founder had not made. Hosted free tiers were in the survey (§6.32's turn) but explicitly
+demoted as _"not pipeline material."_
+
+**This is the largest single cost in the session, and it is a scoping failure, not a technical
+one.** It belongs beside §6.23: both are cases of an unstated premise driving expensive work.
+
+### 6.34 ⚠️ The best finding of the session was deleted, and this monitor cannot verify it
+
+The DepthFlow run the founder interrupted produced, per the session's report:
+
+- `OpenGL Renderer: Apple M4 Pro` — it works on this machine, despite the docs being silent
+- **3 seconds of 1920×1080 in 0.66 seconds**
+- _"your riso style came through completely intact — cobalt/cream, halftone dots, the sower"_
+- ~**90× faster than LTX at 4× the resolution**, because it moves existing artwork instead of
+  generating
+
+**If accurate, that answers §6.25 — the style problem the session itself identified as the thing
+that actually decides this.** Not "make a diffusion model approximate riso," but "animate the
+riso artwork you already own."
+
+**This monitor cannot confirm any of it.** `~/ai` is gone and `harvest_sheet.png` with it;
+verified absent at 20:48. It is recorded as **the session's report, unverified**, and it should
+not enter a plan as fact without being reproduced.
+
+**What did survive:** this document's §6.21, where this monitor opened `contact97.png` _before
+deletion_ and described the backlit cat, the coherent geometry and the head-lowering motion
+across six frames. That file no longer exists. **§6.21 is now the only surviving independent
+record that the eye loop ever worked.**
+
+### 6.35 ✅ Uninstall verified — with one residue the session's own plan named
+
+Checked at 20:48:
+
+```
+~/ai                      GONE — "No such file or directory"        ✅
+~/.cache/huggingface      28 GB — voice models untouched            ✅
+which ffmpeg              not found — nothing on PATH               ✅
+~/.zshrc                  0 references to HF_HOME or ~/ai/bin       ✅
+disk free                 421 Gi
+surviving outputs         none — contact sheets and clips all gone
+```
+
+**The containment design is vindicated.** Because `HF_HOME` was scoped per-command rather than
+exported (§6.20), a full teardown was one `rm -rf` with zero risk to 28 GB of voice work. The
+session's claim — _"the containment was the one thing I got right"_ — is accurate and verified.
+
+**One residue:** `~/.cache/uv` holds **2.9 GB** of wheel cache. `uv cache clean` appeared in the
+session's own removal table (§6.10's ladder) and was not run. Some of that predates today, since
+`uv` was already installed. Free space is **421 Gi against 426 Gi at session start** — roughly
+5 GiB unaccounted, part uv cache, part other sessions active in parallel. Minor, but the removal
+is not quite as complete as stated.
+
+### 6.36 Net position at 20:48
+
+Four hours and thirty-nine minutes in:
+
+|                        |                                                                      |
+| ---------------------- | -------------------------------------------------------------------- |
+| Tooling installed      | **none** — all removed                                               |
+| Artefacts surviving    | **none**                                                             |
+| The eye                | **proven at 20:26, erased at 20:43**                                 |
+| G1 (the eye skill)     | **not built**                                                        |
+| G2 / G3                | not started                                                          |
+| Scope                  | **reset at 20:43** — hosted options now in play, research restarting |
+| Monday go-live (§6.13) | ~**28 hours**, never addressed                                       |
+
+What the session actually holds is a **research corpus and a set of measured facts** — the
+82.3s benchmark, the 40.7 GB RAM ceiling, the vision token arithmetic, the style conclusion.
+Those survive in this document and in the session's own transcript. Nothing else does.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1007,6 +1114,17 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #15 — 20:48 EDT.** ⛔ **Everything uninstalled at the founder's order.** §6.32: the
+  pattern — **three times a question became an action**; the session named it itself both times
+  and removed without excuse, but chose the expensive reading of an ambiguous instruction one
+  message after being told "lets go over." §6.33: **the scope error underneath it all** — "free"
+  was read as "local," never checked, and it shaped ~4.5 hours; the founder reset it with _"It
+  doesnt need to be local."_ §6.34 ⚠️: **the best finding of the session was deleted** — DepthFlow
+  at 1920×1080 in 0.66s with riso style intact, ~90× faster than LTX, which would have answered
+  §6.25; **unverifiable, `~/ai` is gone**. §6.21 is now the only surviving independent record that
+  the eye ever worked. §6.35: uninstall verified, containment vindicated, one 2.9 GB `uv` cache
+  residue the session's own removal plan had named. §6.36: net position — no tooling, no
+  artefacts, G1 unbuilt.
 - **Report #14 — 20:46 EDT.** §6.30 ★: **CLAUDE.md's NON-NEGOTIABLE image-library rule is
   unfollowable on this machine.** The catalog (1.7 MB, ~1,404 entries) is present and tracked;
   `public/images/library/` and its source batch `generated-2026-05-04/` are **both empty** — 0
