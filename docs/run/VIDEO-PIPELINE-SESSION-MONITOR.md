@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 21:12 EDT — **Report #20**
+**Last updated:** 2026-08-29 21:20 EDT — **Report #21**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1466,6 +1466,76 @@ Secondary, and unraised by anyone: **the cut-out edge is part of the Vox/paper-c
 Real paper collage has a cut or torn edge. A boundary mask is the natural place to put one — which
 would make the constraint a style asset rather than a problem to solve.
 
+### 6.53 ★★ WHY THE REPO IS PUBLIC — answered: there are two repos, and the wrong one is in use
+
+**The cause, from GitHub's own records:**
+
+| Repo                                 | Visibility  | Created    | Last push              | Size    |
+| ------------------------------------ | ----------- | ---------- | ---------------------- | ------- |
+| **`euongelion`** (the typo spelling) | **PUBLIC**  | 2026-01-18 | **2026-08-30 — today** | 2.77 GB |
+| `euangelion` (correct spelling)      | **PRIVATE** | 2026-02-06 | 2026-02-06             | **0**   |
+| `EUONGELION-Project-HUB`             | PUBLIC      | 2026-01-19 | 2026-01-29             | —       |
+
+`git remote -v` → `https://github.com/creativcreature/euongelion.git`.
+
+**The private repo has never received a single byte.** Its `pushed_at` equals its `created_at` to
+the second and its size is 0 — it was created and abandoned.
+
+**The reconstruction.** On **2026-02-06** the founder created a private `euangelion` intending it
+as the home for the project. The same day, the first commit of this history landed — _"feat:
+initialize Euangelion fresh start (Sprint 0)"_ — and **CLAUDE.md was written that same commit
+saying "GitHub: creativcreature/euongelion (private)"**, verified by `git log -S`. But the working
+tree's remote pointed at the older **public** `euongelion` from January, so the first push went
+there, and every push in the seven months since has too.
+
+**The doc names the public repo and labels it private.** Both halves were written together, and
+the label has been wrong since the first commit. Nothing flipped the repo — **it was never
+private**, and the intended private repo was never used.
+
+Corroborating: the owner's other repos are a deliberate mix of public and private, so public was
+not a global default — it was a per-repo choice made in January for what looks like a scratch
+repo, before the February "fresh start."
+
+### 6.54 ✅ Secrets check — no live credentials exposed
+
+Given a seven-month public history, this monitor scanned tracked files for live credentials.
+
+```
+git ls-files | grep -iE '\.env|secret|credential|\.pem|id_rsa'   →  .env.example only
+git check-ignore .env.local                                        →  ignored (.gitignore:104)
+```
+
+Four **structurally valid Supabase JWTs** are committed in
+`docs/technical/ENVIRONMENT-VARIABLES.md` and its `soul-audit-docs/` copy (lines 68 and 92), one
+`anon` and one `service_role` in each file. **Decoded, their `ref` claim is `abcdefghijklmnop`** —
+a sequential a-to-p placeholder, not a real Supabase project reference. **They are documentation
+examples, not live keys.** Every other match classified as a placeholder (`your-…`, `sk-ant-test`,
+`sk-ant-retry`, and similar).
+
+**Verdict: no live secret exposure found.** The exposure is content and internal documentation —
+including this file — not credentials. The repo also shows **0 stars, 0 forks, 0 watchers**, so
+there is no evidence of third-party interest.
+
+### 6.55 The fix, and the one thing it costs
+
+**Recommended: make `euongelion` private.** One command, instant, keeps the URL, the full history,
+the open PRs and the Cloudflare integration intact:
+
+```
+gh repo edit creativcreature/euongelion --visibility private --accept-visibility-change-consequences
+```
+
+Migrating to the unused private `euangelion` instead would abandon seven months of issues, PRs and
+history and require re-pointing the deploy — more disruption for the same outcome.
+
+**What it costs, and it connects back to §6.37:** the pipeline spec's render stage assumes
+_"GitHub Actions is unlimited free on public repos."_ Going private drops that to **2,000
+minutes/month**. That is the single tradeoff, it is small for Remotion renders of this size, and
+it should be a conscious choice rather than a surprise.
+
+**Not done unilaterally.** Changing repository visibility is an outward-facing, account-level
+change and is the founder's call.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1500,6 +1570,16 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #21 — 21:20 EDT.** §6.53 ★★: **answered why the repo is public — there are two
+  repos.** `euongelion` (typo) is PUBLIC, created 2026-01-18, and holds everything; `euangelion`
+  (correct) is PRIVATE, created 2026-02-06 and **never pushed to — size 0**. CLAUDE.md was written
+  on 2026-02-06 naming the _public_ repo and labelling it private; the remote was left pointing at
+  January's public repo. **Nothing flipped it — it was never private.** §6.54 ✅: scanned seven
+  months of public history for credentials — `.env.local` is ignored, and the four structurally
+  valid Supabase JWTs in `ENVIRONMENT-VARIABLES.md` decode to project ref `abcdefghijklmnop`, a
+  placeholder. **No live secret exposure.** §6.55: fix is one `gh repo edit` to make it private,
+  keeping URL/history/deploy; the only cost is losing unlimited Actions minutes (drops to
+  2,000/mo). Not done unilaterally.
 - **Report #20 — 21:12 EDT.** §6.51 ★★: **the founder's masking correction is right and kills
   §6.47's fallback.** Opened `the-harvest.webp` and confirmed it from the artwork — the cream
   ground exists _inside_ every subject as well as outside, halftone highlights **are** exposed
