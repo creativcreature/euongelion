@@ -1,4 +1,4 @@
-# /who-is-god — Eight Rooms
+# /who-is-god — Seven Rooms, Climbed
 
 Design spec, 2026-08-30. Supersedes the first build of this page (SA-134 / F-178),
 which shipped a well-made hero and then a conventional article. This document is
@@ -36,77 +36,85 @@ centred-ish column of prose with fade-ins. Three specific failures:
 | **Lenis** (~3kB, Darkroom Engineering) runs **on native scroll** — `position: sticky`, anchor links and accessibility keep working — and is built to sync GSAP/parallax off one rAF loop.                                                                                                    | lenis.darkroom.engineering; GitHub                                                      | Already a dependency (`lenis@1.3.17`, `gsap@3.14.2`). Zero install cost.                                     |
 | Scrolljacking breaks JAWS/VoiceOver and can make content **keyboard-unreachable** (WCAG 2.1 failure). Parallax triggers vestibular symptoms. `prefers-reduced-motion` needs more than a blanket `animation: none`.                                                                           | Greenlit Content; Accessible Web; css-scroll-driven.com                                 | Hard constraint. See "What we refuse".                                                                       |
 
-## The spine: the page brightens as you descend
+## The spine: the page brightens as you climb
 
 One idea, and every motion decision serves it.
 
 The page opens in darkness over the face of the deep and ends in full light. That
-is not decoration — it is the shape of the story being told. A single scroll-linked
-custom property `--room-light` runs `0 → 1` across the whole document. It drives:
+is not decoration — it is the shape of the story. A single scroll-linked custom
+property `--room-light` runs `0 → 1` across the whole document. It drives:
 
-- **plate dot density** via the SA-128 halftone engine (`src/components/lab/demos/halftone.ts`) — dots open as light rises
+- **plate opacity and brightness**
 - **ground colour** from `--color-tehom` (#0a1320) toward `--color-scroll` (#efe5d8)
 - **type colour**, inverting from cream-on-navy to navy-on-cream by the last room
 - **veil opacity** over each plate
 
+**The page is CLIMBED, not descended** (founder direction, 2026-08-30). The reader
+lands at the bottom and scrolls up into the light. `.wig-main` is
+`flex-direction: column-reverse`, so the first DOM child — the door — renders at
+the visual foot and Room 07 sits at the top. Scrolling is entirely normal;
+nothing is hijacked.
+
+**Why column-reverse and not reversed markup.** DOM order stays in narrative
+order, so a screen reader, a crawler and the no-JS page all still read the door
+then Room 01 first. Reversing the markup would have made the accessible reading
+order run backwards — the same class of failure as scrolljacking, which this
+page's own research flags as a WCAG 2.1 keyboard and screen-reader break.
+
+**Three things invert with it**, each found by measuring rather than assuming:
+the light spine's within-room progress (the door was reading 1.0 — full daylight
+at the exact moment it should be black), the out-of-range fallbacks (the
+geometrically-first element on screen is now the LAST room), and the film scrub
+(the reader was landing on the final frame and the last beat, with the sequence
+running backwards as they climbed).
+
 **The spine has exactly one dip, and Scripture put it there.** Matthew 27:45:
 _"From the sixth hour until the ninth hour darkness came over all the land."_
-Luke 23:44 says the same. So Room 06 — the crucifixion — is the one room where
-`--room-light` **falls** instead of rising: it climbs to 0.74 on the way in,
-drops to 0.18 across the sixth-to-ninth-hour steps, and recovers past the empty
-tomb. Every other room rises monotonically.
+Luke 23:44 says the same. Room 05 — the crucifixion — is the one room where
+`--room-light` **falls** instead of rising.
 
-That dip is the most defensible motion decision on the page. It is not a designer
-choosing drama; it is the text describing the sky, and the page obeying it.
+**Measured on the climb:** door 0.03 → 0.12 → 0.29 → 0.48 → 0.65 → **Room 05 at
+0.18** → 0.94 → 1.0. Ground travels from near-black navy to cream.
 
-By Room 08 the reader is on cream paper in full light. Nobody has done this because
-nobody else is telling this story; it is derived from the content rather than
-applied to it. It satisfies the two things judges actually reward — a single clear
-point of view, and motion that carries meaning — without a polygon on screen.
+## Seven rooms, and the seventh is the threshold
 
-## Seven rooms, then the eighth
+The count is not arbitrary. Founder direction: **seven, with the seventh as the
+threshold.** Seven is the most solidly attested number in Scripture — the creation
+week, the sevens of Revelation. The scrubbed film is not a room: it is the **door**
+you pass through to reach them, and it sits at the foot of the page where the
+reader lands.
 
-The count is not arbitrary and it is not my chapter list. Seven rooms walk the
-story; the eighth is the threshold.
+| #   | Room                            | Pattern                                                                                           | Plate                             | `--room-light`         |
+| --- | ------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------- | ---------------------- |
+| —   | **The door**                    | Scrubbed film at the visual bottom; three beats hand off across the scrub; the two-ways-up choice | genesis film                      | 0.00                   |
+| 01  | Not a force. Someone.           | Sticky stage + 3 steps                                                                            | `deep`                            | 0.06                   |
+| 02  | A story in four movements       | **Centrepiece.** Stage swaps plate per movement                                                   | `deep → break → rescue → restore` | 0.18                   |
+| 03  | He is not given one name        | Pinned Hebrew at display scale, 15 names                                                          | `names`                           | 0.40                   |
+| 04  | One God. Father, Son, Spirit    | Matrix that builds a row per step                                                                 | —                                 | 0.56                   |
+| 05  | The ninth hour                  | Sticky stage; **the light falls here**                                                            | `rescue`                          | 0.74 → **0.18** → 0.80 |
+| 06  | What being saved actually means | Sticky stage + steps                                                                              | `restore`                         | 0.88                   |
+| 07  | **The threshold**               | Full light. Navy on cream.                                                                        | `help`                            | 1.00                   |
 
-Eight is Scripture's number of new beginning — circumcision on the eighth day
-(Gen 17:12), eight souls carried through the flood (1 Pet 3:20), and the
-resurrection as the day after the seventh, which the fathers called the eighth
-day. It is why **baptistries are octagonal**; Ambrose's inscription for the
-octagonal font at Milan says so outright. For a page whose whole job is carrying
-someone from outside to the threshold, the baptistry is a better structural
-exemplar than a luxury pavilion, because it is load-bearing rather than borrowed:
-the building is shaped like the thing it is for.
-
-So the seven rooms are the story, told in the dark and coming slowly into light.
-Room 08 is a different kind of room — full light, cream paper, navy type, no
-plate behind the words. Crossing into it is the largest single light shift on the
-page, and it is the only transition the reader will consciously notice.
-
-| #   | Room                           | Pattern                                                                 | Plate                             | `--room-light`         |
-| --- | ------------------------------ | ----------------------------------------------------------------------- | --------------------------------- | ---------------------- |
-| 01  | The deep                       | Scrubbed film, **three** typographic beats handing off across the scrub | existing genesis film             | 0.00                   |
-| 02  | Someone, not something         | Sticky stage + 3 steps; takes its first light on "Let there be light"   | `deep`                            | 0.06 → 0.16            |
-| 03  | The story                      | **Centrepiece.** Sticky stage, plate swaps per movement                 | `deep → break → rescue → restore` | 0.16 → 0.42            |
-| 04  | The names                      | Pinned stage, Hebrew at display scale, swaps per step through 15 names  | `names`                           | 0.52                   |
-| 05  | One God, three                 | Sticky matrix building a row per step                                   | — (type only)                     | 0.62                   |
-| 06  | Why Jesus — **the ninth hour** | Sticky stage + steps; the light **falls** here                          | `rescue`                          | 0.74 → **0.18** → 0.80 |
-| 07  | What salvation is              | Sticky stage + steps                                                    | `restore`                         | 0.86                   |
-| —   | **the threshold**              | the one transition the reader notices                                   | —                                 | 0.86 → 1.00            |
-| 08  | The eighth day                 | Full light. Navy on cream. Two equal halves.                            | `help` (in its right half)        | 1.00                   |
-
-**Room 08 carries two things of equal weight**, because being sent out means
-both:
+**Room 07 carries two things of equal weight**, because being sent out means both:
 
 - _If you want to keep going_ — three next steps, ordered by how much they ask.
-- _If what you need right now is a phone number_ — Seeking Help Georgia, at full
-  section weight with its own plate (the lit window), naming what is actually
-  there: crisis support, a bed tonight, food, rent and power, a doctor, a lawyer.
-  Free, printable, no sign-up, nothing to believe first.
+- _If what you need right now is a phone number_ — Seeking Help Georgia at full
+  section weight with its own plate, naming what is actually there: crisis
+  support, a bed tonight, food, rent and power, a doctor, a lawyer. Free,
+  printable, no sign-up, nothing to believe first.
 
-That placement is deliberate. The lit window belongs in the brightest room, and
-the person who needs it should arrive at it in full light rather than find it in
-a footnote — which is what the first build did, and what the founder rejected.
+## Two ways up
+
+Someone opening this at three in the morning does not owe the page a twenty-minute
+climb. The door offers **The climb** (seven rooms) or **The short way** (the same
+story, straight).
+
+Short mode keeps every room, claim, verse and attribution in the DOM and only
+collapses the stepped expansions — so with JavaScript off, or for a crawler, the
+page is still the complete text. Short is something a reader chooses, never a
+truncation imposed on them. Room 07 stays whole in both modes.
+
+**Measured: 42,398 px → 9,814 px, a 77% shorter page.**
 
 ## The nine, used honestly
 
@@ -131,7 +139,7 @@ The structural numbers stay seven and eight, which carry far more weight: seven 
 the most solidly attested number in Scripture, and eight has a building shaped
 like it.
 
-## Room 01 fixes the dead stretch
+## The door fixes the dead stretch
 
 The track shortens from 320vh to 220vh, and the copy becomes three beats that hand
 off rather than one that fades to nothing:
@@ -169,14 +177,17 @@ Specific rewrites: "rupture" → "the break"; "restoration" → "put right";
 everyone on the same footing". Every scripture quotation stays **corpus-verbatim**
 from `public/bibles/BSB` — the prose around it changes, the quotations never do.
 
-## The narration, offered
+## The narration — excluded from this pass
 
-The site already renders devotionals in the founder's cloned voice (SA-043) and
-ships a full audio pipeline. Room 01 offers a listen control. It never autoplays.
-Sound that starts unbidden on a page someone opened at three in the morning is an
-intrusion, not immersion.
+The site has the founder's cloned voice and the SA-043 pipeline
+(`render_el_catalog.py`, ElevenLabs `eleven_v3`), and a page a stranger can listen
+to would be genuinely unique.
 
-Scoped as **phase 2** — the page ships without it if the render is not ready.
+**Founder direction 2026-08-30: "finish the entire overhaul minus audio."** So it
+is out of scope for this pass. When it returns, the hard constraint holds: it runs
+**after all text is final**, because the track stores a `textHash` and any later
+prose edit invalidates it and every chapter mark in it. Dry-run first and report
+the exact character cost before spending.
 
 ## What we refuse, and why
 
@@ -189,6 +200,33 @@ Scoped as **phase 2** — the page ships without it if the render is not ready.
 - **No Web Audio score.**
 - **No hidden gestures.** A page for someone who knows nothing must not reward
   only the confident.
+
+## Performance, and a correction
+
+An earlier measurement of this page reported an **18-second LCP**. That was a
+measurement error worth recording because it is easy to repeat: **LCP stops
+updating at first user input, and a programmatic scroll is not input**, so a
+script that scrolls while observing LCP watches the number climb every time a
+larger element enters view. Measured correctly, sitting still: **LCP 92–456 ms,
+FCP 84–336 ms, CLS 0.069, zero long tasks, 118 fps scrolling.** The page was never
+failing Core Web Vitals.
+
+The real waste was real: **2,327 KB of plates were requested at 24 ms**, before any
+scrolling, for a room thousands of pixels away — because the story stage rendered
+all four movement plates eagerly so it could cross-dissolve between them. Eleven
+`<img>` tags served six files.
+
+Fixed with 960px derivatives for stage slots (62% smaller), rendering only the
+plate in view and the next one, and `loading="lazy"` + `decoding="async"` +
+`fetchPriority="low"` + intrinsic dimensions throughout. The door film's 4.3 MB
+fetch defers to first scroll or main-thread idle.
+
+**Measured: plate bytes before any scroll 2,327 KB → 400 KB, an 83% cut.**
+
+**This reverses the planned upscale to 2400×1600.** Serving the master size would
+roughly double image payload for no visible gain at these display sizes. Masters
+stay in `design-sources/`. Note `next.config.ts` sets `images.unoptimized`, so
+there is no srcset in this repo.
 
 ## Accessibility, as a first-class requirement
 
@@ -229,14 +267,26 @@ They must be converted to `.webp` and inspected at 1:1 before install.
 
 ## Acceptance
 
-- [ ] No point in Room 01's track is empty; measured copy opacity ≥ 0.35 throughout
-- [ ] Reading column centred at every breakpoint; no `border-top` section rules
-- [ ] `scripts/check-readability.mjs` reports FK ≤ 8.5 on the page copy
-- [ ] Seeking Help Georgia is a full room with its own plate
-- [ ] `--room-light` measurably rises 0 → 1 across the document
-- [ ] Every scripture quotation still byte-matches `public/bibles/BSB`
-- [ ] Page is complete prose with JavaScript disabled
-- [ ] Reduced-motion: nothing pinned, nothing animated, still readable
+Ticked only where verified by measurement or by eye. Everything else is open.
+
+- [x] No point in the door's track is empty — three beats hand off across the scrub
+- [x] Reading column centred at every breakpoint; no `border-top` section rules
+- [x] The page loads at the bottom and is climbed; DOM order stays narrative
+- [x] `--room-light` measurably runs 0 → 1 across the climb, with the ninth-hour dip
+- [x] Two ways up; short mode keeps all content in the DOM
+- [x] Seeking Help Georgia is a full section in Room 07 with its own plate
+- [x] Reading level FK ≤ 8.5 (measured 2.74 with the repo's own formula)
+- [x] Plate bytes before scroll under 500 KB (measured 400 KB)
+- [ ] Every scripture quotation still byte-matches `public/bibles/BSB` — not re-verified since the rebuild
+- [ ] Page is complete prose with JavaScript disabled — written for, never re-tested
+- [ ] Reduced-motion: nothing pinned, nothing animated, still readable — written for, never tested
 - [ ] AA contrast verified at both ends of the light spine
 - [ ] Keyboard: every room reachable, focus visible throughout
-- [ ] type-check, lint, all verify gates, build, Workers preview, live verify
+- [ ] Mobile at 375px on the rebuilt page
+- [ ] Rooms 01–07 looked at, not just measured
+- [ ] Full test suite green since the rebuild
+- [ ] Rendered-DOM tests for the seven new components (devo-go trap #1 requires these)
+- [ ] Two plates failing `verify-masters.mjs` (`deep` 54%, `restore` 39% blank paper) regenerated
+- [ ] Plate set passes the four set-level axes — currently 3 of 4 fail
+- [ ] SBL Hebrew resolved (font file absent; licence question open)
+- [ ] Live verify after deploy
