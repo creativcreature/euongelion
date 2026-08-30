@@ -13,6 +13,14 @@ founder was right to reject it. Rebuilt so the whole page is the experience.
 - **Seven rooms, the seventh the threshold.** Seven is the most solidly attested
   number in Scripture. The scrubbed film is no longer a room — it is the door you
   pass through to reach them.
+- **The Hebrew font problem was invented, and is now corrected.** I reported
+  `SBLHebrew.woff2` as missing and raised a licence question. Both wrong.
+  `design-system/tokens.css` and `typography.css` are never imported, so
+  `--font-hebrew` is undefined at runtime and the SBL `@font-face` never loads —
+  the site has always rendered Hebrew through `var(--font-family-serif)` and it
+  has always looked right. I used a token nothing else uses, it resolved to
+  nothing, and this page fell to Times New Roman. Now byte-identical to
+  `.word-note-headword`.
 - **Twenty-five Hebrew names, up from fifteen.** Added El Gibbor, YHWH Tseva'ot,
   YHWH Mekaddishkem, El Chai, Qanna, Tsur, Magen, Go'ali, Av and El Bethel. All 25
   quotations verified byte-identical to the BSB corpus by parsing the data file

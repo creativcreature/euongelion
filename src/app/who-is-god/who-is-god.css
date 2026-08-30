@@ -515,7 +515,15 @@
   text-align: center;
 }
 .wig-name-heb {
-  font-family: var(--font-hebrew, 'SBL Hebrew', 'Times New Roman', serif);
+  /* The site renders Hebrew in the serif stack — see .word-note-headword, which
+     is how every existing Hebrew headword on the site is set. `--font-hebrew` is
+     declared in design-system/tokens.css, but that file is NEVER IMPORTED
+     (globals.css pulls in only typography-craft.css and edition-scroll-motion.css),
+     so the token resolves to nothing and the SBL Hebrew @font-face in
+     design-system/typography.css is never loaded either. Using it here dropped
+     this page's Hebrew to Times New Roman while the rest of the site sat in
+     Instrument Serif. Match the site. */
+  font-family: var(--font-family-serif, 'Instrument Serif', Georgia, serif);
   font-size: clamp(3.5rem, 12vw, 8rem) !important;
   line-height: 1.35;
   color: var(--fg) !important;
