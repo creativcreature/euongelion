@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 21:20 EDT — **Report #21**
+**Last updated:** 2026-08-29 21:26 EDT — **Report #22**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1536,6 +1536,109 @@ it should be a conscious choice rather than a surprise.
 **Not done unilaterally.** Changing repository visibility is an outward-facing, account-level
 change and is the founder's call.
 
+### 6.56 ✅✅ §6.52 watch PASSED — the masking spec is better than this monitor's own sketch
+
+The session did not flatten the distinction. It named the operation that _makes_ it boundary
+rather than subtraction:
+
+> _"Background subtraction makes a **per-pixel alpha decision**… Boundary masking makes **one
+> closed-path decision**… The operation that makes it 'boundary' is taking **external contours
+> only** and filling them. **Interior holes are discarded by definition, not cleaned up
+> afterwards.**"_
+
+Specified as: rough segmentation → **morphological close** (bridge the gaps between dots so the
+subject reads as one solid region) → **`RETR_EXTERNAL`** → smooth the contour → **export as an SVG
+path**.
+
+**And the output choice is the part this monitor did not think of:** the deliverable is _"the
+original opaque PNG plus a path — not an alpha PNG."_ Remotion clips with `<clipPath>`, so
+**interior pixels are never touched at all.** Halftone dots and cream paper survive by
+construction rather than by careful matting, and the mask is vector, resolution-independent and
+hand-editable. That is a strictly better answer than §6.51's select-and-fill sketch.
+
+**One concrete gap.** `morphological close` and `RETR_EXTERNAL` are OpenCV operations, and
+**`cv2` is not installed** — measured at 17:11 (`ModuleNotFoundError: No module named 'cv2'`) and
+still absent, since everything installed tonight was removed. The masking stage therefore has an
+unmet dependency. Trivial to add via `uv`, but the founder has said not to install things, so it
+is a decision rather than a detail.
+
+### 6.57 ★ The real goal, finally stated: lifting a YouTube channel
+
+> _"I need the process mapped against the last 30 days research I just did. **I am trying to lift
+> a youtube channel using this pipeline**… Im running additional research, so this is the first
+> half."_
+
+**This reframes the whole session and partly resolves §6.49.** The virality tension — a hook-first
+spine inside a product whose principle is "spiritual formation over engagement metrics" — is much
+weaker if the destination is a **YouTube channel** rather than a devotional reading surface. The
+session anticipated exactly this at 21:02: _"This style might sit better on the wokeGod side than
+on a devotional reading surface."_ It appears to have been right.
+
+**§6.49 narrows again, and this is now the whole of it:** which surface does the output serve? A
+YouTube documentary channel can carry a viral spine honestly. `euangelion.app`'s devotional
+surfaces cannot. **Nobody has yet said which one this pipeline feeds** — and the answer decides
+whether the Vox grammar is appropriate or a category error.
+
+### 6.58 ⚠️ The research corpus is too thin to map a pipeline against
+
+The founder produced `content/market-research/christian-devotional-content-strategy-on-youtube-and-instagram-raw-v3.md`
+(722 lines) and asked for the process mapped against it. **This monitor read it. It does not yet
+support that weight.**
+
+**Source mix, against a question explicitly about "YouTube and Instagram":**
+
+| Source                   | Clusters    |                                                 |
+| ------------------------ | ----------- | ----------------------------------------------- |
+| TikTok                   | **9** (43%) | not one of the platforms asked about            |
+| Reddit                   | 3           | tool reports this source **degraded / partial** |
+| **YouTube**              | **2** (10%) | ← a named target                                |
+| X · Hacker News · GitHub | 2 each      |                                                 |
+| **Instagram**            | **1** (5%)  | ← the other named target                        |
+
+**The two named target platforms account for 3 of 21 clusters — 14%.** TikTok, unasked-for,
+dominates at 43%.
+
+**There is no clustering.** Every one of the 21 entries reads `1 item`. Nothing is corroborated by
+a second source; the "ranked evidence clusters" are 21 individual posts sorted by score.
+
+**The top-scoring items are hashtag strings, not findings** — e.g. score 41: _"#christiantiktok
+#faithcontent #christiangirl #faithoverfear #jesuslovesyou"_.
+
+**At least five entries are off-topic:** a kids-TV promo (#3), a Reddit original-character art post
+(#14), two Christian-nationalism news items (#19, #21 — the latter scoring 5), a church desktop
+app (#20), and #16 — _"Rank for source/author diversity"_ — which is **a GitHub feature request
+for the `last30days` tool itself**, not evidence about the topic.
+
+**Even the two on-target items are not from the last 30 days.** Both YouTube entries — Mike
+Winger's _"You Need to Start a Christian YouTube Channel"_ and Think Media's _"How to Make Money
+as a Christian Content Creator"_ — carry `date unknown [date:low]`, and Winger's own comments date
+it (_"3 years later… I'm watching now"_). The stated window is 2026-07-31 to 2026-08-30.
+
+**This is not a criticism of the founder, who said it himself** — _"this is the first half. Im
+running additional research."_ It is recorded because **the request was to map the pipeline
+against this corpus**, and a pipeline mapped against 3 on-platform, uncorroborated, partly
+undated items would inherit noise as signal. The honest move is to map against the second half
+too, or to treat this pass as directional only.
+
+### 6.59 Prior channel research exists on this project and has not been cited
+
+The founder has researched this exact question before, and the findings on record bear directly
+on a pipeline meant to "lift a YouTube channel":
+
+- **YPP is a threshold cliff with a grandfather clause** — ~4,000 watch hours until 2027-02-01,
+  then ~8,000.
+- **Shorts do not count** toward that watch-hour threshold.
+- **His own channel data: ~21 views for personal content vs ~1,500 for searchable content.**
+
+That last figure is the most decisive number available for this pipeline's design, and it
+**corroborates the Vox-documentary direction** — topic-driven documentary _is_ searchable
+content; personal devotional reflection is not. So the direction is right, for a reason
+established in earlier research that nobody in this session has surfaced.
+
+**These are prior findings, not verified tonight** — the YPP thresholds in particular should be
+re-confirmed before anything is built on them, and the deadline, if still accurate, is
+approximately five months out.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1570,6 +1673,18 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #22 — 21:26 EDT.** §6.56 ✅✅: **§6.52 watch passed** — masking specified as
+  morphological close → **`RETR_EXTERNAL`** → SVG path, output being _"the original opaque PNG
+  plus a path, not an alpha PNG"_ clipped by Remotion's `<clipPath>`, so interior pixels are never
+  touched. Better than this monitor's own sketch. Gap: **`cv2` is not installed** and everything
+  was removed tonight. §6.57 ★: **real goal stated — lifting a YouTube channel**, which partly
+  resolves §6.49; the open question narrows to _which surface the output serves_. §6.58 ⚠️: **the
+  research corpus is too thin to map against** — 21 entries, **every one an uncorroborated "1
+  item"**, only **3 of 21 (14%) from the two named platforms** while unasked-for TikTok holds 43%,
+  top items are hashtag strings, ≥5 entries off-topic (one is a GitHub feature request for the
+  research tool itself), and both on-target YouTube items are undated with one ~3 years old.
+  §6.59: **prior channel research exists and is uncited** — YPP cliff, Shorts excluded, and the
+  founder's own 21-vs-1,500 views figure, which corroborates the documentary direction.
 - **Report #21 — 21:20 EDT.** §6.53 ★★: **answered why the repo is public — there are two
   repos.** `euongelion` (typo) is PUBLIC, created 2026-01-18, and holds everything; `euangelion`
   (correct) is PRIVATE, created 2026-02-06 and **never pushed to — size 0**. CLAUDE.md was written
