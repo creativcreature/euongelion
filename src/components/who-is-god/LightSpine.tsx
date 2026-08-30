@@ -70,7 +70,12 @@ export default function LightSpine({
       for (let i = 0; i < rooms.length; i++) {
         const r = rooms[i].el.getBoundingClientRect()
         if (r.top <= mid && r.bottom >= mid) {
-          const within = (mid - r.top) / Math.max(r.height, 1)
+          // THE PAGE IS CLIMBED. `.wig-main` is column-reverse, so narrative
+          // progress runs UP the screen while geometry still measures down.
+          // Invert `within` or the spine reads backwards inside every room —
+          // which is exactly what it did on the first reversed build: light 1.0
+          // at the door, where it should be darkest.
+          const within = 1 - (mid - r.top) / Math.max(r.height, 1)
           const next = rooms[i + 1]?.light ?? rooms[i].light
           const base = rooms[i].light + (next - rooms[i].light) * within
 
@@ -87,10 +92,11 @@ export default function LightSpine({
           return base
         }
       }
-      // Above the first room, or past the last.
-      const first = rooms[0].el.getBoundingClientRect()
-      if (first.top > mid) return rooms[0].light
-      return rooms[rooms.length - 1].light
+      // Reversed flow: the geometrically-first element on screen is the LAST
+      // room, so the out-of-range fallbacks flip with it.
+      const lastEl = rooms[rooms.length - 1].el.getBoundingClientRect()
+      if (lastEl.top > mid) return rooms[rooms.length - 1].light
+      return rooms[0].light
     }
 
     const tick = () => {

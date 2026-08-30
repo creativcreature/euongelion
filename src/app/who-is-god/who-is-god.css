@@ -92,21 +92,33 @@
   filter: saturate(1.05) contrast(1.04) brightness(0.86);
 }
 
+/* The veil has to hold type against EVERY frame of the scrub, and the frame the
+   reader now lands on is the brightest in the film — a cream sky. The earlier
+   gradient was tuned for the old darker opening and left the headline barely
+   legible. This adds a band of real darkness across the middle third, where the
+   copy sits, and keeps the edges heavy. */
 .wig-door-veil {
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(
+      to bottom,
+      transparent 16%,
+      rgba(10, 19, 32, 0.62) 32%,
+      rgba(10, 19, 32, 0.68) 62%,
+      transparent 82%
+    ),
     radial-gradient(
-      120% 90% at 50% 55%,
-      rgba(10, 19, 32, 0.08) 0%,
-      rgba(10, 19, 32, 0.66) 60%,
-      rgba(10, 19, 32, 0.92) 100%
+      120% 95% at 50% 50%,
+      rgba(10, 19, 32, 0.34) 0%,
+      rgba(10, 19, 32, 0.74) 62%,
+      rgba(10, 19, 32, 0.94) 100%
     ),
     linear-gradient(
       to bottom,
-      rgba(10, 19, 32, 0.5) 0%,
-      transparent 30%,
-      transparent 64%,
+      rgba(10, 19, 32, 0.55) 0%,
+      transparent 26%,
+      transparent 68%,
       #0a1320 100%
     );
 }
@@ -139,6 +151,9 @@
     calc(var(--center) - var(--film-progress, 0))
   );
   opacity: clamp(0, calc(1 - (var(--dist) / (var(--slice) * 0.72))), 1);
+  /* A last-resort floor for legibility: even if a frame is brighter than the
+     veil expects, the type keeps its own edge. */
+  text-shadow: 0 1px 24px rgba(10, 19, 32, 0.75);
   transform: translate3d(
     0,
     calc((var(--film-progress, 0) - var(--center)) * -3rem),
@@ -229,10 +244,21 @@
 
 /* ---------- rooms ------------------------------------------------------- */
 
+/* THE CLIMB.
+   column-reverse renders the first DOM child at the visual BOTTOM, so the door
+   sits at the foot of the page and Room 07 at the top. The reader lands at the
+   bottom and scrolls UP through the seven rooms into full light.
+
+   The DOM stays in narrative order, which is the whole reason for doing it this
+   way rather than reversing the markup: a screen reader, a crawler and the no-JS
+   page all still read Room 01 first. Reversing the markup would have made the
+   accessible reading order run backwards. */
 .wig-main {
   position: relative;
   z-index: 3;
   background: var(--ground);
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 /* Separation is space and light. No rules. */
@@ -707,4 +733,105 @@
   .wig-rail {
     display: none;
   }
+}
+
+/* ---------- two ways up ------------------------------------------------- */
+
+/* The choice sits steady at the door while the beats move over the film. It
+   does not fade with the scrub — someone deciding whether they have twenty
+   minutes should not have to chase the control up the page. */
+.wig-door-choice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* Clear of the site-wide cookie notice, which sits at the foot of the
+     viewport on a first visit and otherwise buries this control. */
+  bottom: clamp(11rem, 26vh, 16rem);
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  padding: 0 var(--gut);
+}
+
+.wig-ways-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(239, 229, 216, 0.45);
+  margin: 0 0 0.9rem;
+  text-align: center;
+}
+
+.wig-ways-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.wig-way {
+  display: grid;
+  gap: 0.2rem;
+  text-align: left;
+  padding: 0.85rem 1.15rem;
+  min-height: 44px;
+  background: rgba(10, 19, 32, 0.55);
+  border: 1px solid rgba(239, 229, 216, 0.22);
+  color: var(--paper);
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease;
+}
+.wig-way:hover {
+  border-color: rgba(239, 229, 216, 0.5);
+}
+.wig-way[aria-pressed='true'] {
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--ink);
+}
+.wig-way:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+.wig-way-name {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+.wig-way-note {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* SHORT MODE.
+   Nothing is removed from the DOM — every claim, every verse and every
+   attribution stays in the document for a crawler, a screen reader and the
+   no-JS page. Short mode only collapses the stepped expansions, leaving the
+   seven ledes and one verse each. The same story, told straight. */
+.wig[data-mode='short'] .wig-stepper,
+.wig[data-mode='short'] .wig-room-plate {
+  display: none;
+}
+.wig[data-mode='short'] .wig-room {
+  padding-top: clamp(4rem, 10vw, 7rem);
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+}
+/* Keep the first scripture in each room; fold the rest away. */
+.wig[data-mode='short'] .wig-room-inner > .wig-scripture ~ .wig-scripture {
+  display: none;
+}
+.wig[data-mode='short'] .wig-door {
+  height: 130vh !important;
+}
+/* Room 07 is the threshold and the point of the whole page — it stays whole
+   in both modes, help section and all. */
+.wig[data-mode='short'] #room-07 .wig-scripture {
+  display: block;
 }

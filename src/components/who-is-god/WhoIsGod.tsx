@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { V } from '@/data/who-is-god-verses'
 import CompareStage from './CompareStage'
 import LightSpine from './LightSpine'
@@ -280,6 +280,17 @@ function NinthHourStage() {
 export default function WhoIsGod() {
   const rootRef = useRef<HTMLDivElement | null>(null)
 
+  // THE SHORT WAY UP.
+  // Someone opening this at three in the morning does not owe the page a
+  // twenty-minute climb. `short` keeps every room and every claim but drops the
+  // stepped expansions, so the whole thing is the seven ledes and one verse
+  // each — the same story, told straight.
+  //
+  // Default is 'full' deliberately: with JavaScript off, or for a crawler, the
+  // page is the complete text. Short is something a reader chooses, never a
+  // truncation imposed on them.
+  const [mode, setMode] = useState<'full' | 'short'>('full')
+
   // Progressive enhancement gate. Staged entrances start hidden, and that hidden
   // state is scoped in CSS to [data-js="true"] — set only here. Without
   // JavaScript nothing is ever hidden and the page is plain, complete prose.
@@ -287,31 +298,91 @@ export default function WhoIsGod() {
     rootRef.current?.setAttribute('data-js', 'true')
   }, [])
 
+  // THE PAGE IS CLIMBED, NOT DESCENDED.
+  // `.wig-main` is `flex-direction: column-reverse`, so the first DOM child (the
+  // door) renders at the visual BOTTOM and Room 07 sits at the top. The reader
+  // lands at the bottom and scrolls UP through the seven rooms into full light —
+  // out of the deep, ascending.
+  //
+  // Why column-reverse rather than reversing the markup: DOM order stays in
+  // narrative order, so a screen reader, a crawler, and the no-JS page all still
+  // read Room 01 first. Reversing the markup would have made the accessible
+  // reading order run backwards.
+  //
+  // The browser does not reliably land at the visual start of a reversed flex
+  // container, so we put the reader there explicitly, before paint, and disable
+  // scroll restoration so a refresh does not drop them mid-climb.
+  useEffect(() => {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+    const toBottom = () =>
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'instant' as ScrollBehavior,
+      })
+    toBottom()
+    // Images and fonts change the height after first paint; hold the reader at
+    // the bottom until the layout settles.
+    const t1 = window.setTimeout(toBottom, 120)
+    const t2 = window.setTimeout(toBottom, 600)
+    return () => {
+      window.clearTimeout(t1)
+      window.clearTimeout(t2)
+    }
+  }, [])
+
   return (
-    <div className="wig" ref={rootRef}>
+    <div className="wig" ref={rootRef} data-mode={mode}>
       <a className="wig-skip" href="#room-01">
         Skip the opening film
       </a>
       <LightSpine rootRef={rootRef} />
       <ProgressRail />
 
-      {/* THE DOOR. Not a numbered room — the seven rooms are the story, and this
+      <main className="wig-main">
+        {/* THE DOOR. Not a numbered room — the seven rooms are the story, and this
           is what you pass through to reach them. Three beats hand off across the
           scrub so no part of the track is ever empty; the first build faded to
           0.15 opacity at the halfway mark and stayed there, which is what the
           founder saw as "a completely blank section". */}
-      <ScrubbedFilm
-        src="/video/who-is-god-genesis.mp4"
-        poster="/images/site/series/genesis-two-stories-of-creation.webp"
-        track={220}
-        beats={[
-          'You have heard the words God and Jesus.',
-          'This is what they actually mean.',
-          'No church words. Nothing you have to agree to. Just scroll.',
-        ]}
-      />
+        <ScrubbedFilm
+          src="/video/who-is-god-genesis.mp4"
+          poster="/images/site/series/genesis-two-stories-of-creation.webp"
+          track={220}
+          beats={[
+            'You have heard the words God and Jesus.',
+            'This is what they actually mean.',
+            'No church words. Nothing you have to agree to. Start climbing.',
+          ]}
+        >
+          <div className="wig-ways">
+            <p className="wig-ways-label">Two ways up</p>
+            <div className="wig-ways-btns">
+              <button
+                type="button"
+                className="wig-way"
+                aria-pressed={mode === 'full'}
+                onClick={() => setMode('full')}
+              >
+                <span className="wig-way-name">The climb</span>
+                <span className="wig-way-note">
+                  Seven rooms. Twenty minutes.
+                </span>
+              </button>
+              <button
+                type="button"
+                className="wig-way"
+                aria-pressed={mode === 'short'}
+                onClick={() => setMode('short')}
+              >
+                <span className="wig-way-name">The short way</span>
+                <span className="wig-way-note">
+                  The same story, straight. Three minutes.
+                </span>
+              </button>
+            </div>
+          </div>
+        </ScrubbedFilm>
 
-      <main className="wig-main">
         <Room
           id="room-01"
           n="01"

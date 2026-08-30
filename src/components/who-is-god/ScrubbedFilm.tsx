@@ -9,6 +9,8 @@ type Props = {
   track?: number
   /** Lines that hand off across the scrub. Each owns a slice of the track. */
   beats: string[]
+  /** Held steady below the beats — the choice of route. */
+  children?: React.ReactNode
 }
 
 /**
@@ -46,6 +48,7 @@ export default function ScrubbedFilm({
   poster,
   track = 220,
   beats,
+  children,
 }: Props) {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -125,7 +128,14 @@ export default function ScrubbedFilm({
       const rect = section.getBoundingClientRect()
       const scrollable = rect.height - window.innerHeight
       if (scrollable <= 0) return 0
-      return Math.min(Math.max(-rect.top, 0), scrollable) / scrollable
+      const geometric =
+        Math.min(Math.max(-rect.top, 0), scrollable) / scrollable
+      // THE FILM IS CLIMBED TOO. The door sits at the visual bottom of a
+      // column-reverse page, so the reader lands at its geometric END. Invert,
+      // or the reader opens on the last frame and the last beat, and the whole
+      // sequence runs backwards as they ascend. Landing = progress 0 = darkness
+      // over the deep; climbing brings the light up.
+      return 1 - geometric
     }
 
     const tick = () => {
@@ -159,6 +169,10 @@ export default function ScrubbedFilm({
       className="wig-door"
       style={{ height: `${track}vh` }}
       data-beats={beats.length}
+      /* The reader lands here, in the dark over the deep. Without this the light
+         spine has no anchor at the foot of the page and falls back to the last
+         room's value — full light, at the exact moment it should be black. */
+      data-light="0"
     >
       <div className="wig-door-stage">
         {reduced ? (
@@ -205,8 +219,10 @@ export default function ScrubbedFilm({
           ))}
         </div>
 
+        {children ? <div className="wig-door-choice">{children}</div> : null}
+
         <p className="wig-door-hint" aria-hidden="true">
-          Scroll
+          Scroll up
         </p>
       </div>
     </div>

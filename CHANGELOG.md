@@ -13,6 +13,26 @@ founder was right to reject it. Rebuilt so the whole page is the experience.
 - **Seven rooms, the seventh the threshold.** Seven is the most solidly attested
   number in Scripture. The scrubbed film is no longer a room — it is the door you
   pass through to reach them.
+- **The page is climbed, not descended.** Founder direction: you start at the
+  bottom and work north. `.wig-main` is `column-reverse`, so the door renders at
+  the visual foot and Room 07 at the top; the reader lands at the bottom and
+  scrolls up into full light. DOM order stays narrative, so screen readers,
+  crawlers and the no-JS page still read the door then Room 01 first - reversing
+  the markup instead would have made the accessible reading order run backwards.
+  Three things had to invert with it, each caught by measuring: the light spine's
+  within-room progress (the door was reading full daylight where it should be
+  black), the out-of-range fallbacks, and the film's scrub (the reader was landing
+  on the final frame and the last beat). Measured on the climb: door 0.03 to 1.0
+  at Room 07, with the ninth-hour dip to 0.18 intact.
+- **Two ways up.** Someone opening this at three in the morning does not owe the
+  page twenty minutes. The door offers the full climb or the short way. Short mode
+  keeps every room, claim and verse in the DOM and only collapses the stepped
+  expansions, so no-JS and crawlers still get the complete text; Room 07 and
+  Seeking Help Georgia stay whole in both. Measured 42,398px to 9,814px, 77%
+  shorter.
+- **The door veil rebalanced** - landing at the bottom means landing on the
+  brightest frame in the film, and the old gradient left the headline barely
+  legible.
 - **Image loading fixed, after correcting my own measurement.** An 18-second LCP
   I reported earlier was a measurement artifact - LCP stops updating at first user
   input, and a programmatic scroll is not input. Measured properly the page does
