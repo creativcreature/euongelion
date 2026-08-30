@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:35 EDT — **Report #12**
+**Last updated:** 2026-08-29 20:41 EDT — **Report #13**
 **Status:** **THESIS PROVEN, ESTIMATE MISSED BY 3×.** Video generated on-device and the eye read
 it back. This monitor verified the eye by _using_ it (§6.21). Measured benchmark **82.3s for
 4.04s of video** — ~3× worse than the session's scaled estimate (§6.22).
@@ -838,6 +838,80 @@ regardless of clip length, and model load **~21s per process**. The repo ships
 `serve_ltx_mlx.py`; running it as a persistent server amortises both. For one-off runs that is
 noise — for a pipeline it is most of the per-clip overhead.
 
+### 6.27 ✅ It caught its own second error unprompted, and the cleanup verifies
+
+Before the founder could object again, the session stopped itself:
+
+> _"You asked why, and I answered by starting a 28 GB download you didn't authorise — on a
+> machine where you'd just told me space was tight. Stopping it."_
+
+That is the right catch: it had converted a **question** into a 28 GB action. Killed and cleaned.
+
+**Cleanup verified independently at 20:41:**
+
+```
+~/ai                                    24 GB — back to pre-13B exactly
+~/ai/ltx/models/LTX/                    2B safetensors 5.9 GB + text_encoder 18 GB + tokenizer 808 K
+~/ai/ltx/ltx-mlx/models/LTX/"LTX 13B"   4.0 K  ← empty scaffold dir + DOWNLOAD.md, NOT weights
+~/.cache/huggingface                    28 GB — still untouched
+running download processes              none
+```
+
+The session's claim _"Back to 24 GB, exactly where it was"_ is accurate. The only `13b` artefacts
+remaining are two sample videos that shipped with the repo clone and a 4 KB placeholder directory.
+
+It then laid the real decision out as three options with honest odds rather than choosing again:
+pull the 13B (~30 min, +28.58 GB, decent chance it OOMs unpatched), patch staged loading first,
+or treat the 2B result as the floor rather than the verdict. **Unanswered.**
+
+### 6.28 ⚠️ COST-RULE CONFLICT ACROSS SESSIONS — "completely free" is being violated right now
+
+At 20:38 the founder wrote: _"while my other session tests LTX- lets go over all possible free
+alternatives here."_
+
+**The other session is real.** This monitor located it: `d8f640ad`, active as of 20:39. So there
+is no coordination gap — but there is a **direct contradiction between the two sessions' cost
+rules.**
+
+Session `5c`'s cost answer (§6.9) named exactly one thing as forbidden:
+
+> **"Never: the Comfy Cloud MCP."** … _"The `mcp**comfyui**_` tools you already have installed
+> charge per generation. Don't use them."\*
+
+Session `d8f640ad` is, at this moment, **running LTX on ComfyUI Cloud** — and confirming the
+billing in its own words:
+
+> _"It queued — and notably **no paid-API warning this time**… That's the **GPU-billed path
+> confirmed in practice**, not just in the estimate."_
+> _"4.84 seconds at 1280×704, 25fps — nearly three times longer than the local run, and it
+> **cost GPU-seconds** rather than credits."_
+
+**So leak #1 from the cost answer is not hypothetical — it is open and spending, in parallel,
+on the same task.** One session has ruled the Cloud MCP out as the single "never" of the free
+stack; the other is using it as its primary test path. This monitor takes no view on whether the
+spend is worth it — the founder may well have authorised it deliberately as the cloud/local
+comparison. **It is recorded because the two sessions are operating under opposite rules and
+neither appears to know it.**
+
+_(This monitor has not quantified the spend and is not asserting it is large.)_
+
+### 6.29 ✅ Independent convergence — two sessions reached the same finding separately
+
+Worth recording because it materially raises confidence in §6.23 and §6.24. Session `d8f640ad`,
+with no access to this document and no part in `5c`'s reasoning, independently concluded at
+20:36:
+
+> _"Don't uninstall. Local LTX is 24GB against **398GB free** — **disk was never the
+> constraint.** The premise that led to picking 2B over 13B was **wrong**; it's **RAM** that's
+> tight (48GB against **~40.7GB resident**)."_
+
+That is the same disk-premise error (§6.23) and the same 40.7 GB RAM ceiling (§6.24), reached
+independently, in the same wording of magnitude. Its 398 GB against this monitor's 426 GiB is
+consistent — the gap is the 24 GB of LTX weights downloaded in between.
+
+**Three separate observers now agree:** disk was never the constraint, RAM is, and the 2B choice
+rested on a premise that had already been disproven.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -872,6 +946,15 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #13 — 20:41 EDT.** §6.27: session **caught its own unauthorised 28 GB download** and
+  stopped it; cleanup verified — back to 24 GB, the leftover "LTX 13B" is a **4 KB scaffold, not
+  weights**, HF cache still 28 GB. Decision laid out as three honest options, unanswered.
+  §6.28 ⚠️: **cost-rule conflict** — `5c` ruled the Comfy Cloud MCP the single "never" of the free
+  stack; parallel session `d8f640ad` is **running LTX on it right now and confirming GPU-second
+  billing in its own words.** Leak #1 is open and spending; the two sessions hold opposite rules
+  and neither knows. §6.29: **independent convergence** — `d8f640ad` separately reached the same
+  "disk was never the constraint / RAM is / ~40.7 GB resident" conclusion, corroborating §6.23
+  and §6.24.
 - **Report #12 — 20:35 EDT.** Founder pushed back hard (_"WHY DIDNT YOU DOWNLOAD THE FULL
   LTX?"_). §6.23: **the session chose the 2B on a premise it had itself disproven** — it told the
   founder "space is not your constraint" at 17:31 and then cited tight space as its reason at
