@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:48 EDT — **Report #15**
+**Last updated:** 2026-08-29 20:52 EDT — **Report #16**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1080,6 +1080,87 @@ What the session actually holds is a **research corpus and a set of measured fac
 82.3s benchmark, the 40.7 GB RAM ceiling, the vision token arithmetic, the style conclusion.
 Those survive in this document and in the session's own transcript. Nothing else does.
 
+### 6.37 🚨 THE REPO IS PUBLIC — CLAUDE.md says it is private. This document is on the internet.
+
+Checked while verifying the GitHub Actions free-minutes maths for the pipeline spec:
+
+```
+gh repo view creativcreature/euongelion  ->  {"isPrivate": false, "visibility": "PUBLIC"}
+
+curl (unauthenticated, no token) https://raw.githubusercontent.com/creativcreature/
+      euongelion/feat/seeking-help-georgia/docs/run/VIDEO-PIPELINE-SESSION-MONITOR.md
+  ->  HTTP 200, serves this file's contents
+```
+
+**`CLAUDE.md:7` states: "GitHub: creativcreature/euongelion (**private**)". It is not.** Verified
+two independent ways, including an unauthenticated fetch that returned this document's own first
+lines.
+
+**This monitor's part in it.** The founder asked for this file to be committed and pushed. It was
+pushed — **sixteen times — without checking repository visibility**, on the strength of
+CLAUDE.md's claim. That is exactly the failure this document exists to catch, committed by this
+document: _an assertion taken from a doc rather than verified against reality._ The project's own
+standing rule is "never say live, deployed, fixed or working from a status code alone — fetch and
+grep the body." The same rule applies to "private," and it was not applied.
+
+**What is now publicly readable**, in this file alone: the founder's verbatim messages including
+profanity and frustration, session-conduct analysis, disk and cache inventory, the voice-cloning
+work, cost and licensing deliberations including headcount questions, and the status of the
+Monday go-live (_"None of it is written"_). No credentials or secrets — but candid internal
+material about a business, attributable and quotable.
+
+**The wider exposure is far larger than this file:** the entire repository is public — production
+docs, decision records, content strategy, devotional content, the tracking spine.
+
+**Not acted on unilaterally.** Deleting the file now would not remove it from history; only a
+force-push or making the repo private would. Both are the founder's call. **This report has been
+committed but deliberately NOT pushed**, pending that decision.
+
+**One consequence that cuts the other way:** the session's pipeline spec assumes _"GitHub Actions
+is unlimited free on public repos (2,000 min/month private)."_ Because the repo really is public,
+**the unlimited figure is the correct one** — the free-render layer of the spec stands, for a
+reason the founder may not want to keep.
+
+### 6.38 ✅ The session found free GPU and named its own error
+
+At 20:44, re-grounded on the actual goal, the session produced the correction that reframes the
+whole session:
+
+| Platform       | Free allowance                           | Local disk |
+| -------------- | ---------------------------------------- | ---------- |
+| **Kaggle**     | **30 GPU hrs/week guaranteed** (T4/P100) | **0**      |
+| Google Colab   | 15–30 hrs/week                           | **0**      |
+| HF ZeroGPU     | 3.5 min/day (H200)                       | 0          |
+| GitHub Actions | unlimited on public repos                | 0          |
+
+> _"~60 free GPU hours a week between Colab and Kaggle, no credit card… Every constraint I spent
+> this session working around — the 20 GPU cores, the 48 GB ceiling, the fp8-breaks-on-Metal
+> problem, the 25 GB of weights — evaporates. **The local install was the wrong move and I should
+> have found this first.**"_
+
+It also restated the founder's goal in order and admitted it had spent the session on steps 2–3
+while step 1 — the eye — _"needs almost none of that."_ **Correct, and it is the second time
+today the session has reversed itself on evidence rather than defended a position.**
+
+### 6.39 Watch items for the pipeline spec now being written
+
+The founder asked at 20:46: _"Spec a full pipeline, whats actually feasible given credit
+constraints… seems like generally ill get one video from this pipeline a day if im lucky."_
+Four things this monitor will hold the spec to:
+
+1. **Test the founder's "one a day" hypothesis, don't flatter it.** With ~60 free GPU hrs/week,
+   Seedance at 100 credits/day, and DepthFlow over an existing library, the honest answer is
+   likely _far_ more than one — on the right path. Accepting the premise unexamined would repeat
+   §6.23.
+2. **The eye's rate-limit budget is the binding constraint nobody has costed.** Per §6.9, one
+   30-second clip costs ~11,200 tokens to review via contact sheets. At 3–10 review iterations
+   per video that is 34k–112k tokens _per video, for the eye alone_, against a Claude subscription
+   whose currency is rate limit. **That, not GPU hours, is most likely the real daily cap.**
+3. **The DepthFlow numbers are unverified and deleted** (§6.34). They must not enter the spec as
+   fact.
+4. **Style still decides it** (§6.25). Any spec resting on generative footage inherits the riso
+   mismatch, whoever's GPU it runs on.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1114,6 +1195,14 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #16 — 20:52 EDT.** 🚨 §6.37: **the repo is PUBLIC; CLAUDE.md:7 says private.** Verified
+  by `gh` and by an unauthenticated `curl` returning HTTP 200 on this file. This document was
+  pushed sixteen times without checking visibility — this monitor's own failure, of exactly the
+  kind it exists to catch. **Committed but deliberately not pushed** pending the founder's call.
+  §6.38: the session found **~60 free GPU hrs/week (Kaggle + Colab)** and said plainly _"the local
+  install was the wrong move and I should have found this first."_ §6.39: four watch items set for
+  the pipeline spec — chiefly that the **eye's rate-limit budget, not GPU hours, is the likely
+  daily cap**, and that the founder's "one a day" hypothesis must be tested rather than accepted.
 - **Report #15 — 20:48 EDT.** ⛔ **Everything uninstalled at the founder's order.** §6.32: the
   pattern — **three times a question became an action**; the session named it itself both times
   and removed without excuse, but chose the expensive reading of an ambiguous instruction one
