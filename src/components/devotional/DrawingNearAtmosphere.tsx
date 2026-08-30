@@ -32,12 +32,12 @@
  * alpha. Type is never competing with more than a faint tone.
  */
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { sampleGrid, drawHalftone } from '@/components/lab/demos/halftone'
 
 /** Peak alpha of the texture. Founder: the images should fade more than not. */
 const PEAK_LIGHT = 0.3
-const PEAK_DARK = 0.38
+const PEAK_DARK = 0.5
 /**
  * Output cell in CSS px. Founder: the dots were "way too large" and the plate
  * read as an abstract field rather than the picture. Fine enough that the
@@ -128,6 +128,8 @@ export default function DrawingNearAtmosphere({
   heroSrc?: string
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  // Bumped when the reader changes theme, to re-read the palette.
+  const [rebuild, setRebuild] = useState(0)
 
   useEffect(() => {
     const cv: HTMLCanvasElement | null = canvasRef.current
@@ -145,7 +147,16 @@ export default function DrawingNearAtmosphere({
     const ink = readToken(shell, '--mock-ink', '#141414')
     const darkPaper = luminanceOf(paper) < 0.5
     const peak = darkPaper ? PEAK_DARK : PEAK_LIGHT
-    canvas.style.mixBlendMode = darkPaper ? 'screen' : 'multiply'
+    // ALWAYS multiply. Founder: on dark mode the ground must darken against the
+    // page, not lighten it.
+    //
+    // The trap this fixes: on the dark themes `--mock-ink` is the TEXT colour,
+    // which is cream (#efe5d8 on navy, #d8d0c0 on night). Painting dots in it
+    // and screening produced light dots — the opposite of ink on stock. So the
+    // dot colour is the reader's ink only when that ink is actually dark, and a
+    // deep tone otherwise, and the blend never changes.
+    canvas.style.mixBlendMode = 'multiply'
+    const dot = luminanceOf(ink) < 0.5 ? ink : '#05060f'
 
     let bands: Band[] = []
     let plates = new Map<string, HTMLCanvasElement>()
@@ -204,7 +215,7 @@ export default function DrawingNearAtmosphere({
         cell: CELL,
         mode: 'still',
         t: 0,
-        ink,
+        ink: dot,
         paper: 'rgba(0,0,0,0)',
         gain: 1.0,
       })
@@ -370,13 +381,33 @@ export default function DrawingNearAtmosphere({
     void build()
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onResize)
+
+    // The reader can change theme mid-reading. Colours and blend are read once
+    // at mount, so without this the layer keeps the palette it started with —
+    // light-theme ink sitting on a night-theme page.
+    const themeWatch = new MutationObserver(() => setRebuild((n) => n + 1))
+    themeWatch.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    })
+    const shellWatch = new MutationObserver(() => setRebuild((n) => n + 1))
+    const home = document.querySelector('.mock-home')
+    if (home) {
+      shellWatch.observe(home, {
+        attributes: true,
+        attributeFilter: ['data-reading-theme'],
+      })
+    }
+
     return () => {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onResize)
       window.clearTimeout(resizeTimer)
+      themeWatch.disconnect()
+      shellWatch.disconnect()
       if (raf) cancelAnimationFrame(raf)
     }
-  }, [heroSrc])
+  }, [heroSrc, rebuild])
 
   return (
     <canvas

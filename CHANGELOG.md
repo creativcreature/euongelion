@@ -90,6 +90,13 @@ out, and leaving clean paper before the next one begins.
   starts behind the first scripture and is gone by the reflection. `two-minute-open-v2`
   pins that module order, so sections 1 and 4 are those two modules and no shared
   component needed a hook.
+- **Dark mode darkens rather than lightens.** The layer was screening on dark
+  themes, which lifted the page. It now always multiplies. The trap: on the dark
+  themes `--mock-ink` is the TEXT colour and is cream (#efe5d8 on navy), so
+  painting dots in it could only lighten — the dot colour is the reader's ink
+  only when that ink is actually dark, and a deep tone otherwise.
+- The layer now rebuilds when the reader changes theme mid-reading; palette and
+  blend were previously read once at mount and went stale on a switch.
 - Session documented at `handoff/2026-08-30-drawing-near-and-image-intensity.md`
   — what shipped with its evidence, what is half-done, and the traps (Workers
   preview self-fetching production for a new devotional; audio living in R2 and
