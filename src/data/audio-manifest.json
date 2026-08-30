@@ -24954,6 +24954,813 @@
     "mix": "scored-stereo-v1",
     "sha": "465f798390"
   },
+  "drawing-near-day-1": {
+    "src": "/audio/drawing-near-day-1.m4a",
+    "duration": 1242.2,
+    "words": 3439,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 10228881,
+    "textHash": "4acffdcb73ab",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 26.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 49.2,
+        "label": "Crowned First",
+        "module": 3
+      },
+      {
+        "t": 144.5,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 150.5,
+        "label": "A Short Prayer",
+        "module": 5
+      },
+      {
+        "t": 164.6,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 214.8,
+        "label": "An Image Is a Claim",
+        "module": 8
+      },
+      {
+        "t": 339.7,
+        "label": "Word study",
+        "module": 10
+      },
+      {
+        "t": 368.4,
+        "label": "Scripture",
+        "module": 12
+      },
+      {
+        "t": 394.0,
+        "label": "Hiding Comes First",
+        "module": 13
+      },
+      {
+        "t": 522.2,
+        "label": "The Question He Did Not Need to Ask",
+        "module": 14
+      },
+      {
+        "t": 574.6,
+        "label": "Ancient and Now",
+        "module": 15
+      },
+      {
+        "t": 611.5,
+        "label": "Scripture",
+        "module": 16
+      },
+      {
+        "t": 653.3,
+        "label": "The Reason Is In the Text",
+        "module": 17
+      },
+      {
+        "t": 810.3,
+        "label": "The Gate That Was Never Reopened",
+        "module": 20
+      },
+      {
+        "t": 904.8,
+        "label": "Scripture",
+        "module": 21
+      },
+      {
+        "t": 937.1,
+        "label": "Two Ways to Be Far Off",
+        "module": 22
+      },
+      {
+        "t": 1030.2,
+        "label": "Reflect",
+        "module": 23
+      },
+      {
+        "t": 1036.2,
+        "label": "Practice",
+        "module": 24
+      },
+      {
+        "t": 1041.7,
+        "label": "Crowned, And Hiding",
+        "module": 25
+      },
+      {
+        "t": 1112.9,
+        "label": "Where the Week Is Going",
+        "module": 26
+      },
+      {
+        "t": 1148.8,
+        "label": "Prayer",
+        "module": 28
+      },
+      {
+        "t": 1174.5,
+        "label": "Carry This",
+        "module": 29
+      },
+      {
+        "t": 1180.8,
+        "label": "One Question",
+        "module": 30
+      },
+      {
+        "t": 1205.0,
+        "label": "A Voice From the Church",
+        "module": 31
+      }
+    ]
+  },
+  "drawing-near-day-2": {
+    "src": "/audio/drawing-near-day-2.m4a",
+    "duration": 1175.4,
+    "words": 3147,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 9673225,
+    "textHash": "9fe80fdb359f",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 8.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 27.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 50.8,
+        "label": "The Offering Is the Nearness",
+        "module": 3
+      },
+      {
+        "t": 102.1,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 108.8,
+        "label": "A Short Prayer",
+        "module": 5
+      },
+      {
+        "t": 121.0,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 138.6,
+        "label": "Holiness Is Not Being Very Good",
+        "module": 8
+      },
+      {
+        "t": 285.6,
+        "label": "Scripture",
+        "module": 10
+      },
+      {
+        "t": 360.7,
+        "label": "Three Times, And Only Here",
+        "module": 11
+      },
+      {
+        "t": 443.3,
+        "label": "Word study",
+        "module": 12
+      },
+      {
+        "t": 469.2,
+        "label": "Why Blood, and Who Gave It",
+        "module": 14
+      },
+      {
+        "t": 590.1,
+        "label": "One Man, One Room, One Day",
+        "module": 15
+      },
+      {
+        "t": 638.7,
+        "label": "Scripture",
+        "module": 16
+      },
+      {
+        "t": 681.7,
+        "label": "The System Named Its Own Ceiling",
+        "module": 17
+      },
+      {
+        "t": 818.0,
+        "label": "Ancient and Now",
+        "module": 18
+      },
+      {
+        "t": 855.0,
+        "label": "The Coal Came From the Altar",
+        "module": 20
+      },
+      {
+        "t": 913.2,
+        "label": "Reflect",
+        "module": 22
+      },
+      {
+        "t": 918.6,
+        "label": "Practice",
+        "module": 23
+      },
+      {
+        "t": 925.1,
+        "label": "As Near As Blood Could Bring You",
+        "module": 24
+      },
+      {
+        "t": 1030.4,
+        "label": "A Shadow Has the Right Shape",
+        "module": 25
+      },
+      {
+        "t": 1078.1,
+        "label": "Prayer",
+        "module": 27
+      },
+      {
+        "t": 1102.9,
+        "label": "Carry This",
+        "module": 28
+      },
+      {
+        "t": 1109.5,
+        "label": "One Question",
+        "module": 29
+      },
+      {
+        "t": 1135.5,
+        "label": "A Voice From the Church",
+        "module": 30
+      }
+    ]
+  },
+  "drawing-near-day-3": {
+    "src": "/audio/drawing-near-day-3.m4a",
+    "duration": 1256.3,
+    "words": 3446,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 10345765,
+    "textHash": "4600b40f04e0",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 22.8,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 44.9,
+        "label": "One Word, Not a Complaint",
+        "module": 3
+      },
+      {
+        "t": 177.2,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 182.4,
+        "label": "A Short Prayer",
+        "module": 5
+      },
+      {
+        "t": 191.8,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 227.4,
+        "label": "Two Things Tore",
+        "module": 8
+      },
+      {
+        "t": 380.9,
+        "label": "Word study",
+        "module": 10
+      },
+      {
+        "t": 407.3,
+        "label": "Scripture",
+        "module": 12
+      },
+      {
+        "t": 428.3,
+        "label": "Not Destroyed. Filled Full.",
+        "module": 13
+      },
+      {
+        "t": 541.5,
+        "label": "The Same Verb, Opened",
+        "module": 14
+      },
+      {
+        "t": 619.6,
+        "label": "Ancient and Now",
+        "module": 15
+      },
+      {
+        "t": 655.0,
+        "label": "Scripture",
+        "module": 16
+      },
+      {
+        "t": 672.2,
+        "label": "What God Was Never Asking For",
+        "module": 17
+      },
+      {
+        "t": 772.6,
+        "label": "Scripture",
+        "module": 18
+      },
+      {
+        "t": 794.1,
+        "label": "The Man Who Could Not Look",
+        "module": 21
+      },
+      {
+        "t": 916.4,
+        "label": "Finished Is Not the Same as Over",
+        "module": 22
+      },
+      {
+        "t": 1006.8,
+        "label": "Reflect",
+        "module": 24
+      },
+      {
+        "t": 1011.8,
+        "label": "Practice",
+        "module": 25
+      },
+      {
+        "t": 1017.7,
+        "label": "The Day the Week Turns On",
+        "module": 26
+      },
+      {
+        "t": 1119.1,
+        "label": "Why the Direction Matters",
+        "module": 27
+      },
+      {
+        "t": 1164.9,
+        "label": "Prayer",
+        "module": 28
+      },
+      {
+        "t": 1186.1,
+        "label": "Carry This",
+        "module": 29
+      },
+      {
+        "t": 1191.3,
+        "label": "One Question",
+        "module": 30
+      },
+      {
+        "t": 1214.7,
+        "label": "A Voice From the Church",
+        "module": 31
+      }
+    ]
+  },
+  "drawing-near-day-4": {
+    "src": "/audio/drawing-near-day-4.m4a",
+    "duration": 1167.5,
+    "words": 3045,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 9604544,
+    "textHash": "b4c90bcd5054",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.4,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 23.3,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 49.1,
+        "label": "A Freedom Word",
+        "module": 3
+      },
+      {
+        "t": 96.8,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 101.5,
+        "label": "A Short Prayer",
+        "module": 5
+      },
+      {
+        "t": 112.5,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 150.1,
+        "label": "Point By Point",
+        "module": 8
+      },
+      {
+        "t": 257.3,
+        "label": "Scripture",
+        "module": 10
+      },
+      {
+        "t": 290.2,
+        "label": "The Request That Was Refused",
+        "module": 11
+      },
+      {
+        "t": 408.8,
+        "label": "Word study",
+        "module": 12
+      },
+      {
+        "t": 433.8,
+        "label": "Scripture",
+        "module": 14
+      },
+      {
+        "t": 481.8,
+        "label": "With Open Face",
+        "module": 15
+      },
+      {
+        "t": 610.3,
+        "label": "Scripture",
+        "module": 18
+      },
+      {
+        "t": 649.7,
+        "label": "Not a Petitioner",
+        "module": 19
+      },
+      {
+        "t": 784.3,
+        "label": "A Royal Priesthood",
+        "module": 20
+      },
+      {
+        "t": 841.9,
+        "label": "Ancient and Now",
+        "module": 21
+      },
+      {
+        "t": 879.2,
+        "label": "Reflect",
+        "module": 22
+      },
+      {
+        "t": 884.3,
+        "label": "Practice",
+        "module": 23
+      },
+      {
+        "t": 890.8,
+        "label": "The Standing Changed",
+        "module": 24
+      },
+      {
+        "t": 1010.7,
+        "label": "Every Ground Is Given Before the Invitation",
+        "module": 25
+      },
+      {
+        "t": 1067.5,
+        "label": "Prayer",
+        "module": 27
+      },
+      {
+        "t": 1098.7,
+        "label": "Carry This",
+        "module": 28
+      },
+      {
+        "t": 1105.6,
+        "label": "One Question",
+        "module": 29
+      },
+      {
+        "t": 1131.7,
+        "label": "A Voice From the Church",
+        "module": 30
+      }
+    ]
+  },
+  "drawing-near-day-5": {
+    "src": "/audio/drawing-near-day-5.m4a",
+    "duration": 1114.7,
+    "words": 2828,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 9182985,
+    "textHash": "a23d83d00a51",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.7,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 24.1,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 49.5,
+        "label": "The Order of the Sentence",
+        "module": 3
+      },
+      {
+        "t": 94.4,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 99.8,
+        "label": "A Short Prayer",
+        "module": 5
+      },
+      {
+        "t": 111.6,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 142.3,
+        "label": "Three Consequences, In Order",
+        "module": 8
+      },
+      {
+        "t": 262.7,
+        "label": "Scripture",
+        "module": 10
+      },
+      {
+        "t": 280.2,
+        "label": "Not Instead Of. More Than.",
+        "module": 11
+      },
+      {
+        "t": 400.6,
+        "label": "Both Times, At a Table",
+        "module": 12
+      },
+      {
+        "t": 452.7,
+        "label": "Word study",
+        "module": 13
+      },
+      {
+        "t": 480.3,
+        "label": "Scripture",
+        "module": 15
+      },
+      {
+        "t": 511.2,
+        "label": "The Walking Is Caused",
+        "module": 16
+      },
+      {
+        "t": 646.9,
+        "label": "One Beat On the Stumblingblock",
+        "module": 17
+      },
+      {
+        "t": 714.1,
+        "label": "Reflect",
+        "module": 18
+      },
+      {
+        "t": 720.1,
+        "label": "Practice",
+        "module": 19
+      },
+      {
+        "t": 726.4,
+        "label": "Scripture",
+        "module": 20
+      },
+      {
+        "t": 751.3,
+        "label": "Reverence and Boldness Together",
+        "module": 21
+      },
+      {
+        "t": 870.7,
+        "label": "Ancient and Now",
+        "module": 22
+      },
+      {
+        "t": 904.3,
+        "label": "Only Use Not Liberty",
+        "module": 23
+      },
+      {
+        "t": 1006.6,
+        "label": "Prayer",
+        "module": 26
+      },
+      {
+        "t": 1038.9,
+        "label": "Carry This",
+        "module": 27
+      },
+      {
+        "t": 1045.4,
+        "label": "One Question",
+        "module": 28
+      },
+      {
+        "t": 1076.2,
+        "label": "A Voice From the Church",
+        "module": 29
+      }
+    ]
+  },
+  "drawing-near-day-6": {
+    "src": "/audio/drawing-near-day-6.m4a",
+    "duration": 390.7,
+    "words": 1086,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 3217442,
+    "textHash": "53dcafdeb91c",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 25.5,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 44.3,
+        "label": "The Week In One Sentence",
+        "module": 3
+      },
+      {
+        "t": 131.2,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 136.8,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 152.1,
+        "label": "The Week in One View",
+        "module": 7
+      },
+      {
+        "t": 173.6,
+        "label": "What Held The Week Together",
+        "module": 10
+      },
+      {
+        "t": 182.1,
+        "label": "Scripture",
+        "module": 11
+      },
+      {
+        "t": 205.8,
+        "label": "The Horizon The Week Was Pointing At",
+        "module": 13
+      },
+      {
+        "t": 347.8,
+        "label": "Reflect",
+        "module": 14
+      },
+      {
+        "t": 352.5,
+        "label": "Carrying The Week Forward",
+        "module": 15
+      },
+      {
+        "t": 359.4,
+        "label": "If You Only Keep One Thing",
+        "module": 19
+      }
+    ]
+  },
+  "drawing-near-day-7": {
+    "src": "/audio/drawing-near-day-7.m4a",
+    "duration": 173.8,
+    "words": 522,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 1429448,
+    "textHash": "0d33aabc1f70",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.1,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 21.5,
+        "label": "Sabbath",
+        "module": 2
+      },
+      {
+        "t": 109.7,
+        "label": "Scripture",
+        "module": 4
+      },
+      {
+        "t": 148.8,
+        "label": "Reflect",
+        "module": 5
+      },
+      {
+        "t": 154.7,
+        "label": "Prayer",
+        "module": 7
+      }
+    ]
+  },
   "genesis-two-stories-of-creation-day-1": {
     "src": "/audio/genesis-two-stories-of-creation-day-1-5b0331fd97.m4a",
     "duration": 386.7,
