@@ -13,6 +13,12 @@ founder was right to reject it. Rebuilt so the whole page is the experience.
 - **Seven rooms, the seventh the threshold.** Seven is the most solidly attested
   number in Scripture. The scrubbed film is no longer a room — it is the door you
   pass through to reach them.
+- **The dip is now actually implemented.** The seven-room commit claimed the
+  spine falls in Room 05 and it did not — `LightSpine` read `data-light` but
+  never `data-dip`. Fixed with a half-sine, which is zero at both edges and one
+  at the middle, so the room enters at its own light and leaves at the next
+  room's. Measured in the Workers preview: entering 0.74, bottoming at 0.18,
+  recovering to 0.88.
 - **The page brightens as you descend.** One custom property, `--room-light`,
   runs 0 → 1 across the document and drives ground colour, type colour, plate
   opacity and veil. It has exactly one dip, and Scripture put it there: Matthew

@@ -50,8 +50,15 @@ export default function LightSpine({
 
     const rooms = Array.from(
       root.querySelectorAll<HTMLElement>('[data-light]'),
-    ).map((el) => ({ el, light: parseFloat(el.dataset.light ?? '0') }))
+    ).map((el) => ({
+      el,
+      light: parseFloat(el.dataset.light ?? '0'),
+      dip: el.dataset.dip === 'true',
+    }))
     if (!rooms.length) return
+
+    /** How dark the ninth hour goes. Matthew 27:45 / Luke 23:44. */
+    const DIP_FLOOR = 0.18
 
     let running = true
     let current = 0
@@ -65,7 +72,19 @@ export default function LightSpine({
         if (r.top <= mid && r.bottom >= mid) {
           const within = (mid - r.top) / Math.max(r.height, 1)
           const next = rooms[i + 1]?.light ?? rooms[i].light
-          return rooms[i].light + (next - rooms[i].light) * within
+          const base = rooms[i].light + (next - rooms[i].light) * within
+
+          // THE ONE DIP, AND SCRIPTURE PUT IT THERE. Matthew 27:45: "From the
+          // sixth hour until the ninth hour darkness came over all the land."
+          // A half-sine is zero at both edges and one in the middle, so the
+          // room still enters at its own light and leaves at the next room's —
+          // it just goes dark in between. The page obeys the text describing
+          // the sky rather than a designer choosing drama.
+          if (rooms[i].dip) {
+            const fall = Math.sin(Math.PI * Math.min(Math.max(within, 0), 1))
+            return base - (base - DIP_FLOOR) * fall
+          }
+          return base
         }
       }
       // Above the first room, or past the last.
