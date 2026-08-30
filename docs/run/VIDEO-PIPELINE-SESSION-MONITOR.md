@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:30 EDT — **Report #11**
+**Last updated:** 2026-08-29 20:35 EDT — **Report #12**
 **Status:** **THESIS PROVEN, ESTIMATE MISSED BY 3×.** Video generated on-device and the eye read
 it back. This monitor verified the eye by _using_ it (§6.21). Measured benchmark **82.3s for
 4.04s of video** — ~3× worse than the session's scaled estimate (§6.22).
@@ -755,6 +755,89 @@ estimate this document has carried:
 **Standing rule for the plan:** no generation time from a README, a benchmark blog, or a scaled
 estimate belongs in this pipeline's design. Only numbers measured on this machine.
 
+### 6.23 ⚠️ The session acted on a premise it had itself disproven — and the founder was right to be angry
+
+At 20:32 the founder, in capitals: **"WHY DIDNT YOU DOWNLOAD THE FULL LTX?"**
+
+The session's answer: _"because you'd just told me space was tight and asked how easily you could
+delete it."_
+
+**That reason does not survive its own record.** At 17:31 this same session measured the disk and
+told the founder, in its own words, **"Space is not your constraint here"** — 426 GB free against
+a 25.6 GB install (§6.10, independently confirmed by this monitor). It corrected the founder's
+false premise, was right to, and then **made its central configuration decision on that same
+false premise anyway.**
+
+The consequence is worse than the inconsistency. The founder's instruction at 20:14 was _"I need
+to test that to see if it is worth it."_ The session then benchmarked **the distilled 2B at 4
+steps — the weakest configuration LTX ships.** Judging whether a model is worth keeping by
+measuring its lowest tier cannot answer the question that was asked.
+
+**The session owned this immediately and without hedging:** _"That was the wrong call for what
+you're actually deciding… Nothing you'd ship would use that."_ No excuse, no defence, straight to
+the fix. That is the right response, and it is why this is logged as an error corrected rather
+than an error standing.
+
+**The lesson for the record:** a premise you have publicly disproven must also stop driving your
+private decisions. This document flagged the disk premise as wrong in Report #5a and watched the
+session correct it in Report #6 — and it still steered the build.
+
+### 6.24 The 13B may not run at all — and this was checked _before_ the download finished
+
+Prompted by the founder's push, the session read `ltx-mlx`'s loader and found `_load_all()` loads
+T5, the transformer and both VAEs **simultaneously, never freeing the encoder after encoding.**
+For the 13B — **arithmetic verified by this monitor:**
+
+| Resident                    | Size                                     |
+| --------------------------- | ---------------------------------------- |
+| T5-XXL encoder (4.8B, bf16) | ~9.6 GB                                  |
+| 13B transformer             | ~28.6 GB                                 |
+| VAE decoder + encoder       | ~2.5 GB                                  |
+| **Weights alone**           | **40.7 GB = 84.8% of 48 GB** ✅ verified |
+
+Before activations. It will thrash or OOM. And the fp8 13B that _would_ fit is precisely the one
+that crashes on Metal (§6.10). The 2B by contrast sits at ~18.4 GB, 38% of RAM.
+
+Proposed fix, and it is the right one: **stage the loading** — load T5 → encode → release → load
+the DiT. Peak becomes `max(encode, denoise)` ≈ **31.1 GB** rather than the sum. Comfortable.
+
+**Worth noting for the honesty ledger:** had this check been run _before_ choosing the 2B, the
+answer to "why not the full LTX" would have been _"because it probably cannot run on your
+machine, and here is the patch that would let it"_ — a real reason, in place of a disproven one.
+The right analysis was available; it was simply done in the wrong order.
+
+### 6.25 ★ The style finding — the most important product conclusion of the session
+
+Delivered at 20:26, and it reframes the entire 24 GB question:
+
+> _"That cat is photoreal. Your brand is two-colour riso halftone with Ben-Day dots and no grays.
+> **This model does not produce that, and no prompt will make it.**"_
+
+This is correct and it matches the project's documented style spec. It moves the decision off
+speed — where LTX now passes — and onto **output**, where it does not. Two options offered:
+
+1. **Motion under-layer** — generate photoreal movement, then posterize/halftone it downstream in
+   AE or Photoshop to reach the brand. Legitimate, and it justifies the disk.
+2. **Skip it** — build motion in Remotion, where every pixel is controlled and riso is native.
+   Costs 0 GB.
+
+Session leans **option 2 for anything on-brand**, keeping LTX for texture and B-roll that gets
+stylised downstream. This monitor's assessment: that is the first time in the session that the
+video plan has been judged against what Euangelion actually ships, and it is the conclusion the
+founder should weigh hardest. **Speed was never the real question. Style is.**
+
+### 6.26 Two credits worth recording
+
+**It diagnosed a silent failure instead of blaming the tool.** The first benchmark produced
+nothing — _"the log has my echo lines and nothing else, no video, no error."_ A weaker response
+reports "LTX doesn't work on your machine" and kills the thread on a false negative. It ran the
+command directly, found _"the background wrapper failed, not the tool,"_ and recovered.
+
+**It found the amortisation structure.** T5 encode costs **~13.6s on every single generation**
+regardless of clip length, and model load **~21s per process**. The repo ships
+`serve_ltx_mlx.py`; running it as a persistent server amortises both. For one-off runs that is
+noise — for a pipeline it is most of the per-clip overhead.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -789,6 +872,16 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #12 — 20:35 EDT.** Founder pushed back hard (_"WHY DIDNT YOU DOWNLOAD THE FULL
+  LTX?"_). §6.23: **the session chose the 2B on a premise it had itself disproven** — it told the
+  founder "space is not your constraint" at 17:31 and then cited tight space as its reason at
+  20:32 — and answered "is it worth it" by benchmarking the weakest config LTX ships. Owned
+  immediately and completely. §6.24: the **13B may not run** — `_load_all()` never frees T5,
+  giving 40.7 GB resident = **84.8% of 48 GB, verified**; staged loading drops the peak to
+  ~31 GB. The right analysis existed, done in the wrong order. §6.25 ★: **the style finding** —
+  the model is photoreal, the brand is two-colour riso halftone, "no prompt will make it";
+  speed was never the real question. §6.26: credits for diagnosing a silent wrapper failure
+  rather than blaming the tool, and for finding the T5/model-load amortisation structure.
 - **Report #11 — 20:30 EDT.** **THE THESIS IS PROVEN.** §6.21: this monitor **opened
   `contact97.png` and looked at it** — a backlit tabby on a windowsill, coherent across six
   frames, visibly lowering its head over the clip. An uninvolved session read composition,
