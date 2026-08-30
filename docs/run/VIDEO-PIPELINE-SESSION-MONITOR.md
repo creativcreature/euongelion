@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 21:50 EDT — **Report #25**
+**Last updated:** 2026-08-29 21:56 EDT — **Report #26**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1816,6 +1816,67 @@ monitor will check the document against.
 solved on paper and unproven in practice; the binding constraint was never production capacity,
 it was the approval gate._
 
+### 6.66 The handoff scored against §6.65 — 4 of 5 passed, and the epistemics are the best part
+
+`docs/run/HANDOFF-2026-08-29-video-pipeline-for-social-strategy.md`, 208 lines.
+
+**Watch 1 — the 83-day gate finding. ✅ PASSED.** Carried verbatim and prominently:
+_"**Nothing has cleared the founder's approval gate in 83 days.**"_ with the supporting detail —
+Week 1 _"queued,"_ launch set Mon Jun 15, _"Log stops at **2026-06-07 15:12**"_ — and the
+founder's ruling recorded at line 14 that _"all approval gates stay live until a first product he
+likes exists."_ The process fact survived a video handoff, which was the specific risk.
+
+**Watch 2 — the surface question. ⚠️ NOT CARRIED.** The document has a _"Surface split"_ heading,
+but it is about **Shorts vs long-form** — distribution surfaces. **The question of which
+_product_ surface the output serves — the @ChrisXJames YouTube channel or euangelion.app's
+devotional surfaces — does not appear.** Nor does the tension §6.49 identified: a hook-first spine
+inside a product whose first principle is _"spiritual formation over engagement metrics."_
+
+This is the one real gap, and it lands badly for this particular recipient: **a session asked to
+build social strategy will now do so without knowing which product the strategy serves.** It is
+also the oldest unanswered question in this log.
+
+**Watch 3 — verified constraints. ✅ PASSED, and it went further than asked.** It carried the
+clock and then did the arithmetic: _"4,000 watch hours by 2027-02-01, or accept the 8,000 bar and
+build over 12–18 months. Arithmetic: 4,000 hours in ~155 days is ~26 [hrs/day]."_ Plus Shorts not
+banking YPP watch time, and long-form as the primary artifact with Shorts as near-zero-marginal-
+cost re-crops.
+
+**Watch 4 — retracted numbers. ✅ PASSED, cleanly.** No _"not feasible"_, no _"25–30 seconds"_, no
+Wan verdict. The only timing carried is the measured **82.3s**. And the reversal itself is stated
+as a finding rather than buried: _"The `ltx-mlx` published benchmark does not reproduce… Measured
+gap is 11.8×, against hardware only 3.8× larger in GPU cores."_
+
+**Watch 5 — unproven claims marked. ✅ PASSED, and this is the document's best feature.** It opens
+its evidence section with the caveat this monitor most wanted to see:
+
+> _"**The artifacts were deleted at founder instruction at the end of the run, so none of it is
+> re-checkable without reinstalling.** The numbers were observed directly in-session; the files
+> backing them are gone."_
+
+And it quarantines the blocker under its own heading — _"The blocking unknown — everything depends
+on it… **Whether Codex `image_gen` can produce usable isolated elements is untested.** Not
+attempted this session… it is unproven"_ — with boundary masking filed as _"specified, never
+run."_
+
+### 6.67 One thing the handoff understates: parts of it _are_ independently corroborated
+
+The handoff says _"none of it is re-checkable."_ That is true of the files — but **not of the
+findings**, because this monitor verified several of them independently before the deletion. For
+the receiving session, the corroboration tiers differ:
+
+| Claim                                                             | Status                                                                      |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| ffmpeg 9.0 **arm64**, encode / probe / frame-extract              | **independently verified** by this monitor (§6.19)                          |
+| The eye loop — contact sheet legible, subject and motion readable | **independently verified** (§6.21) — described from the PNG before deletion |
+| LTX output = **97 frames / 4.041667s**                            | **independently verified** — `ffprobe`'d by this monitor                    |
+| LTX timing **82.3s**                                              | session-reported; timing not observed by this monitor                       |
+| DepthFlow **0.66s / riso intact**                                 | **session-reported only** — this monitor never saw the artifact (§6.34)     |
+
+So the DepthFlow figure is the single "proved" item with **no independent corroboration
+anywhere**, and it is also the one that most shapes the recommendation. The rest of the proved
+list has a second witness in this document.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1850,6 +1911,17 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #26 — 21:56 EDT.** §6.66: handoff scored — **4 of 5 watch items passed.** ✅ The
+  **83-day gate finding survived** into a video handoff, carried verbatim with the founder's
+  ruling. ✅ Constraints carried _with arithmetic_ (~26 watch-hours/day to clear YPP in 155 days).
+  ✅ **No retracted numbers** — only the measured 82.3s, with the failed reproduction stated as a
+  finding. ✅ **Unproven claims quarantined**, opening with _"the artifacts were deleted… none of
+  it is re-checkable"_ and filing the transparency question as _"the blocking unknown."_
+  ⚠️ **Watch 2 failed: the surface question is absent** — its "Surface split" is Shorts vs
+  long-form, not YouTube channel vs devotional app, so a session about to write social strategy
+  does not know which product it serves. §6.67: the handoff _understates_ its own footing — this
+  monitor independently verified ffmpeg, the eye loop and the 97-frame output before deletion;
+  **only the DepthFlow figure has no second witness anywhere.**
 - **Report #25 — 21:50 EDT.** §6.65: **watch items set for the handoff** the session is now
   writing to brief the social-media session. Must carry: the **83-day gate finding** (a process
   fact a video handoff is likely to drop), the **unresolved surface question** (YouTube channel vs
