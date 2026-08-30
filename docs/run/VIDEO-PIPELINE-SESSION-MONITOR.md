@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 22:06 EDT — **Report #27**
+**Last updated:** 2026-08-29 **23:32 EDT** — **Report #28**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1974,6 +1974,74 @@ devotionals written: 7 each for 6 series = 42; john-3 and what-is-euangelion hav
 need for 44.** The word "written" overstates by 14; the conclusion — _"content is not the
 constraint"_ — holds.
 
+### 6.71 ⚠️⚠️⚠️ Correction: this monitor asserted ownership of commits that were not its own
+
+Across several turns this document and its reports stated flatly that **"all unpushed commits are
+mine."** **That was false, and it was checked once and then repeated without re-checking while
+parallel sessions kept committing.**
+
+Measured at 23:32 — 14 unpushed commits, of which **two are not this monitor's**:
+
+```
+3f12ab4c  docs: consolidate all handoffs into a chronological handoff/ folder     ← NOT mine
+1119b856  feat(imagery): image intensity — a 1–5 tonal scale — SA-131 (F-175)     ← NOT mine
+… the other 12 are monitor reports #16–#27
+```
+
+**This is the third error of the same species tonight**, and the pattern is now unmistakable:
+
+| #             | Error                                                | Root cause                                     |
+| ------------- | ---------------------------------------------------- | ---------------------------------------------- |
+| §6.37         | pushed 16× to a repo believed private                | trusted a **doc claim** without testing it     |
+| §6.63 / §6.70 | corpus "21 items" (was 63); images "869" (was 9,427) | measured a **subset**, characterised the whole |
+| **§6.71**     | **"all unpushed commits are mine"**                  | verified **once**, then repeated as current    |
+
+All three are the same failure in different clothes: **stating as current something that was
+established earlier and never re-checked.** That is precisely the failure this document was
+created to catch in the subject session, and this monitor has now committed it three times while
+catching it once there (§6.15, where the subject session reported stale repo state).
+
+**Standing correction to every "loose ends" statement in this session's reports:** the ownership
+split must be re-derived each time, not carried forward.
+
+### 6.72 ⚠️ Correction: this document's timestamps drifted by roughly an hour
+
+Verified against `date`: the real time is **23:32 EDT**. Reports #23–#27 were stamped 21:38
+through 22:06 and are each **roughly 60–90 minutes early**. The early reports were accurate —
+`date` was checked directly at 17:11 and 20:11 — but once this monitor began converting the
+subject transcript's UTC stamps by inference rather than measurement, it drifted.
+
+**Affected:** the _labels_ on Reports #23–#27 and the elapsed-time claims derived from them. The
+**ordering, content and findings are unaffected**, and every _measured_ value in this document
+(disk, token maths, benchmark, YPP arithmetic) was taken from command output, not from the clock.
+
+The one substantive consequence: §6.13 and §6.36 computed "hours to the Monday go-live" from these
+stamps. At the true time of **23:32 Saturday**, that deadline is roughly **24–36 hours out**, not
+the ~28 previously stated.
+
+### 6.73 The handoff convention moved _during_ this session — and out from under this document
+
+The subject session said it wrote its handoff to the wrong directory. **Correct, and the reason is
+that the convention changed mid-session.** Commit `3f12ab4c`, _"docs: consolidate all handoffs into
+a chronological handoff/ folder"_, timestamped **2026-08-29 23:23** — nine minutes before this
+check — moved every handoff into `handoff/YYYY-MM-DD-<topic>.md`.
+
+`handoff/README.md` states it: _"Every handoff document for the Euangelion app, in one place…
+Consolidated 2026-08-29 from eight scattered locations: the repo root, `docs/`, `docs/run/`,
+`docs/brand/`, `soul-audit-docs/production-governance/`, and
+`design-sources/image-library/generated-2026-05-04/`."_
+
+**This explains an observation from the start of this session.** At 17:14 this monitor chose
+`docs/run/` for this file on the precedent of the `HANDOFF-*.md` files sitting there. Those files
+are now gone from `docs/run/` — `ls docs/run/HANDOFF-*.md` returns no matches. **The precedent
+this document was placed on has been relocated beneath it.**
+
+**Assessment: this file should probably stay where it is.** It is not a handoff — it is a live
+running log, and `docs/run/` still holds exactly that class of document (`CHANGELOG.md`,
+`RUN_REPORT.md`, `RESULTS_LOG.md`, `CHECKLIST.md`, `DECISIONS.md`). But the founder should know the
+neighbourhood changed, and that a _snapshot_ convention now exists for documents that are live
+elsewhere — which is the pattern this file would follow if it ever needs archiving.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -2008,7 +2076,17 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
-- **Report #27 — 22:06 EDT.** §6.68 ★★: the parallel **`video-spec` pitch answers the surface
+- **Report #28 — 23:32 EDT.** Three corrections, two of them this monitor's. §6.71 ⚠️⚠️⚠️: it
+  repeatedly asserted **"all unpushed commits are mine"** — false; **2 of 14 belong to other
+  sessions** (`3f12ab4c` handoff consolidation, `1119b856` SA-131). **Third error of the same
+  species tonight**, alongside §6.37 and §6.63/§6.70: _stating as current something verified once
+  and never re-checked_ — the exact failure this document exists to catch. §6.72 ⚠️: **timestamps
+  drifted ~60–90 minutes**; real time is **23:32 EDT**, so Reports #23–#27 are mislabelled and the
+  Monday go-live is **~24–36 hours out**, not ~28. Findings and measured values unaffected.
+  §6.73: the **handoff convention moved mid-session** — commit `3f12ab4c` at 23:23 consolidated
+  all handoffs into `handoff/YYYY-MM-DD-topic.md` from eight locations, so the `docs/run/`
+  precedent this file was placed on has been relocated beneath it.
+- **Report #27 (timestamp corrected: ~23:05, not 22:06) —** §6.68 ★★: the parallel **`video-spec` pitch answers the surface
   question** — _"It is the spine, and the plan becomes downstream of it"_ — settling the oldest
   open item in this log, though **the handoff to the social session doesn't carry it**. Its
   arithmetic **fully verified**: 22.3 weeks, 42,857/35,556 views, 1,948/974/808 per episode, 711
