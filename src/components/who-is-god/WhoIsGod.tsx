@@ -73,7 +73,15 @@ function SomeoneStage() {
       stage={(key) => (
         <div className="wig-plate-stage" data-key={key}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`${PLATE}/deep.webp`} alt="" />
+          <img
+            src={`${PLATE}/deep-sm.webp`}
+            alt=""
+            width={960}
+            height={640}
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+          />
         </div>
       )}
     />
@@ -128,16 +136,28 @@ function StoryStage() {
       }))}
       stageLabel="The four movements of the story"
       stage={(key) => {
-        const m = movements.find((x) => x.key === key) ?? movements[0]
+        const i = Math.max(
+          0,
+          movements.findIndex((x) => x.key === key),
+        )
+        // Render only the plate in view and the one after it. The cross-dissolve
+        // needs two in the DOM; it does not need all four. Rendering all four
+        // pulled 2,327 KB at 24ms for a room thousands of pixels below the fold.
+        const visible = movements.filter((_, j) => j === i || j === i + 1)
         return (
           <div className="wig-plate-stage" data-key={key}>
-            {movements.map((x) => (
+            {visible.map((x, j) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={x.key}
-                src={`${PLATE}/${x.plate}.webp`}
+                src={`${PLATE}/${x.plate}-sm.webp`}
                 alt=""
-                data-on={x.key === m.key}
+                width={960}
+                height={640}
+                loading="lazy"
+                decoding="async"
+                fetchPriority={j === 0 ? 'auto' : 'low'}
+                data-on={x.key === movements[i].key}
               />
             ))}
           </div>
@@ -242,7 +262,15 @@ function NinthHourStage() {
       stage={(key) => (
         <div className="wig-plate-stage wig-plate-dip" data-key={key}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`${PLATE}/rescue.webp`} alt="" />
+          <img
+            src={`${PLATE}/rescue-sm.webp`}
+            alt=""
+            width={960}
+            height={640}
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+          />
         </div>
       )}
     />
@@ -508,7 +536,15 @@ export default function WhoIsGod() {
           <section className="wig-help" aria-labelledby="wig-help-title">
             <div className="wig-help-plate" aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`${PLATE}/help.webp`} alt="" loading="lazy" />
+              <img
+                src={`${PLATE}/help-sm.webp`}
+                alt=""
+                width={960}
+                height={640}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+              />
             </div>
             <div className="wig-help-body">
               <p className="wig-room-kicker">Georgia</p>

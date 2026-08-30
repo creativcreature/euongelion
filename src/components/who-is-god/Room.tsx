@@ -57,7 +57,15 @@ export default function Room({
       {plate ? (
         <div className="wig-room-plate" aria-hidden="true">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={plate} alt="" loading="lazy" decoding="async" />
+          <img
+            src={plate}
+            alt=""
+            width={1536}
+            height={1024}
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+          />
         </div>
       ) : null}
 

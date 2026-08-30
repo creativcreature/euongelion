@@ -64,20 +64,49 @@ export default function ScrubbedFilm({
     if (reduced) return
     let cancelled = false
     let objectUrl: string | null = null
-    fetch(src)
-      .then((r) =>
-        r.ok ? r.blob() : Promise.reject(new Error(String(r.status))),
-      )
-      .then((blob) => {
-        if (cancelled) return
-        objectUrl = URL.createObjectURL(blob)
-        setMediaSrc(objectUrl)
-      })
-      .catch(() => {
-        if (!cancelled) setMediaSrc(src)
-      })
+    let started = false
+
+    const begin = () => {
+      if (started || cancelled) return
+      started = true
+      fetch(src)
+        .then((r) =>
+          r.ok ? r.blob() : Promise.reject(new Error(String(r.status))),
+        )
+        .then((blob) => {
+          if (cancelled) return
+          objectUrl = URL.createObjectURL(blob)
+          setMediaSrc(objectUrl)
+        })
+        .catch(() => {
+          if (!cancelled) setMediaSrc(src)
+        })
+    }
+
+    // DEFER THE FILM. The poster is already painted, and nothing needs the video
+    // until the reader starts moving. Fetching it on mount put ~4.3 MB on the
+    // wire at first paint, competing with everything else for no visible gain.
+    // Whichever comes first: the reader scrolls, or the main thread goes idle.
+    const onScroll = () => begin()
+    window.addEventListener('scroll', onScroll, { once: true, passive: true })
+
+    const ric = (
+      window as Window &
+        typeof globalThis & {
+          requestIdleCallback?: (
+            cb: () => void,
+            o?: { timeout: number },
+          ) => number
+        }
+    ).requestIdleCallback
+    const idle = ric
+      ? ric(begin, { timeout: 2500 })
+      : window.setTimeout(begin, 1200)
+
     return () => {
       cancelled = true
+      window.removeEventListener('scroll', onScroll)
+      if (!ric) window.clearTimeout(idle as number)
       if (objectUrl) URL.revokeObjectURL(objectUrl)
     }
   }, [src, reduced])

@@ -13,6 +13,17 @@ founder was right to reject it. Rebuilt so the whole page is the experience.
 - **Seven rooms, the seventh the threshold.** Seven is the most solidly attested
   number in Scripture. The scrubbed film is no longer a room — it is the door you
   pass through to reach them.
+- **Image loading fixed, after correcting my own measurement.** An 18-second LCP
+  I reported earlier was a measurement artifact - LCP stops updating at first user
+  input, and a programmatic scroll is not input. Measured properly the page does
+  92-456 ms LCP and 84-336 ms FCP, and was never failing Core Web Vitals. The real
+  waste was that the story stage rendered all four movement plates eagerly to
+  cross-dissolve between them, putting **2,327 KB on the wire at 24 ms** for a room
+  thousands of pixels below the fold. Now: 960px derivatives for stage slots (62%
+  smaller), only the plate in view plus the next one rendered, lazy + async +
+  low-priority with intrinsic dimensions, and the door film's 4.3 MB fetch deferred
+  to first scroll or idle. **Plate bytes before any scroll: 2,327 KB to 400 KB, an
+  83% cut**, with scrubbing verified intact.
 - **The dip is now actually implemented.** The seven-room commit claimed the
   spine falls in Room 05 and it did not — `LightSpine` read `data-light` but
   never `data-dip`. Fixed with a half-sine, which is zero at both edges and one
