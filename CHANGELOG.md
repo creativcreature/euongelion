@@ -5,6 +5,36 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Every handoff in one place — `handoff/` (2026-08-29)
+
+Twenty-six handoff documents were spread across eight locations: the repo root,
+`docs/`, `docs/run/`, `docs/brand/`, `soul-audit-docs/production-governance/`, and
+`design-sources/image-library/generated-2026-05-04/`. They are now one folder,
+`handoff/`, named `YYYY-MM-DD-<topic>.md` so `ls` returns them in the order they
+were written. `handoff/README.md` indexes all 26 with their original paths.
+
+- **Two documents were copied, not moved**, because other files depend on their
+  paths: `docs/PRODUCTION-COMPACTION-HANDOFF.md` (item 5 of the mandatory resume
+  order in `AGENTS.md` and `CLAUDE.md`, referenced by ten docs) and
+  `docs/run/HANDOFF.md` (the rolling post-compaction resume doc). Both originals
+  are untouched and remain the working files; the archive holds a snapshot.
+- The 24 moved files are byte-identical to their originals except five, whose
+  internal cross-links were repointed at the new sibling names.
+- Eight inbound references broke on the move and were updated:
+  `docs/CHRIS-X-JAMES-CHANNEL-SPEC.md`, `docs/decisions/VOICE-ROADMAP.md`,
+  `docs/feature-prds/F-084.md`, `docs/feature-prds/F-152.md`,
+  `docs/production-decisions.yaml`, `docs/run/R2-AUDIO-MIGRATION.md`,
+  and `docs/run/VIDEO-PIPELINE-SESSION-MONITOR.md`. One further reference — a
+  comment in `src/lib/red-letter-resolve.ts` — still points at the old
+  `docs/run/` path; editing it triggers the SA/F decision-reference gate, so it
+  is left for a commit that carries those ids.
+- **The worktrees held almost nothing unique.** Of 49 handoff files across the ten
+  worktrees under `.claude/worktrees/`, 48 are byte-identical to a file now in
+  `handoff/`. The single distinct revision — a 182-line production compaction
+  handoff held by nine worktrees, against 203 lines in the main tree — is kept at
+  `handoff/_variants/`, alongside `WORKTREE-MANIFEST.md` recording all 49 with
+  checksums. The worktrees themselves were not modified.
+
 ## 2026-08-29 — Image intensity: a 1–5 tonal scale for devotional plates — SA-131 (F-175)
 
 Two visual registers now coexist by design. `--intensity=1..5` on

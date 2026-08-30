@@ -5,7 +5,7 @@ the pitch are ruled on.
 **Pitch (decision surface):** https://euangelion.app/admin/pitches/chris-x-james-channel-plan
 **Date:** 2026-08-20
 **Session:** youtube-launch
-**Relationship to `docs/DEVO-PIPELINE-HANDOFF-SPEC.md`:** that spec defines the faceless,
+**Relationship to `handoff/2026-08-13-devo-pipeline-spec.md`:** that spec defines the faceless,
 Euangelion-branded S0–S7 pipeline. **This spec does not replace it.** It adds the
 founder-on-camera dimension that spec has no model for, and reuses S2/S4/S5 wholesale.
 

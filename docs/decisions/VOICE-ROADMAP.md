@@ -87,6 +87,6 @@ the gap before any investment in training infrastructure.
 
 ## Related
 
-- `docs/run/HANDOFF-2026-08-15-narration.md` — operational state, traps
+- `handoff/2026-08-15-narration.md` — operational state, traps
 - `.claude/skills/devo-go/references/narration.md` — the shipping pipeline
 - Decision **SA-043**, feature **F-086**

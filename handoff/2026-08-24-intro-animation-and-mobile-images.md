@@ -11,23 +11,23 @@ the shared checkout held 426 working-tree-only files under `public/`. Read
 
 ## Shipped and live
 
-| PR | Decision | What |
-| --- | --- | --- |
-| `#41` | SA-123 (F-168) | Mobile images survive one bad network moment |
-| `#42` | SA-123 (F-168) | The responsive hero variants, committed at last |
-| `#43` | SA-127 (F-171) | The intro opens in the reader's own mode |
+| PR            | Decision       | What                                                     |
+| ------------- | -------------- | -------------------------------------------------------- |
+| `#41`         | SA-123 (F-168) | Mobile images survive one bad network moment             |
+| `#42`         | SA-123 (F-168) | The responsive hero variants, committed at last          |
+| `#43`         | SA-127 (F-171) | The intro opens in the reader's own mode                 |
 | `#38` / `#39` | SA-121 (F-166) | The homepage led with the Word — **reverted, see below** |
-| `#40` | SA-121 (F-166) | The revert |
+| `#40`         | SA-121 (F-166) | The revert                                               |
 
 Live at time of writing: service worker **v154**, worker version
 `140eb73e-c0d4-4db0-8d0d-50767ce4ff15`.
 
 ### The intro animation (SA-127 / F-171) — the headline
 
-Founder: *"The homepage animation is not working at all the way it should. This
+Founder: _"The homepage animation is not working at all the way it should. This
 is the intro animation I want [telhaclarke.com.au]. I need 2 versions - one for
 Darkmode, one for Light Mode… If Light Mode, Euangelion should be Blue, if Dark
-Mode it should be white. I also want the subtle text rollover."*
+Mode it should be white. I also want the subtle text rollover."_
 
 **There was only ever ONE version.** The sheet was cobalt in both themes with
 the wordmark KNOCKED OUT of it, so a light-mode reader watched a cream word on
@@ -59,7 +59,7 @@ no `prefers-reduced-motion` handling at all.** We do not copy that.
 
 ### Mobile images (SA-123 / F-168)
 
-Founder: *"The mobile version of the homepage doesnt load the images."*
+Founder: _"The mobile version of the homepage doesnt load the images."_
 Production would not fail on demand — real Chrome AND real WebKit at 375px
 painted everything. The cause was device-side: `sw.js`'s image handler answered
 any failed fetch with a fabricated **empty 404**, and an installed PWA keeps the
@@ -72,7 +72,7 @@ real network error. The featured devotional art (the LCP candidate) also dropped
 
 Built overnight to the research-backed order (Word of the Day → Soul Audit →
 Grace Line → featured → scale line → one action), shipped, and reverted the next
-morning on sight: *"revert the homepage your flow just doesnt make sense."* The
+morning on sight: _"revert the homepage your flow just doesnt make sense."_ The
 pre-SA-121 structure is the standing state. **Do not re-propose that reorder.**
 The word-of-the-day resolver and the writer's copy alternates are recoverable
 from `#38` if ever wanted. See `feedback_homepage_rebuild_reverted` in memory.
@@ -129,7 +129,7 @@ this reason, and the CSS says so at three separate sites.
 the letter roll was correct while the intro was visibly broken — the mask sized
 itself to both copies, so the word showed doubled and then vanished entirely.
 Only capturing frames and **looking at them** caught it. Percentage transforms
-are of the *element*, and the column is two faces tall, so one face of travel is
+are of the _element_, and the column is two faces tall, so one face of travel is
 50%, not 100%.
 
 **Ids race.** `SA-120`/`F-165` were claimed by another session mid-build and had

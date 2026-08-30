@@ -1818,7 +1818,7 @@ it was the approval gate._
 
 ### 6.66 The handoff scored against §6.65 — 4 of 5 passed, and the epistemics are the best part
 
-`docs/run/HANDOFF-2026-08-29-video-pipeline-for-social-strategy.md`, 208 lines.
+`handoff/2026-08-29-video-pipeline-for-social-strategy.md`, 208 lines.
 
 **Watch 1 — the 83-day gate finding. ✅ PASSED.** Carried verbatim and prominently:
 _"**Nothing has cleared the founder's approval gate in 83 days.**"_ with the supporting detail —

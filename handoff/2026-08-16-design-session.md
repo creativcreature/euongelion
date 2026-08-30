@@ -10,18 +10,18 @@ times; see “Parallel-session hazards” at the end.
 
 ## Shipped and live
 
-| Commit | Decision | What |
-| --- | --- | --- |
-| `debea132` | SA-060 (F-104) | Mobile pass, the lancet, site-wide scroll motion |
-| — | SA-062 (F-106) | **Flow** — the artboard, replacing the rose window |
-| — | SA-063 (F-107) | Imagery ruling, fail-open motion, the mobile menu |
-| — | SA-064 (F-108) | The press impression (open animation), centred resume button |
+| Commit     | Decision       | What                                                         |
+| ---------- | -------------- | ------------------------------------------------------------ |
+| `debea132` | SA-060 (F-104) | Mobile pass, the lancet, site-wide scroll motion             |
+| —          | SA-062 (F-106) | **Flow** — the artboard, replacing the rose window           |
+| —          | SA-063 (F-107) | Imagery ruling, fail-open motion, the mobile menu            |
+| —          | SA-064 (F-108) | The press impression (open animation), centred resume button |
 
 Live at time of writing: service worker **v92** (v93 with the last commit).
 
 ### The big ones
 
-- **Daily Bread ↔ Today swapped**, paper renamed *The Daily Bread* (SA-059 /
+- **Daily Bread ↔ Today swapped**, paper renamed _The Daily Bread_ (SA-059 /
   F-103). Swapped **by meaning, not by string** — ~20 references meaning “my
   plan reader” followed the content to `/today`, including the soul-audit
   redirect payloads, middleware auth matcher, onboarding destination and the
@@ -41,8 +41,8 @@ Live at time of writing: service worker **v92** (v93 with the last commit).
    (it bills the API account per image), never Nano Banana, never Higgsfield.
    **Claude Code has no built-in `image_gen`, and there is no `codex` binary on
    PATH**, so this cannot be done from a Claude session at all.
-   *Disclosure: 8 images were generated through the billed CLI before that
-   ruling arrived; the founder accepted the spend.*
+   _Disclosure: 8 images were generated through the billed CLI before that
+   ruling arrived; the founder accepted the spend._
 2. **Full mobile audit of all seven toggles.** Blocked, not skipped — the
    browser tooling repeatedly reported a 1313px viewport while the window was
    414px, so measurements were worthless. Covers, Rack, the lancet and Flow were
@@ -71,7 +71,7 @@ stop measuring — the board is a CSS grid at `width: 100%` and fills by
 construction.
 
 **`--color-gold` is cobalt in light mode.** Fourth time this has cost something;
-here it made the scroll-progress line invisible *even where it was not covered*.
+here it made the scroll-progress line invisible _even where it was not covered_.
 
 **`max-height` caps LINE LENGTH in vertical writing mode.** A hardcoded
 `max-height: 300px` on `.spine-title` is what ellipsised the spine titles. I
@@ -101,7 +101,7 @@ comparison passed. Rewritten against real grid placement.
 
 ## The open animation (SA-064 / F-108)
 
-First attempt was a curtain — founder: *“It was half assed.”* Rebuilt as **the
+First attempt was a curtain — founder: _“It was half assed.”_ Rebuilt as **the
 press impression**, which is the one sequence only this masthead can make:
 
 1. **Ink** — solid cobalt, wordmark knocked out (the letters are paper showing
@@ -110,7 +110,7 @@ press impression**, which is the one sequence only this masthead can make:
 3. **Register** — a crimson ghost offset a few px slides into alignment.
    Misregistration is this brand's actual signature.
 4. **Hand off** — the ink lifts on a hard edge and the wordmark **flies to the
-   measured position and size of the real masthead**. The intro *becomes* the
+   measured position and size of the real masthead**. The intro _becomes_ the
    site rather than getting out of its way.
 
 Two calibration notes, both found by slowing it 6× and photographing it:

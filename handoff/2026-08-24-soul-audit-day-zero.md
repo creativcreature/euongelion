@@ -4,8 +4,8 @@ Written for compaction. **Shipped and verified live** — SA-126 / F-170, Worker
 `76e5291c`, edition 0.8.20, SW v154. One thing is left undone and it needs a
 human: PR #44 is open and mergeable but I was blocked from merging it.
 
-Other sessions were live in the same tree throughout. `HANDOFF-2026-08-24-all-these-things.md`
-and `HANDOFF-2026-08-24-soul-audit-cost-architecture.md` are different work —
+Other sessions were live in the same tree throughout. `2026-08-24-all-these-things.md`
+and `2026-08-24-soul-audit-cost-architecture.md` are different work —
 don't merge them, and don't `git add -A`.
 
 ---

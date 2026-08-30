@@ -116,6 +116,6 @@ has served real traffic.
 
 ## Related
 
-- `docs/run/HANDOFF-2026-08-15-narration.md` — narration state, Voicebox traps
+- `handoff/2026-08-15-narration.md` — narration state, Voicebox traps
 - `docs/decisions/VOICE-ROADMAP.md` — where the voice itself is going
 - `.claude/skills/devo-go/references/narration.md` — the shipping pipeline

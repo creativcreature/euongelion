@@ -11,18 +11,18 @@ repeatedly — always re-check both files immediately before committing.
 
 ## Shipped and live today (this session)
 
-| Commit | Decision | What |
-| --- | --- | --- |
-| `7ee20f67` | SA-040 (F-087) | Looking at the Sun replated through the locked riso pipeline |
-| `e2e44add` | SA-041 (F-087) | No portraits — figures rendered anonymous |
-| `172efd59` | SA-041 | Service worker v64 so replaced artwork reaches readers |
-| `04a93fcc` | SA-044 (F-090) | Series library, active-day advance, phrase search, homepage rotation |
+| Commit     | Decision       | What                                                                              |
+| ---------- | -------------- | --------------------------------------------------------------------------------- |
+| `7ee20f67` | SA-040 (F-087) | Looking at the Sun replated through the locked riso pipeline                      |
+| `e2e44add` | SA-041 (F-087) | No portraits — figures rendered anonymous                                         |
+| `172efd59` | SA-041         | Service worker v64 so replaced artwork reaches readers                            |
+| `04a93fcc` | SA-044 (F-090) | Series library, active-day advance, phrase search, homepage rotation              |
 | `410b9c59` | SA-042 (F-089) | Restored two files `main` was missing to compile (another session's split commit) |
-| `dfce403d` | SA-046 (F-092) | Editable highlights — recolour, note, remove |
-| `5aeaa172` | SA-047 (F-092) | Toolbar flips when no room above; chat launcher themed |
-| `86b7862d` | SA-047 | Unblocked `verify:feature-prds` for everyone |
-| `303b9ff5` | SA-049 (F-094) | The reading room — ten print-form layouts |
-| `79a0cfbc` | SA-050 (F-094) | Cut to seven, centred controls, quiet resume line |
+| `dfce403d` | SA-046 (F-092) | Editable highlights — recolour, note, remove                                      |
+| `5aeaa172` | SA-047 (F-092) | Toolbar flips when no room above; chat launcher themed                            |
+| `86b7862d` | SA-047         | Unblocked `verify:feature-prds` for everyone                                      |
+| `303b9ff5` | SA-049 (F-094) | The reading room — ten print-form layouts                                         |
+| `79a0cfbc` | SA-050 (F-094) | Cut to seven, centred controls, quiet resume line                                 |
 
 Live version at time of writing: `67e85b49`. Service worker **v75**.
 
@@ -42,18 +42,18 @@ SA-043 and SA-048 were all taken out from under me today.
 
 ## Red letter — the investigation, so it is not repeated
 
-Founder: *"through out the site — Jesus direct words in Red. ensure the
-highlight color is correct for such text."* Then: *"are there no guides to this
-for the edition we have online anywhere?"*
+Founder: _"through out the site — Jesus direct words in Red. ensure the
+highlight color is correct for such text."_ Then: _"are there no guides to this
+for the edition we have online anywhere?"_
 
 ### The answer is no, not for our editions. Verified, not assumed:
 
-| Source | Words-of-Jesus data? | Coverage of our catalog |
-| --- | --- | --- |
-| `eng-kjv.osis.xml` (on disk) | **Yes** — 2,021 `<q who="Jesus" sID=…/>` milestone pairs, verse-addressed | **1 of 125** Gospel passages |
-| BSB official USFM (`usfm-bible/examples.bsb`, public domain since 2023-04-30) | **No** — fetched `43LUKBSB.usfm` (156 KB), **zero `\wj`**; carries `\f` footnotes only | 70 of 125 |
-| NIV | Copyrighted (Biblica). No open dataset. | 50 of 125 |
-| STEPBible-Data (on disk) | **No** speaker attribution — the grep hit was `wj` inside a Google Sheets URL | — |
+| Source                                                                        | Words-of-Jesus data?                                                                   | Coverage of our catalog      |
+| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ---------------------------- |
+| `eng-kjv.osis.xml` (on disk)                                                  | **Yes** — 2,021 `<q who="Jesus" sID=…/>` milestone pairs, verse-addressed              | **1 of 125** Gospel passages |
+| BSB official USFM (`usfm-bible/examples.bsb`, public domain since 2023-04-30) | **No** — fetched `43LUKBSB.usfm` (156 KB), **zero `\wj`**; carries `\f` footnotes only | 70 of 125                    |
+| NIV                                                                           | Copyrighted (Biblica). No open dataset.                                                | 50 of 125                    |
+| STEPBible-Data (on disk)                                                      | **No** speaker attribution — the grep hit was `wj` inside a Google Sheets URL          | —                            |
 
 ### Catalog shape (measured, `public/devotionals/*.json`)
 
@@ -101,6 +101,7 @@ red word is a false attribution. Under-mark, never over-mark.
   are light pastels in both — this is the founder's "ensure the highlight color
   is correct for such text", and it is why the light value was measured against
   the swatches rather than against the page.
+
 - 6 tests in `__tests__/red-letter.test.tsx`, including the Luke 10 negative
   case.
 

@@ -5,7 +5,7 @@ commits, no decision id assigned. What exists is a set of measurements, three
 findings that change the shape of the work, four traps, and two decisions
 waiting on the founder.
 
-A parallel session owns `HANDOFF-2026-08-24-all-these-things.md`. Different
+A parallel session owns `2026-08-24-all-these-things.md`. Different
 work; don't merge them, and don't `git add -A`.
 
 ---

@@ -641,7 +641,7 @@ Pre-existing/unrelated:
 
 This handoff:
 
-- `CLAUDE-HANDOFF-2026-07-28.md`
+- `handoff/2026-07-28-claude-stabilization-audit.md`
 
 `git diff --check` was clean immediately before this handoff was created.
 
