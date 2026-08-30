@@ -71,12 +71,34 @@ const CEILING = 0.72
  * stock. Founder: "images too zoomed out." Cropping into the plate at this
  * factor keeps the aspect honest and puts one large piece of the artwork behind
  * the reading, the way the reference crops into its engraving.
+ *
+ * REVERTED to this value 2026-08-30. A later pass replaced cropping with drawing
+ * the whole plate small in a field of paper; the founder judged the earlier
+ * sizing better — "Revert the background image size. The last version worked."
+ * The corrections made alongside that experiment are kept: finer screen, softer
+ * edge fades, and holding the first texture until below the fold.
  */
-const IMAGE_W = 0.56
+const ZOOM = 1.25
 /** How much slower than the text the texture travels. */
 const PARALLAX = 0.18
 
-type Band = { src: string; centre: number; height: number }
+/**
+ * A band keeps ELEMENT references, not scroll offsets.
+ *
+ * Anchors captured once at mount go stale: the layer builds before the plates
+ * have loaded and the article is still short, so every centre recorded then is
+ * wrong by the time anything is on screen. Measured on day 1, that put the
+ * intro band's peak at the top of its range instead of its middle. Reading the
+ * rects at draw time costs a handful of reads per frame and cannot drift.
+ */
+type Band = {
+  src: string
+  /** Span is measured from these each frame. `to` defaults to `from`. */
+  from: HTMLElement
+  to?: HTMLElement
+  /** Extra reach past the span, as a multiple of viewport height. */
+  pad: number
+}
 
 function readToken(el: Element, name: string, fallback: string) {
   const v = getComputedStyle(el).getPropertyValue(name).trim()
@@ -153,11 +175,10 @@ export default function DrawingNearAtmosphere({
       stage.height = h
       const sctx = stage.getContext('2d')
       if (!sctx) return null
-      // Paper first — see IMAGE_W. Without this the empty field prints solid.
-      sctx.fillStyle = '#ffffff'
-      sctx.fillRect(0, 0, w, h)
-      const dw = w * IMAGE_W
-      const dh = dw * (img.naturalHeight / img.naturalWidth)
+      const cover = Math.max(w / img.naturalWidth, h / img.naturalHeight)
+      const scale = cover * ZOOM
+      const dw = img.naturalWidth * scale
+      const dh = img.naturalHeight * scale
       const dx = (w - dw) / 2
       const dy = (h - dh) / 2
       sctx.imageSmoothingQuality = 'high'
@@ -195,7 +216,7 @@ export default function DrawingNearAtmosphere({
       // the texture always dissolves into paper rather than stopping.
       // Founder: the fade was eating too much of the plate. It now runs over
       // the image's own top and bottom edge only, not a fifth of the frame.
-      const fade = octx.createLinearGradient(0, dy, 0, dy + dh)
+      const fade = octx.createLinearGradient(0, 0, 0, h)
       fade.addColorStop(0, 'rgba(0,0,0,1)')
       fade.addColorStop(0.1, 'rgba(0,0,0,0)')
       fade.addColorStop(0.9, 'rgba(0,0,0,0)')
@@ -206,7 +227,7 @@ export default function DrawingNearAtmosphere({
       // The same treatment on the left and right edges. Without it the plate
       // ends in two hard verticals and reads as a panel dropped behind the
       // page rather than as ground showing through it.
-      const side = octx.createLinearGradient(dx, 0, dx + dw, 0)
+      const side = octx.createLinearGradient(0, 0, w, 0)
       side.addColorStop(0, 'rgba(0,0,0,1)')
       side.addColorStop(0.12, 'rgba(0,0,0,0)')
       side.addColorStop(0.88, 'rgba(0,0,0,0)')
@@ -223,18 +244,23 @@ export default function DrawingNearAtmosphere({
         document.querySelectorAll<HTMLElement>('figure.inline-image-module'),
       )
       const next: Band[] = []
-      if (heroSrc)
-        next.push({ src: heroSrc, centre: vh * 0.5, height: vh * 2.2 })
+      if (heroSrc) {
+        // Founder: "intro image should start behind the first scripture and end
+        // by reflection or so." The v2 two-minute open pins that order —
+        // scripture, vocab, teaching, reflection, prayer, cta — so sections 1
+        // and 4 ARE those two modules. Anchoring to the real elements means no
+        // shared component needed a hook added for this.
+        const first = document.getElementById('devotional-section-1')
+        const until = document.getElementById('devotional-section-4')
+        if (first && until) {
+          next.push({ src: heroSrc, from: first, to: until, pad: 0.2 })
+        }
+      }
       for (const fig of figures) {
         const img = fig.querySelector('img')
         const src = img?.getAttribute('src')
         if (!src) continue
-        const r = fig.getBoundingClientRect()
-        next.push({
-          src,
-          centre: r.top + window.scrollY + r.height / 2,
-          height: vh * 2.6,
-        })
+        next.push({ src, from: fig, pad: 1.3 })
       }
       bands = next
     }
@@ -280,15 +306,22 @@ export default function DrawingNearAtmosphere({
       for (const b of bands) {
         const off = plates.get(b.src)
         if (!off) continue
-        const d = Math.abs(mid - b.centre)
-        if (d > b.height) continue
+        // Live measurement — see the Band type.
+        const ra = b.from.getBoundingClientRect()
+        const rb = (b.to ?? b.from).getBoundingClientRect()
+        const top = ra.top + window.scrollY
+        const bottom = rb.bottom + window.scrollY
+        const centre = (top + bottom) / 2
+        const height = (bottom - top) / 2 + vh * b.pad
+        const d = Math.abs(mid - centre)
+        if (d > height) continue
         // Envelope: full in the middle of the band, nothing at its edges, so
         // consecutive plates are separated by clean paper rather than a mix.
-        const e = 1 - d / b.height
+        const e = 1 - d / height
         const alpha =
           peak * Math.pow(Math.sin(e * Math.PI * 0.5), 1.6) * revealed
         if (alpha < 0.004) continue
-        const travel = reduced ? 0 : (mid - b.centre) * PARALLAX
+        const travel = reduced ? 0 : (mid - centre) * PARALLAX
         ctx.globalAlpha = alpha
         ctx.drawImage(off, 0, (vh - off.height) / 2 + travel)
       }

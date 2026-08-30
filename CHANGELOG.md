@@ -31,6 +31,19 @@ out, and leaving clean paper before the next one begins.
   proportions at 56% of viewport width; fades moved onto the plate's own four
   edges; and the first texture held until below the fold (verified: zero ink
   from scrollY 0 through 900 on an 890px viewport).
+- **Sizing reverted** on founder's call — "the last version worked": back to the
+  cover crop at 1.25x rather than drawing the whole plate small in a field of
+  paper. The corrections made alongside that experiment are kept (cell 5, softer
+  edge fades, below-fold hold). Verified on the navy reader theme as well as
+  cream: screen blend, light dots, type unaffected.
+- **The intro plate is anchored to the reading, not to a scroll offset**: it
+  starts behind the first scripture and is gone by the reflection. `two-minute-open-v2`
+  pins that module order, so sections 1 and 4 are those two modules and no shared
+  component needed a hook.
+- **Fixed while verifying: bands were measuring stale anchors.** Offsets captured
+  at mount are wrong by the time plates have loaded and the article has grown —
+  it put the intro band's peak at the top of its range instead of the middle.
+  Bands now hold element references and read their rects per frame.
 
 ## 2026-08-30 — Drawing Near: seven days on access, at image intensity 5 — SA-132 (F-176)
 
