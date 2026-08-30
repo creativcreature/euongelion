@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 21:56 EDT — **Report #26**
+**Last updated:** 2026-08-29 22:06 EDT — **Report #27**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1877,6 +1877,103 @@ So the DepthFlow figure is the single "proved" item with **no independent corrob
 anywhere**, and it is also the one that most shapes the recommendation. The rest of the proved
 list has a second witness in this document.
 
+### 6.68 ★★ The `video-spec` pitch answers the surface question — but the handoff doesn't carry it
+
+The founder pointed at `euangelion.app/admin/pitches/target-youtube-episode-spec` — 478 lines from
+a **parallel `video-spec` session**. It settles §6.49 / §6.57 / §6.66's Watch-2 outright:
+
+> _"This is the answer to how the video sits against the social plan. **It does not sit beside it.
+> It is the spine, and the plan becomes downstream of it.**"_
+
+The target is the long-form YouTube episode; social is derivative. **So the oldest open question in
+this log is answered — in a pitch, by a different session.** The handoff written tonight to brief
+the social session does _not_ contain it (§6.66). The answer exists and is simply not connected to
+the document that needs it.
+
+**Its arithmetic is fully verified by this monitor:**
+
+```
+days to 2027-02-01 .......... 156  = 22.3 weeks     ✓ ("roughly 22 weeks")
+4,000 hrs = 240,000 watch-min                        ✓
+22 eps · 14min · 40% → avg 5.60min → 42,857 views → 1,948/ep   ✓
+44 eps · 14min · 40% → 42,857 views → 974/ep                    ✓
+44 eps · 15min · 45% → avg 6.75min → 35,556 views → 808/ep      ✓
+subscriber gate: 2% of 35,556 = 711 vs 1,000 → short 289        ✓
+```
+
+And it draws the honest conclusion this monitor would have: _"Your best-ever video did 1,500 views.
+Scenario one asks you to beat that every week for 22 weeks from zero subscribers… **Only one of
+those is a plan.**"_ Plus the sharpest structural point of the night — **YPP is two gates, not
+one**: long-form banks the 4,000 hours, Shorts bank the 1,000 subscribers, neither substitutes,
+and the **subscriber gate is the tighter one**.
+
+### 6.69 ⚠️ The pitch contradicts tonight's pipeline on the compositor
+
+> _"**No generation. Standing ruling.** Motion comes from **Adobe CC** plus the owned **Artlist
+> packs**. Generation is reserved for the single case nothing else covers: making one of your own
+> plates move."_
+
+Two collisions with the pipeline built tonight:
+
+1. **Adobe CC vs Remotion.** §6.46 argued Remotion over After Effects specifically — 12fps native,
+   no motion blur by default, posterize as `Math.floor(frame/2)*2`, and crucially _"expressed as
+   code Claude can read and check,"_ which is what makes the eye skill possible at all. The pitch
+   names Adobe CC. **These are different compositors with different eye-skill implications, and
+   nobody has reconciled them.**
+2. **"Owned Artlist packs"** — a licensed motion-asset library that **no one in the video session
+   has mentioned all night**. It materially changes §6.48's element-library maths (100–150 elements
+   at 60–120s of Codex generation each). If motion assets are already owned, a large part of the
+   generation stage may be unnecessary.
+
+_(The "no generation" ruling appears to concern **video/motion** generation, which is consistent
+with LTX being uninstalled. Codex image generation for collage elements remains sanctioned by
+CLAUDE.md. But the ruling should be stated precisely rather than inferred.)_
+
+**Other locked specifics the pipeline must respect:** palette Newspaper Cream / Federal
+Ultramarine 80% / Deep Crimson Burgundy 20% spot, burgundy-led roughly 1 in 5 for sacred-weight
+passages; **screen-blend elements must sit on pure black or the cream ground renders as a visible
+box — "already cost time once"**; paper grain and two-ink misregistration as _"the anti-AI tell
+made visible"_; half of all frames type-as-art; ~1,540 spoken words per 14-minute episode; score
+ducked ~−18 dB, **implemented and still unverified**; never render twice to the same filename,
+verify the master by decoding it. Title formulas: declarative facts shaped like queries;
+rhetorical-question and "not X, but Y" both **banned** — consistent with SA-130.
+
+### 6.70 ⚠️⚠️ Correction to this monitor's §6.41 — and it is the second scoping error tonight
+
+**§6.41 said CLAUDE.md's "~8,500 images" was "a roughly 10× overstatement" against a measured 869.
+That was wrong.** This monitor counted only `public/images/`. Measured across every location:
+
+```
+public/images     869
+design-sources  6,635
+archive         1,923
+TOTAL           9,427     ← CLAUDE.md's "~8,500" was approximately RIGHT
+```
+
+**The credit given in §6.41 must also be withdrawn** — the video session's use of 869 was correct
+_for its context_, but this monitor's framing of CLAUDE.md as a 10× overstatement was not. The
+subject session found and corrected the same thing independently at 22:05.
+
+**This is the second scoping error of the night** — §6.63 corrected the research corpus (21 vs 63
+items). **Both have the same root cause: measuring a subset and characterising the whole.** It is
+the exact failure this document exists to catch, committed twice by the document. Recorded as a
+standing caution on everything above: **where this monitor cites a count, check what was counted.**
+
+**A third near-miss, caught before publication.** The pitch claims _"Eight series briefs with
+matching source packs already exist… 56 episodes written against a need for 44."_ This monitor
+first checked `public/devotionals/` and found only 6 of 8 series present (42 devotionals), and was
+about to call the claim wrong. Checking the artefact actually named — **briefs and source packs** —
+shows the pitch is right:
+
+```
+all 8 series: content/series-briefs/<slug>.md ✓  and  content/source-packs/<slug>.md ✓
+devotionals written: 7 each for 6 series = 42; john-3 and what-is-euangelion have 0
+```
+
+**Precisely: 42 episodes drafted, 14 more briefed with source packs, 56 total capacity against a
+need for 44.** The word "written" overstates by 14; the conclusion — _"content is not the
+constraint"_ — holds.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1911,6 +2008,19 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #27 — 22:06 EDT.** §6.68 ★★: the parallel **`video-spec` pitch answers the surface
+  question** — _"It is the spine, and the plan becomes downstream of it"_ — settling the oldest
+  open item in this log, though **the handoff to the social session doesn't carry it**. Its
+  arithmetic **fully verified**: 22.3 weeks, 42,857/35,556 views, 1,948/974/808 per episode, 711
+  subs vs 1,000. Best structural point of the night: **YPP is two gates**, long-form banks hours,
+  Shorts bank subscribers, and the **subscriber gate is tighter**. §6.69 ⚠️: the pitch's _"No
+  generation. Standing ruling. Motion comes from **Adobe CC** plus the owned **Artlist packs**"_
+  collides with tonight's **Remotion** argument, and names an owned motion library **nobody in the
+  video session has mentioned** — which would shrink the generation stage materially. §6.70 ⚠️⚠️:
+  **corrected this monitor's own §6.41** — the real image total is **9,427**, so CLAUDE.md's
+  ~8,500 was approximately right and the "10× overstatement" claim is withdrawn. **Second scoping
+  error tonight**, same root cause as §6.63: measuring a subset, characterising the whole. A third
+  near-miss on the pitch's series claim was caught before publication — it is correct as stated.
 - **Report #26 — 21:56 EDT.** §6.66: handoff scored — **4 of 5 watch items passed.** ✅ The
   **83-day gate finding survived** into a video handoff, carried verbatim with the founder's
   ruling. ✅ Constraints carried _with arithmetic_ (~26 watch-hours/day to clear YPP in 155 days).
