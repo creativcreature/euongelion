@@ -1,5 +1,10 @@
 # Production Compaction Handoff
 
+> **Latest session handoff (2026-08-30):**
+> `handoff/2026-08-30-drawing-near-and-image-intensity.md` — Drawing Near
+> shipped live, image intensity 1-5 (SA-131), the reader atmosphere (SA-133).
+> Read that first for what is half-done and the traps.
+
 Last Updated: 2026-02-18
 Purpose: Guarantee continuity after context compaction with no behavior drift.
 

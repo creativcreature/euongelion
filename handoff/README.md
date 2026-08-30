@@ -24,34 +24,35 @@ Everything else in this folder was **moved**. Nothing was duplicated and nothing
 
 ## The archive
 
-| Date       | File                                                | Document                                        | Moved from                                           |
-| ---------- | --------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------- |
-| 2026-02-11 | `2026-02-11-opencode-typography-color.md`           | The Typography & Color Revolution               | `opencode-handoff.md`                                |
-| 2026-02-14 | `2026-02-14-production-compaction-soul-audit.md`    | Production Compaction Handoff                   | `soul-audit-docs/production-governance/`             |
-| 2026-02-18 | `2026-02-18-production-compaction.md`               | Production Compaction Handoff                   | `docs/` — **copy, original is live**                 |
-| 2026-02-28 | `2026-02-28-soul-audit-overhaul.md`                 | Soul Audit Overhaul — Running Handoff           | repo root                                            |
-| 2026-05-04 | `2026-05-04-brand-bible-workstream.md`              | Brand Bible Workstream — Session Handoff        | `docs/brand/HANDOFF.md`                              |
-| 2026-05-04 | `2026-05-04-site-changes.md`                        | Site Changes — Handoff for Next Session         | `design-sources/image-library/generated-2026-05-04/` |
-| 2026-05-04 | `2026-05-04-homepage-devotional-redesign.md`        | Homepage Devotional Redesign                    | `design-sources/image-library/generated-2026-05-04/` |
-| 2026-07-10 | `2026-07-10-run-handoff-rolling.md`                 | Resume here after any compaction/restart        | `docs/run/HANDOFF.md` — **copy, original is live**   |
-| 2026-07-11 | `2026-07-11-reader-format-redesign.md`              | Reader Format Redesign                          | `docs/reader-format-redesign-handoff.md`             |
-| 2026-07-28 | `2026-07-28-claude-stabilization-audit.md`          | Euangelion Stabilization Audit                  | repo root                                            |
-| 2026-07-30 | `2026-07-30-session-handoff.md`                     | 07-26 → 07-30: Harvest + Daily Bread + cleanup  | `docs/run/SESSION-HANDOFF-2026-07-30.md`             |
-| 2026-07-30 | `2026-07-30-run-handoff.md`                         | Imagery, Reader Redesign & Repo Cleanup         | `docs/run/HANDOFF-2026-07-30.md`                     |
-| 2026-07-30 | `2026-07-30-custom-generation-session.md`           | Custom Generation, Accounts, Storefront         | `docs/run/`                                          |
-| 2026-08-13 | `2026-08-13-devo-pipeline-spec.md`                  | Devotional Media Pipeline — Build Spec          | `docs/DEVO-PIPELINE-HANDOFF-SPEC.md`                 |
-| 2026-08-15 | `2026-08-15-library-and-red-letter.md`              | Library, highlights, red letter                 | `docs/run/`                                          |
-| 2026-08-15 | `2026-08-15-narration.md`                           | Narration                                       | `docs/run/`                                          |
-| 2026-08-16 | `2026-08-16-design-session.md`                      | The design session                              | `docs/run/`                                          |
-| 2026-08-16 | `2026-08-16-transport-and-journaling.md`            | Reader Transport & Journaling                   | `docs/run/`                                          |
-| 2026-08-19 | `2026-08-19-bible-365-overhaul-and-homepage.md`     | Bible 365 overhaul + homepage hero (08-19 → 24) | `docs/run/`                                          |
-| 2026-08-20 | `2026-08-20-audio-player.md`                        | The Audio Player                                | `docs/run/`                                          |
-| 2026-08-24 | `2026-08-24-all-these-things.md`                    | "All These Things" series build                 | `docs/run/`                                          |
-| 2026-08-24 | `2026-08-24-soul-audit-day-zero.md`                 | Soul Audit day-zero completion                  | `docs/run/`                                          |
-| 2026-08-24 | `2026-08-24-soul-audit-cost-architecture.md`        | Soul Audit cost architecture                    | `docs/run/`                                          |
-| 2026-08-24 | `2026-08-24-youtube-channel-and-devotional-film.md` | YouTube channel + devotional film               | `docs/run/`                                          |
-| 2026-08-24 | `2026-08-24-intro-animation-and-mobile-images.md`   | Intro animation, mobile images, bad deploy      | `docs/run/`                                          |
-| 2026-08-29 | `2026-08-29-video-pipeline-for-social-strategy.md`  | Video pipeline, for the social-strategy session | `docs/run/`                                          |
+| Date       | File                                                | Document                                                | Moved from                                           |
+| ---------- | --------------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------- |
+| 2026-02-11 | `2026-02-11-opencode-typography-color.md`           | The Typography & Color Revolution                       | `opencode-handoff.md`                                |
+| 2026-02-14 | `2026-02-14-production-compaction-soul-audit.md`    | Production Compaction Handoff                           | `soul-audit-docs/production-governance/`             |
+| 2026-02-18 | `2026-02-18-production-compaction.md`               | Production Compaction Handoff                           | `docs/` — **copy, original is live**                 |
+| 2026-02-28 | `2026-02-28-soul-audit-overhaul.md`                 | Soul Audit Overhaul — Running Handoff                   | repo root                                            |
+| 2026-05-04 | `2026-05-04-brand-bible-workstream.md`              | Brand Bible Workstream — Session Handoff                | `docs/brand/HANDOFF.md`                              |
+| 2026-05-04 | `2026-05-04-site-changes.md`                        | Site Changes — Handoff for Next Session                 | `design-sources/image-library/generated-2026-05-04/` |
+| 2026-05-04 | `2026-05-04-homepage-devotional-redesign.md`        | Homepage Devotional Redesign                            | `design-sources/image-library/generated-2026-05-04/` |
+| 2026-07-10 | `2026-07-10-run-handoff-rolling.md`                 | Resume here after any compaction/restart                | `docs/run/HANDOFF.md` — **copy, original is live**   |
+| 2026-07-11 | `2026-07-11-reader-format-redesign.md`              | Reader Format Redesign                                  | `docs/reader-format-redesign-handoff.md`             |
+| 2026-07-28 | `2026-07-28-claude-stabilization-audit.md`          | Euangelion Stabilization Audit                          | repo root                                            |
+| 2026-07-30 | `2026-07-30-session-handoff.md`                     | 07-26 → 07-30: Harvest + Daily Bread + cleanup          | `docs/run/SESSION-HANDOFF-2026-07-30.md`             |
+| 2026-07-30 | `2026-07-30-run-handoff.md`                         | Imagery, Reader Redesign & Repo Cleanup                 | `docs/run/HANDOFF-2026-07-30.md`                     |
+| 2026-07-30 | `2026-07-30-custom-generation-session.md`           | Custom Generation, Accounts, Storefront                 | `docs/run/`                                          |
+| 2026-08-13 | `2026-08-13-devo-pipeline-spec.md`                  | Devotional Media Pipeline — Build Spec                  | `docs/DEVO-PIPELINE-HANDOFF-SPEC.md`                 |
+| 2026-08-15 | `2026-08-15-library-and-red-letter.md`              | Library, highlights, red letter                         | `docs/run/`                                          |
+| 2026-08-15 | `2026-08-15-narration.md`                           | Narration                                               | `docs/run/`                                          |
+| 2026-08-16 | `2026-08-16-design-session.md`                      | The design session                                      | `docs/run/`                                          |
+| 2026-08-16 | `2026-08-16-transport-and-journaling.md`            | Reader Transport & Journaling                           | `docs/run/`                                          |
+| 2026-08-19 | `2026-08-19-bible-365-overhaul-and-homepage.md`     | Bible 365 overhaul + homepage hero (08-19 → 24)         | `docs/run/`                                          |
+| 2026-08-20 | `2026-08-20-audio-player.md`                        | The Audio Player                                        | `docs/run/`                                          |
+| 2026-08-24 | `2026-08-24-all-these-things.md`                    | "All These Things" series build                         | `docs/run/`                                          |
+| 2026-08-24 | `2026-08-24-soul-audit-day-zero.md`                 | Soul Audit day-zero completion                          | `docs/run/`                                          |
+| 2026-08-24 | `2026-08-24-soul-audit-cost-architecture.md`        | Soul Audit cost architecture                            | `docs/run/`                                          |
+| 2026-08-24 | `2026-08-24-youtube-channel-and-devotional-film.md` | YouTube channel + devotional film                       | `docs/run/`                                          |
+| 2026-08-24 | `2026-08-24-intro-animation-and-mobile-images.md`   | Intro animation, mobile images, bad deploy              | `docs/run/`                                          |
+| 2026-08-29 | `2026-08-29-video-pipeline-for-social-strategy.md`  | Video pipeline, for the social-strategy session         | `docs/run/`                                          |
+| 2026-08-30 | `2026-08-30-drawing-near-and-image-intensity.md`    | Drawing Near series, image intensity, reader atmosphere | written in place                                     |
 
 ## `_variants/`
 

@@ -40,6 +40,10 @@ out, and leaving clean paper before the next one begins.
   starts behind the first scripture and is gone by the reflection. `two-minute-open-v2`
   pins that module order, so sections 1 and 4 are those two modules and no shared
   component needed a hook.
+- Session documented at `handoff/2026-08-30-drawing-near-and-image-intensity.md`
+  — what shipped with its evidence, what is half-done, and the traps (Workers
+  preview self-fetching production for a new devotional; audio living in R2 and
+  not the deploy bundle; intensity-5 plates flooding a halftone).
 - **Fixed while verifying: bands were measuring stale anchors.** Offsets captured
   at mount are wrong by the time plates have loaded and the article has grown —
   it put the intro band's peak at the top of its range instead of the middle.
