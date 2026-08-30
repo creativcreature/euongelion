@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:52 EDT — **Report #16**
+**Last updated:** 2026-08-29 20:56 EDT — **Report #17**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1161,6 +1161,70 @@ Four things this monitor will hold the spec to:
 4. **Style still decides it** (§6.25). Any spec resting on generative footage inherits the riso
    mismatch, whoever's GPU it runs on.
 
+### 6.40 The spec, scored against §6.39's watch items — 3 of 4 passed
+
+**Watch 1 — test the "one a day" hypothesis, don't flatter it. ✅ PASSED, well.**
+It did the arithmetic instead of accepting the premise: _"'100 free credits/day' on Seedance is
+not 100 clips. A 5-second 720p clip costs 50–60 credits. 1080p costs 150."_ Stacked across
+Seedance, Kling, Veo and Dreamina: **30–60 seconds of generated footage per day, mostly
+watermarked.** A 60-second video needs ~12 clips. Verdict — _"one video a day is correct for a
+generation-first pipeline, and wrong by about 5× for a library-and-motion-first one."_
+
+The design rule it derived from that is the strongest single line of the session:
+**"Generation is garnish, never substrate."** Stage 3 resolves library image → constructed motion
+→ free-GPU generation → hosted tier, in that order. Under it, a 60-second devotional spends
+5–10 seconds of generated footage as accent: **4–6 videos a day, not one.**
+
+**Watch 2 — the eye's rate-limit budget. ⚠️ NOT PASSED. The spec contradicts its own earlier work.**
+The spec states: _"**Only stage 3 is metered.** Every other stage is unlimited or already yours."_
+Stage 7's quota is listed as _"1,500 req/day"_ — Gemini's allowance only. Stages 0, 1 and 2
+(brief, research, storyboard) are all marked **"none."**
+
+At 17:27 this same session established the opposite (§6.9): _"On your subscription, vision costs
+**$0 in dollars** — it costs **rate-limit budget**. That's the real currency, and **the eye skill
+is the biggest consumer in the whole pipeline**."_ With ~11,200 tokens per 30-second clip review
+via contact sheets, at 3–10 iterations per video, stage 7 alone is 34k–112k tokens per video.
+
+**Claude's subscription rate limit is not "none," and by the session's own analysis it is the
+heaviest meter in the pipeline.** The spec costs Gemini and omits Claude. This is the same shape
+as §6.23 — a finding the session established itself, then designed past.
+
+**Watch 3 — don't let the deleted DepthFlow numbers in as fact. ✅ PASSED.** The spec says
+"depth parallax… seconds per clip" qualitatively and never quotes the unverifiable 0.66s figure.
+
+**Watch 4 — style decides it. ✅ PASSED.** _"Your brand is riso and typographic, which points at
+the second anyway — the ceiling and the aesthetic agree."_
+
+### 6.41 ✅ It used the real image count, not CLAUDE.md's — verified exactly
+
+The spec cites _"your 869-image library."_ **This monitor counted independently:**
+
+```
+find public/images -type f \( -name "*.webp" -o -name "*.png" -o -name "*.jpg" \) | wc -l
+  ->  869   ✅ exact match
+
+devotional-prints 291 · site 228 · substack-cache 182 · series 87 · og-lead 40 · edition 23 …
+```
+
+`CLAUDE.md:234` claims _"~8,500 generated images already on disk"_ and `:240` claims 1,405 in
+`public/images/library/`. **The real figure is 869 — a roughly 10× overstatement in the project's
+own documentation**, and it corroborates §6.30 from a second direction. The session quietly used
+the measured number rather than the documented one, which is the right instinct and worth the
+credit.
+
+### 6.42 The founder rejected the spec's basis, and the session conceded correctly
+
+> _"this process needs an actual researched pipeline to reflect against. What are industry
+> professionals doing? I need actual examples of workflows that we can either employ ourselves or
+> edit for our goals."_
+
+Session: _"Good — my spec was invented from first principles, which is exactly the wrong basis.
+Let me find documented professional practice."_
+
+**A fair call and a clean concession.** The spec was internally coherent and arithmetically sound,
+but it was reasoned rather than sourced — and the founder's opening brief had asked for research
+first precisely to avoid that. Third self-correction on evidence today, none defensive.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1195,6 +1259,15 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #17 — 20:56 EDT.** Spec delivered and scored against §6.39: **3 of 4 watch items
+  passed.** ✅ It tested the "one a day" hypothesis with real credit arithmetic (Seedance 100
+  credits = 1–2 clips, not 100) and answered conditionally — one/day generation-first, **4–6/day
+  library-first**, on the rule _"generation is garnish, never substrate."_ ⚠️ **Watch 2 failed:**
+  the spec says _"only stage 3 is metered"_ and costs Gemini but not Claude — contradicting its
+  own §6.9 finding that the eye is the pipeline's heaviest consumer of subscription rate limit.
+  §6.41: it used **869 images — verified exactly** — against CLAUDE.md's claimed ~8,500, a ~10×
+  doc overstatement corroborating §6.30. §6.42: founder rejected the first-principles basis and
+  the session conceded cleanly — third non-defensive self-correction today.
 - **Report #16 — 20:52 EDT.** 🚨 §6.37: **the repo is PUBLIC; CLAUDE.md:7 says private.** Verified
   by `gh` and by an unauthenticated `curl` returning HTTP 200 on this file. This document was
   pushed sixteen times without checking visibility — this monitor's own failure, of exactly the
