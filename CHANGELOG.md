@@ -13,6 +13,12 @@ founder was right to reject it. Rebuilt so the whole page is the experience.
 - **Seven rooms, the seventh the threshold.** Seven is the most solidly attested
   number in Scripture. The scrubbed film is no longer a room — it is the door you
   pass through to reach them.
+- **Twenty-five Hebrew names, up from fifteen.** Added El Gibbor, YHWH Tseva'ot,
+  YHWH Mekaddishkem, El Chai, Qanna, Tsur, Magen, Go'ali, Av and El Bethel. All 25
+  quotations verified byte-identical to the BSB corpus by parsing the data file
+  and comparing, not by inspection. Abba and Ancient of Days are deliberately
+  excluded and the exclusion is named: both are Aramaic, and the ask was Biblical
+  Hebrew.
 - **The comparison is comprehensive now.** Eighteen attributes, every one said of
   the Father, the Son and the Spirit, with a verse in all 54 cells — each verified
   present in `public/bibles/BSB`. Seven show by default and the other eleven sit
