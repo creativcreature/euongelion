@@ -1,0 +1,312 @@
+{
+  "day": 1,
+  "chiasm_position": "A",
+  "format": "two-minute-open-v2",
+  "title": "Crowned, And Hiding",
+  "subtitle": "The distance was chosen before it was enforced",
+  "teaser": "Made in His image, crowned with glory — and then hiding in the trees.",
+  "anchorVerse": "Genesis 3:8",
+  "theme": "Origins, and the exile that was mercy",
+  "framework": "chiastic-open",
+  "scriptureReference": "Genesis 1:26-28; Psalm 8:5; Genesis 3:8, 22-24",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Genesis 3:8",
+      "translation": "KJV",
+      "passage": "And they heard the voice of the Lord God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the Lord God amongst the trees of the garden.",
+      "emphasis": [
+        "hid themselves from the presence"
+      ],
+      "scriptureContext": "Before anyone is sent anywhere, they hide. The distance starts as a choice."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "צֶלֶם",
+      "transliteration": "tselem",
+      "pronunciation": "TSEH-lem",
+      "strongsNumber": "H6754",
+      "definition": "an image, a likeness — and specifically a representative image, the kind set up to stand for someone",
+      "usage": "The word in \"let us make man in our image.\" It is not a word about resemblance in the way a child resembles a parent. It is closer to a marker set in a place, so the place knows whose it is."
+    },
+    {
+      "type": "teaching",
+      "heading": "Crowned First",
+      "content": "The story does not begin with a fall. It begins with a coronation.\n\nBefore anything goes wrong, Genesis says two things in one breath: made in our image, and let them have dominion. Psalm 8 says the same thing with the crown made explicit — thou hast crowned him with glory and honour.\n\nThat is the starting position. Not small, not incidental, not on probation. Crowned.\n\nThis matters because most people carry the opposite as their first fact about themselves. If your account of yourself begins at Genesis 3, you will read everything after it as damage control. If it begins at Genesis 1, Genesis 3 becomes a loss — and a loss is a different thing from a verdict.\n\nSomething was taken. Something was there to take.\n\nThere is a second thing in the sentence that gets missed.\n\nGod says let us make man in our image, and then immediately says male and female created he them. The image is not given to one sort of person and withheld from another. It is stated of the pair, in the same verse, without qualification.\n\nSo whatever the crown is, nobody in the room is wearing a smaller one.\n\nHold that against how most of us actually rank ourselves. We keep private league tables — of usefulness, of holiness, of how well the week went. Genesis 1 does not know about any of that. It hands out the same crown before anyone has done anything at all."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which chapter does your account of yourself begin in — the crowning, or the hiding?",
+      "invitationType": "sit-with-it"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Short Prayer",
+      "prayerType": "opening",
+      "prayerText": "Father, I have got used to starting my story at the wrong chapter. Remind me today what I was made as, before I tell You again what I have done. Amen."
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "The crown, the hiding, and an exile with a stated reason."
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 1:26-28",
+      "translation": "KJV",
+      "passage": "And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth. So God created man in his own image, in the image of God created he him; male and female created he them. And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.",
+      "emphasis": [
+        "in our image",
+        "let them have dominion"
+      ],
+      "scriptureContext": "Image and dominion arrive in the same sentence. In the ancient world those two ideas belonged together."
+    },
+    {
+      "type": "teaching",
+      "heading": "An Image Is a Claim",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "content": "The two halves of that sentence are usually pulled apart. Image gets treated as a statement about human worth, and dominion as a separate job description.\n\nThe text does not separate them. They arrive together, and the order is deliberate.\n\nAn image, in that world, was something a king set up in a province he was not standing in. It marked the territory. It said whose this was. Daniel gives us the practice from the inside — Nebuchadnezzar sets up an image on the plain of Dura, and the whole province is summoned to it.\n\nA note on precision here. Daniel is written in Aramaic, and the word there is cognate to the Hebrew of Genesis rather than identical to it. The practice is the point; the vocabulary link should not be pushed further than that.\n\nSo read Genesis 1 again with that in mind. Humanity is placed in creation the way a marker is placed in a province. The territory is meant to look at us and learn something about who holds it.\n\nThat is a far heavier thing than being told you are valuable. Value is a fact about you. This is a job you were made to do by existing.\n\nAnd it makes the hiding in chapter three specific. It is not just that people felt bad. The marker went and stood behind a tree.\n\nThere is a reason this matters for a week about drawing near.\n\nIf the image is a marker of ownership, then a person hiding from God is not just a person feeling bad. It is a claim going unmade. The province stops hearing whose it is.\n\nThat reframes the stakes of your own quietness with God. It is not only that you miss out on comfort. Something you were placed here to say stops being said.\n\nAnd it explains why the Bible is so persistent about this. God keeps making ways to be near people who keep making distance. He is not collecting attendance. He is restoring a thing to its purpose."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day1-crowned.webp",
+      "inlineImageAlt": "A lone robed figure standing on a high ridge above an immense dark valley, seen from far behind and below.",
+      "inlineImageCaption": "Genesis 1:26-28 — the image of a King, set in a province so the territory knows whose it is.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "כָּבוֹד",
+      "transliteration": "kavod",
+      "pronunciation": "kah-VODE",
+      "strongsNumber": "H3519",
+      "definition": "glory — from a root meaning to be heavy. Weight, substance, the mass of what is present",
+      "usage": "Psalm 8 says God crowned man with kavod. It is not a word about sparkle. It is a word about heft — the difference a real presence makes in a room. Paul plays on it in 2 Corinthians 4:17 when he writes of an eternal weight of glory."
+    },
+    {
+      "type": "pullquote",
+      "content": "The marker went and stood behind a tree."
+    },
+    {
+      "type": "scripture",
+      "reference": "Psalm 8:4-6",
+      "translation": "KJV",
+      "passage": "What is man, that thou art mindful of him? and the son of man, that thou visitest him? For thou hast made him a little lower than the angels, and hast crowned him with glory and honour. Thou madest him to have dominion over the works of thy hands; thou hast put all things under his feet.",
+      "emphasis": [
+        "crowned him with glory and honour"
+      ],
+      "scriptureContext": "David reads Genesis 1 back as a coronation, and asks why anyone would bother."
+    },
+    {
+      "type": "teaching",
+      "heading": "Hiding Comes First",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "content": "Here is the detail that reorders the whole chapter.\n\nThey hid before they were sent out.\n\nRead the order in Genesis 3. The eating happens. Then the eyes open. Then they hear God walking in the garden in the cool of the day — and they hide themselves among the trees. The exile has not been announced yet. Nobody has been driven anywhere.\n\nThe distance began as a decision made by two frightened people in a garden. Only afterwards did it become a boundary with a guard on it.\n\nThat order is worth carrying, because it describes something most of us do without noticing. Long before anyone tells us we are far off, we have already put a tree between ourselves and God. We go quiet in prayer. We skip the part of the day where we would have to be known. We stay busy.\n\nNone of that is enforced by anyone. It is chosen, and it is chosen out of fear, and it is chosen first.\n\nAnd notice what God does with it. He does not shout across the garden. He walks in it, and He asks a question — where art thou — of someone He can plainly see.\n\nThe first move toward closing the distance is made by the one who was hidden from.\n\nThere is one more thing worth pulling out of the order.\n\nWhat they hid from is named precisely. Not from God in the abstract. From the presence of the Lord God, and from a sound — the voice of the Lord God walking in the garden in the cool of the day.\n\nThat is a domestic detail. It reads like something they had heard many times before and had not previously run from. The same sound, on a different day, was presumably the best part of the day.\n\nSo the change in Genesis 3 is not that God arrives differently. He arrives exactly as He always had. The change is entirely on their side of it.\n\nMost people know that experience. Nothing about God changed this week. Something about your willingness to be in the room did."
+    },
+    {
+      "type": "insight",
+      "heading": "The Question He Did Not Need to Ask",
+      "content": "God's first recorded words after the fall are a question, and it is not an interrogation.\n\nHe asks where they are. He is not short of the information.\n\nThe question is doing something else. It gives them the chance to come out and answer rather than be dragged out. It treats them, in the middle of the worst moment of the story, as people who can still speak for themselves.\n\nThat is the tone God takes toward hiding people. It sets up everything the rest of this week is about.",
+      "historicalContext": "Genesis 3:9. The Hebrew is a simple locative question, and the same courtesy shows up later with Hagar in the wilderness and with Elijah under the juniper — God asking someone who is hiding a question they can answer."
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient and Now",
+      "ancientTruth": "Humanity was set in creation as the image of a King, and then hid from Him among the trees He had made.",
+      "modernApplication": "The distance you feel is rarely something being done to you. Most of it is a tree you chose, for reasons that felt like good ones at the time.",
+      "connectionPoint": "Genesis 3:8 puts the hiding before the exile. Fear moved first, and the boundary came afterwards.",
+      "newTestamentEcho": "Romans 8:15 — \"ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.\""
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 3:22-24",
+      "translation": "KJV",
+      "passage": "And the Lord God said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever: Therefore the Lord God sent him forth from the garden of Eden, to till the ground from whence he was taken. So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.",
+      "emphasis": [
+        "lest he put forth his hand",
+        "live for ever",
+        "to keep the way of the tree of life"
+      ],
+      "scriptureContext": "The exile arrives with its reason stated in the text. It is worth reading the reason before reading the sentence."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Reason Is In the Text",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "content": "There is a way of telling this story that everyone has heard. God was angry, and He threw them out.\n\nGenesis does not tell it that way, and the difference is one verse.\n\nBefore the sending out, God says why. Lest he put forth his hand, and take also of the tree of life, and eat, and live for ever.\n\nRead that slowly, because it is not what people expect. The danger God names is not that they would get away with something. The danger is that they would eat and live for ever — in the condition they were now in.\n\nA man who has just learned to hide, just learned to blame his wife, just learned to be afraid of the sound of God walking. Fix that man in place permanently, and you have not punished him. You have sealed him.\n\nSo the gate is shut. And it is shut with cherubim and a flaming sword that turns every way, which is a serious image and is meant to be. But the stated purpose is to keep the way of the tree of life.\n\nKeep can mean guard against. It can also mean preserve. Something is being kept safe here, and the text does not say it was being kept safe from us out of spite.\n\nIt is possible to read that gate as the first mercy in the Bible.\n\nThat does not make the exile pleasant, and this week will not pretend it was. But it changes who God is in the scene. Not a landlord evicting tenants. Someone refusing to let a broken thing become permanent.\n\nOne more thing about the sword, because the image is violent and it should not be softened dishonestly.\n\nIt is a real barrier with a real edge. Genesis is not describing a polite request to leave. The way is kept, and kept with force.\n\nBut notice what it is kept away from. Not from God. From the tree of life.\n\nThe couple are not barred from God's presence in Genesis 3. They go on speaking with Him. Cain speaks with Him in the next chapter. What is closed is the one thing that would have fixed their present condition in place for ever.\n\nThat distinction runs all week. The thing that got hard was not conversation. It was nearness of a particular kind — the settled, unguarded, walking-in-the-cool-of-the-day kind. That is what needed a torn veil to get back."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day1-hiding.webp",
+      "inlineImageAlt": "Two figures pressed behind heavy tree trunks in deep shadow, backs turned, a warm light falling through the grove beyond them.",
+      "inlineImageCaption": "Genesis 3:8 — they hid themselves among the trees. The distance was chosen before it was enforced.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "GQI72THyO5I",
+      "videoTitle": "Book of Genesis Summary: A Complete Animated Overview (Part 1)",
+      "videoCaption": "The shape of Genesis 1-11, which is the ground the whole week stands on.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "story",
+      "heading": "The Gate That Was Never Reopened",
+      "content": "Nothing in the Old Testament goes back through that gate.\n\nThat is worth noticing. The garden is not revisited. No patriarch finds it, no prophet is shown the way back in, no king builds near it. Whatever happened to the place, the road there closes in Genesis 3 and the Bible simply stops speaking about it.\n\nWhat replaces it is a series of arrangements for coming near somewhere else. A tent in a wilderness. A room behind a curtain. A day in the year. Each one is a way of having God present among people. None of them solves the problem of Genesis 3.\n\nAnd then, at the very end of the Bible, the tree of life appears again — in a city, in the open, with no guard mentioned.\n\nThe gate was never reopened. A different way in was made.\n\nThere is one more detail worth having.\n\nThe guard is placed at the east of the garden. Small thing, easily read past. But east is the direction the Bible keeps using for going away from God. Cain goes east. Babel is built as people travel from the east. And the tabernacle is later entered from the east side, so that coming in means walking west, back toward the presence.\n\nWhether or not every one of those is deliberate, the pattern is there in the text, and it is the same shape as this week. Out toward the east, and then a long way back.",
+      "connectionToTheme": "The week runs between those two points. A closed way at the start, a different way opened at the cross, and an open city at the end."
+    },
+    {
+      "type": "scripture",
+      "reference": "Revelation 22:2-3",
+      "translation": "KJV",
+      "passage": "In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations. And there shall be no more curse: but the throne of God and of the Lamb shall be in it; and his servants shall serve him:",
+      "emphasis": [
+        "the tree of life",
+        "there shall be no more curse"
+      ],
+      "scriptureContext": "The tree that was fenced off in Genesis 3, growing in a public street at the end of the Bible, with no guard mentioned."
+    },
+    {
+      "type": "teaching",
+      "heading": "Two Ways to Be Far Off",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "remez",
+      "content": "By the end of Genesis 3 there are two different distances in the story, and it helps to keep them apart.\n\nThe first is the one they chose. They heard God and hid. That distance is made of fear and shame, and it is the one most people actually live with.\n\nThe second is the one that was enforced. A gate, a guard, a real barrier with a real reason behind it.\n\nThey are not the same problem, and they do not have the same solution.\n\nThe enforced distance needed something done about it, and nothing a person could do would do it. That is what the next two days are about — the honest system that managed it, and the afternoon that ended it.\n\nThe chosen distance is different. It is not removed by the cross in the sense of being made impossible. People who fully believe the way is open still hide. The tree is still there and still available.\n\nWhich is why this week does not end at Wednesday. Thursday has to say come, out loud, to people who are already free to.\n\nIt is worth saying plainly which of the two this week can actually do something about.\n\nThe enforced distance is dealt with, finished, and not your problem to solve. Wednesday says so in one word.\n\nThe chosen distance is yours, and it will still be yours on Friday. No amount of correct theology removes it automatically. People who could give you a flawless account of the torn veil still go quiet for months.\n\nSo the week is not only information. Thursday is an invitation, and Friday is about what you do with the freedom once you have believed it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Name the tree you go behind. Not the sin — the hiding place you use afterwards.",
+      "invitationType": "journal",
+      "additionalQuestions": [
+        "What does going quiet with God look like for you specifically?",
+        "If God asked where art thou today, what would be the honest answer?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Practice",
+      "interaction_type": "physical",
+      "instruction": "A short exercise done standing. It takes about three minutes.",
+      "steps": [
+        {
+          "title": "Stand up",
+          "description": "Actually stand. This one does not work sitting down, because the body is part of the point."
+        },
+        {
+          "title": "Take a step back",
+          "description": "One deliberate step backwards. As you take it, name the tree — the thing you put between yourself and God when you do not want to be seen."
+        },
+        {
+          "title": "Stay there a moment",
+          "description": "Do not rush this. Notice that the step was yours. Nobody moved you."
+        },
+        {
+          "title": "Step forward",
+          "description": "One step back to where you were. Say, out loud if you can: the way is open, and the hiding was mine."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "Crowned, And Hiding",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "sod",
+      "content": "Both things are true at once, and the week begins by holding them together.\n\nYou were made as the image of a King, crowned with weight and given a province. And you are, most days, somewhere behind a tree.\n\nMost accounts of a person pick one. Either you are wonderful and the problem is your circumstances, or you are a mess and the crown talk is flattery. Genesis refuses both. It gives the coronation in chapter one and the hiding in chapter three, and it never withdraws the first to explain the second.\n\nThat is the position the rest of this week speaks to. Not to someone who needs convincing they matter, and not to someone who needs their failure explained away.\n\nTo someone crowned, and hiding, and about to be told what it cost to open the way back.\n\nTomorrow does not rush to comfort. It goes to an altar and looks honestly at how far blood could bring a person, and where it stopped. The comfort is real, and it is on Thursday, and it will mean more for having waited."
+    },
+    {
+      "type": "insight",
+      "heading": "Where the Week Is Going",
+      "content": "This series runs on two frames, one inside the other.\n\nThe outer frame is obedience to relationship. The inner frame is permission to proximity.\n\nToday sits at the start of both. What was lost in the garden was not primarily a permission slip. It was company — walking in the garden in the cool of the day, which is the most ordinary picture of God in the whole Bible.\n\nKeep that picture. It is what the week is trying to get back to.",
+      "historicalContext": "Genesis 3:8 describes God walking in the garden as a habit rather than an event — the phrasing implies something the couple recognised by sound."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day1-sword.webp",
+      "inlineImageAlt": "Two figures walking away from a lit gateway into darkness, seen from behind, shoulders touching.",
+      "inlineImageCaption": "Genesis 3:24 — the way to the tree is kept, and two people walk out of the garden.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerType": "closing",
+      "prayerText": "Father, You made me to stand for You in a place, and I have spent a good deal of my life standing behind a tree instead. Thank You that the first thing You said after it all went wrong was a question, and that You asked it of someone You could already see. Ask it again today. I will try to answer without hiding. Amen.",
+      "breathPrayer": "Crowned — and no longer hiding."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "Today I will answer where art thou without going quiet first.",
+      "leavingAtCross": [
+        "The version of my story that starts at the failure",
+        "The habit of hiding before I have even been asked anything"
+      ],
+      "receivingFromCross": [
+        "A crown that was given before anything was earned",
+        "A God whose first move toward hiding people is a question"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "According to Genesis 3:22, why were the man and the woman sent out of the garden?",
+      "options": [
+        "So that they would learn to work the ground",
+        "So that they would not eat of the tree of life and live for ever in that condition",
+        "Because God could no longer bear to look at them",
+        "So that the cherubim would have something to guard"
+      ],
+      "answer": 1,
+      "explanation": "The text gives the reason before it gives the sentence: \"lest he put forth his hand, and take also of the tree of life, and eat, and live for ever.\" The danger named is permanence, not escape. Read that way, the shut gate keeps a broken condition from becoming a fixed one."
+    },
+    {
+      "type": "profile",
+      "heading": "A Voice From the Church",
+      "name": "David",
+      "era": "Around the tenth century BC",
+      "bio": "A shepherd, then a fugitive, then a king, and the author of Psalm 8. He read Genesis 1 back as a coronation and then asked the obvious question about it — why God would bother with people at all.",
+      "keyQuote": "What is man, that thou art mindful of him?",
+      "lessonForUs": "David does not resolve the tension between the crown and the smallness. He holds both in one psalm. That is the right posture for today."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Further Study",
+      "relatedScriptures": [
+        {
+          "reference": "Daniel 3:1 (KJV)",
+          "text": "Nebuchadnezzar sets up an image on the plain of Dura and summons a province to it. The practice behind Genesis 1:26, seen from inside. Note: Daniel is Aramaic, so the word is cognate rather than identical."
+        },
+        {
+          "reference": "2 Corinthians 4:17 (KJV)",
+          "text": "\"An eternal weight of glory\" — Paul playing on the same heaviness that sits under the Hebrew kavod."
+        },
+        {
+          "reference": "Revelation 22:2 (KJV)",
+          "text": "The tree of life reappears at the end of the Bible, in a city, with no guard mentioned."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Book of Genesis Summary (Part 1)",
+          "type": "video",
+          "source": "BibleProject",
+          "note": "Genesis 1-11 as a single argument."
+        },
+        {
+          "title": "Strong's H6754 / H3519",
+          "type": "reference",
+          "note": "tselem and kavod."
+        }
+      ]
+    }
+  ]
+}

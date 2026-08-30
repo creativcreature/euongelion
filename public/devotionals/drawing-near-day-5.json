@@ -1,0 +1,296 @@
+{
+  "day": 5,
+  "chiasm_position": "A-prime",
+  "format": "two-minute-open-v2",
+  "title": "Only Use Not Liberty",
+  "subtitle": "How you carry something this expensive",
+  "teaser": "Kept out once, for protection. Let in now, at cost. So how is a freedom like that held?",
+  "anchorVerse": "Galatians 5:13",
+  "theme": "Nearness produces company",
+  "framework": "chiastic-close",
+  "scriptureReference": "Hebrews 10:23-25; Galatians 5:13",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Galatians 5:13",
+      "translation": "KJV",
+      "passage": "For, brethren, ye have been called unto liberty; only use not liberty for an occasion to the flesh, but by love serve one another.",
+      "emphasis": [
+        "called unto liberty",
+        "by love serve one another"
+      ],
+      "scriptureContext": "Paul states the freedom first and without qualification, then says how it is carried."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "חֶסֶד",
+      "transliteration": "chesed",
+      "pronunciation": "KHEH-sed",
+      "strongsNumber": "H2617",
+      "definition": "steadfast love, loyal kindness, mercy — covenant faithfulness that keeps showing up",
+      "usage": "In Hosea 6:6 God says He desired this rather than sacrifice. English needs several words for it: mercy, lovingkindness, steadfast love. It is the thing God wants from people who have been brought near."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Order of the Sentence",
+      "content": "Read Galatians 5:13 in the order Paul wrote it, because the order is the teaching.\n\nFirst: ye have been called unto liberty. Flat statement, no conditions attached, nothing held back pending good behaviour.\n\nThen: only use not liberty for an occasion to the flesh.\n\nThe warning comes second, and it comes as a way of holding the first thing, not as a limit on it. Paul does not say you have a bit of freedom, so be careful. He says you are free, and here is how free people carry it.\n\nThat order matters because most of us have heard this verse the other way round — as a leash with a small amount of slack.\n\nToday is not a warning day. It is the last movement of a week about being let in."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Do you hold your freedom as a gift to carry, or as a rule with some slack in it?",
+      "invitationType": "sit-with-it"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Short Prayer",
+      "prayerType": "opening",
+      "prayerText": "Lord, You called me to liberty and I keep turning it back into a rulebook, or into an excuse. Teach me the third thing today. Amen."
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "Draw near, hold fast, consider one another — in that order, for a reason."
+    },
+    {
+      "type": "scripture",
+      "reference": "Hebrews 10:23-25",
+      "translation": "KJV",
+      "passage": "Let us hold fast the profession of our faith without wavering; (for he is faithful that promised;) And let us consider one another to provoke unto love and to good works: Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.",
+      "emphasis": [
+        "consider one another",
+        "provoke unto love and to good works"
+      ],
+      "scriptureContext": "The two sentences that follow let us draw near. Hebrews answers its own question about what nearness produces."
+    },
+    {
+      "type": "teaching",
+      "heading": "Three Consequences, In Order",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "content": "Hebrews does not leave you to work out what to do with an open door. It gives three things in sequence, and the sequence is the argument.\n\nLet us draw near. That was yesterday.\n\nLet us hold fast the profession of our faith without wavering. That is second, and notice the reason given in the brackets — for he is faithful that promised. The holding on is grounded in His reliability, not in yours.\n\nAnd let us consider one another to provoke unto love and to good works. That is third.\n\nSo the responsibility of this week is not a separate topic bolted on at the end. It is the third consequence of nearness. You go in; you keep hold; you look around at who else is in the room.\n\nThat is why today is not a corrective. Nothing has gone wrong that needs fixing. The letter is simply following its own logic to the end.\n\nAnd it is worth seeing what the third item actually says. Consider one another — the word carries the sense of paying attention, studying, noticing. Then provoke, which in the Greek is a sharp word, closer to stirring up than to encouraging politely.\n\nYou are to pay enough attention to people to know what would stir them up toward love. That is a considerable amount of attention.\n\nIt is worth noticing what Hebrews does not say here.\n\nIt does not say now that you may draw near, be careful. It does not add conditions to yesterday. Nothing in verses 23 to 25 reaches back and qualifies verse 22.\n\nThe instructions are downstream. They describe the life of people who have already gone in, not the terms on which they may.\n\nThat is the difference between a warning and a consequence, and reading it wrongly has soured this passage for a lot of people."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day5-table.webp",
+      "inlineImageAlt": "A crowded table, a hand closing on a tax collector's wrist as he half rises, others recoiling.",
+      "inlineImageCaption": "Matthew 9:10-13 — Jesus quotes Hosea 6:6 at people objecting to who is at the table.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "scripture",
+      "reference": "Hosea 6:6",
+      "translation": "KJV",
+      "passage": "For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings.",
+      "emphasis": [
+        "I desired mercy, and not sacrifice"
+      ],
+      "scriptureContext": "The line Jesus quotes twice. The Hebrew idiom needs care, and its own internal control is nearby."
+    },
+    {
+      "type": "teaching",
+      "heading": "Not Instead Of. More Than.",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "content": "Hosea 6:6 is a verse that can be made to say something it does not say.\n\nRead flatly in English, I desired mercy, and not sacrifice sounds like an abolition. As though God had rejected the altar outright, which would put this verse at war with everything Tuesday was about.\n\nHebrew regularly states a preference by negating the lesser term. Not this, but that means this matters far more than that, not this is cancelled.\n\nAnd we do not have to guess, because Scripture supplies its own control. In Mark 12, a scribe agrees with Jesus and puts it in comparative form: to love God and love your neighbour is more than all whole burnt offerings and sacrifices.\n\nMore than. Same idea, unambiguous grammar.\n\nSo Hosea is not deleting Tuesday. He is ranking. The altar was real and God gave it, and the thing He was always after through it was chesed — steadfast, loyal love.\n\nKeep that pairing whenever you meet this verse. On its own it can be made to abolish the sacrificial system. With Mark 12:33 beside it, it does what it was written to do.\n\nThere is a wider habit worth taking from this.\n\nScripture regularly supplies its own controls. A verse that could be over-read in isolation usually has a companion somewhere that pins the meaning down.\n\nHosea has Mark 12. The seesaw in Matthew 5:17 has the two Greek verbs sitting side by side. Genesis 3:24 has Genesis 3:22 one verse earlier, stating the reason.\n\nWhen a verse seems to say something enormous on its own, the honest next move is to look for the control before building on it."
+    },
+    {
+      "type": "insight",
+      "heading": "Both Times, At a Table",
+      "content": "Jesus quotes Hosea 6:6 twice, and the settings are worth noticing together.\n\nThe first time, He is eating with tax collectors and sinners, and the objection is about the company. Go and learn what that meaneth, He says, and quotes the verse.\n\nThe second time, His disciples are pulled up for plucking grain on the sabbath. Same verse, and this time He adds a line: ye would not have condemned the guiltless.\n\nBoth times, the verse is aimed at people judging someone else. Not at people who were failing to be merciful in the abstract — at people standing over others.\n\nWhich is the exact thing Paul warns about in Romans 14, and the exact thing that turns liberty into a weapon.",
+      "historicalContext": "Matthew 9:13 and Matthew 12:7. In both cases the audience is religious observers rather than the people being defended."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐλευθερία",
+      "transliteration": "eleutheria",
+      "pronunciation": "el-yoo-ther-EE-ah",
+      "strongsNumber": "G1657",
+      "definition": "liberty, freedom — the condition of a free person as opposed to a slave",
+      "usage": "Paul's word in Galatians 5:13 and in 2 Corinthians 3:17, where the Spirit of the Lord is. The same social sense sits behind parrēsia from yesterday: this is the vocabulary of citizens, not of servants."
+    },
+    {
+      "type": "pullquote",
+      "content": "The responsibility is the third consequence of nearness, not a separate warning."
+    },
+    {
+      "type": "scripture",
+      "reference": "Ezekiel 36:26-27",
+      "translation": "KJV",
+      "passage": "A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.",
+      "emphasis": [
+        "cause you to walk"
+      ],
+      "scriptureContext": "The promise underneath today. The obedience is produced, not demanded from nothing."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Walking Is Caused",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "content": "There is a question sitting under this whole day, and it deserves a straight answer.\n\nIf the pressure is off, where does the actual living come from?\n\nEzekiel answers it centuries early, and the verb is the thing to watch. I will put my spirit within you, and cause you to walk in my statutes.\n\nCause. Not require, not command, not expect. The walking is produced by something God puts inside a person.\n\nThat is the difference between this and moral effort. Moral effort starts from the outside and works in. Ezekiel describes a new heart, given, followed by walking that comes out of it.\n\nSo the instruction in Galatians — by love serve one another — is not a heavier weight dropped on you now that the old one is lifted. It is a description of what the new heart does.\n\nAnd this is where the caricature of freedom collapses. The version that says it does not matter what I do assumes the pressure was the only thing producing the behaviour. Take the pressure away, and nothing is left.\n\nBut if there is a new heart, then removing the pressure does not remove the walking. It removes the resentment in it.\n\nPaul answers the same thing in one line: all things are lawful for me, but all things are not expedient. He says it once, and moves on, and so will we.\n\nOne more thing about the new heart, because it changes how you read your own inconsistency.\n\nIf obedience is produced by a heart God gives, then a bad week is not evidence that the arrangement has failed. Hearts of flesh are not machines. Ezekiel promises a new heart, not a guarantee of uninterrupted performance.\n\nThat matters on a Friday. Most people finish a week like this one with a mixture of gratitude and the private knowledge that they did not live up to it.\n\nBoth of those can be true and neither of them changes what Wednesday said."
+    },
+    {
+      "type": "insight",
+      "heading": "One Beat On the Stumblingblock",
+      "content": "Romans 14 is where the mirror of Monday finally closes.\n\nIn Genesis, God bars the way to the tree of life, and the reason is stated and it is mercy — so that a broken man is not sealed broken for ever.\n\nIn Romans 14:13, Paul names the one road you are still able to obstruct: that no man put a stumblingblock or an occasion to fall in his brother's way.\n\nSame picture, pointed the other direction. God blocked one way, once, to keep someone from being fixed in ruin. The one blocking you are capable of is your brother's road, and there is no mercy in it.\n\nThat is one beat, and it is a guardrail rather than the point of the day. Paul spends far more of Romans 14 telling people not to judge each other than telling them to police themselves.",
+      "historicalContext": "Romans 14:13. Paul's surrounding argument in 14:4 asks who you are to judge another man's servant, and 1 Corinthians 5:12 keeps outsiders out of scope entirely."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Who are you currently standing over? And what would considering them instead look like this week?",
+      "invitationType": "journal",
+      "additionalQuestions": [
+        "Where has your freedom become a way of being right about someone?",
+        "What would provoking someone toward love actually require you to notice about them?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Practice",
+      "interaction_type": "art",
+      "instruction": "A short drawing exercise. It does not need to be good — it needs to be specific.",
+      "steps": [
+        {
+          "title": "Draw a door",
+          "description": "Anywhere on a page. Open. Do not decorate it."
+        },
+        {
+          "title": "Put yourself through it",
+          "description": "A stick figure on the far side is fine. This is Thursday, and it is already true."
+        },
+        {
+          "title": "Add one other person",
+          "description": "Someone specific, by name, who you find hard. Put them on the same side of the door as you, because that is where they are."
+        },
+        {
+          "title": "Draw what you would have to stop doing",
+          "description": "Not a feeling — an action. Something you would have to put down for them to walk freely. Write it beside the door."
+        }
+      ]
+    },
+    {
+      "type": "scripture",
+      "reference": "Hebrews 12:28-29",
+      "translation": "KJV",
+      "passage": "Wherefore we receiving a kingdom which cannot be moved, let us have grace, whereby we may serve God acceptably with reverence and godly fear: For our God is a consuming fire.",
+      "emphasis": [
+        "with reverence and godly fear",
+        "a consuming fire"
+      ],
+      "scriptureContext": "Hebrews puts a kingdom that cannot be moved and a consuming fire in the same sentence, without apology."
+    },
+    {
+      "type": "teaching",
+      "heading": "Reverence and Boldness Together",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "remez",
+      "content": "The same letter that gave you boldness to enter says, three chapters later, that our God is a consuming fire.\n\nThere is no embarrassment in that. Hebrews does not think it is contradicting itself, and it is not.\n\nWe treat reverence and confidence as opposite ends of one dial. More awe, less freedom. More freedom, less awe. So people pick a lane, and both lanes are thin. One produces a God you are careful around and never enjoy. The other produces a God you enjoy and do not take seriously.\n\nScripture keeps them together and never explains itself, because to the writers there was nothing to explain. Of course you speak freely to Him. Of course He is a consuming fire.\n\nThis is why the week had to run in this order. If today came before Tuesday, the freedom would be cheap. Having spent a day inside the otherness of God, you can hear a kingdom which cannot be moved and a consuming fire in one breath and not flinch.\n\nThe people in Scripture who speak to God most plainly are the ones who know exactly who they are speaking to.\n\nRomans 14 adds one more piece to this, and it is a quiet one.\n\nPaul tells people to act from their own settled conviction before God. Let every man be fully persuaded in his own mind, and, happy is he that condemneth not himself in that thing which he alloweth.\n\nThat is a striking amount of trust to place in ordinary believers. He is not issuing a ruling on the disputed questions. He is telling people to think, decide before God, and then not tear each other apart over the outcome.\n\nFreedom, in Paul's hands, comes with the expectation that you will actually use your own judgement."
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient and Now",
+      "ancientTruth": "God barred the way to the tree of life, and the stated reason was to keep a broken man from being fixed in that condition for ever.",
+      "modernApplication": "The one road you are still able to block is someone else's. Paul names it, and there is no mercy in that blocking.",
+      "connectionPoint": "Genesis 3:24 and Romans 14:13 use the same picture — a way, obstructed — and point it in opposite directions.",
+      "newTestamentEcho": "Romans 14:17 — \"the kingdom of God is not meat and drink; but righteousness, and peace, and joy in the Holy Ghost.\""
+    },
+    {
+      "type": "teaching",
+      "heading": "Only Use Not Liberty",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "sod",
+      "content": "Monday ended with two people walking away from a shut gate, and a sword turning behind them.\n\nToday ends with a door standing open, and a question about how you walk through it.\n\nThat is the mirror, and it is worth naming plainly. On Monday the distance was enforced, and the enforcement was mercy. Today there is no enforcement at all, and the thing that keeps freedom from curdling is not a rule. Paul says what it is: by love serve one another.\n\nNot supervision. Not a lighter set of restrictions. Love, doing the work that fear used to do.\n\nAnd notice where the week has landed. It began with a person alone behind a tree and it ends with people considering one another. Nearness to God produced company with people, and Hebrews treats that as so obvious it does not argue for it.\n\nOne last thing. There is a version of this day that turns into anxiety — a reader who leaves worrying about whether they are using their liberty correctly. That would be a failure of the week.\n\nRomans 14 ends where this ought to: the kingdom of God is not meat and drink, but righteousness, and peace, and joy in the Holy Ghost.\n\nYou were let in. Carry it like something that cost someone else a great deal, and then go and enjoy it.\n\nOne more sentence before the week turns toward rest.\n\nTomorrow is a recap, and Sunday is a sabbath with almost nothing in it. That shape is deliberate. A week about drawing near should not end with a task.\n\nIt should end quiet, in the company of the God it has been describing."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day5-road.webp",
+      "inlineImageAlt": "A narrow stone road running through darkness toward a distant lit gate, one large stone lying across it in the foreground.",
+      "inlineImageCaption": "Romans 14:13 — the one road you are still able to block is your brother's.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day5-lamps.webp",
+      "inlineImageAlt": "Several small clay oil lamps burning together on a dark stone ledge, their flames leaning toward one another.",
+      "inlineImageCaption": "Consider one another to provoke unto love: nearness to God produced company with people.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerType": "closing",
+      "prayerText": "Father, You called me to liberty, and I keep making it either a rulebook or an excuse. Give me the third thing. Make me someone who pays enough attention to other people to know what would stir them toward love. Keep me from putting anything in anyone's way. And thank You that the walking itself is something You cause, and not something I have to manufacture. Amen.",
+      "breathPrayer": "Called to liberty — by love serve one another."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "Today I will consider one person specifically, instead of standing over them.",
+      "leavingAtCross": [
+        "Freedom used as a way of being right about someone",
+        "The anxiety of policing my own liberty"
+      ],
+      "receivingFromCross": [
+        "A new heart that produces the walking",
+        "Company, which is what nearness was always going to make"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "Why does Hosea 6:6 not mean God rejected the sacrificial system?",
+      "options": [
+        "Because Hosea was speaking only to the northern kingdom",
+        "Because Hebrew states a preference by negating the lesser term, and Mark 12:33 gives the same idea as more than",
+        "Because the verse was mistranslated in the KJV",
+        "Because God changed His mind later"
+      ],
+      "answer": 1,
+      "explanation": "Not this, but that is ordinary Hebrew idiom for ranking rather than abolition, and Scripture supplies its own control: in Mark 12:33 the same thought appears in unambiguous comparative form — is more than all whole burnt offerings and sacrifices. Read that way, Hosea ranks what God was always after through the altar, rather than cancelling it."
+    },
+    {
+      "type": "profile",
+      "heading": "A Voice From the Church",
+      "name": "Paul",
+      "era": "First century",
+      "bio": "A Pharisee trained in the strictest possible reading of the law, who spent the rest of his life insisting that people set free by Christ were genuinely free — and then spent almost as much energy telling them not to use it against each other.",
+      "keyQuote": "Ye have been called unto liberty; only use not liberty for an occasion to the flesh, but by love serve one another.",
+      "lessonForUs": "Paul never protects freedom by shrinking it. He protects it by naming what it is for."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Further Study",
+      "relatedScriptures": [
+        {
+          "reference": "Mark 12:33 (KJV)",
+          "text": "\"Is more than all whole burnt offerings and sacrifices.\" The internal control on Hosea 6:6, in unambiguous comparative form."
+        },
+        {
+          "reference": "Romans 14:4 (KJV)",
+          "text": "\"Who art thou that judgest another man's servant?\" The surrounding argument, which is mostly about not standing over people."
+        },
+        {
+          "reference": "1 Corinthians 10:23 (KJV)",
+          "text": "\"All things are lawful for me, but all things are not expedient.\" Said once, and not turned into a system."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Strong's H2617 / G1657",
+          "type": "reference",
+          "note": "chesed and eleutheria."
+        },
+        {
+          "title": "Hosea 6:6 with Mark 12:33",
+          "type": "reference",
+          "note": "Always read as a pair. Alone, the Hebrew idiom is routinely over-read."
+        }
+      ]
+    }
+  ]
+}

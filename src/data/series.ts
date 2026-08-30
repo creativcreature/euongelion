@@ -1159,6 +1159,44 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     ],
   },
 
+  'drawing-near': {
+    title: 'Drawing Near',
+    heroImage: '/images/site/series/drawing-near.webp',
+    question:
+      'If the way in is genuinely open, why do you still pray like someone who might be asked to leave?',
+    introduction:
+      'Nearness was always the point, and for most of the Bible it was rationed on purpose. One priest, one room, one day a year — an honest system that said its own ceiling out loud. Then a man on a cross said one word, and a curtain tore from the top down, and Hebrews stops to tell you what the curtain was: his flesh. This week runs from a shut gate in Genesis to a city with no temple in it, and the hinge is a Wednesday afternoon.',
+    context:
+      'For anyone who believes the theology of access and still approaches God carefully, building a case. The week does not rush to comfort. It spends a full day inside the otherness of God, because the invitation on Thursday only means as much as Tuesday was real. It ends without a task: a sabbath, four words from the last chapter of the Bible, and nothing asked of you.',
+    framework:
+      'Hebrews 10:1-25 read against Genesis 1-3 and Leviticus 17:11 - far off, made nigh',
+    pathway: 'Awake',
+    keywords: [
+      'distance',
+      'unworthiness',
+      'access',
+      'shame',
+      'hiding',
+      'freedom',
+      'belonging',
+      'adoption',
+      'reverence',
+      'welcome',
+    ],
+    days: [
+      { day: 1, title: 'Crowned, And Hiding', slug: 'drawing-near-day-1' },
+      {
+        day: 2,
+        title: 'As Near As Blood Could Bring You',
+        slug: 'drawing-near-day-2',
+      },
+      { day: 3, title: 'It Is Finished', slug: 'drawing-near-day-3' },
+      { day: 4, title: 'Boldness To Enter', slug: 'drawing-near-day-4' },
+      { day: 5, title: 'Only Use Not Liberty', slug: 'drawing-near-day-5' },
+      { day: 6, title: 'Far Off, Made Nigh', slug: 'drawing-near-day-6' },
+      { day: 7, title: 'They Shall See His Face', slug: 'drawing-near-day-7' },
+    ],
+  },
   'all-these-things': {
     title: 'All These Things',
     heroImage: '/images/site/series/all-these-things.webp',
@@ -1381,6 +1419,7 @@ export const NEW_SERIES_ORDER = [
   'looking-at-the-sun',
   'rekindled',
   'all-these-things',
+  'drawing-near',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.
@@ -1425,12 +1464,12 @@ export const DEVOTIONAL_SERIES = WAKEUP_SERIES_ORDER.map((slug, i) => ({
 // the MOST RECENT series takes the main feature slot; too-busy-for-god
 // rotated out. Supersedes the 2026-05-08 Bible-365-first direction.
 export const FEATURED_SERIES = [
+  'all-these-things',
   'rekindled',
   'the-harvest',
   'bible-365',
   'prayer-of-jabez',
   'identity',
-  'why-jesus',
 ] as const
 // SA-123 (2026-08-24): `all-these-things` is now the most recent series and
 // therefore holds the homepage MAIN feature slot via HOMEPAGE_TODAY in

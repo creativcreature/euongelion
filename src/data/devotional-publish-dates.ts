@@ -47,6 +47,13 @@ export const DEVOTIONAL_PUBLISH_DATES: Record<string, DevotionalPublishDate> = {
     publishedAt: '2025-09-26',
     source: 'substack',
   },
+  'drawing-near-day-1': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-2': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-3': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-4': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-5': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-6': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-7': { publishedAt: '2026-08-30', source: 'series-ship' },
   'all-these-things-day-1': {
     publishedAt: '2026-08-24',
     source: 'series-ship',

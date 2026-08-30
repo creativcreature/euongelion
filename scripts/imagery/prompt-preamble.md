@@ -69,6 +69,8 @@ COMPOSITION FOR CROPPING — this is a TALL 3:4 portrait frame, compose it as on
 Five rungs, 1 (current site register) to 5 (cinematic baroque). Calibrated 2026-08-29
 against a 28-generation run on a single subject; each rung below is the VERBATIM
 wording that produced its founder-approved plate, held in `imagery-staging/intensity-spectrum/scale-5/`.
+A named intensity applies to EVERY image in that run, stills and motion alike; the
+stills-1 / motion-5 split is only the default when none is named (founder, 2026-08-29).
 Do not paraphrase a rung. The requested percentages inside these blocks do NOT track
 linearly with the result — asking for more deep ink produced a lighter plate at one
 point — so the wording is the asset, not the numbers in it. Verify by measuring the

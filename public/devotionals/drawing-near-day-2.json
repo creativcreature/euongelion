@@ -1,0 +1,302 @@
+{
+  "day": 2,
+  "chiasm_position": "B",
+  "format": "two-minute-open-v2",
+  "title": "As Near As Blood Could Bring You",
+  "subtitle": "An honest system that said its own ceiling out loud",
+  "teaser": "One man, one room, one day a year — and the text never pretends that was enough.",
+  "anchorVerse": "Leviticus 17:11",
+  "theme": "Holiness, blood, and the honest limit",
+  "framework": "chiastic-build",
+  "scriptureReference": "Leviticus 17:11; Hebrews 10:1-4",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Leviticus 17:11",
+      "translation": "KJV",
+      "passage": "For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.",
+      "emphasis": [
+        "I have given it to you"
+      ],
+      "scriptureContext": "God explains why blood is on the altar at all. The verb in the middle of the sentence is give."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קׇרְבָּן",
+      "transliteration": "qorbân",
+      "pronunciation": "kor-BAHN",
+      "strongsNumber": "H7133",
+      "definition": "an offering — from the verb qârab, to come near, to approach, to be brought close",
+      "usage": "The Hebrew for offering is built from the verb for approaching. An offering is literally the brought-near thing. The vocabulary of sacrifice in the Old Testament is the vocabulary of getting closer."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Offering Is the Nearness",
+      "content": "Before anything else today, notice what the Hebrew is doing.\n\nThe word for an offering, qorbân, comes from the verb qârab, which means to come near. The thing you brought was called the brought-near thing.\n\nThat single fact reorganises the whole system. Sacrifice, in the Old Testament, is not primarily about punishment being transferred. It is the machinery of approach. It is how a person got closer.\n\nSo when today looks at an altar, it is not looking at a courtroom. It is looking at a door, and at the price of using it.\n\nAnd yesterday told us why a door was needed at all. Something was closed in a garden, for a stated reason, and nobody has been back through it since."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What would change if you read sacrifice as the cost of getting closer, rather than as punishment being paid?",
+      "invitationType": "sit-with-it"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Short Prayer",
+      "prayerType": "opening",
+      "prayerText": "God, I do not really believe You are as other as You are. Make me honest about the distance today, so that tomorrow means something. Amen."
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "Holiness as otherness, blood as life, and a system that named its own ceiling."
+    },
+    {
+      "type": "scripture",
+      "reference": "1 Samuel 2:2",
+      "translation": "KJV",
+      "passage": "There is none holy as the Lord: for there is none beside thee: neither is there any rock like our God.",
+      "emphasis": [
+        "for there is none beside thee"
+      ],
+      "scriptureContext": "Hannah defines holiness in the second half of her own sentence, and the definition is not about morality."
+    },
+    {
+      "type": "teaching",
+      "heading": "Holiness Is Not Being Very Good",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "content": "Ask most people what holy means and you get a word about behaviour. Very pure. Very moral. Extremely good.\n\nThe Hebrew is not saying that. The root qadash means to be set apart, and the noun qodesh is apartness. Holiness is otherness before it is anything else.\n\nHannah gives the definition inside her own sentence. There is none holy as the Lord — and then, immediately, the reason — for there is none beside thee.\n\nGod is not the best item in a category. He is not the highest score on a scale that also has us on it. He is outside the category. There is nothing beside Him to compare Him to.\n\nThis is the thing that makes the rest of the week make sense, and it is the thing modern readers most often skip.\n\nIf God is merely very good, then the distance in the Bible looks like snobbery, and all the arrangements for approach look like bureaucracy. Why the curtain? Why the one day a year? It reads as fussiness.\n\nBut if God is other — genuinely, categorically other — then the distance is not an attitude He has. It is a fact about what He is. And then the arrangements stop looking like fussiness and start looking like mercy, because their entire purpose is to make proximity survivable.\n\nHold that as we go to Isaiah. He does not walk into that room and feel guilty. He comes apart.\n\nThere is a practical consequence, and it is the reason this is not just word study.\n\nIf holiness means very moral, then the way to get near God is to become more moral. That is the religion most people are actually running, whatever they say they believe. You improve, and access improves with you.\n\nIf holiness means other, that road does not exist. You cannot become less of a different category by trying harder. No amount of improvement moves you across a line that is not a line of degree.\n\nWhich sounds like bad news, and today it is. It is meant to be. It is the reason something had to be done from the other side."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day2-coal.webp",
+      "inlineImageAlt": "A single burning coal held in long metal tongs, glowing fiercely against overwhelming darkness and rising smoke.",
+      "inlineImageCaption": "Isaiah 6:6 — a live coal, taken with the tongs from off the altar, carried to a man who could not move.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "scripture",
+      "reference": "Isaiah 6:1-7",
+      "translation": "KJV",
+      "passage": "In the year that king Uzziah died I saw also the Lord sitting upon a throne, high and lifted up, and his train filled the temple. Above it stood the seraphims: each one had six wings; with twain he covered his face, and with twain he covered his feet, and with twain he did fly. And one cried unto another, and said, Holy, holy, holy, is the Lord of hosts: the whole earth is full of his glory. And the posts of the door moved at the voice of him that cried, and the house was filled with smoke. Then said I, Woe is me! for I am undone; because I am a man of unclean lips, and I dwell in the midst of a people of unclean lips: for mine eyes have seen the King, the Lord of hosts. Then flew one of the seraphims unto me, having a live coal in his hand, which he had taken with the tongs from off the altar; And he laid it upon my mouth, and said, Lo, this hath touched thy lips; and thine iniquity is taken away, and thy sin purged.",
+      "emphasis": [
+        "Holy, holy, holy",
+        "Woe is me! for I am undone",
+        "from off the altar"
+      ],
+      "scriptureContext": "The throne-room vision. Isaiah's response to the presence is not awe in the pleasant sense."
+    },
+    {
+      "type": "teaching",
+      "heading": "Three Times, And Only Here",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "content": "Hebrew has no word for most or very. It has no superlative form the way English does. When Hebrew wants to intensify something, it repeats it.\n\nSo doubling a word raises it. And tripling is the ceiling — as high as the language can go.\n\nIn the throne-room visions, one attribute of God gets the tripling. Isaiah hears it, and John hears the same thing in Revelation 4. Holy, holy, holy.\n\nA note on how far to push that. It is often said that no other attribute of God is ever tripled anywhere in Scripture. That is a claim about every verse in the Bible, and this series has not verified it, so it will not be made. What can be said is narrower and still striking: in the two great visions of the throne, this is the word that gets the ceiling of the language.\n\nAnd notice who is saying it. Creatures who have never sinned, covering their faces.\n\nWhich tells you what Isaiah's problem is. He is not the worst thing in the room by comparison with the seraphim — they are hiding their eyes too. His problem is not that he compares badly. It is where he is standing."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נֶפֶשׁ",
+      "transliteration": "nephesh",
+      "pronunciation": "NEH-fesh",
+      "strongsNumber": "H5315",
+      "definition": "life, soul, the living self — the whole animate creature rather than a part of it",
+      "usage": "Leviticus 17:11 says the life of the flesh is in the blood, and the word for life there is nephesh. That is why blood is not currency in this system. It is not a token that stands for something valuable. It is life itself."
+    },
+    {
+      "type": "pullquote",
+      "content": "The offering was the brought-near thing. The word for it says so."
+    },
+    {
+      "type": "teaching",
+      "heading": "Why Blood, and Who Gave It",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "content": "Now the verse the whole day turns on.\n\nFor the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls.\n\nTwo things sit in that sentence and both matter.\n\nThe first is the reason. Blood is not on the altar because God requires a fee, and it is not there because ancient people happened to be violent. It is there because the life is in it. What is being brought is life, not payment. That is why nephesh matters — the word rules out reading blood as a token.\n\nThe second is the verb, and it is the one people read past. I have given it to you.\n\nGiven. Not demanded, not extracted, not required as a condition of a truce. The means of approach is something God handed over.\n\nThis is where the most common caricature of the Old Testament falls apart. The picture of a furious deity who has to be bought off cannot survive a sentence in which He supplies the price Himself and says so.\n\nAnd it will matter again tomorrow. When Hebrews says the veil torn open was His own flesh, it is the same move made larger. God does not stand on the far side of the barrier waiting to be satisfied. He provides the way through, and then, at the cross, He is the way through.\n\nSo hold both halves today. The otherness is real, and the distance is real, and the means of crossing it was a gift from the far side.\n\nOne more note, because this is the day people quietly disengage from.\n\nModern readers find the altar distasteful, and it is worth being honest that the reaction is not stupid. It is a bloody system and the Bible does not apologise for it.\n\nBut notice what the alternative would have been. A God who is genuinely other, and no arrangement at all for being near Him. That is not kinder. That is just distance with nothing done about it.\n\nThe altar is not there because God likes blood. It is there because life is in the blood, and life is what the situation required, and He supplied it rather than asking anyone to work out how to."
+    },
+    {
+      "type": "insight",
+      "heading": "One Man, One Room, One Day",
+      "content": "It is worth being concrete about how narrow the access actually was.\n\nOne man could enter the holiest place. Not one man per family or per town — one man, the high priest.\n\nOne day in the year.\n\nAnd Leviticus 16:17 adds a detail that is easy to miss: while he was in there making atonement, there was to be no man in the tabernacle of the congregation at all. Not merely no one else in the inner room. No one in the tent.\n\nThat is the ceiling of the system, stated by the system itself.",
+      "historicalContext": "Leviticus 16 governs the Day of Atonement. This series deliberately does not walk through its procedure — the point here is the limit the procedure names, not the choreography of it."
+    },
+    {
+      "type": "scripture",
+      "reference": "Hebrews 10:1-4",
+      "translation": "KJV",
+      "passage": "For the law having a shadow of good things to come, and not the very image of the things, can never with those sacrifices which they offered year by year continually make the comers thereunto perfect. For then would they not have ceased to be offered? because that the worshippers once purged should have had no more conscience of sins. But in those sacrifices there is a remembrance again made of sins every year. For it is not possible that the blood of bulls and of goats should take away sins.",
+      "emphasis": [
+        "the comers thereunto",
+        "a remembrance again made of sins every year",
+        "it is not possible"
+      ],
+      "scriptureContext": "Hebrews states the limit in the plainest terms the Bible uses about the sacrificial system."
+    },
+    {
+      "type": "teaching",
+      "heading": "The System Named Its Own Ceiling",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "remez",
+      "content": "Hebrews makes an argument here that is easy to misread as an insult to the Old Testament. It is not.\n\nThe argument runs on the repetition. If the sacrifices had actually finished the job, they would have stopped. A thing that works does not need doing again next year.\n\nBut they did not stop. Year by year, continually. And what the annual repetition produced was not a settled conscience but the opposite: a remembrance again made of sins every year.\n\nThink about that phrase for a moment. The yearly ceremony functioned as an annual reminder that the problem was still there.\n\nThen the flat sentence: it is not possible that the blood of bulls and of goats should take away sins.\n\nNot inadequate. Not less effective than what came later. Not possible.\n\nAnd here is the thing to hold on to. That is not a later Christian criticism smuggled back onto Israel. The Old Testament system was built with its limit visible. One man. One room. One day. Every year, again. Nobody was being told this was the final arrangement.\n\nSo when Hebrews calls it a shadow of good things to come, it is not sneering. A shadow is cast by something real, and it has the shape of the thing. The system was accurate. It was simply never the body.\n\nIt is worth naming what this does to a familiar complaint.\n\nPeople sometimes say the God of the Old Testament and the God of the New are two different characters. Today is the answer to that, and the answer is not a clever reconciliation.\n\nIt is that the Old Testament says the same thing about itself. The limit is not a discovery made later by Christians. It is written into the arrangement — in the one day, the one man, the empty tent, the annual repeat.\n\nThe system was honest. It never claimed to be the end of the story, and Hebrews is simply reading it the way it asked to be read."
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient and Now",
+      "ancientTruth": "Blood was given upon the altar because life is in it, and it brought a person as near as anything then could — which was not all the way.",
+      "modernApplication": "Any arrangement you are running that has to be repeated to keep working is telling you the same thing the annual sacrifice told Israel.",
+      "connectionPoint": "The repetition was the proof of the limit. Hebrews reads the calendar itself as the argument.",
+      "newTestamentEcho": "Hebrews 10:12 — \"this man, after he had offered one sacrifice for sins for ever, sat down.\" The sitting down is the point; a priest with unfinished work stays standing."
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "G_OlRWGLdnw",
+      "videoTitle": "This Ancient Ritual Helps Explain Jesus’ Death",
+      "videoCaption": "What the sacrificial system was actually doing, which is the thing today is trying to take seriously rather than skip.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "story",
+      "heading": "The Coal Came From the Altar",
+      "content": "Go back to Isaiah, because the answer to his undoing is oddly specific.\n\nHe says he is ruined. A seraph flies to him with a live coal, taken with tongs from off the altar, and touches it to his mouth.\n\nNotice the sourcing. The coal does not come from the throne. It comes from the altar — the place where blood went. Even inside a vision of overwhelming glory, the thing that makes a man able to stand there is fetched from the place of sacrifice.\n\nAnd notice the direction. Isaiah does not approach the altar. The altar comes to him, carried, while he is standing there falling apart.\n\nHe asked for nothing. He announced his ruin, and fire was brought to him.",
+      "connectionToTheme": "The whole week is that motion. A person cannot cross the distance, and the means of crossing keeps being carried toward them from the other side."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day2-altar.webp",
+      "inlineImageAlt": "Tight on the base of a stone altar, a pour running down wet stone, fire cropped above the frame.",
+      "inlineImageCaption": "\"I have given it to you upon the altar\" — the sentence that rules out a God who had to be bought off.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you running an arrangement with God that needs repeating every year to keep working?",
+      "invitationType": "journal",
+      "additionalQuestions": [
+        "What do you do to feel acceptable again after you have failed?",
+        "How often does it need doing?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Practice",
+      "interaction_type": "memory",
+      "instruction": "Commit one clause to memory. It is short, and it is the clause that does the work today.",
+      "steps": [
+        {
+          "title": "Read it aloud",
+          "description": "\"I have given it to you upon the altar.\" Read it three times, slowly."
+        },
+        {
+          "title": "Put the weight on the verb",
+          "description": "Read it again, leaning on the word given. Not required. Not demanded. Given."
+        },
+        {
+          "title": "Say it back without looking",
+          "description": "Cover the words and say the clause from memory."
+        },
+        {
+          "title": "Use it once today",
+          "description": "Next time you catch yourself building a case for why God should hear you, say the clause instead."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "As Near As Blood Could Bring You",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "sod",
+      "content": "That is the title of the day, and it is meant to be read both ways.\n\nBlood brought people genuinely near. That is not nothing. A nation carried the presence of God around in a tent for forty years. There was a room where God was, and a way to be dealt with when you had gone wrong, and a priest who came out alive on the far side of it. It worked at what it did.\n\nAnd it brought them exactly that far, and no further.\n\nThere is a temptation on a day like this to rush to the good news. Do not. The invitation on Thursday only means something in proportion to how real today is.\n\nIf the otherness of God is not real to you, then boldness to enter is just a nice phrase. If the one man, one room, one day is not real to you, then anyone, any day, in person is only a mild improvement.\n\nSo let today be heavy. The whole earth is full of His glory, and a prophet standing in that room said he was undone, and the fix had to be carried to his mouth by someone else.\n\nTomorrow, that room opens.\n\nSit with one image before you close.\n\nA priest goes in, alone, once a year, and the tent behind him is emptied of every other person. Whatever else that is, it is lonely. The nearest anyone in the nation could get to God involved a man by himself in a room, with everyone else outside.\n\nTomorrow the room opens and the loneliness of that arrangement ends with it. Thursday will use the word anyone.\n\nBut you cannot feel the relief of that if you have not first felt the tent go quiet."
+    },
+    {
+      "type": "insight",
+      "heading": "A Shadow Has the Right Shape",
+      "content": "Hebrews calls the law a shadow of good things to come, and not the very image of the things.\n\nIt is a careful image and it is not dismissive. A shadow is not a lie. It is cast by something solid, and it has the outline of the thing that made it.\n\nSo everything in the old system was telling the truth. Blood really is life. Approach really does cost. Holiness really is other. None of that gets cancelled tomorrow.\n\nWhat arrives tomorrow is the body that was casting the shadow.",
+      "historicalContext": "Hebrews 10:1. The contrast is between a shadow and the very image — the Greek behind image here is a word for the thing itself rather than a representation of it."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day2-tent.webp",
+      "inlineImageAlt": "The empty interior of an ancient tent, one heavy curtain hanging closed, a thin line of light at its edge.",
+      "inlineImageCaption": "Leviticus 16:17 — while atonement was made, there was to be no man in the tent at all.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerType": "closing",
+      "prayerText": "Holy God, there is none beside You, and I have spent years talking to You as though there were. Make the distance honest to me. Not so that I despair of it, but so that I know what it cost to close it. Thank You that even in the vision, the coal was carried to the man who could not move. Amen.",
+      "breathPrayer": "There is none beside Thee."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "Today I will let God be other, and stop grading Him on my scale.",
+      "leavingAtCross": [
+        "The picture of a God who had to be bought off",
+        "The arrangement I repeat every time I need to feel acceptable again"
+      ],
+      "receivingFromCross": [
+        "A holiness that is otherness, not disapproval",
+        "A means of approach that was given, not demanded"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "According to Hebrews 10, what does the yearly repetition of the sacrifices prove?",
+      "options": [
+        "That the people were unusually sinful that year",
+        "That the sacrifices had not finished the job, since a completed work would have stopped",
+        "That God enjoyed the ceremony",
+        "That the priests were doing it incorrectly"
+      ],
+      "answer": 1,
+      "explanation": "Hebrews argues from the calendar: if the worshippers had once been purged, the offerings would have ceased. Instead there is a remembrance again made of sins every year. The repetition is the evidence, and the conclusion is flat — it is not possible that the blood of bulls and of goats should take away sins."
+    },
+    {
+      "type": "profile",
+      "heading": "A Voice From the Church",
+      "name": "Isaiah",
+      "era": "Eighth century BC",
+      "bio": "A prophet in Jerusalem whose commissioning vision is the most-quoted throne-room scene in Scripture. He saw the Lord high and lifted up in the year king Uzziah died, and his first reaction was to announce his own ruin.",
+      "keyQuote": "Woe is me! for I am undone.",
+      "lessonForUs": "Isaiah is not being dramatic. He is being accurate about what it is to stand near what God actually is. Everything this week says about welcome is said to people who have understood that first."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Further Study",
+      "relatedScriptures": [
+        {
+          "reference": "Leviticus 16:17 (KJV)",
+          "text": "No man was to be in the tabernacle of the congregation while atonement was being made — not merely no one in the inner room."
+        },
+        {
+          "reference": "Revelation 4:8 (KJV)",
+          "text": "The same threefold cry that Isaiah heard, in the second great throne-room vision."
+        },
+        {
+          "reference": "Hebrews 10:12 (KJV)",
+          "text": "\"After he had offered one sacrifice for sins for ever, sat down.\" The contrast with a priest who never finishes."
+        }
+      ],
+      "resources": [
+        {
+          "title": "This Ancient Ritual Helps Explain Jesus’ Death",
+          "type": "video",
+          "source": "BibleProject",
+          "note": "What sacrifice was for, taken seriously."
+        },
+        {
+          "title": "Strong's H7133 / H5315",
+          "type": "reference",
+          "note": "qorbân and nephesh."
+        }
+      ]
+    }
+  ]
+}

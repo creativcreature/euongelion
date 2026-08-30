@@ -12,9 +12,10 @@
  *   node scripts/imagery/build-prompts.mjs --json     # {slug: prompt} for all pending
  *
  * IMAGE INTENSITY (SA-131, founder-chosen 2026-08-29): --intensity=1..5 grades the
- * plate from the current site register (1) to cinematic baroque (5). Defaults are
- * 1 for stills and 5 for motion (--motion), per the founder's split: the site's
- * still imagery stays light, video/gif/motion source plates go dark.
+ * plate from the current site register (1) to cinematic baroque (5). 1 for stills
+ * and 5 for motion (--motion) are DEFAULTS ONLY, used when no intensity is given.
+ * An explicitly named intensity applies to EVERY generated image in the run and
+ * overrides that split.
  *
  *   node scripts/imagery/build-prompts.mjs <slug> --intensity=3
  */
@@ -29,9 +30,12 @@ const REPO = path.resolve(HERE, '../..')
 // interrupted run never commits half a set.
 const ORIENT = process.argv.includes('--portrait') ? 'portrait' : 'landscape'
 
-// Intensity 1..5. Motion plates default to the top of the scale because that is
-// what the baroque register exists for; stills default to the bottom, which is
-// the register the shipped site already uses.
+// Intensity 1..5. An EXPLICIT --intensity applies to every image in the run,
+// stills and motion alike, and overrides the split below (founder 2026-08-29:
+// "Unless I specify, the intensity is for all generated images"). The split is
+// only the default: motion plates default to the top of the scale because that
+// is what the baroque register exists for, stills to the bottom, which is the
+// register the shipped site already uses.
 const MOTION = process.argv.includes('--motion')
 const intensityArg = process.argv.find((a) => a.startsWith('--intensity='))
 const INTENSITY = intensityArg ? Number(intensityArg.slice('--intensity='.length)) : MOTION ? 5 : 1

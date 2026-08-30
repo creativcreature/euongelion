@@ -741,6 +741,19 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     'Not theory. Practice. The early church pooled resources, shared meals, and stayed when empire collapsed. Can we?',
   'community-day-5':
     'Systems are failing. Networks scatter. But covenant people stay. These are your people. And you are theirs.',
+  'drawing-near-day-1':
+    'Made in His image, crowned with glory — and then hiding in the trees.',
+  'drawing-near-day-2':
+    'One man, one room, one day a year — and the text never pretends that was enough.',
+  'drawing-near-day-3':
+    'Two things tore that afternoon, and Hebrews says they were the same thing.',
+  'drawing-near-day-4':
+    'One man became anyone. One day a year became any day. By proxy became in person.',
+  'drawing-near-day-5':
+    'Kept out once, for protection. Let in now, at cost. So how is a freedom like that held?',
+  'drawing-near-day-6':
+    'Ye who sometimes were far off are made nigh by the blood of Christ.',
+  'drawing-near-day-7': 'No teaching today. The week said what it had to say.',
   'genesis-two-stories-of-creation-day-1':
     "God's creative power revealed as both cosmic King and personal Potter",
   'genesis-two-stories-of-creation-day-2':
@@ -1496,6 +1509,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'community-day-3': "What if you're not meant to be alone?",
   'community-day-4': 'What does covenant community actually look like?',
   'community-day-5': 'Who will remain when everything collapses?',
+  'drawing-near-day-1': 'Crowned, And Hiding',
+  'drawing-near-day-2': 'As Near As Blood Could Bring You',
+  'drawing-near-day-3': 'It Is Finished',
+  'drawing-near-day-4': 'Boldness To Enter',
+  'drawing-near-day-5': 'Only Use Not Liberty',
+  'drawing-near-day-6': 'Far Off, Made Nigh',
+  'drawing-near-day-7': 'They Shall See His Face',
   'genesis-two-stories-of-creation-day-1': 'The Divine Zoom Lens',
   'genesis-two-stories-of-creation-day-2': 'Made in His Image',
   'genesis-two-stories-of-creation-day-3': 'The Breath of Life',

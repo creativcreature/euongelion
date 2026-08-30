@@ -1,0 +1,265 @@
+{
+  "day": 6,
+  "chiasm_position": "recap",
+  "format": "two-minute-open-v2",
+  "title": "Far Off, Made Nigh",
+  "subtitle": "The week in eleven words",
+  "teaser": "Ye who sometimes were far off are made nigh by the blood of Christ.",
+  "anchorVerse": "Ephesians 2:13",
+  "theme": "The week, gathered",
+  "framework": "recap",
+  "scriptureReference": "Ephesians 2:13; Revelation 21:3, 22-23",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Ephesians 2:13",
+      "translation": "KJV",
+      "passage": "But now in Christ Jesus ye who sometimes were far off are made nigh by the blood of Christ.",
+      "emphasis": [
+        "far off",
+        "made nigh"
+      ],
+      "scriptureContext": "Paul says the whole of this week in one sentence, and the two words that matter are a distance and its ending."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἐγγύς",
+      "transliteration": "engys",
+      "pronunciation": "eng-GOOS",
+      "strongsNumber": "G1451",
+      "definition": "near, close at hand — the ordinary word for proximity in space or time",
+      "usage": "Paul's word for made nigh. It is not a specialist religious term. It is the everyday word you would use for a place being close, or an event being soon."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Week In One Sentence",
+      "content": "Paul gives you the entire week in a single line, and it has three parts.\n\nSometimes were far off. That is Monday and Tuesday — a garden with a guard on the gate, and an altar that could bring a person only so close.\n\nAre made nigh. That is Thursday — boldness to enter, adoption, a royal priesthood.\n\nBy the blood of Christ. That is Wednesday, and it is the hinge that makes the other two into one sentence instead of two unrelated facts.\n\nNotice the tense. Made nigh. Not being brought nearer, not approaching. It is done and it is a state you are in.\n\nIf you keep nothing else from six days, keep the sentence. It is short enough to carry.\n\nThere is a word in the middle worth pausing on.\n\nSometimes, in the older English, does not mean occasionally. It means formerly — once, at one time. Paul is not saying you drift in and out of being far off. He is naming a period that ended.\n\nThat is a different claim from the one most people hear. Being far off was your address. It is not your address now.\n\nAnd the change of address was not gradual. There is no verse describing a slow approach that eventually succeeded. There is an afternoon, and a torn curtain, and then a new state of affairs that Paul reports in the past tense."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which half of that sentence do you actually live in — far off, or made nigh?",
+      "invitationType": "sit-with-it"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerType": "opening",
+      "prayerText": "Father, I have read a whole week about being brought near, and part of me still lives at a distance out of habit. Make the second half of Paul's sentence true in how I pray today. Amen."
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "The five days gathered, and the horizon they were pointing at."
+    },
+    {
+      "type": "recap",
+      "heading": "The Week in One View",
+      "intro": "Five days, and each one is a single move. Read them in order and the shape shows itself: a distance that was chosen and then enforced, a system that was honest about its ceiling, an afternoon that ended the rationing, an invitation with every limit turned over, and a freedom that produces company.",
+      "days": [
+        {
+          "day": 1,
+          "title": "Crowned, And Hiding",
+          "anchor_verse": "Genesis 3:8 (KJV)",
+          "key_insight": "They hid before they were sent out. The distance was chosen before it was enforced — and the exile came with its reason stated: lest he live for ever in that condition."
+        },
+        {
+          "day": 2,
+          "title": "As Near As Blood Could Bring You",
+          "anchor_verse": "Leviticus 17:11 (KJV)",
+          "key_insight": "Holiness is otherness, not high moral scoring. And the blood was given, not demanded — God supplied the means of His own approach, and the system named its own ceiling."
+        },
+        {
+          "day": 3,
+          "title": "It Is Finished",
+          "anchor_verse": "John 19:30 (KJV)",
+          "key_insight": "Two things tore, and Hebrews says they were one tearing: a curtain from the top down, and a body. Christ is the telos of the law — its goal, not its demolition."
+        },
+        {
+          "day": 4,
+          "title": "Boldness To Enter",
+          "anchor_verse": "Hebrews 10:19 (KJV)",
+          "key_insight": "Every limit inverted. One man became anyone, one day became any day, by proxy became in person. The holiness did not reduce by one degree; the standing changed."
+        },
+        {
+          "day": 5,
+          "title": "Only Use Not Liberty",
+          "anchor_verse": "Galatians 5:13 (KJV)",
+          "key_insight": "Draw near, hold fast, consider one another — in that order. Responsibility is the third consequence of nearness, not a warning attached to it."
+        }
+      ]
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day6-far-off.webp",
+      "inlineImageAlt": "A lone figure at a great distance from a lit doorway across dark open ground.",
+      "inlineImageCaption": "Far off, and made nigh — Paul’s two words are a distance and its ending.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "pullquote",
+      "content": "Far off. Made nigh. By the blood of Christ. The week fits in eleven words."
+    },
+    {
+      "type": "recap",
+      "heading": "What Held The Week Together",
+      "intro": "Two frames ran under all five days, one inside the other. Naming them makes the week easier to keep.",
+      "days": [
+        {
+          "day": 1,
+          "title": "The outer frame — obedience to relationship",
+          "anchor_verse": "Genesis 3:8 (KJV)",
+          "key_insight": "The Bible does not move from a religion of rules to a religion of no rules. It moves from arrangement to relationship, and the arrangement was always pointing at the relationship."
+        },
+        {
+          "day": 2,
+          "title": "The inner frame — permission to proximity",
+          "anchor_verse": "Romans 8:15 (KJV)",
+          "key_insight": "What the cross opened was not mainly a permission slip. It was company. Not may I come, but you are family in the house — Abba, and heirs."
+        },
+        {
+          "day": 3,
+          "title": "One verb, twice",
+          "anchor_verse": "Hebrews 10:22 (KJV)",
+          "key_insight": "Hebrews 10:1 calls them the drawing-near ones and says the law could not perfect them. Verse 22 uses the same Greek verb as an invitation. One word, twenty-one verses apart, and everything between them is the reason."
+        }
+      ]
+    },
+    {
+      "type": "scripture",
+      "reference": "Revelation 21:3",
+      "translation": "KJV",
+      "passage": "And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God.",
+      "emphasis": [
+        "the tabernacle of God is with men"
+      ],
+      "scriptureContext": "The tent from Tuesday reappears at the end of the Bible, and this time it is not pitched at a distance."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day6-city.webp",
+      "inlineImageAlt": "A vast open gateway with no door in it, light pouring through from beyond, seen from below.",
+      "inlineImageCaption": "Revelation 21:22 — \"I saw no temple therein.\" Tuesday’s one rationed room becomes the whole city.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "teaching",
+      "heading": "The Horizon The Week Was Pointing At",
+      "content": "There is one more move, and it is worth seeing before Sunday.\n\nTuesday spent a whole day inside a system built around one room. A curtain, a priest, a day in the calendar, and a tent emptied of everyone else.\n\nAt the end of the Bible, John describes the city and says something startling: I saw no temple therein.\n\nNot a bigger temple. Not a temple with better access arrangements. No temple at all.\n\nAnd the reason he gives is not that the presence has gone. The reason is that the Lord God Almighty and the Lamb are the temple of it. The building existed to house a presence that is now simply everywhere in the city.\n\nThen: the city had no need of the sun, neither of the moon, to shine in it, for the glory of God did lighten it.\n\nThat is the same glory Moses asked to see and was refused. It is the kavod from Monday — weight, the mass of what is present. In the city it is the lighting.\n\nSo the whole arc of this week runs from a shut gate to an open city. Genesis 3 closes a way. Revelation 21 has a city whose gates are not shut at all.\n\nAnd the thing that made the difference happened on a Wednesday afternoon, outside a wall, when a man said one word and a curtain tore from the top.\n\nOne more detail from the city, because it closes Monday exactly.\n\nGenesis ends its third chapter with a way that is kept — cherubim and a turning sword, guarding the road to the tree of life.\n\nRevelation 22 has the tree of life again, growing in the middle of the street, on both sides of the river, and nothing is said about a guard. Two verses earlier John writes that there shall be no more curse.\n\nThat is the loop closing. The curse of Genesis 3 named, and reversed, and the tree that was fenced off standing in the open in a public street.\n\nA note on how this series reads the last chapter. The verse many people quote here is Revelation 22:14, which in this translation speaks of those that do his commandments. That reading sits awkwardly at the end of a week arguing that Christ is the goal of the law, and the textual evidence for the wording is genuinely divided. So this series does not build on it. Verses 2 and 4 say everything the week needs, and their text is not in question."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which of the five days is the one you most need to be true this coming week?",
+      "invitationType": "journal",
+      "additionalQuestions": [
+        "What would change on Monday if made nigh were your working assumption?",
+        "Which day did you resist most, and why do you think that was?"
+      ]
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carrying The Week Forward",
+      "commitment": "This week I will pray from made nigh, not from far off.",
+      "leavingAtCross": [
+        "The distance I keep out of habit rather than conviction",
+        "The picture of a God who has to be talked into having me"
+      ],
+      "receivingFromCross": [
+        "A finished work that does not need renewing",
+        "Freedom of speech in the holiest place, and company to use it in"
+      ]
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "1fNWTZZwgbs",
+      "videoTitle": "Book of Hebrews Summary: A Complete Animated Overview",
+      "videoCaption": "If you watch one thing from this week, watch this. Hebrews is the letter the whole series lives inside.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day6-tabernacle.webp",
+      "inlineImageAlt": "An ancient tent pitched among ordinary dwellings at night, warm light glowing through its seams.",
+      "inlineImageCaption": "Revelation 21:3 — the tabernacle of God is with men. The tent is no longer pitched at a distance.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "resource",
+      "heading": "Further Your Learning",
+      "relatedScriptures": [
+        {
+          "reference": "Hebrews 10:1-25 (KJV)",
+          "text": "The passage trail for the week, and the best single sitting you can give it. Read the whole thing in one go and watch verse 1 and verse 22 use the same verb."
+        },
+        {
+          "reference": "Genesis 3:8-24 (KJV)",
+          "text": "Monday. Read it watching for the order — hiding first, then exile, with the reason stated in verse 22."
+        },
+        {
+          "reference": "Isaiah 6:1-8 (KJV)",
+          "text": "Tuesday. The throne room, the undoing, and a coal carried from the altar to a man who could not move."
+        },
+        {
+          "reference": "2 Corinthians 3:12-18 (KJV)",
+          "text": "Thursday. Paul answering Exodus 33 with its own vocabulary. Read Exodus 33:18-23 first, then this."
+        },
+        {
+          "reference": "Romans 14 (KJV)",
+          "text": "Friday. Notice how much of it is about not standing over people, and how little is about policing yourself."
+        },
+        {
+          "reference": "Revelation 21:1 - 22:5 (KJV)",
+          "text": "The horizon. A city with no temple, lit by glory, with a tree of life in the open and no guard mentioned."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Book of Hebrews Summary",
+          "type": "video",
+          "source": "BibleProject",
+          "note": "The letter this week lives inside, end to end."
+        },
+        {
+          "title": "This Ancient Ritual Helps Explain Jesus' Death",
+          "type": "video",
+          "source": "BibleProject",
+          "note": "What sacrifice was actually for — the background to Tuesday."
+        },
+        {
+          "title": "Book of Genesis Summary (Part 1)",
+          "type": "video",
+          "source": "BibleProject",
+          "note": "Genesis 1-11, the ground Monday stands on."
+        },
+        {
+          "title": "Learn Where Heaven and Earth Overlap",
+          "type": "video",
+          "source": "BibleProject",
+          "note": "God's space and ours, and where they meet."
+        },
+        {
+          "title": "A guided read for the week ahead",
+          "type": "practice",
+          "note": "Take Hebrews 10:19-25 and read it once a day for seven days. Do not study it. Read it aloud, slowly, and stop at let us draw near each time before going on."
+        }
+      ]
+    },
+    {
+      "type": "recap",
+      "heading": "If You Only Keep One Thing",
+      "intro": "Keep the sentence from Ephesians. It is eleven words and it holds the entire week: ye who sometimes were far off are made nigh by the blood of Christ. Far off is a real description of where things stood. Made nigh is a completed action, not a process you are managing. And by the blood of Christ is the reason, which is not your effort and never was.",
+      "days": [
+        {
+          "day": 6,
+          "title": "The sentence",
+          "anchor_verse": "Ephesians 2:13 (KJV)",
+          "key_insight": "Made nigh is in the passive. Something was done to you. The whole week is an explanation of that one grammatical fact."
+        }
+      ]
+    }
+  ]
+}

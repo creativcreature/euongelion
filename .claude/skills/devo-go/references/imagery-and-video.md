@@ -59,9 +59,15 @@ The series carries a tonal register, chosen in Phase 1 and passed to every
 generation as `--intensity=N`. It is the founder's two-style split made into one
 control: **1 is the current site register** (airy, ambient light, quiet cream
 ground, subject small in frame) and **5 is cinematic baroque** (tenebrist, one
-hard light source inside the scene, frame filled, bodies mid-event). Defaults are
-**stills 1, motion 5** — the baroque register exists for video, gifs and motion
-source plates; still imagery on the site stays light.
+hard light source inside the scene, frame filled, bodies mid-event). **Stills 1, motion 5 are DEFAULTS only**, used when no intensity is given — the
+baroque register exists for video, gifs and motion source plates, and still
+imagery on the site otherwise stays light.
+
+**An explicitly set intensity applies to EVERY generated image in the run — stills
+and motion alike (founder ruling 2026-08-29).** The stills-1 / motion-5 split is
+only a DEFAULT, used when no intensity is given. Founder: _"Unless I specify, the
+intensity is for all generated images. If I set intensity then this rule overrides
+the default."_
 
 | Rung | Register            | Deep mass (<64) | Lit (>200) |
 | ---- | ------------------- | --------------- | ---------- |

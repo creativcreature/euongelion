@@ -1555,3 +1555,9 @@ features:
     status: shipped
     decision: SA-131
     doc: docs/feature-prds/F-175.md
+
+  - id: F-176
+    title: drawing-near-seven-day-series-on-access-at-image-intensity-5
+    status: shipped
+    decision: SA-132
+    doc: docs/feature-prds/F-176.md

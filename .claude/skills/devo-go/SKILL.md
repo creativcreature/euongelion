@@ -23,9 +23,12 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
    **Image intensity 1–5 (SA-131)** — the tonal register for the series' plates, asked
    in the same Phase-1 AskUserQuestion. 1 is the current site register (airy, ambient
    light, quiet cream ground); 5 is cinematic baroque (tenebrist, one hard in-scene
-   source, frame filled). Defaults: **stills 1, motion 5** — the founder's split is that
-   the site's still imagery stays light and video/gif source plates go dark. Record the
-   chosen value in the brief header; pass it as `--intensity=N` to every generation.
+   source, frame filled). **Defaults only, used when no intensity is given: stills 1,
+   motion 5.** When the founder names an intensity it applies to EVERY generated image
+   in the run, stills and motion alike, and overrides that split — founder, 2026-08-29:
+   _"Unless I specify, the intensity is for all generated images. If I set intensity
+   then this rule overrides the default."_ Record the chosen value in the brief header;
+   pass it as `--intensity=N` to every generation.
 2. The founder's personal/emotional context for the series (becomes the spine — ask if not offered).
 3. Founder answers via AskUserQuestion on: format, editorial stance on any cultural baggage, how personal the spine is, and definition of done. Ask BEFORE writing anything.
 4. Governing docs read in full: `content/AUTHORING-SPEC.md` (governs on conflict), `docs/AI-CONTENT-CONSTRAINTS.md`, `docs/PUBLIC-FACING-LANGUAGE.md`, `.claude/skills/euangelion-platform/references/content-structure.md`, and `docs/production-decisions.yaml` SA-029.

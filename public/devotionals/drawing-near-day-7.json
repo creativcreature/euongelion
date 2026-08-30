@@ -1,0 +1,111 @@
+{
+  "day": 7,
+  "chiasm_position": "sabbath",
+  "title": "They Shall See His Face",
+  "subtitle": "Nearness with nothing required of it",
+  "teaser": "No teaching today. The week said what it had to say.",
+  "anchorVerse": "James 4:8",
+  "theme": "Rest, and the last line",
+  "framework": "sabbath",
+  "scriptureReference": "James 4:8; Revelation 22:1-4",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "James 4:8",
+      "translation": "KJV",
+      "passage": "Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.",
+      "emphasis": [
+        "Draw nigh to God, and he will draw nigh to you"
+      ],
+      "scriptureContext": "The invitation in its shortest form, in the imperative, with a promise attached."
+    },
+    {
+      "type": "sabbath",
+      "heading": "Sabbath",
+      "scripture_anchor": {
+        "reference": "Revelation 22:4",
+        "translation": "KJV",
+        "text": "And they shall see his face; and his name shall be in their foreheads."
+      },
+      "invitation": "There is no teaching today. The week said what it had to say.\n\nSit somewhere quiet for ten unhurried minutes. Do not review the week. Do not work out what to do with it.\n\nOn Thursday you read about Moses asking to see God's glory, and being told that no man sees His face and lives. He was put in a cleft of rock, covered by a hand, and shown the back of it. That was the best the old covenant could do, for the man who knew God best.\n\nThe last chapter of the Bible has four words that answer him.\n\nThey shall see his face.\n\nNo cleft. No covering hand. No glimpse of the back of it as the glory goes past. A face, seen.\n\nThat is where all of this has been going the whole time — past permission, past access, past even boldness, to the plainest kind of nearness there is. Two people who can look at each other.\n\nSo today, nothing is asked of you. No task, no application, no next step.\n\nJames says draw nigh to God and He will draw nigh to you, which is the only instruction on the page, and it is not really an instruction so much as a description of what happens.\n\nSit still. He is not far off.",
+      "prayerText": "Father, I have nothing to bring today and nothing to finish. Thank You that the way is open, that it was opened from Your side, and that it stays open while I am not thinking about it. I will sit here a while. Amen."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day7-face.webp",
+      "inlineImageAlt": "Warm light filling an open doorway with no door in it, seen straight on, quiet and still.",
+      "inlineImageCaption": "Revelation 22:4 — the last word of the week is a face, seen.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "scripture",
+      "reference": "Revelation 22:1-4",
+      "translation": "KJV",
+      "passage": "And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb. In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations. And there shall be no more curse: but the throne of God and of the Lamb shall be in it; and his servants shall serve him: And they shall see his face; and his name shall be in their foreheads.",
+      "emphasis": [
+        "the tree of life",
+        "there shall be no more curse",
+        "they shall see his face"
+      ],
+      "scriptureContext": "The tree from Genesis 3, growing in a public street, with no guard mentioned and the curse lifted."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Nothing to answer today. Just sit with the four words: they shall see his face.",
+      "invitationType": "sit-with-it"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day7-water.webp",
+      "inlineImageAlt": "Still clear water in a stone channel, catching a single band of warm light on its surface.",
+      "inlineImageCaption": "Revelation 22:1 — a pure river of water of life, proceeding out of the throne.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerType": "closing",
+      "prayerText": "Lord, the week began with two people hiding among trees and it ends with a tree standing in the open street. Thank You that the gate was never reopened, because a better way was made instead. I am not going to ask You for anything today. Amen.",
+      "breathPrayer": "Draw nigh — He draws nigh."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/drawing-near/day7-tree.webp",
+      "inlineImageAlt": "A tree growing in the middle of an open street beside still water, unguarded.",
+      "inlineImageCaption": "The tree that was fenced off in Genesis 3 stands in a public street in Revelation 22, with no guard named.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "resource",
+      "heading": "If You Want To Keep Going",
+      "relatedScriptures": [
+        {
+          "reference": "Revelation 22:2 (KJV)",
+          "text": "The tree of life in the midst of the street, its leaves for the healing of the nations. Genesis 3 answered in a sentence."
+        },
+        {
+          "reference": "Exodus 33:20 (KJV)",
+          "text": "\"There shall no man see me, and live.\" Read it beside Revelation 22:4 and let the two sit together."
+        },
+        {
+          "reference": "Hebrews 10:19-22 (KJV)",
+          "text": "The passage to carry into next week. Read it once a day, aloud, and stop at let us draw near."
+        }
+      ],
+      "resources": [
+        {
+          "title": "The whole of Hebrews 10",
+          "type": "practice",
+          "note": "One sitting, out loud if you can. Watch verse 1 and verse 22 use the same verb."
+        },
+        {
+          "title": "Nothing else today",
+          "type": "practice",
+          "note": "This is a sabbath. The best use of it is not another resource."
+        }
+      ]
+    }
+  ]
+}
