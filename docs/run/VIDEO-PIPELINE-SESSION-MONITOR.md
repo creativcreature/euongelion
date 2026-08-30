@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 21:03 EDT — **Report #18**
+**Last updated:** 2026-08-29 21:08 EDT — **Report #19**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1316,6 +1316,93 @@ drawing it would inherit the wrong target.
    not less.
 4. **The virality/formation tension in §6.44** must be resolved explicitly, not inherited.
 
+### 6.46 ★ The constraint dissolves — the Vox spec needs no video generation at all
+
+> _"Everything in these references is **still elements moved by a compositor.** Cut-out PNGs on
+> layers, camera parallax, staggered entrances, posterized time. **No diffusion video anywhere.**"_
+
+Images → Codex `image_gen` (covered by the ChatGPT sub). Motion → Remotion (free, unlimited).
+Voice → the local clone. **Video-generation credits: not used.** The "one video a day" ceiling of
+§6.40 was a consequence of choosing generated footage as substrate; this style doesn't.
+
+**Every constraint the session fought for four hours is now irrelevant** — the 82.3s benchmark,
+the 40.7 GB RAM ceiling, fp8-on-Metal, the 25 GB of weights, Seedance's credit arithmetic. None
+of it applies to the target the founder actually wants.
+
+The Remotion-over-AE argument is well made and concrete: 12 fps is `fps: 12`; **no motion blur is
+Remotion's default** where AE users must disable it; Posterize Time @6 is `Math.floor(frame/2)*2`;
+stagger is `<Sequence from={n}>`; the AE tutorial's camera-null 3D parallax maps onto one CSS
+`perspective` container with `translateZ` per layer — _"same parallax, expressed as code Claude
+can read and check."_ That last clause matters: it makes the whole look **legible to the eye
+skill**, which a nested AE comp is not.
+
+### 6.47 ✅ The transparency problem is real, unaddressed here, and it was correctly refused
+
+The session named the make-or-break: _"Codex `image_gen` produces flat images. This style needs
+cut-out elements on transparent backgrounds, each on its own layer."_ It said plainly _"I don't
+know the answer yet,"_ gave three paths, and stopped: **"This is the first thing to test, before
+any pipeline gets built."**
+
+**This monitor checked, and the flag is justified:**
+
+```
+PNGs sampled from public/images        12
+  ... with an alpha channel             0        ← no transparent asset exists in this project
+imagen SKILL.md mentions of transparency/alpha    none
+Adobe MCP image_remove_background      available  ← path 2 is viable
+```
+
+So the project has **never produced a cut-out**, and the skill that governs its image generation
+has never considered transparency. The session's path 2 — generate flat, then remove background
+in Photoshop / the Adobe MCP — is confirmed available as a fallback.
+
+**Credit, and it is the important kind:** this is the same session that twice turned a question
+into an install. Here it identified an unknown that everything downstream depends on and
+**refused to build past it.** That is the corrected behaviour, applied unprompted, at the exact
+moment it mattered most.
+
+### 6.48 ✅ Its generation arithmetic is sourced, not invented
+
+The spec's throughput maths — _"~45 beats, 4–8 elements each… 100–150 unique elements… at roughly
+60–120s per Codex generation, 2.5–5 hours of generation wall-clock"_ — rests on a per-generation
+figure. **Verified: `imagen/SKILL.md:103` states "A generation turn takes 60–120s."** The number
+comes from the project's own skill, not from memory. Conclusion — _"not one video a day. One
+video's worth of elements in an afternoon, and the library compounds"_ — follows.
+
+### 6.49 ⚠️ §6.44's virality flag is now concrete: the viral spine is _in_ the spec
+
+The session raised the brand tension itself, and well: _"Vox's grammar is journalistic and fast;
+your brand is sacred minimalism… This style might sit better on the wokeGod side than on a
+devotional reading surface. Your call, and it's a story question, not a technical one."_
+
+**But that addresses pacing, not the optimisation target — and the target survived into the
+pipeline.** Stage 1 of the spec reads, verbatim:
+
+> `Structure: Hook → Intro → Main → Turning Point → Big Picture → Powerful Ending`
+
+That is the master prompt's **viral** spine, lifted intact, from a template whose stated criteria
+are "highly clickable" and "curiosity-driven" and whose opening _"must immediately create
+curiosity."_ `CLAUDE.md`'s first line is **"Spiritual formation over engagement metrics."**
+
+The session correctly separated the template's _staging discipline_ (worth stealing verbatim) from
+its _content_. It did not separate the **story spine** from the **virality objective** that shaped
+it. Narrowed and sharpened: **the open question is not whether Vox pacing suits a devotional
+surface — it is whether a hook-first structure engineered for clickthrough belongs in content
+whose founding principle rejects engagement optimisation.** Unresolved, and now embedded at stage
+1 rather than sitting in a reference image.
+
+### 6.50 ✅ The Voicebox reorder is right, and it draws on real project history
+
+> *"The animatic is stills cut to **narration timing**. You can't check pacing against a voice
+> that doesn't exist yet, so Voicebox has to run *before* stage 6, not after stage 8."*
+
+Correct, and it follows necessarily from §6.43's animatic finding. It also cited two failure modes
+specific to this project rather than generic caveats — that **Voicebox jobs wedge in
+`generating`** and need an app quit/relaunch, and that **Whisper invents a repeated tail on any
+slice ending mid-material**, having already produced two false "damaged track" reports here. Both
+match this project's recorded history. Consequence drawn correctly: narration is _"a batch stage
+with a watchdog, not an inline call the pipeline can just await."_
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1350,6 +1437,17 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #19 — 21:08 EDT.** §6.46 ★: **the constraint dissolves** — Vox collage is still
+  elements moved by a compositor, so no video generation, no credits, and every hardware limit
+  the session fought for four hours becomes irrelevant. Remotion-over-AE argued concretely, and
+  the look ends up _legible to the eye_ as code. §6.47 ✅: the transparency blocker is real —
+  **0 of 12 sampled PNGs have alpha, the `imagen` skill never mentions transparency**, and
+  `image_remove_background` is available as the fallback; the session **refused to build past the
+  unknown**, the corrected behaviour applied at the moment it mattered. §6.48: its 60–120s
+  per-generation figure **verified against `imagen/SKILL.md:103`** — sourced, not invented.
+  §6.49 ⚠️: §6.44 narrowed — the session addressed Vox _pacing_ but **the viral spine survived
+  verbatim into stage 1** of its own pipeline. §6.50: the Voicebox reorder is correct and cites
+  two real project-specific failure modes.
 - **Report #18 — 21:03 EDT.** §6.43 ★★: **the researched pipeline is the session's best output.**
   Four documented pipelines converge on a cheap proxy before expensive commitment; the session
   connected the founder's "random mess" complaint to the **animatic** and reframed the eye as _"a
