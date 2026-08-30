@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 21:46 EDT — **Report #24**
+**Last updated:** 2026-08-29 21:50 EDT — **Report #25**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -1775,6 +1775,47 @@ one night.
 the working tree stays clean; nothing further goes to that remote until the founder says where
 this document should live.
 
+### 6.65 Watch items for the handoff to the social-media session
+
+> _"I need to handoff doc to tell the social media bot about the video stuff we have come together
+> on. it doesnt understand what we are doing, and needs it to devleop social strategy. which will
+> impact our final pipeline."_
+
+The session invoked the `handoff` skill. **A handoff is where a night's findings get compressed —
+and compression is where retracted claims get quietly re-promoted to fact.** Five things this
+monitor will check the document against.
+
+**Must carry:**
+
+1. **The 83-day gate finding (§6.60).** A social strategy designed without knowing that _nothing
+   has cleared the approval gate since 2026-06-07_ — including a fully-built, queued Instagram
+   Week 1 — will design more things to queue. This is the single most load-bearing fact of the
+   night and it is about process, not video, so it is exactly the kind of thing a video handoff
+   drops.
+2. **The unresolved surface question (§6.49 / §6.57).** Does the output serve the **YouTube
+   channel** or the **devotional app**? The viral spine is honest on one and a category error on
+   the other. Still unanswered; a social strategy cannot be written without it.
+3. **The verified hard constraints:** YPP needs 1,000 subs + 4,000 watch hours before
+   **2027-02-01**, doubling to 8,000 after (**~5 months**); **Shorts do not count** toward it;
+   the founder's own **21 views personal vs 1,500 searchable**; and the finding that the riso lock
+   — two inks, no faces, biblical-object vocabulary — is _"the only thing in this research that
+   would not disappear into that scroll"_ against a feed whose median is 100–600 views.
+
+**Must NOT carry, or must carry marked as unproven:**
+
+4. **Retracted numbers.** The Wan _"not feasible"_ verdict was **reversed** (§6.7); the
+   _"25–30 seconds per 4-second clip"_ estimate was **wrong by 3×** and superseded by the measured
+   **82.3s** (§6.22). Neither belongs in a handoff except as history.
+5. **Unproven claims.** The **DepthFlow** result — 1920×1080 in 0.66s with riso intact — was
+   **deleted before verification** (§6.34) and must not travel as fact. The **transparency /
+   cut-out question is untested** and is the make-or-break of the whole approach (§6.47). **`cv2`
+   is not installed**, so the masking stage (§6.56) has an unmet dependency. And nothing at all
+   is currently installed (§6.35).
+
+**The honest one-line summary of the night, if the handoff needs one:** _the video problem is
+solved on paper and unproven in practice; the binding constraint was never production capacity,
+it was the approval gate._
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -1809,6 +1850,14 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #25 — 21:50 EDT.** §6.65: **watch items set for the handoff** the session is now
+  writing to brief the social-media session. Must carry: the **83-day gate finding** (a process
+  fact a video handoff is likely to drop), the **unresolved surface question** (YouTube channel vs
+  devotional app — it decides whether the viral spine is honest), and the verified constraints
+  (**~5 months** to the YPP cliff, Shorts excluded, 21-vs-1,500, the riso lock as the only
+  non-invisible thing in a 100–600-view feed). Must **not** carry as fact: the **reversed** Wan
+  verdict, the **3×-wrong** 25–30s estimate, the **deleted, unverified** DepthFlow result, or the
+  **untested** transparency question — and it should say plainly that **nothing is installed**.
 - **Report #24 — 21:46 EDT.** §6.64 ⚠️: **founder was right — this monitor pushed to an abandoned
   repo.** Verified: `npm run deploy` builds the **working tree** straight to Cloudflare
   (`package.json:48`), every live deployment reads `Source: Unknown (deployment)` with **no GitHub
