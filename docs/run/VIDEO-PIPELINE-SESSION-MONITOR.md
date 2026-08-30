@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 20:20 EDT — **Report #9**
+**Last updated:** 2026-08-29 20:24 EDT — **Report #10**
 **Status:** **BUILDING.** Founder authorised the install at 20:14. ffmpeg going into a contained
 `~/ai/` tree; LTX to follow. First code of the session. _(Header below predates this — see §6.16.)_
 
@@ -622,6 +622,62 @@ Nothing has leaked into system paths, and the voice-cloning cache is intact. The
 commitment from §6.14 is holding so far. This monitor will re-check after the LTX step, which is
 where the 19 GB encoder makes containment actually load-bearing.
 
+### 6.19 ✅ ffmpeg install — every claim independently verified
+
+The session reported: _"ffmpeg is installed and proven working. Native arm64, checksum-verified
+against the publisher's SHA256, ad-hoc signed. I tested it end to end."_ **This monitor re-ran
+all of it at 20:24 rather than accept the report.**
+
+| Claim                | Independent check           | Result                                       |
+| -------------------- | --------------------------- | -------------------------------------------- |
+| Native arm64         | `file ~/ai/bin/ffmpeg`      | `Mach-O 64-bit executable arm64` ✅          |
+| ffprobe too          | `file ~/ai/bin/ffprobe`     | `arm64` ✅                                   |
+| Working build        | `ffmpeg -version`           | **ffmpeg version 9.0** ✅                    |
+| Ad-hoc signed        | `codesign -dv`              | `Signature=adhoc`, TeamIdentifier not set ✅ |
+| Encodes              | generated a 2s 320×240 clip | succeeded ✅                                 |
+| Probes correctly     | `ffprobe -count_frames`     | `nb_read_frames=60` — exactly 2s × 30fps ✅  |
+| **Frame extraction** | `-vf fps=2` over 2s         | **4 PNGs written** ✅                        |
+
+That last row is the one that matters: **frame extraction is the eye skill's hot path, and it is
+now proven working on native silicon.** This is the first thing in the entire session that has
+been demonstrated rather than researched.
+
+**§6.17's flag is closed, with one nuance kept.** The session added checksum verification against
+the publisher's SHA256, which is the right move and closes the gap raised in Report #9. The
+nuance worth keeping in the record: a checksum published on the same site as the binary proves
+**integrity in transit, not provenance.** It rules out a corrupted or tampered download; it does
+not independently attest the publisher. Likewise `Signature=adhoc` is a local Gatekeeper
+accommodation, not a developer-ID attestation. This is the normal and accepted way to obtain
+arm64 ffmpeg on macOS — noted so the record does not overstate what was proven.
+
+### 6.20 ✅ Containment verified at the process level — including the trap it set for itself
+
+The founder's hard requirement was _"we must be able to get rid of it."_ Checked at 20:24:
+
+```
+~/.cache/huggingface        28 GB — EXACTLY UNCHANGED (voice models untouched)
+~/ai                        18 GB and growing (text encoder mid-pull)
+~/ai/ltx/                   .venv, hf, models, ltx-mlx, out, run.sh,
+                            download-models.sh, UNINSTALL.md
+which ffmpeg ffprobe        not found — nothing on PATH, nothing system-wide
+```
+
+**And the trap from §6.14 was avoided, verified two ways:**
+
+```
+grep HF_HOME ~/.zshrc ~/.zshenv ~/.bash_profile   →  NOT PRESENT  ✅
+ps eww <running download pid>                     →  HF_HOME=/Users/jamesparker/ai/ltx/hf  ✅
+```
+
+The session identified the risk that a global `HF_HOME` would blind the voice tooling to its
+existing 28 GB and silently re-download it — then **set it per-process only**, exactly as it
+said it would. The live download process carries the contained path in its own environment while
+the shell config is clean. `UNINSTALL.md` is written and on disk.
+
+**Assessment: the removability requirement is met and demonstrated, not asserted.** Everything
+video lives under one directory that `rm -rf` reverses, and the voice-cloning work is provably
+isolated from it.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -656,6 +712,14 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
+- **Report #10 — 20:24 EDT.** **First demonstrated capability of the session.** Re-ran every
+  ffmpeg claim independently: native arm64 ✅, ffmpeg 9.0 ✅, ad-hoc signed ✅, encodes ✅, probes
+  to exactly 60 frames ✅, and **frame extraction — the eye's hot path — produces 4 PNGs from a
+  2s clip** ✅. §6.17's flag closed by the session adding SHA256 verification; kept the nuance
+  that a same-origin checksum proves integrity, not provenance. Added §6.20: containment verified
+  at the **process level** — `HF_HOME` absent from shell config and present in the live download's
+  own environment, HF cache still exactly 28 GB, nothing on PATH, `UNINSTALL.md` on disk. The
+  removability requirement is demonstrated, not asserted.
 - **Report #9 — 20:20 EDT.** **Build started — first code of the session.** Founder authorised
   ffmpeg + LTX at 20:14 with removability as a stated hard requirement, taking rungs 1+3 rather
   than the recommended rung 1. Added §6.16 — **Q1 is now answered by conduct, not by statement.**
