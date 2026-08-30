@@ -22,6 +22,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      // Introduction for someone with no church background. Indexed at high
+      // priority — this is the page a cold search like "who is God" should land
+      // on, and it is written to be read by a complete stranger.
+      url: `${baseUrl}/who-is-god`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/soul-audit`,
       lastModified: now,
       changeFrequency: 'monthly',

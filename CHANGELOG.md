@@ -5,6 +5,49 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Who is God — a door for someone standing outside (2026-08-30) — SA-134 (F-178)
+
+Everything on the site assumed a reader already inside the faith. `/who-is-god`
+is the door for someone who is not: eight chapters that start from nothing, wear
+none of the app chrome, and ask for no agreement.
+
+- **The comparison the founder asked for** is a two-view control, because the
+  doctrine is two claims held together. _What is the same_ is a 7×3 matrix —
+  eternal, creator, all-knowing, everywhere present, holy, gives life, called God
+  — carrying a verse in every one of its 21 cells; that is the argument for one
+  God. _What is different_ is three cards on sending and being sent, closing on
+  the baptism where all three act at once.
+- **Fifteen Hebrew names**, script with transliteration, gloss, and the moment
+  each was given — including El Roi, named by a runaway slave in a desert, the
+  first person in Scripture to give God a name at all.
+- **Every one of the 92 quotations is corpus-verbatim**, extracted by script from
+  `public/bibles/BSB`. The verse bank is deliberately not annotated
+  `Record<string, Verse>` so TypeScript infers the literal key union — which is
+  what turned a bad `<Scripture>` key from a `next build` prerender crash into a
+  compile error.
+- **The hero film is scrubbed, not played.** Scroll drives `video.currentTime`,
+  eased in one rAF loop, gated on `loadeddata`, muted and `playsInline` for iOS.
+  Seeded from the existing Genesis creation plate, so the motion is the brand's
+  own riso print rather than a stock look. One render, ~319 of the 1,000 credits
+  allowed; compressed 11.1 MB to 4.3 MB with macOS `avconvert` (no ffmpeg here).
+- **The stills were not generated.** `CLAUDE.md` forbids Claude Code generating
+  imagery for this project, and `public/images/library/` is gitignored and absent
+  from the tree — so all seven chapter plates are founder-approved series plates
+  already on disk.
+- **The animation is the enhancement; the words are not contingent on it.**
+  Staged entrances start hidden, but that hidden state is scoped to
+  `.wig[data-js="true"]`. The first implementation had this inverted and rendered
+  a blank page with JavaScript off — caught by screenshotting with
+  `--disable-javascript`, not by a passing build.
+- Homepage: a full-bleed doorway band links to it — deliberately not a fourth CTA
+  card, since that section documents a no-competing-CTAs rule. **Seeking Help
+  Georgia now sits last on the homepage**, superseding its 2026-08-24 placement.
+
+Known gap: `design-system/typography.css` declares an `@font-face` for SBL Hebrew
+at `/fonts/SBLHebrew.woff2` and that file is not in `public/fonts/`. Hebrew
+renders correctly vocalised in the Times New Roman fallback; dropping the woff2
+in fixes it with no code change.
+
 ## 2026-08-30 — Drawing Near: the scrolling halftone atmosphere — SA-133 (F-177)
 
 An experiment scoped hard to one series. Each plate that appears in the page also

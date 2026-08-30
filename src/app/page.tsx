@@ -486,6 +486,37 @@ export default function Home() {
           </div>
         </section>
 
+        {/* The front door for someone with no church background at all.
+            Deliberately NOT a fourth card in the action ladder above — that
+            section documents a no-competing-CTAs rule, and this is a different
+            species: a standalone scroll experience, not a reading entry. Given
+            its own full-bleed band so it reads as a doorway, not a rival. */}
+        <section
+          className="homepage-doorway"
+          aria-labelledby="homepage-doorway-heading"
+        >
+          <div className="homepage-doorway-inner">
+            <p className="text-label mock-kicker">NEW TO ALL OF THIS?</p>
+            <h2
+              id="homepage-doorway-heading"
+              className="homepage-doorway-title"
+            >
+              You have heard the words <em>God</em> and <em>Jesus</em>.
+            </h2>
+            <p className="homepage-doorway-copy">
+              An introduction that assumes nothing — the names of God in Hebrew,
+              what the Bible actually is, why Jesus, and what salvation means.
+              No church background, no jargon, nothing you have to agree to.
+            </p>
+            <Link
+              href="/who-is-god"
+              className="homepage-doorway-link text-label"
+            >
+              START AT THE BEGINNING &rarr;
+            </Link>
+          </div>
+        </section>
+
         {/* SA-107 — the audio callout.
             Audio was tucked deliberately (the drawer is a handle, not a bar),
             and tucked with no announcement is just hidden. This is the one
@@ -700,34 +731,6 @@ export default function Home() {
           )}
         </section>
 
-        {/* Outreach. Deliberately quiet and deliberately low — someone who
-            needs it will read the whole page, and someone who does not should
-            not have a crisis banner shouted at them. Founder direction
-            2026-08-24: "low on the homepage please. maybe under soul audit." */}
-        <section
-          className="homepage-outreach"
-          aria-labelledby="homepage-outreach-heading"
-        >
-          <p className="text-label mock-kicker">GEORGIA</p>
-          <h2
-            id="homepage-outreach-heading"
-            className="homepage-outreach-title"
-          >
-            If what you need right now is a phone number, not a devotional.
-          </h2>
-          <p className="homepage-outreach-copy">
-            We keep a checked list of Georgia help lines — crisis support, a bed
-            tonight, food, rent and power, a doctor, a lawyer. Free, printable,
-            no sign-up, and no requirement to believe anything.
-          </p>
-          <Link
-            href="/seeking-help-georgia"
-            className="homepage-outreach-link text-label"
-          >
-            Seeking help in Georgia →
-          </Link>
-        </section>
-
         <section className="homepage-howitworks">
           <p className="text-label mock-kicker">HERE&rsquo;S HOW IT WORKS</p>
           <h2 className="mock-title-center">
@@ -916,6 +919,35 @@ export default function Home() {
         <section className="mock-more-row">
           <Link href="/help#faq" className="mock-btn text-label">
             VIEW FULL FAQ
+          </Link>
+        </section>
+
+        {/* Outreach. Deliberately quiet — someone who needs it will read the
+            whole page, and someone who does not should not have a crisis banner
+            shouted at them. Founder direction 2026-08-24: "low on the homepage
+            please. maybe under soul audit." Superseded 2026-08-30: "make
+            Seeking Help GA the last thing in the home page." */}
+        <section
+          className="homepage-outreach"
+          aria-labelledby="homepage-outreach-heading"
+        >
+          <p className="text-label mock-kicker">GEORGIA</p>
+          <h2
+            id="homepage-outreach-heading"
+            className="homepage-outreach-title"
+          >
+            If what you need right now is a phone number, not a devotional.
+          </h2>
+          <p className="homepage-outreach-copy">
+            We keep a checked list of Georgia help lines — crisis support, a bed
+            tonight, food, rent and power, a doctor, a lawyer. Free, printable,
+            no sign-up, and no requirement to believe anything.
+          </p>
+          <Link
+            href="/seeking-help-georgia"
+            className="homepage-outreach-link text-label"
+          >
+            Seeking help in Georgia →
           </Link>
         </section>
 

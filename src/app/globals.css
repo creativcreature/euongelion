@@ -18184,3 +18184,75 @@ html.dark .edition-quote-text--red {
   position: relative;
   z-index: 1;
 }
+
+/* =========================================================================
+   Homepage doorway — the entry to /who-is-god.
+   Full-bleed and dark so it reads as a threshold rather than a fourth CTA
+   card competing with the action ladder above it. The plate behind it is the
+   same Genesis creation print the experience opens on, so the two surfaces
+   are visibly the same room.
+   ========================================================================= */
+
+.homepage-doorway {
+  position: relative;
+  margin: clamp(3rem, 8vw, 5.5rem) 0;
+  padding: clamp(3rem, 9vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  background-color: var(--color-tehom, #0a1320);
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(10, 19, 32, 0.94) 0%,
+      rgba(10, 19, 32, 0.82) 46%,
+      rgba(10, 19, 32, 0.6) 100%
+    ),
+    url('/images/site/series/genesis-two-stories-of-creation.webp');
+  background-size: cover;
+  background-position: center 62%;
+  color: var(--color-scroll, #efe5d8);
+  overflow: hidden;
+}
+
+.homepage-doorway-inner {
+  max-width: 34rem;
+}
+
+.homepage-doorway .mock-kicker {
+  color: var(--color-amber, #c8a56a);
+}
+
+.homepage-doorway-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  line-height: 1.1;
+  font-weight: 400;
+  margin: 0.75rem 0 1rem;
+  text-wrap: balance;
+}
+.homepage-doorway-title em {
+  font-style: italic;
+  color: var(--color-amber, #c8a56a);
+}
+
+.homepage-doorway-copy {
+  margin: 0 0 1.75rem;
+  font-size: clamp(0.98rem, 2vw, 1.1rem);
+  line-height: 1.62;
+  color: rgba(239, 229, 216, 0.78);
+}
+
+.homepage-doorway-link {
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+  color: var(--color-amber, #c8a56a);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 165, 106, 0.45);
+}
+.homepage-doorway-link:hover {
+  color: var(--color-scroll, #efe5d8);
+  border-bottom-color: var(--color-scroll, #efe5d8);
+}
+.homepage-doorway-link:focus-visible {
+  outline: 2px solid var(--color-amber, #c8a56a);
+  outline-offset: 4px;
+}

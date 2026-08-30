@@ -1,0 +1,701 @@
+/* =========================================================================
+   /who-is-god — a standalone introduction to God.
+   Deliberately its own visual world: this is the one page on the site a
+   complete stranger may land on first, so it does not wear the app chrome.
+   Follows the house palette (tehom / scroll / cobalt / amber) and the house
+   faces (Instrument Serif for reading, Industry for labels).
+   Every animation is gated behind prefers-reduced-motion.
+   ========================================================================= */
+
+.wig {
+  --wig-ink: var(--color-tehom, #0a1320);
+  --wig-paper: var(--color-scroll, #efe5d8);
+  --wig-cobalt: var(--color-cobalt, #1f2a8d);
+  --wig-amber: var(--color-amber, #c8a56a);
+  --wig-rule: rgba(239, 229, 216, 0.14);
+  --wig-measure: 34rem;
+  --wig-gut: clamp(1.25rem, 5vw, 4rem);
+
+  background: var(--wig-ink);
+  color: var(--wig-paper);
+  font-family: 'Instrument Serif', Georgia, serif;
+  overflow-x: clip;
+}
+
+.wig-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 50;
+  padding: 0.75rem 1rem;
+  background: var(--wig-paper);
+  color: var(--wig-ink);
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.wig-skip:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ---------- the scroll-scrubbed film ---------------------------------- */
+
+.wig-film {
+  position: relative;
+  width: 100%;
+}
+
+.wig-film-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.wig-film-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* The source plate is cream-on-cobalt; deepening it lets type sit on top
+     without a heavy scrim killing the halftone texture. */
+  filter: saturate(1.05) contrast(1.04) brightness(0.82);
+}
+
+.wig-film-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      120% 90% at 50% 55%,
+      rgba(10, 19, 32, 0.1) 0%,
+      rgba(10, 19, 32, 0.72) 62%,
+      rgba(10, 19, 32, 0.94) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(10, 19, 32, 0.55) 0%,
+      transparent 28%,
+      transparent 62%,
+      var(--wig-ink) 100%
+    );
+}
+
+.wig-film-copy {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--wig-gut);
+  max-width: 52rem;
+  text-align: center;
+  /* Copy rises and settles across the first third of the scrub. */
+  --lift: calc((1 - min(var(--film-progress, 0) * 3, 1)) * 2.5rem);
+  transform: translate3d(0, var(--lift), 0);
+  opacity: clamp(0.15, calc(1 - (var(--film-progress, 0) - 0.55) * 2.6), 1);
+}
+
+.wig-hero-kicker {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: clamp(0.66rem, 1.5vw, 0.78rem);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--wig-amber);
+  margin: 0 0 1.5rem;
+}
+
+.wig-hero-title {
+  font-size: clamp(2.1rem, 7vw, 5rem);
+  line-height: 1.04;
+  font-weight: 400;
+  margin: 0;
+  text-wrap: balance;
+}
+.wig-hero-title em {
+  font-style: italic;
+  color: var(--wig-amber);
+}
+.wig-hero-title span {
+  display: block;
+  margin-top: 0.5em;
+  color: rgba(239, 229, 216, 0.74);
+}
+
+.wig-hero-sub {
+  margin: 2rem auto 0;
+  max-width: 30rem;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.55;
+  color: rgba(239, 229, 216, 0.66);
+}
+
+.wig-hero-hint {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(239, 229, 216, 0.4);
+  margin: 3.5rem 0 0;
+  opacity: calc(1 - var(--film-progress, 0) * 6);
+}
+
+/* ---------- reading body ---------------------------------------------- */
+
+.wig-main {
+  position: relative;
+  z-index: 3;
+  background: var(--wig-ink);
+  padding: clamp(4rem, 12vw, 9rem) 0 0;
+}
+
+.wig-chapter {
+  padding: 0 var(--wig-gut) clamp(5rem, 14vw, 10rem);
+  max-width: 74rem;
+  margin: 0 auto;
+}
+
+.wig-chapter-head {
+  border-top: 1px solid var(--wig-rule);
+  padding-top: 1.5rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.wig-num,
+.wig-kicker {
+  font-family: 'Industry', system-ui, sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+}
+.wig-num {
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  color: var(--wig-amber);
+}
+.wig-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: rgba(239, 229, 216, 0.45);
+  margin-top: 0.6rem;
+}
+
+.wig-title {
+  font-size: clamp(1.9rem, 5.2vw, 3.4rem);
+  line-height: 1.1;
+  font-weight: 400;
+  margin: 1rem 0 0;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+.wig-chapter-body {
+  max-width: var(--wig-measure);
+  font-size: clamp(1.05rem, 2.1vw, 1.2rem);
+  line-height: 1.68;
+  color: rgba(239, 229, 216, 0.82);
+}
+.wig-chapter-body > p {
+  margin: 0 0 1.5em;
+}
+.wig-chapter-body em {
+  font-style: italic;
+  color: var(--wig-paper);
+}
+.wig-chapter-body strong {
+  color: var(--wig-paper);
+  font-weight: 400;
+}
+
+.wig-lede {
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--wig-paper);
+}
+
+.wig-aside {
+  border-left: 2px solid var(--wig-amber);
+  padding-left: 1.25rem;
+  color: rgba(239, 229, 216, 0.7);
+  font-style: italic;
+}
+.wig-aside-final {
+  font-style: normal;
+  margin-top: 3rem;
+}
+
+/* plates ---------------------------------------------------------------- */
+
+.wig-plate {
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
+  overflow: hidden;
+  border: 1px solid var(--wig-rule);
+}
+.wig-plate img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 34vw, 380px);
+  object-fit: cover;
+  filter: brightness(0.86) saturate(1.05);
+}
+
+/* scripture -------------------------------------------------------------- */
+
+.wig-scripture {
+  margin: 2.25rem 0;
+  padding-left: 1.25rem;
+  border-left: 1px solid rgba(200, 165, 106, 0.5);
+}
+.wig-scripture blockquote {
+  margin: 0;
+  font-size: 1.05em;
+  line-height: 1.6;
+  color: var(--wig-paper);
+}
+.wig-scripture figcaption {
+  margin-top: 0.6rem;
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wig-amber);
+}
+.wig-scripture-tight {
+  margin: 1.25rem 0 0;
+  font-size: 0.94em;
+}
+
+/* ---------- four movements -------------------------------------------- */
+
+.wig-movements {
+  display: grid;
+  gap: 1px;
+  background: var(--wig-rule);
+  border: 1px solid var(--wig-rule);
+  margin: clamp(2rem, 5vw, 3rem) 0;
+  max-width: none;
+  width: min(100%, 74rem);
+}
+@media (min-width: 52rem) {
+  .wig-movements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.wig-movement {
+  background: var(--wig-ink);
+  padding: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+.wig-movement-index {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  color: var(--wig-amber);
+  margin: 0;
+}
+.wig-movement-title {
+  font-size: clamp(1.5rem, 3.4vw, 2rem);
+  font-weight: 400;
+  margin: 0.75rem 0 0.2rem;
+}
+.wig-movement-sub {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(239, 229, 216, 0.45);
+  margin: 0 0 1rem;
+}
+.wig-movement-body {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba(239, 229, 216, 0.78);
+}
+
+/* ---------- the names -------------------------------------------------- */
+
+.wig-names {
+  margin: clamp(2rem, 5vw, 3rem) 0;
+  width: min(100%, 74rem);
+  border-top: 1px solid var(--wig-rule);
+}
+.wig-names-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wig-name {
+  border-bottom: 1px solid var(--wig-rule);
+}
+
+.wig-name-btn {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, auto) 1fr auto;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  width: 100%;
+  padding: clamp(1rem, 2.4vw, 1.5rem) 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  min-height: 44px;
+  transition: opacity 0.25s ease;
+}
+.wig-name-btn:hover {
+  opacity: 0.75;
+}
+.wig-name-btn:focus-visible {
+  outline: 2px solid var(--wig-amber);
+  outline-offset: 3px;
+}
+
+.wig-name-heb {
+  font-family: var(--font-hebrew, 'SBL Hebrew', 'Times New Roman', serif);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  line-height: 1.4;
+  color: var(--wig-paper);
+  white-space: nowrap;
+}
+
+.wig-name-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.wig-name-translit {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wig-amber);
+}
+.wig-name-gloss {
+  font-size: 1rem;
+  color: rgba(239, 229, 216, 0.76);
+  line-height: 1.4;
+}
+
+.wig-name-mark {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  flex: none;
+}
+.wig-name-mark::before,
+.wig-name-mark::after {
+  content: '';
+  position: absolute;
+  background: var(--wig-amber);
+  transition: transform 0.28s ease;
+}
+.wig-name-mark::before {
+  inset: 5px 0;
+  height: 1px;
+}
+.wig-name-mark::after {
+  inset: 0 5px;
+  width: 1px;
+}
+.wig-name[data-open='true'] .wig-name-mark::after {
+  transform: scaleY(0);
+}
+
+.wig-name-panel {
+  padding: 0 0 1.75rem;
+  max-width: var(--wig-measure);
+}
+.wig-name-note {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.62;
+  color: rgba(239, 229, 216, 0.8);
+}
+
+/* ---------- comparison -------------------------------------------------- */
+
+.wig-compare {
+  margin: clamp(2rem, 5vw, 3rem) 0;
+  width: min(100%, 74rem);
+}
+
+.wig-toggle {
+  display: inline-flex;
+  border: 1px solid var(--wig-rule);
+  margin-bottom: 2rem;
+}
+.wig-toggle-btn {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.25rem;
+  min-height: 44px;
+  background: none;
+  border: 0;
+  color: rgba(239, 229, 216, 0.55);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.wig-toggle-btn[aria-selected='true'] {
+  background: var(--wig-paper);
+  color: var(--wig-ink);
+}
+.wig-toggle-btn:focus-visible {
+  outline: 2px solid var(--wig-amber);
+  outline-offset: -2px;
+}
+
+.wig-compare-lede {
+  max-width: var(--wig-measure);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(239, 229, 216, 0.82);
+  margin: 0 0 2rem;
+}
+
+.wig-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--wig-rule);
+  -webkit-overflow-scrolling: touch;
+}
+.wig-table {
+  width: 100%;
+  min-width: 46rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.wig-table th,
+.wig-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 1rem;
+  border-bottom: 1px solid var(--wig-rule);
+}
+.wig-table thead th {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wig-amber);
+  border-bottom: 1px solid rgba(200, 165, 106, 0.4);
+  white-space: nowrap;
+}
+.wig-table tbody th {
+  border-right: 1px solid var(--wig-rule);
+  min-width: 11rem;
+}
+.wig-attr-label {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--wig-paper);
+}
+.wig-attr-plain {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: rgba(239, 229, 216, 0.55);
+}
+.wig-cell-ref {
+  display: block;
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wig-amber);
+  margin-bottom: 0.45rem;
+}
+.wig-cell-text {
+  display: block;
+  line-height: 1.5;
+  color: rgba(239, 229, 216, 0.76);
+}
+
+.wig-persons {
+  display: grid;
+  gap: 1px;
+  background: var(--wig-rule);
+  border: 1px solid var(--wig-rule);
+}
+@media (min-width: 52rem) {
+  .wig-persons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.wig-person {
+  background: var(--wig-ink);
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+.wig-person-title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+  color: var(--wig-paper);
+}
+.wig-person-body {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba(239, 229, 216, 0.78);
+}
+
+.wig-once {
+  margin-top: 2.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(200, 165, 106, 0.35);
+  max-width: var(--wig-measure);
+}
+.wig-once-kicker {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wig-amber);
+  margin: 0 0 0.85rem;
+}
+.wig-once-body {
+  margin: 0;
+  line-height: 1.62;
+  color: rgba(239, 229, 216, 0.82);
+}
+
+/* ---------- next steps -------------------------------------------------- */
+
+.wig-next {
+  list-style: none;
+  margin: clamp(2rem, 5vw, 3rem) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--wig-rule);
+  border: 1px solid var(--wig-rule);
+}
+.wig-next > li {
+  background: var(--wig-ink);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+}
+.wig-next-n {
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--wig-amber);
+  padding-top: 0.35rem;
+}
+.wig-next h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+}
+.wig-next p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba(239, 229, 216, 0.76);
+}
+.wig-next-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'Industry', system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wig-amber);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 165, 106, 0.4);
+  padding-bottom: 2px;
+  min-height: 44px;
+  line-height: 44px;
+}
+.wig-next-link:hover {
+  color: var(--wig-paper);
+  border-bottom-color: var(--wig-paper);
+}
+.wig-next-link:focus-visible {
+  outline: 2px solid var(--wig-amber);
+  outline-offset: 3px;
+}
+
+/* ---------- staged entrances -------------------------------------------
+   Every hidden-start rule below is scoped to .wig[data-js='true'], which the
+   component sets in an effect. No JavaScript, a failed bundle, or a crawler
+   therefore sees fully-visible prose rather than a blank page. Do not remove
+   that scope. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .wig[data-js='true'] .wig-chapter[data-in='false'] .wig-chapter-head,
+  .wig[data-js='true'] .wig-chapter[data-in='false'] .wig-chapter-body {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+  .wig-chapter .wig-chapter-head,
+  .wig-chapter .wig-chapter-body {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .wig-chapter .wig-chapter-body {
+    transition-delay: 0.09s;
+  }
+
+  .wig[data-js='true'] .wig-movements[data-in='false'] .wig-movement,
+  .wig[data-js='true'] .wig-names[data-in='false'] .wig-name,
+  .wig[data-js='true'] .wig-compare[data-in='false'] .wig-person {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+  }
+  .wig-movement,
+  .wig-name,
+  .wig-person {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--i, 0) * 60ms);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wig-film-copy {
+    transform: none;
+    opacity: 1;
+  }
+  .wig-hero-hint {
+    display: none;
+  }
+  .wig-film {
+    height: auto !important;
+  }
+  .wig-film-stage {
+    position: relative;
+    height: 78vh;
+  }
+}
+
+/* Very small screens: the film track is shortened so the opening does not
+   become an endurance test on a phone. */
+@media (max-width: 40rem) {
+  .wig-film {
+    height: 220vh !important;
+  }
+  .wig-name-btn {
+    grid-template-columns: 1fr auto;
+    row-gap: 0.5rem;
+  }
+  .wig-name-heb {
+    grid-column: 1 / -1;
+  }
+}

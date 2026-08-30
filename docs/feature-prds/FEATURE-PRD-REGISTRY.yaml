@@ -1567,3 +1567,8 @@ features:
     status: shipped
     decision: SA-133
     doc: docs/feature-prds/F-177.md
+  - id: F-178
+    title: who-is-god-standalone-introduction
+    status: shipped
+    decision: SA-134
+    doc: docs/feature-prds/F-178.md
