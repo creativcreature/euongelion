@@ -16,13 +16,22 @@ type Props = {
  * Scroll-scrubbed film. The Apple product-page technique: the page scroll
  * position drives `video.currentTime` rather than the video playing itself.
  *
- * Three things this has to survive, all learned the hard way on mobile Safari:
- *  1. iOS refuses to decode a video that is not `muted` + `playsInline`, and
- *     will not seek at all until it has metadata — so we gate on `loadeddata`.
- *  2. Seeking on every scroll event stutters. We lerp toward the target inside
- *     a single rAF loop and only write `currentTime` when the delta is worth it.
- *  3. `prefers-reduced-motion` must get a still frame, not a frozen video
- *     element — so the video is never mounted in that case.
+ * WHY THE FILE IS FETCHED INTO A BLOB FIRST
+ * -----------------------------------------
+ * Cloudflare Workers' asset handler does not answer HTTP Range requests for
+ * this bundle — `Range: bytes=0-1023` comes back `200` with the whole file and
+ * no `Accept-Ranges`. Chrome will not seek a progressive video it cannot range-
+ * request, so `video.seekable` is an empty [0,0] range and every write to
+ * `currentTime` silently reads back 0. The scrub looked implemented and did
+ * nothing. Downloading once and pointing the element at an object URL makes the
+ * media local, so seeking is instant and exact. It costs the same bytes and
+ * scrubs more smoothly than range seeking would.
+ *
+ * The other three things this has to survive, all mobile Safari:
+ *  1. iOS refuses to decode a video that is not `muted` + `playsInline`.
+ *  2. Seeking on every scroll event stutters, so we lerp toward the target in a
+ *     single rAF loop and only write when the delta is worth a frame.
+ *  3. `prefers-reduced-motion` gets a still image — the video is never mounted.
  */
 export default function ScrubbedFilm({
   src,
@@ -34,6 +43,9 @@ export default function ScrubbedFilm({
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [reduced, setReduced] = useState(false)
   const [ready, setReady] = useState(false)
+  // null while downloading; the blob URL once local; the raw path if the fetch
+  // failed, so a bad network still yields a poster and a playable element.
+  const [mediaSrc, setMediaSrc] = useState<string | null>(null)
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -43,14 +55,40 @@ export default function ScrubbedFilm({
     return () => mq.removeEventListener('change', apply)
   }, [])
 
+  // Pull the film down once and hand the element a seekable local copy.
   useEffect(() => {
     if (reduced) return
+    let cancelled = false
+    let objectUrl: string | null = null
+
+    fetch(src)
+      .then((r) =>
+        r.ok ? r.blob() : Promise.reject(new Error(String(r.status))),
+      )
+      .then((blob) => {
+        if (cancelled) return
+        objectUrl = URL.createObjectURL(blob)
+        setMediaSrc(objectUrl)
+      })
+      .catch(() => {
+        // Fall back to the network path. Scrubbing will not work without range
+        // support, but the poster and first frame still render.
+        if (!cancelled) setMediaSrc(src)
+      })
+
+    return () => {
+      cancelled = true
+      if (objectUrl) URL.revokeObjectURL(objectUrl)
+    }
+  }, [src, reduced])
+
+  useEffect(() => {
+    if (reduced || !mediaSrc) return
     const section = sectionRef.current
     const video = videoRef.current
     if (!section || !video) return
 
     let raf = 0
-    let target = 0
     let current = 0
     let running = true
 
@@ -58,16 +96,15 @@ export default function ScrubbedFilm({
       const rect = section.getBoundingClientRect()
       const scrollable = rect.height - window.innerHeight
       if (scrollable <= 0) return 0
-      const passed = Math.min(Math.max(-rect.top, 0), scrollable)
-      return passed / scrollable
+      return Math.min(Math.max(-rect.top, 0), scrollable) / scrollable
     }
 
     const tick = () => {
       if (!running) return
-      target = measure()
+      const target = measure()
       // Ease toward the target so a flung scroll does not machine-gun seeks.
       current += (target - current) * 0.12
-      const duration = video.duration
+      const { duration } = video
       if (Number.isFinite(duration) && duration > 0) {
         const t = current * duration
         if (Math.abs(video.currentTime - t) > 1 / 60) {
@@ -91,7 +128,7 @@ export default function ScrubbedFilm({
       cancelAnimationFrame(raf)
       video.removeEventListener('loadeddata', start)
     }
-  }, [reduced])
+  }, [reduced, mediaSrc])
 
   return (
     <div
@@ -113,7 +150,7 @@ export default function ScrubbedFilm({
           <video
             ref={videoRef}
             className="wig-film-media"
-            src={src}
+            {...(mediaSrc ? { src: mediaSrc } : {})}
             poster={poster}
             muted
             playsInline

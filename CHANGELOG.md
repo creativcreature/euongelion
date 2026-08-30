@@ -30,6 +30,13 @@ none of the app chrome, and ask for no agreement.
   Seeded from the existing Genesis creation plate, so the motion is the brand's
   own riso print rather than a stock look. One render, ~319 of the 1,000 credits
   allowed; compressed 11.1 MB to 4.3 MB with macOS `avconvert` (no ffmpeg here).
+- **The film had to be fetched into a blob to scrub at all.** Cloudflare's asset
+  handler does not answer Range requests here — `Range: bytes=0-1023` returns 200
+  with the whole file and no `Accept-Ranges` — and Chrome will not seek a video it
+  cannot range-request. `video.seekable` was `[0,0]` and every write to
+  `currentTime` read back 0, so a fully-implemented scrub did nothing and the hero
+  was a still frame. Downloading once into an object URL makes the media local:
+  `seekable.end(0)` 0 → 5.042, scroll drives `currentTime` 0 → 4.149 → 5.037.
 - **The stills were not generated.** `CLAUDE.md` forbids Claude Code generating
   imagery for this project, and `public/images/library/` is gitignored and absent
   from the tree — so all seven chapter plates are founder-approved series plates
