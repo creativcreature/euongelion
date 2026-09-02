@@ -52,7 +52,8 @@
     "build:edge-function": "node scripts/build-edge-function.mjs",
     "test:e2e:signed-in": "node scripts/e2e-signed-in.mjs",
     "strip:audio-assets": "node scripts/strip-audio-from-assets.mjs",
-    "verify:devotional-consistency": "node scripts/check-devotional-consistency.mjs"
+    "verify:devotional-consistency": "node scripts/check-devotional-consistency.mjs",
+    "ops:user-count": "node scripts/ops/user-count.mjs"
   },
   "dependencies": {
     "@capacitor/cli": "^8.1.0",

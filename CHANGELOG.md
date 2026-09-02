@@ -5,6 +5,32 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Ops: user headcount script (2026-09-02)
+
+Answering "how many users does the site have?" meant opening the Supabase
+dashboard or hand-rolling a curl. It is now one command.
+
+**Added**
+
+- `scripts/ops/user-count.mjs` (`npm run ops:user-count`, `--json` for
+  machine-readable output). Read-only: it never writes, deletes, or modifies
+  anything.
+- Reports **both** account tables, because they can disagree. `auth.users` is
+  the raw Supabase Auth record created the instant a signup succeeds — the
+  source of truth for "how many people signed up". `public.users` is the app
+  profile row written afterwards by `src/app/auth/callback/route.ts`. A signup
+  that died between the two leaves an auth user with no profile, so any drift
+  in either direction is listed per-account rather than averaged away.
+- Alongside the totals: email-confirmed, ever-signed-in, signed-in-last-30d,
+  new signups over 7/30 days, auth provider split, onboarding completion, and
+  subscription tier breakdown.
+
+Requires `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` in
+`.env.local` (service role — it reads the auth admin API), so it runs on the
+founder's machine, not in CI.
+
+---
+
 ## Runtime defect sweep — fewer crashes, less thrash, no volume ratchet (2026-08-29) — SA-129 (F-173)
 
 Measured, not guessed: a real browser over ten production routes capturing
