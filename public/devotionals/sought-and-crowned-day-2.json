@@ -1,0 +1,282 @@
+{
+  "day": 2,
+  "chiasm_position": "B",
+  "format": "two-minute-open-v2",
+  "title": "What The Breach Costs",
+  "subtitle": "On which side of a broken relationship moves first",
+  "teaser": "Greek writers used this verb of God being reconciled — an offended deity talked round. Paul turns it the other way, and the New Testament never once says God was reconciled to us.",
+  "anchorVerse": "2 Corinthians 5:18",
+  "theme": "Reconciliation is not God changing His mind about us; it is God absorbing the cost of the breach Himself",
+  "framework": "2 Corinthians 5:18-21 — God reconciled us to Himself through Christ",
+  "scriptureReference": "2 Corinthians 5:18-21",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "2 Corinthians 5:18-19",
+      "translation": "BSB",
+      "passage": "All this is from God, who reconciled us to Himself through Christ and gave us the ministry of reconciliation: that God was reconciling the world to Himself in Christ, not counting men’s trespasses against them. And He has committed to us the message of reconciliation.",
+      "emphasis": [
+        "reconciled us to Himself",
+        "not counting men’s trespasses"
+      ],
+      "scriptureContext": "Written to a church that had turned on Paul. He is describing the thing he is asking them to do, by describing what God did first."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "καταλλαγή",
+      "transliteration": "katallagē",
+      "pronunciation": "kat-al-lah-GAY",
+      "strongsNumber": "G2643",
+      "definition": "reconciliation — the exchange that turns enmity into friendship",
+      "usage": "The word comes out of the money-changer's table. Its root sense is to change one thing for another of equal value, and then, of persons, to change a relationship from hostility to peace. Paul is the only writer in the New Testament who uses it. The noun appears four times, the verb six.",
+      "usageNote": "It is not the same idea as ἱλασμός, hilasmos, which is sacrificial language about appeasing and whose object is wrath or sin. Katallagē is relational and its object is people. Two different metaphor families, often flattened into one. Note also that 2 Maccabees uses this verb with God as the one being reconciled. Paul turns it around, and in the New Testament God is never said to be reconciled to us.",
+      "relatedWords": [
+        "καταλλάσσω (katallassō) — to reconcile, the verb, G2644",
+        "ἱλασμός (hilasmos) — propitiation, G2434",
+        "λογίζομαι (logizomai) — to count, to reckon, as in not counting trespasses"
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "Who Moved First",
+      "content": "There is a direction hidden in this sentence, and everything depends on it.\n\nPaul says God reconciled us to Himself. He does not say God was reconciled to us.\n\nThat sounds like a small distinction until you notice how unusual it is. In the Greek writing around Paul, this verb runs the other way. Second Maccabees uses it of God being reconciled — an offended deity being talked round, appeased, brought back into a good mood by people who had upset Him.\n\nThat is the ordinary religious arrangement, and it is the one most of us assume even when we would deny it. Something is wrong between us and God. Our job is to fix His attitude.\n\nPaul inverts it. The offended party initiates. The one with the grievance absorbs the cost and comes looking. Across the whole New Testament, God is never once described as being reconciled to us.\n\nJohn Chrysostom, preaching on this passage in the fourth century, put the question exactly where it belongs. Who was the aggrieved one? Himself.\n\nSo the breach is real. Paul is not softening it. He is telling you which side crossed it.\n\nIt helps to know who Paul is writing to.\n\nThe Corinthians had turned on him. Other teachers had arrived, more impressive on a platform, and the church had largely gone with them. Paul's authority was being questioned, his appearance mocked, his sincerity doubted. Second Corinthians is written from the wrong end of a relationship that has gone badly.\n\nSo when he starts talking about reconciliation, he is not lecturing from a comfortable distance. He is describing something he is in the middle of needing.\n\nAnd he does not begin by asking them to make it right with him. He begins by telling them what God did about a much larger breach, and then asks them to be reconciled to God. The horizontal repair he wants is downstream of a vertical one he insists happened first.",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose attitude have you been quietly trying to fix — God's, or your own?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "God, I have spent a long time trying to talk You round, as though the problem were Your temper. Paul says You came across the gap Yourself. Let me stop negotiating and start receiving.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: a word borrowed from the money-changer's table, two famous preachers who wrecked a friendship in print, and what the offended party actually did about it."
+    },
+    {
+      "type": "scripture",
+      "reference": "2 Corinthians 5:20-21",
+      "translation": "BSB",
+      "passage": "Therefore we are ambassadors for Christ, as though God were making His appeal through us. We implore you on behalf of Christ: Be reconciled to God. God made Him who knew no sin to be sin on our behalf, so that in Him we might become the righteousness of God.",
+      "emphasis": [
+        "Be reconciled to God",
+        "to be sin on our behalf"
+      ],
+      "scriptureContext": "The appeal and the mechanism, in two sentences. Paul asks for the response only after he has explained what was paid."
+    },
+    {
+      "type": "teaching",
+      "heading": "Yesterday's Chapter Had A Debt In It",
+      "content": "Yesterday we left a king asking whether anyone was left of the house that hunted him.\n\nWe skipped past something in that question, and today is the day for it.\n\nThe house of Saul had genuinely tried to kill David. That is not a misunderstanding to be cleared up. Saul threw a spear at him, hunted him through the wilderness with three thousand men, and slaughtered a town of priests for helping him. There was a real breach, with real blood in it.\n\nWhen David asks after Jonathan's son, he is not being nice to someone who mildly annoyed him. He is extending kindness across a genuine wrong that was genuinely done.\n\nAnd Mephibosheth understood this perfectly. Years later, describing his own position, he does not talk about a misunderstanding.\n\n\"For all the house of my grandfather deserves death from my lord the king, yet you have set your servant among those who eat at your table.\"\n\nHe knew what he was. Not an overlooked guest. A member of a house that by every convention of the age should have been executed, sitting at the table of the man with every right to do it.\n\nReconciliation is only meaningful where there was something to reconcile. Otherwise it is just politeness.",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day2-lead.webp",
+      "inlineImageAlt": "A heavy wooden money-changer's table at dusk, two unequal piles of coin either side of a set of balance scales, one hand pushing the whole of one pile across the table toward the other side",
+      "inlineImageCaption": "The word Paul chose comes off this table. An exchange, at cost, so that two sides end up level.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "G_OlRWGLdnw",
+      "videoTitle": "This Ancient Ritual Helps Explain Jesus' Death",
+      "videoCaption": "How the sacrificial system works as a mechanism — covering evil so that God can remove it without removing the people it is attached to.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "pullquote",
+      "content": "The offended party initiates. Across the whole New Testament, God is never once described as being reconciled to us."
+    },
+    {
+      "type": "teaching",
+      "heading": "Two Words People Treat As One",
+      "content": "Two different pictures sit underneath the way the New Testament talks about the cross, and it helps to keep them apart.\n\nThe first is katallagē, the word in front of us. It comes from commerce — the exchange of one currency for another of equal value — and it is used of people whose relationship changes from hostility to peace. Its object is always a person or a relationship. Paul is the only New Testament writer who uses it at all.\n\nThe second is hilasmos, which belongs to the altar. It is sacrificial language about turning away wrath, and its object is wrath or sin rather than a person. It appears twice, both times in John's first letter.\n\nThey are not synonyms and they are not rivals. They are two angles on one event, and each of them says something the other cannot.\n\nThere has been a long argument about the sacrificial word. C. H. Dodd argued in the 1930s that it means expiation — the removal of sin. Leon Morris argued that standard Greek usage meant propitiation — the averting of wrath. The debate is still live and honest people hold both.\n\nWhat is not in dispute is the direction of the relational word. Whatever the altar language turns out to carry, katallagē says the estranged parties were brought back together, and it says who did the bringing.\n\nOne consequence of keeping them apart is worth naming.\n\nIf the only picture you have is the altar, then the cross reads as a transaction between God and God, with people watching from a distance. Something is offered, wrath is satisfied, the books balance.\n\nIf the only picture you have is the money-changer's table, the cross can slide into sentiment — a gesture of goodwill with nothing actually paid.\n\nHeld together, they say something neither manages alone. There was a real cost, and it was paid, and the point of paying it was a restored relationship between persons rather than a settled account in the abstract.\n\nPaul finishes the paragraph with both in one breath. God made Him who knew no sin to be sin on our behalf — that is the altar. So that in Him we might become the righteousness of God — that is the exchange.",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "bridge",
+      "heading": "Then and Now",
+      "ancientTruth": "In the ancient world, restoring a broken relationship between unequal parties was the inferior party's job. You brought the gift, you made the approach, you absorbed the humiliation, and you hoped. Nobody expected a wronged king to initiate anything.",
+      "modernApplication": "We have inherited the same instinct and applied it to God. Get the apology right. Get the behaviour corrected. Get the record improved. Then approach, carefully, and hope the reception is warm.",
+      "connectionPoint": "Paul writes to people who thought exactly that, and tells them the approach has already happened from the other direction, and that the cost was already absorbed by the party who did not owe it.",
+      "newTestamentEcho": "Isaiah had described it centuries before, in the passive voice, with the cost falling on somebody else: He was pierced for our transgressions, He was crushed for our iniquities."
+    },
+    {
+      "type": "scripture",
+      "reference": "Isaiah 53:5",
+      "translation": "BSB",
+      "passage": "But He was pierced for our transgressions, He was crushed for our iniquities; the punishment that brought us peace was upon Him, and by His stripes we are healed.",
+      "emphasis": [
+        "the punishment that brought us peace",
+        "by His stripes we are healed"
+      ],
+      "scriptureContext": "Written centuries earlier. Note where the cost lands in every clause — never on the people being made well."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day2-scales.webp",
+      "inlineImageAlt": "A single ledger page held open by two hands, columns of entries filling it, one hand drawing a line through the whole column rather than erasing any single figure",
+      "inlineImageCaption": "The debts are real and itemised. What changes is not the entries but where they are charged.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "teaching",
+      "heading": "Not Counting",
+      "content": "There is a bookkeeping word in the middle of Paul's sentence and it is easy to read past.\n\nGod was reconciling the world to Himself in Christ, not counting men's trespasses against them.\n\nThe verb is logizomai. It is an accounting term — to reckon, to enter in a ledger, to put on somebody's account. Paul uses it constantly.\n\nSo the picture is not that the trespasses were never real. A ledger with nothing in it does not need a decision about what to do with the entries. The picture is of debts that exist and are not being charged.\n\nAnd Paul says where they went. God made Him who knew no sin to be sin on our behalf.\n\nThat is the exchange the money-changer's word was reaching for. Not a cancellation, which costs nobody anything. A transfer, which costs somebody everything.\n\nThis is the part that makes the whole week possible. A king can seat a rival heir at his table because he has decided not to charge the account. But somebody still eats the loss.\n\nOn Sunday, David absorbs it. He gives away land, he gives away revenue, he takes a political risk that could cost him the throne, and he never sends Mephibosheth a bill for any of it.\n\nOn a Friday outside Jerusalem, the loss is absorbed on a scale the story of a king and a lame man can only gesture at.\n\nThere is one more thing in the word that is easy to miss.\n\nLogizomai is the same verb Paul uses in Romans when he says Abraham believed God and it was counted to him as righteousness. The ledger runs both ways. Something can be entered that was not there, and something that was there can be left unentered.\n\nSo the accounting language is not a loophole. It is the whole vocabulary Paul thinks in when he talks about how a person stands with God.\n\nAnd it protects the story from becoming sentimental. Grace in this passage is not God deciding the debts were small. It is God deciding where the debts go.",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "3lfPK2vfC54",
+      "videoTitle": "Book of 2 Corinthians Summary: A Complete Animated Overview",
+      "videoCaption": "The argument these verses sit inside — a letter written to a church that had turned on the man who founded it.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day2-letter.webp",
+      "inlineImageAlt": "An eighteenth-century writing desk by candlelight, a half-written letter under one hand, a printed pamphlet pushed to the far edge of the desk with its pages open, the writer's other hand resting flat and still on the paper",
+      "inlineImageCaption": "The breach was conducted in print, which is the hardest kind to mend quietly.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "story",
+      "heading": "The Funeral Sermon",
+      "content": "George Whitefield and John Wesley began as brothers in the same work, and then broke over predestination in public.\n\nWriting from Maryland on 24 November 1740, Whitefield set the breach down in his own hand. \"O that there may be harmony, and very intimate union between us! Yet it cannot be, since you hold universal Redemption.\"\n\nThen came the plea.\n\n\"My dear brother, for CHRIST's sake avoid all disputation. Do not oblige me to preach against you; I had rather die.\"\n\nHe did worse than preach against him. He published something private — that years before, Wesley had decided whether Whitefield should abandon Georgia by drawing a lot, and had posted him the slip of paper. Whitefield later admitted he would never have published this private transaction to the world had Wesley not used the lot a second time.\n\nTheir followers split. The movement carried two camps for a generation.\n\nThen Whitefield died in Massachusetts in 1770, and his executors asked John Wesley to preach his funeral sermon.\n\nWesley's own journal, Saturday 10 November: \"I returned to London, and had the melancholy news of Mr. Whitefield's death confirmed by his executors, who desired me to preach his funeral sermon on Sunday the 18th. In order to write this, I retired to Lewisham on Monday.\"\n\nHe preached it at Tottenham Court Road to an immense crowd, and again at the Tabernacle five days later.\n\nHe did not reopen the argument. He preached instead on loving people you disagree with — on a love that takes in everyone, of whatever opinion or mode of worship, who believes in the Lord Jesus.",
+      "connectionToTheme": "Thirty years of public quarrel, and the mending is a man retiring to a quiet house to write well about someone he had fought."
+    },
+    {
+      "type": "insight",
+      "heading": "The Line That Is Not There",
+      "content": "There is a famous line attached to this story and it should not be used.\n\nWhitefield is supposed to have been asked whether he expected to see Wesley in heaven, and to have answered that he did not — because Wesley would be so near the throne, and he so far off.\n\nIt is the most quoted sentence in the whole Whitefield and Wesley story. It is also unsourced. Searched against Whitefield's collected works, against Wesley's funeral sermon, and against both volumes of the standard nineteenth-century biography, it does not appear in any of them.\n\nThe verified material is less quotable and considerably better. A man asking his friend not to make him argue in public. A private letter made public in anger. Thirty years of division. And then executors asking the other man to speak, and that man going away to a quiet house for a week to write it properly.\n\nThe legend gives us a humble sentence. The record gives us a fortnight of somebody's actual behaviour, which is harder and worth more.",
+      "historicalContext": "Whitefield to Wesley, Letter 236, Bohemia, Maryland, 24 November 1740, in the collected Works, volume 1. Wesley's Journal, Saturday 10 November 1770, volume 5 of the 1909 edition, pages 396 to 397. Wesley, Sermon 53, On the Death of the Rev. Mr George Whitefield, preached 18 November 1770 at Tottenham Court Road and repeated at the Tabernacle on 23 November."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where have you been waiting for the other person to move first, in a breach where you know exactly what moving first would cost you?",
+      "additionalQuestions": [
+        "What have you been counting against someone that you could stop counting?",
+        "Is there a quarrel of yours that is still going only because it happened in public?",
+        "What would it cost you to be the one who initiates, and is that cost actually the obstacle?"
+      ],
+      "invitationType": "honest"
+    },
+    {
+      "type": "interactive",
+      "heading": "Write This Down",
+      "instruction": "Today's is a journalling prompt. Give it five minutes and a real piece of paper if you have one.",
+      "steps": [
+        "Write the name of one person you are estranged from, or one you have quietly written off.",
+        "Under the name, write what you are still counting against them. Be specific. Amounts, dates, sentences they said.",
+        "Draw a line under the list. Do not tear it up.",
+        "Underneath, write one sentence: what would it cost me to move first.",
+        "Leave the page where you will see it tomorrow. You are not being asked to act today."
+      ],
+      "interaction_type": "journal"
+    },
+    {
+      "type": "teaching",
+      "heading": "Ambassadors Of A Government We Did Not Elect",
+      "content": "Paul reaches for a political image, and it repays a moment's thought.\n\nAn ambassador is not a volunteer with opinions. He is a person sent, carrying terms he did not draft, representing a government whose decisions he had no part in making. His personal charm is irrelevant. What matters is whether he delivers the message he was given.\n\nThat is a relief, and it is also a limit.\n\nThe relief is that reconciliation is not something we generate. Nobody is being asked to manufacture peace out of their own reserves of patience. The terms already exist. They were settled before we were consulted.\n\nThe limit is that we do not get to adjust them. An ambassador who improves the message is not an ambassador. He is a private citizen with strong views.\n\nPaul then says something odd about how this works: as though God were making His appeal through us. The word is a plea. God appealing, through people, to people.\n\nThat is a strange sentence to sit inside. The offended party not only crosses the gap Himself, but then asks the reconciled to carry the same appeal to the next person along.\n\nWhich means the ministry is not a reward for having sorted yourself out. It is handed to people in the middle of their own mending. Paul is writing to a church that is currently estranged from him, and he tells them they have been given the ministry of reconciliation while they are still not speaking to him properly.",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "markdown": true
+    },
+    {
+      "type": "teaching",
+      "heading": "The Ministry Nobody Asks For",
+      "content": "Paul does not stop at describing what God did. He hands the same job over.\n\nGod reconciled us to Himself through Christ, and gave us the ministry of reconciliation. He has committed to us the message of reconciliation. We are ambassadors for Christ.\n\nAn ambassador does not invent the message. He carries somebody else's terms, and he represents a government he did not elect.\n\nSo the shape of the week is not only something being done for us. It is something we get handed. If the direction of grace runs downward and outward, and the offended party moves first, then the people who have received that are going to find themselves asked to do the same thing in miniature.\n\nWhich is precisely where it stops being comfortable.\n\nIt is a fine thing to say God does not count our trespasses against us. It is a different thing to stop counting somebody else's. Wesley had thirty years of grievance available to him and an invitation to use it in front of an immense crowd. He chose the other sermon.\n\nTomorrow we look at the middle of this — at what it costs the searcher to come down. For now, hold the direction. He moved first. Then He asked us to.",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Lord, I have kept a ledger. I know the entries by heart and I could read them out without notes. You looked at a much longer list and decided not to charge it, and the cost of that decision fell on You. Teach me the arithmetic. Let me stop trying to fix Your attitude toward me, and start carrying Your message to somebody who thinks the same thing about me. Amen.",
+      "breathPrayer": "Breathe in: not counting. Breathe out: You moved first."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "I will name one thing I am still counting against someone, and stop counting it.",
+      "leavingAtCross": [
+        "The belief that God's attitude is the problem to be fixed",
+        "A ledger I have been keeping in some detail",
+        "The idea that reconciliation means pretending nothing happened"
+      ],
+      "receivingFromCross": [
+        "An offended party who came across the gap first",
+        "Trespasses that exist and are not being charged",
+        "A job I did not apply for and can start this week"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Check Yourself",
+      "question": "What is unusual about Paul's use of the reconciliation word in 2 Corinthians 5?",
+      "options": [
+        "He uses it of God being reconciled to us, as Greek writers normally did",
+        "He reverses the usual direction — God reconciles us to Himself, and is never said to be reconciled to us",
+        "He uses it only of human relationships, never of God",
+        "He borrows it from the sacrificial system of the temple"
+      ],
+      "answer": 2,
+      "explanation": "2 Maccabees uses the same verb with God as the one reconciled. Paul turns it around: God reconciled us to Himself. Across the New Testament God is never described as being reconciled to us. The word also comes from commerce, not the altar — the altar word is hilasmos."
+    },
+    {
+      "type": "profile",
+      "heading": "The Preacher Who Asked The Right Question",
+      "name": "John Chrysostom",
+      "era": "Antioch and Constantinople, around 347 to 407",
+      "bio": "Archbishop of Constantinople and the most celebrated preacher of the early church — his nickname means golden-mouthed. He preached verse by verse through the letters of Paul, and his homilies on 2 Corinthians survive.",
+      "keyQuote": "Who was the aggrieved one? Himself.",
+      "lessonForUs": "He puts the whole doctrine in four words by asking a question about who was wronged. The offended party is the one who crosses the room."
+    },
+    {
+      "type": "resource",
+      "heading": "Go Deeper",
+      "relatedScriptures": [
+        "2 Corinthians 5:11-21 — the whole argument, including why Paul thinks he is not out of his mind",
+        "Isaiah 53:4-6 — where the cost lands in every clause",
+        "Romans 5:6-11 — reconciled while still enemies",
+        "Colossians 1:19-22 — the same direction, on a cosmic scale"
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "This Ancient Ritual Helps Explain Jesus' Death",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=G_OlRWGLdnw"
+        },
+        {
+          "type": "video",
+          "title": "Book of 2 Corinthians Summary: A Complete Animated Overview",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=3lfPK2vfC54"
+        }
+      ],
+      "forDeeperStudy": "Sources for today. Katallagē is Strong's G2643, four occurrences, all Pauline; the verb katallassō is G2644, six occurrences. The participle at 5:18 is aorist active; at 5:19 it is present active. Hilasmos is G2434 and occurs only at 1 John 2:2 and 4:10. On the propitiation and expiation debate, C. H. Dodd argued expiation from Septuagint usage in 1935 and Leon Morris argued propitiation from standard Greek usage; both positions are represented here rather than resolved. 2 Maccabees 7:33 and 8:29 use the verb with God as the one reconciled. Chrysostom, Homily XI on 2 Corinthians. Whitefield and Wesley sources as given in the historical note above; the line about being near the throne is unsourced and is not used here."
+    }
+  ]
+}

@@ -1299,6 +1299,71 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     ],
   },
 
+  'sought-and-crowned': {
+    title: 'Sought and Crowned',
+    heroImage: '/images/site/series/sought-and-crowned.webp',
+    question:
+      'What if the thing you assume disqualifies you is the thing God looks for?',
+    introduction:
+      'A king who had already won asked whether anyone survived the house that had hunted him. The answer was a man who could not walk, hidden across a river in a rich man’s house. Seven days on reconciliation, healing and mercy that goes downward: a word that appears three times in the Hebrew Bible and lands somewhere nobody expects, a shepherd who refuses to delegate the search, and a chapter that ends by telling us the man at the king’s table was still lame in both feet.',
+    context:
+      'For anyone who has decided, quietly, that they are too damaged to be looked for — and for anyone whose healing has been slower than the rescue. This week does not promise that the limp goes. It argues that the limp was never what kept you out of reach, and it refuses the popular sermon that tries to hide it.',
+    framework:
+      '2 Samuel 9:1 - Is there anyone left of Saul’s family to whom I can show the kindness of God?',
+    pathway: 'Sleep',
+    keywords: [
+      'reconciliation',
+      'healing',
+      'mercy',
+      'shame',
+      'unworthy',
+      'adoption',
+      'restoration',
+      'being found',
+      'estranged',
+      'disability',
+      'exile',
+      'inheritance',
+      'sonship',
+      'dignity',
+      'forgiveness',
+      'hiding',
+    ],
+    days: [
+      {
+        day: 1,
+        title: 'Is There Anyone Left',
+        slug: 'sought-and-crowned-day-1',
+      },
+      {
+        day: 2,
+        title: 'What the Breach Costs',
+        slug: 'sought-and-crowned-day-2',
+      },
+      {
+        day: 3,
+        title: 'The God Who Comes Down Looking',
+        slug: 'sought-and-crowned-day-3',
+      },
+      {
+        day: 4,
+        title: 'Robe, Ring, Sandals',
+        slug: 'sought-and-crowned-day-4',
+      },
+      {
+        day: 5,
+        title: 'At the Table, Still Lame',
+        slug: 'sought-and-crowned-day-5',
+      },
+      {
+        day: 6,
+        title: 'The Week, Gathered Up',
+        slug: 'sought-and-crowned-day-6',
+      },
+      { day: 7, title: 'Quiet', slug: 'sought-and-crowned-day-7' },
+    ],
+  },
+
   'looking-at-the-sun': {
     title: 'Looking at the Sun',
     heroImage: '/images/site/series/looking-at-the-sun.webp',
@@ -1420,6 +1485,7 @@ export const NEW_SERIES_ORDER = [
   'rekindled',
   'all-these-things',
   'drawing-near',
+  'sought-and-crowned',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.

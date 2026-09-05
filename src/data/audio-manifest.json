@@ -1467,7 +1467,7 @@
       },
       {
         "t": 396.3,
-        "label": "Apostles \u2014 The Anointed and Sent",
+        "label": "Apostles — The Anointed and Sent",
         "module": 13
       }
     ],
@@ -1478,7 +1478,7 @@
     "src": "/audio/bible-365-day-1-73632f83f4.m4a",
     "duration": 1290.6,
     "words": 3644,
-    "voice": "James \u2014 Channel (single-take)",
+    "voice": "James — Channel (single-take)",
     "engine": "chatterbox_turbo",
     "bytes": 20399466,
     "textHash": "dacdc3594321",
@@ -1930,7 +1930,7 @@
       },
       {
         "t": 130.6,
-        "label": "He Did Not Fall \u2014 He Drifted",
+        "label": "He Did Not Fall — He Drifted",
         "module": 3
       },
       {
@@ -9815,7 +9815,7 @@
       },
       {
         "t": 333.9,
-        "label": "As Strong As Death \u2014 Until One Day, Stronger",
+        "label": "As Strong As Death — Until One Day, Stronger",
         "module": 5
       },
       {
@@ -9878,7 +9878,7 @@
       },
       {
         "t": 325.5,
-        "label": "As Strong As Death \u2014 Then Stronger",
+        "label": "As Strong As Death — Then Stronger",
         "module": 5
       },
       {
@@ -13973,7 +13973,7 @@
       },
       {
         "t": 293.6,
-        "label": "Be Perfect \u2014 and Here Is Your Daily Bread",
+        "label": "Be Perfect — and Here Is Your Daily Bread",
         "module": 5
       },
       {
@@ -15579,7 +15579,7 @@
     "src": "/audio/bible-365-day-3-7072cee3dd.m4a",
     "duration": 740.0,
     "words": 2155,
-    "voice": "James \u2014 Channel (single-take)",
+    "voice": "James — Channel (single-take)",
     "engine": "chatterbox_turbo",
     "bytes": 11696990,
     "textHash": "1dff2f3b7651",
@@ -16165,7 +16165,7 @@
       },
       {
         "t": 307.3,
-        "label": "Dead and Alive Again, Lost and Found \u2014 Said Twice",
+        "label": "Dead and Alive Again, Lost and Found — Said Twice",
         "module": 5
       },
       {
@@ -20061,7 +20061,7 @@
       },
       {
         "t": 149.2,
-        "label": "The Bible Ends Where It Began \u2014 In a Garden, With God Near",
+        "label": "The Bible Ends Where It Began — In a Garden, With God Near",
         "module": 3
       },
       {
@@ -20134,7 +20134,7 @@
       },
       {
         "t": 340.0,
-        "label": "The Bible Ends in a Garden \u2014 Reopened",
+        "label": "The Bible Ends in a Garden — Reopened",
         "module": 5
       },
       {
@@ -21866,7 +21866,7 @@
     "src": "/audio/bible-365-day-6-a982bb1f66.m4a",
     "duration": 650.1,
     "words": 1879,
-    "voice": "James \u2014 Channel (single-take)",
+    "voice": "James — Channel (single-take)",
     "engine": "chatterbox_turbo",
     "bytes": 10270387,
     "textHash": "a55e9c590409",
@@ -22258,7 +22258,7 @@
       },
       {
         "t": 738.4,
-        "label": "Son of Nun, Moses\u2019 Successor",
+        "label": "Son of Nun, Moses’ Successor",
         "module": 12
       }
     ],
@@ -24317,7 +24317,7 @@
       },
       {
         "t": 300.0,
-        "label": "The Wisest Man Builds the Greatest House \u2014 and Cannot Hold God",
+        "label": "The Wisest Man Builds the Greatest House — and Cannot Hold God",
         "module": 5
       },
       {
@@ -27312,7 +27312,7 @@
       },
       {
         "t": 44.0,
-        "label": "GETHSEMANE \u2014 THE GARDEN OF TERROR",
+        "label": "GETHSEMANE — THE GARDEN OF TERROR",
         "module": 2
       },
       {
@@ -27322,7 +27322,7 @@
       },
       {
         "t": 127.6,
-        "label": "THE PIVOT \u2014 THE CROSS IN THE DARKNESS",
+        "label": "THE PIVOT — THE CROSS IN THE DARKNESS",
         "module": 4
       },
       {
@@ -30000,7 +30000,7 @@
       },
       {
         "t": 112.1,
-        "label": "THE PIVOT \u2014 GOD'S ECONOMY OF ABUNDANCE",
+        "label": "THE PIVOT — GOD'S ECONOMY OF ABUNDANCE",
         "module": 4
       },
       {
@@ -30101,7 +30101,7 @@
       },
       {
         "t": 164.5,
-        "label": "SEEK FIRST THE KINGDOM \u2014 AND SHARE",
+        "label": "SEEK FIRST THE KINGDOM — AND SHARE",
         "module": 5
       },
       {
@@ -31458,6 +31458,722 @@
     ],
     "mix": "scored-stereo-v1",
     "sha": "f13e6534ea"
+  },
+  "sought-and-crowned-day-1": {
+    "src": "/audio/sought-and-crowned-day-1-d619cc3c77.m4a",
+    "duration": 1146.3,
+    "words": 3066,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 18143441,
+    "textHash": "aee3270895a9",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 8.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 62.4,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 108.9,
+        "label": "Is There Anyone Left",
+        "module": 3
+      },
+      {
+        "t": 268.8,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 274.1,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 289.4,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 315.3,
+        "label": "Hurt In Somebody Else's Disaster",
+        "module": 8
+      },
+      {
+        "t": 384.0,
+        "label": "Three Times In The Whole Bible",
+        "module": 12
+      },
+      {
+        "t": 508.2,
+        "label": "Then and Now",
+        "module": 13
+      },
+      {
+        "t": 572.5,
+        "label": "What Lo-debar Actually Was",
+        "module": 14
+      },
+      {
+        "t": 735.0,
+        "label": "It Was My Card",
+        "module": 16
+      },
+      {
+        "t": 828.3,
+        "label": "What Treves Got Wrong",
+        "module": 17
+      },
+      {
+        "t": 918.6,
+        "label": "Scripture",
+        "module": 18
+      },
+      {
+        "t": 944.8,
+        "label": "Reflect",
+        "module": 19
+      },
+      {
+        "t": 951.6,
+        "label": "Breathe This",
+        "module": 20
+      },
+      {
+        "t": 959.5,
+        "label": "Before He Knew Anything About It",
+        "module": 21
+      },
+      {
+        "t": 1033.4,
+        "label": "Prayer",
+        "module": 22
+      },
+      {
+        "t": 1059.8,
+        "label": "Carry This",
+        "module": 23
+      },
+      {
+        "t": 1067.3,
+        "label": "Check Yourself",
+        "module": 24
+      },
+      {
+        "t": 1093.4,
+        "label": "The Man Who Sheltered Him",
+        "module": 25
+      }
+    ],
+    "mix": "scored-stereo-v1",
+    "sha": "d619cc3c77"
+  },
+  "sought-and-crowned-day-2": {
+    "src": "/audio/sought-and-crowned-day-2-a0880d5342.m4a",
+    "duration": 1224.3,
+    "words": 3143,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 19396532,
+    "textHash": "e02d96bc46f3",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 5.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 35.9,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 93.2,
+        "label": "Who Moved First",
+        "module": 3
+      },
+      {
+        "t": 208.0,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 213.7,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 226.6,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 259.9,
+        "label": "Yesterday's Chapter Had A Debt In It",
+        "module": 8
+      },
+      {
+        "t": 334.9,
+        "label": "Two Words People Treat As One",
+        "module": 12
+      },
+      {
+        "t": 482.6,
+        "label": "Then and Now",
+        "module": 13
+      },
+      {
+        "t": 548.3,
+        "label": "Scripture",
+        "module": 14
+      },
+      {
+        "t": 570.9,
+        "label": "Not Counting",
+        "module": 16
+      },
+      {
+        "t": 701.0,
+        "label": "The Funeral Sermon",
+        "module": 19
+      },
+      {
+        "t": 820.0,
+        "label": "The Line That Is Not There",
+        "module": 20
+      },
+      {
+        "t": 928.7,
+        "label": "Reflect",
+        "module": 21
+      },
+      {
+        "t": 939.3,
+        "label": "Write This Down",
+        "module": 22
+      },
+      {
+        "t": 946.7,
+        "label": "Ambassadors Of A Government We Did Not Elect",
+        "module": 23
+      },
+      {
+        "t": 1042.8,
+        "label": "The Ministry Nobody Asks For",
+        "module": 24
+      },
+      {
+        "t": 1115.0,
+        "label": "Prayer",
+        "module": 25
+      },
+      {
+        "t": 1149.3,
+        "label": "Carry This",
+        "module": 26
+      },
+      {
+        "t": 1158.0,
+        "label": "Check Yourself",
+        "module": 27
+      },
+      {
+        "t": 1184.9,
+        "label": "The Preacher Who Asked The Right Question",
+        "module": 28
+      }
+    ],
+    "mix": "scored-stereo-v1",
+    "sha": "a0880d5342"
+  },
+  "sought-and-crowned-day-3": {
+    "src": "/audio/sought-and-crowned-day-3-214ebb568d.m4a",
+    "duration": 1403.0,
+    "words": 3830,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 22224700,
+    "textHash": "3298746a584f",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 7.8,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 35.0,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 95.6,
+        "label": "Somebody Has To Go Down There",
+        "module": 3
+      },
+      {
+        "t": 167.8,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 173.5,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 188.2,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 215.0,
+        "label": "The Five Things Nobody Did",
+        "module": 9
+      },
+      {
+        "t": 337.5,
+        "label": "Love You Have To Get Up And Do",
+        "module": 12
+      },
+      {
+        "t": 487.6,
+        "label": "Then and Now",
+        "module": 13
+      },
+      {
+        "t": 549.4,
+        "label": "Down Is The Method",
+        "module": 15
+      },
+      {
+        "t": 707.3,
+        "label": "Seven Times Down The Same Hole",
+        "module": 17
+      },
+      {
+        "t": 864.2,
+        "label": "What The Record Actually Says",
+        "module": 19
+      },
+      {
+        "t": 977.8,
+        "label": "What The Search Tells You About The Searcher",
+        "module": 20
+      },
+      {
+        "t": 1088.3,
+        "label": "Scripture",
+        "module": 21
+      },
+      {
+        "t": 1102.3,
+        "label": "Reflect",
+        "module": 22
+      },
+      {
+        "t": 1109.8,
+        "label": "Do This With Your Body",
+        "module": 23
+      },
+      {
+        "t": 1118.5,
+        "label": "The Direction Of Grace",
+        "module": 24
+      },
+      {
+        "t": 1225.2,
+        "label": "Prayer",
+        "module": 25
+      },
+      {
+        "t": 1256.4,
+        "label": "Carry This",
+        "module": 26
+      },
+      {
+        "t": 1261.9,
+        "label": "Check Yourself",
+        "module": 27
+      },
+      {
+        "t": 1285.8,
+        "label": "The Man Who Went Down",
+        "module": 28
+      },
+      {
+        "t": 1329.7,
+        "label": "Why This Is The Hinge Of The Week",
+        "module": 29
+      }
+    ],
+    "mix": "scored-stereo-v1",
+    "sha": "214ebb568d"
+  },
+  "sought-and-crowned-day-4": {
+    "src": "/audio/sought-and-crowned-day-4-03d2ede113.m4a",
+    "duration": 1110.8,
+    "words": 3090,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 17607503,
+    "textHash": "a24ef35a5b1b",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 7.3,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 45.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 109.7,
+        "label": "The Apology He Never Finished",
+        "module": 3
+      },
+      {
+        "t": 179.9,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 186.3,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 201.8,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 226.5,
+        "label": "Three Gifts, None Of Them Comforts",
+        "module": 8
+      },
+      {
+        "t": 345.1,
+        "label": "Rescue Is Not Rehabilitation",
+        "module": 12
+      },
+      {
+        "t": 475.0,
+        "label": "Scripture",
+        "module": 13
+      },
+      {
+        "t": 531.0,
+        "label": "Then and Now",
+        "module": 14
+      },
+      {
+        "t": 585.8,
+        "label": "The Panel Is Not Thrown Away",
+        "module": 15
+      },
+      {
+        "t": 707.5,
+        "label": "Many Weeks Of Apparently Unprofitable Labour",
+        "module": 18
+      },
+      {
+        "t": 817.2,
+        "label": "Who Was Doing The Work, And Why It Matters",
+        "module": 19
+      },
+      {
+        "t": 906.6,
+        "label": "Reflect",
+        "module": 21
+      },
+      {
+        "t": 913.6,
+        "label": "Learn This By Heart",
+        "module": 22
+      },
+      {
+        "t": 922.5,
+        "label": "Slower Than The Rescue",
+        "module": 23
+      },
+      {
+        "t": 994.8,
+        "label": "Prayer",
+        "module": 24
+      },
+      {
+        "t": 1028.8,
+        "label": "Carry This",
+        "module": 25
+      },
+      {
+        "t": 1036.3,
+        "label": "Check Yourself",
+        "module": 26
+      },
+      {
+        "t": 1062.3,
+        "label": "The Man Who Argued From A Workshop",
+        "module": 27
+      }
+    ],
+    "mix": "scored-stereo-v1",
+    "sha": "03d2ede113"
+  },
+  "sought-and-crowned-day-5": {
+    "src": "/audio/sought-and-crowned-day-5-d8ff5435c3.m4a",
+    "duration": 1128.9,
+    "words": 3044,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 17880576,
+    "textHash": "1d1ca38e9beb",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 6.9,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 33.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 99.8,
+        "label": "Seated Is The Same Tense As Raised",
+        "module": 3
+      },
+      {
+        "t": 171.6,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 181.1,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 198.2,
+        "label": "Scripture",
+        "module": 7
+      },
+      {
+        "t": 237.1,
+        "label": "Crowning His Own Gifts",
+        "module": 8
+      },
+      {
+        "t": 324.1,
+        "label": "The Emperor's Adopted Son",
+        "module": 12
+      },
+      {
+        "t": 447.1,
+        "label": "Then and Now",
+        "module": 13
+      },
+      {
+        "t": 508.2,
+        "label": "The Boy With No Name",
+        "module": 15
+      },
+      {
+        "t": 597.5,
+        "label": "Two Things The Record Will Not Give Us",
+        "module": 16
+      },
+      {
+        "t": 691.8,
+        "label": "And He Was Lame In Both His Feet",
+        "module": 18
+      },
+      {
+        "t": 802.7,
+        "label": "Scripture",
+        "module": 19
+      },
+      {
+        "t": 819.5,
+        "label": "Already And Not Yet, In One Chapter",
+        "module": 21
+      },
+      {
+        "t": 915.0,
+        "label": "Reflect",
+        "module": 22
+      },
+      {
+        "t": 920.8,
+        "label": "Make Something",
+        "module": 23
+      },
+      {
+        "t": 930.1,
+        "label": "Tomorrow Is A Monday Morning",
+        "module": 24
+      },
+      {
+        "t": 1027.1,
+        "label": "Prayer",
+        "module": 25
+      },
+      {
+        "t": 1057.4,
+        "label": "Carry This",
+        "module": 26
+      },
+      {
+        "t": 1064.0,
+        "label": "Check Yourself",
+        "module": 27
+      },
+      {
+        "t": 1081.4,
+        "label": "The Bishop Who Read The Psalms Out Loud",
+        "module": 28
+      }
+    ],
+    "mix": "scored-stereo-v1",
+    "sha": "d8ff5435c3"
+  },
+  "sought-and-crowned-day-6": {
+    "src": "/audio/sought-and-crowned-day-6-5a21adedce.m4a",
+    "duration": 731.6,
+    "words": 1586,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 11580881,
+    "textHash": "7111e673d188",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 7.6,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 23.7,
+        "label": "Word study",
+        "module": 2
+      },
+      {
+        "t": 52.3,
+        "label": "Five Days In One Sentence",
+        "module": 3
+      },
+      {
+        "t": 79.3,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 82.9,
+        "label": "A Two-Minute Prayer",
+        "module": 5
+      },
+      {
+        "t": 96.5,
+        "label": "The Week",
+        "module": 8
+      },
+      {
+        "t": 305.0,
+        "label": "What We Deliberately Did Not Say",
+        "module": 10
+      },
+      {
+        "t": 398.2,
+        "label": "Further Your Learning",
+        "module": 12
+      },
+      {
+        "t": 724.2,
+        "label": "Carry This Into The Week",
+        "module": 13
+      }
+    ],
+    "mix": "scored-stereo-v1",
+    "sha": "5a21adedce"
+  },
+  "sought-and-crowned-day-7": {
+    "src": "/audio/sought-and-crowned-day-7-7a270157f1.m4a",
+    "duration": 135.1,
+    "words": 384,
+    "voice": "chris-james-thca-master",
+    "engine": "elevenlabs",
+    "bytes": 2143370,
+    "textHash": "53ea79a44c68",
+    "chapters": [
+      {
+        "t": 0.0,
+        "label": "Opening",
+        "module": 0
+      },
+      {
+        "t": 4.5,
+        "label": "Scripture",
+        "module": 1
+      },
+      {
+        "t": 25.8,
+        "label": "Nothing To Add",
+        "module": 3
+      },
+      {
+        "t": 112.0,
+        "label": "Reflect",
+        "module": 4
+      },
+      {
+        "t": 116.3,
+        "label": "Silence",
+        "module": 5
+      },
+      {
+        "t": 123.2,
+        "label": "Prayer",
+        "module": 8
+      }
+    ],
+    "mix": "scored-stereo-v1",
+    "sha": "7a270157f1"
   },
   "standing-strong-day-1": {
     "src": "/audio/standing-strong-day-1-a396e1caaa.m4a",
@@ -33804,7 +34520,7 @@
       },
       {
         "t": 412.1,
-        "label": "The First 'I Am' \u2014 A Claim to Divine Identity",
+        "label": "The First 'I Am' — A Claim to Divine Identity",
         "module": 5
       },
       {
@@ -33993,7 +34709,7 @@
       },
       {
         "t": 436.5,
-        "label": "Eucharistia \u2014 The Posture of the Satisfied Soul",
+        "label": "Eucharistia — The Posture of the Satisfied Soul",
         "module": 5
       },
       {
@@ -34525,7 +35241,7 @@
       },
       {
         "t": 113.4,
-        "label": "THE PIVOT \u2014 \"I AM THE TRUTH\"",
+        "label": "THE PIVOT — \"I AM THE TRUTH\"",
         "module": 4
       },
       {
@@ -34694,7 +35410,7 @@
       },
       {
         "t": 360.5,
-        "label": "Nick Vujicic \u2014 The Boy Who Asked God Why",
+        "label": "Nick Vujicic — The Boy Who Asked God Why",
         "module": 13
       }
     ],
@@ -34757,7 +35473,7 @@
       },
       {
         "t": 379.0,
-        "label": "Nick Vujicic \u2014 God's Canvas",
+        "label": "Nick Vujicic — God's Canvas",
         "module": 13
       }
     ],
@@ -34820,7 +35536,7 @@
       },
       {
         "t": 398.2,
-        "label": "Nick Vujicic \u2014 Surviving the Darkness",
+        "label": "Nick Vujicic — Surviving the Darkness",
         "module": 13
       }
     ],
@@ -34883,7 +35599,7 @@
       },
       {
         "t": 422.3,
-        "label": "Nick Vujicic \u2014 From Victim to Vessel",
+        "label": "Nick Vujicic — From Victim to Vessel",
         "module": 13
       }
     ],
@@ -34946,7 +35662,7 @@
       },
       {
         "t": 453.2,
-        "label": "Nick Vujicic \u2014 Valued to Value Others",
+        "label": "Nick Vujicic — Valued to Value Others",
         "module": 13
       }
     ],

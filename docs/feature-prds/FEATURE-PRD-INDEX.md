@@ -181,3 +181,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-176 | Content           | Drawing Near — seven days on access, at intensity 5       | 0/10     | shipped  | [F-176.md](./F-176.md) |
 | F-177 | Reader            | Drawing Near — scrolling halftone atmosphere              | 0/10     | shipped  | [F-177.md](./F-177.md) |
 | F-178 | Outreach          | Who is God — standalone introduction for a stranger       | 0/10     | shipped  | [F-178.md](./F-178.md) |
+| F-179 | Content           | Sought and Crowned — seven days on reconciliation         | 0/10     | shipped  | [F-179.md](./F-179.md) |

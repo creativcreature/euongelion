@@ -47,13 +47,6 @@ export const DEVOTIONAL_PUBLISH_DATES: Record<string, DevotionalPublishDate> = {
     publishedAt: '2025-09-26',
     source: 'substack',
   },
-  'drawing-near-day-1': { publishedAt: '2026-08-30', source: 'series-ship' },
-  'drawing-near-day-2': { publishedAt: '2026-08-30', source: 'series-ship' },
-  'drawing-near-day-3': { publishedAt: '2026-08-30', source: 'series-ship' },
-  'drawing-near-day-4': { publishedAt: '2026-08-30', source: 'series-ship' },
-  'drawing-near-day-5': { publishedAt: '2026-08-30', source: 'series-ship' },
-  'drawing-near-day-6': { publishedAt: '2026-08-30', source: 'series-ship' },
-  'drawing-near-day-7': { publishedAt: '2026-08-30', source: 'series-ship' },
   'all-these-things-day-1': {
     publishedAt: '2026-08-24',
     source: 'series-ship',
@@ -477,6 +470,13 @@ export const DEVOTIONAL_PUBLISH_DATES: Record<string, DevotionalPublishDate> = {
   'community-day-3': { publishedAt: '2026-02-06', source: 'first-seen' },
   'community-day-4': { publishedAt: '2026-02-06', source: 'first-seen' },
   'community-day-5': { publishedAt: '2026-02-06', source: 'first-seen' },
+  'drawing-near-day-1': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-2': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-3': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-4': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-5': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-6': { publishedAt: '2026-08-30', source: 'series-ship' },
+  'drawing-near-day-7': { publishedAt: '2026-08-30', source: 'series-ship' },
   'genesis-two-stories-of-creation-day-1': {
     publishedAt: '2026-01-11',
     source: 'substack',
@@ -708,6 +708,34 @@ export const DEVOTIONAL_PUBLISH_DATES: Record<string, DevotionalPublishDate> = {
   'signs-boldness-opposition-integrity-day-5': {
     publishedAt: '2026-02-21',
     source: 'first-seen',
+  },
+  'sought-and-crowned-day-1': {
+    publishedAt: '2026-09-05',
+    source: 'series-ship',
+  },
+  'sought-and-crowned-day-2': {
+    publishedAt: '2026-09-05',
+    source: 'series-ship',
+  },
+  'sought-and-crowned-day-3': {
+    publishedAt: '2026-09-05',
+    source: 'series-ship',
+  },
+  'sought-and-crowned-day-4': {
+    publishedAt: '2026-09-05',
+    source: 'series-ship',
+  },
+  'sought-and-crowned-day-5': {
+    publishedAt: '2026-09-05',
+    source: 'series-ship',
+  },
+  'sought-and-crowned-day-6': {
+    publishedAt: '2026-09-05',
+    source: 'series-ship',
+  },
+  'sought-and-crowned-day-7': {
+    publishedAt: '2026-09-05',
+    source: 'series-ship',
   },
   'standing-strong-day-1': { publishedAt: '2026-02-21', source: 'first-seen' },
   'standing-strong-day-2': { publishedAt: '2026-02-21', source: 'first-seen' },

@@ -35,7 +35,11 @@ Everything reader-facing traces to a verified source recorded in the source pack
 
 - Official channels only. Vetted default: BibleProject; Gospel in Life (Keller) for sermon-length go-deepers. Founder may extend the list.
 - Verify each candidate by fetching `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<ID>&format=json` — confirms the ID is live and returns the exact current title + channel. BibleProject retitled its catalog (2022-24); never trust remembered titles.
-- Then check embeddability: fetch `https://www.youtube.com/embed/<ID>` and grep for `UNPLAYABLE` / "Playback on other websites has been disabled". Founder rule: never embed a video that blocks off-YouTube playback.
+- Then check embeddability. **The naive fetch does not work and produced silent false negatives until 2026-09-05.** `https://www.youtube.com/embed/<ID>` requested with NO `Referer` header returns `previewPlayabilityStatus: {"status":"ERROR","reason":"Video player configuration error"}` for EVERY video, including known-good ones. The check is only meaningful from an embedding origin:
+  ```bash
+  curl -H 'Referer: https://euangelion.app/' https://www.youtube.com/embed/<ID>
+  ```
+  Then decode the `embedded_player_response` blob in `ytcfg` and read `previewPlayabilityStatus`. A pass is `{"status":"OK","playableInEmbed":true}`. Founder rule: never embed a video that blocks off-YouTube playback.
 - Reject third-party mirrors even with identical content (precedents: 6HjlGvl8ljM, iVwauTiyFjM).
 - Each video brief states what the video must TEACH in its slot, not just its topic. 1-2 inline per teaching day; the recap collects the full study set as resource links.
 

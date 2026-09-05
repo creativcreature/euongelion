@@ -923,6 +923,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     'Released from custody, Peter and John return to their community. What they pray for next reveals everything about what the early church valued.',
   'signs-boldness-opposition-integrity-day-5':
     'The apostles face arrest, an angel opens prison doors, and a Pharisee named Gamaliel offers the wisest counsel in Acts.',
+  'sought-and-crowned-day-1':
+    'A king with no obligation asks whether anyone survived the house that hunted him. The answer is a man who cannot walk, hidden across a river. The search begins before he knows anything about it.',
+  'sought-and-crowned-day-2':
+    'Greek writers used this verb of God being reconciled — an offended deity talked round. Paul turns it the other way, and the New Testament never once says God was reconciled to us.',
+  'sought-and-crowned-day-3':
+    'Ezekiel 34 lists five things the shepherds of Israel failed to do. Twelve verses later God repeats the same list — as things He will now do Himself. The search does not get delegated. It gets taken over.',
+  'sought-and-crowned-day-4':
+    'The son has an apology prepared and gets two thirds of the way through it. What the father calls for is not a bath, a bed or a meal — it is three restorations of standing, handed to a boy who smells of pigs.',
+  'sought-and-crowned-day-5':
+    "The chapter ends with two facts in one sentence and reconciles neither. He always ate at the king's table. And he was lame in both his feet.",
+  'sought-and-crowned-day-6':
+    "He always ate at the king's table, and he was lame in both feet. Both halves, in one sentence, reconciled by nobody.",
+  'sought-and-crowned-day-7':
+    'He will quiet you with His love. Not persuade you, not improve you. Quiet you.',
   'standing-strong-day-1':
     "Discovering that doubt isn't the end of faith but the beginning of a deeper conversation with God",
   'standing-strong-day-2':
@@ -1617,6 +1631,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'signs-boldness-opposition-integrity-day-4': 'A Prayer for Boldness',
   'signs-boldness-opposition-integrity-day-5':
     'When Integrity Meets Opposition',
+  'sought-and-crowned-day-1': 'Is There Anyone Left',
+  'sought-and-crowned-day-2': 'What The Breach Costs',
+  'sought-and-crowned-day-3': 'The God Who Comes Down Looking',
+  'sought-and-crowned-day-4': 'Robe, Ring, Sandals',
+  'sought-and-crowned-day-5': 'At The Table, Still Lame',
+  'sought-and-crowned-day-6': 'The Week, Gathered Up',
+  'sought-and-crowned-day-7': 'Quiet',
   'standing-strong-day-1': 'Confident Faith',
   'standing-strong-day-2': 'Joy in Adversity',
   'standing-strong-day-3': 'Standing Firm',

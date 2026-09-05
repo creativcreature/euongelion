@@ -5,6 +5,40 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Sought and Crowned — seven days on reconciliation, at intensity 5 — SA-135 (F-179)
+
+**2026-09-05.** Founder-directed end to end: "reconcilliation- healing- Gods mercy
+and seeking us in the lowest of places to rehabilitate and crown us."
+
+Seven days on Mephibosheth (2 Samuel 9), Sunday-start chiasm, every plate at image
+intensity 5. The week turns on a rare word: the text introduces him with נְכֵה
+_nekeh_ (H5223), not the ordinary _pisseach_ — and H5223 occurs three times in the
+Hebrew Bible, twice of him and once at Isaiah 66:2, of the one God says He will
+look at.
+
+Research killed three fabrications the series would otherwise have printed as its
+emotional peaks, each verified by fetching and grepping the primary text:
+
+- **"The king's tablecloth covered his lame feet"** — the most-quoted Mephibosheth
+  line in circulation, with no attributable author anywhere.
+- **"I am not an animal! I am a human being!"** — David Lynch's 1980 screenplay.
+  Zero hits against Treves 1923.
+- **"He will be so near the throne and I so far off"** — zero hits across
+  Whitefield's _Works_ vols 1–2, Wesley's Sermon 53 and both Tyerman volumes.
+
+Two popular readings also failed, and the true version is better: "Lo-debar means
+no pasture" requires repointing the consonantal text (BDB declines to translate the
+name at all), and the "barren wasteland" reading is contradicted from inside
+Scripture — Machir _of Lo-debar_ provisions David's army with beds, wheat, honey
+and cheese at 2 Samuel 17:27-29. He was hidden in a rich man's house.
+
+The chapter contains no healing verb and ends on "and he was lame in both feet."
+Day 5 is built on that refusal rather than around it.
+
+Also fixed in passing: `verification-standards.md` §5 told every session to test
+YouTube embeddability with a bare fetch, which returns an error for _every_ video
+including good ones. It needs a `Referer` header from an embedding origin.
+
 ## Who is God, rebuilt as seven rooms (2026-08-30) — SA-134 (F-178)
 
 The first pass shipped a good hero and a conventional article behind it. The

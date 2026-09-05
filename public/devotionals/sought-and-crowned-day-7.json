@@ -1,0 +1,77 @@
+{
+  "day": 7,
+  "chiasm_position": "sabbath",
+  "format": "sabbath",
+  "title": "Quiet",
+  "subtitle": "The seventh day of Sought and Crowned",
+  "teaser": "He will quiet you with His love. Not persuade you, not improve you. Quiet you.",
+  "anchorVerse": "Zephaniah 3:17",
+  "theme": "Rest in a seat that was given rather than earned",
+  "framework": "Zephaniah 3:17 — He will quiet you with His love",
+  "scriptureReference": "Zephaniah 3:17",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Zephaniah 3:17",
+      "translation": "BSB",
+      "passage": "The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing.",
+      "emphasis": [
+        "He will quiet you with His love"
+      ],
+      "scriptureContext": "Written to a people who had every reason to expect a verdict, and received a song instead."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day7-lead.webp",
+      "inlineImageAlt": "An empty chair drawn up to a long table in an otherwise still room, early morning light across the boards, a single place set and nobody yet sitting in it",
+      "inlineImageCaption": "The chair is already yours. Today there is nothing to do but sit in it.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "sabbath",
+      "heading": "Nothing To Add",
+      "content": "This week asked one question five ways, and it was never about whether you were fit to be found.\n\nA king asked whether anyone was left. A shepherd went out into the clouds and darkness rather than send anyone. A father ran before the apology was finished. And a man ate at the king's table for the rest of his life, lame in both feet, without either fact cancelling the other.\n\nToday there is nothing to work out.\n\nZephaniah says God will quiet you with His love. Not persuade you. Not improve you. Quiet you.\n\nSo be quiet.\n\nThere is a Hebrew word behind the promise in Zephaniah that is worth carrying without studying. It is the language of a parent settling a child who has run out of words — not reasoning with them, not correcting them, just holding them until the crying stops.\n\nThat is what is on offer today. Not an explanation of your week. Not a resolution of the thing you are carrying.\n\nSit somewhere for ten minutes without your phone. You are not being asked to pray well, or to feel anything in particular, or to reach a conclusion about your week.\n\nIf your mind goes to the thing that has not changed, let it. Do not argue with it and do not fix it. It was true at the table too.\n\nThe chair was given to you on Thursday. Today you simply sit in it.\n\nOne week ago you did not know Mephibosheth's name. Today you know the last four words of his chapter, and you know they were left standing.\n\nThat is enough for a seventh day.",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "What would it be like to stop explaining yourself to God for one day?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "interactive",
+      "heading": "Silence",
+      "instruction": "The whole of today is this. Ten minutes, no words required.",
+      "steps": [
+        "Sit down somewhere you can be still, and put your phone in another room.",
+        "Set a timer for ten minutes so you do not have to watch the clock.",
+        "Say once, out loud or silently: He will quiet me with His love.",
+        "Then stop talking. If your thoughts wander, let them. You are not doing this wrong.",
+        "When the timer goes, do not evaluate how it went."
+      ],
+      "interaction_type": "silence"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day7-window.webp",
+      "inlineImageAlt": "Morning light falling across an empty room through a tall window, dust visible in the beam, nothing else in the frame",
+      "inlineImageCaption": "Ten minutes, no words required.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day7-close.webp",
+      "inlineImageAlt": "A pair of open hands resting palm-up and still on a lap, fingers relaxed, no object held",
+      "inlineImageCaption": "Not persuade you. Not improve you. Quiet you.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Lord, quiet me. Amen.",
+      "breathPrayer": "Breathe in: You are among me. Breathe out: quiet me with Your love."
+    }
+  ]
+}

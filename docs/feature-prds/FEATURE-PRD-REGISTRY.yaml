@@ -1572,3 +1572,8 @@ features:
     status: shipped
     decision: SA-134
     doc: docs/feature-prds/F-178.md
+  - id: F-179
+    title: sought-and-crowned-seven-day-series-on-reconciliation
+    status: shipped
+    decision: SA-135
+    doc: docs/feature-prds/F-179.md

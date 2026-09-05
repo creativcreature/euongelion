@@ -16,8 +16,8 @@ describe('Series Data', () => {
     //  rekindled 2026-08-17 SA-075/F-119;
     //  all-these-things 2026-08-24 SA-123/F-168;
     //  drawing-near 2026-08-30 SA-132/F-176)
-    expect(SERIES_ORDER).toHaveLength(40)
-    expect(ALL_SERIES_ORDER).toHaveLength(40)
+    expect(SERIES_ORDER).toHaveLength(41)
+    expect(ALL_SERIES_ORDER).toHaveLength(41)
   })
 
   it('has 7 Wake-Up series', () => {

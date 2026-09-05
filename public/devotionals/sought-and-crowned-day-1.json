@@ -1,0 +1,267 @@
+{
+  "day": 1,
+  "chiasm_position": "A",
+  "format": "two-minute-open-v2",
+  "title": "Is There Anyone Left",
+  "subtitle": "On a question asked in a room the answer was not in",
+  "teaser": "A king with no obligation asks whether anyone survived the house that hunted him. The answer is a man who cannot walk, hidden across a river. The search begins before he knows anything about it.",
+  "anchorVerse": "2 Samuel 9:1",
+  "theme": "The search starts with the searcher, before the found man knows there is a search",
+  "framework": "2 Samuel 9:1-4 — Is there anyone left of Saul's family to whom I can show the kindness of God?",
+  "scriptureReference": "2 Samuel 9:1-4",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "2 Samuel 9:1-4",
+      "translation": "BSB",
+      "passage": "Then David asked, “Is there anyone left from the house of Saul to whom I can show kindness for the sake of Jonathan?” Now there was a servant of Saul’s household named Ziba, and they summoned him to David. “Are you Ziba?” asked the king. “I am your servant,” he replied. So the king asked, “Is there anyone left of Saul’s family to whom I can show the kindness of God?” Ziba answered, “There is still Jonathan’s son, who is lame in both feet.” “Where is he?” replied the king. And Ziba said, “Indeed, he is in Lo-debar at the house of Machir son of Ammiel.”",
+      "emphasis": [
+        "Is there anyone left",
+        "the kindness of God"
+      ],
+      "scriptureContext": "David is secure on the throne. The house of Saul is finished. Nobody required him to ask this question."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "נְכֵה",
+      "transliteration": "nekeh",
+      "pronunciation": "neh-KHEH",
+      "strongsNumber": "H5223",
+      "definition": "stricken, smitten, disabled — struck down by something",
+      "usage": "Second Samuel does not use the ordinary word for lame when it introduces Mephibosheth. It uses nekeh raglayim, stricken of feet. The word appears in the story of his injury and again when Ziba reports him to the king.",
+      "usageNote": "Here is the part worth sitting with. Nekeh occurs three times in the entire Hebrew Bible. Twice it describes Mephibosheth. The third is Isaiah 66:2, where God says which sort of person He looks at: the one who is humble and stricken in spirit. The word for what made him unlookable-at is the word for who God looks at.",
+      "relatedWords": [
+        "רַגְלַיִם (raglayim) — feet, in the dual",
+        "פִסֵּחַ (pisseach) — lame, the ordinary adjective",
+        "נָכָה (nakah) — to strike, the root"
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "Is There Anyone Left",
+      "content": "David has won. That is the situation at the top of this chapter.\n\nThe long war with the house of Saul is over. The throne is his, the kingdom is united, and the family that hunted him across the wilderness for years is finished. Nothing about his position requires him to think about them again.\n\nAnd out of that security, he asks a question.\n\n\"Is there anyone left from the house of Saul to whom I can show kindness for the sake of Jonathan?\"\n\nRead what the question assumes. It assumes there probably is not anyone. It assumes that if there is, they are not in a position to come forward. And it commits, in advance, to kindness before knowing who the answer will turn out to be.\n\nThis is where we are in God's story this week: the KINGDOM. A king is on a throne and the throne is settled. What Scripture wants us to notice is the first thing this particular secure power does with its security. It goes looking for a survivor.\n\nThe answer comes back in one line, and the line contains everything. There is still a son of Jonathan. He is lame in both feet. He is at Lo-debar.\n\nThere is something behind the question, and it is worth knowing before we go further.\n\nYears earlier, when David was still a hunted man and Jonathan was still the crown prince, the two of them made an agreement. Jonathan could see where things were going. He knew his father's house was finished and that David would end up on the throne.\n\nSo he asked for two things.\n\nThe first was for himself, and modest enough: treat me with the LORD's loving devotion, that I may not die.\n\nThe second was for everyone who would come after him.\n\n\"Do not ever cut off your loving devotion from my household — not even when the LORD cuts off every one of David's enemies from the face of the earth.\"\n\nRead that last clause again. Jonathan is naming the exact moment. Not while we are friends. Not while it is easy. When you have won, and when every enemy of yours has been removed, and when nobody could criticise you for finishing the job — do not cut it off then.\n\nDavid's question in chapter nine is him keeping that promise. He is not being spontaneously generous. He is honouring a covenant made with a man who has been dead for years, to protect people who cannot hold him to it.",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "What part of yourself do you assume would end a search if the searcher found out about it?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "God, I have spent a long time assuming that the thing wrong with me is the reason I have not been looked for. Ask after me anyway. Ask the way David asked — before knowing what the answer would turn out to be.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: a Hebrew word that appears three times in the Bible and lands somewhere unexpected, a man left on a station floor with nothing but a card, and what Lo-debar actually was."
+    },
+    {
+      "type": "scripture",
+      "reference": "2 Samuel 4:4",
+      "translation": "BSB",
+      "passage": "And Jonathan son of Saul had a son who was lame in his feet. He was five years old when the report about Saul and Jonathan came from Jezreel. His nurse picked him up and fled, but as she hurried to leave, he fell and became lame. His name was Mephibosheth.",
+      "emphasis": [
+        "he fell and became lame"
+      ],
+      "scriptureContext": "The injury happens in a sentence, inside somebody else's catastrophe. Nobody meant to hurt him."
+    },
+    {
+      "type": "teaching",
+      "heading": "Hurt In Somebody Else's Disaster",
+      "content": "Before the chapter about kindness, there is a chapter about how he got that way.\n\nHe was five. News came that his grandfather and father were dead on Mount Gilboa. The household understood immediately what that meant — a new dynasty was coming and the old one's children did not survive it. His nurse picked him up and ran.\n\nAnd somewhere in that running, she dropped him.\n\nThat is the whole account. No villain, no malice. A woman doing exactly the right thing, at speed, in terror, and a child injured in the process of being saved.\n\nA great deal of human damage happens like that. Not through anybody's cruelty toward us, but as a side effect of someone else's crisis. A parent's illness, a family's collapse, a war, a bankruptcy, a divorce that had nothing to do with us. We were in the room while something else was happening, and we came out of it different.\n\nScripture records the cause plainly and then never uses it against him. Nobody in the story tells Mephibosheth he should be over it by now. Nobody asks him to explain his feet.",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day1-lead.webp",
+      "inlineImageAlt": "A young man alone in an upper doorway of a large stone house at dusk, one hand braced against the frame taking his weight, looking out across a river valley toward distant lights he is not going to reach",
+      "inlineImageCaption": "Hidden is not the same as safe. He had been in that house for years when the messengers came.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "YvoWDXNDJgs",
+      "videoTitle": "Book of 2 Samuel Summary: A Complete Animated Overview",
+      "videoCaption": "The shape of the book this chapter sits in — David's covenant kingship, and why a surviving grandson of Saul is hiding across the Jordan.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "pullquote",
+      "content": "The word for what made him unlookable-at is the word for who God looks at."
+    },
+    {
+      "type": "teaching",
+      "heading": "Three Times In The Whole Bible",
+      "content": "The Hebrew here rewards attention.\n\nWhen Ziba tells the king about Mephibosheth, the text does not use the ordinary word for lame. That word is pisseach, and Scripture uses it thirteen times. It turns up at the end of this very chapter.\n\nThe word used when he is introduced is different. It is nekeh, and the phrase is nekeh raglayim — stricken of feet. Struck. Something happened to him.\n\nNekeh appears three times in the entire Hebrew Bible.\n\nTwice, it describes Mephibosheth.\n\nThe third time is Isaiah 66:2. God has just finished asking whether any house could be built for Him, whether His own hand did not make everything there is. Then He names the one person He will look at.\n\n\"This is the one I will esteem: he who is humble and contrite in spirit, who trembles at My word.\"\n\nThe word behind contrite there is nekeh. Stricken.\n\nSo the vocabulary runs like this. The thing that made a man unpresentable at court is the same thing that makes a person the object of God's attention. Not a similar idea. The same word, in a Bible that only uses it three times.\n\nThis is not a trick of translation and it is not a stretch. It is what is sitting there in the text, and nobody arranged it for our benefit.\n\nIt is worth pausing on how easily this could have gone the other way.\n\nZiba could have said, there is a son. He could have stopped there. Instead the report includes the condition, immediately, as though it were the relevant fact about him — there is still Jonathan's son, who is lame in both feet.\n\nThat is how he had been catalogued. Not by his father's name first. By what was wrong with him.\n\nAnd the king does not react to it. There is no pause in the text, no recorded hesitation, no adjustment to the plan. The very next words out of David's mouth are a logistical question.\n\n\"Where is he?\"\n\nThe condition that defined him to everybody else did not alter the sentence the king was already in the middle of.",
+      "chiasm_position": "C",
+      "pardes_layer": "remez",
+      "markdown": true
+    },
+    {
+      "type": "bridge",
+      "heading": "Then and Now",
+      "ancientTruth": "In the ancient world a surviving male heir of a deposed dynasty was a political problem with a heartbeat. Standard practice across the region was to eliminate them. When a king sent men to find you and you were Saul's grandson, there was one obvious reason.",
+      "modernApplication": "We carry the same arithmetic without noticing. We assume that if we were fully known — the record, the diagnosis, the thing we did, the thing done to us — the summons that followed would be bad news. So we arrange to be hard to find, and we call it privacy.",
+      "connectionPoint": "Mephibosheth had been hidden for years by the time the messengers arrived. Everything about that arrival said sentence, not banquet.",
+      "newTestamentEcho": "Jesus tells a story about a banquet where the invited guests all have excuses, and the host sends his servant into the streets to bring in the poor, the crippled, the blind and the lame. The people least likely to expect a summons are the ones the house fills up with."
+    },
+    {
+      "type": "teaching",
+      "heading": "What Lo-debar Actually Was",
+      "content": "You may have heard Lo-debar preached as a barren wasteland, a place of no pasture, a desert of nothing.\n\nThat reading has two problems, and both are worth knowing, because the true version is better.\n\nThe first is linguistic. Getting \"no pasture\" out of the name requires changing the vowels the Hebrew text actually carries. The standard scholarly lexicon declines to translate the name at all and simply calls it a location in Gilead. Amos plays on it as a pun for nothing — rejoicing in Nothing while boasting about taking Horns by your own strength.\n\nThe second problem is that Scripture tells us what was in Lo-debar.\n\nMachir son of Ammiel, the man sheltering Mephibosheth, turns up again years later. David is fleeing Absalom, his people hungry and exhausted in the wilderness, and Machir is one of three men who meet him. He brings beds, basins, earthen vessels, wheat, barley, flour, roasted grain, beans, lentils, honey, curds, sheep and cheese.\n\nThat is not a poor man's contribution. Machir is wealthy, and he supplies an army.\n\nSo Mephibosheth was not starving in a desert. He was hidden in a rich man's house, across the Jordan, out of reach.\n\nWhich is its own kind of lost, and one that a lot of people will recognise better than the desert. You can be perfectly comfortable and still be somewhere nobody is coming to look for you.\n\nThere is a related claim worth retiring at the same time.\n\nMephibosheth is often preached as a beggar, destitute and starving. Scripture does not say that, and the historical picture will not support it. There is no word for beggar in biblical Hebrew — begging as an institution shows up later, in the rabbinic period and in the New Testament, where blind Bartimaeus sits by the road.\n\nWhat this chapter actually gives him is the opposite of destitution. He gets his grandfather's land back. He gets Ziba and his fifteen sons and twenty servants to farm it. He gets a household of his own and a place at the king's table.\n\nThat is a patronage story, not a rags story.\n\nWhich matters, because the poverty version quietly makes the kindness easier to understand. Of course you would help a starving man. It is harder to explain why a king restores the estate of a rival heir who was doing perfectly well in someone else's house.",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day1-station.webp",
+      "inlineImageAlt": "A man collapsed in the darkest corner of a Victorian railway waiting room, wrapped in a long cloak, one hand extended holding out a small white printed card toward an unseen figure at the door",
+      "inlineImageCaption": "He could not make himself understood. So he held out the one thing that connected him to somebody who might claim him.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "story",
+      "heading": "It Was My Card",
+      "content": "In 1886 the police at Liverpool Street Station in London sent for a surgeon named Frederick Treves.\n\nTwo years earlier Treves had paid a penny to see a man exhibited in a shuttered shop on the Whitechapel Road, examined him, and given him a card so he could be admitted to the college opposite. He had thought that was the end of it.\n\nSince then the man's showman had taken him abroad, found the exhibition banned in Brussels, robbed him of his savings, put him on a train and abandoned him. He arrived in London with a few shillings and nothing to eat or drink on the way. A crowd had gathered. The police had got him inside.\n\nHe could not explain himself. Treves wrote that his speech was so maimed that he might as well have spoken in Arabic.\n\nSo he produced the only thing he still had.\n\n\"It was my card.\"\n\nTreves found him where the police had put him, in the third-class waiting room. He had sunk to the floor in the darkest corner.\n\n\"He looked a mere heap. It seemed as if he had been thrown there like a bundle.\"\n\nIn the cab afterwards he fell asleep at once and said nothing, but seemed to be satisfied that all was well.\n\nThey gave him two rooms at the London Hospital and told him they were his for life.\n\nHe could not take it in. For a long time he kept asking, timidly, where he would be taken next.",
+      "connectionToTheme": "A man in the lowest place he had ever been, unable to speak for himself, holding out the one token that connected him to somebody who might claim him."
+    },
+    {
+      "type": "insight",
+      "heading": "What Treves Got Wrong",
+      "content": "Three things have to be said about that account, because the story has been told many times since and the retellings have added to it.\n\nHis name was Joseph. Treves calls him John throughout, and the name Joseph does not appear once in the book. The error is the surgeon's, repeated for a century.\n\nTreves also writes that his mother basely deserted him and calls her worthless and inhuman. That is false. Merrick's mother died when he was a child. What Merrick himself said about her was this, about his own appearance: \"It is very strange, for, you see, mother was so beautiful.\"\n\nHe was right and his surgeon was wrong.\n\nAnd the line everybody knows — I am not an animal, I am a human being — is not in the record at all. It is from the 1980 film. Search the 1923 text and it is not there.\n\nWhat is there is quieter and better. After the rooms were given him, Merrick said: \"I am happy every hour of the day.\"",
+      "historicalContext": "Frederick Treves, The Elephant Man and Other Reminiscences, Cassell and Company, London, 1923, chapter one, pages 9 to 13 for the Liverpool Street sequence. Treves wrote roughly thirty-seven years after the events. He is demonstrably wrong on the name and the mother, and reliable on what he personally did and saw."
+    },
+    {
+      "type": "scripture",
+      "reference": "Luke 14:21",
+      "translation": "BSB",
+      "passage": "The servant returned and reported all this to his master. Then the owner of the house became angry and said to his servant, ‘Go out quickly into the streets and alleys of the city, and bring in the poor, the crippled, the blind, and the lame.’",
+      "emphasis": [
+        "bring in",
+        "the lame"
+      ],
+      "scriptureContext": "Jesus is at a dinner party, answering a man who has just said how blessed it will be to eat bread in the kingdom of God.",
+      "redLetter": [
+        "The servant returned and reported all this to his master. Then the owner of the house became angry and said to his servant, ‘Go out quickly into the streets and alleys of the city, and bring in the poor, the crippled, the blind, and the lame.’"
+      ]
+    },
+    {
+      "type": "reflection",
+      "prompt": "If someone with real power asked today whether there was anyone left of your house, what would you assume they wanted?",
+      "additionalQuestions": [
+        "What have you decided disqualifies you, and who told you that?",
+        "Where are you comfortable and still unfindable?",
+        "Who last searched for you when you had not asked to be found?"
+      ],
+      "invitationType": "honest"
+    },
+    {
+      "type": "interactive",
+      "heading": "Breathe This",
+      "instruction": "Today's is a breath prayer. It takes about ninety seconds and you can do it sitting exactly where you are.",
+      "steps": [
+        "Sit still and let your shoulders drop. Breathe normally for a few breaths before you start.",
+        "Breathing in, say silently: Is there anyone left.",
+        "Breathing out, say silently: You already knew where I was.",
+        "Repeat six times, slowly. If your mind supplies the reason you would not be wanted, keep breathing and let the second line answer it."
+      ],
+      "interaction_type": "breath"
+    },
+    {
+      "type": "teaching",
+      "heading": "Before He Knew Anything About It",
+      "content": "Nothing in this chapter starts with Mephibosheth.\n\nHe does not petition the palace. He does not send a letter explaining that he is Jonathan's son and hoping to be remembered. He does not improve his position first and then present himself.\n\nHe is at Machir's house, as he has been for years, and the first he knows of any of it is the sound of men at the door.\n\nThe question that changed his life was asked in a room he was not in, about a person the questioner had never met, before anyone knew where he lived.\n\nThat is the shape of the week we are starting. Not a story about a man who found his way back to the king. A story about a king who asked whether anyone was left, and then sent for him.\n\nWe leave him here today, at the point where he has been given something he cannot yet believe. Tomorrow we will look at what it costs to mend a breach like this one, because kindness across that kind of gap is never free.\n\nFor now, hold the question in the form David asked it. Not is there anyone worthy. Not is there anyone recovered.\n\nIs there anyone left.",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "God, I know how to be hidden. I have been good at it for years, and some of the places I hide in are comfortable enough that I have stopped calling it hiding. You asked after a man who could not have asked after You. Ask after me. And when You send, let me believe it is kindness at the door and not a sentence. Amen.",
+      "breathPrayer": "Breathe in: Is there anyone left. Breathe out: You knew where I was."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "I will stop treating the thing I was struck by as the reason I cannot be sought.",
+      "leavingAtCross": [
+        "The assumption that being fully known would end the search",
+        "The belief that an injury I did not choose disqualifies me",
+        "The habit of hiding somewhere comfortable and calling it fine"
+      ],
+      "receivingFromCross": [
+        "A question asked before anyone knew my address",
+        "A word that means stricken and lands on the one God looks at",
+        "Permission to be found in the house I have been hiding in"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Check Yourself",
+      "question": "What is unusual about the Hebrew word nekeh, used of Mephibosheth?",
+      "options": [
+        "It is the most common word for lameness in the Old Testament",
+        "It occurs three times in the Hebrew Bible — twice of Mephibosheth, once in Isaiah 66:2 of the person God looks at",
+        "It is a Greek loanword that entered Hebrew late",
+        "It always carries the sense of punishment for sin"
+      ],
+      "answer": 2,
+      "explanation": "The ordinary word for lame is pisseach, which appears thirteen times and is used at the end of 2 Samuel 9. Nekeh is different and rare. Isaiah 66:2 uses it for the humble and stricken in spirit — the one God says He will esteem."
+    },
+    {
+      "type": "profile",
+      "heading": "The Man Who Sheltered Him",
+      "name": "Machir son of Ammiel",
+      "era": "Lo-debar, in Gilead, east of the Jordan, around 1000 BC",
+      "bio": "A wealthy man of Gilead who kept Jonathan's crippled son in his household for years, at obvious political risk. He appears again in 2 Samuel 17, meeting David's exhausted army in the wilderness with beds, basins, wheat, barley, flour, beans, lentils, honey, curds, sheep and cheese.",
+      "keyQuote": "Indeed, he is in Lo-debar at the house of Machir son of Ammiel.",
+      "lessonForUs": "He is barely a character and the story does not work without him. Somebody sheltered the heir nobody could afford to be caught sheltering, and Scripture keeps his name."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/sought-and-crowned/day1-covenant.webp",
+      "inlineImageAlt": "Two young men gripping each other's forearms in a field at dusk, a stone marker beside them, one wearing a prince's cloak and holding it half off his shoulders as though about to hand it over",
+      "inlineImageCaption": "Jonathan asked for this years earlier, naming the exact moment it would be hardest to honour.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "resource",
+      "heading": "Go Deeper",
+      "relatedScriptures": [
+        "2 Samuel 4:4 — the injury, told in one sentence",
+        "2 Samuel 17:27-29 — what Machir of Lo-debar was actually able to give",
+        "Isaiah 66:1-2 — the third and last use of nekeh",
+        "Luke 14:15-24 — the banquet that fills with the people nobody invited"
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "The Human Condition You Can't Escape (No Matter Where You Live)",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=xSua9_WhQFE"
+        },
+        {
+          "type": "video",
+          "title": "Book of 2 Samuel Summary: A Complete Animated Overview",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=YvoWDXNDJgs"
+        }
+      ],
+      "forDeeperStudy": "Sources for today. Nekeh is Strong's H5223, occurring at 2 Samuel 4:4, 2 Samuel 9:3 and Isaiah 66:2 — the full distribution. The ordinary adjective for lame is pisseach, H6455, thirteen occurrences, including 2 Samuel 9:13. Lo-debar is H3810 and stands as two words in the Hebrew; the \"no pasture\" gloss requires repointing the consonantal text, and Brown-Driver-Briggs gives the name no meaning at all, describing only a location in Gilead. The pun on \"nothing\" is at Amos 6:13. Merrick material from Frederick Treves, The Elephant Man and Other Reminiscences, 1923, chapter one, as noted above; the line \"I am not an animal\" appears nowhere in that text and comes from the 1980 film."
+    }
+  ]
+}
