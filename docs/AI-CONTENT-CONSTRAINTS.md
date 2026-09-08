@@ -603,6 +603,25 @@ _To be expanded as patterns are identified_
 - Hedged duration ranges ("5 to 10 minutes", "3-4 weeks")
 - "In short," / "In summary," / "To sum up"
 
+**Added 2026-09-08 (SA-134) — mannered prose, tell 10:**
+
+Substituting metaphor and flourish for direct statement — "a dial worth turning"
+for "a parameter worth varying", "this point earns its keep" for "this point still
+matters". The phrase exists to display the writer rather than carry the idea, and
+it is imprecise: a metaphor drags in connotations the writer did not choose. Say
+what you mean; when a literal phrase is available, use it.
+
+Stock flourish vocabulary caught mechanically: "earns its keep", "does the heavy
+lifting", "punches above its weight", "moves the needle" / "moves the dial",
+"secret sauce", "where the magic happens", "a masterclass in", "lives and dies by",
+"the beating heart of", "connective tissue", "carries its weight", "north star",
+"worth turning".
+
+This does NOT ban figurative language. Scripture is figurative throughout and so is
+good teaching about it. The test is whether the figure CARRIES the idea or STANDS IN
+for it — if a plain phrase would say the same thing more exactly, the figure is
+decoration. The wider class is an editorial judgement.
+
 Full table with fixes: `content/AUTHORING-SPEC.md` §2, "AI tells (avoidable constructions)".
 
 ### Appendix B: Approved Source Authors

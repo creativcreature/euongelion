@@ -125,23 +125,56 @@ prose. Every one of them has a fix, and you lose nothing by taking it.
 piece you are citing. Inside quotation marks these are content. In your own
 voice they are always avoidable, so avoid them.
 
-| #   | Tell                         | Example                                                                                  | Write this instead                                      |
-| --- | ---------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| 1   | The seesaw                   | "That's not compliance. That's stalling."                                                | Say the second half only — "They're stalling."          |
-| 2   | Two fragments stuck together | "Fast. Simple." / "No fluff. Just answers."                                              | Pick one and write it like a person                     |
-| 3   | Two pictures, no advice      | "Less a hammer, more a scalpel."                                                         | Say what to do                                          |
-| 4   | Clapping for itself          | "And that matters." / "That's the part everyone misses." / "Which is exactly the point." | Delete it. You lose nothing                             |
-| 5   | The X-of-Y analogy           | "It's the Excel of AI agents."                                                           | Only lands if the reader knows both. Usually they don't |
-| 6   | Warming up before talking    | "Here's the thing." / "Let me be clear." / "The truth is…"                               | Start one sentence later                                |
-| 7   | Always three                 | "Faster, cheaper, smarter."                                                              | Real reasons come in twos and fives. Never always three |
-| 8   | The range                    | "5 to 10 minutes."                                                                       | A range means you never did it. Say 7 minutes           |
-| 9   | The recap ending             | "In short…" / "At the end of the day…"                                                   | Stop typing. End on the high note                       |
+| #   | Tell                         | Example                                                                                  | Write this instead                                                          |
+| --- | ---------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| 1   | The seesaw                   | "That's not compliance. That's stalling."                                                | Say the second half only — "They're stalling."                              |
+| 2   | Two fragments stuck together | "Fast. Simple." / "No fluff. Just answers."                                              | Pick one and write it like a person                                         |
+| 3   | Two pictures, no advice      | "Less a hammer, more a scalpel."                                                         | Say what to do                                                              |
+| 4   | Clapping for itself          | "And that matters." / "That's the part everyone misses." / "Which is exactly the point." | Delete it. You lose nothing                                                 |
+| 5   | The X-of-Y analogy           | "It's the Excel of AI agents."                                                           | Only lands if the reader knows both. Usually they don't                     |
+| 6   | Warming up before talking    | "Here's the thing." / "Let me be clear." / "The truth is…"                               | Start one sentence later                                                    |
+| 7   | Always three                 | "Faster, cheaper, smarter."                                                              | Real reasons come in twos and fives. Never always three                     |
+| 8   | The range                    | "5 to 10 minutes."                                                                       | A range means you never did it. Say 7 minutes                               |
+| 9   | The recap ending             | "In short…" / "At the end of the day…"                                                   | Stop typing. End on the high note                                           |
+| 10  | Mannered prose               | "A dial worth turning." / "This point earns its keep."                                   | Say what you mean — "a parameter worth varying", "this point still matters" |
 
-Tells 1, 4, 6, 8, and 9 are caught mechanically by `scripts/validate-devotional.mjs`
-at NEEDS-FIX. Tells 2, 3, 5, and 7 fire on legitimate prose when automated —
-a short line is often a real beat, "the God of Israel" is not an analogy, and
-"Holy, holy, holy" is a quoted triad — so they are enforced at editorial review
-instead. The scan skips quoted spans, per the exemption above.
+Tells 1, 4, 6, 8, 9 and the stock-phrase half of 10 are caught mechanically by
+`scripts/validate-devotional.mjs` at NEEDS-FIX. Tells 2, 3, 5, and 7 fire on
+legitimate prose when automated — a short line is often a real beat, "the God of
+Israel" is not an analogy, and "Holy, holy, holy" is a quoted triad — so they are
+enforced at editorial review instead. The scan skips quoted spans, per the
+exemption above.
+
+#### Tell 10 in full — mannered prose (founder ruling 2026-09-08, SA-134)
+
+Mannered prose substitutes metaphor and flourish for direct statement. Instead of
+"a parameter worth varying", the mannered writer produces "a dial worth turning".
+Instead of "this point still matters", they write "this point earns its keep".
+
+Two things are wrong with it, and the second is the one writers miss.
+
+**It is performance.** The phrase exists to display the writer, not to convey the
+idea, and readers can tell. That is why mannered prose irritates: it makes the
+reader work harder so the writer can perform. In a devotional this is worse than
+irritating — the reader came for the passage, not for us.
+
+**It is imprecise.** A metaphor drags in connotations the writer did not choose
+and cannot control. "This point earns its keep" quietly implies the point was on
+probation, was costing something, might be dismissed. None of that was meant.
+
+**The fix: say what you mean. When a literal phrase is available, use it.**
+
+**What this does NOT ban.** Scripture is figurative throughout, and so is good
+teaching about it. A vine, a veil, a coal carried from an altar — these are the
+text's own images, and explaining them is the job. The test is not "is this
+figurative" but **"is the figure carrying the idea, or standing in for it?"** If a
+plain phrase would say the same thing more exactly, the figure is decoration.
+
+Mechanically the validator catches only the stock business-flourish vocabulary —
+"earns its keep", "does the heavy lifting", "moves the needle", "north star",
+"the beating heart of", and the rest. Those were measured against 596 shipped
+devotionals before landing and are clean or near-clean. The wider class is an
+editorial judgement and belongs to the editor pass.
 
 ### Forbidden user-facing labels (for in-text references to the experience)
 

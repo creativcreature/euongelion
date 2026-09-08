@@ -40,11 +40,21 @@ Meanwhile, pull ALL scripture yourself from `public/bibles/<TRANSLATION>/<BOOK>.
 - Use CANONICAL flat field names (`content` as string — the renderer preserves it since the 2026-07-12 fix; regression-guarded by `__tests__/module-renderer-flat-content.test.tsx`).
 - Compute `totalWords` with the validator's counting rules; iterate until `node scripts/validate-devotional.mjs` reports 0 BLOCKING / 0 NEEDS-FIX.
 - Self-check greps: banned phrases, "it's not X, it's Y" formula, rhetorical-question-then-answer, forbidden labels ("devotional" in reader-facing prose, etc.).
+- **Mannered-prose pass (SA-134).** Before the editor sees it, read your own prose
+  hunting for figures that stand in for plain statement — "earns its keep", "does
+  the heavy lifting", "the beating heart of". The validator catches that stock
+  vocabulary; it cannot catch the class. Ask of each figure: is it carrying the
+  idea, or performing? If a plain phrase would say the same thing more exactly,
+  the figure is decoration — cut it. Scripture's own images are exempt: explaining
+  a vine or a torn veil IS the work.
 
 ## Phase 5 — Editorial Review
 
 - Spawn the `devotional-editor` agent with: AUTHORING-SPEC, brief, source pack, all day files. It returns severity-ranked notes with exact replacement text.
 - Apply everything BLOCKING/NEEDS-FIX; where the editor flags something the research actually verified, add it to the source pack instead of stripping (that's what the pack is for).
+- The editor pass owns the wider **mannered-prose** judgement (SA-134). Tells 2, 3,
+  5, 7 and the class half of 10 all fire on legitimate devotional prose when
+  automated, so they are enforced here by reading, not by regex.
 - Send the editor a re-review message (SendMessage to the same agent keeps its context); require an explicit READY FOR FOUNDER verdict.
 - **Readability gate (SA-053, 2026-08-16):** `node scripts/check-readability.mjs <slug>` — series-wide FK ≤ 8.5, under 8% of sentences at 30+ words, and **nothing over 45 words**. `--list` prints every offending sentence with its day and module.
   - **The average is not the problem; the tail is.** Measured across the four most recent series the average already sat at FK 7.7 / Reading Ease 71 — plain English — while each series carried 11–25 sentences of 45–95 words scoring grade 33–36. An average hides those. A reader does not.

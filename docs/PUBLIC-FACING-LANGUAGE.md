@@ -427,6 +427,40 @@ When content is time-locked, we need to explain why without being preachy.
 | "Join thousands of believers!"  | "Start where you are."        |
 | "Unlock your purpose!"          | "Explore what matters."       |
 | "We're so blessed to have you!" | "You're welcome here."        |
+| "A dial worth turning."         | "A setting worth changing."   |
+| "This earns its keep."          | "This still matters."         |
+| "It does the heavy lifting."    | "It does most of the work."   |
+
+---
+
+### Mannered prose (founder ruling 2026-09-08, SA-134)
+
+Applies to every word on the site — UI copy, emails, series descriptions, the
+about page — not only devotional prose.
+
+Mannered prose substitutes metaphor and flourish for direct statement. Instead of
+"a parameter worth varying", the mannered writer produces "a dial worth turning".
+Instead of "this point still matters", they write "this point earns its keep".
+
+It is wrong twice over. **It is performance** — the phrase exists to display the
+writer, not to convey the idea, and readers can tell; it makes the reader work
+harder so the writer can perform. **And it is imprecise** — a metaphor drags in
+connotations the writer did not choose and cannot control.
+
+That cuts against this guide's core principle directly. A reader who feels
+performed at does not feel _met_.
+
+**The fix: say what you mean. When a literal phrase is available, use it.**
+
+This does not ban figurative language — "Daily bread for the cluttered, hungry
+soul" is a figure, and it is the recommended headline. The test is whether the
+figure CARRIES the idea or STANDS IN for it. "Daily bread" is doing real work.
+"A dial worth turning" is standing in for a plainer phrase that would have been
+more exact.
+
+Devotional prose is additionally gated mechanically — see
+`content/AUTHORING-SPEC.md` §2, tell 10, enforced by
+`scripts/validate-devotional.mjs`.
 
 ---
 

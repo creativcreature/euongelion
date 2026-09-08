@@ -97,6 +97,22 @@ const FORBIDDEN_LABELS = [
 // Only mechanically-safe tells live here. Fragment pairs, the two-picture
 // metaphor, the X-of-Y analogy and manufactured triads fire on legitimate
 // devotional prose, so AUTHORING-SPEC §2 enforces those at editorial review.
+//
+// MANNERED PROSE (tell 10, founder ruling 2026-09-08) is the same shape of
+// problem and mostly the same answer. The class is: substituting metaphor and
+// flourish for direct statement — "a dial worth turning" for "a parameter worth
+// varying", "this point earns its keep" for "this point still matters". The
+// phrase exists to display the writer rather than to carry the idea, which makes
+// the reader work harder so the writer can perform, and it is imprecise besides:
+// a metaphor drags in connotations the writer did not choose and cannot control.
+//
+// The class cannot be caught by regex — a devotional is FULL of legitimate
+// figurative language, and Scripture is figurative throughout. What CAN be caught
+// is the stock business-flourish vocabulary, which has no place in this voice and
+// is never the clearest way to say anything. Measured against 596 shipped
+// devotionals before landing: every pattern below is clean or near-clean (0-2
+// hits). "sings" was a candidate and was DROPPED — it fired 22 times, because in
+// a devotional people literally sing, in the Psalms.
 const AI_TELLS = [
   [/\b(?:that|this|it)'s not\b[^.!?]{1,70}[.!?]\s+(?:that|this|it)'s\b/i, 'the seesaw — say the second half only'],
   [/\b(?:that|this|it) isn'?t\b[^.!?]{1,70}[.!?]\s+(?:that|this|it)'s\b/i, 'the seesaw — say the second half only'],
@@ -111,6 +127,21 @@ const AI_TELLS = [
   [/\bin short,/i, 'recap ending — stop typing'],
   [/\bin summary,/i, 'recap ending — stop typing'],
   [/\bto sum(?: it)? up\b/i, 'recap ending — stop typing'],
+  // Tell 10 — mannered prose. Say what you mean; when a literal phrase is
+  // available, use it.
+  [/\bearns? its keep\b/i, 'mannered — say what you mean ("still matters")'],
+  [/\bworth turning\b/i, 'mannered — say what you mean'],
+  [/\bdoes? the heavy lifting\b/i, 'mannered — say what the thing actually does'],
+  [/\bpunch(?:es|ing)? above its weight\b/i, 'mannered — say what you mean'],
+  [/\bmoves? the (?:needle|dial)\b/i, 'mannered — say what changes'],
+  [/\bsecret sauce\b/i, 'mannered — name the thing'],
+  [/\bwhere the magic happens\b/i, 'mannered — say what happens'],
+  [/\ba masterclass in\b/i, 'mannered — say what it does well'],
+  [/\blives? and dies? by\b/i, 'mannered — say what it depends on'],
+  [/\bthe beating heart of\b/i, 'mannered — say what is central and why'],
+  [/\bconnective tissue\b/i, 'mannered — say what connects to what'],
+  [/\bcarr(?:y|ies|ied) its weight\b/i, 'mannered — say what you mean'],
+  [/\bnorth star\b/i, 'mannered — name the actual goal'],
 ]
 
 // Strip quoted spans before the AI-tell scan so cited Scripture and quoted

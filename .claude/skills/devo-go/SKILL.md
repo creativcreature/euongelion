@@ -85,6 +85,16 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 - Allowed translations only (BSB/WEB/KJV/ASV/YLT/DARBY/BBE); match the corpus's exact text INCLUDING divine-name casing (repo KJV prints "the Lord"; BSB prints "the LORD").
 - Hebrew/Greek never unpaired with transliteration; the Jabez metathesis rule generalizes: never overstate a lexical claim the interlinear doesn't support.
 - Banned phrases/labels per AUTHORING-SPEC §2 — zero tolerance; validator enforces.
+- **Mannered prose is tell 10 (SA-134, founder ruling 2026-09-08).** Substituting
+  metaphor and flourish for direct statement — "a dial worth turning" for "a
+  parameter worth varying", "this point earns its keep" for "this point still
+  matters". It is performance (the phrase displays the writer instead of carrying
+  the idea, and makes the reader work harder so the writer can perform) and it is
+  imprecise (a metaphor drags in connotations you did not choose). **Say what you
+  mean; when a literal phrase is available, use it.** This does NOT ban figurative
+  language — Scripture is figurative throughout and explaining its images is the
+  job. The test: is the figure CARRYING the idea, or STANDING IN for it? The
+  validator catches only the stock flourish vocabulary; the class is an editor call.
 - Videos: official channels only, oEmbed-verified AND embed-block-checked; never a video that blocks off-YouTube playback.
 - The Two-Minute Open is required on all new days (SA-030, forward-only): a reader who stops at the DEEP DIVE CTA must have had a complete devotional.
 - No arbitrary images — every slot needs a one-sentence contextual justification (the caption). (The pre-imagery reading PAUSE was retired by SA-031; the reading artifact itself is still mandatory.)

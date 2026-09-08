@@ -1582,3 +1582,9 @@ features:
     status: shipped
     decision: SA-136
     doc: docs/feature-prds/F-180.md
+
+  - id: F-181
+    title: mannered-prose-tell-10-and-the-restored-prd-integrity-gate
+    status: shipped
+    decision: SA-138
+    doc: docs/feature-prds/F-181.md

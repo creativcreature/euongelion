@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-08 — Mannered prose is tell 10, and a gate that was silently dead — SA-138 (F-181)
+
+Founder-directed, scoped to the devo-go writer **and overall site writing**.
+
+- **Tell 10: mannered prose.** Substituting metaphor and flourish for direct
+  statement — "a dial worth turning" for "a parameter worth varying". It is
+  performance (the phrase displays the writer rather than carrying the idea) and
+  it is imprecise (a metaphor drags in connotations the writer did not choose).
+  Say what you mean; when a literal phrase is available, use it.
+- **The class is editorial, the vocabulary is mechanical.** Scripture is
+  figurative throughout, so no regex can judge the class. The test is whether the
+  figure CARRIES the idea or STANDS IN for it.
+- **Measured against 596 shipped devotionals before landing** (SA-130 precedent).
+  Fourteen patterns clean or near-clean; **"sings" was dropped — 22 hits**,
+  because in a devotional people literally sing, in the Psalms.
+- Landed in `AUTHORING-SPEC.md` §2, mirrored to `AI-CONTENT-CONSTRAINTS.md`,
+  site-wide in `PUBLIC-FACING-LANGUAGE.md`, enforced in
+  `validate-devotional.mjs`, and carried by both the devo-go writer and editor
+  phases.
+
+**A gate had been silently passing for nine days, and the cause was mine.**
+`scripts/check-feature-prd-integrity.mjs` was 0 bytes since 2026-08-29. Three
+commits that night bumped its count with
+`open(p,'w').write(open(p).read().replace(...))` — `open(p,'w')` truncates before
+the inner read runs, so it read an empty file and wrote nothing, and every gate
+reported OK afterwards. Restored, count corrected 171 → 177, and on its first live
+run it caught `F-178.md` missing both its methodology section and its
+Desktop/Mobile contract. Never use that idiom.
+
 ## Homepage features the latest series by computation — SA-136 (F-180)
 
 **2026-09-08.** Founder: "the featured devotional should be the latest devotional
