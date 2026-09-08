@@ -108,6 +108,17 @@ export default function EditorialMotionSystem() {
               const el = entry.target as HTMLElement
               el.classList.add('is-visible')
               observer?.unobserve(el)
+              // Same frozen-transition hazard as the sweep below: an element
+              // whose transition never started stays at opacity 0 even once
+              // `is-visible` lands. Cheap here, and it closes the case where
+              // IO does fire but the clock never ran.
+              if (typeof el.getAnimations === 'function') {
+                el.getAnimations().forEach((animation) => {
+                  if (animation.playState === 'running' && animation.currentTime === 0) {
+                    animation.finish()
+                  }
+                })
+              }
             })
           },
           {
@@ -192,19 +203,39 @@ export default function EditorialMotionSystem() {
     // The sweep is the backstop, not a replacement. IO still does the work and
     // still drives the staggered reveal; this only catches what it skipped,
     // and only ever reveals — it never re-hides.
+    // Adding `is-visible` is necessary but NOT sufficient, and this cost a
+    // deploy to learn. Measured on production 2026-09-08: stuck elements carry
+    // a CSSTransition with playState "running" and currentTime frozen at 0.
+    // A transition that never advances holds its from-value — opacity 0 —
+    // and it outranks the class rule AND an inline `opacity: 1 !important`,
+    // which is why the first fix looked correct in the DOM and changed nothing
+    // on screen. The transition has to be finished, not out-specified.
+    //
+    // Only transitions showing the stuck signature are finished, so a healthy
+    // fade already in flight is never cut short.
+    const unfreeze = (el: HTMLElement) => {
+      if (typeof el.getAnimations !== 'function') return
+      el.getAnimations().forEach((animation) => {
+        if (animation.playState !== 'running') return
+        if (animation.currentTime !== 0) return
+        animation.finish()
+      })
+    }
+
     const sweepScrolledPast = () => {
       if (!canObserve) return
       const viewportHeight = window.innerHeight || 900
       document
         .querySelectorAll<HTMLElement>('.editorial-reveal-target.is-prepared')
         .forEach((el) => {
-          if (el.classList.contains('is-visible')) return
           // Anything whose top has reached the fold has been given its chance.
           // Reveal it rather than leave it stranded.
-          if (el.getBoundingClientRect().top < viewportHeight) {
+          if (el.getBoundingClientRect().top >= viewportHeight) return
+          if (!el.classList.contains('is-visible')) {
             el.classList.add('is-visible')
             observer?.unobserve(el)
           }
+          unfreeze(el)
         })
     }
 
