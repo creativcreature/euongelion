@@ -141,6 +141,17 @@ euangelion-voice-prototype/archive-abandoned-clone-path/
 # Rendered TTS chunks, kept so a failed run resumes without re-spending credits
 euangelion-voice-prototype/.el-chunk-cache/
 euangelion-voice-prototype/thca-source/
+
+# Founder-voice mining off the THCA interview masters. All of it is derived
+# from thca-source/ and regenerable; the corpus alone is 163 MB, well past the
+# 25 MiB/file Workers asset limit, and a parallel session running `git add -A`
+# would otherwise stage the lot.
+euangelion-voice-prototype/thca-mined*/
+euangelion-voice-prototype/thca-elevenlabs*/
+euangelion-voice-prototype/thca-style/
+euangelion-voice-prototype/thca-profile-*/
+euangelion-voice-prototype/thca-longform*/
+euangelion-voice-prototype/ab-*/
 src/data/audio-manifest.json.lock
 
 # Codex imagery staging — masters live outside the deploy tree (SA-052/F-096)
