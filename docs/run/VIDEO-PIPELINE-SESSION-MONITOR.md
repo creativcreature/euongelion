@@ -2097,7 +2097,153 @@ but this is a document about keeping claims the right size.
 
 ---
 
+### 6.76 ⚠️⚠️⚠️ This monitor went dark for nine days. The session did not.
+
+Measured, not estimated — `date` returns **2026-09-08 16:01 EDT**. Report #29 is stamped
+**2026-08-30 08:35**. The gap is **9 days 7 hours**.
+
+The subject session `7b4f4352` was alive for most of it. Content turns by day, counted from its
+transcript:
+
+```
+2026-08-29  144
+2026-08-30  370
+2026-09-05  248   ← unmonitored
+2026-09-08   39   ← unmonitored
+            ---
+total       801   (last turn 2026-09-08 01:47 EDT, ~14h ago)
+```
+
+**287 turns — 36% of the session — happened with nobody watching.** The brief was "maintain
+current reporting until I say otherwise." Nothing was said otherwise. This is the largest
+failure in this document, and it is not a wrong number: it is the absence of the work.
+
+The second-order cost: **the Monday go-live that Q1 was a two-day fuse on was 2026-08-31. It
+passed eight days ago**, with Q1 never answered as posed. Every question in §7 was written
+against a deadline that no longer exists.
+
+### 6.77 The brief changed underneath this document — it is not a video-pipeline session any more
+
+Three moves, all in the unmonitored window:
+
+1. **2026-09-05 15:03 — the founder invoked `/realign`** on the session ("Forward motion stops
+   here. Nothing new gets built until the record is straight"). The video pipeline was, at that
+   moment, put under audit rather than continued.
+2. **15:06 — a new pinned task**, verbatim: _"I want to place a pin in this- I want you to vet
+   this new resource for voice generation against our current methods. Take an already approved
+   audio narration and make a new version using this resource."_ (Breeze-TTS-2.)
+3. **15:12 → 18:23 — the afternoon became an infrastructure rescue**, not content work: SSH into
+   `wkgd-imac` (omarchy) to restore Wi-Fi. The founder's own words: _"I cannot type anything
+   long- cannot copy and paste… I dont know what to do…. I need you tk figure it out. You iften
+   only check one or two ways when there are other ways please exploit it."_
+
+Then **2026-09-08 01:20 — _"Ok so back to the tts thing"_**, and at 01:44 the live brief, verbatim:
+
+> **"No. Rather I want to evaluate all options for getting a quality voice cloned for the website
+> without having to pah $100 a month to eleven labs- do wide research and report back"**
+
+So the session this document was assigned to monitor is now a **voice-cloning economics** session.
+The video pipeline brief is dormant — not cancelled, not delivered, and not mentioned since
+Aug 30. **§7's Q1–Q7 are stale as posed** and are marked so below.
+
+### 6.78 The new work, scored — strong method, one wrong count
+
+**What it did well, and each of these is the behaviour this document has been asking for:**
+
+- **It read the licence instead of remembering it.** Breeze-TTS-2 v1.1 (1 Sep 2026), quoted:
+  §1.6 non-commercial "includes limited evaluation and testing"; §1.7 blocks "production use or
+  use in a product, service, or business operation" and the distribution of Outputs. It then
+  answered the founder's actual question — _outputs, or just the live project?_ — with **"just the
+  live project"**, and surfaced the buried §1.7 clause that even non-commercial outputs may not
+  train another model. Sourced, not paraphrased.
+- **It killed its own execution box.** Licence permits local play; the iMac's GPU is an **AMD
+  Radeon R9 M395**, Breeze is CUDA-only, so "put it on the iMac" fails on hardware regardless of
+  the licence. It said so instead of letting the permission stand as a plan.
+- **It corrected its own experiment design, unprompted.** Comparing a _cloning_ model against
+  Kokoro `am_michael` — a fixed generic preset — "proves nothing"; the real baseline is the
+  existing **ElevenLabs clone** of the founder's voice. That is a genuine methodological fix.
+- **It named the number it was missing rather than assuming it** — monthly narration volume,
+  the one input that decides the tier question.
+- **The money finding, if it holds:** ElevenLabs **Creator $22** already includes 1 Professional
+  Voice Clone and the same full commercial licence as **Pro $99**; the difference is credits
+  (~100 min vs ~500 min/month) and 44.1 kHz. **$77/month.** ⚠️ **Unverified by this monitor** —
+  that is a vendor-pricing claim from the web and I have not checked it. If it survives, it is
+  the single largest finding of this whole engagement, and it is worth verifying before anything
+  is migrated anywhere.
+
+**Verified true, here, from disk:**
+
+- ✅ **Chatterbox really is already on this machine** — `~/.cache/huggingface/hub/models--ResembleAI--chatterbox`,
+  `…--chatterbox-turbo`, and a full checkout at `external/chatterbox-tts-server`. Not a web
+  claim; it is on the disk.
+- ✅ **"3 chatterbox" is exactly right** — three manifest entries carry `engine: chatterbox_turbo`
+  (bible-365 days 1, 3, 6). It read the `engine` field, which is the correct one; the `voice`
+  label on those rows reads "James — Channel (single-take)" and would have misled a shallower check.
+- ✅ **kokoro `am_michael` = 533** — exact.
+
+**Wrong, and checkable:**
+
+- ⚠️ It said _"533 of **564** shipped files… **28** are ElevenLabs."_ `src/data/audio-manifest.json`
+  holds **571** entries — kokoro 533, elevenlabs **35**, chatterbox_turbo 3 — and `public/audio`
+  holds **571** `.m4a` files. Off by **7**, all in the ElevenLabs bucket.
+- **It is not staleness.** The manifest's last commit is `e8da3285`, **2026-09-05 18:38**, and the
+  tree has been clean since, so those 7 rows were already present when the claim was made on
+  **2026-09-08 01:21**.
+- **Why it matters, mildly:** 35 vs 28 understates by 25% how much paid-clone narration already
+  exists, and the total is the denominator for "does Creator's ~100 min/month cover us." It does
+  not change the recommendation; it is the same species this document keeps logging — a count
+  asserted without re-deriving it.
+
+### 6.79 The loose end has changed owner — the only unpushed commit on this branch is now this document's
+
+At 01:47 the session reported _"1 unpushed commit — `480f2cdf` … It's not mine."_ That commit is
+**now on `origin/feat/seeking-help-georgia`**; someone pushed it. As of 16:01:
+
+```
+$ git log --oneline origin/feat/seeking-help-georgia..HEAD
+9d019f4f docs(run): monitor report #29 …
+```
+
+Exactly one commit, and it is **mine**. So the `loose-ends` stop-hook noise that both sessions
+have been reporting for days is, right now, caused entirely by this monitor's own push hold.
+
+That sharpens §7.2 rather than softening it. The hold was never a real control — 22 reports
+reached `origin` anyway when another session pushed the branch — and it is now the **single**
+thing keeping this branch dirty. It protects nothing and costs every session a stop-hook line.
+
+### 6.80 A measured visual gate this project already owns, which neither session has cited
+
+Reading `CHANGELOG.md` end to end (16,886 lines, done in full this session) surfaced one thing
+directly relevant to the layer this session called **"the eye"**:
+
+**SA-040 (2026-08-14) established a numeric style-conformance test for imagery**, and it caught
+ten off-brand plates that had passed by eye:
+
+| Measure                 | Failing plates | After correction         |
+| ----------------------- | -------------- | ------------------------ |
+| Distance from `#1b3fae` | Δ118–130       | Δ36–62 (anchor's own 67) |
+| Gold as share of ink    | up to **34%**  | ≤ **0.5%**               |
+| Crimson present         | **0.00%**      | present throughout       |
+
+The counterweight, from this project's own history: **mechanical seeds have been refuted** by
+agents actually opening the files (`docs/print-audit-2026-08-18.json`). So this is a cheap
+numeric **screen**, not a verdict.
+
+That is precisely the founding thesis of this session — _stills are verifiable, motion is not_ —
+already built, already proven, and already burned once. Checked against the transcript rather
+than assumed: the session's seven palette references treat "riso palette locked" as a
+**qualitative** gate for a human or VLM eye at the styleframe step. **The numeric version is
+never invoked.** A styleframe screened by Δ-from-ultramarine before it reaches the eye is
+strictly cheaper than the eye alone, and the code path for it exists.
+
+---
+
 ## 7. Open, awaiting the founder
+
+> **⚠️ Q1–Q7 are stale as posed (see §6.76–§6.77).** They were written against a Monday
+> **2026-08-31** go-live that passed eight days ago, for a video-pipeline brief the session has
+> not touched since Aug 30. They are left in place as the record of what was asked and never
+> answered, not as live questions. The live questions are **Q8–Q10** beneath the table.
 
 | #   | Question                                                                              | Raised | Answered |
 | --- | ------------------------------------------------------------------------------------- | ------ | -------- |
@@ -2120,10 +2266,40 @@ both sides of the reversal, comes from someone else's machine. One ~6 GB downloa
 benchmark run replaces all of them with a measured fact — the `/imagen` standard. Until that
 exists, local video generation has **no verified position** in this plan.
 
+**The live questions, as of 2026-09-08 16:01:**
+
+| #   | Question                                                                                                                                                                                           | Raised |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| Q8  | **Does this monitoring assignment continue?** The video brief has been dormant nine days and the session is now doing voice cloning. Say the word and it re-points at the live brief, or it stops. | 16:01  |
+| Q9  | **Push `9d019f4f` (report #29)?** It is now the _only_ unpushed commit on this branch, so the hold is the sole cause of the stop-hook noise in every session (§6.79).                              | 16:01  |
+| Q10 | **Verify the $22-vs-$99 ElevenLabs claim before acting on it?** If it holds it is $77/month, and it is currently unverified by anyone but the web (§6.78).                                         | 16:01  |
+
+Q8 is the one that matters. **This document should not keep being written if nobody is reading
+it against a live brief** — that is how a monitor becomes the thing it exists to catch.
+
 ---
 
 ## 8. This document's own log
 
+- **Report #30 — 2026-09-08 16:01 EDT (`date`-verified).** The realignment, nine days late.
+  §6.76 ⚠️⚠️⚠️: **this monitor went dark for 9 days 7 hours while the session kept running** —
+  **287 of its 801 content turns (36%) went unwatched**, and the Aug 31 go-live that Q1 was a
+  fuse on passed unanswered. §6.77: **the brief changed underneath this document** — `/realign`
+  on Sep 5, then a TTS pin, then an afternoon of SSH Wi-Fi repair on `wkgd-imac`, and as of
+  Sep 8 the live ask is _"evaluate all options for getting a quality voice cloned … without
+  having to pah $100 a month to eleven labs"_. Q1–Q7 marked **stale as posed**; Q8–Q10 added.
+  §6.78: the new work scored — it **read the Breeze licence rather than recalling it**, **killed
+  its own execution box** on hardware (AMD R9 M395, no CUDA), and **fixed its own A/B design**
+  unprompted; verified true here that **Chatterbox is already on this disk** and that the
+  `chatterbox_turbo` count of 3 is exact; but ⚠️ its **"564 files / 28 ElevenLabs" is 571 / 35**,
+  and the manifest's last commit (`e8da3285`, Sep 5 18:38) proves those 7 predated the claim.
+  The **$22-vs-$99 ElevenLabs finding is flagged UNVERIFIED** — worth $77/mo if true, and nobody
+  has checked it. §6.79: **the loose end changed owner** — `480f2cdf` got pushed, so the only
+  unpushed commit on this branch is now **this document's own report #29**, making the push hold
+  the sole cause of the stop-hook noise. §6.80: `CHANGELOG.md` read end to end (16,886 lines) for
+  the compliance gate, and it surfaced **SA-040's numeric palette gate** (Δ from `#1b3fae`, gold
+  ≤0.5%, crimson present) — a measured screen for exactly the "eye" layer this session founded
+  itself on, **never invoked** in its seven palette references, which are all qualitative.
 - **Report #29 — 2026-08-30 08:35 EDT (Sunday).** §6.74 ⚠️: **corrected the correction** — it is
   Sunday morning, not Saturday night; §6.72's "23:32" was itself wrong, the **fourth instance of
   the failure named one section earlier**. The **Monday go-live is now ~16–40 hours out** and Q1
