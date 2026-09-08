@@ -5,6 +5,41 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Homepage features the latest series by computation — SA-136 (F-180)
+
+**2026-09-08.** Founder: "the featured devotional should be the latest devotional
+added to the site. That should be a standing rule." And: "Give the seeking help
+section on the bottom in red."
+
+SA-031 already said the feature slot belonged to the most recent series, in July.
+It drifted anyway — Sought and Crowned shipped 2026-09-05 and the homepage kept
+featuring Drawing Near, because the slot was a hand-edited constant and nothing
+connected publishing a series to editing it.
+
+It is derived now. `latestFeaturedSeries()` reads the publish-date register
+(generated from `git log --diff-filter=A`, gated by a pre-commit check) and
+returns the newest series. Shipping a series IS updating the homepage. A test
+recomputes the answer independently and fails if the two disagree — because a
+rule enforced by memory is not enforced, which is the whole lesson of SA-031.
+
+`first-seen` dates are excluded: they record the day an import script ran, not a
+publication.
+
+The outreach band now carries brand crimson on its rules, kicker, heading and
+link over a 4% tint — marked, not alarmed. The body paragraph keeps normal ink,
+because that is the text someone under stress has to read carefully.
+
+Also fixed: `day5-lead` alt text still described the crutches that were removed
+from that plate during generation, so screen-reader users were told about objects
+not in the picture.
+
+**Audit finding, not fixed here.** Ordinary wheel scrolling on a series page
+leaves 12-13 elements stuck at `opacity: 0` — day 4-7 titles, their READ links,
+and the footer copyright/version line. They carry `editorial-reveal-target
+is-prepared` and never promote. Reproduced identically on `drawing-near`, so it
+predates this work. It does not reproduce under a programmatic jump to the
+bottom, which is why it has survived.
+
 ## Sought and Crowned — seven days on reconciliation, at intensity 5 — SA-135 (F-179)
 
 **2026-09-05.** Founder-directed end to end: "reconcilliation- healing- Gods mercy
@@ -12838,7 +12873,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.25
+**Version:** 0.8.26
 **Version:** 0.8.19
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features

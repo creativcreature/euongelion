@@ -1577,3 +1577,8 @@ features:
     status: shipped
     decision: SA-135
     doc: docs/feature-prds/F-179.md
+  - id: F-180
+    title: homepage-features-latest-series-and-red-outreach-band
+    status: shipped
+    decision: SA-136
+    doc: docs/feature-prds/F-180.md

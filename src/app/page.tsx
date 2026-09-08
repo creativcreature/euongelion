@@ -19,45 +19,27 @@ import { typographer } from '@/lib/typographer'
 import { SERIES_COUNT } from '@/data/series'
 import { HERO_ROTATION, heroDrawScript } from '@/lib/home/hero-rotation'
 import { featuredForServer, rotateFeatured } from '@/lib/home/featured-rotation'
+import { latestFeaturedSeries } from '@/lib/home/latest-series'
 import { isScrollLocked } from '@/lib/use-scroll-lock'
 
 /**
  * Homepage featured SERIES content. Founder direction 2026-05-13: the
- * featured slot now surfaces the SERIES as a whole, not an individual
- * devotional. Title is the series title; copy is the series question
- * + a beat of introduction; CTA opens the series page (where the
- * reader sees all days and starts). Day-level data lives in
- * `daySlug` / `dayTitle` only as fallback context.
+ * featured slot surfaces the SERIES as a whole, not an individual devotional.
+ * Title is the series title; copy is the series question; CTA opens the series
+ * page (where the reader sees all days and starts).
+ *
+ * SA-136 (founder, 2026-09-08): "the featured devotional should be the latest
+ * devotional added to the site. That should be a standing rule."
+ *
+ * This used to be a hand-edited object, and SA-031 had already ruled the slot
+ * belonged to the most recent series. It drifted anyway — Sought and Crowned
+ * shipped 2026-09-05 and the homepage kept featuring Drawing Near, because
+ * publishing and editing the constant were two separate acts. It is derived
+ * now, so shipping a series IS updating the homepage. See
+ * `src/lib/home/latest-series.ts` for why publish dates and not the order
+ * array decide it.
  */
-// SA-031 (founder, 2026-07-26): the main feature slot always belongs
-// to the MOST RECENT series. SA-034 (2026-08-10): he-cannot-deny-himself
-// replaces the-harvest, which rotates back into the six FEATURED_SERIES
-// cards below it.
-const HOMEPAGE_TODAY = {
-  series: 'drawing-near',
-  daySlug: 'drawing-near-day-1',
-  dayTitle: 'Crowned, And Hiding',
-  kicker: 'FEATURED SERIES · 7 DAYS · HEBREWS 10:19',
-  title: 'Drawing Near',
-  // Series-level scripture anchor (the framework verse).
-  scripture: 'Hebrews 10:19-22 · Genesis 3:24 · Leviticus 17:11',
-  // Surfaces the series QUESTION (what the reader actually carries),
-  // then one beat of the introduction. Series-level copy, not Day 1's.
-  // Founder 2026-08-16: "the text on the right should not have soo much —
-  // 10-14 words max." A featured slot is a headline and a line, not a
-  // paragraph; the full introduction is one tap away on the series page.
-  teaser:
-    'Far off, made nigh. Seven days on the way that was opened from the other side.',
-  // Homepage hero banner (full-bleed at top of page). SA-113
-  // (2026-08-20) supersedes R38: the banner now ROTATES per page load
-  // across seven gospel plates (HERO_ROTATION below). heroSrc stays
-  // pointed at the tomb — it is the JS-off/noscript fallback plate.
-  heroSrc: '/images/site/homepage/hero/header-v2.webp',
-  // Featured-card art: the all-these-things series master, which is already a
-  // 3:2 landscape crop and so matches the container's landscape aspect (the
-  // 1:1 series card would crop badly under object-fit: cover).
-  featuredArt: '/images/site/series/drawing-near.webp',
-}
+const HOMEPAGE_TODAY = latestFeaturedSeries()
 
 const HOW_STEPS = [
   {

@@ -18104,13 +18104,29 @@ html.dark .edition-quote-text--red {
 }
 
 /* ── Homepage outreach band (links to /seeking-help-georgia) ───────
-   Low on the page and visually quiet by founder direction. It should
-   read as a door left open, not an alarm. */
+   Low on the page, and last on it. Founder 2026-09-08: "Give the seeking
+   help section on the bottom in red."
+
+   Red is the brand's one spot colour (--color-crimson), used sparingly
+   everywhere else on the site, so spending it here is the whole point: this
+   is the only band on the homepage a reader in trouble needs to find fast.
+   The band is tinted rather than filled — a solid crimson field would read as
+   an emergency alarm shouted at everyone, which the earlier direction ("low
+   on the homepage", "a door left open") explicitly rejected. The rule and the
+   heading carry the colour; the body copy stays legible ink. */
 .homepage-outreach {
-  border-top: var(--mock-stroke) solid var(--mock-line);
+  border-top: var(--mock-stroke) solid var(--color-crimson);
+  border-bottom: var(--mock-stroke) solid var(--color-crimson);
+  /* ~4% tint of the spot colour. Kept this low so the band reads as marked
+     rather than as a warning panel, and so the title stays well clear of
+     WCAG AA against it in both themes. */
+  background: color-mix(in srgb, var(--color-crimson) 4%, transparent);
   padding: 1.6rem var(--mock-pad-x) 1.8rem;
   max-width: var(--mock-frame-max);
   margin: 0 auto;
+}
+.homepage-outreach .mock-kicker {
+  color: var(--color-crimson);
 }
 .homepage-outreach-title {
   font-family: var(--font-instrument-serif), Georgia, serif;
@@ -18118,18 +18134,20 @@ html.dark .edition-quote-text--red {
   line-height: 1.24;
   margin: 0.5rem 0 0.6rem;
   max-width: 34ch;
-  color: var(--mock-ink);
+  color: var(--color-crimson);
 }
 .homepage-outreach-copy {
   font-size: var(--type-body-s);
   line-height: 1.55;
+  /* Deliberately NOT crimson. This is the paragraph that has to be read
+     carefully by someone under stress, so it keeps normal body contrast. */
   color: var(--mock-muted);
   max-width: 56ch;
   margin: 0 0 0.9rem;
 }
 .homepage-outreach-link {
   display: inline-block;
-  color: var(--mock-blue-text);
+  color: var(--color-crimson);
   text-decoration: none;
   border-bottom: 1.5px solid currentColor;
   padding-bottom: 2px;
