@@ -3,7 +3,7 @@
 **Maintained by:** monitoring session `euangelion-b7` (`28a7fd72`) — _not_ the session doing the work
 **Subject session:** `euangelion-5c` (`7b4f4352-5581-4532-b889-2dc798009127`)
 **Started:** 2026-08-29 17:09 EDT
-**Last updated:** 2026-08-29 **23:32 EDT** — **Report #28**
+**Last updated:** **2026-08-30 08:35 EDT (Sunday)** — **Report #29**
 **Status:** ⛔ **ALL TOOLING UNINSTALLED AT FOUNDER'S ORDER.** `~/ai` deleted. Zero tools remain.
 The eye was proven at 20:26 and erased at 20:43 — see §6.34 for what was lost and what this
 document preserved. Scope reset at 20:43: _"It doesnt need to be local."_
@@ -2042,6 +2042,54 @@ running log, and `docs/run/` still holds exactly that class of document (`CHANGE
 neighbourhood changed, and that a _snapshot_ convention now exists for documents that are live
 elsewhere — which is the pattern this file would follow if it ever needs archiving.
 
+### 6.74 ⚠️ Correction to the correction — it is Sunday morning, not Saturday night
+
+§6.72 corrected a timestamp drift and stated the time as **23:32 EDT Saturday**. **That was also
+wrong.** Measured directly:
+
+```
+date  ->  2026-08-30 08:32 EDT  (Sunday morning)
+```
+
+A long gap fell between turns, and this monitor assumed continuity rather than re-measuring —
+**the fourth instance tonight of the same failure named in §6.71**, committed inside the very
+report that named it.
+
+**The consequence that matters:** the Monday go-live is now **Monday 31 August, roughly 16–40
+hours away** depending on the hour it lands. §6.13, §6.36 and §6.72's figures are all superseded.
+Q1 — raised at 17:13 Saturday and still unanswered — has now been open for **~15 hours**.
+
+**Rule adopted for the remainder of this log: no time claim without a `date` call in the same
+turn.**
+
+### 6.75 Peer request resolved — the who-is-god author was invisible because it is outside the repo
+
+Session `euangelion-ca` asked whether the who-is-god work churning the shared tree belonged to
+this monitor. **It does not.** This monitor's entire footprint is one file —
+`docs/run/VIDEO-PIPELINE-SESSION-MONITOR.md` — across 13 commits, every one staged by explicit
+path, never `git add -A`.
+
+**The author is session `9d25c0d0`, and the reason no one could find it is that it is not running
+from the repository.** Its cwd is `/Users/jamesparker`, so its transcript lives in
+`~/.claude/projects/-Users-jamesparker/` rather than the euangelion project directory anyone would
+search.
+
+```
+9d25c0d0   27 write operations on who-is-god paths
+           session span 03:00:48Z → 12:31:59Z   (~9.5 hours, still live)
+           last write ~1 minute before this check
+```
+
+**The operational risk this creates, and it is larger than the churn itself:** a session running
+from the home directory **has not loaded the repo's `CLAUDE.md`**. It therefore does not know the
+`git add -A` hazard, the husky `SA-###`/`F-###` commit gate, the parallel-session warnings, or —
+most seriously — that **`npm run deploy` builds the working tree**, so unfinished components in
+that tree ship to production on the next deploy by anyone.
+
+Confirmed for the peer, and worth recording here: **git is not the exposure vector for that
+risk.** Pushing or withholding commits changes nothing about production, because deployment
+bypasses GitHub entirely (§6.64). The tree is the exposure.
+
 ### 6.6 Small overreach
 
 "Claude has no native video input. **Ever.**" — true today, stated as a permanent law. Minor,
@@ -2076,7 +2124,17 @@ exists, local video generation has **no verified position** in this plan.
 
 ## 8. This document's own log
 
-- **Report #28 — 23:32 EDT.** Three corrections, two of them this monitor's. §6.71 ⚠️⚠️⚠️: it
+- **Report #29 — 2026-08-30 08:35 EDT (Sunday).** §6.74 ⚠️: **corrected the correction** — it is
+  Sunday morning, not Saturday night; §6.72's "23:32" was itself wrong, the **fourth instance of
+  the failure named one section earlier**. The **Monday go-live is now ~16–40 hours out** and Q1
+  has been unanswered ~15 hours. Rule adopted: no time claim without a `date` call in the same
+  turn. §6.75: peer `euangelion-ca` asked if the who-is-god churn was this monitor's — it is not
+  (footprint is one file, 13 commits, always staged by explicit path). **Author identified as
+  session `9d25c0d0`, invisible because its cwd is `/Users/jamesparker`, not the repo** — 27
+  writes on who-is-god paths, ~9.5 hours live. Consequence: it **has not loaded the repo's
+  CLAUDE.md**, so it does not know the `add -A` hazard, the husky gate, or that `npm run deploy`
+  ships the working tree.
+- **Report #28 (timestamp wrong — see §6.74) —** Three corrections, two of them this monitor's. §6.71 ⚠️⚠️⚠️: it
   repeatedly asserted **"all unpushed commits are mine"** — false; **2 of 14 belong to other
   sessions** (`3f12ab4c` handoff consolidation, `1119b856` SA-131). **Third error of the same
   species tonight**, alongside §6.37 and §6.63/§6.70: _stating as current something verified once
