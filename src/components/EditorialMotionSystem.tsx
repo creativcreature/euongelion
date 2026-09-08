@@ -174,6 +174,54 @@ export default function EditorialMotionSystem() {
 
     scanRoot(document.body)
 
+    // SA-137 — the scroll-past sweep. IntersectionObserver only delivers a
+    // callback when the intersection ratio CROSSES a threshold between two
+    // samples. On a fast wheel scroll an element can travel from below the
+    // fold to above it inside one sample gap: the ratio goes 0 -> 0, nothing
+    // crosses 0.12, and no entry is ever emitted. The element keeps
+    // `is-prepared` and sits at opacity 0 permanently, because a reader moving
+    // down a page never scrolls back up to give it a second chance.
+    //
+    // Measured on production 2026-09-08: ordinary wheel scrolling left 32 of
+    // 96 targets invisible on the homepage and 12-13 on a series page —
+    // including day titles, their READ links, the footer copyright and version
+    // line, and the entire heading and body of the Georgia outreach band. It
+    // did not reproduce under a programmatic jump to the bottom, which is why
+    // it survived: every automated check arrives instantly.
+    //
+    // The sweep is the backstop, not a replacement. IO still does the work and
+    // still drives the staggered reveal; this only catches what it skipped,
+    // and only ever reveals — it never re-hides.
+    const sweepScrolledPast = () => {
+      if (!canObserve) return
+      const viewportHeight = window.innerHeight || 900
+      document
+        .querySelectorAll<HTMLElement>('.editorial-reveal-target.is-prepared')
+        .forEach((el) => {
+          if (el.classList.contains('is-visible')) return
+          // Anything whose top has reached the fold has been given its chance.
+          // Reveal it rather than leave it stranded.
+          if (el.getBoundingClientRect().top < viewportHeight) {
+            el.classList.add('is-visible')
+            observer?.unobserve(el)
+          }
+        })
+    }
+
+    let sweepFrame = 0
+    const queueSweep = () => {
+      if (sweepFrame) return
+      sweepFrame = window.requestAnimationFrame(() => {
+        sweepFrame = 0
+        sweepScrolledPast()
+      })
+    }
+
+    // Coalesced to one frame (SA-129: PrintRail scheduled a fresh rAF per
+    // scroll event and re-read layout many times per frame).
+    window.addEventListener('scroll', queueSweep, { passive: true })
+    window.addEventListener('resize', queueSweep, { passive: true })
+
     const mutationObserver = new MutationObserver((records) => {
       records.forEach((record) => {
         record.addedNodes.forEach((node) => {
@@ -186,6 +234,9 @@ export default function EditorialMotionSystem() {
 
     return () => {
       if (frame) window.cancelAnimationFrame(frame)
+      if (sweepFrame) window.cancelAnimationFrame(sweepFrame)
+      window.removeEventListener('scroll', queueSweep)
+      window.removeEventListener('resize', queueSweep)
       mutationObserver.disconnect()
       observer?.disconnect()
     }
