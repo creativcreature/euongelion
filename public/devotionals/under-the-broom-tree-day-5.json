@@ -1,0 +1,266 @@
+{
+  "day": 5,
+  "chiasm_position": "B-prime",
+  "format": "two-minute-open-v2",
+  "title": "What Are You Doing Here",
+  "subtitle": "The same question, twice. The same complaint, word for word. And then, a job.",
+  "teaser": "God doesn't argue with Elijah's despair. He asks the same question twice, lets him give the same answer twice, and then hands him three names and a successor. Correction never shows up. A task does.",
+  "anchorVerse": "1 Kings 19:15-16",
+  "theme": "God does not argue with the feeling of being alone. He answers it with a task.",
+  "framework": "1 Kings 19:13-17 - What are you doing here, Elijah?",
+  "scriptureReference": "1 Kings 19:13-17",
+  "totalWords": 3600,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "1 Kings 19:13-14",
+      "translation": "BSB",
+      "passage": "When Elijah heard it, he wrapped his face in his cloak and went out and stood at the mouth of the cave. Suddenly a voice came to him and said, \"What are you doing here, Elijah?\" \"I have been very zealous for the LORD, the God of Hosts,\" he replied, \"but the Israelites have forsaken Your covenant, torn down Your altars, and killed Your prophets with the sword. I am the only one left, and they are seeking my life as well.\"",
+      "emphasis": [
+        "What are you doing here, Elijah?",
+        "I am the only one left"
+      ],
+      "scriptureContext": "Two minutes with a question asked twice, and an answer given twice, word for word — before anything changes."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "מַה־לְּךָ פֹה",
+      "transliteration": "mah-lekha poh",
+      "pronunciation": "mah-le-KHA po",
+      "strongsNumber": "H4100 / H6311",
+      "definition": "literally \"what to you here\" — closer to \"what is this place to you\" than \"what are you doing\"",
+      "usage": "Identical, word for word, in verse 9 and again here in verse 13. Not two different questions. The same question, repeated, waiting for an answer that will actually change something this time."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Question That Doesn't Move",
+      "content": "God has already asked this exact question once, before the wind and the earthquake and the fire. Elijah gave an answer. Then came the whole display on the mountain, and the near-silence after it. And now, standing at the mouth of the cave with his face wrapped, Elijah hears the identical question again: what are you doing here?\n\nHe gives the identical answer. Word for word — same complaint, same \"I am the only one left,\" nothing added, nothing softened by whatever he just experienced on the mountain.\n\nA reader might expect God to correct him here. To say: you're wrong, there are others, stop exaggerating. That correction doesn't come — not yet, not directly. What comes instead, in the verses just ahead, is a set of instructions. Three names. A road to travel. A successor to anoint. God's answer to \"I am alone\" turns out not to be an argument at all. It's an assignment."
+    },
+    {
+      "type": "reflection",
+      "prompt": "If God's response to your own complaint wasn't correction but a task, what might that be telling you about what you actually need right now?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord, I keep waiting for You to argue with how alone I feel. Show me instead what You'd have me do next. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below: what the question is actually asking underneath its English translation, a man handed a prison ministry instead of his old political life back, and why being given a successor is grace, not a demotion."
+    },
+    {
+      "type": "scripture",
+      "reference": "1 Kings 19:13-17",
+      "translation": "BSB",
+      "passage": "When Elijah heard it, he wrapped his face in his cloak and went out and stood at the mouth of the cave. Suddenly a voice came to him and said, \"What are you doing here, Elijah?\" \"I have been very zealous for the LORD, the God of Hosts,\" he replied, \"but the Israelites have forsaken Your covenant, torn down Your altars, and killed Your prophets with the sword. I am the only one left, and they are seeking my life as well.\" Then the LORD said to him, \"Go back by the way you came, and go to the Desert of Damascus. When you arrive, you are to anoint Hazael as king over Aram. You are also to anoint Jehu son of Nimshi as king over Israel and Elisha son of Shaphat from Abel-meholah to succeed you as prophet. Then Jehu will put to death whoever escapes the sword of Hazael, and Elisha will put to death whoever escapes the sword of Jehu.",
+      "hebrewOriginal": "קַנֹּא קִנֵּאתִי",
+      "transliteration": "qanno qinneti — \"zealous have I been zealous,\" an intensifying construction repeated identically both times he answers",
+      "emphasis": [
+        "What are you doing here, Elijah?",
+        "Elisha son of Shaphat from Abel-meholah to succeed you as prophet"
+      ],
+      "scriptureContext": "The repeated question, the repeated complaint, and then — without a word of rebuke in between — a road, three names, and a successor."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "Not \"What Are You Doing\" — \"What Is This to You\"",
+      "content": "The English translation \"what are you doing here\" suggests a question about activity — as if God is asking Elijah to account for his schedule. The Hebrew asks something closer to what this place is to you, or what business you have here at all. It's a question about belonging and purpose, not a status update.\n\nThat distinction changes how the repetition lands. God isn't checking whether Elijah's answer has changed, the way a teacher might re-ask a question expecting a corrected response. He's asking, twice, whether Elijah actually understands why he's standing where he's standing — at the mountain of God, having fled the entire length of his own country to get there.\n\nAnd both times, Elijah's answer is entirely about what he's fleeing, not about the mountain itself. \"I have been very zealous... but the Israelites have forsaken Your covenant... I am the only one left.\" It's an answer about a whole nation's failure and his own solitary righteousness inside it. It never actually addresses what this place is to him — only what he's running from."
+    },
+    {
+      "type": "pullquote",
+      "content": "God isn't re-asking to see if the answer has changed. He's asking whether Elijah understands why he's standing where he's standing at all."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "heading": "The Same Words, Twice, on Purpose",
+      "content": "The second answer could look like plain narrative repetition — an editor reusing a line rather than writing a new one. The Hebrew doesn't support that reading. Elijah's complaint both times uses the identical intensifying construction, qanno qinneti, \"zealous have I been zealous\" — the same grammatical insistence, verbatim, both times he speaks.\n\nThat precision matters. Scripture is not summarizing a general sentiment loosely. It is recording that Elijah said the exact same thing, in the exact same words, before and after the wind, the earthquake, the fire, and the near-silence. Whatever happened on the mountain did not change what he believes about his situation. He walked out of the theophany with his complaint completely intact.\n\nThis is worth sitting with honestly, because it complicates any reading of this story as a straightforward before-and-after. Elijah is not \"fixed\" by hearing the still small voice. He hears it, wraps his face in reverence, comes to the mouth of the cave — and then says the identical despairing sentence he said before any of it happened. An encounter with God, even a real one, does not automatically dissolve a settled conviction. Something else is required to move him, and it isn't more theophany.\n\nThis is a genuinely humbling detail for anyone who has ever hoped a single powerful spiritual experience would permanently resolve a settled despair. Elijah had, by any measure, just had one of the most direct encounters with God recorded anywhere in the Old Testament. He walked away from it still saying the same thing. Scripture does not treat that as a failure on his part, or a sign the encounter didn't count. It simply moves forward to what actually does change something — which turns out not to be a bigger experience, but a different kind of response altogether."
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient Truth, Modern Life",
+      "ancientTruth": "Elijah's complaint did not change after his encounter with God on the mountain. What changed was what God gave him to do next.",
+      "modernApplication": "A person waiting for a feeling or an encounter to dissolve their despair may be waiting for the wrong mechanism. Sometimes conviction only shifts when it's given somewhere to go — a task, a responsibility, a next right thing.",
+      "connectionPoint": "God does not need Elijah's feelings corrected before He can use him again. The commission comes while the complaint is still standing, unresolved, spoken in the same breath.",
+      "newTestamentEcho": "\"Simon son of John, do you love Me?\" — asked three times, to a man who had just failed publicly and completely. Jesus does not lecture Peter about his denial before recommissioning him. He asks a question, and then hands him work: \"Feed My sheep\" (John 21:15-17, BSB)."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "heading": "A Task, Not a Verdict",
+      "content": "God never tells Elijah he's wrong to feel alone — that correction is still a day away, waiting for verse 18. He never says the words you're not actually the only one — that correction is still a day away in this reading, waiting for verse 18. What He gives Elijah first, immediately after the second identical complaint, is a road to walk and three specific names: Hazael, to anoint as king over Aram; Jehu, to anoint as king over Israel; and Elisha, to anoint as prophet in Elijah's own place.\n\nThat last name matters most for today. Elijah isn't sent back to his old solitary role, unchanged, to keep running the same race alone the way he's been running it. He's told to find and appoint the person who will eventually carry it after him. God's answer to \"I am the only one left\" is, functionally: then go make sure you aren't, permanently, by training someone who will still be standing when you're gone.\n\nAlexander Maclaren read this move as its own kind of correction — gentler than an argument, and in some ways harder to receive. \"The commission for further service, which closes the scene, is a further rebuke to the prophet,\" he wrote, before naming what the rebuke actually consists of: \"The true conception of our work is that we are only links in a chain, and that we can be done without. God removes the workers and carries on the work.\" And then, honestly, about the cost of that particular lesson: \"To anoint our successor is often a bitter pill; but self-importance needs to be taken down.\"\n\nThat's a harder thing to hear than a straightforward pep talk would be. Being handed a successor is not purely comforting. It says, plainly, that the work does not depend on this one person continuing forever — which is exactly the blow to Elijah's sense of his own indispensability that a man convinced he's carrying the whole covenant alone might need. The cure for \"I am the only one left\" isn't only the news that others exist. It's the assignment of building toward a future where his own continued presence isn't the load-bearing wall."
+    },
+    {
+      "type": "story",
+      "heading": "Anybody Who Wants It",
+      "content": "In 1974, Charles Colson — a former White House aide who had helped run Richard Nixon's political operation at the height of its power — entered a federal prison camp in Alabama, convicted for his role in the Watergate scandal. It was as total and public a collapse of status as American political life produces.\n\nColson did not spend the following years trying to rebuild his old career or restore his old influence. In 1976, he founded Prison Fellowship — an organization built, deliberately, around training volunteers and inmates themselves to lead Bible studies inside prisons, rather than centering the ministry on Colson's own presence or celebrity. Asked directly who should carry the work forward, he answered simply: \"Anybody who wants it!\"\n\nThe organization grew quickly — from six staff members and a ninety-thousand-dollar budget in 1976 to roughly a hundred seventy staff and fifteen thousand volunteers within seven years — precisely because it was never designed to require Colson personally in every room. He had been, by his own account, one of the most self-important men in Washington. The task he was given after collapse was not a smaller version of his old power. It was the deliberate opposite: build something that would keep working once he was no longer at the center of it.\n\nWhat makes the parallel to Elijah sharper still is what Colson did not do. He did not spend years lobbying to reenter political life, the world he actually understood and had spent a career mastering. He accepted a task in an entirely different arena — prisons, not politics — that required him to trust other people, most of them without any of his former standing, to carry the actual weight of the work. Handing real responsibility to volunteers and former inmates was its own kind of anointing a successor, repeated daily rather than done once. For a man who had operated at the center of national power, it was a standing admission that the work did not need him specifically in order to matter.",
+      "connectionToTheme": "Like Elijah at Horeb, Colson was not returned to his previous role unchanged. He was given a specific task whose entire design assumed he would eventually not be needed — the same lesson Maclaren draws from Elijah's anointing of Elisha, aimed at the same self-importance in a very different century."
+    },
+    {
+      "type": "insight",
+      "heading": "Links in a Chain",
+      "content": "Maclaren again, on what the commission to anoint a successor actually means: \"The true conception of our work is that we are only links in a chain, and that we can be done without. God removes the workers and carries on the work.\"",
+      "historicalContext": "From \"Elijah's Weakness, and Its Cure,\" Maclaren's exposition of 1 Kings 19:15-17."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "Not Rebuked. Reassigned.",
+      "content": "What does and doesn't happen in this exchange is easy to flatten into a simple morality tale about God correcting a self-pitying prophet. That isn't what the text shows.\n\nGod does not scold Elijah for his complaint. He does not withhold the commission until Elijah admits he was wrong. The instructions come immediately, attached to no condition, while the identical despairing sentence is still hanging in the air between them. Whatever is being communicated here, it isn't disapproval.\n\nWhat it is, instead, is a redirection of attention. Elijah's complaint is entirely backward-looking and entirely about his own isolation — what has been forsaken, torn down, killed, and what remains is only him. The commission is entirely forward-looking and entirely about other people — a king to anoint here, a king to anoint there, a successor to raise up. God doesn't argue with the diagnosis. He simply hands Elijah something to do that requires believing, functionally, that the future includes more than himself alone in it.\n\nThis is a pattern worth watching for in your own life, particularly in a season that feels like Elijah's. Don't wait for someone to argue you out of feeling alone, and don't expect a single dramatic encounter to do it either. Instead, notice what task you are being handed that assumes other people exist — a person to mentor, a group to serve, a piece of work that only makes sense if it outlasts you. Accepting that task, even while the old complaint is still true in your mouth, may do more than any amount of correction could.\n\nIt is worth being honest, too, about what this is not saying. It is not a claim that busyness cures despair, or that a person in real crisis should simply be handed more responsibility and told to get on with it. Elijah has just been fed, rested, and allowed a full theophany before this commission ever arrives — the task comes fourth, not first, in a sequence that began with sleep. The order matters as much here as it did on the mountain. A task offered too early is just another burden. A task offered after real rest, to someone who has already been cared for in the body, can be the very thing that gives despair somewhere to go besides in circles."
+    },
+    {
+      "type": "scripture",
+      "reference": "John 21:15-17",
+      "translation": "BSB",
+      "passage": "When they had finished eating, Jesus asked Simon Peter, \"Simon son of John, do you love Me more than these?\" \"Yes, Lord,\" he answered, \"You know I love You.\" Jesus replied, \"Feed My lambs.\" Jesus asked a second time, \"Simon son of John, do you love Me?\" \"Yes, Lord,\" he answered, \"You know I love You.\" Jesus told him, \"Shepherd My sheep.\" Jesus asked a third time, \"Simon son of John, do you love Me?\" Peter was deeply hurt that Jesus had asked him a third time, \"Do you love Me?\" \"Lord, You know all things,\" he replied. \"You know I love You.\" Jesus said to him, \"Feed My sheep.",
+      "emphasis": [
+        "Feed My lambs",
+        "Feed My sheep"
+      ],
+      "scriptureContext": "A threefold question to a man who had just failed publicly and completely — answered, both times, with a task rather than a lecture.",
+      "redLetter": [
+        "Simon son of John, do you love Me more than these?",
+        "Yes, Lord,",
+        "You know I love You.",
+        "Feed My lambs.",
+        "Simon son of John, do you love Me?",
+        "Yes, Lord,",
+        "You know I love You.",
+        "Shepherd My sheep.",
+        "Simon son of John, do you love Me?",
+        "Do you love Me?",
+        "Lord, You know all things,",
+        "You know I love You."
+      ]
+    },
+    {
+      "type": "reflection",
+      "prompt": "If God isn't waiting for your complaint to change before He gives you something to do, what task might already be sitting in front of you, unaccepted?",
+      "additionalQuestions": [
+        "Is there someone you've been avoiding investing in — a successor, a mentee, someone to hand something off to — because it feels like admitting you're replaceable?",
+        "Colson's task after collapse was the opposite of his old power: something designed to work without him. What would that look like in your own situation?",
+        "Where have you been waiting for a feeling to change before you'll accept an assignment that's already in front of you?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Today's Practice: Memorizing the Question",
+      "instruction": "A scripture memory exercise, using repetition on purpose — the same technique the text itself uses.",
+      "interaction_type": "memory",
+      "steps": [
+        {
+          "title": "Say it once",
+          "description": "Read 1 Kings 19:13 aloud once, slowly: \"What are you doing here?\""
+        },
+        {
+          "title": "Say it again, later",
+          "description": "Set a reminder for two hours from now. When it goes off, say the same line aloud again, in whatever place you happen to be — the way Elijah heard it twice, in two different places."
+        },
+        {
+          "title": "Answer it honestly both times",
+          "description": "Each time you say it, answer out loud, in your own words, exactly where you actually are right now — not where you think you should be."
+        },
+        {
+          "title": "Notice what task is nearby",
+          "description": "After the second answer, name one specific task in front of you this week that assumes other people exist — someone to help, mentor, or serve. Write it down."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "The Question Becomes an Assignment",
+      "content": "What are you doing here — asked twice, answered twice, identically. And then, without ever contradicting Elijah's own account of himself, God gives him a road, three names, and a job that only makes sense if the future has other people standing in it.\n\nThis is not a story about a prophet who finally sees the light and stops feeling alone. He's still going to need the news in tomorrow's reading — the actual number, the actual seven thousand — before the isolation gets a direct answer. Today's turn is smaller and, in its own way, more practical: before Elijah is told he isn't alone, he's given something to do that requires believing, at least provisionally, that he isn't the last one standing.\n\nThe task comes before the comfort. Not because God is withholding the comfort as a test, but because sometimes a hand held out to do something is the very thing that makes the comfort possible to receive later. Elijah walks toward Damascus still convinced he's alone. He walks there anyway, with a job to do."
+    },
+    {
+      "type": "prayer",
+      "heading": "Closing Prayer",
+      "prayerText": "Lord, I keep waiting to feel less alone before I'll accept what You've put in front of me. Today let me take the task even while the ache is still true in my mouth. Show me who I'm meant to raise up, hand off to, or serve — not as proof I've earned Your comfort, but as the road toward receiving it. Amen.",
+      "breathPrayer": "Inhale: What are you doing here? Exhale: Here I am — send me.",
+      "prayerType": "closing"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will accept one specific task this week that assumes a future with other people in it, even while my own complaint is still unresolved.",
+      "leavingAtCross": [
+        "The belief that my complaint must be corrected before I can be useful again",
+        "The fear that raising up someone else means I'm replaceable",
+        "Waiting for a feeling to change before accepting the work in front of me"
+      ],
+      "receivingFromCross": [
+        "A task, not a verdict, in answer to my despair",
+        "Permission to be a link in a chain rather than the whole chain",
+        "A God who commissions before He comforts, and means both"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "How does God respond to Elijah's second, identical complaint (\"I am the only one left\") in verses 15-17?",
+      "options": [
+        "He rebukes Elijah for exaggerating",
+        "He immediately gives him a road to travel and three people to anoint, including his own successor",
+        "He sends him back to sleep under the broom tree",
+        "He tells him the number of the seven thousand right away"
+      ],
+      "answer": 1,
+      "explanation": "God does not argue with the complaint or correct it directly here — that comes in verse 18. Instead He gives Elijah an immediate, concrete task: anoint Hazael, anoint Jehu, and anoint Elisha to succeed him as prophet. The task comes before the comfort."
+    },
+    {
+      "type": "profile",
+      "heading": "A Voice From the Story",
+      "name": "Charles W. Colson",
+      "era": "1931-2012, Washington, D.C.",
+      "bio": "A former special counsel to President Nixon, imprisoned in 1974 for his role in the Watergate scandal. Founded Prison Fellowship in 1976, building a ministry designed from the outset to run on trained volunteers and former inmates rather than his own celebrity.",
+      "keyQuote": "Anybody who wants it!",
+      "lessonForUs": "Colson's answer to who should carry his work forward mirrors God's instruction to Elijah — the work was never meant to depend on one irreplaceable person continuing it alone."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Related Study",
+      "relatedScriptures": [
+        {
+          "reference": "2 Kings 2:9-12 (BSB)",
+          "text": "Elisha's eventual succession, years after this anointing — the task Elijah accepted today, completed."
+        },
+        {
+          "reference": "John 21:15-17 (BSB)",
+          "text": "Jesus's threefold recommissioning of Peter after his denial — a task in place of a lecture."
+        },
+        {
+          "reference": "2 Timothy 2:2 (BSB)",
+          "text": "Paul to Timothy: \"the things that you have heard me say among many witnesses, entrust these to faithful men who will be qualified to teach others as well.\" The same chain-of-links pattern Maclaren names."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Alexander Maclaren, \"Elijah's Weakness, and Its Cure,\" Expositions of Holy Scripture (Hodder & Stoughton)",
+          "description": "Source of today's quotations on the repeated question and the successor as \"a bitter pill.\" Verified across three independent digitizations: BlueLetterBible, CCEL, and Project Gutenberg ebook #8068."
+        },
+        {
+          "title": "Charles Colson, Born Again (Chosen Books, 1976); \"Why Charles Colson's Heart Is Still in Prison,\" Christianity Today (1983)",
+          "description": "Source of today's account of Prison Fellowship's founding and Colson's own words on who should lead it."
+        },
+        {
+          "title": "Hebrew data",
+          "description": "mah-lekha poh — identical wording in 1 Kings 19:9 and 19:13, more literally \"what is this place to you\" than \"what are you doing.\" qanno qinneti (H7065) — infinitive-absolute intensifier, identical both times Elijah answers."
+        }
+      ],
+      "forDeeperStudy": "Read 2 Kings 2 in full — the day Elijah's successor finally takes up the task he was handed today."
+    }
+  ]
+}

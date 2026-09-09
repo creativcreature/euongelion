@@ -1013,6 +1013,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     "You don't need more facts. You need the wisdom to know what's true—and Who to trust.",
   'truth-day-5':
     'The resolution: You were never meant to navigate the fog alone. Truth has a name. And he knows yours.',
+  'under-the-broom-tree-day-1':
+    'Before a prophet, a threat, a shrub, or a mountain — one line about a shepherd who makes His flock stop moving. Sit in that first. The rest of the story can wait one day.',
+  'under-the-broom-tree-day-2':
+    "Yesterday he called down fire in front of a whole nation and won. Today he's under a shrub in the desert asking God to kill him. The Bible doesn't treat that as a contradiction — it treats it as ordinary.",
+  'under-the-broom-tree-day-3':
+    "A man has just asked God to kill him. God's first move is not an argument. It's a cake of bread, a jar of water, and permission to go back to sleep — and then, because once wasn't enough, the exact same thing again.",
+  'under-the-broom-tree-day-4':
+    'God tells a suicidal prophet to come stand on the mountain, then puts on the loudest show in the chapter and isn\'t in any of it. What\'s actually in the phrase translated "still small voice" is stranger, and better, than gentle.',
+  'under-the-broom-tree-day-5':
+    "God doesn't argue with Elijah's despair. He asks the same question twice, lets him give the same answer twice, and then hands him three names and a successor. Correction never shows up. A task does.",
+  'under-the-broom-tree-day-6':
+    "God never tells Elijah his feelings are wrong. He tells him a fact he didn't have: seven thousand people, already faithful, already there. Centuries later Paul quotes this exact exchange to make the same point to a different kind of isolation.",
+  'under-the-broom-tree-day-7':
+    'Five days, one prophet, one shrub, one mountain. No new ground today — only the road walked back, and the study set for anyone who wants to keep going.',
   'valued-day-1':
     "Discovering that God's love is not conditional on our physical perfection or circumstances",
   'valued-day-2':
@@ -1652,6 +1666,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
     "What if truth isn't a fact you verify—it's a person you know?",
   'truth-day-4': 'From information overload to wisdom: learning to discern',
   'truth-day-5': "Truth is a person, not a dataset—and he's waiting for you",
+  'under-the-broom-tree-day-1': 'He Makes Me Lie Down',
+  'under-the-broom-tree-day-2': 'I Have Had Enough',
+  'under-the-broom-tree-day-3': 'Get Up and Eat',
+  'under-the-broom-tree-day-4': 'Not in the Fire',
+  'under-the-broom-tree-day-5': 'What Are You Doing Here',
+  'under-the-broom-tree-day-6': "Seven Thousand You Don't Know About",
+  'under-the-broom-tree-day-7': 'Down From the Mountain',
   'valued-day-1': 'Valued in Questions',
   'valued-day-2': 'Valued in Weakness',
   'valued-day-3': 'Valued in Suffering',

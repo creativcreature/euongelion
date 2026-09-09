@@ -1216,6 +1216,71 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
       { day: 7, title: 'Enough For Today', slug: 'all-these-things-day-7' },
     ],
   },
+  'under-the-broom-tree': {
+    title: 'Under the Broom Tree',
+    heroImage: '/images/site/series/under-the-broom-tree.webp',
+    question:
+      'What if God’s first answer to your collapse isn’t a lecture, but a nap and a meal?',
+    introduction:
+      'The day after Elijah calls down fire from heaven in front of a whole nation, he asks God to let him die. Seven days inside one chapter: a prophet fed and put back to sleep before a single word of counsel, a mountain where wind and earthquake and fire all get named and dismissed, a question asked twice with the same answer given twice, and a number — seven thousand — that was the real reply to “I am the only one left.”',
+    context:
+      'For anyone who has decided, quietly and without drama, that they are the only one still holding on, and that stopping would be reasonable rather than dramatic. This week does not argue anyone out of that feeling. It follows the order the text actually uses: rest before revelation, a task before a correction, and a fact — not just a feeling — as the final answer to being alone.',
+    framework: '1 Kings 19:1-18 - after the fire came a still, small voice',
+    pathway: 'Sleep',
+    keywords: [
+      'burnout',
+      'exhausted',
+      'want to quit',
+      'ministry fatigue',
+      'compassion fatigue',
+      'isolated',
+      'alone',
+      'only one left',
+      'no one understands',
+      'invisible',
+      'tired of trying',
+      'running on empty',
+      'spiritually depleted',
+      'still small voice',
+      'feel forgotten',
+      'carrying it alone',
+      'nobody else gets it',
+      'done',
+      'cannot do this anymore',
+      'weary',
+      'overwhelmed',
+    ],
+    days: [
+      {
+        day: 1,
+        title: 'He Makes Me Lie Down',
+        slug: 'under-the-broom-tree-day-1',
+      },
+      {
+        day: 2,
+        title: 'I Have Had Enough',
+        slug: 'under-the-broom-tree-day-2',
+      },
+      { day: 3, title: 'Get Up and Eat', slug: 'under-the-broom-tree-day-3' },
+      { day: 4, title: 'Not in the Fire', slug: 'under-the-broom-tree-day-4' },
+      {
+        day: 5,
+        title: 'What Are You Doing Here',
+        slug: 'under-the-broom-tree-day-5',
+      },
+      {
+        day: 6,
+        title: 'Seven Thousand You Don’t Know About',
+        slug: 'under-the-broom-tree-day-6',
+      },
+      {
+        day: 7,
+        title: 'Down From the Mountain',
+        slug: 'under-the-broom-tree-day-7',
+      },
+    ],
+  },
+
   rekindled: {
     title: 'Rekindled',
     heroImage: '/images/site/series/rekindled.webp',
@@ -1381,6 +1446,7 @@ export const NEW_SERIES_ORDER = [
   'looking-at-the-sun',
   'rekindled',
   'all-these-things',
+  'under-the-broom-tree',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.

@@ -1,0 +1,244 @@
+{
+  "day": 2,
+  "chiasm_position": "A",
+  "format": "two-minute-open-v2",
+  "title": "I Have Had Enough",
+  "subtitle": "The day after the fire fell, the same man asked to die.",
+  "teaser": "Yesterday he called down fire in front of a whole nation and won. Today he's under a shrub in the desert asking God to kill him. The Bible doesn't treat that as a contradiction — it treats it as ordinary.",
+  "anchorVerse": "1 Kings 19:4",
+  "theme": "Collapse arrives after triumph, not instead of it. Wanting to stop is not evidence of failed faith.",
+  "framework": "1 Kings 19:4 - I have had enough, LORD... take my life, for I am no better than my fathers",
+  "scriptureReference": "1 Kings 19:1-5a",
+  "totalWords": 3600,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "1 Kings 19:3-5a",
+      "translation": "BSB",
+      "passage": "And Elijah was afraid and ran for his life. When he came to Beersheba in Judah, he left his servant there, while he himself traveled on a day's journey into the wilderness. He sat down under a broom tree and prayed that he might die. \"I have had enough, LORD,\" he said. \"Take my life, for I am no better than my fathers.\" Then he lay down under the broom tree and fell asleep.",
+      "emphasis": [
+        "I have had enough, LORD",
+        "Take my life, for I am no better than my fathers"
+      ],
+      "scriptureContext": "Two minutes with a prophet who ran as far as he could, sat down, and asked to stop existing."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "רֹתֶם",
+      "transliteration": "rothem",
+      "pronunciation": "ROH-them",
+      "strongsNumber": "H7574",
+      "definition": "broom tree — a low desert shrub, not the tall shade tree \"juniper\" suggests",
+      "usage": "The plant is Retama raetam, a wiry desert bush that stays largely leafless most of the year, photosynthesizing through its own thin green stems. It gives thin, dappled shade at best. Elijah did not collapse under a canopy. He collapsed under the only cover the wilderness had to offer, which wasn't much."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Day After the Fire",
+      "content": "Twenty-four hours before this scene, Elijah stood on Mount Carmel and watched fire fall from heaven on command, in front of the whole nation, ending a three-year drought and a religious war he'd been fighting mostly alone. It was the single greatest public victory of his life.\n\nThen Jezebel sends one threat, and he runs. Not partway — a full day's journey past the edge of his own country, then further, alone, into open desert. He sits down under a shrub barely tall enough to shade his head and asks God to let him die.\n\nMost readers expect collapse to follow failure. This collapse follows the biggest win of his career. The text doesn't explain that as strange. It just reports it, plainly, the way it reports everything else — because exhaustion after triumph isn't a contradiction in the story of a person's life. It's often exactly when the body and the spirit finally stop performing and tell the truth about the cost."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Has there been a moment when you were most exhausted right after something went well, not after it fell apart?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord, I have had enough, and I am not sure it's allowed to say so. Meet me here anyway. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below: why wanting to quit isn't the same as losing your faith, a preacher's own account of the darkest days of his ministry, and what this story is actually doing in the middle of a book about kings."
+    },
+    {
+      "type": "scripture",
+      "reference": "1 Kings 19:1-5a",
+      "translation": "BSB",
+      "passage": "Now Ahab told Jezebel everything that Elijah had done and how he had killed all the prophets with the sword. So Jezebel sent a messenger to Elijah, saying, \"May the gods deal with me, and ever so severely, if by this time tomorrow I do not make your life like the lives of those you killed!\" And Elijah was afraid and ran for his life. When he came to Beersheba in Judah, he left his servant there, while he himself traveled on a day's journey into the wilderness. He sat down under a broom tree and prayed that he might die. \"I have had enough, LORD,\" he said. \"Take my life, for I am no better than my fathers.\" Then he lay down under the broom tree and fell asleep.",
+      "hebrewOriginal": "רֹתֶם",
+      "transliteration": "rothem — the broom tree, a leafless desert shrub",
+      "emphasis": [
+        "Elijah was afraid and ran for his life",
+        "I have had enough, LORD"
+      ],
+      "scriptureContext": "One threat, one flight, one collapse — from the man who was calling down fire the day before."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "heading": "One Threat, After Everything",
+      "content": "What actually breaks Elijah is not much, on paper. Jezebel doesn't send an army. She sends a single messenger with a single sentence — a threat, phrased as an oath, that she intends to have him dead within a day.\n\nThat's it. No new attack. No fresh defeat. The man who spent the previous chapter unafraid of four hundred and fifty prophets of Baal, unafraid of a king, unafraid of an entire nation watching him win or lose in public — that man reads one threatening message and runs.\n\nThe text doesn't treat this as out of character. It doesn't pause to explain the shift. It simply moves from confrontation to flight in two verses, as if the transition needs no defense — because for anyone who has run on adrenaline through something enormous and public, it doesn't. The threat isn't really what breaks him. It's what finally lands on a person who has nothing left to meet it with."
+    },
+    {
+      "type": "pullquote",
+      "content": "The threat that broke him wasn't bigger than anything he'd already survived. It just arrived after there was nothing left to meet it with."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "heading": "Where This Week Sits in the Story",
+      "content": "This week stands in the KINGDOM stretch of God's story — the divided monarchy, decades before exile, when Israel and Judah are separate nations with separate kings. Elijah serves under Ahab, king of the northern kingdom, most likely in the 870s to 850s BC (the one externally fixed point historians have is Ahab fighting the Assyrian king Shalmaneser III at the Battle of Qarqar in 853 BC, recorded independently in Assyrian archives).\n\nAhab's wife, Jezebel, was a Phoenician princess, daughter of the priest-king of Tyre and Sidon, and she didn't practice Baal worship quietly. She funded it: four hundred and fifty prophets of Baal and four hundred prophets of Asherah, eating at her own table, a state religion with royal money behind it (1 Kings 18:19). Mount Carmel wasn't a private spiritual crisis. It was one prophet standing against an entire government-sponsored religious apparatus, in public, and winning outright.\n\nWhich is what makes the flight to Beersheba a specific, geographic fact worth noticing rather than skimming past. Beersheba sits at the traditional southern edge of Judah — the far half of the phrase \"from Dan to Beersheba,\" used across the Old Testament to mean the whole land, end to end. Elijah doesn't just run from Jezreel. He runs the full length of the kingdom, past its last town, and then keeps going another day's journey into open wilderness beyond it. He leaves his servant at Beersheba — the last place still inside a settlement — before continuing on utterly alone. Every choice in these two verses moves him further from any other human being.\n\nThat matters for reading the rest of the chapter honestly. This is not a private breakdown happening quietly in a corner of an otherwise stable life. It is a national figure, at the center of a very public religious and political conflict, walking off the map his own society could reach him on. The King of Israel knows what happened at Carmel. The Queen has just sent a personal death threat. And the prophet's response is to make himself unreachable by every structure that might have supported him — his king, his servant, his own nation's furthest town. Collapse, for Elijah, does not look like slowing down inside ordinary life. It looks like leaving the whole map behind."
+    },
+    {
+      "type": "bridge",
+      "heading": "Ancient Truth, Modern Life",
+      "ancientTruth": "Elijah had just won the most public spiritual victory of his generation, funded and opposed by a royal court, and one message afterward asked God to let him die.",
+      "modernApplication": "The instinct after any visible win — a project finished, a hard season survived, a role people are watching you succeed at — is to expect momentum, not collapse. When collapse comes anyway, it gets read as weakness rather than what it usually is: the cost of the win finally being paid.",
+      "connectionPoint": "Scripture puts a prophet's death wish two verses after his greatest triumph and does not soften it, explain it away, or treat it as a lapse in faith. It simply reports it as what happened next.",
+      "newTestamentEcho": "\"Elijah was a man just like us. He prayed earnestly that it would not rain, and it did not rain on the land for three and a half years\" — James 5:17 (BSB). The New Testament's own commentary on this man refuses to make him superhuman before it credits his prayers as effective."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "heading": "Neither Failure Nor Overreaction",
+      "content": "Here is the double bind worth naming plainly, once, before this week goes any further: admitting exhaustion this deep tends to feel like one of two unacceptable things. Either it feels like a spiritual failure — proof that faith wasn't strong enough to withstand it — or it feels like an overreaction, a thing to be embarrassed about once the feeling passes and life resumes.\n\nElijah's own story refuses both readings, in the plainest way it could. Scripture does not record God rebuking him for wanting to die. It does not record God explaining the feeling away as an overreaction to one message from one queen. What it records is a full day's journey of despair taken with complete seriousness, met first with sleep and food rather than a single word of correction — which is tomorrow's reading, and worth waiting for.\n\nWhat this text will not let a reader do is split the difference by deciding Elijah's exhaustion was somehow a smaller, more forgivable version of collapse than anyone else's — because he was, after all, a great prophet, so surely this was different. It wasn't different. \"I am no better than my fathers,\" he says, out loud, comparing himself to ordinary, unremarkable ancestors rather than to the fire-calling version of himself from the day before. He is the one insisting there's nothing exceptional about his own exhaustion. Scripture agrees with him on that point and moves on without treating it as scandal.\n\nThat is the whole editorial claim of this opening day, stated once and not revisited as an argument: wanting to stop, after doing something hard and real, is neither proof of failed faith nor something to be talked out of feeling. It's what the text plainly shows happening to a man Scripture elsewhere calls righteous enough that his prayers moved weather (James 5:17-18). The rest of the week is what God actually does about it — which starts nowhere near a lecture.\n\nThe omission here is doing real work. It does not send an angel to argue Elijah out of his despair with better theology. It does not remind him, on the spot, of the seven thousand he doesn't know about yet — that answer is still three days away in this reading, and God lets the full weight of the wrong belief stand, unanswered, for a while. Comfort, when it finally comes, will not begin with correction. It will begin with a meal and a nap. That order is itself an argument about what a person actually needs first, and it is the whole subject of tomorrow."
+    },
+    {
+      "type": "story",
+      "heading": "The Darkness After Surrey Gardens",
+      "content": "On October 19, 1856, Charles Spurgeon — twenty-two years old and already the most talked-about preacher in London — filled a rented hall in Surrey Gardens to a crowd of ten thousand. Partway through the service, someone falsely shouted that the building was on fire. In the panicked crush that followed, seven people died and twenty-eight were injured.\n\nSpurgeon did not treat what followed as a passing bad week. Years later, teaching his own students, he called it \"such a horror of great darkness as that which fell upon me after the deplorable accident at the Surrey Music Hall.\" His own words: \"I was pressed beyond measure and out of bounds with an enormous weight of misery. The tumult, the panic, the deaths, were day and night before me, and made life a burden.\" He was, by every outward measure, at the very start of an extraordinary ministry — famous, effective, sought after. He was also, by his own account, in the worst depression of his life.\n\nHe recovered, and kept preaching for another thirty-six years. But he never pretended the darkness hadn't been real, and he never suggested a stronger man wouldn't have felt it. He told his students the opposite: that depression visits \"the most of us,\" including \"the strong,\" including \"the brave,\" and that no one should assume \"some strange thing had happened to them\" simply because it happened to him too, at the height of his success.\n\nWhat makes the account worth returning to here is the timing he himself draws attention to. He does not describe the darkness as arriving during a slow season, or a failure, or a stretch of doubt about his calling. He places it immediately after the single most crowded, most celebrated night of his young career — the exact structure of Elijah's own week, success and collapse separated by less than a day.",
+      "connectionToTheme": "Like Elijah, Spurgeon's collapse followed triumph rather than defeat — a packed, celebrated night, not a failed one. And like Elijah's, Scripture's own commentary on his life, he insisted, was not that the darkness disqualified him, but that it was ordinary enough to name out loud to the next generation."
+    },
+    {
+      "type": "insight",
+      "heading": "What He Told the Younger Men",
+      "content": "Spurgeon again, explaining why he chose to speak about his own depression at all: \"I thought it might be consolatory to some of my brethren if I gave my thoughts thereon, that younger men might not fancy that some strange thing had happened to them when they became for a season possessed by melancholy.\"",
+      "historicalContext": "From Lectures to My Students, First Series, Lecture 11, \"The Minister's Fainting Fits\" (1875) — spoken to students at his own Pastors' College."
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "heading": "Saying It Out Loud",
+      "content": "Elijah says the actual sentence. Not a euphemism, not a vague complaint about being tired — a direct request to die, spoken to God by name. \"I have had enough, LORD... take my life.\"\n\nThat directness is worth borrowing, because the alternative is usually a slow erosion of honesty that helps no one. A person circling real despair without naming it plainly tends to manage the feeling instead of bringing it anywhere — performing wellness in public while privately negotiating with something much darker, alone, the way Elijah was alone under that shrub before he said anything to anyone.\n\nSaying the actual sentence to God does not require it to be theologically tidy. \"I am no better than my fathers\" isn't a careful doctrinal claim; it's a man comparing himself, unfavorably and without much precision, to unnamed relatives he never even singles out by name. The prayer is not composed. It's simply true, spoken out loud, to the only audience that mattered.\n\nSpurgeon's own choice, generations later, tracks the same instinct: not managing the darkness silently for the sake of appearances, but naming it plainly to the people who would need to hear it someday. That's the shape of honesty this week is asking for before anything else gets built on top of it — not analysis, not immediate resolution. Just the sentence, said to God, exactly as it actually is.\n\nThere is a particular kind of exhaustion that only sets in once the performance is finally allowed to stop — the smile held through the last handshake, the composure kept through the last public moment, and then, alone, nothing left to hold it up with. Elijah's collapse happens the moment he is finally out of anyone's sight. That is not weakness catching up with him. It is simply the first available moment honesty had."
+    },
+    {
+      "type": "scripture",
+      "reference": "James 5:17-18",
+      "translation": "BSB",
+      "passage": "Elijah was a man just like us. He prayed earnestly that it would not rain, and it did not rain on the land for three and a half years. Again he prayed, and the heavens gave rain, and the earth yielded its crops.",
+      "emphasis": [
+        "Elijah was a man just like us"
+      ],
+      "scriptureContext": "The New Testament's own verdict on the man under the broom tree — ordinary, not exempt, and no less effective for it."
+    },
+    {
+      "type": "reflection",
+      "prompt": "What is the honest sentence you have been avoiding saying to God, because it feels either too weak or too dramatic to admit?",
+      "additionalQuestions": [
+        "Where has a recent success or achievement been followed by exhaustion you didn't expect?",
+        "Spurgeon chose to name his own depression publicly, to help others. Is there someone in your life who needs to hear that this has happened to you too?",
+        "James calls Elijah \"a man just like us,\" right after quoting this very prayer. What changes if you stop treating your own exhaustion as exceptional?"
+      ]
+    },
+    {
+      "type": "interactive",
+      "heading": "Today's Practice: A Breath for the Honest Sentence",
+      "instruction": "A short breath prayer, using Elijah's own words. Find a quiet minute, seated or lying down.",
+      "interaction_type": "breath",
+      "steps": [
+        {
+          "title": "Inhale",
+          "description": "Breathe in slowly, silently thinking: I have had enough, LORD."
+        },
+        {
+          "title": "Exhale",
+          "description": "Breathe out slowly, silently thinking: I am no better than my fathers — and that is allowed to be true."
+        },
+        {
+          "title": "Repeat",
+          "description": "Six slow breaths. Do not try to resolve the feeling or talk yourself out of it. Just let the honest sentence be said, the way Elijah said it, without an argument attached."
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "heading": "Under the Only Shade There Was",
+      "content": "He didn't run to a monastery or a mountain retreat. He ran to open desert and sat down under a shrub barely tall enough to shade his head, because that was what the wilderness actually offered — not what he deserved, not a fitting reward for a man who'd just called fire from heaven. Just the closest available cover.\n\nThat detail matters more than it looks. Nothing about this scene is dignified. No angel choir, no vindication, no crowd to witness the aftermath the way they'd witnessed Carmel. Just a exhausted man, alone, under a thin desert bush, saying the truest sentence he had left in him.\n\nScripture does not rush past this to the resolution. It lets him say the sentence. It lets him lie down. It lets him fall asleep, mid-collapse, with nothing yet fixed. Whatever comes next — and something does come next — it arrives only after the honest exhaustion has been fully allowed to exist, unhurried and unexplained.\n\nThat is where today ends: not at an answer, but at permission. The permission to have had enough, to say so plainly, and to lie down under whatever shade is actually available, and rest, before anything else is asked of you."
+    },
+    {
+      "type": "prayer",
+      "heading": "Closing Prayer",
+      "prayerText": "Lord, I have carried more than I've said out loud. Today I say it plainly, the way Elijah did: I have had enough. I am not asking You to fix it yet. I am asking You to let the truth be true without making it a failure. Meet me under whatever shade I actually have. Amen.",
+      "breathPrayer": "Inhale: I have had enough. Exhale: You already know.",
+      "prayerType": "closing"
+    },
+    {
+      "type": "takeaway",
+      "heading": "Today's Commitment",
+      "commitment": "I will say the honest sentence about my own exhaustion out loud — to God, and to at least one other person — instead of managing it silently.",
+      "leavingAtCross": [
+        "The shame of admitting I've had enough",
+        "The pressure to treat my exhaustion as either failure or overreaction",
+        "The performance of being fine after something that genuinely cost me something"
+      ],
+      "receivingFromCross": [
+        "Permission to say the true sentence without an argument attached",
+        "A God who let Elijah's collapse stand, unexplained, before doing anything about it",
+        "Company — a prophet, and a preacher eighteen centuries later, who both said it too"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "One Question",
+      "question": "What happens in the two verses right before Elijah's collapse in 1 Kings 19?",
+      "options": [
+        "He is defeated in battle by the prophets of Baal",
+        "He wins his greatest public victory, then flees after a single threatening message",
+        "He is exiled from Israel by King Ahab",
+        "He loses a theological debate in front of the royal court"
+      ],
+      "answer": 1,
+      "explanation": "Chapter 18 ends with fire falling on Mount Carmel and the whole nation on its face declaring the LORD is God — Elijah's greatest public triumph. Chapter 19 opens with him fleeing after one message from Jezebel. The collapse follows the win, not a defeat."
+    },
+    {
+      "type": "profile",
+      "heading": "A Voice From the Story",
+      "name": "Charles Haddon Spurgeon",
+      "era": "1834-1892, London",
+      "bio": "Pastor of the Metropolitan Tabernacle from age twenty-two, and by wide agreement the most famous preacher in the English-speaking world during his lifetime. Also, by his own repeated and public admission, a lifelong sufferer of depression, which he addressed directly with his own students rather than concealing.",
+      "keyQuote": "Fits of depression come over the most of us... the strong are not always vigorous, the wise not always ready, the brave not always courageous.",
+      "lessonForUs": "Spurgeon's fame did not exempt him from collapse, and he refused to let his students assume it should exempt them either. His honesty is this week's first piece of evidence that Elijah's story is not describing a special case.",
+      "keyEvent": "October 19, 1856 — the Surrey Gardens Music Hall disaster and the depression that followed it, at the very outset of his ministry."
+    },
+    {
+      "type": "resource",
+      "heading": "Sources & Related Study",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 18:36-39 (BSB)",
+          "text": "The victory the day before — fire falling from heaven, the whole nation on its face."
+        },
+        {
+          "reference": "1 Kings 18:19 (BSB)",
+          "text": "The state-funded scale of what Elijah had just publicly opposed: 450 prophets of Baal, 400 of Asherah, at Jezebel's own table."
+        },
+        {
+          "reference": "James 5:17-18 (BSB)",
+          "text": "The New Testament's own verdict: \"Elijah was a man just like us.\""
+        }
+      ],
+      "resources": [
+        {
+          "title": "C. H. Spurgeon, Lectures to My Students, First Series, Lecture 11, \"The Minister's Fainting Fits\" (1875)",
+          "description": "Source of today's quoted lines on his own depression following the Surrey Gardens disaster. Full text at spurgeongems.org and onthewing.org."
+        },
+        {
+          "title": "Historical/chronological data",
+          "description": "Ahab's reign is commonly dated to the 870s-850s BC (Thiele: 874-853 BC); the one externally fixed point is the Battle of Qarqar, 853 BC, independently recorded in Assyrian records. Jezebel was the daughter of Ethbaal, priest-king of Tyre and Sidon. Beersheba was the traditional southern edge of settled Judah, the far half of the phrase \"from Dan to Beersheba.\""
+        }
+      ],
+      "forDeeperStudy": "Read 1 Kings 18 in full before tomorrow — the whole day Elijah is running away from, in one sitting."
+    }
+  ]
+}

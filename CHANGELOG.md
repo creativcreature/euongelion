@@ -5,6 +5,46 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## Under the Broom Tree — a week on collapse, rest, and the whisper after it (2026-09-09) — SA-130 (F-174)
+
+The weekly series machine (SA-100/F-146), cloud edition, on 1 Kings 19:1-18 —
+Elijah's collapse the day after his greatest victory, the meal and sleep
+before a single word of counsel, the still small voice at Horeb, the
+repeated question answered with a task, and the seven thousand as the real
+reply to "I am the only one left." Sunday-start week shape (SA-029): Day 1
+sabbath (Psalm 23), Days 2-6 the deep-dive chiasm, Day 7 recap.
+
+**Verified, not assumed.** Four parallel research agents fetched primary or
+scholarly-triangulated sources directly rather than trusting memory. The
+rothem broom tree is confirmed botanically as _Retama raetam_ — a largely
+leafless desert shrub, never the canopy shade tree devotional art often
+paints — and that correction runs through every image brief. The "fine as
+dust" golden-calf parallel is correctly cited to Deuteronomy 9:21, not
+Exodus 32:20. "Still small voice" is presented honestly as a smoothing
+translation of a more literal, more paradoxical Hebrew phrase. Five stories
+verified against primary or clearly-caveated secondary sources (Spurgeon,
+Newton/Cowper, Pascal's Memorial, Colson, Brother Andrew); three video slots
+shipped without an inline video rather than a mismatched substitute, because
+no verified official-channel video exists for those exact angles.
+
+**Imagery failed loudly, on purpose.** `codex exec` authentication was
+confirmed stale before any generation was attempted — a live probe returned
+`HTTP 401`, token refresh failing against a credential last refreshed
+2026-08-16. Per the standing cloud-constraints ruling, the imagery phase was
+failed rather than routed through a banned substitute generator (Nano
+Banana, Higgsfield, or the per-image billed API script). The 21 planned
+inline-image briefs and the series hero, all botanically and texturally
+corrected, were removed from the shipped JSON rather than left as broken
+file references — a missing image is a hard pre-commit blocker — and are
+preserved for the next imagery pass once Codex auth is refreshed.
+
+**Wired, not featured.** The series enters `NEW_SERIES_ORDER` and the "When
+You're Overwhelmed" rail. It deliberately does not take the homepage main
+feature or `FEATURED_SERIES` slot — that prominence call belongs to the
+founder's actual ship decision, not to this reading-gate build. Per SA-100's
+cloud revision, the reading gate here is the pull request itself: pushed to
+`series/auto-2026-09-09`, not merged, not deployed.
+
 ## Runtime defect sweep — fewer crashes, less thrash, no volume ratchet (2026-08-29) — SA-129 (F-173)
 
 Measured, not guessed: a real browser over ten production routes capturing

@@ -1,0 +1,65 @@
+{
+  "day": 1,
+  "chiasm_position": "sabbath",
+  "title": "He Makes Me Lie Down",
+  "subtitle": "A day for rest, before the story begins",
+  "teaser": "Before a prophet, a threat, a shrub, or a mountain — one line about a shepherd who makes His flock stop moving. Sit in that first. The rest of the story can wait one day.",
+  "anchorVerse": "Psalm 23:2",
+  "theme": "Rest arrives before understanding. The week's whole argument, stated once, before any of the week's actual difficulty begins.",
+  "framework": "Psalm 23:1-3 - He maketh me to lie down in green pastures",
+  "scriptureReference": "Psalm 23:1-3",
+  "totalWords": 410,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Psalm 23:1-3",
+      "translation": "KJV",
+      "passage": "The Lord is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake.",
+      "hebrewOriginal": "יַרְבִּיצֵנִי",
+      "transliteration": "yarbitzeni — \"he makes me lie down\"",
+      "emphasis": [
+        "he maketh me to lie down in green pastures",
+        "he leadeth me beside the still waters"
+      ],
+      "scriptureContext": "Three verses about a shepherd's first move, before anything else about the sheep's day is decided."
+    },
+    {
+      "type": "sabbath",
+      "heading": "Before the Story Starts",
+      "content": "Notice the order in these three verses, because the whole week ahead is built on it. The shepherd does not lead the sheep to a task first, or a lesson, or a test of faith. He makes them lie down. Rest is not the reward for a good day out in the pasture. It's the first thing the shepherd does, before the sheep have earned anything at all.\n\nThis week, starting tomorrow, follows a man who reached the exact end of himself — worn past what he could carry, convinced he was the only one left, ready to stop. His story doesn't begin with an answer. It begins the same way this Psalm does: with rest, offered before a single word of explanation.\n\nToday there is no teaching. No word study, no story, no argument to follow — those start tomorrow. Sit somewhere quiet for as long as can honestly be spared. Let the shepherd make you lie down, the way the Psalm says He does, before there's anything to understand.\n\nThe pastures will still be green tomorrow. So will the harder ground the week is about to walk into. Today is only for the lying down.\n\nNo effort is required to make this true. The Hebrew behind \"he maketh me to lie down\" is a causative form — the shepherd does not simply allow the sheep to rest if it happens to want to. He brings the rest about. The sheep does not decide to lie down and then receive credit for good judgment. It is made to, by someone who can see, better than the sheep can, exactly how much rest is needed before the harder ground ahead."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Before this week's story even begins, what would it mean to let yourself simply lie down, without first proving you've earned it?",
+      "invitationType": "silence"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Prayer for the Silence",
+      "prayerText": "He maketh me to lie down. That is enough for today. Amen.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "resource",
+      "heading": "Notes & Sources",
+      "relatedScriptures": [
+        {
+          "reference": "1 Kings 19:1-18 (BSB)",
+          "text": "Tomorrow's story, in full, for anyone who wants to read ahead — a prophet who reached the end of himself, and what God did about it."
+        },
+        {
+          "reference": "Matthew 11:28 (BSB)",
+          "text": "\"Come to Me, all you who are weary and burdened, and I will give you rest\" — the same shepherd's order of operations, centuries later."
+        }
+      ],
+      "resources": [
+        {
+          "title": "A note on the Hebrew",
+          "description": "יַרְבִּיצֵנִי (yarbitzeni), \"he makes me lie down,\" is a causative form — the shepherd doesn't merely permit rest, he actively brings it about. The sheep does not decide to lie down; the shepherd sees to it."
+        }
+      ],
+      "forDeeperStudy": "Nothing today. Come back tomorrow."
+    }
+  ]
+}

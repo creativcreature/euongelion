@@ -821,6 +821,34 @@ export const DEVOTIONAL_PUBLISH_DATES: Record<string, DevotionalPublishDate> = {
   'truth-day-3': { publishedAt: '2026-02-06', source: 'first-seen' },
   'truth-day-4': { publishedAt: '2026-02-06', source: 'first-seen' },
   'truth-day-5': { publishedAt: '2026-02-06', source: 'first-seen' },
+  'under-the-broom-tree-day-1': {
+    publishedAt: '2026-09-09',
+    source: 'series-ship',
+  },
+  'under-the-broom-tree-day-2': {
+    publishedAt: '2026-09-09',
+    source: 'series-ship',
+  },
+  'under-the-broom-tree-day-3': {
+    publishedAt: '2026-09-09',
+    source: 'series-ship',
+  },
+  'under-the-broom-tree-day-4': {
+    publishedAt: '2026-09-09',
+    source: 'series-ship',
+  },
+  'under-the-broom-tree-day-5': {
+    publishedAt: '2026-09-09',
+    source: 'series-ship',
+  },
+  'under-the-broom-tree-day-6': {
+    publishedAt: '2026-09-09',
+    source: 'series-ship',
+  },
+  'under-the-broom-tree-day-7': {
+    publishedAt: '2026-09-09',
+    source: 'series-ship',
+  },
   'valued-day-1': { publishedAt: '2026-02-21', source: 'first-seen' },
   'valued-day-2': { publishedAt: '2026-02-21', source: 'first-seen' },
   'valued-day-3': { publishedAt: '2026-02-21', source: 'first-seen' },
