@@ -2111,8 +2111,12 @@ transcript:
 2026-09-05  248   ← unmonitored
 2026-09-08   39   ← unmonitored
             ---
-total       801   (last turn 2026-09-08 01:47 EDT, ~14h ago)
+total       801   (last turn 2026-09-07 21:47 EDT — ~18¼h before this report)
 ```
+
+⚠️ **Buckets above are UTC dates, and the times quoted in §6.77–§6.79 were originally mislabelled
+EDT — see §6.82.** The "2026-09-08" row is really the evening of **Sep 7** local. The nine-day
+gap itself is unaffected (both ends were already EDT).
 
 **287 turns — 36% of the session — happened with nobody watching.** The brief was "maintain
 current reporting until I say otherwise." Nothing was said otherwise. This is the largest
@@ -2126,18 +2130,18 @@ against a deadline that no longer exists.
 
 Three moves, all in the unmonitored window:
 
-1. **2026-09-05 15:03 — the founder invoked `/realign`** on the session ("Forward motion stops
+1. **2026-09-05 11:03 EDT — the founder invoked `/realign`** on the session ("Forward motion stops
    here. Nothing new gets built until the record is straight"). The video pipeline was, at that
    moment, put under audit rather than continued.
-2. **15:06 — a new pinned task**, verbatim: _"I want to place a pin in this- I want you to vet
+2. **11:06 — a new pinned task**, verbatim: _"I want to place a pin in this- I want you to vet
    this new resource for voice generation against our current methods. Take an already approved
    audio narration and make a new version using this resource."_ (Breeze-TTS-2.)
-3. **15:12 → 18:23 — the afternoon became an infrastructure rescue**, not content work: SSH into
+3. **11:12 → 14:23 — the afternoon became an infrastructure rescue**, not content work: SSH into
    `wkgd-imac` (omarchy) to restore Wi-Fi. The founder's own words: _"I cannot type anything
    long- cannot copy and paste… I dont know what to do…. I need you tk figure it out. You iften
    only check one or two ways when there are other ways please exploit it."_
 
-Then **2026-09-08 01:20 — _"Ok so back to the tts thing"_**, and at 01:44 the live brief, verbatim:
+Then **2026-09-07 21:20 EDT — _"Ok so back to the tts thing"_**, and at 21:44 the live brief, verbatim:
 
 > **"No. Rather I want to evaluate all options for getting a quality voice cloned for the website
 > without having to pah $100 a month to eleven labs- do wide research and report back"**
@@ -2188,7 +2192,7 @@ Aug 30. **§7's Q1–Q7 are stale as posed** and are marked so below.
   holds **571** `.m4a` files. Off by **7**, all in the ElevenLabs bucket.
 - **It is not staleness.** The manifest's last commit is `e8da3285`, **2026-09-05 18:38**, and the
   tree has been clean since, so those 7 rows were already present when the claim was made on
-  **2026-09-08 01:21**.
+  **2026-09-07 21:21 EDT**.
 - **Why it matters, mildly:** 35 vs 28 understates by 25% how much paid-clone narration already
   exists, and the total is the denominator for "does Creator's ~100 min/month cover us." It does
   not change the recommendation; it is the same species this document keeps logging — a count
@@ -2196,7 +2200,7 @@ Aug 30. **§7's Q1–Q7 are stale as posed** and are marked so below.
 
 ### 6.79 The loose end has changed owner — the only unpushed commit on this branch is now this document's
 
-At 01:47 the session reported _"1 unpushed commit — `480f2cdf` … It's not mine."_ That commit is
+At 21:47 EDT on Sep 7 the session reported _"1 unpushed commit — `480f2cdf` … It's not mine."_ That commit is
 **now on `origin/feat/seeking-help-georgia`**; someone pushed it. As of 16:01:
 
 ```
@@ -2235,6 +2239,62 @@ than assumed: the session's seven palette references treat "riso palette locked"
 **qualitative** gate for a human or VLM eye at the styleframe step. **The numeric version is
 never invoked.** A styleframe screened by Δ-from-ultramarine before it reaches the eye is
 strictly cheaper than the eye alone, and the code path for it exists.
+
+### 6.81 A fleet-wide audit has been ordered — and it is self-reported, which is this document's job
+
+**2026-09-10 13:01 EDT**, one minute before this entry, the subject session received a
+cross-session message from a peer named **PROJECT MANAGER 1** (`bridge:session_01Rmni…`),
+requesting a **FLEET audit**: every session replies with one JSON object numbering _"every genuine
+directive verbatim"_ and grading each `DONE|PARTIAL|DEVIATED|DROPPED|BLOCKED|SUPERSEDED|UNKNOWN`,
+plus an `earliest_deviation`. The peer's own rules are unusually good:
+
+> _"DONE needs pointable evidence — a licence question is DONE only if the answer is written down
+> somewhere James can find it. CHECK before DROPPED or PARTIAL; silence is not evidence of
+> absence. Absence of any record is UNKNOWN, never PARTIAL… Self-reported and labelled as such on
+> the dashboard. Accurate, not flattering."_
+
+**It has not replied yet** — the peer message is the last row in its transcript.
+
+**Why this matters here, and it is the most useful hook this monitor has had:** the dashboard will
+carry a **self-assessment**, correctly labelled as one. This document is the only **independent**
+record of the same session's first two days. When the JSON lands there is a direct, cheap check
+available — score its self-report line by line against §6.1–§6.80.
+
+Two things this document already knows that a self-report is most likely to soften:
+
+- **The Aug 31 go-live.** Q1 was raised 17:13 on Aug 29 and never answered; the date passed. The
+  honest grade is `BLOCKED` (waiting on the founder) or `SUPERSEDED` — **not** `DROPPED`, and
+  certainly not omitted.
+- **The video-pipeline brief itself.** Nine directives' worth of spec work, none of it shipped, and
+  untouched since Aug 30 (§6.77). `SUPERSEDED` is defensible; silence is not.
+
+**Watch item — the first genuine test of the audit:** does the session's `earliest_deviation`
+point at the go-live it let pass, or at something more recent and more flattering?
+
+### 6.82 ⚠️ Correction — Report #30 read the transcript's UTC stamps as EDT. Fifth instance.
+
+Transcript timestamps end in `Z`. Report #30 quoted six of them with an `EDT` label or none,
+which shifted every one **four hours later than it happened**. Corrected in place above; the list,
+so the size of the error is visible rather than quietly patched:
+
+| Stated in #30                                          | Actually (EDT)               | What it is                  |
+| ------------------------------------------------------ | ---------------------------- | --------------------------- |
+| last turn "2026-09-08 01:47 EDT, ~14h ago"             | **2026-09-07 21:47**, ~18¼h  | the dark-window measurement |
+| `/realign` at 15:03                                    | **11:03**                    | founder directive           |
+| TTS pin at 15:06                                       | **11:06**                    | founder directive           |
+| iMac rescue 15:12→18:23                                | **11:12→14:23**              | founder directive           |
+| "back to the tts thing" 2026-09-08 01:20 / brief 01:44 | **2026-09-07 21:20 / 21:44** | **the live brief**          |
+| manifest claim "01:21"                                 | **2026-09-07 21:21**         | the 564/28 miscount         |
+
+**No conclusion changes.** The nine-day gap used EDT at both ends and stands. The manifest's last
+commit (`e8da3285`, Sep 5 18:38 local) still predates the 21:21 claim, so §6.78's finding holds.
+What changes is _when the founder actually spoke_ — and getting that wrong in a document whose
+purpose is an accurate record of who asked for what, when, is not cosmetic.
+
+**This is the fifth timestamp failure logged here** (§6.72, §6.74, and the two it named). The rule
+adopted at #29 — no time claim without a `date` call in the same turn — was followed for "now"
+and **not extended to times read out of a file**. Rule amended: **every timestamp lifted from a
+transcript is UTC until converted, and the conversion is shown.**
 
 ---
 
@@ -2281,6 +2341,19 @@ it against a live brief** — that is how a monitor becomes the thing it exists 
 
 ## 8. This document's own log
 
+- **Report #31 — 2026-09-10 13:02 EDT (`date`-verified).** Two days on; **Q8–Q10 still
+  unanswered**, and this document's push hold is still the only unpushed commit on the branch.
+  §6.81: a peer, **PROJECT MANAGER 1**, has ordered a **fleet-wide self-audit** — every session
+  grades its own directives `DONE|PARTIAL|DEVIATED|…` for a dashboard, correctly labelled as
+  self-reported. **The subject has not replied yet.** That makes this document the only
+  independent record to score it against, and the watch item is precise: does its
+  `earliest_deviation` point at the **Aug 31 go-live it let pass** (honestly `BLOCKED` or
+  `SUPERSEDED`), or at something more recent and more flattering? §6.82 ⚠️: **corrected six
+  timestamps in Report #30** — the transcript stamps are UTC and were labelled EDT, putting every
+  founder directive four hours late; the live brief was **Sep 7 21:44**, not Sep 8 01:44. No
+  conclusion changes and the nine-day gap stands. **Fifth timestamp failure** logged here; the
+  #29 rule covered "now" and not times read out of a file, so it is amended — every transcript
+  timestamp is UTC until converted, and the conversion gets shown.
 - **Report #30 — 2026-09-08 16:01 EDT (`date`-verified).** The realignment, nine days late.
   §6.76 ⚠️⚠️⚠️: **this monitor went dark for 9 days 7 hours while the session kept running** —
   **287 of its 801 content turns (36%) went unwatched**, and the Aug 31 go-live that Q1 was a
