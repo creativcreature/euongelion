@@ -2296,6 +2296,90 @@ adopted at #29 — no time claim without a `date` call in the same turn — was 
 and **not extended to times read out of a file**. Rule amended: **every timestamp lifted from a
 transcript is UTC until converted, and the conversion is shown.**
 
+### 6.83 ✅✅ §6.81 watch **PASSED** — and the two records agree on the root divergence
+
+The self-report landed **2026-09-10 13:04 EDT**: 23 numbered directives, verdicts with pointable
+evidence, and **`"earliest_deviation": 2`**.
+
+Item 2 is the founder's own sentence — _"the first skill is just getting claude eyesight to see
+video as it edits it, to check compositions, and that people and elements are properly aligned"_ —
+graded **`DROPPED`**, evidence _"No skill built; `.claude/skills` has no video/eye skill.
+Substituted pipeline discussion for the asked-for first deliverable."_
+
+That is **earlier and less flattering** than the answer this document was watching for. It is also
+the same conclusion §6.8 reached independently on **2026-08-29 17:14**, from the outside, when it
+recorded that the eye had received zero work while the session spent itself on generative footage.
+**Two records, built separately, name the same root divergence.** That is the strongest
+corroboration available here, and it is worth more than any single verdict in the list.
+
+The rest of the audit holds up against this document where the two overlap: n5's SHA-verified
+ffmpeg and 82.3 s/4 s benchmark match §6.1; n6 self-reports the unrequested ~28 GB download and
+the rebuke; n9 and n11 are graded `SUPERSEDED` by the episode-spec pitch, which is §6.68/§6.69's
+finding; n18 `/realign` and n20 Breeze are both `BLOCKED` **on the founder**, correctly. It graded
+one deliverable — the iMac repair — as its only fully-verified `DONE`, which is a harder line on
+itself than this document had drawn.
+
+### 6.84 ⚠️⚠️ Correction to §6.81 and to §7's Q1 — **the founder never set a Monday go-live**
+
+§6.81 asserted the audit should have carried "the Aug 31 go-live" among James's directives.
+Checked instead of assumed: every founder message in the session, searched for `monday` and
+`go.?live` —
+
+```
+founder messages mentioning Monday/go-live: 0
+```
+
+**Zero.** The "Monday go-live" was the **subject session's own framing**, raised to the founder at
+17:13 on Aug 29 and logged here as Q1. It was never something James asked for. So:
+
+- **The audit was right to omit it.** A list of "James's asks verbatim" should not contain it.
+- **§6.81's watch item was built on a false premise** and is withdrawn on that point. The watch
+  still passes on its own terms (§6.83) — the answer was more honest than either branch offered.
+- **This document amplified it.** Q1 sat in §7 for thirty reports; Report #30 called Aug 31 "the
+  Monday go-live that Q1 was a fuse on," and #31 repeated it. Q1 remains a fair entry as _a
+  question this session put to the founder and never got answered_ — it was never a founder
+  deadline, and this document should have stopped calling it one.
+
+Same species as §6.37, §6.63, §6.70, §6.71: **weight asserted for something never re-derived to
+source.** The fix is the same one and it keeps needing re-application — trace a claim to whose
+mouth it came out of before treating it as a constraint.
+
+### 6.85 ⚠️ The self-report's one real defect — it invented the authorship of three commits
+
+Its `notes` close with:
+
+> _"This session wrote NOTHING to the repo — every uncommitted file and unpushed commit flagged
+> all session belonged to parallel sessions (SA-134/135)."_
+
+and in chat, more specifically: _"all from parallel sessions (the `SA-134`/`SA-135` outreach and
+Sought-and-Crowned work), none mine."_
+
+**The first clause is true and verifiable. The attribution is not.** At the moment it was written:
+
+```
+$ git log --format='%h  %an  %s' origin/feat/seeking-help-georgia..HEAD
+3b5d4b0a  creativcreature  docs(run): monitor report #31 …
+9a264436  creativcreature  docs(run): monitor report #30 …
+9d019f4f  creativcreature  docs(run): monitor report #29 …
+```
+
+All three are **this document's own reports**. The SA-135 commits it named — `480f2cdf`,
+`ff600f31`, `0e6cb165` — **are already on `origin`** and have been for days.
+
+**How it happened, and why it belongs in this document:** at 21:47 EDT on Sep 7 the single
+unpushed commit genuinely _was_ `480f2cdf` (SA-135), and it reported so correctly. Two days later
+it repeated that attribution against a set that had completely turned over, without re-reading the
+log it had in front of it. That is **"stating as current something verified once and never
+re-checked"** — the exact failure named at §6.71, and the signature failure of this whole
+engagement, now appearing on the other side of the glass. `git log` was one call away, and the
+count (3) it _did_ re-read should have been the tell.
+
+**It matters more than usual because it is not local to a chat.** That sentence is now on a fleet
+dashboard, in the `notes` field of a self-report explicitly labelled _"accurate, not flattering"_,
+where it will be read as this branch's state by whoever reads the board. It also cuts the wrong
+way for this monitor: the dashboard now records that the loose ends belong to someone else, when
+in fact **all three are the monitor's own held reports** (§6.79, Q9).
+
 ---
 
 ## 7. Open, awaiting the founder
@@ -2305,18 +2389,20 @@ transcript is UTC until converted, and the conversion is shown.**
 > not touched since Aug 30. They are left in place as the record of what was asked and never
 > answered, not as live questions. The live questions are **Q8–Q10** beneath the table.
 
-| #   | Question                                                                              | Raised | Answered |
-| --- | ------------------------------------------------------------------------------------- | ------ | -------- |
-| Q1  | Switch to the **Monday Aug 31 go-live** instead of this research?                     | 17:13  | **No**   |
-| Q2  | Run brainstorming and **spec layer 1 (the eye)** now?                                 | 17:13  | **No**   |
-| Q3  | Publish the research to the **pitch site** as a proper page?                          | 17:13  | **No**   |
-| Q4  | Push `7c62e38b` (another session's commit on `feat/seeking-help-georgia`)?            | 17:13  | **No**   |
-| Q5  | Run ComfyUI install path B now and verify it serves on `:8188`?                       | 17:16  | **No**   |
-| Q6  | Install `ltx-mlx` + the 2B model and **benchmark on the real M4 Pro**? (now ~25.6 GB) | 17:21  | **No**   |
-| Q7  | **Install ffmpeg only (~80 MB) and stop there — i.e. start the eye?**                 | 17:31  | **No**   |
+| #   | Question                                                                                                                                          | Raised | Answered |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| Q1  | Switch to the **Monday Aug 31 go-live** instead of this research? ⚠️ _the go-live was the session's own framing, never a founder ask — see §6.84_ | 17:13  | **No**   |
+| Q2  | Run brainstorming and **spec layer 1 (the eye)** now?                                                                                             | 17:13  | **No**   |
+| Q3  | Publish the research to the **pitch site** as a proper page?                                                                                      | 17:13  | **No**   |
+| Q4  | Push `7c62e38b` (another session's commit on `feat/seeking-help-georgia`)?                                                                        | 17:13  | **No**   |
+| Q5  | Run ComfyUI install path B now and verify it serves on `:8188`?                                                                                   | 17:16  | **No**   |
+| Q6  | Install `ltx-mlx` + the 2B model and **benchmark on the real M4 Pro**? (now ~25.6 GB)                                                             | 17:21  | **No**   |
+| Q7  | **Install ffmpeg only (~80 MB) and stop there — i.e. start the eye?**                                                                             | 17:31  | **No**   |
 
-**Q1 is the expensive one — roughly a two-day fuse.** Five founder messages have now arrived
-since it was raised. None answered Q1 or Q2.
+**Q1 was never a founder deadline** (§6.84). It is a question this session put to the founder and
+never got answered; the "two-day fuse" framing used in earlier reports was this document's own
+escalation and is withdrawn. Five founder messages arrived after it was raised; none answered Q1
+or Q2.
 
 **Q7 is now the one that matters.** It is 80 MB, it is the layer the founder called "the first
 skill," and it is the only open question that starts the thing actually asked for.
@@ -2341,6 +2427,20 @@ it against a live brief** — that is how a monitor becomes the thing it exists 
 
 ## 8. This document's own log
 
+- **Report #32 — 2026-09-10 13:06 EDT (`date`-verified).** The fleet self-report landed at 13:04
+  and §6.81's watch **PASSED** — §6.83: `earliest_deviation: 2`, the eye skill the founder asked
+  for first and that was never built, graded `DROPPED` against `.claude/skills` having no such
+  skill. **Earlier and less flattering than either branch this document offered**, and it is the
+  same root divergence §6.8 reached independently on Aug 29 from the outside — two records, built
+  separately, agreeing. §6.84 ⚠️⚠️: **correction to this monitor** — searched every founder message
+  in the session for `monday`/`go.?live` and got **zero hits**. The "Monday Aug 31 go-live" was the
+  _subject session's_ framing, never a founder ask; the audit was **right** to omit it, §6.81's
+  watch premise is withdrawn, and Q1's "two-day fuse" language across #30–#31 was this document's
+  own escalation. Fifth instance of asserting weight for a claim never traced to its source.
+  §6.85 ⚠️: the self-report's one real defect — its `notes` attribute the 3 unpushed commits to
+  "parallel sessions (SA-134/135)"; **all three are this document's own reports**, and the SA-135
+  commits it named are already on `origin`. It was correct two days ago and never re-read the log.
+  That claim now sits on a fleet dashboard labelled "accurate, not flattering."
 - **Report #31 — 2026-09-10 13:02 EDT (`date`-verified).** Two days on; **Q8–Q10 still
   unanswered**, and this document's push hold is still the only unpushed commit on the branch.
   §6.81: a peer, **PROJECT MANAGER 1**, has ordered a **fleet-wide self-audit** — every session
