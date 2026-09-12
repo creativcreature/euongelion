@@ -5,6 +5,42 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-12 — The listening player, as a real route — SA-114 (F-158)
+
+Founder: "I want the audio player more like audible. Right now its hard to
+navigate on mobile — especially when I am driving." Then, on the first pass:
+"These desig. Currentky doenst looke like rhe website."
+
+- **`/admin/lab/audio-player`** — the proposed player as a real admin-gated
+  route, not a picture, because a picture is what drifted. Every colour and
+  size comes from the site's own tokens (`--color-amber`, `--ts-*`), and it
+  plays a REAL rendered track with its REAL chapter marks.
+- **The section rule** replaces one `<input type="range">` spanning a whole
+  reading. A 2px ruled track with a 26px thumb, a 56px touch strip, snap to
+  section starts, and full keyboard operation. Two earlier shapes were
+  rejected: a rail with no scrubber (could not reach an arbitrary section) and
+  a segmented bar (needed a 9px floor per segment, so it distorted time).
+- **Tiered ticks, and this is the premise.** Measured over all 6,132 chapter
+  marks: **3,444 — 56% — are one of six module labels**, and 13% of readings
+  repeat a label (`bible-365-day-1` says "Scripture" seven times). A tall tick
+  marks a section you would navigate by; a short one marks furniture, with a
+  timecode to tell repeats apart.
+- **Transport in conventional order** — prev · back · play · forward · next.
+  The shipped drawer puts previous LAST, right of next, and sizes all five at
+  44px. Three sizes here, nothing under 54px.
+- **Drive mode switches sections**, not steps them, per the founder's
+  correction. Nothing under 68px, play at 132px, Escape leaves, wake lock held.
+- **Plan:** `docs/superpowers/plans/2026-09-10-audible-style-audio-player.md`,
+  rewritten against measurement — it was wrong about the type floor, the
+  scrubber, and the editorial-label premise, each marked in place.
+- 14 tests in `__tests__/lab-audio-player.test.tsx` assert the things a unit
+  test normally cannot see: order, target size, tick tiering, and that no size
+  or colour is a literal.
+- **Not deployed.** The working tree holds another session's branch, and
+  `npm run deploy` ships the tree. The route is live at the next deploy.
+
+---
+
 ## 2026-09-08 — Mannered prose is tell 10, and a gate that was silently dead — SA-138 (F-181)
 
 Founder-directed, scoped to the devo-go writer **and overall site writing**.
