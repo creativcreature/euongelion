@@ -1,0 +1,315 @@
+{
+  "day": 4,
+  "chiasm_position": "B-prime",
+  "format": "two-minute-open-v2",
+  "title": "Who Are You To Judge?",
+  "subtitle": "Romans 14, the weak and the strong, and how free people treat a brother at the table",
+  "teaser": "Paul says he is fully persuaded that nothing is unclean in itself. In the same breath he tells the people who agree with him that they carry the heavier duty.",
+  "anchorVerse": "Romans 14:4",
+  "theme": "Freedom in Christ is real, and it is measured by how it treats the brother it could wound",
+  "framework": "Romans 14:1-4 — Who are you to judge someone else's servant?",
+  "scriptureReference": "Romans 14:1-4",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Romans 14:1-4",
+      "translation": "BSB",
+      "passage": "Accept him whose faith is weak, without passing judgment on his opinions. For one person has faith to eat all things, while another, who is weak, eats only vegetables. The one who eats everything must not belittle the one who does not, and the one who does not eat everything must not judge the one who does, for God has accepted him. Who are you to judge someone else’s servant? To his own master he stands or falls. And he will stand, for the Lord is able to make him stand.",
+      "emphasis": [
+        "Accept him whose faith is weak",
+        "for God has accepted him",
+        "Who are you to judge someone else’s servant?"
+      ],
+      "scriptureContext": "Paul writes to house churches in Rome with Jewish and Gentile believers. They disagree about food and holy days."
+    },
+    {
+      "type": "vocab",
+      "language": "greek",
+      "word": "ἀσθενέω",
+      "transliteration": "astheneo",
+      "pronunciation": "as-theh-NEH-oh",
+      "strongsNumber": "G770",
+      "definition": "to be weak",
+      "usage": "Paul uses it in Romans 14:1 for the one who is “weak in faith” and in 14:2 for the one who “eats only vegetables.” Thayer's lexicon explains the weakness in these verses as being doubtful about what is lawful for a Christian. In Romans 15:1 Paul says the strong ought to bear the weaknesses of those without strength.",
+      "usageNote": "The word does not mean spiritually immature or less saved. In Romans 14 the weak person is uncertain whether something is allowed. Paul's instruction is to welcome that person, not to correct him.",
+      "relatedWords": [
+        {
+          "word": "ἀσθενής (asthenes)",
+          "transliteration": "asthenes",
+          "meaning": "weak, the adjective in 1 Corinthians 8:9"
+        },
+        {
+          "word": "δυνατός (dynatos)",
+          "transliteration": "dynatos",
+          "meaning": "strong, able; Paul counts himself among the strong in Romans 15:1"
+        },
+        {
+          "word": "πρόσκομμα (proskomma)",
+          "transliteration": "proskomma",
+          "meaning": "stumbling block, Romans 14:13"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "God Has Accepted Him",
+      "content": "The church in Rome had a dispute at the dinner table. Some believers ate anything. Others ate only vegetables. Some treated certain days as holy, and others treated every day alike.\n\nPaul could have settled it by announcing who was right. He opens instead by telling both sides how to treat each other.\n\nThe one who eats everything must not look down on the one who does not. The one who does not eat must not judge the one who does. Paul gives the same reason to both: “God has accepted him.”\n\nThen he asks a pointed question. “Who are you to judge someone else's servant?” Each believer belongs to the Lord. Each one will stand or fall before his own master, and Paul says the Lord is able to make him stand.\n\nThe word “weak” here does not mean immature. It describes someone who is not sure what is allowed. Paul does not tell the church to fix that person. He tells them to welcome him.\n\nThat is harder than winning the argument. It asks the person who is right to treat the person who disagrees as someone God has already received.",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "Who do you find it easiest to look down on for how they practice their faith?",
+      "invitationType": "honest"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Lord, you have accepted people I would not have chosen. Keep me from looking down on the ones who are more careful than I am. Keep me from judging the ones who are freer than I am. They are your servants, not mine.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: who the weak in Rome may have been, what a stumbling block really is, Luther's two sentences on freedom, sausages in Zurich, two bishops who disagreed and shared communion, and what it means to walk in love."
+    },
+    {
+      "type": "scripture",
+      "reference": "Romans 14:13-17",
+      "translation": "KJV",
+      "passage": "Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock or an occasion to fall in his brother’s way. I know, and am persuaded by the Lord Jesus, that there is nothing unclean of itself: but to him that esteemeth any thing to be unclean, to him it is unclean. But if thy brother be grieved with thy meat, now walkest thou not charitably. Destroy not him with thy meat, for whom Christ died. Let not then your good be evil spoken of: For the kingdom of God is not meat and drink; but righteousness, and peace, and joy in the Holy Ghost.",
+      "emphasis": [
+        "there is nothing unclean of itself",
+        "now walkest thou not charitably",
+        "Destroy not him with thy meat, for whom Christ died"
+      ],
+      "scriptureContext": "Paul turns from judging to the harm a free believer can do."
+    },
+    {
+      "type": "teaching",
+      "heading": "Two Ways Of Honoring The Lord",
+      "content": "Romans 14 describes believers who practice their faith differently, and Paul says that both eating and abstaining can be done to the Lord with thanksgiving.\n\nThe first kind eats anything. The second eats only vegetables. The first treats every day alike. The second honors certain days above others. Paul says each should be fully convinced in his own mind.\n\nThen he says the same thing about both. The one who keeps a special day keeps it to the Lord. The one who eats gives thanks to God, and so does the one who abstains. Both people are trying to honor God. Neither is being careless.\n\nPaul does take a position. “I am convinced and fully persuaded in the Lord Jesus that nothing is unclean in itself.” He counts himself among the strong. But he adds a second sentence at once. “But if anyone regards something as unclean, then for him it is unclean.”\n\nThe Greek word for unclean here is koinos, meaning common or unfit for holy use. Paul is saying two things at the same time. Food is not unclean in itself. A person who believes it is unclean should not eat it, because eating it would mean acting against his conscience.\n\nThat is why Paul warns against putting a stumbling block in a brother's way. Thayer's Greek lexicon explains the word proskomma in these verses as something that leads another person to sin by acting against his conscience. A stumbling block is not simply something another believer dislikes. It is pressure that pushes him to do what he believes is wrong.\n\nPaul ends the chapter with a sentence that applies to both sides. “Everything that is not from faith is sin.” The careful believer who eats against his conscience sins. The free believer who pushes him into it shares the blame.\n\nSo the burden in Romans 14 does not fall equally. Paul places himself among the strong and says that nothing is unclean in itself; he also gives the strong the heavier duty toward the weak. They are to change what they do for the sake of someone who disagrees with them.",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day4-table.webp",
+      "inlineImageAlt": "Looking straight down on a low table in a Roman house, several bowls of vegetables and bread on one side and a single dish of meat on the other, the robed shoulders and knees of the people sharing the meal around the edge",
+      "inlineImageCaption": "One eats everything, another only vegetables. Paul put them at the same table.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "heading": "Who Were The Weak?",
+      "content": "Paul never says who the weak believers in Rome were. Scholars have proposed several answers, and each one changes how the chapter sounds.\n\nThe most common view is that the weak were Jewish believers, along with some Gentiles close to them, who still kept the food laws and holy days. C. E. B. Cranfield, James Dunn, Douglas Moo and Thomas Schreiner all hold a version of this view. John Chrysostom held it in the fourth century. He suggested that Jewish believers who still kept the food laws gave up all meat, so that avoiding pork alone would not draw attention.\n\nA second view says the weak were believers worried about meat sacrificed to idols, as in 1 Corinthians 8. Some older scholars proposed an ascetic group. Seventh-day Adventist writers read Romans 14 along these lines, and they hold that it does not concern the list in Leviticus 11.\n\nA third view, from Robert Karris, says Paul was not describing a specific group at all. He was giving general guidance.\n\nA fourth view comes from Mark Nanos, a Jewish New Testament scholar. He argues that the weak were Jews in the Roman synagogues who had not yet come to believe in Jesus. Schreiner finds this unlikely, because the house churches of Romans 16 were not part of the synagogue. Other readers point out that Paul calls the weak person a brother for whom Christ died. Nanos answers that the other readings assume Paul had left the Torah behind.\n\nA fifth view comes from N. T. Wright. He argues that Paul chose the words “weak” and “strong” instead of “Jewish” and “Gentile” on purpose. Both groups probably contained both kinds of people. In Wright's reading, Paul refused to divide the church by ethnic background.\n\nThere is an old Jewish precedent for eating only vegetables. Daniel resolved not to defile himself with the king's food, and he asked for vegetables instead. Paul does not use Daniel's Greek word, so this is a background example, not a quotation.\n\nWhatever the answer, Paul's instructions stay the same. Nobody in Rome was to despise or judge a fellow believer over food.",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "markdown": true
+    },
+    {
+      "type": "scripture",
+      "reference": "Leviticus 19:14",
+      "translation": "BSB",
+      "passage": "You must not curse the deaf or place a stumbling block before the blind, but you shall fear your God. I am the LORD.",
+      "emphasis": [
+        "place a stumbling block before the blind"
+      ],
+      "scriptureContext": "The same holiness chapter that commands love of neighbor."
+    },
+    {
+      "type": "pullquote",
+      "content": "Paul places himself among the strong and says that nothing is unclean in itself; he also gives the strong the heavier duty toward the weak."
+    },
+    {
+      "type": "teaching",
+      "heading": "Free Lord Of All, Servant Of All",
+      "content": "Martin Luther wrote a short book in 1520 called The Freedom of a Christian. It opens with two sentences that seem to contradict each other.\n\n“A Christian man is the most free lord of all, and subject to none; a Christian man is the most dutiful servant of all, and subject to every one.”\n\nLuther took the pair from Paul. In 1 Corinthians 9:19 Paul writes that though he is free from all, he has made himself a slave to all. The freedom is real, and it is spent on other people.\n\nLuther applied this directly to Romans 14. He said Christians should bear with weak believers who cannot yet grasp their freedom, and even keep fasts for their sake. Then he quoted Paul's advice about using freedom quietly. “Hast thou faith? have it to thyself before God.”\n\nJohn Calvin drew a sharper line. He distinguished between two kinds of offense. Some people are offended because they are weak and unsure. Others take offense the way the Pharisees did. Calvin said Christians should give way to the first and not to the second.\n\n“We will so temper the use of our liberty as to make it yield to the ignorance of weak brethren, but not to the austerity of Pharisees.”\n\nGalatians 2 shows why that line matters. In Antioch, Peter used to eat with Gentile believers. When certain men arrived from James, he pulled back from the Gentile table. Other Jewish believers followed him, even Barnabas. Paul confronted Peter in front of everyone. By withdrawing, Peter was pressuring Gentiles to live like Jews in order to belong.\n\nThe same Paul who opposed Peter at Antioch told the strong in Rome to give way. At Antioch a food practice was being used to decide who belonged at the table. In Rome a food practice was a matter of conscience. Paul resisted the first and protected the second.\n\nThe Jerusalem Council in Acts 15 had already said that Gentile believers did not need to become Jews. Seventh-day Adventists accept that, and One Law teachers accept that Gentiles need not be circumcised to be saved. Both still hold that the food laws of Leviticus 11 apply to all believers.",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "scripture",
+      "reference": "Galatians 2:11-14",
+      "translation": "BSB",
+      "passage": "When Cephas came to Antioch, however, I opposed him to his face, because he stood to be condemned. For before certain men came from James, he used to eat with the Gentiles. But when they arrived, he began to draw back and separate himself, for fear of those in the circumcision group. The other Jews joined him in his hypocrisy, so that by their hypocrisy even Barnabas was led astray. When I saw that they were not walking in line with the truth of the gospel, I said to Cephas in front of them all, “If you, who are a Jew, live like a Gentile and not like a Jew, how can you compel the Gentiles to live like Jews?”",
+      "emphasis": [
+        "he began to draw back and separate himself",
+        "not walking in line with the truth of the gospel"
+      ],
+      "scriptureContext": "Cephas is Peter. The dispute is about who eats with whom, and Paul treats it as a question about the gospel itself."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day4-antioch.webp",
+      "inlineImageAlt": "A long low table in a courtyard seen from behind a man who has just stood up and turned away, his empty cushion and half-finished bread left at the table where other guests remain seated",
+      "inlineImageCaption": "At Antioch, Peter drew back from the Gentile believers' table. Paul called it a failure to walk in line with the gospel.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "vmx4UjRFp0M",
+      "videoTitle": "Book of Galatians Summary: A Complete Animated Overview",
+      "videoCaption": "Why Paul would not let Torah observances decide who belonged in the churches of Galatia, and how the gospel made one family out of Jews and Gentiles.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Then and Now",
+      "ancientTruth": "In Rome, believers disagreed about meat, vegetables and holy days. In Antioch, the disagreement split the table itself.",
+      "modernApplication": "Christians today still keep different food practices before God. Catholics keep days of fasting and abstinence from meat. Orthodox believers keep long fasts. Seventh-day Adventists avoid the foods Leviticus calls unclean. Many Messianic Jews keep kosher as part of their calling. Many Protestants keep no set food rules.",
+      "connectionPoint": "Each of these groups is trying to honor God with what it eats or does not eat. Romans 14 does not ask them to agree. It asks them not to despise or judge each other, and not to push anyone to act against conscience.",
+      "newTestamentEcho": "Paul's summary covers all of them: “He who eats does so to the Lord, for he gives thanks to God; and he who abstains does so to the Lord and gives thanks to God” (Romans 14:6)."
+    },
+    {
+      "type": "story",
+      "heading": "Two Dried Sausages In Zurich",
+      "content": "In Lent 1522, a group of men met at the house of Christoph Froschauer, a printer in Zurich. It was a season when the church forbade eating meat.\n\nA baker named Bartholomäus Pur later testified to the city council about what happened. The printer brought out two dried sausages. The men cut them up, and each one received a small piece. According to Pur, all of them ate, except one: Ulrich Zwingli, the preacher at the Great Minster.\n\nFroschauer wrote to the council to defend himself. His workers were printing the letters of Saint Paul day and night to have them ready for the Frankfurt fair. He said porridge alone was not enough to keep them going, and he could not always afford fish.\n\nZwingli had not eaten the sausage. He also did not leave the others to face the charge alone. On 23 March he preached a sermon on freedom in choosing foods, and he later printed it. In it he wrote that he would be an unfaithful shepherd if he did not strengthen the weak and guard the strong. The sermon works through Romans 14.\n\nLater that year Zwingli described what happened when he spoke to the men who had eaten meat. When he told them they ought to consider the offense they might cause, they stopped.\n\nOn 9 April the city council ruled. No one was to eat meat in Lent without good reason. And no one was to quarrel with or insult anyone else over the matter.",
+      "connectionToTheme": "Zwingli believed Christians were free to eat meat in Lent, and he defended the men who did. He also did not eat it himself that night, and he asked the others to think about who might be hurt. Both halves of Romans 14 appear in this one documented episode."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day4-press.webp",
+      "inlineImageAlt": "A wooden hand printing press in a workshop, stacks of blank printed sheets drying on a line overhead, and on a bench beside it a small board with two dried sausages cut into pieces and a knife",
+      "inlineImageCaption": "Froschauer's workers were printing Paul's letters day and night. At his house in Lent, a group of men shared two dried sausages.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "insight",
+      "heading": "Different Days, One Table",
+      "content": "The early church faced a Romans 14 question that is easy to forget. Christians disagreed about which day to celebrate Easter.\n\nThe churches of Asia Minor kept the feast on the fourteenth day of the Jewish month of Nisan, the date of Passover. Polycarp, the bishop of Smyrna, said he had always done so with John, the Lord's disciple. The church in Rome celebrated it on a Sunday.\n\nAround the year 155, Polycarp visited Rome, where Anicetus was bishop. Irenaeus, who had known Polycarp in his youth, later described the meeting. Neither man could persuade the other. Anicetus could not talk Polycarp out of what he had kept with John. Polycarp could not talk Anicetus out of the custom of the elders before him.\n\nIrenaeus reported what they did next.\n\n“But though matters were in this shape, they communed together, and Anicetus conceded the administration of the eucharist in the church to Polycarp, manifestly as a mark of respect. And they parted from each other in peace.”\n\nDecades later, Bishop Victor of Rome tried to cut off the churches of Asia over the same question. Irenaeus wrote to stop him, and he reminded Victor of Polycarp and Anicetus. He summed up the matter in one line.\n\n“The disagreement in regard to the fast confirms the agreement in the faith.”",
+      "historicalContext": "Eusebius, Church History 5.24.9-18, quoting Irenaeus's letter to Victor of Rome (McGiffert translation, 1890); see also Church History 4.14.1 and Irenaeus, Against Heresies 3.3.4. The date of Polycarp's visit, around 155, is the conventional estimate. The phrase “agreed to disagree” does not appear in this account. Zwingli story: Emil Egli, Actensammlung zur Geschichte der Zürcher Reformation (1879), nos. 233-237; Zwingli, Von Erkiesen und Freiheit der Speisen (1522); Zwingli, Archeteles (1522), in S. M. Jackson's translation (1901)."
+    },
+    {
+      "type": "teaching",
+      "heading": "Do Not Destroy Your Brother",
+      "content": "Paul's strongest words in Romans 14 are aimed at the believers who are free. “If your brother is distressed by what you eat, you are no longer acting in love. Do not by your eating destroy your brother, for whom Christ died.”\n\nJohn Chrysostom preached on that verse in Antioch in the late fourth century, and he did not soften it.\n\n“Or do you not value your brother enough even to purchase his salvation at the price of abstinence from meats? And yet Christ refused not to become a slave, nor yet to die for him; but thou dost not despise even food, that you may save him.”\n\nChrysostom saw the comparison Paul was making. Christ gave his life for that brother. A free believer is asked to give up a meal.\n\nThen Paul says what matters more than food. “For the kingdom of God is not a matter of eating and drinking, but of righteousness, peace, and joy in the Holy Spirit.” The word for eating there is brosis. It is the same word Hebrews uses for the single meal Esau sold his birthright for.\n\nChristians disagree about more than food, and some of those disagreements are serious. Romans 14 does not turn every question into a matter of taste, and Paul does not treat it that way. In Galatians he resisted Peter to his face. What Romans 14 settles is how a brother is treated while a disagreement stands. He is to be welcomed, not despised or destroyed, because Christ died for him.\n\nPaul closes the argument in chapter 15. “We who are strong ought to bear with the shortcomings of the weak and not to please ourselves.” Then he gives the reason. “For even Christ did not please Himself.”",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you using your freedom in a way that might push someone else to act against their conscience?",
+      "additionalQuestions": [
+        "Which believers do you secretly look down on as less free than you?",
+        "Which believers do you secretly judge as less careful than you?",
+        "What would it cost you to give up something you are free to do, for the sake of one person?"
+      ],
+      "invitationType": "honest"
+    },
+    {
+      "type": "interactive",
+      "heading": "Learn This By Heart",
+      "instruction": "Today's is memory work. One verse, in about four minutes.",
+      "steps": [
+        {
+          "description": "Read Romans 14:17 aloud once, slowly: For the kingdom of God is not a matter of eating and drinking, but of righteousness, peace, and joy in the Holy Spirit."
+        },
+        {
+          "description": "Say it again and leave out the last word, finishing the line from memory."
+        },
+        {
+          "description": "Say it again, leaving out the last two words. Then three. Keep going until you say only the first word and your memory supplies the rest."
+        },
+        {
+          "description": "Now build it back up one word at a time."
+        },
+        {
+          "description": "Before your next meal, say it once more."
+        }
+      ],
+      "interaction_type": "memory"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day4-bishops.webp",
+      "inlineImageAlt": "Two elderly bishops in simple robes seen from behind at a plain stone table in a small church, one holding a clay cup toward the other, a round loaf between them and morning light from a high window",
+      "inlineImageCaption": "Polycarp and Anicetus could not agree on the date of Easter. They shared communion and parted in peace.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "teaching",
+      "heading": "Walking In Love",
+      "content": "The King James Version translates Romans 14:15 with a word picture. “But if thy brother be grieved with thy meat, now walkest thou not charitably.”\n\nPaul often describes the Christian life as a way of walking. In Ephesians 5 he tells believers to “walk in love, just as Christ loved us and gave Himself up for us.” In Galatians 2 he says Peter and the others were not walking in line with the truth of the gospel.\n\nPaul’s language of walking makes freedom a daily practice, not only a belief about food. A believer who walks in love does not pressure another person to act against conscience or make personal freedom the center of every meal.\n\nPaul's final word on the matter is in Romans 15:7. “Accept one another, then, just as Christ accepted you, in order to bring glory to God.” The standard for how we accept each other is how Christ accepted us. He did not wait until we were right about everything.\n\nFreedom in Christ is real. The food laws no longer determine whether Gentiles belong to God’s people, though Christians still disagree about whether and for whom those laws remain binding. The respect owed to Christ's sacrifice shows up in how that freedom is used. A believer who knows what it cost Christ to make him free will not use that freedom to wound someone Christ died for.",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day4-walk.webp",
+      "inlineImageAlt": "Two men seen from behind walking together along a dusty road in the late afternoon, one leaning on a staff and moving slowly, the other matching his pace with a hand at his elbow",
+      "inlineImageCaption": "“Walk in love” (Ephesians 5:2).",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Lord Jesus, you made me free, and it cost you your life. Keep me from using that freedom to hurt anyone you died for. When I am the strong one, make me patient. When I am the weak one, keep me from judging. Teach me to walk in love beside people who see things differently, and to welcome them the way you welcomed me. Amen.",
+      "breathPrayer": "Breathe in: You accepted me. Breathe out: I will accept my brother."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "I will use my freedom in Christ to serve the people around me, not to prove that I am right.",
+      "leavingAtCross": [
+        "Contempt for believers who are more careful than I am",
+        "Judgment of believers who are freer than I am"
+      ],
+      "receivingFromCross": [
+        "The freedom Christ bought for me",
+        "A brother for whom Christ died, whatever we disagree about"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Check Yourself",
+      "question": "What does Paul mean by a “stumbling block” in Romans 14?",
+      "options": [
+        "Anything another Christian dislikes or disapproves of",
+        "Pressure that leads another believer to act against his conscience",
+        "Any food listed as unclean in Leviticus 11",
+        "A difficult passage of Scripture"
+      ],
+      "answer": 2,
+      "explanation": "Thayer's lexicon explains the stumbling block in Romans 14 as something that leads a person to sin by acting against his conscience. Paul says whatever is not from faith is sin (14:23). Mere disapproval is a different matter."
+    },
+    {
+      "type": "profile",
+      "heading": "The Preacher Who Did Not Eat The Sausage",
+      "name": "Ulrich Zwingli",
+      "era": "Zurich, Switzerland, 1484 to 1531",
+      "bio": "The people's priest at Zurich's Great Minster from 1519 and a leader of the Swiss Reformation. When a group of men ate sausage at the printer Christoph Froschauer's house in Lent 1522, he did not eat. He defended their freedom in a sermon on Romans 14 and asked them to consider the weak.",
+      "keyQuote": "I had nowhere taught that Lent ought not to be kept, though I could wish that it were not prescribed so imperiously, but were left free to the individual.",
+      "lessonForUs": "He held two convictions together. Christians are free, and freedom has to take account of the people it might hurt."
+    },
+    {
+      "type": "resource",
+      "heading": "Go Deeper",
+      "relatedScriptures": [
+        "Romans 14:1-15:13 — the whole argument, ending in welcome",
+        "1 Corinthians 8 — knowledge, love and the weak brother",
+        "1 Corinthians 9:19-23 — free from all, servant of all",
+        "Galatians 2:11-14 — Peter at Antioch",
+        "Acts 15:1-29 — the Jerusalem Council"
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Book of Galatians Summary: A Complete Animated Overview",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=vmx4UjRFp0M"
+        }
+      ],
+      "forDeeperStudy": "Sources for today. Astheneo is G770; asthenes G772; proskomma G4348, with Thayer's definition of an occasion of sin against conscience; koinos G2839. On the identity of the weak: Mark Snoeberger, Detroit Baptist Seminary Journal 12 (2007), surveying Cranfield, Dunn, Moo, Karris and others; Thomas Schreiner, Romans (BECNT, 1998); John Chrysostom, Homily 25 on Romans; Mark D. Nanos, The Mystery of Romans (1996); N. T. Wright, “Romans and the Theology of Paul” (1995). Daniel 1:8 and Romans 14:2 use different Greek words. Luther, The Freedom of a Christian (1520), R. S. Grignon translation. Calvin, Institutes 3.19.11 (Beveridge translation). Chrysostom, Homily 26 on Romans. Seventh-day Adventist Fundamental Belief 22; Code of Canon Law 1250-1251. Zwingli: Egli, Actensammlung (1879), nos. 233-237; Archeteles (Jackson, 1901), p. 18. Polycarp and Anicetus: Eusebius, Church History 5.24."
+    }
+  ]
+}

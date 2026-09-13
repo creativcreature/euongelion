@@ -445,6 +445,34 @@ export const DEVOTIONAL_PUBLISH_DATES: Record<string, DevotionalPublishDate> = {
   'bible-365-day-97': { publishedAt: '2026-05-08', source: 'first-seen' },
   'bible-365-day-98': { publishedAt: '2026-05-08', source: 'first-seen' },
   'bible-365-day-99': { publishedAt: '2026-05-08', source: 'first-seen' },
+  'by-the-heel-day-1': {
+    publishedAt: '2026-09-13',
+    source: 'series-ship',
+  },
+  'by-the-heel-day-2': {
+    publishedAt: '2026-09-13',
+    source: 'series-ship',
+  },
+  'by-the-heel-day-3': {
+    publishedAt: '2026-09-13',
+    source: 'series-ship',
+  },
+  'by-the-heel-day-4': {
+    publishedAt: '2026-09-13',
+    source: 'series-ship',
+  },
+  'by-the-heel-day-5': {
+    publishedAt: '2026-09-13',
+    source: 'series-ship',
+  },
+  'by-the-heel-day-6': {
+    publishedAt: '2026-09-13',
+    source: 'series-ship',
+  },
+  'by-the-heel-day-7': {
+    publishedAt: '2026-09-13',
+    source: 'series-ship',
+  },
   'coming-to-the-end-of-ourselves-day-1': {
     publishedAt: '2026-02-21',
     source: 'first-seen',

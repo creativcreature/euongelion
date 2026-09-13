@@ -1594,3 +1594,8 @@ features:
     status: shipped
     decision: SA-139
     doc: docs/feature-prds/F-182.md
+  - id: F-183
+    title: by-the-heel-seven-day-series-on-law-and-freedom
+    status: shipped
+    decision: SA-140
+    doc: docs/feature-prds/F-183.md

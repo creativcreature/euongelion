@@ -1,0 +1,304 @@
+{
+  "day": 2,
+  "chiasm_position": "B",
+  "format": "two-minute-open-v2",
+  "title": "Sold For A Single Meal",
+  "subtitle": "A birthright traded for stew, a blessing taken in borrowed clothes, and the law as a guardian",
+  "teaser": "Esau sold his birthright for a bowl of lentils, and Jacob took the blessing by dressing up as his brother. Neither brother comes out of Genesis 27 well, and Christians have seen the gospel in it anyway.",
+  "anchorVerse": "Genesis 25:34",
+  "theme": "Food cannot buy what an inheritance gives, and believers receive the blessing through Christ, the firstborn, as a gift",
+  "framework": "Genesis 25:29-34 — Thus Esau despised his birthright",
+  "scriptureReference": "Genesis 25:29-34",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Genesis 25:29-34",
+      "translation": "BSB",
+      "passage": "One day, while Jacob was cooking some stew, Esau came in from the field and was famished. He said to Jacob, “Let me eat some of that red stew, for I am famished.” (That is why he was also called Edom.) “First sell me your birthright,” Jacob replied. “Look,” said Esau, “I am about to die, so what good is a birthright to me?” “Swear to me first,” Jacob said. So Esau swore to Jacob and sold him the birthright. Then Jacob gave some bread and lentil stew to Esau, who ate and drank and then got up and went away. Thus Esau despised his birthright.",
+      "emphasis": [
+        "First sell me your birthright",
+        "Thus Esau despised his birthright"
+      ],
+      "scriptureContext": "The twins are grown. Esau is a hunter and Jacob stays near the tents. The firstborn's right is about to change hands over a pot of lentils."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "בְּכֹרָה",
+      "transliteration": "bekhorah",
+      "pronunciation": "beh-khoh-RAH",
+      "strongsNumber": "H1062",
+      "definition": "birthright; the right of the firstborn",
+      "usage": "The standing and inheritance that belonged to the firstborn son. It appears in Genesis 25:31-34 and again in Genesis 27:36, when Esau says Jacob has taken both his birthright and his blessing. Hebrews 12:16 translates the idea into Greek as prototokia, the firstborn's right.",
+      "usageNote": "In Genesis 27:36 Esau puts two words side by side: bekhorati, “my birthright,” and birkhati, “my blessing.” The Cambridge Bible notes that they use the same consonants with two letters swapped. Esau's complaint is a play on words.",
+      "relatedWords": [
+        {
+          "word": "בְּכוֹר (bekhor)",
+          "transliteration": "bekhor",
+          "meaning": "firstborn"
+        },
+        {
+          "word": "בְּרָכָה (berakhah)",
+          "transliteration": "berakhah",
+          "meaning": "blessing"
+        },
+        {
+          "word": "πρωτοτόκια (prototokia)",
+          "transliteration": "prototokia",
+          "meaning": "birthright, in Hebrews 12:16"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "A Future Traded For Lunch",
+      "content": "Esau comes in from the field exhausted and hungry. Jacob is cooking. Esau asks for some of the red stew.\n\nJacob does not offer him a bowl. He names a price: “First sell me your birthright.”\n\nThe birthright was the firstborn son's place in the family and his share of the inheritance. Esau decides it is worth less than a meal. He says he is about to die, so what good is it to him? He swears, eats, drinks, gets up and leaves.\n\n“Thus Esau despised his birthright.”\n\nNeither brother looks good here. Esau treats something God attached to his family as cheap. Jacob uses his brother's hunger to take it from him.\n\nThe New Testament remembers the scene. Hebrews 12:16 warns against being “godless like Esau, who for a single meal sold his birthright.”\n\nEsau's problem was that he wanted what was in front of him more than what God had promised. Hunger is not a sin. Letting hunger decide what you are willing to lose can be.",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "What have you been tempted to trade away for something you wanted right now?",
+      "invitationType": "honest"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Father, I know how Esau felt at that table. I have wanted the bowl in front of me more than what you promised. Keep me from selling cheaply what you gave me, and keep me from taking advantage of anyone else's hunger.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: a blessing stolen in borrowed clothes, what Jewish and Christian readers have seen in it, the law as a guardian of an heir, and a tinker from Bedford who was afraid he had become Esau."
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 27:15-23",
+      "translation": "BSB",
+      "passage": "And Rebekah took the finest clothes in the house that belonged to her older son Esau, and she put them on her younger son Jacob. She also put the skins of the young goats on his hands and on the smooth part of his neck. Then she handed her son Jacob the tasty food and bread she had made. So Jacob went to his father and said, “My father.” “Here I am!” he answered. “Which one are you, my son?” Jacob said to his father, “I am Esau, your firstborn. I have done as you told me. Please sit up and eat some of my game, so that you may bless me.” But Isaac asked his son, “How did you ever find it so quickly, my son?” “Because the LORD your God brought it to me,” he replied. Then Isaac said to Jacob, “Please come closer so I can touch you, my son. Are you really my son Esau, or not?” So Jacob came close to his father Isaac, who touched him and said, “The voice is the voice of Jacob, but the hands are the hands of Esau.” Isaac did not recognize him, because his hands were hairy like those of his brother Esau; so he blessed him.",
+      "emphasis": [
+        "the finest clothes in the house that belonged to her older son Esau",
+        "The voice is the voice of Jacob, but the hands are the hands of Esau"
+      ],
+      "scriptureContext": "Isaac is old and nearly blind. He has sent Esau to hunt so that he can bless him. Rebekah overhears and makes a plan."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Same Word For Food",
+      "content": "The stew in Genesis 25 has an unexpected link to Romans 14, and it runs through a single Greek word.\n\nWhen Hebrews 12:16 says Esau sold his birthright “for a single meal,” the word for meal is brosis. It means eating, or food. Paul uses the same word in Romans 14:17. “For the kingdom of God is not a matter of eating and drinking, but of righteousness, peace, and joy in the Holy Spirit.”\n\nBoth verses put food below something greater: the birthright in Hebrews, and righteousness, peace and joy in Romans. Esau lost something by choosing a meal over a promise. The Roman Christians Paul wrote to were in danger of losing something by fighting over meals.\n\nAugustine noticed that the problem in Genesis was not the lentils. Lentils were never forbidden to anyone. In his City of God he drew this lesson.\n\n“We learn from this that a person is to be blamed, not for the kind of food he eats, but for immoderate greed.”\n\nAugustine’s point keeps the two passages together. The food laws of Leviticus were real and holy. A person can keep every food rule and still value a meal more than what God has promised.\n\nThe opposite mistake is possible too. A person can be free to eat anything and still let appetite rule. Esau was free to eat the stew, and he still wanted it more than his birthright.",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day2-stew.webp",
+      "inlineImageAlt": "Over the shoulder of an exhausted hunter slumped on the ground with his bow and quiver beside him, looking across a small cooking fire toward his brother standing in the tent doorway with a clay pot of stew",
+      "inlineImageCaption": "Esau came in from the field famished, and Jacob was the one cooking.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "teaching",
+      "heading": "Dressed In His Brother's Clothes",
+      "content": "Years later, the birthright is Jacob's. The blessing is still to come. Isaac is old and nearly blind, and he asks Esau to hunt game and make him a meal so that he can bless him before he dies.\n\nRebekah hears it and makes a plan. She cooks two young goats the way Isaac likes. She dresses Jacob in Esau's best clothes. She covers his hands and neck with goatskin, so that he will feel like his hairy brother.\n\nJacob objects only that his father might touch him and find him out.\n\nThen he lies. He tells his father, “I am Esau, your firstborn.” When Isaac asks how the hunt went so fast, Jacob brings God into the lie: “Because the LORD your God brought it to me.”\n\nIsaac is suspicious. He calls Jacob closer and touches him. He says the voice is Jacob's, but the hands are Esau's. He smells the clothes, and they smell like the field. He blesses him.\n\nThen Esau comes home. When Isaac realizes what happened, he trembles violently. Esau lets out “a loud and bitter cry.” He begs, “Bless me too, O my father!”\n\nEsau also turns his brother's name against him. “Is he not rightly named Jacob? For he has cheated me twice.” The verb Esau uses comes from the word for heel. Young's Literal Translation keeps the picture: “he doth take me by the heel these two times.” The boy who came out holding his brother's heel has now tripped him twice.\n\nGenesis does not approve of any of this. Esau resolves to kill Jacob, and Jacob has to run for his life. The blessing is real, and the deception costs everyone.\n\nHe had despised his birthright, and he still wept for his father's blessing.",
+      "chiasm_position": "B",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day2-clothes.webp",
+      "inlineImageAlt": "Inside a dim tent, a woman's hands binding a piece of shaggy goatskin around a young man's bare forearm, a folded fine robe waiting on a chest beside them, lamplight from one side",
+      "inlineImageCaption": "Rebekah dressed the younger son in the firstborn's clothes and covered his hands with goatskin.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "pullquote",
+      "content": "The boy who came out holding his brother's heel has now tripped him twice."
+    },
+    {
+      "type": "teaching",
+      "heading": "Blessed In Borrowed Clothes",
+      "content": "Readers have never been comfortable with Genesis 27, and they have also never stopped finding meaning in it. Jewish and Christian interpreters have both lingered over the clothes.\n\nThe medieval Jewish commentator Rashi asks why Isaac liked the smell. Goatskins do not smell pleasant. Rashi's answer is that the fragrance of the Garden of Eden came into the room with Jacob. The Talmud offers a different reading built on a play on words. The Hebrew for “his garments,” begadav, sounds like bogedav, “his betrayers.” Rabbi Zeira taught that even the betrayers among God's people carry the smell of a field the LORD has blessed.\n\nAugustine saw Jacob as a picture of Christ. Jacob covered himself in goatskins “as if bearing the sins of others,” he wrote, and came under his father's hands.\n\nAmbrose of Milan, in the fourth century, read the fine robe as a picture of the Old Testament given to the church. He also wrote about the smell of the clothes. Perhaps, he said, it means we are justified not by works but by faith.\n\nJohn Calvin took Ambrose's hint further. In his Institutes he described the Christian coming to God the Father the way Jacob came to Isaac.\n\n“So we conceal ourselves under the precious purity of Christ, our first-born brother, that we may obtain an attestation of righteousness from the presence of God.”\n\nThose words are Calvin's, following Ambrose. Paul says something close to it in Galatians 3:27. “For all of you who were baptized into Christ have clothed yourselves with Christ.”\n\nCalvin’s comparison has a clear limit. Jacob wore clothes that were not his and lied to receive the blessing Isaac intended for Esau. Paul says that those baptized into Christ “have clothed yourselves with Christ.” They are received through the Son without deceiving the Father. In this Christian reading, Jacob grasped at a blessing; believers receive life in Christ as a gift.",
+      "chiasm_position": "C",
+      "pardes_layer": "remez",
+      "markdown": true
+    },
+    {
+      "type": "scripture",
+      "reference": "Galatians 3:23-29",
+      "translation": "BSB",
+      "passage": "Before this faith came, we were held in custody under the law, locked up until faith should be revealed. So the law became our guardian to lead us to Christ, that we might be justified by faith. Now that faith has come, we are no longer under a guardian. You are all sons of God through faith in Christ Jesus. For all of you who were baptized into Christ have clothed yourselves with Christ. There is neither Jew nor Greek, slave nor free, male nor female, for you are all one in Christ Jesus. And if you belong to Christ, then you are Abraham’s seed and heirs according to the promise.",
+      "emphasis": [
+        "the law became our guardian to lead us to Christ",
+        "clothed yourselves with Christ",
+        "heirs according to the promise"
+      ],
+      "scriptureContext": "Paul writes to Gentile churches being told they must keep the law of Moses to belong fully. He answers with guardianship, clothing and inheritance."
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "n-UenIDevpI",
+      "videoTitle": "What Jesus Meant by \"The Last Will Be First\"",
+      "videoCaption": "The Bible keeps giving the birthright to younger brothers, Jacob among them. This traces that pattern to Jesus, the firstborn who makes his followers a family of firstborn children.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Then and Now",
+      "ancientTruth": "In Jacob's world the firstborn received the family's standing and the father's blessing. Everyone else received less, and a blessing once given could not be taken back.",
+      "modernApplication": "We rarely talk about birthrights, but we still sort people by who came first, who earned it and who deserves it. Many Christians quietly believe God blesses the ones who have kept the most rules.",
+      "connectionPoint": "Genesis does not support that belief. The blessing goes to the younger brother, and he is not the better man. Whatever grace is, it is not a reward for good behavior.",
+      "newTestamentEcho": "Paul says believers are “all sons of God through faith in Christ Jesus” and “heirs according to the promise” (Galatians 3:26, 29). The inheritance comes through the firstborn, not through who we are."
+    },
+    {
+      "type": "teaching",
+      "heading": "A Guardian Until The Date Set By The Father",
+      "content": "Galatians gives a picture of what the law was for, and it is easy to get wrong.\n\nPaul calls the law a paidagogos. The King James Version translated that word as “schoolmaster,” and many people imagine a teacher. The Greek lexicon of Joseph Thayer says otherwise. A paidagogos was a trusted slave who supervised a boy's conduct and morals. He was not the teacher. His job was custody and discipline for a limited time.\n\nPaul extends the picture in the next chapter.\n\n“What I am saying is that as long as the heir is a child, he is no different from a slave, although he is the owner of everything. He is subject to guardians and trustees until the date set by his father.”\n\nThe heir owns everything and still lives under supervision, because he is not yet grown. Then the date comes.\n\n“God sent His Son, born of a woman, born under the law, to redeem those under the law, that we might receive our adoption as sons.”\n\nPaul's conclusion follows. The believer is no longer a slave but a son, and a son is an heir.\n\nThis picture helps explain why Christians disagree about the law without calling it bad. They differ over what ended with the guardian: the law as a covenant, its ceremonies, or the law as a way to be justified. The guardian was not the enemy of the heir. He kept the boy safe until the father's appointed time. Paul even says the law led us to Christ, though scholars debate whether the phrase means “to Christ” or “until Christ.”\n\nWhat the guardian could not do was give the inheritance. Only the father could do that.\n\nThat connects the law of Leviticus to the story of Jacob. Jacob wanted the blessing so much that he dressed as the firstborn to get it. Paul compares the law’s custody before faith came to a guardian’s temporary care. Neither Jacob’s disguise nor a guardian’s supervision creates an heir; in Galatians, that status comes from God through his Son.",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day2-guardian.webp",
+      "inlineImageAlt": "A Roman-era street at dawn seen from behind, an older household slave in a plain tunic walking a boy with a writing tablet toward a schoolroom doorway, the boy's hand resting on the man's arm",
+      "inlineImageCaption": "Paul's word for the law was paidagogos: not the teacher, but the household slave who guarded a boy until he came of age.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "story",
+      "heading": "The Man Who Thought He Was Esau",
+      "content": "John Bunyan was a tinker from Bedfordshire in England. He became a preacher, and in 1660 he was put in prison for leading religious meetings the law did not allow. In prison he wrote an account of his own soul, Grace Abounding to the Chief of Sinners, published in 1666.\n\nIn it he describes a temptation that came to him over and over. A thought kept running through his mind: “Sell Him, sell Him.” He resisted for a long time. Then one morning he felt the words pass through his heart, “Let Him go, if He will.” He went out into a field, he wrote, “like a man bereft of life.”\n\nThen a verse from Hebrews took hold of him. It was the verse about Esau, who sold his birthright for a single meal. Afterward, when Esau wanted to inherit the blessing, he was rejected, though he sought it carefully with tears.\n\nBunyan believed he had become Esau. He writes that the verse lay on him “all day long, all the week long, yea, all the year long.” He says the torment lasted two years.\n\nRelief came slowly. He studied the story in Genesis. He noticed that Esau's sale was deliberate and public, and that Esau later sought the blessing, not the birthright.\n\nThen one day, walking in a field, a sentence came into his mind: “Thy righteousness is in heaven.” He saw by faith Jesus Christ at God's right hand. He understood that his good moods did not make his righteousness better, and his bad moods did not make it worse.\n\n“For my righteousness was Jesus Christ Himself, The same yesterday, to-day, and for ever.”\n\n“Now did my chains fall off my legs indeed.”\n\nWhen he got home, he could not find those exact words in the Bible. He found their meaning in 1 Corinthians 1:30, which says Christ became our righteousness.",
+      "connectionToTheme": "Bunyan read his own life through Esau's lost birthright, and he found peace only when he stopped looking for the blessing inside himself. The righteousness he needed belonged to Christ and was given to him."
+    },
+    {
+      "type": "insight",
+      "heading": "How The Churches Sort The Old Law",
+      "content": "Christians agree that Leviticus is Scripture and that the law is holy. They disagree about how it carries into Christian life. Here are the main positions, each in its own terms.\n\nThe Catholic Church calls the law “holy, spiritual, and good, yet still imperfect.” Like a tutor, it shows what must be done but does not give the strength to do it. Its moral commands remain. Its ceremonial laws, including the food laws, were fulfilled in Christ. Catholics keep the Church's own discipline of Friday abstinence and Lenten fasting. Historically, Thomas Aquinas and the Council of Florence taught that keeping the ceremonial law after the gospel was a mortal sin. The modern Catechism also says the Old Covenant has never been revoked.\n\nThe Eastern Orthodox churches keep no Levitical list. They fast as a discipline received from the early church. On strict fast days, they even allow shellfish, which Leviticus forbids.\n\nReformed churches, following the Westminster Confession, divide the law into moral, ceremonial and judicial parts. The ceremonial laws are “now abrogated,” and the moral law binds everyone.\n\nLutherans draw the line differently. In 1525 Luther wrote about how Christians should treat Moses.\n\n“We will regard Moses as a teacher, but we will not regard him as our lawgiver - unless he agrees with both the New Testament and the natural law.”\n\nThe Lutheran confessions still keep a use of the law as a guide for believers.\n\nMethodists hold that the ceremonies of Moses do not bind Christians, while the moral commandments do. The Methodist article is taken from Article VII of the Anglican Thirty-Nine Articles, which holds the same line.\n\nNew covenant theologians such as Thomas Schreiner argue that the whole covenant of Moses has passed. They hold that its moral norms are fulfilled in Christ.\n\nDispensational teachers treat the age of the law and the present age of grace as distinct.\n\nSeventh-day Adventists teach believers to “abstain from the unclean foods identified in the Scriptures,” while holding that salvation is all of grace.\n\nMessianic Jewish congregations hold that Jewish followers of Jesus should keep Torah as their covenant calling. Gentile believers are not bound to it.\n\nOne Law or Hebrew Roots teachers hold that Gentile believers are grafted into Israel, so the Torah, food laws included, applies to all believers. They teach that salvation is by grace and that keeping Torah is the way of a blessed life. Messianic Jewish leaders answer that Jews and Gentiles have different callings in the one body.\n\nThe moral, ceremonial and civil division is widely used, and it has critics. Lutheran, new covenant, Messianic Jewish and Jewish writers do not use it as the key to what continues. That sorting is also where many present-day arguments about Leviticus begin, including arguments about sexuality in the chapters near the food laws. Christians reach different conclusions there too. Where they disagree, they still owe love and respect to the people in their lives.",
+      "historicalContext": "Catechism of the Catholic Church 1963; Code of Canon Law 1250-1251; Orthodox Church in America, fasting guidance citing The Lenten Triodion; Westminster Confession of Faith 19.3; Luther, How Christians Should Regard Moses (1525, Bachmann translation); Formula of Concord, Epitome VI; United Methodist Articles of Religion, Article VI; Thomas R. Schreiner, The Fulfillment of the Law; Dallas Theological Seminary Doctrinal Statement, Article V; Seventh-day Adventist Fundamental Beliefs 19 and 22; Union of Messianic Jewish Congregations, Defining Messianic Judaism (2005) and its statement on One Law movements; TorahResource, One Law."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Where are you still trying to earn a blessing that can only be given?",
+      "additionalQuestions": [
+        "What have you despised because it was given freely instead of earned?",
+        "When have you, like Jacob, tried to get something from God by pretending to be someone you are not?",
+        "Whose grief, like Esau's, have you been tempted to overlook because the story turned out well for you?"
+      ],
+      "invitationType": "honest"
+    },
+    {
+      "type": "interactive",
+      "heading": "Write It Down",
+      "instruction": "Today's is a journaling prompt. Give it ten minutes and a pen.",
+      "steps": [
+        {
+          "description": "At the top of a page, write: The voice is the voice of Jacob, but the hands are the hands of Esau."
+        },
+        {
+          "description": "Underneath, write the ways you try to look like someone God would bless. Be specific."
+        },
+        {
+          "description": "Now read Galatians 3:27 slowly: all of you who were baptized into Christ have clothed yourselves with Christ."
+        },
+        {
+          "description": "Draw a line across the page. Below it, write one sentence about what it would mean to come to God dressed in Christ instead of your own disguise."
+        },
+        {
+          "description": "Do not tear out the first half. Both halves are true about you."
+        }
+      ],
+      "interaction_type": "journal"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day2-cry.webp",
+      "inlineImageAlt": "A large hunter seen from behind, kneeling outside a tent in late afternoon with his head bowed and his broad shoulders shaking, a covered dish of cooked game set on the ground beside him untouched",
+      "inlineImageCaption": "“Bless me too, O my father!”",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "teaching",
+      "heading": "The Blessing Esau Wanted",
+      "content": "Hebrews says something hard about Esau. “Afterward, when he wanted to inherit the blessing, he was rejected. He could find no ground for repentance, though he sought the blessing with tears.”\n\nThat verse frightened John Bunyan for two years. It has frightened many readers since.\n\nEsau could not undo the sale. He had traded his birthright for a meal, and the blessing had gone to his brother. Hebrews uses him as a warning not to treat holy things as cheap.\n\nBunyan's relief did not come from deciding the warning was false. It came from seeing where his righteousness really was. It was not in his feelings or his record. It was in Christ, at God's right hand.\n\nGenesis also does not leave Esau without mercy. He becomes a man with plenty of his own. Years later, he is the one who runs to meet the brother who cheated him.\n\nSo hold both brothers today. Esau reminds us not to sell God's gifts for something in front of us. Jacob reminds us that God's blessing comes to people who do not deserve it.\n\nNeither of them could make himself an heir. The law could not do it either. That work belongs to the Father, and he does it through his Son.",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day2-touch.webp",
+      "inlineImageAlt": "Close side view of an old man's hand resting on a young man's forearm wrapped in shaggy goatskin, the two sleeves meeting in lamplight inside a tent",
+      "inlineImageCaption": "Isaac touched the goatskin and blessed the son dressed as the firstborn.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Father, I have been Esau, trading what you gave me for what I wanted right away. I have been Jacob, dressing up to get a blessing. Neither made me your child. Thank you that your Son gives me his own clothing, and that I do not have to trick you to be blessed. Keep me from despising your gifts, and keep me gentle toward every brother I have wronged. Amen.",
+      "breathPrayer": "Breathe in: Clothe me with Christ. Breathe out: I come as your child."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "I will stop trying to earn a blessing that God gives through his Son.",
+      "leavingAtCross": [
+        "The disguises I wear to look worthy of God",
+        "The habit of trading what God gave me for what I want right now"
+      ],
+      "receivingFromCross": [
+        "The righteousness of Christ, given rather than stolen",
+        "My place as an heir through God"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Check Yourself",
+      "question": "What did the Greek word paidagogos mean when Paul used it of the law in Galatians 3:24?",
+      "options": [
+        "A schoolteacher who taught lessons",
+        "A household slave who supervised a boy until he came of age",
+        "A judge who decided punishments",
+        "A priest who offered sacrifices"
+      ],
+      "answer": 2,
+      "explanation": "A paidagogos was a household slave who supervised a boy's conduct, separate from his teachers, until he came of age. Paul uses the picture to describe the law's temporary role before Christ, not to call the law bad."
+    },
+    {
+      "type": "profile",
+      "heading": "The Tinker Who Found His Righteousness In Heaven",
+      "name": "John Bunyan",
+      "era": "Bedfordshire, England, 1628 to 1688",
+      "bio": "A tinker who became a nonconformist preacher and spent twelve years in prison for it. In prison he wrote Grace Abounding to the Chief of Sinners (1666), an honest record of years of spiritual terror. He later wrote The Pilgrim's Progress (1678).",
+      "keyQuote": "For my righteousness was Jesus Christ Himself, The same yesterday, to-day, and for ever.",
+      "lessonForUs": "He took the warning about Esau seriously, and he did not argue it away. His peace came from looking outside himself to where his righteousness actually was."
+    },
+    {
+      "type": "resource",
+      "heading": "Go Deeper",
+      "relatedScriptures": [
+        "Genesis 25:27-34 — the stew and the birthright",
+        "Genesis 27 — the whole chapter, including Esau's cry",
+        "Hebrews 12:14-17 — Esau as a warning",
+        "Galatians 3:23-4:7 — the guardian and the heir",
+        "Romans 14:17 — the kingdom is not eating and drinking"
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "What Jesus Meant by \"The Last Will Be First\"",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=n-UenIDevpI"
+        }
+      ],
+      "forDeeperStudy": "Sources for today. Bekhorah (birthright) is Strong's H1062; berakhah (blessing) H1293; the verb aqav (to take by the heel, supplant) H6117, from which Esau's pun in Genesis 27:36 comes (Young's Literal Translation: “he doth take me by the heel these two times”). The birthright and blessing wordplay: Cambridge Bible for Schools (H. E. Ryle) on Genesis 27:36. Brosis (eating, meal) is G1035, in both Hebrews 12:16 and Romans 14:17. Paidagogos is G3807; Thayer's lexicon distinguishes the paidagogos from the teacher. Scholars debate whether Galatians 3:24 means “to lead us to Christ” or “until Christ.” Augustine, City of God 16.37 (Dods translation). Ambrose, On Jacob and the Happy Life 2.2.9; Calvin, Institutes 3.11.23 (Beveridge translation), where the “first-born brother” sentence is Calvin's own, following Ambrose. Rashi on Genesis 27:27; Babylonian Talmud Sanhedrin 37a. John Bunyan, Grace Abounding (1666; later editions sections 139-145 and 229-230)."
+    }
+  ]
+}

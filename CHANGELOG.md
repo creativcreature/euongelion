@@ -5,6 +5,24 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-13 — By the Heel: seven days on law and freedom — SA-140 (F-183)
+
+Founder-directed through /devo-go: Romans 14 against Leviticus 11, freedom in
+Christ, reverence for his sacrifice, and an inheritance received through his
+death, carried by Jacob and Esau. Image intensity 1, more plates than usual, read
+as one story.
+
+- **All sides, agreements first.** Jewish readings of Leviticus 11 and eleven
+  Christian positions on the food laws, each in its own terms from its own
+  documents. Where the traditions agree is stated before where they differ.
+- **Research killed several claims the week would otherwise have printed:**
+  "Jacob means deceiver", "Israel means prince with God", "broken for you" as
+  Paul's text, Simon of Cyrene carrying with the Galatians 6:2 verb, and a
+  traditional link between the heels of Genesis 3:15 and 25:26.
+- **Prose written to SA-138** after the founder rejected last week's writing.
+- **The founder rejected one plate on sight** (a newborn's hand on a heel). No
+  infant or heel-grab imagery in any plate.
+
 ## 2026-09-12 — The mini player, on the Spotify/Audible shape — SA-139 (F-182)
 
 Founder: _"it should follow the something lole spotify or audible. Currently it

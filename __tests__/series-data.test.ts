@@ -15,9 +15,10 @@ describe('Series Data', () => {
     //  looking-at-the-sun 2026-08-14 SA-036/F-087;
     //  rekindled 2026-08-17 SA-075/F-119;
     //  all-these-things 2026-08-24 SA-123/F-168;
-    //  drawing-near 2026-08-30 SA-132/F-176)
-    expect(SERIES_ORDER).toHaveLength(41)
-    expect(ALL_SERIES_ORDER).toHaveLength(41)
+    //  drawing-near 2026-08-30 SA-132/F-176;
+    //  by-the-heel 2026-09-13 SA-140/F-183)
+    expect(SERIES_ORDER).toHaveLength(42)
+    expect(ALL_SERIES_ORDER).toHaveLength(42)
   })
 
   it('has 7 Wake-Up series', () => {

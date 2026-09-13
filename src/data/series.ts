@@ -1364,6 +1364,70 @@ export const SERIES_DATA: Record<string, SeriesInfo> = {
     ],
   },
 
+  'by-the-heel': {
+    title: 'By the Heel',
+    heroImage: '/images/site/series/by-the-heel.webp',
+    question:
+      'If Christ has set you free from the food laws, what do you owe the God who gave them and the brother who still keeps them?',
+    introduction:
+      'Leviticus 11 told Israel which animals they could eat and gave one reason: be holy, because I am holy. Romans 14 says nothing is unclean in itself and then gives the harder duty to the people who agree. Seven days on law and freedom, carried by Jacob, who was born holding his brother’s heel, took a blessing in borrowed clothes, wrestled with God until he was blessed and limped toward the brother who ran to meet him. The week sets out where Jewish readers and the Christian traditions agree about the law, where they differ, and what it means to receive an inheritance that came through the death of Christ.',
+    context:
+      'For anyone who has felt guilty under rules, anyone who treats freedom as permission, and anyone divided from another believer over what they eat or keep. The series takes every tradition’s view seriously and argues for none of them against the others. It ends with what our relationships look like now that the curtain is torn.',
+    framework:
+      'Romans 14:17 - For the kingdom of God is not a matter of eating and drinking, but of righteousness, peace, and joy in the Holy Spirit.',
+    pathway: 'Awake',
+    keywords: [
+      'law',
+      'freedom',
+      'legalism',
+      'guilt',
+      'conscience',
+      'judging others',
+      'food',
+      'rules',
+      'inheritance',
+      'blessing',
+      'brothers',
+      'reconciliation',
+      'family division',
+      'grace',
+      'reverence',
+    ],
+    days: [
+      {
+        day: 1,
+        title: 'Be Holy, Because I Am Holy',
+        slug: 'by-the-heel-day-1',
+      },
+      {
+        day: 2,
+        title: 'Sold for a Single Meal',
+        slug: 'by-the-heel-day-2',
+      },
+      {
+        day: 3,
+        title: 'Through the Curtain of His Body',
+        slug: 'by-the-heel-day-3',
+      },
+      {
+        day: 4,
+        title: 'Who Are You to Judge?',
+        slug: 'by-the-heel-day-4',
+      },
+      {
+        day: 5,
+        title: 'I Will Not Let You Go',
+        slug: 'by-the-heel-day-5',
+      },
+      {
+        day: 6,
+        title: 'Called to Freedom',
+        slug: 'by-the-heel-day-6',
+      },
+      { day: 7, title: 'An Easy Yoke', slug: 'by-the-heel-day-7' },
+    ],
+  },
+
   'looking-at-the-sun': {
     title: 'Looking at the Sun',
     heroImage: '/images/site/series/looking-at-the-sun.webp',
@@ -1486,6 +1550,7 @@ export const NEW_SERIES_ORDER = [
   'all-these-things',
   'drawing-near',
   'sought-and-crowned',
+  'by-the-heel',
 ] as const
 
 // Bible-365 — the year-long canonical-chronological reading plan.

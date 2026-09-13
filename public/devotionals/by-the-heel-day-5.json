@@ -1,0 +1,325 @@
+{
+  "day": 5,
+  "chiasm_position": "A-prime",
+  "format": "two-minute-open-v2",
+  "title": "I Will Not Let You Go",
+  "subtitle": "A night of wrestling, a limp at sunrise, a brother who ran, and what our relationships look like now",
+  "teaser": "Jacob had spent his life taking what he wanted. The night before he met his brother, he held on to God instead, and he walked away blessed and limping. The next morning Esau ran to him.",
+  "anchorVerse": "Genesis 32:26",
+  "theme": "Heirs who have been given the blessing hold on to God, carry each other's burdens and run toward the brother they once wronged",
+  "framework": "Genesis 32:24-28 — I will not let you go unless you bless me",
+  "scriptureReference": "Genesis 32:24-28",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Genesis 32:24-28",
+      "translation": "BSB",
+      "passage": "So Jacob was left all alone, and there a man wrestled with him until daybreak. When the man saw that he could not overpower Jacob, he struck the socket of Jacob’s hip and dislocated it as they wrestled. Then the man said, “Let me go, for it is daybreak.” But Jacob replied, “I will not let you go unless you bless me.” “What is your name?” the man asked. “Jacob,” he replied. Then the man said, “Your name will no longer be Jacob, but Israel, because you have struggled with God and with men, and you have prevailed.”",
+      "emphasis": [
+        "I will not let you go unless you bless me",
+        "you have struggled with God and with men"
+      ],
+      "scriptureContext": "Jacob is on his way home after twenty years. His brother Esau is coming to meet him with four hundred men, and Jacob is afraid."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "פְּנִיאֵל",
+      "transliteration": "Peniel",
+      "pronunciation": "peh-nee-EL",
+      "strongsNumber": "H6439",
+      "definition": "the face of God; the name Jacob gave the place where he wrestled",
+      "usage": "After the wrestling, Jacob named the place Peniel, “Indeed, I have seen God face to face, and yet my life was spared” (Genesis 32:30). The name joins panim, face, with El, God. The next morning Jacob tells Esau that seeing his face is like seeing the face of God (Genesis 33:10).",
+      "usageNote": "Genesis spells the place two ways in consecutive verses, Peniel in 32:30 and Penuel in 32:31. The lexicons give no settled explanation for the difference.",
+      "relatedWords": [
+        {
+          "word": "פָּנִים (panim)",
+          "transliteration": "panim",
+          "meaning": "face"
+        },
+        {
+          "word": "יִשְׂרָאֵל (Yisrael)",
+          "transliteration": "Yisrael",
+          "meaning": "Israel, the new name given at Peniel"
+        },
+        {
+          "word": "בְּרָכָה (berakhah)",
+          "transliteration": "berakhah",
+          "meaning": "blessing, which Jacob asks for and later gives"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "He Held On",
+      "content": "Jacob has been away for twenty years. Now he is going home, and Esau is coming to meet him with four hundred men. The last time the brothers were together, Esau wanted to kill him.\n\nJacob sends his family and everything he owns across a stream. He stays behind, alone, in the dark.\n\nA man wrestles with him until daybreak. The man cannot overpower him, so he touches Jacob's hip and puts it out of joint. Then he asks Jacob to let him go.\n\nJacob says no. “I will not let you go unless you bless me.”\n\nThe man asks his name. For most of his life, that name has been tied to the heel and to cheating. Esau made it an insult. Now God gives him a new one. His name will be Israel, because he has struggled with God and with men and has prevailed.\n\nJacob names the place Peniel, “face of God,” because he has seen God face to face and lived. When the sun rises, he is limping.\n\nFor once, Jacob’s hands are not taking a birthright or stealing a blessing. He clings to God and asks to receive what only God can give.",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "What would it look like for you to hold on to God instead of taking what you want?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "God, I want to hold on to you today. I will not let you go unless you bless me. And if the blessing comes with a limp, let me walk home with it.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: Jacob's fear of his brother, a food custom that grew out of his wound, the morning Esau ran, two brothers in 1749 who fell on each other's necks, and what our relationships should look like now that the veil is torn."
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 32:7-11",
+      "translation": "BSB",
+      "passage": "In great fear and distress, Jacob divided his people into two camps, as well as the flocks and herds and camels. He thought, “If Esau comes and attacks one camp, then the other camp can escape.” Then Jacob declared, “O God of my father Abraham, God of my father Isaac, the LORD who told me, ‘Go back to your country and to your kindred, and I will make you prosper,’ I am unworthy of all the kindness and faithfulness You have shown Your servant. Indeed, with only my staff I came across the Jordan, but now I have become two camps. Please deliver me from the hand of my brother Esau, for I am afraid that he may come and attack me and the mothers and children with me.",
+      "emphasis": [
+        "I am unworthy of all the kindness and faithfulness You have shown Your servant",
+        "for I am afraid"
+      ],
+      "scriptureContext": "Twenty years earlier Jacob told his father “the LORD your God.” Now he prays to the God of his fathers himself and admits he is afraid."
+    },
+    {
+      "type": "teaching",
+      "heading": "Afraid Of His Brother",
+      "content": "Twenty years is a long time to be away from home. Jacob left with nothing but a staff, running from a brother who wanted him dead. He comes back with two wives, eleven sons, servants and large flocks.\n\nHe also comes back afraid. His messengers return with news that Esau is coming to meet him with four hundred men. Jacob splits everything into two camps, so that if Esau attacks one, the other can escape.\n\nThen he prays. “I am unworthy of all the kindness and faithfulness You have shown Your servant.” He remembers crossing the Jordan with only his staff. He admits he is afraid.\n\nThis is a different Jacob. Twenty years earlier he lied to his blind father and used God's name to do it. Now he tells God the truth about himself.\n\nHe still makes plans. He sends wave after wave of livestock ahead as gifts for Esau. Genesis gives his reasoning.\n\n“I will appease Esau with the gift that is going before me. After that I can face him, and perhaps he will accept me.”\n\nIn Hebrew the verse is full of faces. Jacob hopes to cover his brother's face with a gift, see his face, and have his own face lifted up. The verb for cover, kaphar, is the same root Leviticus uses for atonement. Here it means to pacify. Jacob is not atoning for anything. He is hoping a gift will be enough to let him face his brother.\n\nThen he sends everyone across the stream and stays behind. Genesis says he was left alone.",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day5-ford.webp",
+      "inlineImageAlt": "A lone man with a staff seen from behind on a rocky riverbank at dusk, watching his household and animals walking away along the far bank of a shallow stream",
+      "inlineImageCaption": "He sent everyone across the stream. “So Jacob was left all alone.”",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 32:24-32",
+      "translation": "KJV",
+      "passage": "And Jacob was left alone; and there wrestled a man with him until the breaking of the day. And when he saw that he prevailed not against him, he touched the hollow of his thigh; and the hollow of Jacob’s thigh was out of joint, as he wrestled with him. And he said, Let me go, for the day breaketh. And he said, I will not let thee go, except thou bless me. And he said unto him, What is thy name? And he said, Jacob. And he said, Thy name shall be called no more Jacob, but Israel: for as a prince hast thou power with God and with men, and hast prevailed. And Jacob asked him, and said, Tell me, I pray thee, thy name. And he said, Wherefore is it that thou dost ask after my name? And he blessed him there. And Jacob called the name of the place Peniel: for I have seen God face to face, and my life is preserved. And as he passed over Penuel the sun rose upon him, and he halted upon his thigh. Therefore the children of Israel eat not of the sinew which shrank, which is upon the hollow of the thigh, unto this day: because he touched the hollow of Jacob’s thigh in the sinew that shrank.",
+      "emphasis": [
+        "I will not let thee go, except thou bless me",
+        "he halted upon his thigh",
+        "the children of Israel eat not of the sinew which shrank"
+      ],
+      "scriptureContext": "The King James Version keeps the older word “halted,” meaning limped, and the verb “touched,” which is what the Hebrew says."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day5-wrestle.webp",
+      "inlineImageAlt": "Two men in rough mantles locked together in a wrestling hold on a stony riverbank at first light, seen from the side at a distance, their heads pressed against each other's shoulders against a pale grey dawn sky",
+      "inlineImageCaption": "“There a man wrestled with him until daybreak.” Jacob would not let go.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "teaching",
+      "heading": "A Light Touch And A Long Limp",
+      "content": "Many translations say the man struck Jacob's hip. The Hebrew verb is naga, which means touched. The King James Version keeps that word. A touch was enough to put the hip out of joint.\n\nGenesis says the man could not overpower Jacob. When he asks to be let go, Jacob refuses. He is hurt and he will not stop holding on until he is blessed.\n\nThe prophet Hosea looked back on this night centuries later. “He struggled with the angel and prevailed; he wept and sought His favor.” Genesis does not mention tears, but Hosea does. The strong grip was also a desperate plea.\n\nThen comes the new name. People often say Israel means “prince with God.” That idea comes from the King James wording, not from the Hebrew verb, which means to strive or persist. Genesis explains the name simply: Jacob has struggled with God and with men and has prevailed. Scholars still debate what the name meant on its own. Some think it originally meant “God strives” or “God persists.”\n\nJacob asks the man's name, and the man does not give it. He blesses Jacob there. As the sun rises, Jacob walks on, limping.\n\nC. H. Spurgeon preached on this blessing and did not make the limp disappear.\n\n“While he got the blessing, he got lameness too, and he might be well content to carry that lameness to his grave.”\n\nThe chapter ends with a detail about food. “Therefore to this day the Israelites do not eat the tendon which is at the socket of the hip.” Jewish law still keeps this rule. The Mishnah, the early collection of Jewish law, applies it to kosher cattle and wild animals, though not to birds. Removing the sinew takes trained hands, and in many communities that part of the animal is simply not used.\n\nIt is the only food rule in the Torah that comes directly out of a story about one of the patriarchs. The Jewish sages said it was commanded at Sinai and recorded in Genesis at the place where it belongs. Maimonides, in his discussion of the food laws, said its reason is stated in the Law itself.\n\nSo Leviticus 11 and Jacob's limp belong to the same tradition. For centuries, Israel has remembered at the dinner table the night their father held on to God and was wounded. Christians also keep a meal of remembrance, and it remembers a body given for them.",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day5-limp.webp",
+      "inlineImageAlt": "A man in a head cloth and mantle seen from behind, walking away from a rocky stream up a stony path with a staff in his left hand, a small sun just above the far ridge and his long shadow falling back toward the viewer",
+      "inlineImageCaption": "“The sun rose above him as he passed by Penuel, and he was limping because of his hip.”",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 33:1-11",
+      "translation": "BSB",
+      "passage": "Now Jacob looked up and saw Esau coming toward him with four hundred men. So he divided the children among Leah, Rachel, and the two maidservants. He put the maidservants and their children in front, Leah and her children next, and Rachel and Joseph at the rear. But Jacob himself went on ahead and bowed to the ground seven times as he approached his brother. Esau, however, ran to him and embraced him, threw his arms around his neck, and kissed him. And they both wept. When Esau looked up and saw the women and children, he asked, “Who are these with you?” Jacob answered, “These are the children God has graciously given your servant.” Then the maidservants and their children approached and bowed down. Leah and her children also approached and bowed down, and then Joseph and Rachel approached and bowed down. “What do you mean by sending this whole company to meet me?” asked Esau. “To find favor in your sight, my lord,” Jacob answered. “I already have plenty, my brother,” Esau replied. “Keep what belongs to you.” But Jacob insisted, “No, please! If I have found favor in your sight, then receive this gift from my hand. For indeed, I have seen your face, and it is like seeing the face of God, since you have received me favorably. Please accept my gift that was brought to you, because God has been gracious to me and I have all I need.” So Jacob pressed him until he accepted.",
+      "emphasis": [
+        "Esau, however, ran to him and embraced him",
+        "it is like seeing the face of God",
+        "Please accept my gift"
+      ],
+      "scriptureContext": "The morning after Peniel. Jacob is limping toward the brother he cheated twice."
+    },
+    {
+      "type": "teaching",
+      "heading": "Esau Ran",
+      "content": "Jacob walks ahead of his family, limping, and bows to the ground seven times as he comes near his brother.\n\nEsau does not wait for him to finish. “Esau, however, ran to him and embraced him, threw his arms around his neck, and kissed him. And they both wept.”\n\nIn the Hebrew text of Genesis, the word for “kissed him” is marked with a row of small dots. The ancient rabbis argued about what the dots meant. Some said Esau did not kiss him with his whole heart. Rabbi Shimon bar Yochai disagreed, and the Sifrei records his answer.\n\n“It is a known halachah that Esav hates Jacob, but his mercy gained the ascendancy at that time and he kissed him with all his heart.”\n\nGenesis gives no hint of a trick. It shows Esau asking about the women and children, refusing the gifts because he already has plenty, and calling Jacob “my brother.”\n\nJacob answers with a sentence that reaches back to the night before. “I have seen your face, and it is like seeing the face of God, since you have received me favorably.” At Peniel he saw God's face and lived. Now he sees his brother's face and is welcomed.\n\nJohn Calvin read the moment as a sign of God's own favor.\n\n“And certainly Esau being thus changed, was no obscure figure of the favor of God.”\n\nThen Jacob says one more thing. The Berean Standard Bible reads “Please accept my gift.” The Hebrew word Jacob uses is berakhah, blessing. Literally, Jacob says, “Take my blessing.” It is the same word Esau used twenty years earlier when he cried that Jacob had taken his blessing. The brother who stole the blessing is now pressing a blessing into his brother's hands.\n\nJesus told a story with a scene very close to this one. When the prodigal son comes home, his father sees him while he is still far off. He runs to him, embraces him and kisses him. The Greek words are not identical to the Greek of Genesis 33, but the picture is the same. Someone who had every reason to stay angry runs toward the one who wronged him.",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day5-embrace.webp",
+      "inlineImageAlt": "Two bearded men in woven mantles locked in an embrace on open ground, one with a large frame and a hunter's bow on his back, faces buried in each other's shoulders, a line of distant riders waiting on the ridge behind",
+      "inlineImageCaption": "“Esau, however, ran to him and embraced him.” The brother who was cheated ran first.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "F4isSyennFo",
+      "videoTitle": "Book of Genesis Summary: A Complete Animated Overview (Part 2)",
+      "videoCaption": "The story of Abraham's family from Genesis 12 to 50, including the Jacob stories and his renaming as Israel. It shows how God keeps his promise through a family that keeps failing.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Then and Now",
+      "ancientTruth": "Jacob feared that the brother he had wronged was approaching with four hundred men to attack him, so he divided his household into two camps and prayed for deliverance.",
+      "modernApplication": "Families still break over money, blessing, favoritism and old wounds. People go years without speaking, and each side waits for the other to make the first move.",
+      "connectionPoint": "Esau did not wait for a complete apology. He did not demand that every question be settled first. He ran, and then he asked about the people Jacob loved.",
+      "newTestamentEcho": "Paul gives the Christian version of that choice: “Accept one another, then, just as Christ accepted you, in order to bring glory to God” (Romans 15:7)."
+    },
+    {
+      "type": "story",
+      "heading": "They Fell On Each Other's Neck",
+      "content": "In March 1741, George Whitefield told John Wesley to his face that the two of them preached different gospels. Wesley recorded it in his journal. Whitefield would not give him the right hand of fellowship, and he said he would preach against John and his brother Charles.\n\nEight years later, it was the Wesley brothers who were divided. John believed that a widow named Grace Murray had promised to marry him. Charles believed she had promised to marry another preacher, John Bennet, and he acted to see her married to Bennet.\n\nOn 4 October 1749, John rode to Leeds. Whitefield was there, and John wrote privately that Whitefield “wept and prayed over me.”\n\nThe next morning news came that Grace had married Bennet. Charles arrived an hour later. John wrote that he did not want to see him, but Whitefield insisted.\n\nJohn recorded what Charles said. “I renounce all intercourse with you, but what I would have with an heathen man or a publican.”\n\nThen John wrote down what happened next.\n\n“Poor Mr. Whitefield and John Nelson burst into tears. They prayed, cried, and entreated, till the storm passed away. We could not speak, but only fell on each other's neck.”\n\nWhen John Bennet came into the room, John Wesley and Bennet could not speak either. They kissed each other and wept.\n\nThree days later Charles wrote to a friend that Whitefield, his brother and he were one, “a threefold cord.” He added that at Leeds, John had given Whitefield the right hand of fellowship.",
+      "connectionToTheme": "Two brothers who had wounded each other fell on each other's necks, the same picture as Esau and Jacob. The man who brought them together was someone John had once been estranged from himself."
+    },
+    {
+      "type": "insight",
+      "heading": "A Ring Instead Of A Verdict",
+      "content": "The Wesleys and Whitefield never came to agree about the doctrine that first divided them. Whitefield remained a Calvinist, and the Wesleys did not.\n\nWhitefield died in 1770. In his will he left mourning rings to both brothers. He explained why in his own words.\n\n“In token of my indissoluble union with them, in heart and christian affection, notwithstanding our difference in judgment about some particular points of doctrine.”\n\nWhitefield's executors asked John Wesley to preach his funeral sermon, and he did. In it he spoke about disagreements over doctrines “of a less essential nature.” Then he said this.\n\n“In these we may think and let think; we may ‘agree to disagree.’ But mean time let us hold fast the essentials of the faith.”\n\nThe account of the reconciliation at Leeds is John Wesley's own, written privately, so it tells his side. It should not be read as making Charles the villain. Charles acted on what he believed was right. It still shows brothers who could not agree on everything choosing each other.",
+      "historicalContext": "John Wesley, Journal, 28 March 1741, and his private manuscript account of 2-5 October 1749, both printed in the Standard Edition of the Journal, ed. Nehemiah Curnock (1909), vols. 2 and 3. Charles Wesley to Ebenezer Blackwell, 8 October 1749, in The Journal of the Rev. Charles Wesley, ed. Thomas Jackson (1849). George Whitefield's will, in John Gillies, Memoirs of the Life of George Whitefield (1772). John Wesley, A Sermon on the Death of the Rev. Mr George Whitefield (1770). The popular claim that Whitefield himself asked Wesley to preach his funeral is not supported; Wesley says the executors asked."
+    },
+    {
+      "type": "teaching",
+      "heading": "Carry One Another's Burdens",
+      "content": "Paul gives the church a short command in Galatians 6:2. “Carry one another's burdens, and in this way you will fulfill the law of Christ.” He uses the same Greek verb, bastazo, in Romans 15:1, where the strong are to bear with the weak.\n\nPaul calls it a law. After everything he has said about freedom from the law of Moses, he still names a law Christians are bound to keep. It is the law of Christ, and carrying each other is how it is kept.\n\nThe Gospels name one man who carried Jesus' cross for him. On the way to the cross, the soldiers seized Simon of Cyrene as he came in from the country and put the cross on him “to carry behind Jesus.” He did not volunteer. The Gospels use different verbs for what Simon did, so this is a picture of burden-bearing rather than a word link to Galatians. Mark's Gospel names his sons, Alexander and Rufus, as if the first readers knew them.\n\nDietrich Bonhoeffer described what it means to bear another person in his 1939 book Life Together.\n\n“The Christian, however, must bear the burden of a brother. He must suffer and endure the brother. It is only when he is a burden that another person is really a brother and not merely an object to be manipulated.”\n\nLuther said something similar in 1520. He wrote that the Father has freely helped us in Christ, so we should freely help our neighbor with our bodies and our work. Each Christian, he said, “should become to other a sort of Christ.”\n\nJacob and Esau fought over one birthright and one blessing, because there was only one to go around. The inheritance Christ gives does not work like that. George MacDonald, the Scottish writer, explained the difference.\n\n“To have a share in any earthly inheritance, is to diminish the share of the other inheritors. In the inheritance of the saints, that which each has, goes to increase the possession of the rest.”\n\nHeirs of that kind have no reason to compete. They are free to carry each other instead.",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day5-simon.webp",
+      "inlineImageAlt": "A strong man in a plain country tunic seen from the side, carrying a rough wooden beam along his shoulder on a stone road outside a city gate, following a few paces behind a man in a torn garment, with a Roman soldier walking behind them",
+      "inlineImageCaption": "Simon of Cyrene carried the cross behind Jesus.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "scripture",
+      "reference": "Matthew 7:9-11",
+      "translation": "BSB",
+      "passage": "Which of you, if his son asks for bread, will give him a stone? Or if he asks for a fish, will give him a snake? So if you who are evil know how to give good gifts to your children, how much more will your Father in heaven give good things to those who ask Him!",
+      "emphasis": [
+        "how much more will your Father in heaven give good things"
+      ],
+      "scriptureContext": "Jesus reasons from the love of ordinary parents to the love of God the Father. Genesis 33 shows a brother's welcome; this shows the Father's.",
+      "redLetter": [
+        "Which of you, if his son asks for bread, will give him a stone? Or if he asks for a fish, will give him a snake? So if you who are evil know how to give good gifts to your children, how much more will your Father in heaven give good things to those who ask Him!"
+      ]
+    },
+    {
+      "type": "reflection",
+      "prompt": "Whose face have you been avoiding, and what would it mean to see God's kindness in it?",
+      "additionalQuestions": [
+        "Toward whom could you make a first move, as Jacob approached and Esau ran to meet him?",
+        "Whose burden could you carry this week without being asked?",
+        "What are you still grabbing for that Christ has already given you as an heir?"
+      ],
+      "invitationType": "honest"
+    },
+    {
+      "type": "interactive",
+      "heading": "Make Something",
+      "instruction": "Today's is an art response. Give it fifteen minutes. You do not need any skill.",
+      "steps": [
+        {
+          "description": "Take a sheet of paper and draw a simple line across the middle. On one side write the name of someone you are estranged from or struggling to love. On the other side write your own name."
+        },
+        {
+          "description": "Draw a path from your name to theirs. Make it uneven. Jacob walked it limping."
+        },
+        {
+          "description": "Along the path, write one thing you would need to let go of to walk it, and one burden of theirs you could help carry."
+        },
+        {
+          "description": "At the end of the path, write Genesis 33:10: I have seen your face, and it is like seeing the face of God."
+        },
+        {
+          "description": "Keep the paper somewhere you will see it this week."
+        }
+      ],
+      "interaction_type": "art"
+    },
+    {
+      "type": "teaching",
+      "heading": "What Our Relationships Look Like Now",
+      "content": "Genesis 33 and the New Testament show five marks of how believers treat each other.\n\nFirst, freedom shows up as welcome. Esau ran to Jacob before every question was settled. Paul tells Christians to accept one another as Christ accepted us.\n\nSecond, love notices a brother’s family. Esau asked who Jacob’s companions were and offered to travel with them. When Jacob said the children and animals needed a slower pace, Esau offered some of his own men.\n\nThird, disagreement does not cancel love. Christians will still differ over food, holy days and harder questions. Whitefield and the Wesleys never settled their doctrinal difference. They still treated each other as brothers.\n\nFourth, the strong carry the weak. Paul says we were called to freedom, but we should not use it to indulge ourselves. We should serve one another in love.\n\nFifth, we live as heirs of a generous Father. Jesus said that if ordinary parents know how to give good gifts to their children, “how much more will your Father in heaven give good things to those who ask Him.” God wants more for his children than any parent does. Hebrews says Jesus is not ashamed to call us brothers.\n\nThe blessing that Jacob once took by deceit has been given to us through the body of Christ. We no longer have to compete with each other for it. Because Christ has received us, we can approach people we have wronged, make amends, welcome their families, and help carry their burdens.",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Father, you give good gifts to your children, more than any parent could. You have made me an heir through your Son, who is not ashamed to call me his brother. Teach me to hold on to you, to carry the people you give me, and to run toward the ones I have wronged or who have wronged me. Let me see your kindness in their faces. Amen.",
+      "breathPrayer": "Breathe in: I will not let you go. Breathe out: Teach me to carry my brother."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "I will take the first step toward someone I am estranged from, and I will ask about the people they love.",
+      "leavingAtCross": [
+        "The grudge I have been waiting for someone else to end",
+        "The habit of grabbing for a blessing Christ has already given"
+      ],
+      "receivingFromCross": [
+        "A place among heirs who do not have to compete",
+        "A Father who gives good gifts, and a brother who is not ashamed of me"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Check Yourself",
+      "question": "What Hebrew word does Jacob use when he urges Esau to accept his gift in Genesis 33:11?",
+      "options": [
+        "Bekhorah, birthright",
+        "Berakhah, blessing, the same word Esau used when Jacob took his blessing",
+        "Qorban, the word for an offering brought near in Leviticus",
+        "Peniel, face of God"
+      ],
+      "answer": 2,
+      "explanation": "Jacob literally says, “Take my blessing.” It is the word Esau used in Genesis 27:36 when he cried that Jacob had taken his blessing. The brother who took the blessing gives one back."
+    },
+    {
+      "type": "profile",
+      "heading": "The Evangelist Who Reconciled Brothers",
+      "name": "George Whitefield",
+      "era": "England and America, 1714 to 1770",
+      "bio": "An open-air evangelist of the eighteenth-century revival. He broke with John Wesley in 1741 over doctrine. In 1749 he wept and prayed between John and Charles Wesley until they were reconciled, and in his will he left both brothers a mourning ring.",
+      "keyQuote": "In token of my indissoluble union with them, in heart and christian affection, notwithstanding our difference in judgment about some particular points of doctrine.",
+      "lessonForUs": "He never agreed with the Wesleys on everything. He still carried their quarrel as if it were his own, and he chose union with them to the end."
+    },
+    {
+      "type": "resource",
+      "heading": "Go Deeper",
+      "relatedScriptures": [
+        "Genesis 32-33 — the gifts, the wrestling, the embrace",
+        "Hosea 12:3-4 — the prophet's memory of Peniel",
+        "Luke 15:11-32 — the father who ran",
+        "Galatians 5:13-6:2 — freedom spent on love and burdens",
+        "Romans 15:1-7 — the strong bear with the weak"
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Book of Genesis Summary: A Complete Animated Overview (Part 2)",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=F4isSyennFo"
+        }
+      ],
+      "forDeeperStudy": "Sources for today. Peniel is Strong's H6439; panim H6440; Yisrael H3478, with the verb sarah (strive, persist) H8280; naga (touch) H5060 in Genesis 32:25; kaphar H3722 in Genesis 32:20, where Brown-Driver-Briggs glosses it “pacify.” Berakhah (blessing) H1293 appears in both Genesis 27:36 and 33:11. The meaning of the name Israel is debated; “prince with God” reflects the King James wording, not the verb. Gid hanasheh: Mishnah Chullin 7:1 and 7:6; Sefer HaChinukh, commandment 3; Maimonides, Guide for the Perplexed 3.48. The dots over “kissed him” in Genesis 33:4: Sifrei Bamidbar 69:2 (Silverstein translation); Genesis Rabbah 78:9 records the opposing view. Calvin, Commentary on Genesis 33:10 (King translation). Luke 15:20 and Genesis 33:4 describe the same kind of scene with different Greek verb forms. Spurgeon, “He Blessed Him There,” Metropolitan Tabernacle Pulpit No. 3219. Bastazo (G941) in Galatians 6:2 and Romans 15:1; the Gospels use different verbs for Simon of Cyrene. Bonhoeffer, Life Together, trans. John W. Doberstein (Harper & Row, 1954), chapter 4. Luther, The Freedom of a Christian (Grignon translation). George MacDonald, “The Inheritance,” Unspoken Sermons, Series III (1889). Wesley and Whitefield sources are listed in today's insight."
+    }
+  ]
+}

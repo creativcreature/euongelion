@@ -1,0 +1,302 @@
+{
+  "day": 1,
+  "chiasm_position": "A",
+  "format": "two-minute-open-v2",
+  "title": "Be Holy, Because I Am Holy",
+  "subtitle": "What the food laws of Leviticus 11 were for, and what every tradition agrees about them",
+  "teaser": "Leviticus 11 tells Israel not to eat the camel, the rabbit or the pig, and it gives one reason twice. Before anyone argues about whether the list still applies, that reason has to be heard.",
+  "anchorVerse": "Leviticus 11:44",
+  "theme": "The food laws were God's good gift to set a people apart as holy, and every tradition begins from that agreement",
+  "framework": "Leviticus 11:44-45 — Be holy, because I am holy",
+  "scriptureReference": "Leviticus 11:44-45",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Leviticus 11:44-45",
+      "translation": "BSB",
+      "passage": "For I am the LORD your God; consecrate yourselves, therefore, and be holy, because I am holy. You must not defile yourselves by any creature that crawls along the ground. For I am the LORD, who brought you up out of the land of Egypt so that I would be your God; therefore be holy, because I am holy.",
+      "emphasis": [
+        "be holy, because I am holy",
+        "who brought you up out of the land of Egypt"
+      ],
+      "scriptureContext": "The closing verses of the food laws. God gives the reason for the whole list, and he gives it twice."
+    },
+    {
+      "type": "vocab",
+      "language": "hebrew",
+      "word": "קָדוֹשׁ",
+      "transliteration": "qadosh",
+      "pronunciation": "kah-DOHSH",
+      "strongsNumber": "H6918",
+      "definition": "holy; set apart for God",
+      "usage": "The word describes God himself and the people, places and things that belong to him. In Leviticus 11:44 the order is emphatic: literally, “you shall be holy, for holy am I.” The same word calls Israel “a holy nation” in Exodus 19:6, and the seraphim cry it three times in Isaiah 6:3.",
+      "usageNote": "The lexicons support “set apart” as the word's meaning in use. You will often hear that the root literally means “cut off.” The standard reference works do not establish that.",
+      "relatedWords": [
+        {
+          "word": "קָדַשׁ (qadash)",
+          "transliteration": "qadash",
+          "meaning": "to be holy; in Leviticus 11:44, “consecrate yourselves”"
+        },
+        {
+          "word": "טָהוֹר (tahor)",
+          "transliteration": "tahor",
+          "meaning": "clean; fit for Israel's table and worship"
+        },
+        {
+          "word": "טָמֵא (tamei)",
+          "transliteration": "tamei",
+          "meaning": "unclean; not fit for Israel's table and worship"
+        }
+      ]
+    },
+    {
+      "type": "teaching",
+      "heading": "A List With A Reason",
+      "content": "Leviticus 11 is a list of animals. It tells Israel which ones they may eat and which ones they may not. Cattle, sheep and goats are allowed. The camel, the rabbit and the pig are not. Neither is anything in the water without fins and scales, most birds of prey, or anything that moves along the ground.\n\nThe list comes with a reason, and the reason is in these two verses. God says he brought this people up out of Egypt so that he would be their God. Then he says it twice: be holy, because I am holy.\n\nHoly means set apart for God. The food laws were one of the ways Israel lived that out. Every meal reminded them whose people they were.\n\nThe wording earlier in the chapter matters too. The camel is “unclean for you.” The Hebrew word is tamei, and it names a religious status. It does not mean dirty or diseased. The camel was not a bad animal. It was not food for this people.\n\nChristians still read these verses. Peter quotes them to believers in 1 Peter 1:16. Christians disagree about what that means for their own tables. They agree on where to start. God gave these laws, and he gave them so that his people would be holy.",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "What part of your ordinary day shows, without words, whose you are?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "prayer",
+      "heading": "A Two-Minute Prayer",
+      "prayerText": "Holy God, you brought your people out of Egypt so that you would be their God. Before I decide what your old commands mean for me, teach me to respect them. Make me yours in the ordinary places, even at my table.",
+      "prayerType": "centering"
+    },
+    {
+      "type": "cta",
+      "ctaLabel": "DEEP DIVE",
+      "ctaHref": "#devotional-section-7",
+      "ctaSubtext": "That can be the whole of today. Below, when there is time: six explanations people have given for the food laws, a ninety-year-old scribe who would not pretend to eat pork, and a younger brother born holding his brother's heel."
+    },
+    {
+      "type": "scripture",
+      "reference": "Leviticus 11:1-8",
+      "translation": "BSB",
+      "passage": "The LORD spoke again to Moses and Aaron, telling them, “Say to the Israelites, ‘Of all the beasts of the earth, these ones you may eat: You may eat any animal that has a split hoof completely divided and that chews the cud. But of those that only chew the cud or only have a divided hoof, you are not to eat the following: The camel, though it chews the cud, does not have a divided hoof; it is unclean for you. The rock badger, though it chews the cud, does not have a divided hoof; it is unclean for you. The rabbit, though it chews the cud, does not have a divided hoof; it is unclean for you. And the pig, though it has a split hoof completely divided, does not chew the cud; it is unclean for you. You must not eat their meat or touch their carcasses; they are unclean for you.",
+      "emphasis": [
+        "it is unclean for you",
+        "a split hoof completely divided and that chews the cud"
+      ],
+      "scriptureContext": "Spoken to Moses and Aaron while Israel was camped at Sinai, after the escape from Egypt. The phrase “unclean for you” repeats after every animal."
+    },
+    {
+      "type": "teaching",
+      "heading": "A Family Rule For Freed Slaves",
+      "content": "Leviticus opens with God calling to Moses from the tent of meeting. The people have left Egypt. They are camped at Sinai, and God has come to live among them in that tent.\n\nIn the larger story of the Bible, this is the wilderness. The promise God made to Abraham has become a nation. That nation is now learning how to live near a holy God, and Leviticus is the book of that learning.\n\nChapter 11 brings the lesson into the kitchen. A land animal must have a split hoof and chew the cud. A water creature must have fins and scales. A list of birds is ruled out, most of them birds of prey. Most insects are ruled out, and so is everything that moves along the ground.\n\nSome of the rules look arbitrary to a modern reader. The goat is allowed and the rabbit is not. The text gives the two signs, but it never explains why those two signs mark what Israel may eat.\n\nNotice first the phrase “unclean for you.” It follows the camel, the rock badger, the rabbit and the pig. The Hebrew word is tamei, and the lexicons treat it as a religious category. It does not mean dirty, and it does not mean diseased. It marks what was off limits for Israel's table and Israel's worship.\n\nThe second detail is the word “you.” The rule is addressed to a particular people. Other nations are not told to keep this list. Jewish tradition still reads it that way. The medieval commentator Rashi says God gave these rules to Israel and forbade nothing of the kind to the other nations.\n\nMost Christian traditions read the chapter as ceremonial law given to Israel, which Christ fulfilled. Seventh-day Adventists read it more widely. They point out that Noah already knew clean from unclean animals (Genesis 7:2), and they hold that the distinction still applies to believers today.\n\nThe rule came with a reason, stated twice. “Be holy, because I am holy.” God did not want his people to be like everyone else at the table, because he was not like anyone else.\n\nThe Hebrew word for holy is qadosh. It means set apart for God. A holy people belongs to him in a way other people can see. Food was one of the places they could see it, at every meal.",
+      "chiasm_position": "A",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day1-camp.webp",
+      "inlineImageAlt": "An Israelite family seen from behind, crouched around a small cooking fire at the edge of a wilderness camp of goat-hair tents, the dark slopes of a great mountain rising beyond them in morning light",
+      "inlineImageCaption": "Leviticus 11 was given to a camp of freed slaves, and it reached them at the cooking fire.",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "pullquote",
+      "content": "God did not want his people to be like everyone else at the table, because he was not like anyone else."
+    },
+    {
+      "type": "teaching",
+      "heading": "Six Explanations And One Stated Purpose",
+      "content": "People have asked for more than two thousand years why God cared what Israel ate. The text gives the purpose, which is holiness. It does not explain why the camel is out and the goat is in. So readers have offered explanations. Six have lasted, and each deserves to be heard in its own terms.\n\nThe first is health. Moses Maimonides, the great Jewish philosopher of the twelfth century, argued that the forbidden foods are unwholesome. Some modern Christians say the same. Critics answer that the text never mentions health, that some permitted animals carry disease, and that the list ignores poisonous plants.\n\nThe second is symbol. A Jewish writer in Alexandria, about two centuries before Christ, said the animals picture virtues. Chewing the cud pictures memory, and a divided hoof pictures telling right from wrong. He put his case this way.\n\n“All these ordinances were made for the sake of righteousness to aid the quest for virtue and the perfecting of character.”\n\nThat is the Letter of Aristeas, section 144. Its author kept the food laws and taught their meaning as well.\n\nThe third is order. In 1966 the anthropologist Mary Douglas argued that clean animals fit their place in creation and unclean ones cross its categories. Late in life she changed her mind. She wrote that in Leviticus “the unclean animals are not abominable.” She came to think the laws protect those creatures rather than despise them.\n\nThe fourth is reverence for life. Jacob Milgrom, a Jewish scholar who spent his career on Leviticus, argued that the laws limit which animals may be killed. Eating becomes a daily reminder that life belongs to God.\n\nThe fifth is separation. Gordon Wenham, an evangelical Old Testament scholar, points to Leviticus 20, where God ties the food laws to Israel's calling. “I have set you apart from the nations to be My own.” Each meal marked Israel as God's people.\n\nThe sixth is decree. The rabbis taught that some commands come without a stated reason and are kept because the King gave them. Rashi passes on a saying of Rabbi Elazar ben Azariah from around the year 100. A person should not claim that he finds pork disgusting. He should say this instead.\n\n“I would, indeed, like them, but what can I do since my Father in heaven has imposed these decrees upon me.”\n\nChristian readers have drawn on this list for centuries. Thomas Aquinas gave several reasons at once, and he cited Maimonides by name while he did it.\n\nEach explanation has critics, and scholars still disagree. They share something larger. Every one of them accepts the purpose the text states. The laws were about holiness, God gave them, and they were good.\n\nA Christian who no longer keeps the list still has no grounds to call it foolish. Paul writes that “the law is holy, and the commandment is holy, righteous, and good” (Romans 7:12).",
+      "chiasm_position": "B",
+      "pardes_layer": "remez",
+      "markdown": true
+    },
+    {
+      "type": "video",
+      "videoProvider": "youtube",
+      "videoId": "IJ-FekWUZzE",
+      "videoTitle": "Book of Leviticus Summary: A Complete Animated Overview",
+      "videoCaption": "How Leviticus is built, and how its rituals let a holy God live among a flawed people. The food laws make sense inside that larger design.",
+      "videoAttribution": "BibleProject"
+    },
+    {
+      "type": "bridge",
+      "heading": "Then and Now",
+      "ancientTruth": "In Israel, what you ate showed whose you were. A Jew living in a Greek city could be recognized at a shared meal by what he would not eat.",
+      "modernApplication": "Most people now treat food as a private matter of taste or health. A religious food rule can look like superstition, or like a way of keeping people out.",
+      "connectionPoint": "Leviticus asks a reader to take the older view seriously. Eating is not neutral. It happens in front of God, and it can mark a person as belonging to him.",
+      "newTestamentEcho": "Paul keeps that conviction even where he changes the rule: “So whether you eat or drink or whatever you do, do it all to the glory of God” (1 Corinthians 10:31)."
+    },
+    {
+      "type": "teaching",
+      "heading": "Worth Dying For",
+      "content": "It is easy to treat a food law as a small thing. For many Jews in the centuries before Christ, it was not.\n\nIn 167 BC the Seleucid king Antiochus IV set out to end Jewish worship in Judea. The first book of Maccabees records that he ordered pigs and other unclean animals sacrificed. It also records that many in Israel resolved not to eat unclean food, and that refusing could cost a person's life.\n\nSecond Maccabees, a book Christians do not all read the same way, tells the story of one of them, an old scribe named Eleazar.\n\nEleazar’s story shows what the food laws meant to people who kept them. Keeping them was loyalty to God, and some people would not break them even to save their lives.\n\nA Christian who reads Romans 14 needs that picture first. Paul was not writing to people who took food lightly. He was writing to people whose tradition honored those who died rather than break these laws.",
+      "chiasm_position": "C",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "story",
+      "heading": "The Scribe Who Would Not Pretend",
+      "content": "Second Maccabees tells of a man named Eleazar. He was one of the principal scribes, and he was ninety years old.\n\nThe king's officers forced his mouth open and tried to make him eat pork. He spat it out. Then he walked, of his own accord, toward the place of punishment.\n\nThe men in charge had known him for years. They took him aside and offered him a way out. He could bring meat he was allowed to eat and only pretend it was the king's sacrifice. No one would know.\n\nEleazar refused. He said that pretending was unworthy of his age. Young people would hear that Eleazar, at ninety, had gone over to a foreign religion. His pretense would lead them astray.\n\nHe told his captors what he wanted to leave behind.\n\n“And leave a notable example to such as be young to die willingly and courageously for the honourable and holy laws.”\n\nThey beat him. As he was dying, he said that God knew he could have escaped death and chose the pain instead. Then he said why.\n\n“In soul am well content to suffer these things, because I fear him.”\n\nThe book says his death became an example not only to young men but to all his nation.",
+      "connectionToTheme": "The food laws were not a matter of taste. For Eleazar, keeping them in public was faithfulness to God and to the young people watching him, and pretending would have been a lie."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day1-scribe.webp",
+      "inlineImageAlt": "An old robed scribe with a white beard, seen from behind and slightly to one side, walking steadily away from a low table where a plate of meat has been left untouched, soldiers' spears standing at the frame edge",
+      "inlineImageCaption": "Offered a way to pretend, Eleazar walked away from the table instead.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "insight",
+      "heading": "A Book The Churches Read Differently",
+      "content": "Second Maccabees is Scripture for some Christians and not for others.\n\nThe Catholic Church counts it as Scripture. The Council of Trent listed it in 1546. The Eastern Orthodox churches also accept it, as the Synod of Jerusalem did in 1672. Anglicans read it “for example of life and instruction of manners,” but they do not use it to establish doctrine. The Westminster Confession, which shaped Presbyterian churches, says such books have no authority in the church. It is not part of the Hebrew Bible that Jews read.\n\nNo source outside the Maccabean books confirms Eleazar’s life. Its details are therefore presented as the account of Second Maccabees, not as independently established history.\n\nOne point connects all these traditions. The letter to the Hebrews, which every church accepts, remembers faithful people who “were tortured, not accepting deliverance.” The Anglican scholar B. F. Westcott read that line as a reference to the martyrs of 2 Maccabees 6 and 7. Hebrews does not name Eleazar. It does honor people like him.",
+      "historicalContext": "Eleazar's story is 2 Maccabees 6:18-31, quoted from the King James Version of the Apocrypha. The persecution under Antiochus IV is dated from 1 Maccabees 1:54 to December 167 BC. Canon: Council of Trent, Session IV (1546); Confession of Dositheus, Synod of Jerusalem (1672), Question 3; Thirty-Nine Articles, Article VI; Westminster Confession 1.3. Hebrews 11:35 in the King James Version; B. F. Westcott, The Epistle to the Hebrews (1889), note on 11:35."
+    },
+    {
+      "type": "teaching",
+      "heading": "The Same Book Says Love Your Neighbor",
+      "content": "The food laws are not the only law in Leviticus. Eight chapters later, the same book gives the command Jesus would call the second greatest.\n\n“Do not seek revenge or bear a grudge against any of your people, but love your neighbor as yourself. I am the LORD.”\n\nThat is Leviticus 19:18. Jewish teachers have given it a central place. Rabbi Akiva, in the second century, called it “an all-embracing principle in the Torah.” The Talmud records a short summary of the whole law from the earlier teacher Hillel.\n\n“That which is hateful to you do not do to another; that is the entire Torah, and the rest is its interpretation. Go study.”\n\nJesus names Leviticus 19:18 as the second commandment, after loving God. Paul says every other command is summed up in it. Every Christian tradition, and the Jewish sources beside them, agree that this command still stands. On this point there is no real dispute.\n\nThe same chapter holds another command. “You must not curse the deaf or place a stumbling block before the blind.” Paul uses that same picture of a stumbling block when he writes about food in Romans 14.\n\nSo Leviticus should not be reduced to its strangest rules. The book that keeps the pig off Israel's table also tells Israel to love the neighbor and protect the blind. Holiness in Leviticus covers the kitchen and the neighbor together.\n\nThat gives a Christian a fair way to read the food laws. They are one part of a larger call to be God's people, and every tradition agrees that the call to love still stands.",
+      "chiasm_position": "B-prime",
+      "pardes_layer": "derash",
+      "markdown": true
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day1-stone.webp",
+      "inlineImageAlt": "A village street at midday, a man in a woven tunic bending to lift a large stone off the path while an older man with a long walking stick feels his way along the same street",
+      "inlineImageCaption": "The same book that sets the food laws says: do not place a stumbling block before the blind.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "scripture",
+      "reference": "1 Peter 1:15-16",
+      "translation": "BSB",
+      "passage": "But just as He who called you is holy, so be holy in all you do, for it is written: “Be holy, because I am holy.”",
+      "emphasis": [
+        "so be holy in all you do"
+      ],
+      "scriptureContext": "Peter writes to churches with many Gentile believers, and he quotes Leviticus to them directly. Whatever else has changed, the call to be holy has not."
+    },
+    {
+      "type": "reflection",
+      "prompt": "Which old command have you dismissed as foolish before you understood what it was for?",
+      "additionalQuestions": [
+        "Who taught you to take God seriously in ordinary things like meals?",
+        "Where in your week does belonging to God show up in something you do or do not do?",
+        "What would change if you ate today's meals knowing God is present?"
+      ],
+      "invitationType": "honest"
+    },
+    {
+      "type": "interactive",
+      "heading": "Breathe This",
+      "instruction": "Today's is a breath prayer from Leviticus 11:44. It takes about ninety seconds, and you can do it where you are.",
+      "steps": [
+        {
+          "description": "Sit still and let your shoulders drop. Breathe normally for a few breaths."
+        },
+        {
+          "description": "Breathing in, say silently: Be holy."
+        },
+        {
+          "description": "Breathing out, say silently: because I am holy."
+        },
+        {
+          "description": "Repeat six times, slowly. If you feel that holiness is out of your reach, remember that the command came to people God had already brought out of Egypt."
+        }
+      ],
+      "interaction_type": "breath"
+    },
+    {
+      "type": "scripture",
+      "reference": "Genesis 25:21-26",
+      "translation": "BSB",
+      "passage": "Later, Isaac prayed to the LORD on behalf of his wife, because she was barren. And the LORD heard his prayer, and his wife Rebekah conceived. But the children inside her struggled with each other, and she said, “Why is this happening to me?” So Rebekah went to inquire of the LORD, and He declared to her: “Two nations are in your womb, and two peoples from within you will be separated; one people will be stronger than the other, and the older will serve the younger.” When her time came to give birth, there were indeed twins in her womb. The first one came out red, covered with hair like a fur coat; so they named him Esau. After this, his brother came out grasping Esau’s heel; so he was named Jacob. And Isaac was sixty years old when the twins were born.",
+      "emphasis": [
+        "his brother came out grasping Esau’s heel"
+      ],
+      "scriptureContext": "Centuries before Sinai. The nation that received the food laws takes its name from the second of these twins."
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day1-rebekah.webp",
+      "inlineImageAlt": "A pregnant woman in a mantle and veil seen from behind at sunrise, standing alone on open ground a short walk from her tent, one hand pressed to her side, facing the low sun over the hills",
+      "inlineImageCaption": "“Why is this happening to me?” Rebekah took her question to God.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "teaching",
+      "heading": "Before There Was A List",
+      "content": "Israel's story does not begin at Sinai. Long before the food laws, there was a family, and the family began with a struggle.\n\nIsaac's wife Rebekah could not have children. Isaac prayed, and she conceived twins. The babies struggled inside her so hard that she asked God why. God told her that two nations were in her womb, and that the older would serve the younger.\n\nThe first boy was born red and hairy, and they named him Esau. His brother came out right after him, holding on to Esau's heel. They named him Jacob.\n\nThe name plays on the Hebrew word for heel, aqev. People often say that Jacob means deceiver. Genesis does not say that. It connects the name to the heel. Later in the story, Esau will turn the name into an insult.\n\nThat younger brother is Israel's ancestor. God later gives him the name Israel, and the nation carries it. The people who received the holy laws of Leviticus were the children of a boy who was born grasping at his brother.\n\nFor today, hold two things together. God gave Israel good and holy laws. And the people who received them were descended from someone who needed God's mercy.",
+      "chiasm_position": "A-prime",
+      "pardes_layer": "peshat",
+      "markdown": true
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Holy God, you set your people apart and told them why. You gave them good laws, and you gave them to a family that began with two brothers fighting. I come from people like that, and I am someone like that. Teach me to honor your commands. Make me holy where it counts, at my table and with my neighbor. Amen.",
+      "breathPrayer": "Breathe in: You are holy. Breathe out: I belong to you."
+    },
+    {
+      "type": "takeaway",
+      "heading": "Carry This",
+      "commitment": "I will treat God's old commands as a gift before I decide what they mean for me.",
+      "leavingAtCross": [
+        "Contempt for the parts of Scripture I do not yet understand",
+        "The idea that ordinary meals have nothing to do with God"
+      ],
+      "receivingFromCross": [
+        "A holy God who calls people his own",
+        "A holiness that reaches both my table and my neighbor"
+      ]
+    },
+    {
+      "type": "comprehension",
+      "heading": "Check Yourself",
+      "question": "What does the Hebrew word tamei, “unclean,” mean in Leviticus 11?",
+      "options": [
+        "Dirty, or likely to cause disease",
+        "A religious status: not fit for Israel's table or worship",
+        "Poisonous to every human being",
+        "Created evil by God"
+      ],
+      "answer": 2,
+      "explanation": "The lexicons treat tamei in Leviticus 11 as a religious category. The phrase is “unclean for you,” addressed to Israel. The text never gives a health reason, and the animals are not called evil."
+    },
+    {
+      "type": "profile",
+      "heading": "The Rabbi Who Would Not Say He Hated Pork",
+      "name": "Rabbi Elazar ben Azariah",
+      "era": "Land of Israel, around AD 100",
+      "bio": "A rabbi of the generation after the Romans destroyed the Temple in AD 70. His teaching is preserved in the Sifra, the early rabbinic commentary on Leviticus, and the medieval commentator Rashi repeats it in his notes on Leviticus 20:26.",
+      "keyQuote": "I would, indeed, like them, but what can I do since my Father in heaven has imposed these decrees upon me.",
+      "lessonForUs": "He refused to make obedience look like disgust. He kept the law because his Father asked it of him, and he said so honestly."
+    },
+    {
+      "type": "resource",
+      "heading": "Go Deeper",
+      "relatedScriptures": [
+        "Leviticus 11 — the whole chapter, including the water creatures, birds and swarming things",
+        "Leviticus 19:14-18 — the stumbling block and love for your neighbor",
+        "Leviticus 20:24-26 — the food laws tied to Israel's calling",
+        "Genesis 25:19-26 — the twins and the heel",
+        "1 Peter 1:13-16 — Leviticus quoted to the church"
+      ],
+      "resources": [
+        {
+          "type": "video",
+          "title": "Book of Leviticus Summary: A Complete Animated Overview",
+          "source": "BibleProject",
+          "url": "https://www.youtube.com/watch?v=IJ-FekWUZzE"
+        }
+      ],
+      "forDeeperStudy": "Sources for today. Qadosh is Strong's H6918; tamei H2931; tahor H2889; aqev (heel) H6119 — Brown-Driver-Briggs and the BibleHub interlinear. The claim that “Jacob means deceiver” is not supported by Genesis 25:26, which ties the name to the heel. Explanations of the food laws: Maimonides, Guide for the Perplexed 3.48 (Friedländer translation); Letter of Aristeas 144 (R. H. Charles, 1913); Mary Douglas, Leviticus as Literature (Oxford, 1999), chapter 7; Jacob Milgrom, Leviticus 1-16 (Anchor Bible, 1991); Gordon Wenham, “The Theology of Unclean Food,” Evangelical Quarterly 53 (1981); Rashi on Leviticus 11:2 and 20:26, citing the Sifra (Rosenbaum and Silbermann translation); Thomas Aquinas, Summa Theologiae I-II q.102 a.6. Rabbi Akiva: Sifra, Kedoshim 4:12. Hillel: Babylonian Talmud, Shabbat 31a (William Davidson edition). Antiochus IV: 1 Maccabees 1:47, 54, 62. Eleazar: 2 Maccabees 6:18-31 (King James Version Apocrypha)."
+    }
+  ]
+}

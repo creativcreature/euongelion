@@ -1,0 +1,91 @@
+{
+  "day": 7,
+  "chiasm_position": "sabbath",
+  "format": "sabbath",
+  "title": "An Easy Yoke",
+  "subtitle": "The seventh day of By the Heel",
+  "teaser": "At Jerusalem, Peter warned against placing on Gentile disciples a yoke that, in his words, “neither we nor our fathers have been able to bear.” Jesus offers his own yoke, and he calls it easy.",
+  "anchorVerse": "Matthew 11:29",
+  "theme": "Rest from taking, earning and proving; the blessing has been given",
+  "framework": "Matthew 11:28-30 — My yoke is easy and My burden is light",
+  "scriptureReference": "Matthew 11:28-30",
+  "totalWords": 0,
+  "panels": [],
+  "modules": [
+    {
+      "type": "scripture",
+      "reference": "Matthew 11:28-30",
+      "translation": "BSB",
+      "passage": "Come to Me, all you who are weary and burdened, and I will give you rest. Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light.”",
+      "emphasis": [
+        "I will give you rest",
+        "For My yoke is easy and My burden is light"
+      ],
+      "scriptureContext": "Jesus does not tell tired people to carry nothing. He offers them his own yoke, and he says it is easy.",
+      "redLetter": [
+        "Come to Me, all you who are weary and burdened, and I will give you rest. Take My yoke upon you and learn from Me; for I am gentle and humble in heart, and you will find rest for your souls. For My yoke is easy and My burden is light.”"
+      ]
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day7-field.webp",
+      "inlineImageAlt": "A quiet green field in soft morning light beside a low stone wall, a single goat-hair tent and a small house at the far edge, no one working",
+      "inlineImageCaption": "“The smell of my son is like the smell of a field that the LORD has blessed.”",
+      "inlineImageWidth": "bleed"
+    },
+    {
+      "type": "sabbath",
+      "heading": "Nothing To Grab",
+      "content": "Jacob spent much of his life taking what he wanted. He bought his brother's birthright with a bowl of stew, and he took his father's blessing by wearing his brother's clothes. At Peniel he held on to God instead.\n\nThe blessing you need has already been given. It came through the body of Jesus. You do not have to earn it or prove that you deserve it.\n\nAt the Jerusalem Council, Peter warned against placing on Gentile disciples a yoke that, in his words, “neither we nor our fathers have been able to bear.” Jesus offers his own yoke and says that his burden is light. His yoke still calls for obedience, and its teacher is gentle and humble in heart.\n\nSo rest today. Eat a meal slowly and give thanks for it, whatever is on the plate. If you disagree with someone about food or faith, do not argue about it today.\n\nIf this week has been hard, that is all right. Jacob was limping on the morning he was blessed.\n\nSit somewhere quiet for ten minutes. You do not have to feel anything in particular. You are an heir, and today you are allowed to simply be one.",
+      "markdown": true
+    },
+    {
+      "type": "reflection",
+      "prompt": "What have you been carrying this week that Jesus did not ask you to carry?",
+      "invitationType": "quiet"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day7-meal.webp",
+      "inlineImageAlt": "A simple meal set out on a woven mat in a shaded doorway at midday, a round loaf, a bowl of lentils and a clay cup, with no one hurrying to eat",
+      "inlineImageCaption": "Eat slowly and give thanks, whatever is on the plate.",
+      "inlineImageWidth": "narrow"
+    },
+    {
+      "type": "interactive",
+      "heading": "Silence",
+      "instruction": "The whole of today is this. Ten minutes, and no words are required.",
+      "steps": [
+        {
+          "description": "Sit down somewhere you can be still. Put your phone in another room."
+        },
+        {
+          "description": "Set a timer for ten minutes so you do not have to watch the clock."
+        },
+        {
+          "description": "Open your hands and rest them on your knees, palms up. Say once, aloud or silently: Jesus, you said, “My yoke is easy and My burden is light.”"
+        },
+        {
+          "description": "Then stop talking. If your mind reaches for something to fix or finish, let it go and open your hands again."
+        },
+        {
+          "description": "When the timer ends, do not grade how it went."
+        }
+      ],
+      "interaction_type": "silence"
+    },
+    {
+      "type": "inline-image",
+      "inlineImageSrc": "/images/series/by-the-heel/day7-succoth.webp",
+      "inlineImageAlt": "An older man sitting on a low stone bench beside a small stone house at sunset, a staff leaning near him, sheep and goats resting under a roofed shelter of poles and branches",
+      "inlineImageCaption": "At Succoth, Jacob built himself a house and made shelters for his livestock.",
+      "inlineImageWidth": "wide"
+    },
+    {
+      "type": "prayer",
+      "heading": "Prayer",
+      "prayerText": "Jesus, I am tired. I come to you for rest. Amen.",
+      "breathPrayer": "Breathe in: I come to you. Breathe out: Your yoke is easy."
+    }
+  ]
+}
