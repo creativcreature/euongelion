@@ -343,6 +343,23 @@ export default function AudioDrawer() {
       {showHandle && item && (
         <div className="lsn-handle-wrap">
           <div className={`lsn-handle${playing ? ' is-playing' : ''}`}>
+            {/* Position as one ambient rule across the top. Spotify and
+                Audible both carry this, and it is the cheapest possible answer
+                to "how far in am I" — no control, no label, nothing to tap. */}
+            <span className="lsn-handle-track" aria-hidden="true">
+              <span
+                className="lsn-handle-progress"
+                style={{
+                  width: `${Math.max(
+                    0,
+                    Math.min(
+                      100,
+                      (elapsed / Math.max(1, total || item.duration)) * 100,
+                    ),
+                  )}%`,
+                }}
+              />
+            </span>
             <button
               type="button"
               className="lsn-handle-open"
@@ -350,10 +367,28 @@ export default function AudioDrawer() {
               aria-label={`Now playing: ${item.title}${upNext > 0 ? `, ${upNext} more queued` : ''}. Open the queue.`}
               onClick={() => setOpen(true)}
             >
-              <span className="lsn-bars" aria-hidden="true">
-                <i />
-                <i />
-                <i />
+              {/* Cover art, the way every listening app anchors this bar. The
+                  three-bar equalizer glyph that used to sit here carried no
+                  information and almost no weight, which is most of why the
+                  row read as unbalanced: a 13px mark against 88px of controls.
+                  The glyph survives as the fallback for a reading with no
+                  plate, where it still says "this is sounding". */}
+              <span className="lsn-handle-art" aria-hidden="true">
+                {cover ? (
+                  <Image
+                    src={cover.src}
+                    alt=""
+                    fill
+                    sizes="56px"
+                    style={{ objectFit: 'cover' }}
+                  />
+                ) : (
+                  <span className="lsn-bars">
+                    <i />
+                    <i />
+                    <i />
+                  </span>
+                )}
               </span>
               <span className="lsn-handle-lines">
                 <span className="lsn-handle-title">
@@ -362,11 +397,17 @@ export default function AudioDrawer() {
                 <span className="lsn-handle-sub">
                   {handleSection ? item.title : (item.context ?? 'Euangelion')}
                   {remaining !== null ? ` · ${formatTime(remaining)} left` : ''}
+                  {/* Folded into the metadata line rather than floating as its
+                      own chip between the text and the transport, which was
+                      the second thing pulling the row off balance. */}
+                  {upNext > 0 && (
+                    <>
+                      {' · '}
+                      <span className="lsn-handle-count">+{upNext}</span>
+                    </>
+                  )}
                 </span>
               </span>
-              {upNext > 0 && (
-                <span className="lsn-handle-count">+{upNext}</span>
-              )}
             </button>
             <button
               type="button"
@@ -969,6 +1010,7 @@ export default function AudioDrawer() {
           pointer-events: none;
         }
         .lsn-handle {
+          position: relative;
           pointer-events: auto;
           display: inline-flex;
           align-items: center;
@@ -978,16 +1020,51 @@ export default function AudioDrawer() {
           border-left: 3px solid var(--color-gold);
           box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
         }
+        /* The progress rule F-182's contract calls for. A real span rather than
+           a pseudo-element: EditorialMotionSystem claims ::after on every
+           .mock-paper button at runtime, and geometry on it un-collapses that
+           hidden underline into a painted slab (SA-077). One owner per
+           pseudo-element, so this one brings its own box. */
+        .lsn-handle-track {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: var(--color-border);
+          overflow: hidden;
+        }
+        .lsn-handle-progress {
+          display: block;
+          height: 100%;
+          background: var(--color-gold);
+        }
+        /* Explicit box: a fill image is absolutely positioned and contributes
+           nothing to its parent's height, so without one this collapses to zero
+           and the art is present, decoded and invisible — the failure logged
+           four times, most recently as F-115. */
+        .lsn-handle-art {
+          position: relative;
+          flex: none;
+          display: grid;
+          place-items: center;
+          width: 44px;
+          height: 44px;
+          overflow: hidden;
+          background: var(--color-surface-raised, var(--color-bg));
+          border: 1px solid var(--color-border);
+        }
         .lsn-handle-open {
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.6rem;
           min-width: 0;
           min-height: 44px;
-          padding: 0.3rem 0.2rem 0.3rem 0.65rem;
+          padding: 0.3rem 0.2rem 0.3rem 0.4rem;
           background: transparent;
           border: 0;
           cursor: pointer;
+          text-align: left;
         }
         .lsn-bars {
           display: inline-flex;
@@ -1055,6 +1132,7 @@ export default function AudioDrawer() {
         .lsn-handle-close {
           display: grid;
           place-items: center;
+          flex: none;
           min-width: 44px;
           min-height: 44px;
           background: transparent;
@@ -1066,19 +1144,27 @@ export default function AudioDrawer() {
           width: 15px;
           height: 15px;
         }
+        /* The primary action, and it should look like one. A transparent 17px
+           glyph is what the founder meant by "the tap areas are tiny" — the
+           target met 44px but nothing on screen said so, so it read as smaller
+           than it was. Both halves are set explicitly per theme: --color-gold
+           is cobalt in light and amber in dark, and reaching for one without
+           the other is the trap logged at SA-044 and again at SA-047. */
         .lsn-handle-play {
           display: grid;
           place-items: center;
+          flex: none;
           min-width: 44px;
           min-height: 44px;
-          background: transparent;
+          border-radius: 50%;
+          background: var(--color-gold);
           border: 0;
-          color: var(--color-text-primary, var(--color-fg));
+          color: var(--color-bg);
           cursor: pointer;
         }
         .lsn-handle-play svg {
-          width: 17px;
-          height: 17px;
+          width: 18px;
+          height: 18px;
           fill: currentColor;
         }
         .lsn-handle-open:focus-visible,
@@ -1112,13 +1198,34 @@ export default function AudioDrawer() {
             max-width: none;
             border-inline: 0;
             border-bottom: 0;
-            border-top: 3px solid var(--color-gold);
+            /* No border-top: the progress rule is the top edge now, so the
+               bar gains a live cue where it had a static one. */
+            border-top: 0;
+            padding-right: 0.4rem;
           }
           /* Takes the slack, so the title ellipsizes against the controls
              instead of the controls drifting into the middle of the bar. */
           .lsn-handle-open {
             flex: 1 1 auto;
-            padding-left: 0.85rem;
+            gap: 0.7rem;
+            min-height: 64px;
+            padding: 0.4rem 0.3rem 0.4rem 0.6rem;
+          }
+          /* Sized against the row rather than the glyph. 52px of art on the
+             left balances 52px of play on the right, and the title sits
+             between two objects of equal weight instead of trailing off a
+             13px mark. */
+          .lsn-handle-art {
+            width: 52px;
+            height: 52px;
+          }
+          .lsn-handle-play {
+            min-width: 52px;
+            min-height: 52px;
+          }
+          .lsn-handle-play svg {
+            width: 21px;
+            height: 21px;
           }
         }
 

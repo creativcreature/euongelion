@@ -55,10 +55,19 @@ describe('the handle docks on a phone', () => {
     expect(block).toMatch(/\.lsn-handle\s*\{[^}]*border-inline:\s*0/)
   })
 
-  it('moves the gold edge to the top, where a docked surface carries it', () => {
-    expect(block).toMatch(
-      /\.lsn-handle\s*\{[^}]*border-top:\s*3px solid var\(--color-gold\)/,
-    )
+  it('drops the static top border — the progress rule is the top edge now', () => {
+    expect(block).toMatch(/\.lsn-handle\s*\{[^}]*border-top:\s*0/)
+  })
+
+  it('balances the row: art and play are the same size', () => {
+    const art = /\.lsn-handle-art\s*\{[^}]*width:\s*(\d+)px/.exec(block)?.[1]
+    const play = /\.lsn-handle-play\s*\{[^}]*min-width:\s*(\d+)px/.exec(block)?.[1]
+    expect(Number(art)).toBeGreaterThanOrEqual(52)
+    expect(Number(play)).toBe(Number(art))
+  })
+
+  it('gives the row real height rather than a 44px minimum', () => {
+    expect(block).toMatch(/\.lsn-handle-open\s*\{[^}]*min-height:\s*64px/)
   })
 
   it('lets the title take the slack rather than the controls drifting inward', () => {
@@ -78,5 +87,51 @@ describe('the desktop pill is left alone', () => {
   it('keeps the wrapper right-aligned outside the phone block', () => {
     const base = SOURCE.slice(0, SOURCE.lastIndexOf('@media (max-width: 900px)'))
     expect(base).toMatch(/\.lsn-handle-wrap\s*\{[^}]*justify-content:\s*flex-end/)
+  })
+})
+
+/**
+ * The bar is anchored by cover art and a real primary action, the way Spotify
+ * and Audible both anchor theirs. Founder: "it should follow the something
+ * lole spotify or audible. Currently it feels unbalanced and the tap areas are
+ * tiny."
+ *
+ * The row used to open on a 13px three-bar equalizer glyph and close on 88px
+ * of transparent controls, which is the imbalance. Art on the left and a
+ * filled play on the right give it two ends of equal weight.
+ */
+describe('the bar is anchored at both ends', () => {
+  it('leads with cover art, falling back to the equalizer when none exists', () => {
+    expect(SOURCE).toMatch(/className="lsn-handle-art"/)
+    expect(SOURCE).toMatch(/cover \? \(/)
+    expect(SOURCE).toMatch(/className="lsn-bars"/)
+  })
+
+  it('gives the art an explicit box, so a fill image cannot collapse it', () => {
+    expect(SOURCE).toMatch(
+      /\.lsn-handle-art\s*\{[^}]*width:\s*\d+px[^}]*height:\s*\d+px/,
+    )
+  })
+
+  it('carries the progress rule F-182 promised, as a real element', () => {
+    expect(SOURCE).toMatch(/className="lsn-handle-track"/)
+    expect(SOURCE).toMatch(/className="lsn-handle-progress"/)
+    // Never a pseudo-element: EditorialMotionSystem owns ::after on these
+    // buttons at runtime and geometry on it paints a slab (SA-077).
+    expect(SOURCE).not.toMatch(/\.lsn-handle-track::(after|before)/)
+  })
+
+  it('paints play as a filled control, both halves set per theme', () => {
+    const play = /\.lsn-handle-play\s*\{[^}]*\}/.exec(SOURCE)?.[0] ?? ''
+    expect(play).toMatch(/background:\s*var\(--color-gold\)/)
+    expect(play).toMatch(/color:\s*var\(--color-bg\)/)
+  })
+
+  it('folds the queue count into the metadata line, not a floating chip', () => {
+    const sub = SOURCE.slice(
+      SOURCE.indexOf('className="lsn-handle-sub"'),
+      SOURCE.indexOf('</span>', SOURCE.indexOf('lsn-handle-count')),
+    )
+    expect(sub).toMatch(/lsn-handle-count/)
   })
 })

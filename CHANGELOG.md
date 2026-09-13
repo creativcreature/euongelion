@@ -5,6 +5,46 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-12 — The mini player, on the Spotify/Audible shape — SA-139 (F-182)
+
+Founder: _"it should follow the something lole spotify or audible. Currently it
+feels unbalanced and the tap areas are tiny."_
+
+**The imbalance was measurable.** The row opened on a 13px three-bar equalizer
+glyph and closed on 88px of transparent controls, with the title trailing off
+the small end. Every listening app worth copying anchors this bar the same way:
+art on the left, text in the middle, one unmistakable action on the right.
+
+- **Cover art leads**, 52px on a phone, resolved through the same
+  `coverForReading` the lock screen already uses — so the bar, the Now Playing
+  card and the reading page cannot disagree about which plate belongs to a
+  reading. The equalizer survives as the fallback for a reading with no plate,
+  where it still says "this is sounding". The box is explicitly sized, because a
+  `fill` image contributes nothing to its parent's height and would have shipped
+  present, decoded and invisible — the F-115 failure, four times logged.
+- **Play is a filled control**, 52px, matching the art at the other end so the
+  title sits between two objects of equal weight. Its target was already 44px;
+  nothing on screen said so, which is what "the tap areas are tiny" actually
+  describes. Both halves are set per theme — `--color-gold` is cobalt in light
+  and amber in dark, and reaching for one without the other is SA-044/SA-047.
+- **The progress rule F-182 promised now exists**, as a live 2px line across the
+  top rather than the static gold border that was there. A real span, never a
+  pseudo-element: `EditorialMotionSystem` claims `::after` on these buttons at
+  runtime and geometry on it paints a slab (SA-077).
+- **The queue count folds into the metadata line** instead of floating as its
+  own chip between the text and the transport — the second thing pulling the row
+  off centre.
+- Row height 64px, up from a 44px minimum.
+
+**Cost one self-inflicted wound worth recording:** the first pass put a backtick
+inside a CSS comment, which terminates the styled-jsx template literal and fails
+the esbuild transform outright. It is in the project's own trap list. Reading
+the note is not the same as remembering it at the moment it applies.
+
+Desktop keeps the compact pill. Twelve tests pin the shape.
+
+---
+
 ## 2026-09-12 — The mini player docks on a phone instead of floating — SA-139 (F-182)
 
 Founder, from the installed PWA with a screenshot: _"the normal player needs
@@ -13054,7 +13094,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.30
+**Version:** 0.8.31
 **Version:** 0.8.19
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features
