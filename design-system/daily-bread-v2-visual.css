@@ -1,0 +1,65 @@
+/* ============================================
+   DAILY BREAD V2 — PROCEDURAL SCENE (SA-142 / F-184)
+   ============================================
+   The poster (inline SVG halftone) is always present; the canvas is an
+   overlay that fades in only after its first real frame. Colours come only
+   from existing tokens. The poster also carries palette hex values as SVG
+   presentation attributes, so it prints correctly outside `.mock-home` where
+   these tokens are not defined; inside `.mock-home` the rules below win and
+   follow the live theme — unless the component was given an explicit theme
+   (`data-theme`), which is honoured as-is. */
+
+.db2-scene {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2 / 1;
+  margin: 0;
+  background: var(--mock-paper);
+}
+
+.db2-scene-poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.db2-scene-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 600ms ease;
+  pointer-events: none;
+}
+
+.db2-scene-canvas.is-live {
+  opacity: 1;
+}
+
+/* Light theme inside the reader shell: cobalt ink on cream. */
+.mock-home .db2-scene:not([data-theme]) .db2-scene-poster {
+  fill: var(--mock-blue);
+}
+
+.mock-home .db2-scene:not([data-theme]) .db2-scene-paper {
+  fill: var(--mock-paper);
+}
+
+.mock-home .db2-scene:not([data-theme]) .db2-scene-spot {
+  fill: var(--color-crimson);
+}
+
+/* Dark theme: `--mock-blue` IS the navy paper there, so the ink is the
+   cream `--mock-ink`. */
+.mock-home.is-dark .db2-scene:not([data-theme]) .db2-scene-poster,
+.dark .mock-home .db2-scene:not([data-theme]) .db2-scene-poster {
+  fill: var(--mock-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .db2-scene-canvas {
+    display: none;
+  }
+}

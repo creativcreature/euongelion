@@ -1,0 +1,269 @@
+# The Daily Bread V2 — architecture (SA-142 / F-184)
+
+The Daily Bread V2 turns the paper into a serialized daily publication. It is
+assembled off-request, frozen, published at the 7am New York rollover, and archived
+permanently. It is built behind a flag and does not replace the SA-090 paper until the
+founder turns it on. Operations: `docs/runbooks/DAILY-BREAD-V2-RUNBOOK.md`.
+
+## 1. The edition
+
+`DailyEdition` (`src/lib/daily-bread/types.ts`) is one frozen document per editorial
+date:
+
+| Field | Meaning |
+| --- | --- |
+| `editionDate`, `slug` | `YYYY-MM-DD`, the editorial (New York) date |
+| `archiveOrigin` | `native` or `backfilled` |
+| `volume`, `issue` | Native only. Allocated at publish. `Vol. 1 · No. 001` is the first native paper |
+| `lifecycle` | `draft → assembling → ready → published → superseded` |
+| `quality` | `normal`, `fallback` or `minimum`. Independent of lifecycle |
+| `activeRevision` | 1 at publication; +1 per correction |
+| `title`, `deck`, `primaryScripture`, `liturgical`, `seed` | The day's frame |
+| `composition` | Archetype, placements (module, region, span, tier, band, beat), rhythm, scoring |
+| `modules` | 31 module types (reading, Scripture, comic, scene, puzzles, …) |
+| `assets` | Lead plate, scene poster seed, OG card data, fallbacks |
+| `generation` | Run id, providers used, fallbacks, usage and cost, module failures, comic level, source item ids |
+
+Nothing in the document is recomputed when a reader requests the page.
+
+## 2. Persistence
+
+`supabase/migrations/20260913000001_daily_bread_v2.sql` (idempotent):
+
+- `daily_bread_editions`: unique `edition_date`; partial unique index on native `issue`.
+  CHECK constraints: backfilled rows have no issue; a ready row is complete; a
+  published row is numbered and stamped; a withdrawn row has a reason.
+- `daily_bread_edition_revisions`: `(edition_id, revision)`. A trigger rejects UPDATE
+  and DELETE.
+- `daily_bread_publication_attempts`: one row per pipeline attempt.
+- Functions (SECURITY DEFINER, `search_path = public`, revoked from PUBLIC, granted
+  to `service_role`):
+  - `daily_bread_acquire_assembly(date, owner, ttl, origin)`
+  - `daily_bread_release_assembly(date, owner)`
+  - `daily_bread_mark_ready(date, owner, document)`: lease holder only
+  - `daily_bread_reopen_ready(date)`
+  - `daily_bread_publish(date, now)`: advisory lock, next issue number, revision 1
+  - `daily_bread_create_revision(date, reason, patch)`
+  - `daily_bread_supersede(date, reason)`
+- RLS: anon and authenticated may SELECT only published or superseded editions and
+  their revisions. They have no write grants and no access to attempts.
+
+`src/lib/daily-bread/repository/`: one `DailyBreadRepository` interface with three
+implementations:
+
+- `supabase.ts`: production. Calls the SQL functions; throws on error.
+- `memory.ts`: tests and dry runs. Mirrors the SQL semantics.
+- `fixture.ts`: read-only local preview. Loads `.daily-bread-local/fixtures.json` or
+  the ASSETS copy.
+
+The SQL itself is tested in real Postgres by `__tests__/daily-bread-v2-sql.test.ts`
+(PGlite).
+
+## 3. Time
+
+`src/lib/daily-bread/time.ts` is the only place an instant becomes an editorial date.
+The rollover is 07:00 America/New_York, resolved per instant with Intl, so it is
+DST-safe. `__tests__/daily-bread-v2-time.test.ts` checks it against the SA-114
+`effectiveEditionDate` every 37 minutes across 2026. `schedulePlan` returns the live
+date, the next date and whether the 12-hour build window is open.
+
+## 4. The pipeline
+
+`src/lib/daily-bread/orchestrator.ts` (Node only, never on a reader request):
+
+1. **Lease.** `acquireAssembly` gives one owner per invocation. A duplicate job gets
+   `skipped`.
+2. **History.** The last 14 days of archetypes, scenes, comic ids and lead plates,
+   used for anti-repeat.
+3. **Modules** (`modules/build.ts`). Every module is built in isolation, and a failure
+   is recorded without stopping the build. Sources, in order: `edition_items` rows
+   live at the rollover (the SA-114 review queue), then the SA-090/092 generators and
+   committed banks. The primary Scripture comes from the lead, then the reading, then
+   the week's memory verse. It is trimmed to at most 6 verses and looked up in the BSB.
+4. **Editorial frame** (`generate/frame.ts`). See section 5.
+5. **Comic** (`comic/chain.ts`). See section 6.
+6. **Scene.** The frame's scene, rendered by one of three renderers chosen by seed.
+7. **Composition** (`composition/`). See section 7.
+8. **Validation** (`validate.ts`). Checks required modules, placements against
+   modules, safe links and assets, a 900 KB size cap, no script-like content, and no
+   credential values or credential-shaped strings.
+9. **Mark ready.** Only the lease holder can mark ready. The document is frozen.
+
+`publish.ts`:
+
+1. The rollover must be reached.
+2. Reviewed `edition_items` used by the build are re-checked. A row rejected since the
+   build sends the edition back to draft for a rebuild.
+3. `daily_bread_publish` runs.
+
+`runDailyBread`, the scheduler step:
+
+1. The live date must be published: publish it if ready, or build and publish it now
+   if it is missing.
+2. Inside the build window, build tomorrow.
+
+Every call writes a `PublicationAttempt`.
+
+**Quality:**
+- `minimum`: no lead or reading, or at least half the standing and play modules failed.
+- `fallback`: the frame fell to deterministic under the full policy, the Scripture
+  came from the weekly verse, the comic was reprinted or omitted, or any module failed.
+- `normal`: otherwise.
+
+## 5. Generator chain
+
+`providers/`:
+
+| Order | Provider | Credential (server/CI only) | Transport |
+| --- | --- | --- | --- |
+| 1 | `claude-api` | `ANTHROPIC_API_KEY` | Messages API over fetch, `x-api-key` header |
+| 1 | `claude-cli` | `CLAUDE_CODE_OAUTH_TOKEN` | `claude -p`, prompt on stdin |
+| 2 | `gemini` | `GEMINI_API_KEY` / `GOOGLE_API_KEY` | `x-goog-api-key` header; never in the URL |
+| 3 | `deterministic` | none | committed banks + BSB context verses |
+
+`runProviderChain`:
+
+- Skips providers that are not configured.
+- Aborts each attempt at the timeout (default 90 s).
+- Retries once on a retryable failure or a validation failure, with backoff.
+- Does not retry auth failures.
+- Records `ProviderUsage` for every attempt.
+- Lands on the deterministic floor last. If the floor throws, the task fails loudly.
+
+The model writes only the frame:
+- **Deck:** 60–220 characters, one sentence.
+- **Rabbit holes:** 2–4 references with a reason; the verse text is looked up.
+- **Comic:** a storyboard in the fixed vocabulary.
+- **Scene:** one of three.
+
+`generate/guards.ts` rejects:
+- quotation marks
+- URLs, emoji and markup
+- first person
+- the AI-CONTENT-CONSTRAINTS §4.2 forbidden patterns
+
+## 6. The comic
+
+**Root cause of "the comic doesn't load".** The page printed its reserved placeholder
+because no strip rows existed. These faults stopped the rows from being made:
+- The strip machine is paused by default.
+- `daily-gapfill.yml` never installed the Claude CLI, so its tier probe always failed
+  and the job exited 0.
+- `daily-edition.yml` timed out at 15 minutes, before its final strip step.
+- Tier 3 unset the OAuth token, and `compose-lead-claude.mjs` then threw.
+- The failure alert had no `issues: write` permission.
+
+Items 2–5 are repaired. `STRIP_MACHINE` is unchanged: it is a founder switch.
+
+**V2** (`src/lib/daily-bread/comic/`):
+- **Script:** a `ComicScript` of 3 panels. Each panel has a setting, 1–4 figures, a
+  screen-reader description and an optional verbatim BSB caption.
+- **Render:** `render.ts` produces a deterministic SVG tree with a halftone pattern
+  and a single crimson spot. `svg.ts` allowlists tags and attributes.
+  `ComicStrip.tsx` maps the tree to React elements (no innerHTML). It renders a wide
+  strip on desktop and stacked panels below 700px, with an sr-only panel list.
+- **Fallback chain:**
+  1. Approved strip art from `edition_items`.
+  2. A generated script, validated and render-checked.
+  3. One of 17 committed templates, skipping any used in the last 14 days.
+  4. An archive reprint, credited.
+  5. Omitted. The composition closes the gap, and no placeholder is printed.
+
+## 7. Composition
+
+`composition/archetypes.ts` defines eight structural layouts. Each is a front band set
+plus body bands, with span assignments on a 6-column grid and an omit list:
+- **Broadsheet:** lead with rail, then the ruled sheet.
+- **Illuminated:** scene, illuminated Scripture, lead, then the reading.
+- **Quiet:** one 44rem column, no games.
+- **Field Notes:** a 2:1 main column plus a ruled margin.
+- **Red Letter:** Christ's words set at display size.
+- **Study Table:** word and puzzles first.
+- **Joy:** scene, comic, good news and hymnal up front.
+- **Prayer Book:** the prayer first, rubric-numbered, no games.
+
+Choosing an archetype (`compose.ts`):
+- Score = affinity (weekday, season, somber days, Gospel reference, good news
+  present) + seeded jitter − recency penalty.
+- An archetype repeats on consecutive days only if nothing else is eligible.
+- Modules left unplaced join a back sheet in standard order.
+
+Rendering: `DailyBreadEdition.tsx` shows a masthead with the persisted serial, the
+contents line, the bands, previous/next navigation, and a colophon naming the archetype
+and any quality note. CSS lives in `design-system/daily-bread-v2.css`.
+
+## 8. Procedural visual engine
+
+`src/lib/daily-bread/visual/` and `src/components/daily-bread/visual/ProceduralScene.tsx`:
+
+- **Scenes:** Living Water, Grain and Wilderness Stars. Each is a pure seeded scalar
+  field (`field.ts`) mirrored in GLSL ES 1.00 (`shaders.ts`).
+- **Renderers:** riso (halftone plus crimson misregistration and stepped grain),
+  halftone, and ASCII on Canvas2D.
+- **Poster:** a static halftone SVG (`poster.ts`), server-rendered first and always
+  present.
+- **Runtime:**
+  - Motion runs only when both OS and in-app reduced motion are off, the scene is
+    intersecting, and the page is visible.
+  - Capped at 30 fps and DPR 1.5.
+  - On `webglcontextlost` the scene shows the poster and rebuilds on restore.
+  - The canvas is `aria-hidden` and needs no CSP change.
+- No runtime image generation and no third-party rendering library.
+
+## 9. Security
+
+- Secrets are read at call time, never stored on objects. They are never in the
+  document, never in `NEXT_PUBLIC_*`, and redacted from every log line and error.
+- `/api/admin/daily-bread/publish` requires `X-Internal-Secret`. It validates the date
+  (the live date or the two days before), is rate-limited to 10/min, reads a body of
+  at most 256 bytes, and refuses a fixture source.
+- `/api/admin/daily-bread/health` accepts the internal secret or an allowlisted
+  founder session, and is rate-limited to 30/min.
+- `/admin/preview/daily-bread-v2` is admin-only and noindex.
+- The reader path renders text as text. The JSON-LD is the only injected block, with
+  `<` escaped.
+- Links pass `safeHref`: same-site paths, or public https without credentials or IP
+  literals.
+- Images pass `safeAssetSrc`: `/images/**` or the project's `edition-assets` public
+  bucket.
+- Good News is human-curated only (`src/data/daily-bread-good-news.ts`) and validated.
+  Models never produce it.
+
+## 10. Observability
+
+- **Logs:** structured `[daily-bread] {json}` lines with run id, event, stage timings
+  and redaction.
+- **Attempts:** the `daily_bread_publication_attempts` table.
+- **Health** (`health.ts`):
+  - `down` when today is unpublished 90 minutes after rollover.
+  - `degraded` when today is fallback or minimum, tomorrow is not ready 2 hours before
+    rollover, or 2 or more consecutive failures have occurred.
+  - Also reports 7-day counts and estimated cost.
+- **Alerts:** the scheduler workflow files a GitHub issue when a run fails or health
+  is down.
+
+## 11. Routes and cache
+
+| Route | Flag off | Flag on | Cache |
+| --- | --- | --- | --- |
+| `/daily-bread` | SA-090 paper | newest published ≤ today; notice if today is still on the press | ISR 300 s |
+| `/daily-bread/YYYY-MM-DD` | 404 | frozen edition, prev/next | ISR 3600 s |
+| `/daily-bread/archive` | SA-114 date list | persisted index, `?before=` cursor | ISR 300 s (dynamic with cursor) |
+| `/daily-bread/archive/[date]` | SA-114 re-render | redirect to `/daily-bread/[date]` | dynamic |
+| `/daily-bread/[date]/opengraph-image` | house card | serial + title + verse card | 3600 s |
+
+## 12. Tests
+
+| File | Covers |
+| --- | --- |
+| `daily-bread-v2-sql` | Postgres semantics, RLS, grants |
+| `daily-bread-v2-time` | Clock, DST, parity |
+| `daily-bread-v2-composition` | PRNG, archetypes, anti-repeat |
+| `daily-bread-v2-providers` | Chain, transports, frame validation |
+| `daily-bread-v2-comic` and `-comic-verses` | Renderer, SVG safety, templates, verbatim captions |
+| `daily-bread-v2-procedural` | Fields, poster, shaders, frame gate, component lifecycle |
+| `daily-bread-v2-security` | Links, redaction, document validation, endpoint auth, rate limit |
+| `daily-bread-v2-pipeline` | Quality, failure injection, scheduler, backfill, health, E2E |
+| `daily-bread-v2-routes` | Loaders, rendering all eight archetypes, flag behaviour |
+
+CI also runs `npm run daily-bread -- e2e`.

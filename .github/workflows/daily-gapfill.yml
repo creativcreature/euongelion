@@ -25,9 +25,15 @@ on:
         description: 'How many days forward to check (default 3)'
         required: false
 
+# SA-142: the concurrency group is shared with daily-edition.yml so the two
+# jobs can never draw the same strip number at the same time.
 concurrency:
-  group: edition-content
+  group: daily-edition
   cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   gapfill:
@@ -45,6 +51,7 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           CLAUDE_CODE_OAUTH_TOKEN_2: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_2 }}
+          CONTENT_PIPELINE_API_KEY: ${{ secrets.CONTENT_PIPELINE_API_KEY }}
           HAS_CODEX: ${{ secrets.CODEX_AUTH_JSON != '' }}
           CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
           STRIP_MACHINE: ${{ vars.STRIP_MACHINE || 'paused' }}
@@ -52,6 +59,11 @@ jobs:
         run: |
           set -euo pipefail
           npm ci --ignore-scripts
+          # SA-142 root cause: this job never installed the Claude Code CLI, so
+          # select_tier's `claude -p ok` probe failed as "command not found",
+          # was classified "exhausted", and the job exited 0 every morning
+          # having filled nothing. Install it before the tier probe.
+          npm install -g @anthropic-ai/claude-code
           # The tier ladder (select_tier) ships on the failover branch; use
           # it when merged, else the plain subscription token carries the day.
           if [ -f scripts/lib/claude-tier.sh ]; then
@@ -86,3 +98,12 @@ jobs:
               node scripts/edition/strip/generate-strip.mjs --date="$DAY" || echo "::warning::strip failed for $DAY — the placeholder frame prints"
             fi
           done
+
+      - name: Report a failed gap-fill
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Daily gap-fill failed ($(date -u +%F))" \
+            --body "The daily-gapfill run failed. See the job log for the step that stopped."

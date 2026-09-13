@@ -1,6 +1,6 @@
 {
   "name": "euangelion",
-  "version": "0.8.32",
+  "version": "0.8.33",
   "private": true,
   "engines": {
     "node": ">=22.0.0 <23"
@@ -12,6 +12,7 @@
     "build:lexicon-index": "tsx scripts/build-lexicon-index.mts",
     "edition:build": "node scripts/edition/build.mjs",
     "edition:audit-prints": "node scripts/edition/audit-prints.mjs",
+    "daily-bread": "tsx scripts/daily-bread/cli.mts",
     "build:voice-bank": "node scripts/build-voice-bank.mjs",
     "build:wordnote-bank": "node scripts/build-wordnote-bank.mjs",
     "build:og-leads": "python3 scripts/build_og_leads.py",
@@ -79,6 +80,7 @@
     "zustand": "^5.0.11"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.2.17",
     "@eslint/eslintrc": "^3.3.3",
     "@fontsource/instrument-serif": "^5.2.8",
     "@fontsource/inter": "^5.2.8",

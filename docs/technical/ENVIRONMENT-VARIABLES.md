@@ -348,6 +348,31 @@ SENTRY_AUTH_TOKEN=sntrys_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
+## The Daily Bread V2 (SA-142 / F-184)
+
+Names only — values live in Cloudflare Worker settings and GitHub secrets, never in
+source. None of these is `NEXT_PUBLIC_*`, so none reaches a browser bundle.
+
+| Name | Where | Required | Purpose |
+| --- | --- | --- | --- |
+| `DAILY_BREAD_V2` | Worker var | no (default off) | `on` renders V2 editions on `/daily-bread` and enables `/daily-bread/YYYY-MM-DD` |
+| `DAILY_BREAD_V2_SOURCE` | Worker var | no (default `supabase`) | `fixture` only for local preview/QA; unknown values throw |
+| `DAILY_BREAD_V2_SCHEDULER` | GitHub repo variable | no (default off) | `enabled` lets `.github/workflows/daily-bread-v2.yml` run |
+| `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SUPABASE_URL` | Worker + GitHub secrets | yes | edition reads (Worker) and pipeline writes (CI) |
+| `INTERNAL_ROUTE_SECRET` | Worker + callers | for the endpoints | `X-Internal-Secret` for `/api/admin/daily-bread/{publish,health}` |
+| `ANTHROPIC_API_KEY` | GitHub secret | optional | generator chain, Claude API transport |
+| `CLAUDE_CODE_OAUTH_TOKEN` | GitHub secret | optional | generator chain, Claude Code CLI transport |
+| `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) | GitHub secret | optional | generator chain, secondary provider |
+| `DAILY_BREAD_CLAUDE_MODEL` | CI env | optional | API model override (default `claude-sonnet-5`) |
+| `DAILY_BREAD_CLAUDE_CLI_MODEL`, `DAILY_BREAD_CLAUDE_BIN` | CI env | optional | CLI model / binary override |
+| `DAILY_BREAD_GEMINI_MODEL` | CI env | optional | Gemini model override (default `gemini-2.0-flash-lite`) |
+| `DAILY_BREAD_PROVIDER_TIMEOUT_MS` | CI env | optional | per-attempt provider timeout (default 90000) |
+
+With no model credential at all the pipeline still publishes (deterministic floor),
+and the edition is marked as a fallback edition.
+
+---
+
 ## Email Service (Future)
 
 ### RESEND_API_KEY

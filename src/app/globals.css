@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 @import '../../design-system/typography-craft.css';
 @import '../../design-system/edition-scroll-motion.css';
+@import '../../design-system/daily-bread-v2.css';
+@import '../../design-system/daily-bread-v2-comic.css';
+@import '../../design-system/daily-bread-v2-visual.css';
 
 /* ============================================
    Audit batch 2026-05-13 — token additions + utilities

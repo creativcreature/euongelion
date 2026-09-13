@@ -5,6 +5,44 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-13 — The Daily Bread V2: serialized, frozen, self-archiving (behind a flag) — SA-142 (F-184) — v0.8.33
+
+Founder: _"There was a massive update happening to my Daily Bread feature on my
+Euangelion website, please finish it"_ with the Daily Bread V2 implementation plan.
+Everything ships OFF: `DAILY_BREAD_V2` (Worker) and `DAILY_BREAD_V2_SCHEDULER`
+(repo variable) both default off, and with the flag off `/daily-bread` is the SA-090
+paper unchanged. The migration is written and tested but NOT applied to production.
+
+- **Serialized editions.** `daily_bread_editions` + immutable
+  `daily_bread_edition_revisions` + `daily_bread_publication_attempts`. Native issues
+  start at Vol. 1 · No. 001, allocated inside the publish transaction under an
+  advisory lock; backfilled editions never take a number. Tested in real Postgres
+  (PGlite): numbering, lease, idempotency, revisions, RLS and grants.
+- **Frozen pages.** `/daily-bread/YYYY-MM-DD` renders the stored document with
+  previous/next; the archive lists serials, titles and how each paper was set.
+  Lifecycle and quality are separate, and a fallback edition says so on the page.
+- **The comic, fixed at the root.** It never "failed to load": no strip rows were
+  being made. Repaired in the legacy pipeline: the gap-fill now installs the Claude CLI
+  (its tier probe always failed), the weekly job's 15-minute timeout no longer kills
+  its final strip step, tier 3 no longer breaks the Sunday lead, and failure alerts can
+  file issues. `STRIP_MACHINE` is unchanged. V2 draws wordless SVG strips from 17
+  parable templates with verbatim BSB captions, through a five-level fallback chain.
+- **Generator chain.** Claude (API or Claude Code CLI) → Gemini → deterministic floor,
+  with timeouts, retries and validation. The model writes only the frame (deck,
+  rabbit-hole reasons, storyboard and scene choice). Scripture is always looked up.
+- **Eight archetypes** (Broadsheet, Illuminated, Quiet, Field Notes, Red Letter, Study
+  Table, Joy, Prayer Book) chosen by seeded anti-repeat scoring.
+- **Procedural scenes** (Living Water, Grain, Wilderness Stars) in first-party WebGL,
+  with a static halftone poster first, reduced-motion and off-screen pauses.
+- **Operations.** `npm run daily-bread -- build|publish|run|health|backfill|e2e|fixtures`,
+  `.github/workflows/daily-bread-v2.yml`, protected health and publish endpoints,
+  `/admin/preview/daily-bread-v2`, CI end-to-end step. Docs:
+  `docs/daily-bread/DAILY-BREAD-V2.md`, `docs/runbooks/DAILY-BREAD-V2-RUNBOOK.md`.
+- 167 new tests across 10 suites; 7-day desktop, mobile and dark visual QA.
+- Service worker v169.
+
+---
+
 ## 2026-09-13 — Narration reads every word; the 66 books only — SA-141 (F-183) — v0.8.32
 
 - Reading contract 2 for new tracks: every list the page renders is read (exercise steps, extra reflection questions, related words, leaving/receiving at the cross), citations in prose are expanded, requests are cut at paragraph and sentence ends. Contract 1 is unchanged for every existing track.
@@ -13122,7 +13160,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.32
+**Version:** 0.8.33
 **Version:** 0.8.19
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features

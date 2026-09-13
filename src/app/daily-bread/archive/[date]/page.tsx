@@ -3,12 +3,17 @@
  * EditionPage the live paper renders, keyed to a past date, so history
  * reads exactly as it printed. Only dates from the first edition up to
  * (not including) the live one resolve; everything else is not found.
+ *
+ * DAILY_BREAD_V2 on (SA-142 / F-184): the canonical address of an edition is
+ * /daily-bread/YYYY-MM-DD, so this legacy address redirects there.
  */
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import EditionPage from '@/components/edition/EditionPage'
 import { isArchivedEdition } from '@/lib/edition/archive'
+import { dailyBreadV2Enabled } from '@/lib/daily-bread/flags'
+import { isValidDateSlug } from '@/lib/daily-bread/time'
 
 export const dynamic = 'force-dynamic'
 
@@ -31,6 +36,10 @@ export default async function ArchivedEditionPage({
   params: Promise<{ date: string }>
 }) {
   const { date } = await params
+  if (dailyBreadV2Enabled()) {
+    if (!isValidDateSlug(date)) notFound()
+    redirect(`/daily-bread/${date}`)
+  }
   if (!isArchivedEdition(date)) {
     notFound()
   }

@@ -111,9 +111,14 @@ if (sundays.length === 0) {
   process.exit(0)
 }
 
-if (!process.env.CLAUDE_CODE_OAUTH_TOKEN) {
+// SA-142: select_tier (scripts/lib/claude-tier.sh) leaves exactly ONE
+// credential set. On tier 3 it unsets CLAUDE_CODE_OAUTH_TOKEN and exports
+// ANTHROPIC_API_KEY, which `claude -p` accepts just as well. Requiring the
+// OAuth token here made every tier-3 run throw on any window with a Sunday,
+// failing the Build step and skipping the lead-plate and strip steps after it.
+if (!process.env.CLAUDE_CODE_OAUTH_TOKEN && !process.env.ANTHROPIC_API_KEY) {
   throw new Error(
-    'CLAUDE_CODE_OAUTH_TOKEN is not set — this script is the subscription path',
+    'no Claude credential: set CLAUDE_CODE_OAUTH_TOKEN (subscription) or ANTHROPIC_API_KEY (tier 3)',
   )
 }
 

@@ -1,0 +1,116 @@
+name: daily-bread-v2
+
+# The Daily Bread V2 scheduler (SA-142 / F-184).
+#
+# Every run executes ONE idempotent step (`npm run daily-bread -- run`):
+#   1. the edition live now (7am New York rule) is published if it is ready,
+#      or built and published immediately if it is missing;
+#   2. inside the 12 hours before the next 7am rollover, tomorrow's edition is
+#      built and frozen as READY so it can publish on time.
+# The database serializes concurrent runs (assembly lease + advisory lock on
+# issue allocation), so overlapping or duplicate triggers are harmless.
+#
+# Cloudflare Cron is inert in this project, so GitHub Actions is the clock.
+# Cron times (UTC) — cheap runs when there is nothing to do:
+#   22:15  evening build of tomorrow (18:15 EDT / 17:15 EST)
+#   02:15  retry build (22:15 EDT / 21:15 EST)
+#   11:05  publish after the EDT rollover (07:05 EDT)
+#   12:05  publish after the EST rollover (07:05 EST) — and an EDT safety net
+#   13:05  late safety net
+#
+# SAFE ACTIVATION: nothing runs unless the repository variable
+# DAILY_BREAD_V2_SCHEDULER is 'enabled' (Settings → Variables). The reader
+# switch is separate: the Worker secret DAILY_BREAD_V2=on.
+#
+# REQUIRED SECRETS: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
+# OPTIONAL (generator chain, in order): ANTHROPIC_API_KEY (Claude API) or
+# CLAUDE_CODE_OAUTH_TOKEN (Claude Code subscription), then GEMINI_API_KEY.
+# With none of them the paper is still built — by the deterministic floor —
+# and marked as a fallback edition.
+
+on:
+  schedule:
+    - cron: '15 22 * * *'
+    - cron: '15 2 * * *'
+    - cron: '5 11 * * *'
+    - cron: '5 12 * * *'
+    - cron: '5 13 * * *'
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'run | health | build | publish'
+        required: false
+        default: 'run'
+      date:
+        description: 'YYYY-MM-DD (build/publish only)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: daily-bread-v2
+  cancel-in-progress: false
+
+jobs:
+  scheduler:
+    if: vars.DAILY_BREAD_V2_SCHEDULER == 'enabled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci --ignore-scripts
+
+      - name: Install Claude Code (subscription transport)
+        env:
+          HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+        run: |
+          if [ "$HAS_TOKEN" = "true" ]; then
+            npm install -g @anthropic-ai/claude-code
+          else
+            echo "::notice::no CLAUDE_CODE_OAUTH_TOKEN — the CLI transport is unavailable this run"
+          fi
+
+      - name: Daily Bread step
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DB2_COMMAND: ${{ inputs.command || 'run' }}
+          DB2_DATE: ${{ inputs.date }}
+        # Inputs reach the shell as env vars and are validated by the CLI —
+        # never interpolated into the script text.
+        run: |
+          set -euo pipefail
+          case "$DB2_COMMAND" in
+            run|health) npm run daily-bread -- "$DB2_COMMAND" ;;
+            build|publish) npm run daily-bread -- "$DB2_COMMAND" --date="$DB2_DATE" ;;
+            *) echo "unknown command"; exit 2 ;;
+          esac
+
+      - name: Health
+        id: health
+        if: always()
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run daily-bread -- health
+
+      - name: Alert
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Daily Bread V2: scheduler run failed or paper down ($(date -u +%F))" \
+            --body "The daily-bread-v2 run failed or the health check reported DOWN. Open the job log: every attempt is also recorded in daily_bread_publication_attempts."

@@ -55,6 +55,9 @@ on:
 
 permissions:
   contents: read
+  # SA-142: the failure alert below files an issue; with contents: read alone
+  # `gh issue create` was refused and `|| true` hid it, so failures were silent.
+  issues: write
 
 # One edition build at a time. A manual dispatch that lands on top of the 03:00
 # nightly would have both runs upserting the same (kind, publish_date, slot)
@@ -67,7 +70,9 @@ concurrency:
 jobs:
   build-edition:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # SA-142: 15 minutes could not cover an 8-day window (lead compose, guides,
+    # build, 8 plates) so the job was killed before its LAST step — the strips.
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
 

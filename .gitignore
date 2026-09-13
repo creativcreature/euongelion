@@ -204,3 +204,7 @@ content/market-research/*.db
 
 # Python bytecode from the voice-prototype spec scripts.
 euangelion-voice-prototype/spec/__pycache__/
+
+# Daily Bread V2 local fixture sets and dry-run documents (SA-142). Built by
+# `npm run daily-bread -- fixtures|build --dry-run`; never committed or deployed.
+.daily-bread-local/

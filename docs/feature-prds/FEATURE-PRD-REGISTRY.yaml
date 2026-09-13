@@ -1599,3 +1599,8 @@ features:
     status: shipped
     decision: SA-140
     doc: docs/feature-prds/F-183.md
+  - id: F-184
+    title: daily-bread-v2-serialized-self-archiving-daily-paper
+    status: wip
+    decision: SA-142
+    doc: docs/feature-prds/F-184.md

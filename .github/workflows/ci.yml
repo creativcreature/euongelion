@@ -56,5 +56,11 @@ jobs:
       - name: Test
         run: npm test
 
+      # SA-142 / F-184: the whole Daily Bread V2 publication run in memory —
+      # real builders, scheduler, numbering, and the total-AI-outage scenario.
+      # No network, no secrets.
+      - name: Daily Bread V2 end-to-end
+        run: npm run daily-bread -- e2e
+
       - name: Dependency vulnerability audit
         run: npm audit --audit-level=high

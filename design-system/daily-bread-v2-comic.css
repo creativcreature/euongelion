@@ -1,0 +1,112 @@
+/* ── The Daily Bread V2 — the funnies, drawn in SVG (F-184) ─────────────
+   Two-colour riso: cobalt ink on paper, one crimson spot. Every colour is an
+   edition token; every size is a TYPE-SCALE rung. The SVG carries only
+   classes — this sheet decides the colours, so the strip follows the theme.
+
+   Imported from src/app/globals.css. */
+
+.db2-comic {
+  margin: 0;
+  color: var(--mock-ink, currentColor);
+}
+
+.db2-comic-strip {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.db2-comic-stack {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.db2-comic-stack-panel svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 699.98px) {
+  .db2-comic-strip {
+    display: none;
+  }
+
+  .db2-comic-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+.db2-comic-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.7rem;
+  margin-top: 0.6rem;
+  font-family: var(--font-family-ui, system-ui), sans-serif;
+  font-size: var(--type-meta);
+  letter-spacing: 0.04em;
+  color: var(--mock-muted, currentColor);
+}
+
+.db2-comic-title {
+  font-size: var(--type-label);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mock-ink, currentColor);
+}
+
+.db2-comic-line {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-style: italic;
+  font-size: var(--type-body-s);
+  letter-spacing: 0;
+  color: var(--mock-ink, currentColor);
+}
+
+.db2-comic-ref {
+  font-style: normal;
+}
+
+/* ── Ink classes (scoped: nothing outside the strip is touched) ─────── */
+
+.db2-comic .db2-ink {
+  fill: var(--mock-blue, currentColor);
+}
+
+.db2-comic .db2-paper {
+  fill: var(--mock-paper, Canvas);
+}
+
+.db2-comic .db2-spot {
+  fill: var(--color-crimson, currentColor);
+}
+
+/* One ink: linework prints in the same cobalt as the tone (strict duotone). */
+.db2-comic .db2-line {
+  fill: none;
+  stroke: var(--mock-blue, currentColor);
+}
+
+.dark .db2-comic .db2-line,
+.mock-home.is-dark .db2-comic .db2-line {
+  stroke: var(--mock-ink, currentColor);
+}
+
+/* Halftone areas keep the fill attribute the renderer gives them — a
+   url(#db2-halftone-<scriptId>) screen whose dots are .db2-ink — so this
+   rule deliberately sets no fill. */
+.db2-comic .db2-dots {
+  stroke: none;
+}
+
+/* Dark edition: --mock-blue equals --mock-paper there, which would erase the
+   ink. The strip inverts instead: paper-coloured ink on the dark ground. */
+.dark .db2-comic .db2-ink,
+.mock-home.is-dark .db2-comic .db2-ink {
+  fill: var(--mock-ink, currentColor);
+}

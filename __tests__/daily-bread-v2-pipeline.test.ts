@@ -1,0 +1,216 @@
+// @vitest-environment node
+/**
+ * Daily Bread V2 pipeline (SA-142 / F-184): lifecycle and quality are
+ * orthogonal; the scheduler builds before rollover and publishes after;
+ * failure injection at every stage records an attempt and never leaves a
+ * half-built edition; backfill never consumes an issue; health reports
+ * honestly; the E2E and total-AI-outage scenarios pass.
+ */
+import { describe, expect, it } from 'vitest'
+import { createRunLogger } from '@/lib/daily-bread/log'
+import {
+  createDailyBreadEdition,
+  decideQuality,
+  runDailyBread,
+  type PipelineDeps,
+} from '@/lib/daily-bread/orchestrator'
+import { publishDailyBreadEdition } from '@/lib/daily-bread/publish'
+import { MemoryDailyBreadRepository } from '@/lib/daily-bread/repository/memory'
+import { failingProvider, offlineSources, runInMemoryE2E } from '@/lib/daily-bread/e2e'
+import { runBackfill } from '@/lib/daily-bread/backfill'
+import { getDailyBreadHealth } from '@/lib/daily-bread/health'
+import { fixedClock } from '@/lib/daily-bread/time'
+import type { TextProvider } from '@/lib/daily-bread/providers/types'
+
+const quietLogger = (id: string) => createRunLogger(id, { sink: () => {} })
+const noSleep = async () => {}
+
+function deps(repo: MemoryDailyBreadRepository, at: string, extra: Partial<PipelineDeps> = {}): PipelineDeps {
+  return {
+    repo,
+    sources: offlineSources(),
+    providers: [],
+    clock: fixedClock(at),
+    logger: quietLogger(`t-${at}`),
+    trigger: 'e2e',
+    policy: 'deterministic-only',
+    sleep: noSleep,
+    providerTimeoutMs: 2000,
+    ...extra,
+  }
+}
+
+describe('quality is orthogonal to lifecycle', () => {
+  it('decides normal / fallback / minimum from what happened', () => {
+    const base = {
+      policy: 'full' as const,
+      frameDeterministic: false,
+      comicLevel: 'generated-script' as const,
+      scriptureSource: 'devotional' as const,
+      hasLead: true,
+      hasReading: true,
+      failedModules: [] as string[],
+    }
+    expect(decideQuality(base)).toBe('normal')
+    expect(decideQuality({ ...base, frameDeterministic: true })).toBe('fallback')
+    expect(decideQuality({ ...base, policy: 'deterministic-only', frameDeterministic: true, comicLevel: 'deterministic-script' })).toBe('normal')
+    expect(decideQuality({ ...base, comicLevel: 'omitted' })).toBe('fallback')
+    expect(decideQuality({ ...base, failedModules: ['crossword'] })).toBe('fallback')
+    expect(decideQuality({ ...base, hasReading: false })).toBe('minimum')
+    expect(
+      decideQuality({ ...base, failedModules: ['practice', 'word', 'prayer', 'redLetter', 'proverb', 'memoryVerse', 'question', 'voices', 'season', 'hymn'] }),
+    ).toBe('minimum')
+  })
+
+  it('a fallback edition is still a real, numbered, published edition', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const d = deps(repo, '2026-09-14T11:30:00Z', {
+      policy: 'full',
+      providers: [failingProvider('claude-api'), failingProvider('gemini')],
+    })
+    const built = await createDailyBreadEdition('2026-09-14', d)
+    expect(built).toMatchObject({ result: 'ready', quality: 'fallback' })
+    const pub = await publishDailyBreadEdition('2026-09-14', d)
+    expect(pub).toMatchObject({ result: 'published', issue: 1 })
+    const e = await repo.getEdition('2026-09-14')
+    expect(e).toMatchObject({ lifecycle: 'published', quality: 'fallback', issue: 1, volume: 1 })
+  }, 60_000)
+})
+
+describe('failure injection', () => {
+  it('a repository failure at mark-ready fails the attempt, releases the lease, and records it', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    repo.failOn.markReady = new Error('connection reset')
+    const out = await createDailyBreadEdition('2026-09-14', deps(repo, '2026-09-13T23:00:00Z'))
+    expect(out.result).toBe('failed')
+    expect(await repo.getLifecycle('2026-09-14')).toBe('draft')
+    repo.failOn = {}
+    const attempts = await repo.recentAttempts(5)
+    expect(attempts[0]).toMatchObject({ publicationResult: 'failed', targetDate: '2026-09-14' })
+    expect(attempts[0].errors[0].message).toContain('connection reset')
+    // The next run recovers.
+    expect((await createDailyBreadEdition('2026-09-14', deps(repo, '2026-09-13T23:10:00Z'))).result).toBe('ready')
+  }, 60_000)
+
+  it('a module that throws is recorded and the paper still builds', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const sources = offlineSources()
+    const realLookup = sources.lookupVerse
+    let first = true
+    sources.lookupVerse = async (ref) => {
+      if (first) {
+        first = false
+        throw new Error('corpus read failed')
+      }
+      return realLookup(ref)
+    }
+    const out = await createDailyBreadEdition('2026-09-14', deps(repo, '2026-09-13T23:00:00Z', { sources }))
+    expect(out.result).toBe('ready')
+    expect(out.document?.generation.moduleFailures.map((f) => f.module)).toContain('scripture')
+    expect(out.quality).not.toBe('normal')
+  }, 60_000)
+
+  it('a publish failure is reported, and publishing never happens before rollover', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    await createDailyBreadEdition('2026-09-14', deps(repo, '2026-09-13T23:00:00Z'))
+    const early = await publishDailyBreadEdition('2026-09-14', deps(repo, '2026-09-14T10:59:00Z'))
+    expect(early.result).toBe('too_early')
+    repo.failOn.publish = new Error('deadlock detected')
+    const failed = await publishDailyBreadEdition('2026-09-14', deps(repo, '2026-09-14T11:01:00Z'))
+    expect(failed.result).toBe('failed')
+    expect(await repo.getLifecycle('2026-09-14')).toBe('ready')
+  }, 60_000)
+
+  it('a reviewed item rejected after the build sends the edition back to be rebuilt', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const d = deps(repo, '2026-09-13T23:00:00Z')
+    const built = await createDailyBreadEdition('2026-09-14', d)
+    // Simulate a build that used a reviewed strip row.
+    const doc = built.document!
+    ;(await repo.reopenReady('2026-09-14')) &&
+      (await repo.acquireAssembly('2026-09-14', 'x')) &&
+      (await repo.markReady('2026-09-14', 'x', { ...doc, generation: { ...doc.generation, sourceItemIds: ['11111111-1111-1111-1111-111111111111'] } }))
+    const out = await publishDailyBreadEdition('2026-09-14', {
+      ...deps(repo, '2026-09-14T11:05:00Z'),
+      rejectedSourceItems: async (ids) => ids,
+    })
+    expect(out.result).toBe('rebuild_required')
+    expect(await repo.getLifecycle('2026-09-14')).toBe('draft')
+  }, 60_000)
+
+  it('a hung provider is bounded by the timeout and the chain still completes', async () => {
+    const hung: TextProvider = {
+      id: 'claude-api',
+      model: 'm',
+      available: () => true,
+      generate: (req) => new Promise((_, reject) => req.signal.addEventListener('abort', () => reject(Object.assign(new Error('aborted'), { name: 'AbortError' })))),
+    }
+    const repo = new MemoryDailyBreadRepository()
+    const started = Date.now()
+    const out = await createDailyBreadEdition(
+      '2026-09-14',
+      deps(repo, '2026-09-13T23:00:00Z', { policy: 'full', providers: [hung], providerTimeoutMs: 50, providerRetries: 0 }),
+    )
+    expect(out.result).toBe('ready')
+    expect(Date.now() - started).toBeLessThan(30_000)
+    expect(out.document?.generation.usage.some((u) => u.provider === 'claude-api' && !u.ok)).toBe(true)
+  }, 60_000)
+})
+
+describe('scheduler', () => {
+  it('publishes the live paper and builds tomorrow, idempotently', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const evening = await runDailyBread(deps(repo, '2026-09-13T23:00:00Z'))
+    expect(evening.ok).toBe(true)
+    expect(await repo.getLifecycle('2026-09-14')).toBe('ready')
+    const again = await runDailyBread(deps(repo, '2026-09-13T23:05:00Z'))
+    expect(again.actions.find((a) => a.date === '2026-09-14')?.result).toBe('skipped')
+    await runDailyBread(deps(repo, '2026-09-14T11:02:00Z'))
+    expect((await repo.getEdition('2026-09-14'))?.issue).toBe(2)
+  }, 120_000)
+})
+
+describe('backfill', () => {
+  it('publishes past dates as unnumbered archive entries and never touches today', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const result = await runBackfill({
+      from: '2026-09-10',
+      to: '2026-09-14',
+      liveDate: '2026-09-13',
+      deps: deps(repo, '2026-09-13T20:00:00Z'),
+    })
+    expect(result.published).toEqual(['2026-09-10', '2026-09-11', '2026-09-12'])
+    expect(result.skipped.map((s) => s.date)).toEqual(['2026-09-13', '2026-09-14'])
+    for (const d of result.published) {
+      expect(await repo.getEdition(d)).toMatchObject({ archiveOrigin: 'backfilled', issue: null, volume: null })
+    }
+    // The first native edition is still No. 1.
+    const d = deps(repo, '2026-09-13T20:00:00Z')
+    await createDailyBreadEdition('2026-09-13', d)
+    expect((await publishDailyBreadEdition('2026-09-13', d)).issue).toBe(1)
+    await expect(runBackfill({ from: '2026-09-14', to: '2026-09-10', liveDate: '2026-09-13', deps: d })).rejects.toThrow()
+  }, 120_000)
+})
+
+describe('health', () => {
+  it('is down when today is missing long after rollover, ok once published', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const down = await getDailyBreadHealth(repo, fixedClock('2026-09-14T13:00:00Z'))
+    expect(down.status).toBe('down')
+    expect(down.alerts[0]).toContain('2026-09-14')
+    await runDailyBread(deps(repo, '2026-09-14T13:00:00Z'))
+    const ok = await getDailyBreadHealth(repo, fixedClock('2026-09-14T13:05:00Z'))
+    expect(ok.status).toBe('ok')
+    expect(ok.live).toMatchObject({ lifecycle: 'published', issue: 1 })
+    const nearRollover = await getDailyBreadHealth(repo, fixedClock('2026-09-15T10:00:00Z'))
+    expect(nearRollover.status).toBe('degraded')
+    expect(nearRollover.alerts.join(' ')).toContain('2026-09-15')
+  }, 120_000)
+})
+
+describe('end to end', () => {
+  it('passes the full in-memory publication run including the total AI outage', async () => {
+    const report = await runInMemoryE2E()
+    expect(report.checks.filter((c) => !c.ok)).toEqual([])
+  }, 120_000)
+})
