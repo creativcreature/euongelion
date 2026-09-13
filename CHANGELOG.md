@@ -5,6 +5,35 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-12 — The mini player docks on a phone instead of floating — SA-139 (F-182)
+
+Founder, from the installed PWA with a screenshot: _"the normal player needs
+help. Doesnt fit screen properly."_
+
+The handle was right-aligned at `max-width: min(22rem, ...)`, so on a 393px
+phone it left a **~64px dead gutter down the left** and printed on top of
+whatever paragraph was behind it. It read as a fragment of a card rather than a
+player.
+
+**Nothing caught it, and the reason is the useful part: the handle was inside
+the viewport the whole time.** `layout-overflow-contract` asserts that nothing
+breaks its container, and this never did. Fitting and belonging are not the same
+test — a control can be entirely on screen and still be in the wrong place.
+
+Below 900px — the tab bar's own breakpoint — the handle now spans the full
+width, flush to both edges, sitting directly on the tab bar. The gold edge moves
+from the left to the top, because a rule along the top is what makes a surface
+read as docked rather than as a wide card. `.lsn-handle-open` takes the slack so
+the title ellipsizes against the controls instead of the controls drifting into
+the middle.
+
+**Desktop is deliberately untouched** — there is room for a compact pill on a
+wide screen, and the complaint was explicitly about the phone. Two of the eight
+new tests pin that, so widening it everywhere cannot be smuggled in later under
+a bug fix.
+
+---
+
 ## 2026-09-12 — A service-worker update no longer stops the audio — SA-139 (F-182)
 
 Founder, from the installed PWA: _"when in web app (save to ios) and I switch
@@ -13025,7 +13054,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.29
+**Version:** 0.8.30
 **Version:** 0.8.19
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features

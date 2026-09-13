@@ -1088,6 +1088,40 @@ export default function AudioDrawer() {
           outline-offset: -2px;
         }
 
+        /* On a phone the handle is not a pill floating over the reading — it
+           is the mini player, and it docks.
+
+           Right-aligned at a 22rem max-width it left a dead gutter down the
+           left and printed on top of whatever paragraph happened to be behind
+           it. That is what the founder saw: "the normal player needs help.
+           Doesnt fit screen properly." It was inside the viewport the whole
+           time, which is why no overflow check caught it — fitting and
+           belonging are not the same test.
+
+           Full width, flush to both edges, sitting directly on the tab bar.
+           The gold edge moves from the left to the top, because a 3px rule
+           along the top is what makes it read as a docked surface rather than
+           a card that happens to be wide. Desktop keeps the compact pill,
+           where there is room for one. */
+        @media (max-width: 900px) {
+          .lsn-handle-wrap {
+            padding: 0;
+          }
+          .lsn-handle {
+            width: 100%;
+            max-width: none;
+            border-inline: 0;
+            border-bottom: 0;
+            border-top: 3px solid var(--color-gold);
+          }
+          /* Takes the slack, so the title ellipsizes against the controls
+             instead of the controls drifting into the middle of the bar. */
+          .lsn-handle-open {
+            flex: 1 1 auto;
+            padding-left: 0.85rem;
+          }
+        }
+
         .lsn-root {
           position: fixed;
           inset: 0;
