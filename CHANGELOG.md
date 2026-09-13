@@ -5,6 +5,50 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-12 — A service-worker update no longer stops the audio — SA-139 (F-182)
+
+Founder, from the installed PWA: _"when in web app (save to ios) and I switch
+tabs- the audio stops."_
+
+**The tab switch was never the cause.** There is one `<audio>` element for the
+whole site, mounted in the root layout since SA-115, and `MobileTabBar` uses
+`next/link` — so a client-side route change cannot touch it. Checked, not
+assumed: every `pause()` call in the listening code is a deliberate act (the
+transport toggle, the sleep timer, the chapter-end fade), and `GlobalAudioHost`'s
+`visibilitychange` handler only saves position through `sendBeacon`.
+
+What does destroy the element is `window.location.reload()`, and
+`ServiceWorkerRegistration` called it unconditionally on `controllerchange`.
+`registration.update()` runs on mount, a waiting worker is promoted immediately
+via `SKIP_WAITING`, and whenever that landed mid-reading the page reloaded and
+playback died with it. **In a standalone PWA there is no browser chrome to make
+a reload legible** — no spinner, no flash of a URL bar — so it presents as the
+audio simply stopping. It looks like a tab-switch bug because a tab switch is
+when you are most likely to be looking at the screen.
+
+The reload now waits for a gap in the reading: while the element is playing it
+defers and re-arms on `pause` and `ended`. Deferring costs nothing — the new
+worker is already in control, so every asset fetched from that moment is the new
+build, and the reload exists only to re-parse the document. **Behaviour for a
+reader who is not listening is unchanged**, which two of the six tests exist to
+pin: an update with nothing playing still reloads immediately, so the deferral
+can never become a way to get stuck on a stale build.
+
+Written test-first against the real component. The first version of the test
+failed two of its own cases because its fake element froze `paused` at
+construction — a real one flips `paused` before it fires `pause`, and the guard
+re-reads both on wake. The fake was wrong, not the guard; it now changes state
+the way the platform does.
+
+**Still UNVERIFIED, in those words:** the iOS side of this. Backgrounding a
+standalone PWA can also suspend audio at the platform level, which no amount of
+application code prevents — the mitigation for that is a fully populated Media
+Session (`setPositionState`, artwork, seek handlers), which SA-139 adds in the
+same release. Whether the founder's report was this reload, the platform
+suspension, or both cannot be settled from a session; it needs the phone.
+
+---
+
 ## 2026-09-12 — The listening player, rebuilt for a phone in a car — SA-139 (F-182)
 
 Founder: "I want the audio player more like audible. Right now its hard to

@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react'
 
+import { getAudioElement } from '@/lib/audio/audio-element'
+
 // R37 (2026-05-15): bump on every deploy that ships UI changes so
 // returning users force-refresh into the new build without manually
 // reloading. v50 corresponds to the R37 deploy.
@@ -24,11 +26,46 @@ export default function ServiceWorkerRegistration() {
       // the second parse; found by the 2026-07-10 LCP loop, round 2).
       const hadController = Boolean(navigator.serviceWorker.controller)
       let refreshed = false
-      const onControllerChange = () => {
-        if (!hadController) return
+
+      /**
+       * Take the new build — but never out from under someone listening.
+       *
+       * A reload destroys the document, and with it the ONE `<audio>` element
+       * the whole site plays through (SA-115). In the installed PWA there is
+       * no browser chrome to make a reload legible, so it is indistinguishable
+       * from the audio simply stopping — which is what the founder reported:
+       * "when in web app (save to ios) and I switch tabs, the audio stops."
+       *
+       * The tab switch was never the cause. `registration.update()` runs on
+       * mount, a waiting worker is promoted immediately via SKIP_WAITING, and
+       * whenever that lands mid-reading this handler reloaded the page. It
+       * looks like a tab-switch bug because a tab switch is when you are most
+       * likely to be looking.
+       *
+       * Deferring costs nothing. The new worker is already in control, so
+       * every asset fetched from here on is the new build; the reload exists
+       * only to re-parse the document, and that can wait for a gap in the
+       * reading. Nothing changes for a reader who is not listening.
+       */
+      const reloadWhenNotListening = () => {
         if (refreshed) return
+        const audio = getAudioElement()
+        if (audio && !audio.paused && !audio.ended) {
+          audio.addEventListener('pause', reloadWhenNotListening, {
+            once: true,
+          })
+          audio.addEventListener('ended', reloadWhenNotListening, {
+            once: true,
+          })
+          return
+        }
         refreshed = true
         window.location.reload()
+      }
+
+      const onControllerChange = () => {
+        if (!hadController) return
+        reloadWhenNotListening()
       }
 
       navigator.serviceWorker.addEventListener(
