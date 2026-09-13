@@ -84,6 +84,33 @@ NAV_TYPES = {"inline-image", "art", "video", "cta", "resource",
              # catalog duplicate body prose verbatim.
              "pullquote"}
 
+# ── Reading contract versions ────────────────────────────────────────
+# Contract 1 is what every track rendered before 2026-09-13 speaks. It is kept
+# byte-for-byte so those tracks stay current and are never re-rendered.
+#
+# Contract 2 (SA-141, forward only) reads everything the page shows:
+#   - list fields the page renders (exercise steps, extra reflection questions,
+#     related words, leaving/receiving at the cross) — contract 1 skipped every
+#     list, because the catch-all sweep only looks at strings;
+#   - scripture citations inside prose are expanded for speech, not only the
+#     scripture module's own reference (FINDINGS-inline-citations-2026-09-12);
+#   - each paragraph is its own segment, so the renderer can cut requests at
+#     paragraph breaks instead of sending a whole module as one request.
+CONTRACT_LATEST = 2
+
+# Lists the page renders, in page order, read after a module's ordered fields.
+# Lead-ins match the labels printed above each list on the page.
+LIST_FIELDS = {
+    "vocab": [("relatedWords", "See also: ")],
+    "reflection": [("additionalQuestions", "")],
+    "interactive": [("steps", "")],
+    "takeaway": [("leavingAtCross", "What I leave at the cross: "),
+                 ("receivingFromCross", "What I receive from the cross: ")],
+    "comprehension": [("forReflection", "For reflection: "),
+                      ("forAccountabilityPartners",
+                       "For accountability partners: ")],
+}
+
 # Module type → narration register (pace band).
 REGISTER = {
     "scripture": "scripture",
@@ -105,6 +132,13 @@ PREFIX = {
     ("comprehension", "question"): "One question. ",
     ("vocab", "usage"): "In use: ",
 }
+# Contract 2 lead-ins read as sentences, not labels (proofread 2026-09-13).
+PREFIX_V2 = dict(PREFIX, **{
+    "profile|name": "The voice behind today is ",
+    "profile|title": "The voice behind today is ",
+    "comprehension|explanation": "Here is the answer. ",
+    "vocab|usage": "",
+})
 
 
 def strip_nonlatin(text):
@@ -153,7 +187,7 @@ def to_speech(raw):
     return re.sub(r"\s+", " ", s).strip()
 
 
-def text_hash(dev):
+def text_hash(dev, contract=1):
     """Stable fingerprint of everything this devotional would say aloud.
 
     The renderer stores it alongside each track so a later run can tell whether
@@ -162,7 +196,7 @@ def text_hash(dev):
     stale. Any change to the reading contract or the devotional text moves the
     hash, and the track re-renders on the next pass.
     """
-    joined = "\n".join(s["text"] for s in extract(dev))
+    joined = "\n".join(s["text"] for s in extract(dev, contract))
     return hashlib.sha1(joined.encode("utf-8")).hexdigest()[:12]
 
 
@@ -304,6 +338,125 @@ def _expand_single(s, carry_book=None):
     return f"{prefix}{book.strip()}, chapter {num_to_words(chap)}, {verses}"
 
 
+# ── Citations inside prose (contract 2) ──────────────────────────────
+# Proved over the whole corpus in FINDINGS-inline-citations-2026-09-12.md:
+# 3,904 citations, zero false positives. `_NOTBOOK` stops "In 1:14" being read
+# as a book; a bare chapter:verse is never read as a clock time.
+_BOOK = r"(?:[123]\s+|I{1,3}\s+)?(?:[A-Z][a-z]+)(?:\s+(?:of\s+)?[A-Z][a-z]+)?"
+_BOOKED = re.compile(rf"\b({_BOOK})\s+(\d+):([1-9]\d*)(?:\s*[-–]\s*(\d+))?(?!\d)")
+_BARE = re.compile(r"(?<![A-Za-z0-9_:])(\d+):([1-9]\d*)(?:\s*[-–]\s*(\d+))?"
+                   r"(?!\s*[ap]\.?m\.?)(?![\d:])")
+_NOTBOOK = {"The", "A", "An", "In", "At", "On", "And", "But", "For", "This",
+            "That", "His", "Her", "Their", "It", "He", "She", "They", "We",
+            "You", "When", "While", "Verse", "Verses", "Chapter", "See",
+            "Compare", "Read", "Also", "From", "Psalm", "Psalms"}
+
+
+def expand_in_prose(text):
+    if not text or ":" not in text:
+        return text
+
+    def pause(m):
+        # "verse forty-four the order is" needs the comma a reader supplies.
+        return "," if re.match(r" [a-z]", m.string[m.end():m.end() + 2]) else ""
+
+    def booked(m):
+        book, ch, v1, v2 = m.group(1), m.group(2), m.group(3), m.group(4)
+        if book.split()[0] in _NOTBOOK:
+            return m.group(0)
+        # Roman book ordinals ("II Kings") normalised first, so both twins
+        # hand expand_reference the same Arabic form.
+        book = re.sub(r"^(I{1,3})\s+", lambda r: f"{len(r.group(1))} ", book)
+        return expand_reference(f"{book} {ch}:{v1}" + (f"-{v2}" if v2 else "")) \
+            + pause(m)
+
+    def bare(m):
+        ch, v1, v2 = m.group(1), m.group(2), m.group(3)
+        vs = (f"verses {num_to_words(v1)} to {num_to_words(v2)}"
+              if v2 else f"verse {num_to_words(v1)}")
+        return f"chapter {num_to_words(ch)}, {vs}" + pause(m)
+
+    return _BARE.sub(bare, _BOOKED.sub(booked, text))
+
+
+# "1 Corinthians 8", "2 Kings": a numbered book with no verse is otherwise read
+# as a count ("one Corinthians"). The 66 books only (SA-141).
+_NUMBERED_BOOK = re.compile(
+    r"\b([123]) (Samuel|Kings|Chronicles|Corinthians|"
+    r"Thessalonians|Timothy|Peter|John)\b")
+
+
+def expand_book_ordinals(text):
+    return _NUMBERED_BOOK.sub(
+        lambda m: f"{_BOOK_ORDINAL[m.group(1)]} {m.group(2)}", text)
+
+
+def speech_v2(text):
+    """Contract 2 spoken form of one paragraph. Changes what the voice is sent,
+    never the page: capitals that eleven_v3 may stress, initials whose full
+    stops read as sentence ends, and "?." left where a title meets a subtitle."""
+    s = expand_book_ordinals(expand_in_prose(text))
+    s = re.sub(r"\bLORD\b", "Lord", s)
+    # Greek schizo, "to tear": spelled as written it can come out as the slur.
+    s = re.sub(r"\bschizo\b", "skeezo", s)
+    s = re.sub(r"\bGOD\b", "God", s)
+    s = re.sub(r"\b([A-HJ-Z])\. (?=[A-Z])", r"\1 ", s)
+    s = terminate(s)
+    return re.sub(r"([?!])\.", r"\1", s)
+
+
+def terminate(text):
+    """Contract 2: every spoken piece ends as a sentence. A heading, a scripture
+    reference or a list item with no closing punctuation otherwise runs straight
+    into the next words in the same request."""
+    t = text.rstrip()
+    if t and t[-1] not in ".!?:;\"')":
+        return t + "."
+    return t
+
+
+def list_items(field, items):
+    """Spoken text for one list the page renders, one entry per item.
+
+    Related words are one line on the page ("See also …"), so they are one
+    spoken line. Steps are numbered on the page, so they are numbered aloud."""
+    if field == "relatedWords":
+        parts = []
+        for it in items:
+            if isinstance(it, dict):
+                head = (it.get("transliteration") or "").strip() \
+                    or strip_nonlatin(it.get("word") or "")
+                meaning = (it.get("meaning") or "").strip()
+                part = f"{head} means {meaning}" if head and meaning \
+                    else head or meaning
+            elif isinstance(it, str):
+                part = it
+            else:
+                continue
+            part = part.strip()
+            if part:
+                parts.append(terminate(part[0].upper() + part[1:]))
+        return [" ".join(parts)] if parts else []
+    if field in ("leavingAtCross", "receivingFromCross"):
+        parts = [it.strip().rstrip(".") for it in items
+                 if isinstance(it, str) and it.strip()]
+        return [terminate("; ".join(parts))] if parts else []
+    out = []
+    for n, it in enumerate(items, 1):
+        if isinstance(it, dict):
+            title = (it.get("title") or "").strip().rstrip(".")
+            desc = (it.get("description") or "").strip()
+            text = f"{title}. {desc}" if title and desc else title or desc
+        elif isinstance(it, str):
+            text = it
+        else:
+            continue
+        if not text.strip():
+            continue
+        out.append(f"Step {num_to_words(n)}. {text}" if field == "steps" else text)
+    return out
+
+
 def vocab_headword(m):
     """Vocab modules define a word; the definition must not be read orphaned.
     Speak the transliteration (pronounceable), never the glyph."""
@@ -318,13 +471,13 @@ def vocab_headword(m):
     return f"{lang_label} {spoken}"
 
 
-def extract(dev):
+def extract(dev, contract=1):
     """Devotional JSON → ordered narration segments."""
     segs = []
     seen = set()
 
     def push(label, register, text, module_index=0, heading=None,
-             allow_single=False):
+             allow_single=False, break_before=False):
         t = to_speech(text)
         # A lone word mid-devotional is a label or a stray fragment, not prose.
         # Titles and headings are exempt: "Contentment" is the whole title of
@@ -337,14 +490,28 @@ def extract(dev):
         if k in seen:          # never read the same prose twice
             return
         seen.add(k)
-        segs.append({
-            "label": label, "register": register, "text": t,
-            # 1-based to match the reader's `#devotional-section-N` anchors,
-            # which are 1-indexed over the module array (SA-034). 0 = the
-            # title, which precedes every module.
-            "module_index": module_index,
-            "heading": heading,
-        })
+        # Contract 2: one segment per paragraph, citations expanded. The floor
+        # and the dedup above still judge the whole field, so a one-word
+        # paragraph inside real prose is never dropped.
+        pieces = [t]
+        if contract >= 2:
+            # Paragraphs, and each markdown list line within one: a list line
+            # has no closing punctuation, so joined it runs into the next.
+            paras = [to_speech(p) for p in
+                     re.split(r"\n\s*\n|\n(?=[ \t]*(?:[-*+]|\d+\.)[ \t])", text or "")]
+            pieces = [speech_v2(p) for p in paras if p]
+        for n, piece in enumerate(pieces):
+            segs.append({
+                # Renderer hint only, not part of the spoken text or its hash:
+                # this field starts a new request (the note after a reading).
+                "break_before": break_before and n == 0,
+                "label": label, "register": register, "text": piece,
+                # 1-based to match the reader's `#devotional-section-N` anchors,
+                # which are 1-indexed over the module array (SA-034). 0 = the
+                # title, which precedes every module.
+                "module_index": module_index,
+                "heading": heading,
+            })
 
     # Title and subtitle are separate sentences; joined bare they run together.
     parts = [x.strip().rstrip(".") for x in
@@ -399,9 +566,19 @@ def extract(dev):
             push(heading, reg, heading, module_number, heading,
                  allow_single=True)
 
+        vocab_joined = False
         if t == "vocab":
-            push("Word study", "teaching", vocab_headword(m),
-                 module_number, m.get("heading"))
+            head = vocab_headword(m)
+            meaning = next((m[f] for f in ("meaning", "definition")
+                            if isinstance(m.get(f), str) and m[f].strip()), None)
+            if contract >= 2 and head and meaning:
+                # "The Hebrew word qadosh means holy; set apart for God."
+                push("Word study", "teaching", f"{head} means {meaning}",
+                     module_number, m.get("heading"))
+                vocab_joined = True
+            else:
+                push("Word study", "teaching", head,
+                     module_number, m.get("heading"))
 
         if not order:                      # unknown type: read its prose fields
             for k, v in m.items():
@@ -411,17 +588,41 @@ def extract(dev):
             continue
 
         consumed = set()
+        if vocab_joined:
+            consumed.update(("meaning", "definition"))
         for group in order:
+            if consumed.intersection(group):
+                continue
             for field in group:
                 v = m.get(field)
                 if isinstance(v, str) and v.strip():
                     label = m.get("heading") or t.title()
                     prefix = PREFIX.get((t, field), "")
+                    if contract >= 2:
+                        prefix = PREFIX_V2.get(f"{t}|{field}", prefix)
                     if t == "scripture" and field == "reference":
                         v = expand_reference(v)
-                    push(label, reg, prefix + v, module_number, m.get("heading"))
+                    era = m.get("era")
+                    if (contract >= 2 and t == "profile" and field in ("name", "title")
+                            and isinstance(era, str) and era.strip()):
+                        v = f"{v}, {era.strip()}"
+                        consumed.add("era")
+                    push(label, reg, prefix + v, module_number, m.get("heading"),
+                         break_before=(contract >= 2 and t == "scripture"
+                                       and field in ("scriptureContext", "context")))
                     consumed.update(group)   # mirrors are covered too
                     break                    # mirrored variants: first wins
+
+        if contract >= 2:
+            for field, lead in LIST_FIELDS.get(t, []):
+                items = m.get(field)
+                if not isinstance(items, list):
+                    continue
+                consumed.add(field)
+                for i, item in enumerate(list_items(field, items)):
+                    push(m.get("heading") or t.title(), reg,
+                         (lead if i == 0 else "") + item,
+                         module_number, m.get("heading"))
 
         # Catch-all: read any substantial prose the ordered list does not name.
         # push() dedupes, so mirrored text is not read twice.
@@ -437,7 +638,9 @@ def extract(dev):
 
 def main():
     dev = json.load(open(sys.argv[1]))
-    segs = extract(dev)
+    contract = (int(sys.argv[sys.argv.index("--contract") + 1])
+                if "--contract" in sys.argv else 1)
+    segs = extract(dev, contract)
     words = sum(len(s["text"].split()) for s in segs)
     if "--json" in sys.argv:
         json.dump(segs, open(sys.argv[2], "w"), indent=1)

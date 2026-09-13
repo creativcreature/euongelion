@@ -18,6 +18,8 @@
 - **Sexuality:** addressed briefly, only where the text requires it, and never as the subject of a day. Where Christians disagree about how a law applies, the disagreement does not suspend love, care, reconciliation, or respect for the people in someone's life. The series does not take a side on that question.
 - **Prose (SA-134, restated by the founder for this run):** say what you mean; when a literal phrase is available, use it. Specific habits found in the previous week and banned here: sentences that narrate the week's own structure ("this is where the week turns"), fragment paragraphs used for drama, flourishes standing in for plain words, and formula contrast pairs.
 - **Definition of done:** through live deploy, verified on the live site.
+- **The 66 books only (SA-141, 2026-09-13):** "We are only using the 66 books." Day 1 was first built on Eleazar from 2 Maccabees 6 and was rebuilt before shipping on Daniel 1, with Ezekiel 4:14 and Acts 10:14. No apocryphal or deuterocanonical book is a source, story, quote or image subject anywhere in the series.
+- **Narration (SA-141):** rendered once with reading contract 2, after the pre-render gate passes and the scripts are proofread; verified from a transcript. Never re-rendered.
 
 ## One-line theme
 

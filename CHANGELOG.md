@@ -5,6 +5,16 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-13 — Narration reads every word; the 66 books only — SA-141 (F-183) — v0.8.32
+
+- Reading contract 2 for new tracks: every list the page renders is read (exercise steps, extra reflection questions, related words, leaving/receiving at the cross), citations in prose are expanded, requests are cut at paragraph and sentence ends. Contract 1 is unchanged for every existing track.
+- Audio is rendered once. `preflight_narration.py` proves coverage and speakability on text first; `verify_transcript.py` checks the audio from local Whisper afterward; `render_el_catalog.py` refuses to re-render.
+- By the Heel narrated in the founder's voice with the score: 138 minutes across seven days.
+- Day 1 rebuilt on Daniel 1, Ezekiel 4:14 and Acts 10:14 in place of 2 Maccabees (founder: "We are only using the 66 books").
+- Service worker v168.
+
+---
+
 ## 2026-09-13 — By the Heel: seven days on law and freedom — SA-140 (F-183)
 
 Founder-directed through /devo-go: Romans 14 against Leviticus 11, freedom in
@@ -13112,7 +13122,7 @@ Replaced broken symlink with a real directory. Downloaded 47 plain-text files (~
 
 ## Current Status
 
-**Version:** 0.8.31
+**Version:** 0.8.32
 **Version:** 0.8.19
 **Target:** Easter 2026 MVP launch
 **Now:** Typography Masterclass complete — Instrument Serif + Inter, emphasis-based mixed headlines, sacred illumination, pull quotes, ornamental dividers, activated OpenType features

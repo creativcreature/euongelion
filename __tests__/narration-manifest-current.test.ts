@@ -29,11 +29,12 @@ type Entry = {
   duration: number
   words: number
   textHash?: string | null
+  contract?: number
   chapters?: Array<{ t: number; label: string; module: number }>
 }
 const tracks = manifest as unknown as Record<string, Entry>
 
-function spokenHash(slug: string): string | null {
+function spokenHash(slug: string, contract = 1): string | null {
   const file = path.join(DIR, `${slug}.json`)
   if (!fs.existsSync(file)) return null
   const dev = JSON.parse(fs.readFileSync(file, 'utf8'))
@@ -41,7 +42,9 @@ function spokenHash(slug: string): string | null {
   // Python extractor mirrors buildPanelSegments byte-for-byte, and this
   // recomputation is the gate that keeps them identical.
   const segments = Array.isArray(dev.modules)
-    ? buildModuleSegments(dev.title ?? '', dev.modules, dev.subtitle)
+    ? buildModuleSegments(dev.title ?? '', dev.modules, dev.subtitle, {
+        contract,
+      })
     : Array.isArray(dev.panels)
       ? buildPanelSegments(dev.title ?? '', dev.panels, dev.subtitle)
       : null
@@ -71,7 +74,9 @@ describe('narration manifest is current', () => {
   it('every track was rendered from the text the page now shows', () => {
     const stale: string[] = []
     for (const [slug, entry] of Object.entries(tracks)) {
-      const want = spokenHash(slug)
+      // Each track is checked against the reading contract it was rendered
+      // with (SA-141): absent means contract 1, every pre-2026-09-13 track.
+      const want = spokenHash(slug, entry.contract ?? 1)
       if (entry.textHash !== want) {
         stale.push(
           `${slug} (rendered ${entry.textHash ?? 'pre-hash'}, page ${want})`,

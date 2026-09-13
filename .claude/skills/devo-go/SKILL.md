@@ -69,8 +69,13 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 8. Wire: `series.ts` (SERIES_DATA + order array + FEATURED_SERIES if directed), `series-rails.ts`, bump `__tests__/series-data.test.ts` count and `scripts/check-feature-prd-integrity.mjs` count.
 9. Tracking: next SA id from `production-decisions.yaml` (canonical — not CHANGELOG grep), next F-### PRD, CHANGELOG entry.
 10. **Narration + score (SA-043, 2026-08-15) — full detail in `references/narration.md`.** Render the finished series in the founder's cloned voice, then lay the atmospheric score under it. Runs HERE, after the prose is final and before the gates: the audio stores a fingerprint of the text it speaks, so any later edit invalidates the track and every chapter mark in it; and the manifest is a build input, so it must exist before `npm run build`.
-    - `render_el_catalog.py <slugs> --dry-run` FIRST — it prints the exact character cost and refuses to start if the budget will not cover the whole job. Report the cost before spending it. Never spend without showing the number.
-    - Then render, then `produce.py` for the score. The score pass rebuilds from the chunk cache: no credits, no API, repeatable.
+    - **Audio is rendered ONCE and never re-rendered (founder ruling 2026-09-13, SA-141).** Founder: _"I never want to re-render audio — the transcripts and planning to create the final piece needs to be fully conceived and verified before running so regeneration never has to occur."_ Everything that used to be found by listening afterwards is found on text first. `render_el_catalog.py` refuses any slug already in the manifest. Older devotionals keep the recording and reading contract they shipped with; do not change them.
+    - **The whole page is read (reading contract 2).** Founder: _"Ensure the narration reads all the words… All exercises should be read… the entire devotional needs to be read naturally."_ Contract 1 silently skipped every list the page renders (exercise steps, extra reflection questions, related words, leaving/receiving at the cross), read scripture citations in prose as digits, and sent whole modules as one request, which is where eleven_v3 cut phrases short. New tracks use contract 2; the manifest entry records `"contract": 2` and the hash test recomputes with it.
+    - **Pre-render gate, in order, all free:**
+      1. `python3 euangelion-voice-prototype/spec/preflight_narration.py <slug>-day-1 … --out <dir>` — must print ALL PASS. It proves coverage (every page sentence is in the script), flags anything the voice would read as symbols (raw chapter:verse, dotted numbers like `3.19`, numeric ranges, durations like `8:07`, Roman numerals, numbered book names, unexplained line breaks), and prints the exact request plan. Fix the CONTENT of the new days until it passes: move source citations out of spoken fields into the resource module, write "book 3, chapter 19" not "3.19", "March 23" not "23 March", "Antiochus Epiphanes" not "Antiochus IV".
+      2. **Proofread the written script by listening in your head.** Launch a read-only agent over every `<slug>.script.txt` for run-ons, fragments, labels that read badly aloud, unmatched quotes and likely mispronunciations. Fix, re-run step 1.
+      3. `render_el_catalog.py <slugs> --dry-run` — prints the exact character cost and refuses to start if the budget will not cover the whole job. Report the cost before spending it. Never spend without showing the number.
+    - Then render once, then **prove it from a transcript**: `<venv>/bin/python euangelion-voice-prototype/spec/verify_transcript.py <slug>-day-1 …` transcribes every request from the chunk cache with local Whisper (float32 — float16 on MPS returns garbage) and fails any request that dropped 3+ consecutive words or lost its ending. It spends nothing. Only then `produce.py` for the score, which rebuilds from the chunk cache: no credits, no API, repeatable.
     - The founder's voice is for NEW series only; the back catalog stays on `am_michael`. A new devotional averages 9,487 characters against 691k credits a month, so new content is already paid for.
     - **The narration is never processed.** Founder ruling: the voice is right as rendered; everything goes underneath it.
     - Verify all four before shipping: duration drift < 0.5 s (chapter marks are absolute — drift moves every one after it), `textHash` matching the page, chapters starting at 0 and inside runtime, and every file under the **hard 25 MiB Workers asset limit** (no plan raises it; ~23 MB is a 25-minute day at 128 kbps stereo).
@@ -81,6 +86,7 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
 
 ## Guardrails
 
+- **The 66 books only (founder ruling 2026-09-13, SA-141).** Scripture means the 66-book Protestant canon. No apocryphal or deuterocanonical book (Maccabees, Tobit, Judith, Sirach, Wisdom, Baruch, Esdras, additions to Esther/Daniel) is used as a source, a story, a quotation or an image subject, even as history. Founder: _"We are only using the 66 books."_ Precedent: By the Heel Day 1 was built on Eleazar from 2 Maccabees 6 and was rebuilt on Daniel 1 before shipping. When a tradition's canon differs, that difference can be named in one sentence where it matters; it is never the day's material. Research briefs must state this rule.
 - Every quote verbatim + fully cited; every story primary-source verified; folklore REJECTED and the rejection documented in the source pack (Müller breakfast-table and Paton angel-guard are the precedents).
 - Allowed translations only (BSB/WEB/KJV/ASV/YLT/DARBY/BBE); match the corpus's exact text INCLUDING divine-name casing (repo KJV prints "the Lord"; BSB prints "the LORD").
 - Hebrew/Greek never unpaired with transliteration; the Jabez metathesis rule generalizes: never overstate a lexical claim the interlinear doesn't support.
@@ -157,11 +163,13 @@ node scripts/imagery/verify-masters.mjs <masters-dir> --intensity=<1-5>
 # SA-124 — accuracy + consistency. --strict because this is NEW work.
 node scripts/check-devotional-consistency.mjs --strict --series <slug>
 
-# Narration: cost gate FIRST, then render, then score (the score costs nothing —
-# it rebuilds the narration from the chunk cache).
+# Narration (SA-141): prove the script on text, show the cost, render ONCE,
+# prove the audio from a transcript, then score (free — rebuilds from the cache).
+python3 euangelion-voice-prototype/spec/preflight_narration.py <slug>-day-1 ... --out <scratch>/scripts   # ALL PASS
 python3 euangelion-voice-prototype/spec/render_el_catalog.py <slug>-day-1 ... --dry-run
 python3 euangelion-voice-prototype/spec/render_el_catalog.py <slug>-day-1 ...
-python3 euangelion-voice-prototype/spec/produce.py <slug>-day-1 euangelion-voice-prototype/PRODUCED-<slug>-day-1.m4a
+<venv>/bin/python euangelion-voice-prototype/spec/verify_transcript.py <slug>-day-1 ...                  # PASS every request
+python3 euangelion-voice-prototype/spec/produce.py <slug>-day-1 euangelion-voice-prototype/scored/<slug>-day-1.m4a
 
 npm run type-check && npm run verify:production-contracts && npm run verify:tracking && npm run verify:feature-prds
 npm run lint && npm test && npm run build

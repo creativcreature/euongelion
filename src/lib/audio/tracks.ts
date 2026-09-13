@@ -53,6 +53,9 @@ export interface NarrationTrack {
   /** Navigable sections, earliest first. Absent on tracks rendered before
    *  chapters existed, or whose timings could not be verified. */
   chapters?: NarrationChapter[]
+  /** Reading contract the track was rendered with (SA-141). Absent means 1,
+   *  which is every track rendered before 2026-09-13. */
+  contract?: number
 }
 
 const TRACKS = manifest as Record<string, NarrationTrack>

@@ -345,8 +345,12 @@ def main():
     from_audio = sys.argv[sys.argv.index("--from-audio") + 1] \
         if "--from-audio" in sys.argv else None
     dev = json.load(open(os.path.join(REPO, "public", "devotionals", f"{slug}.json")))
-    segs = ne.extract(dev)
-    groups = rc.chunks(segs)
+    # Rebuild with the contract the track was rendered with, so the chunks are
+    # the same requests and every one is found in the cache (SA-141).
+    man = json.load(open(os.path.join(REPO, "src", "data", "audio-manifest.json")))
+    contract = man.get(slug, {}).get("contract", 1)
+    segs = ne.extract(dev, contract)
+    groups = rc.chunks(segs, contract)
     vid = open(os.path.join(REPO, "euangelion-voice-prototype", "el-voice-id.txt")).read().strip()
 
     # 1. rebuild the dry narration from cache — no API, no credits
@@ -364,7 +368,7 @@ def main():
             raise SystemExit(f"chunk {i} not cached — refusing to spend credits")
         frames.extend(decode(hit, tmp + ".c.wav"))
         if i < len(groups):
-            frames.extend([0] * int(PAUSE_AFTER.get(g[-1]["register"], 0.55) * SR))
+            frames.extend([0] * int(rc.gap_after(g) * SR))
     if not from_audio:
         frames.extend([0] * int(TRAILING_PAD * SR))
     n = len(frames)
@@ -388,7 +392,6 @@ def main():
         return
 
     # 3. bed, spotted against the devotional's structure
-    man = json.load(open(os.path.join(REPO, "src", "data", "audio-manifest.json")))
     chapters = man[slug].get("chapters") or []
     def loop_to(path, length, offset_s=0.0):
         a = decode(path, tmp + ".b.wav")

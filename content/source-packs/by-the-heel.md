@@ -3115,6 +3115,8 @@ It gives both halves of Romans 14 in one documented case. There is freedom ("nac
 
 ## Day 1 alternate A: Eleazar the scribe, 2 Maccabees 6:18–31
 
+> **WITHDRAWN — NOT FOR USE (SA-141, founder 2026-09-13: "We are only using the 66 books.").** This section, the canonical-status table and the Hebrews 11:35 note below were used in the first Day 1 draft and removed before shipping. Kept only as a record of what was verified and why it was dropped. Day 1 now uses §7 (Daniel 1).
+
 ### Names and dates
 
 - **Eleazar**, "one of the principal scribes," aged ninety (2 Macc 6:18, 24).
@@ -3723,3 +3725,552 @@ These were also seen in search and skipped as obvious fan re-uploads (no oEmbed 
    - Genesis 12-50 → "Book of Genesis Summary: A Complete Animated Overview (Part 2)"
    - Romans 5-16 → "Book of Romans Summary: A Complete Animated Overview (Part 2)"
 6. Durations come from the watch page `lengthSeconds`. Some are 1 second shorter than the search-results label (e.g. Holiness shows 6:35 in search and 6:34 by lengthSeconds).
+
+---
+
+# 7. Day 1 replacement: Daniel 1, Ezekiel 4:14, Acts 10:14 (SA-141)
+
+Research-agent file, 2026-09-13, copied in whole. Quotes were checked word for word against the fetched sources. Notes on typing errors in the digitized public-domain texts, licences, and apocrypha citations inside the commentaries are in its Caveats; none of the apocrypha references is used. Researcher's own literal translations (Ibn Ezra, Metzudat David) are NOT quoted on the page; Ibn Ezra's view is given only as John Gill reports it. Modern scholars (Baldwin and others) are summarized, never quoted.
+
+Compiled 2026-09-13. Every quotation below was copied from a page or file fetched during this session. Quotations are copied as the source prints them, including the source's own typing errors. Where a source has an obvious typing error, a note follows the quotation. It is not corrected inside the quotation marks.
+
+Status key:
+
+- **VERIFIED** = wording checked against the fetched source (URL or local path given).
+- **VERIFIED (secondary)** = wording or view checked in a fetched secondary source that quotes or cites the primary work. The primary book itself was not seen.
+- **UNVERIFIED** = not checked. Do not present as a quotation.
+
+---
+
+## A. People in Scripture who kept the food laws under pressure
+
+### A.0 Anchor text and source
+
+Local corpus: `/Users/jamesparker/Documents/app-projects/external/euangelion/public/bibles/BSB/`. The file `manifest.json` reads `"name": "Berean Standard Bible"`, `"license": "Public domain (CC0 1.0 Universal)"`, `"year": 2022`. The book codes DAN, EZK and ACT exist as named. **VERIFIED** (local files).
+
+Leviticus 11:44-45 (BSB), from `LEV.json`. **VERIFIED**
+
+> 44 For I am the LORD your God; consecrate yourselves, therefore, and be holy, because I am holy. You must not defile yourselves by any creature that crawls along the ground.
+> 45 For I am the LORD, who brought you up out of the land of Egypt so that I would be your God; therefore be holy, because I am holy.
+
+### A.1 Daniel 1:3-21 (BSB), from `DAN.json`. **VERIFIED**
+
+> 3 Then the king ordered Ashpenaz, the chief of his court officials, to bring in some Israelites from the royal family and the nobility—
+> 4 young men without blemish, handsome, gifted in all wisdom, knowledgeable, quick to understand, and qualified to serve in the king’s palace—and to teach them the language and literature of the Chaldeans.
+> 5 The king assigned them daily provisions of the royal food and wine. They were to be trained for three years, after which they were to enter the king’s service.
+> 6 Among these young men were some from Judah: Daniel, Hananiah, Mishael, and Azariah.
+> 7 The chief official gave them new names: To Daniel he gave the name Belteshazzar; to Hananiah, Shadrach; to Mishael, Meshach; and to Azariah, Abednego.
+> 8 But Daniel made up his mind that he would not defile himself with the king’s food or wine. So he asked the chief official for permission not to defile himself.
+> 9 Now God had granted Daniel favor and compassion from the chief official,
+> 10 but he said to Daniel, “I fear my lord the king, who has assigned your food and drink. For why should he see your faces looking thinner than those of the other young men your age? You would endanger my head before the king!”
+> 11 Then Daniel said to the steward whom the chief official had appointed over Daniel, Hananiah, Mishael, and Azariah,
+> 12 “Please test your servants for ten days. Let us be given only vegetables to eat and water to drink.
+> 13 Then compare our appearances with those of the young men who are eating the royal food, and deal with your servants according to what you see.”
+> 14 So he consented to this and tested them for ten days.
+> 15 And at the end of ten days, they looked healthier and better nourished than all the young men who were eating the king’s food.
+> 16 So the steward continued to withhold their choice food and the wine they were to drink, and he gave them vegetables instead.
+> 17 To these four young men God gave knowledge and understanding in every kind of literature and wisdom. And Daniel had insight into all kinds of visions and dreams.
+> 18 Now at the end of the time specified by the king, the chief official presented them to Nebuchadnezzar.
+> 19 And the king spoke with them, and among all the young men he found no one equal to Daniel, Hananiah, Mishael, and Azariah. So they entered the king’s service.
+> 20 In every matter of wisdom and understanding about which the king consulted them, he found them ten times better than all the magicians and enchanters in his entire kingdom.
+> 21 And Daniel remained there until the first year of King Cyrus.
+
+Context verses 1-2 (BSB). **VERIFIED**
+
+> 1 In the third year of the reign of Jehoiakim king of Judah, Nebuchadnezzar king of Babylon came to Jerusalem and besieged it.
+> 2 And the Lord delivered into his hand Jehoiakim king of Judah, along with some of the articles from the house of God. He carried these off to the land of Shinar, to the house of his god, where he put them in the treasury of his god.
+
+### A.2 Ezekiel 4:12-15 (BSB), from `EZK.json`. **VERIFIED**
+
+> 12 And you shall eat the food as you would a barley cake, after you bake it over dried human excrement in the sight of the people.”
+> 13 Then the LORD said, “This is how the Israelites will eat their defiled bread among the nations to which I will banish them.”
+> 14 “Ah, Lord GOD,” I said, “I have never defiled myself. From my youth until now I have not eaten anything found dead or mauled by wild beasts. No unclean meat has ever entered my mouth.”
+> 15 “Look,” He replied, “I will let you use cow dung instead of human excrement, and you may bake your bread over that.”
+
+Notes for the writer:
+
+- The BSB wording of 4:14 is "No unclean meat has ever entered my mouth." The brief's guess ("nor has any unclean meat entered my mouth") is not the BSB wording. **VERIFIED**
+- Ezekiel was a priest and was among the exiles "in the land of the Chaldeans by the River Kebar" (Ezekiel 1:3 BSB: "the word of the LORD came directly to Ezekiel the priest, the son of Buzi, in the land of the Chaldeans by the River Kebar."). **VERIFIED**
+- Hebrew terms in 4:14 (Bible Hub interlinear, https://biblehub.com/interlinear/ezekiel/4-14.htm): "defiled myself" = H2930 _tame'_ (Pual participle); "anything found dead" = H5038 _nebelah_; "mauled by wild beasts" = H2966 _terephah_; "unclean meat" = H6292 _piggul_ + H1320 _basar_. **VERIFIED**
+- The priestly rule behind "found dead or torn" is Leviticus 22:8 (BSB): "He must not eat anything found dead or torn by wild animals, which would make him unclean. I am the LORD." Compare Ezekiel 44:31. **VERIFIED**
+- Context caution: Ezekiel 4 is a sign-act. Ezekiel protests to God, not to a foreign king, and God grants a concession (4:15). Verse 13 is the prophecy that exiles will eat "defiled bread among the nations". Hosea 9:3 makes a similar threat (BSB: "Ephraim will return to Egypt and eat unclean food in Assyria."). **VERIFIED**
+
+### A.3 Acts 10:9-16 (BSB), from `ACT.json`. **VERIFIED**
+
+> 9 The next day at about the sixth hour, as the men were approaching the city on their journey, Peter went up on the roof to pray.
+> 10 He became hungry and wanted something to eat, but while the meal was being prepared, he fell into a trance.
+> 11 He saw heaven open and something like a large sheet being let down to earth by its four corners.
+> 12 It contained all kinds of four-footed animals and reptiles of the earth, as well as birds of the air.
+> 13 Then a voice said to him: “Get up, Peter, kill and eat!”
+> 14 “No, Lord!” Peter answered. “I have never eaten anything impure or unclean.”
+> 15 The voice spoke to him a second time: “Do not call anything impure that God has made clean.”
+> 16 This happened three times, and all at once the sheet was taken back up into heaven.
+
+Related verses (BSB). **VERIFIED**
+
+- Acts 11:8: "‘No, Lord,’ I said, ‘for nothing impure or unclean has ever entered my mouth.’" (Peter's retelling. Its wording is close to Ezekiel 4:14 and Daniel 10:3.)
+- Acts 10:28: "He said to them, “You know how unlawful it is for a Jew to associate with a foreigner or visit him. But God has shown me that I should not call any man impure or unclean."
+- Mark 7:19: "because it does not enter his heart, but it goes into the stomach and then is eliminated.” (Thus all foods are clean.)"
+- 1 Peter 1:15-16: "But just as He who called you is holy, so be holy in all you do, for it is written: “Be holy, because I am holy.”" (This quotes the Day 1 anchor.)
+- Greek in Acts 10:14 (https://biblehub.com/interlinear/acts/10-14.htm): "impure" = G2839 _koinos_; "unclean" = G169 _akathartos_. **VERIFIED**
+
+Notes for the writer:
+
+- Peter was in Joppa, at the house of Simon the tanner (Acts 9:43; 10:5-6). Joppa was not a foreign land. The pressure on Peter came from a divine command, not from a pagan ruler. The "far from home" framing fits Daniel and Ezekiel. It does not fit Peter.
+- In Acts, the vision leads Peter to the lesson about people (10:28, 10:34-35). A Day 1 page anchored in Leviticus 11 will need to handle that New Testament turn with care.
+
+---
+
+## B. Story retelling of Daniel 1: what the text says and does not say
+
+### B.1 Draft retelling (uses only details from Daniel 1:1-21; about 245 words)
+
+> Nebuchadnezzar king of Babylon besieged Jerusalem, and the Lord delivered King Jehoiakim into his hand. The king ordered Ashpenaz, the chief of his court officials, to bring young men from Israel's royal family and nobility. They had to be without blemish, handsome, wise and quick to learn. They would study the language and literature of the Chaldeans for three years. Every day they would receive royal food and wine. Then they would serve the king.
+>
+> Four of them came from Judah: Daniel, Hananiah, Mishael and Azariah. The chief official gave them new names.
+>
+> But Daniel made up his mind that he would not defile himself with the king's food or wine. He asked the chief official for permission. God had given Daniel favor and compassion with this man, but the official was afraid. "I fear my lord the king," he said. If the king saw them looking thinner than the other young men, the official's head would be in danger.
+>
+> So Daniel went to the steward. "Test your servants for ten days," he said. "Give us vegetables to eat and water to drink. Then compare us." The steward agreed. After ten days the four looked healthier and better nourished than all who ate the king's food. So the steward kept giving them vegetables instead of the choice food and wine.
+>
+> God gave the four knowledge and wisdom. When the king examined them, he found them ten times better than all the magicians and enchanters in his kingdom.
+
+(Draft by the researcher. It is not a quotation. Check the final word count after editing.)
+
+### B.2 What the text SAYS (BSB, VERIFIED against `DAN.json`)
+
+| Point                            | Verse | BSB wording                                                                                         |
+| -------------------------------- | ----- | --------------------------------------------------------------------------------------------------- |
+| The provision                    | 1:5   | "daily provisions of the royal food and wine"                                                       |
+| Daniel's resolve                 | 1:8   | "made up his mind that he would not defile himself with the king’s food or wine"                    |
+| "Defile" appears twice           | 1:8   | "...would not defile himself... permission not to defile himself."                                  |
+| Daniel asked; he did not demand  | 1:8   | "he asked the chief official for permission"                                                        |
+| God's part                       | 1:9   | "God had granted Daniel favor and compassion from the chief official"                               |
+| The official's fear              | 1:10  | "I fear my lord the king... You would endanger my head before the king!"                            |
+| His worry was their looks        | 1:10  | "your faces looking thinner than those of the other young men your age"                             |
+| Daniel then went to a second man | 1:11  | "the steward whom the chief official had appointed"                                                 |
+| The test                         | 1:12  | "test your servants for ten days. Let us be given only vegetables to eat and water to drink."       |
+| The terms                        | 1:13  | "deal with your servants according to what you see"                                                 |
+| Outcome                          | 1:15  | "they looked healthier and better nourished than all the young men who were eating the king’s food" |
+| It continued                     | 1:16  | "the steward continued to withhold their choice food and the wine"                                  |
+| Source of their wisdom           | 1:17  | "To these four young men God gave knowledge and understanding"                                      |
+| Final result                     | 1:20  | "ten times better than all the magicians and enchanters in his entire kingdom"                      |
+
+### B.3 What the text does NOT say
+
+- **It never gives a reason why the food or wine would defile.** It does not mention pork, blood, unclean animals, idols, offerings or covenant. Every explanation in Section C is an inference. This point is made in print by Daud Soesilo (1994): "the text as it stands does not talk about the motivation of Daniel and his three friends". **VERIFIED (secondary; Soesilo quoted briefly)** https://translation.bible/wp-content/uploads/2024/06/soesilo-1994-why-did-daniel-reject-the-king-s-delicacies-daniel-1-8.pdf
+- **It does not say the chief official refused.** He says he is afraid (1:10). Daniel then goes to the steward (1:11). A flat "no" is a common assumption, not the text.
+- **It does not say that all four made the resolve in 1:8.** Only Daniel "made up his mind". The others are included by "your servants" and "us" in 1:12.
+- **It does not say Daniel refused the new name or the Babylonian education.** The line is drawn only at the food and wine.
+- **It does not say Daniel ate vegetables for life.** Daniel 10:3 implies that, at a later time, not eating choice food, meat and wine was unusual for him (see C.6).
+- **It does not say the result was a miracle.** Verse 15 reports the outcome only. Verse 17 attributes the knowledge to God, and verse 9 attributes the favor to God. Commentators differ on how far the health result was natural.
+- **It does not say the four refused all royal food for the whole three years in so many words.** Verse 16 says the steward "continued" to withhold it. S. R. Driver notes that the Hebrew idiom "implies that the treatment which they received was now continuous." **VERIFIED** https://biblehub.com/commentaries/cambridge/daniel/1.htm
+- **It does not name the steward.** The KJV treats "Melzar" as a name. Keil and Delitzsch argue that the word, which has the article, is a title: "המּלצר, having the article, is to be regarded as an appellative, expressing the business of the calling of the man." **VERIFIED** https://biblehub.com/commentaries/kad/daniel/1.htm
+- **"Only" in BSB 1:12 translates a Hebrew preposition.** The interlinear maps "only" to H4480 _min_ ("from"). Literally the phrase is "let them give us from the vegetables". **VERIFIED** https://biblehub.com/interlinear/daniel/1-12.htm
+- **It does not say what the "vegetables" were.** See D.3. "Pulse" (KJV) means beans and peas in modern English, which is narrower than the Hebrew.
+- **It does not say the four were eunuchs.** Barnes cites the _Pictorial Bible_ to argue against that inference. That is a side issue, so leave it out.
+
+### B.4 Key vocabulary as the BSB renders it (VERIFIED)
+
+- "royal food" (1:5, 1:13), "king’s food" (1:8, 1:15), "choice food" (1:16). All five render the same Hebrew word, _pathbag_ (see D.2).
+- "vegetables" (1:12, 1:16). Two related Hebrew forms, both Strong's H2235 (see D.3).
+- "chief official" (1:7-11, 1:18). In 1:3 he is named: "Ashpenaz, the chief of his court officials".
+
+---
+
+## C. Why did Daniel refuse the king's food? All sides
+
+### C.0 Two textual facts that shape the whole debate
+
+1. **The Torah does not forbid wine to ordinary Israelites.** Deuteronomy 14:26 (BSB): "Then you may spend the money on anything you desire: cattle, sheep, wine, strong drink, or anything you wish. You are to feast there in the presence of the LORD your God and rejoice with your household." **VERIFIED**. The exceptions are the Nazirite (Numbers 6:3), priests on duty (Leviticus 10:9) and the Rechabites by family vow (Jeremiah 35:6). **VERIFIED**. Because Daniel refused the wine too, many commentators say Leviticus 11 cannot be the whole reason:
+   - Calvin: "for there was no law to prevent any one drinking wine, except the Nazarites". **VERIFIED** (see C.4)
+   - Keil and Delitzsch: "for in this case the youths were not under the necessity of refraining from the wine". **VERIFIED** (see C.2)
+   - Gill: "otherwise wine was not forbidden". **VERIFIED** (see C.2)
+   - Baldwin (modern) makes the same point. **VERIFIED (secondary)** (see C.3)
+2. **Daniel 10:2-3 (BSB):** "In those days I, Daniel, was mourning for three full weeks. I ate no rich food, no meat or wine entered my mouth, and I did not anoint myself with oil until the three weeks were completed." **VERIFIED**. The Hebrew here is not _pathbag_. "rich food" = H2532 _chamudot_ + H3899 _lechem_; "meat" = H1320 _basar_; "wine" = H3196 _yayin_. **VERIFIED** https://biblehub.com/interlinear/daniel/10-3.htm. Commentators disagree on what this says about Daniel's normal diet:
+   - Calvin reads it to mean Daniel later ate flesh and drank wine freely in quiet times (quoted in C.4).
+   - Gill: Daniel abstained from "generous wine, as he had used to do, living in a king's court". **VERIFIED** https://biblehub.com/commentaries/gill/daniel/10.htm
+   - Barnes disagrees: "It is not to be inferred from this that Daniel ordinarily made use of wine, for it would seem from Daniel 1:that that was not his custom." (The typing error "Daniel 1:that" is in the source.) **VERIFIED** https://biblehub.com/commentaries/barnes/daniel/10.htm
+
+A related verse that is often cited: the exiled King Jehoiachin ate at the Babylonian king's table. 2 Kings 25:29-30 (BSB): "So Jehoiachin changed out of his prison clothes, and he dined regularly at the king’s table for the rest of his life. And the king provided Jehoiachin a daily portion for the rest of his life." (Jeremiah 52:33-34 is parallel.) **VERIFIED**
+
+---
+
+### C.1 View 1: The food was unclean under Leviticus 11, or the blood was not drained
+
+**Who holds it:** Adam Clarke; John Gill; Matthew Henry (as one reason); S. R. Driver (Cambridge Bible); Pulpit Commentary; Metzudat David (Jewish). Keil and Delitzsch mention this view and reject it as the main reason.
+
+**Adam Clarke** (d. 1832), on 1:8. **VERIFIED** https://biblehub.com/commentaries/clarke/daniel/1.htm
+
+> But Daniel - would not defile himself - I have spoken of this resolution in the introduction. The chief reasons why Daniel would not eat meat from the royal table were probably these three: - 1. Because they ate unclean beasts, which were forbidden by the Jewish law.2. Because they ate, as did the heathens in general, beasts which had been strangled, or not properly blooded.3. Because the animals that were eaten were first offered as victims to their gods.
+
+(The missing spaces in "law.2." and "blooded.3." come from the web page formatting.)
+
+**John Gill** (d. 1771), on 1:8. **VERIFIED** https://biblehub.com/commentaries/gill/daniel/1.htm
+
+> partly because it might consist of what was forbidden by the law of Moses, as the flesh of unclean creatures, particularly swine, and fat and blood, and so defile himself in a ceremonial sense
+
+**Matthew Henry** (d. 1714), _Commentary on the Whole Bible_ (the full commentary, not the Concise), on 1:8-16. **VERIFIED** https://biblehub.com/commentaries/mhcw/daniel/1.htm
+
+> Sometimes such meat would be set before them as was expressly forbidden by their law, as swine’s flesh; or they were afraid lest it should have been offered in sacrifice to an idol, or blessed in the name of an idol. The Jews were distinguished from other nations very much by their meats (Lev. 11:45, 46), and these pious young men, being in a strange country, thought themselves obliged to keep up the honour of their being a peculiar people.
+
+Henry links Daniel to Peter's words in Acts 10 in the same paragraph. **VERIFIED** (same URL)
+
+> Though Providence says, Kill and eat, conscience says, Not so, Lord, for nothing common or unclean has come into my mouth.
+
+**S. R. Driver**, _The Book of Daniel_ (Cambridge Bible for Schools and Colleges, 1900), on 1:8-10. **VERIFIED** https://biblehub.com/commentaries/cambridge/daniel/1.htm. The Bible Hub page does not name the author. The authorship and the key sentence were confirmed in the 1900 Cambridge University Press scan: https://archive.org/details/bookdaniel00drivgoog (OCR text contains "tantamount to").
+
+> The meat might be that of animals not slaughtered in the proper manner (Deuteronomy 12:23-24), or of animals prohibited to the Jews as food (Leviticus 11:4-7; Leviticus 11:10-12; Leviticus 13-19, 20); while both the meat and the wine might have been consecrated to the Babylonian gods by portions having been offered to them in sacrifice, so that to partake of either would be tantamount to the recognition of a heathen deity (cf. 1 Corinthians 10:20; 1 Corinthians 10:27-29).
+
+(Caution: the next sentences of Driver's note cite 1-2 Maccabees, Judith and Tobit as historical parallels. Do NOT carry those into the devotional. See Caveats.)
+
+**Pulpit Commentary**, on 1:8. **VERIFIED** https://biblehub.com/commentaries/pulpit/daniel/1.htm
+
+> So far as animal food was concerned, the careful directions as to not eating with blood made partaking of the feasts of the Babylonian monarch peculiarly liable to bring on them defilement.
+
+Supporting laws (BSB). **VERIFIED**
+
+- Leviticus 3:17: "This is a permanent statute for the generations to come, wherever you live: You must not eat any fat or any blood.”" (Note "wherever you live", which is relevant to exile.)
+- Leviticus 17:10: "If anyone from the house of Israel or a foreigner living among them eats any blood, I will set My face against that person and cut him off from among his people."
+- Deuteronomy 12:23: "Only be sure not to eat the blood, because the blood is the life, and you must not eat the life with the meat."
+
+**Jewish reading: Metzudat David** (David Altschuler, 18th century; Hebrew, public domain on Sefaria). **VERIFIED** https://www.sefaria.org/Metzudat_David_on_Daniel.1.8
+
+> אשר לא יתגאל. במאכלי האיסור וביין של עכו״ם
+
+Researcher's literal translation (not a published translation): "That he would not defile himself: with forbidden foods and with the wine of idolaters." Sefaria gives no English version of this comment.
+
+**Weakness of this view, as others state it:**
+
+- It does not explain the wine (see C.0).
+- Modern writers note that the prophets said all food in exile would be unclean (Hosea 9:3). Soesilo reports that Baldwin "makes the point that all food in Babylonia or Assyria was ritually unclean (Ezek 4.13; Hos 9.3-4), and apparently that included even the vegetables". **VERIFIED (secondary)** (Soesilo PDF above)
+- A sermon manuscript cites Tremper Longman, _Daniel_ (NIVAC), p. 52, for the Hosea 9:3 / Amos 7:17 point. **VERIFIED (secondary)** https://www.faithtacoma.org/daniel-2/refusing-to-assimilate-daniel-18-21
+
+---
+
+### C.2 View 2: The food and wine had been offered to Babylonian gods
+
+**Who holds it:** Keil and Delitzsch (main reason); Gill; Clarke (reason 3); JFB (Fausset); Ellicott; Driver; Pulpit Commentary; Barnes (reason 1, citing Calvin and Rosenmüller); Ibn Ezra (for the wine); Malbim (Jewish).
+
+**Keil and Delitzsch** (C. F. Keil, 19th century), on 1:8. **VERIFIED** https://biblehub.com/commentaries/kad/daniel/1.htm
+
+> The partaking of the food brought to them from the king's table was to them contaminating, because forbidden by law; not so much because the food was not prepared according to the Levitical ordinance, or perhaps consisted of the flesh of animals which to the Israelites were unclean, for in this case the youths were not under the necessity of refraining from the wine, but the reason of their rejection of it was, that the heathen at their feasts offered up in sacrifice to their gods a part of the food and the drink, and thus consecrated their meals by a religious rite; whereby not only he who participated in such a meal participated in the worship of idols, but the meat and the wine as a whole were the meat and the wine of an idol sacrifice, partaking of which, according to the saying of the apostle (1 Corinthians 10:20.), is the same as sacrificing to devils.
+
+K&D also connect the refusal to Deuteronomy 8:3 and to trust in God. **VERIFIED** (same URL)
+
+> Daniel's resolution to refrain from such unclean food flowed therefore from fidelity to the law, and from stedfastness to the faith that "man lives not by bread only, but by every word that proceedeth out of the mouth of the Lord" (Deuteronomy 8:3), and from the assurance that God would bless the humbler provision which he asks for himself
+
+(Caution: the same K&D paragraph cites 1 Maccabees and 2 Maccabees. Do not use those references.)
+
+**John Gill**, on 1:8. **VERIFIED** https://biblehub.com/commentaries/gill/daniel/1.htm
+
+> yet part of it being first offered to their idol "Bel", as was usual, and the whole blessed in his name, it would have been against his conscience, and a defiling of that, to eat of things offered to, or blessed in the name of, an idol: nor with the wine which he drank; which was as unlawful as his food; being a libation to his gods, as Aben Ezra observes; otherwise wine was not forbidden; nor was it disused by Daniel, when he could partake of it in his own way, Daniel 10:3
+
+**Jamieson-Fausset-Brown** (Daniel by A. R. Fausset), on 1:8. **VERIFIED** https://biblehub.com/commentaries/jfb/daniel/1.htm
+
+> It was the custom to throw a small part of the viands and wine upon the earth, as an initiatory offering to the gods, so as to consecrate to them the whole entertainment (compare De 32:38). To have partaken of such a feast would have been to sanction idolatry, and was forbidden even after the legal distinction of clean and unclean meats was done away (1Co 8:7, 10; 10:27, 28).
+
+**Ellicott's Commentary for English Readers**, on 1:8 (the whole note). **VERIFIED** https://biblehub.com/commentaries/ellicott/daniel/1.htm
+
+> (8) Daniel purposed in his heart.—He was cautious from the first. He feared that he might eat something that had been consecrated to idols. (See 1 Corinthians 8)
+
+**Pulpit Commentary**, on 1:8 and 1:5. **VERIFIED** https://biblehub.com/commentaries/pulpit/daniel/1.htm
+
+> An ancient feast had always the nature of a sacrifice.
+
+> This fact, that every feast had the character of a sacrifice, might easily make these Hebrew youths refuse the royal dainties.
+
+On 1:5:
+
+> The wine supplied was the wine which the king drank - wine of which an oblation had been offered to idols.
+
+**Albert Barnes** (d. 1870), on 1:8, reason (1). **VERIFIED** https://biblehub.com/commentaries/barnes/daniel/1.htm
+
+> (1) It is not improbable that the food which was offered him had been, in some way, connected with idolatry, and that his participation in it would be construed as countenancing the worship of idols. - Calvin.
+
+(Barnes attributes this to Calvin, but Calvin himself argues that fear of pollution was NOT the reason. See C.4. The attribution is Barnes's, and it is loose.)
+
+Barnes also quotes Rosenmüller, in the same note:
+
+> "It was customary among the ancients to bring a portion of what was eaten and drank as an offering to the gods, as a sign of thankful recognition that all which men enjoy is their gift.
+
+(The quotation continues. Its opening double quote mark is in the source.)
+
+Supporting verses (BSB). **VERIFIED**
+
+- Exodus 34:15: "Do not make a covenant with the inhabitants of the land, for when they prostitute themselves to their gods and sacrifice to them, they will invite you, and you will eat their sacrifices."
+- Deuteronomy 32:38: "which ate the fat of their sacrifices and drank the wine of their drink offerings? Let them rise up and help you; let them give you shelter!"
+- 1 Corinthians 10:20-21: "No, but the sacrifices of pagans are offered to demons, not to God. And I do not want you to be participants with demons. You cannot drink the cup of the Lord and the cup of demons too; you cannot partake in the table of the Lord and the table of demons too."
+- Acts 15:29: "You must abstain from food sacrificed to idols, from blood, from the meat of strangled animals, and from sexual immorality. You will do well to avoid these things. Farewell."
+- Daniel 1:2: Nebuchadnezzar put the temple articles "in the treasury of his god". This shows the court's religious setting.
+
+**Jewish reading: Abraham Ibn Ezra** (12th century), on 1:8. Hebrew text ("Ibn Ezra on Daniel - Daat", marked Public Domain on Sefaria). **VERIFIED** https://www.sefaria.org/Ibn_Ezra_on_Daniel.1.8
+
+> וישם - פת בג המלך אסורה גם היין אסור, וכתוב: אמר לנסכא ליה למשפטם לאלהיהם.
+
+Researcher's literal translation (not published): "The king's _pat-bag_ is forbidden; the wine also is forbidden. And it is written, 'he commanded to pour out [an offering] to him', [that is,] according to their custom for their gods." The words "אמר לנסכא ליה" echo Daniel 2:46, where the Aramaic reads "אֲמַ֖ר לְנַסָּ֥כָה לֵֽהּ" (BSB: "ordered that an offering of incense be presented to him"). **VERIFIED** https://www.sefaria.org/Daniel.2.46. Ibn Ezra's point is that the wine was poured out as a libation to the gods. Gill (above) reports Ibn Ezra the same way.
+
+Note: Sefaria's English for this comment is a "Sefaria Community Translation" (CC0). It adds many bracketed glosses and appears machine-assisted. Do not quote it as Ibn Ezra's words.
+
+**Jewish reading: Malbim** (Meir Leibush Weisser, d. 1879), on 1:8. The Hebrew is public domain. The English on Sefaria is "Trans. Betzalel Avraham Feinstein, 2026", licensed CC-BY-NC. **VERIFIED** https://www.sefaria.org/Malbim_on_Daniel.1.8
+
+- Summary: Malbim holds that Daniel thought he was being groomed for idolatry and that the food and wine would be idol offerings and libations. He also holds that Daniel was ready to give his life rather than eat. Malbim adds that some interpreters take _pat-bag_ itself to mean bread offered to idols.
+
+**Weakness of this view, as others state it:** The vegetables may also have come from the same palace kitchen. A sermon manuscript makes this objection: "there is nothing to suggest that the vegetables were not offered to the gods as well before being placed on the palace table." **VERIFIED (secondary; modern sermon, quote sparingly or summarize)** https://www.faithtacoma.org/daniel-2/refusing-to-assimilate-daniel-18-21. Phillip J. Long also notes that there is "not much evidence" that idol-meat was a problem in the Old Testament period. **VERIFIED (modern blog; summarize)** https://readingacts.com/2020/01/23/daniel-18-16-what-was-wrong-with-the-kings-food/
+
+---
+
+### C.3 View 3: Eating the king's food meant loyalty, a covenant bond, or dependence on the king
+
+**Who holds it:** Joyce Baldwin (TOTC, 1978) is the best-known advocate. Phillip J. Long follows her. Daud Soesilo (1994) leans toward the functional form of this view. Among public-domain writers, Calvin's reading overlaps with it (the king's food as a tool to win the youths' allegiance; see C.4).
+
+**Joyce G. Baldwin**, _Daniel: An Introduction and Commentary_ (Tyndale Old Testament Commentaries), pp. 82-83. This is a copyrighted modern work, so summarize it. **VERIFIED (secondary)**: quoted at length in Daud Soesilo, "Why did Daniel reject the king's delicacies? (Daniel 1.8)", _The Bible Translator_ 45, no. 4 (October 1994), pp. 441-444. https://translation.bible/wp-content/uploads/2024/06/soesilo-1994-why-did-daniel-reject-the-king-s-delicacies-daniel-1-8.pdf
+
+- Summary: Baldwin argues that Leviticus does not explain the refusal, because wine was not forbidden and all food in exile counted as unclean. She takes Daniel 11:26, the only other use of _pathbag_, as the key. Sharing the royal table meant a covenant-like commitment of loyalty to the king. Daniel refused this sign of dependence so that he stayed free to obey God first. For Baldwin the defilement was moral more than ritual.
+- A short phrase you may quote with citation: "By eastern standards to share a meal was to commit oneself to friendship" (Baldwin, p. 82, as quoted by Soesilo). Her cross-references, as Soesilo gives them: Gn. 31:54; Ex. 24:11; Ne. 8:9-12; cf. Mt. 26:26-28.
+- Soesilo also reports Baldwin's claim about wine: "the text includes wine, against which there was no prohibition (except in the case of Rechabites and Nazarites...)". (These are Soesilo's words summarizing Baldwin.)
+
+**Daniel 11:26 (BSB):** "Those who eat from his provisions will seek to destroy him; his army will be swept away, and many will fall slain." **VERIFIED**. Hebrew _pathbag_ in this verse is confirmed by the BDB entry (see D.2).
+
+**Phillip J. Long**, "Daniel 1:8-16 – What was Wrong with the King’s Food?", _Reading Acts_ blog, 23 January 2020. **VERIFIED** https://readingacts.com/2020/01/23/daniel-18-16-what-was-wrong-with-the-kings-food/
+
+- Summary: Long lists three options: unclean food, idol food, and patronage. He calls the third "a better explanation". On his reading, eating the king's food is a public declaration of dependence. He contrasts Daniel with Jehoiachin (2 Kings 25:29) and cites Daniel 11:26. He also cites Baldwin, p. 83, for the claim that pig and horse were commonly eaten in Babylon.
+
+**Daud Soesilo** (1994), same PDF. **VERIFIED**
+
+- Summary: Soesilo surveys the views and concludes that the text focuses on the function of the refusal, not its motive. The four keep their freedom from the king, stand apart from the other trainees, and are later vindicated. Brief phrase: "their freedom is not surrendered to the Babylonian king".
+
+**Proverbs 23:1-3 (BSB)**, often cited for this view. **VERIFIED**
+
+> When you sit down to dine with a ruler, consider carefully what is set before you, and put a knife to your throat if you possess a great appetite. Do not crave his delicacies, for that food is deceptive.
+
+Matthew Henry cites the same idea (KJV form) together with Psalm 141:4. See C.5. Psalm 141:4 (BSB): "...let me not feast on their delicacies." **VERIFIED**
+
+**Weakness of this view, as others state it:** Everything the four ate was still the king's provision. The sermon manuscript cited above reports Dale Ralph Davis's objection: "whatever they ate or drank was going to be “government issue.” [Davis, 32]". **VERIFIED (secondary)** https://www.faithtacoma.org/daniel-2/refusing-to-assimilate-daniel-18-21. Also, Jehoiachin accepted a royal portion, and the text does not condemn him (Long; Soesilo).
+
+---
+
+### C.4 View 4: Refusing court luxury was a way to resist assimilation into Babylon
+
+**Who holds it:** John Calvin (the strongest public-domain statement); Matthew Henry (in part); Barnes (reason 2, citing Calvin). Modern: John Goldingay (WBC) and John J. Collins (Hermeneia), as reported by the Theology of Work Project. Dale Ralph Davis and Walton et al., as reported by a sermon manuscript.
+
+**John Calvin** (d. 1564), _Commentaries on the Book of the Prophet Daniel_, Lecture on 1:8. **VERIFIED** https://biblehub.com/commentaries/calvin/daniel/1.htm; cross-checked word for word at CCEL, https://ccel.org/c/calvin/comment2/dan1-8.htm. Both hosts carry the same digitized text, including the same typing errors.
+
+On 1:5, the king's purpose:
+
+> In this verse, Daniel shews that the king had ordered some youths to be brought to him from Judea, and to be so nourished as to be intoxicated with delicacies, and thus rendered forgetful of their own nation.
+
+> Hence he does not act thus from any feeling of liberality, and his feeding those miserable exiles from his own table should not be esteemed a virtuous action; but, as we have said, he cleverly reconciles the minds of the boys to be reckoned Chaldeans rather than Jews, and thus to deny their own race.
+
+On 1:8. Calvin first raises the objection and answers it:
+
+> It may be asked here, what there was of such importance in the diet to cause Daniel to avoid it? This seems to be a kind of superstition, or at least Daniel may have been too morose in rejecting the king's diet. We know that to the pure all things are pure, and this rule applies to all ages.
+
+> I answer, -- Daniel abstained at first from the luxuries of the court to escape being tampered with. It was lawful for him and his companions to feed on any kind of diet, but he perceived the king's intention.
+
+> hence he simply determined in his hem not to taste the diet of the court, desiring by his very food perpetually to recall the remembrance of his country. He wished so to live in Chaldea, as to consider himself an exile and a captive, sprung from the sacred family of Abraham.
+
+(Typing error in the source: "hem" should be "heart". It appears on both hosts. If the site cannot print "[sic]", start the quotation at "desiring by his very food".)
+
+> This is the reason why he calls tasting the king's food pollution or abomination, though, as I have said, there was nothing abominable in it of itself. Daniel was at liberty to eat and drink at the loyal table, but the abomination arose from the consequences.
+
+(Typing error in the source: "loyal table" should be "royal table". It appears on both hosts.)
+
+> Thus we may ascertain the reason why Daniel thought himself polluted if he fared sumptuously and partook of the royal diet; he was conscious, as we have already observed, of his own infirmities, and wished to take timely precautions, lest he should be enticed by such snares, and fall away from piety and the worship of God, and degenerate into the manners of the Chaldeans, as if he were one of their nation, and of their native princes.
+
+On 1:12 (next lecture). Calvin explicitly rejects View 1. **VERIFIED** (both hosts)
+
+> We see, then, that the foul youths did not abstain from the royal food for fear of pollution; for there was no law to prevent any one drinking wine, except the Nazarites, (Numbers 6:2,) and they might eat of any kind of flesh, of which there was abundance at the royal table. Whence then sprang this scrupulousness? because, as we said yesterday, Daniel was unwilling to accustom himself to the delicacies of the palace, which would cause him to become degenerate.
+
+(Typing error in the source: "foul youths" should be "four youths". The Bible Hub text omits CCEL's "<040602>" code before "Numbers".)
+
+On 10:3, looking back on chapter 1. **VERIFIED** https://biblehub.com/commentaries/calvin/daniel/10.htm
+
+> He wished them to forget their nation by degrees, and to adopt the habits of the Chaldeans, and to be withdrawn by such enticements from the observance of the law, from the worship of God, and from the exercises of piety.
+
+> Meanwhile, we need not hesitate to suppose, that after giving this proof of his constancy, and escaping from these snares of the devil and of the Chaldean monarch, he lived rather freely than frugally, and made use of better bread, and fresh, and wine than before.
+
+(Typing error in the source: "fresh" is almost certainly "flesh".)
+
+**Calvin's prayer** closing the 1:8 lecture (usable as a devotional close; public domain). **VERIFIED** https://biblehub.com/commentaries/calvin/daniel/1.htm
+
+> Grant, Almighty God, as long as our pilgrimage in this world continues, that we may feed on such diet for the necessities of the flesh as may never corrupt us; and may we never be led aside from sobriety, but may we learn to use our abundance by preferring abstinence in the midst of plenty.
+
+**Matthew Henry**, reason 2. **VERIFIED** https://biblehub.com/commentaries/mhcw/daniel/1.htm
+
+> They were jealous over themselves, lest, though it should not be sinful in itself, it should be an occasion of sin to them, lest, by indulging their appetites with these dainties, they should grow sinful, voluptuous, and in love with the pleasures of Babylon.
+
+Henry on the names (on 1:1-7, Concise Commentary). **VERIFIED** https://biblehub.com/commentaries/mhc/daniel/1.htm
+
+> All their Hebrew names had something of God in them; but to make them forget the God of their fathers, the Guide of their youth, the heathen gave them names that savoured of idolatry.
+
+**Albert Barnes**, reason (2). **VERIFIED** https://biblehub.com/commentaries/barnes/daniel/1.htm
+
+> They were captives - exiles from their country - in circumstances of great depression and humiliation, and they did not wish to forget that circumstance. - Calvin.
+
+Note that Barnes disagrees with Calvin about the king's motive (on 1:5): "Calvin supposes that this arrangement was resorted to in order to render them effeminate, and, by a course of luxurious living, to induce them gradually to forget their own country, and that with the same view their names were changed. But there is no evidence that this was the object." **VERIFIED** (same URL). This is a good "all sides" detail.
+
+**Modern (copyrighted: summarize and cite only)**
+
+- **John E. Goldingay**, _Daniel_ (Word Biblical Commentary 30; Dallas: Word, 1989), p. 19. **John J. Collins**, _Daniel_ (Hermeneia, 1993), p. 143. The Theology of Work Project footnote reads: "The best explanation is Daniel’s resistance to assimilation. For the assimilation view, see Goldingay, Daniel, 19; Collins, Daniel, 143; for refusal to commend the king’s diet, see Longman, Daniel, 53." **VERIFIED (secondary)** https://www.theologyofwork.org/old-testament/daniel/introduction-in-exile-at-babylon-u-daniel-1/. The Collins edition and date (Hermeneia 1993) are the researcher's identification. They are not stated in the fetched footnote, so treat them as **UNVERIFIED**.
+- The same sermon manuscript reports that Goldingay lists "seven possible explanations in WBC, 18-19". **VERIFIED (secondary)** https://www.faithtacoma.org/daniel-2/refusing-to-assimilate-daniel-18-21. The seven were not seen. **UNVERIFIED** as to content.
+- **Dale Ralph Davis**, _The Message of Daniel_ (Bible Speaks Today), p. 32, as quoted in that sermon. Davis describes the refusal as a defensive strategy against being "totally squeezed into Babylon’s mold". He quotes Walton et al. (_IVP Bible Background Commentary_): "It is not so much something in the food that defiles as much as it is the total program of assimilation." **VERIFIED (secondary, two steps removed)**. The book title _The Message of Daniel_ is the researcher's identification. It is not given in the sermon, so treat it as **UNVERIFIED**.
+
+**Weakness of this view:** Daniel accepted the Babylonian name and education (1:4, 1:7). So the food was a chosen line, not total separation. Calvin himself says the refusal was tied to "the exigencies of the times" (on 10:3).
+
+---
+
+### C.5 Other views found
+
+**5a. Temperance and self-denial: guarding against the pull of luxury.**
+
+- Matthew Henry, on the ten-day result. **VERIFIED** https://biblehub.com/commentaries/mhcw/daniel/1.htm
+  > This was in part a natural effect of their temperance, but it must be ascribed to the special blessing of God, which will make a little to go a great way, a dinner of herbs better than a stalled ox.
+- Barnes develops this at length into a 19th-century temperance argument against wine (on 1:12 and 1:16). **VERIFIED** (Barnes URL). It is dated and polemical, so use it with care if at all.
+
+**5b. Mourning for Jerusalem: royal food was unfitting while God's people suffered.** This links directly to Daniel 10:2-3.
+
+- Matthew Henry, reason 3. **VERIFIED** https://biblehub.com/commentaries/mhcw/daniel/1.htm
+  > However, they thought it unseasonable now, when Jerusalem was in distress, and they themselves were in captivity. They had no heart to drink wine in bowls, so much were they grieved for the affliction of Joseph. Though they had royal blood in their veins, yet they did not think it proper to have royal dainties in their mouths when they were thus brought low.
+- Calvin on 10:3 reads the later fast as mourning for the Church. **VERIFIED** https://biblehub.com/commentaries/calvin/daniel/10.htm
+  > When he says, he did not eat delicate bread, this was a symbol of sorrow and mourning, like abstinence from flesh and wine.
+
+**5c. A test of faith, so that God, not the king's food, receives the credit.**
+
+- Jerome (d. 420), _Commentary on Daniel_, on 1:12. The translation is by Gleason L. Archer (1958). The hosting page states: "All material on this page is in the public domain - copy freely." **VERIFIED** https://www.tertullian.org/fathers/jerome_daniel_02_text.htm
+  > His faith was so incredibly great that he not only promised he would be in good flesh by eating the humbler food, but he even set a time-limit. Therefore it was not a matter of temerity but of faith, for the sake of which he despised the sumptuous fare of the king.
+- Jerome on 1:9. **VERIFIED** (same URL)
+
+  > For he had purposed in his heart that he would not be denied by food from the king's table, and preferred humble fare to royal delicacies; therefore by the bounteous bestowal of the Lord he received favor and compassion in the sight of the prince of the eunuchs.
+
+  (Transcription error in the source: "denied" is almost certainly "defiled". The same error occurs in Jerome's note on 1:8. Quote only from "preferred humble fare to royal delicacies" onward, or paraphrase.)
+
+- Keil and Delitzsch: "the assurance that God would bless the humbler provision" (quoted in C.2). **VERIFIED**
+- **Tremper Longman III**, _Daniel_ (NIV Application Commentary), p. 53. As quoted in the sermon manuscript, the diet was meant "to keep the four pious Judeans from believing that their physical appearance (and by consequence, perhaps, their intellectual gifts) were the gift of Babylonian culture." **VERIFIED (secondary)** https://www.faithtacoma.org/daniel-2/refusing-to-assimilate-daniel-18-21. The Theology of Work footnote calls this "refusal to commend the king’s diet" (Longman, 53). Summarize; do not quote at length.
+- **Robert A. Anderson**, _Signs and Wonders: A Commentary on the Book of Daniel_ (International Theological Commentary), p. 6, as quoted by Soesilo. Anderson says the scant diet does not endorse asceticism or vegetarianism. Its one purpose is to show God's own work in preparing the four. **VERIFIED (secondary)** (Soesilo PDF).
+
+**5d. A self-imposed "hedge about the Law" in a dangerous setting (not a rule for all Jews).**
+
+- Pulpit Commentary. **VERIFIED** https://biblehub.com/commentaries/pulpit/daniel/1.htm
+  > There is nothing in the passage here which makes it necessary for us to maintain that the principle of action followed by those youths was one which was generally acknowledged to be incumbent on all Jews. It may simply have been that, feeling the critical condition in which they were placed, it was well for them to erect a hedge about the Law.
+
+**5e. A combined view (several reasons at once).**
+
+- **Desmond Ford**, _Daniel_, pp. 80-81, as quoted by Soesilo. Ford names four reasons: rich food harms a body that belongs to God; the meat was not prepared as Moses instructed; some foods were unclean; the food was blessed in the name of idols. Because the Torah does not forbid drink, Ford treats the idol link as the chief reason. **VERIFIED (secondary)** (Soesilo PDF). Matthew Henry, Clarke and Driver also combine reasons (quoted above).
+
+**5f. Rabbinic: Daniel also refused Gentile oil.**
+
+- Babylonian Talmud, Avodah Zarah 36a. Rav holds that Daniel decreed against Gentile oil, reading the plural "drinks" (_mishtav_) in 1:8 as wine and oil. Shmuel holds that Daniel resolved this for himself but did not impose it on all Jews. Sefaria's English (William Davidson Edition, Steinsaltz) is licensed CC-BY-NC, so summarize it. **VERIFIED** https://www.sefaria.org/Avodah_Zarah.36a
+
+**5g. Rashi gives no motive.** On 1:8, Rashi comments only on the word: "**not to be defiled** Heb. לֹא יָתְגָּאַל, an expression of sullying." (Judaica Press translation by A. J. Rosenberg, CC-BY.) **VERIFIED** https://www.sefaria.org/Rashi_on_Daniel.1.8. On 1:5 he defines _pat-bag_ as "the name of the king’s fare in the language of the Chaldeans" (see D.2). **VERIFIED** https://www.sefaria.org/Rashi_on_Daniel.1.5
+
+**5h. Critical-scholarship view (mention with care, or omit).**
+
+- As quoted by Soesilo, Louis Hartman (_Jerome Biblical Commentary_, p. 450) and W. Sibley Towner (_Daniel_, Interpretation, pp. 24-26) read the story as reflecting later, 2nd-century BC concerns about Gentile food. They note that 2 Kings 25:29-30 records Jehoiachin eating the Babylonian king's food without comment. **VERIFIED (secondary)** (Soesilo PDF). These readings assume a late date for Daniel. That assumption conflicts with Jesus' reference to "the prophet Daniel" (Matthew 24:15). A devotional can note the Jehoiachin contrast without adopting the dating.
+
+---
+
+### C.6 Summary table
+
+| View                               | Public-domain voices (VERIFIED)                                                   | Modern voices (summary only)             | Main textual problem                                                       |
+| ---------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------------------------- |
+| 1. Unclean or undrained meat       | Clarke, Gill, Henry, Driver, Pulpit; Metzudat David                               | Ford (via Soesilo)                       | Does not explain the wine; all exile food was "unclean" (Hos 9:3)          |
+| 2. Offered to idols                | K&D, Gill, Clarke, JFB, Ellicott, Driver, Pulpit, Barnes; Ibn Ezra (wine), Malbim | Ford (chief reason)                      | Vegetables might also be "offered"; the text never mentions idols in ch. 1 |
+| 3. Loyalty, covenant or dependence | (Calvin partly)                                                                   | Baldwin; Long; Soesilo                   | Everything they ate was still the king's supply (Davis)                    |
+| 4. Resisting assimilation          | Calvin, Henry, Barnes                                                             | Goldingay, Collins, Davis, Walton et al. | They accepted the names and the education                                  |
+| 5a. Temperance                     | Henry, Barnes                                                                     |                                          | Tends toward moralism                                                      |
+| 5b. Mourning                       | Henry; Calvin (10:3)                                                              |                                          | Not stated in ch. 1                                                        |
+| 5c. Faith test / God gets credit   | Jerome, K&D                                                                       | Longman, Anderson                        | Fits 1:9 and 1:17 well                                                     |
+| 5d. Personal hedge                 | Pulpit                                                                            |                                          |                                                                            |
+| 5f. Gentile oil                    | Talmud (Rav)                                                                      |                                          | Rabbinic midrash                                                           |
+
+---
+
+## D. Hebrew vocabulary
+
+### D.1 "Defile": _ga'al_ (Strong's H1351)
+
+- **Form in Daniel 1:8 (twice):** יִתְגָּאַל _yitga'al_, Hitpael imperfect 3rd masc. sing. ("he would defile himself"). Bible Hub interlinear tags both occurrences "V-Hitpael-Imperf-3ms" and links them to Strong's 1351. **VERIFIED** https://biblehub.com/interlinear/daniel/1-8.htm
+- **Hebrew of the verse** (Sefaria, "Miqra according to the Masorah", CC-BY-SA). **VERIFIED** https://www.sefaria.org/Daniel.1.8
+  > וַיָּ֤שֶׂם דָּנִיֵּאל֙ עַל־לִבּ֔וֹ אֲשֶׁ֧ר לֹֽא־יִתְגָּאַ֛ל בְּפַת־בַּ֥ג הַמֶּ֖לֶךְ וּבְיֵ֣ין מִשְׁתָּ֑יו וַיְבַקֵּשׁ֙ מִשַּׂ֣ר הַסָּרִיסִ֔ים אֲשֶׁ֖ר לֹ֥א יִתְגָּאָֽל׃
+- **Strong's Exhaustive Concordance** (H1351). **VERIFIED** https://biblehub.com/hebrew/1351.htm
+  > defile, pollute, stain A primitive root, (rather identified with ga'al, through the idea of freeing, i.e. Repudiating); to soil or (figuratively) desecrate -- defile, pollute, stain.
+- **BDB** (H1351). **VERIFIED** (same URL)
+
+  > II. [גָּאַל] verb defile, late (compare גָּעַל)
+
+  BDB lists the Niphal "be defiled, hands with blood" (Isaiah 59:3; Lamentations 4:14), the Piel "pollute, desecrate" (Malachi 1:7), and the Pual of priests "desecrated out of the priesthood" (Ezra 2:62 = Nehemiah 7:64). Malachi 1:7 and 1:12 use the word of food: "of bread laid on Yahweh's altar" and "of Yahweh's altar (table, שֻׁלְחָן)". That is a useful link: defiled food, defiled table.
+
+- **Homonym:** H1350 גָּאַל _ga'al_, "redeem, act as kinsman" (BDB "I. גָּאַל verb redeem, act as kinsman"). This is a different root in BDB. Strong's suggests a link "through the idea of freeing, i.e. Repudiating". **VERIFIED** https://biblehub.com/hebrew/1350.htm. Barnes also discusses the link (on 1:8): "The word which is rendered "defile himself" - יתגאל yı̂thegâ'al from גאל gā'al - is commonly used in connection with "redemption," its first and usual meaning being to redeem, to ransom. In later Hebrew, however, it means, to be defiled; to be polluted, to be unclean." **VERIFIED** https://biblehub.com/commentaries/barnes/daniel/1.htm. Do not build a devotional point on a redeem/defile wordplay. BDB treats them as separate verbs.
+- **Pulpit Commentary on the word's date.** **VERIFIED** https://biblehub.com/commentaries/pulpit/daniel/1.htm
+  > The word used for "defile" (ga'al) occurs in Isaiah, Lamentations, Zephaniah, Malachi, Ezra, and Nehemiah. It is an Exilic and post-Exilic word mainly
+- **Contrast with Leviticus 11:44 and Ezekiel 4:14.** Both use a different verb, H2930 _tame'_ ("be or become unclean"). Leviticus 11:44 has Piel imperfect 2mp ("You must not defile yourselves"). Ezekiel 4:14 has the Pual participle ("I have never defiled myself"). **VERIFIED** https://biblehub.com/interlinear/leviticus/11-44.htm and https://biblehub.com/interlinear/ezekiel/4-14.htm. So Daniel does NOT use the technical Levitical purity verb. Several commentators take this as a sign that the issue was wider than Leviticus 11 (compare Baldwin's "moral" defilement, via Soesilo). It is a real observation, but do not overstate it. _Ga'al_ is simply the common later word.
+- **Rashi's gloss:** "an expression of sullying" (לְשׁוֹן לִכְלוּךְ). **VERIFIED** https://www.sefaria.org/Rashi_on_Daniel.1.8
+
+### D.2 "The king's food / delicacies": _pathbag_ (Strong's H6598)
+
+- **Occurrences:** Daniel 1:5, 1:8, 1:13, 1:15, 1:16 and 11:26 only (BDB list). **VERIFIED** https://biblehub.com/hebrew/6598.htm
+- **Strong's Exhaustive Concordance.** **VERIFIED** (same URL)
+  > portion provision of meat Of Persian origin; a dainty -- portion (provision) of meat.
+- **BDB.** **VERIFIED** (same URL)
+
+  > [מַּתבָּֿג] (read always [מַּתְבָּג]) noun [masculine] portion (of food) for king, delicacies (Persian loanword, compare Sanskrit prati-bhâga, Zend [pati-baga; whence] Greek transliteration ποτί-βαζις
+
+  (The pointed forms are shown as Bible Hub prints them. Some pointing may be garbled in the web font.)
+
+- **Keil and Delitzsch** argue for a general meaning, not "dainties". **VERIFIED** https://biblehub.com/commentaries/kad/daniel/1.htm
+  > פּתבּג therefore means neither ambrosia, nor dainties, but generally food, victuals, food of flesh and meal in opposition to wine, drink (משׁתּיו is singular), and vegetables (Daniel 1:12).
+- **S. R. Driver** (Cambridge Bible), on 1:5. **VERIFIED** https://biblehub.com/commentaries/cambridge/daniel/1.htm
+
+  > The Sansk. pratibhâga actually occurs, and means ‘a share of small articles, as fruit, flowers, &c., paid daily to the Rája for household expenditure[181].’ The Pers. patibâga originally, no doubt, denoted similarly choice food offered to the king[182], though in Heb. and Syriac pathbâg was used more widely of choice food, or delicacies, in general.
+
+  (Driver's note ends "The word recurs in Daniel 1:8; Daniel 1:13; Daniel 1:15-16, Daniel 9:26." "9:26" is an error on the page for 11:26.)
+
+- **Barnes** reports a disputed "food for idols" etymology (via Lorsbach and Gesenius). **VERIFIED** https://biblehub.com/commentaries/barnes/daniel/1.htm
+
+  > and the compound means delicate food, dainties; literally, food of the father, i. e., the king; or, according to Lorsbach, in Archiv. f. "Morgenl." Litt. II., 313, food for idols, or the gods; - in either case denoting delicate food; luxurious living. - Gesenius, "Lex."
+
+  The Pulpit Commentary also mentions a derivation from "pat or fat, idol". Treat any "idol-food" etymology as speculative. BDB and K&D derive the word from Persian "portion".
+
+- **Rashi**, on 1:5. **VERIFIED** https://www.sefaria.org/Rashi_on_Daniel.1.5
+  > That is the name of the king’s fare in the language of the Chaldeans.
+- **Soesilo** reports that the term is "a Persian technical term... meaning honorific gifts from the royal table". **VERIFIED (secondary)** (Soesilo PDF). This fits View 3.
+- BSB renders it "royal food" (1:5, 1:13), "king’s food" (1:8, 1:15), "choice food" (1:16) and "provisions" (11:26). **VERIFIED** (interlinear H6598 in 1:5, 1:8 and 1:16; BSB text).
+
+### D.3 "Vegetables" / "pulse" / "seeds": _zero'im_ and _zer'onim_ (Strong's H2235)
+
+- **Forms:** 1:12 הַזֵּרֹעִים _hazzero'im_ (with article); 1:16 זֵרְעֹנִים _zer'onim_. Both are tagged Strong's 2235, N-mp. **VERIFIED** https://biblehub.com/interlinear/daniel/1-12.htm and https://biblehub.com/interlinear/daniel/1-16.htm
+- **Strong's Exhaustive Concordance.** **VERIFIED** https://biblehub.com/hebrew/2235.htm
+  > pulse Or zerason {zay-raw-ohn'}; from zara'; something sown (only in the plural), i.e. A vegetable (as food) -- pulse.
+- **BDB.** **VERIFIED** (same URL)
+  > [זִרִֹעַ] noun [masculine] vegetable (compare foregoing; on this and following compare BevDan 62, and n. 2) — only plural מִןהַֿזֵּרֹעִים Daniel 1:12. [זֵָֽרְעֹן] noun [masculine] id., only plural זֵָֽרְעֹנִים Daniel 1:16.
+- **Warning:** the Bible Hub page title for H2235 wrongly reads "Arm, strength, power". That gloss belongs to a different word, _zeroa'_ "arm". Do not copy the page title. **VERIFIED** (seen on the page)
+- **Root:** H2232 _zara'_ "sow" (Strong's "from zara'"). **VERIFIED**
+- **Driver:** "pulse] rather vegetable food in general; there is no reason for restricting the Heb. word used to leguminous fruits, such as beans and peas, which is what the term ‘pulse’ properly denotes." **VERIFIED** https://biblehub.com/commentaries/cambridge/daniel/1.htm
+- **Barnes**, on 1:12. **VERIFIED** https://biblehub.com/commentaries/barnes/daniel/1.htm
+
+  > The Hebrew word (זרעים zēro‛ı̂ym) would properly have reference to seeds of any kind - from זרע zâra‛, to disperse, to scatter seed, to sow.
+
+  Barnes also reports the ancient versions: the Vulgate has "legumina", and the Greek has "ἀπὸ τῶν σπερμάτων apo tōn spermatōn - "from seeds."" **VERIFIED**
+
+- **Clarke:** "Give us pulse to eat - הזרעים hazzeraim, seeds or grain, such as barley, wheat, rye, and peas, etc." **VERIFIED** https://biblehub.com/commentaries/clarke/daniel/1.htm
+- **K&D:** "זרעים, food from the vegetable kingdom, vegetables, leguminous fruit." **VERIFIED** https://biblehub.com/commentaries/kad/daniel/1.htm
+- **Rashi** on 1:5 treats _zer'onim_ as a substitute for cooked dishes, not for bread: "Now pulse is not a substitute for bread, but a substitute for cooked food." **VERIFIED** https://www.sefaria.org/Rashi_on_Daniel.1.5
+- **Cross-link for the writer:** Ezekiel's exile ration bread in 4:9 (BSB) is "wheat, barley, beans, lentils, millet, and spelt". This is plain sown food, like Daniel's. **VERIFIED** (BSB). (This is a thematic link only. The Hebrew words differ.)
+
+---
+
+## Caveats
+
+1. **Typing errors in the digitized public-domain texts.** Calvin (on both Bible Hub and CCEL) reads "hem" for heart, "loyal table" for royal table, "foul youths" for four youths, and "fresh" for flesh. Jerome (tertullian.org) reads "denied" for defiled. Quote around these errors, or mark them [sic]. Do not silently correct text inside quotation marks.
+2. **Copyright status of Jerome's English.** The Gleason Archer translation dates from 1958. The host page declares it public domain, but the researcher did not verify that claim independently. Keep Jerome quotations short.
+3. **Modern scholars were not read at first hand.** Baldwin, Longman, Goldingay, Collins, Davis, Walton, Ford, Hartman, Towner and Anderson are known here only through Soesilo (1994), the Theology of Work Project, a church sermon manuscript, or a blog. Page numbers are as those sources give them. Summarize these scholars; do not quote them beyond a few words.
+4. **Apocrypha.** Keil and Delitzsch, Driver (Cambridge) and the Pulpit Commentary cite 1-2 Maccabees, Tobit, Judith or Additions to Esther as historical parallels. Soesilo quotes Towner doing the same. None of these should appear in the devotional.
+5. **Licensed (not public-domain) Jewish translations.** On Sefaria, the Malbim English (2026) and the Talmud English (William Davidson/Steinsaltz) are CC-BY-NC. Rashi (Judaica Press) is CC-BY. The Ibn Ezra and Metzudat David renderings above are the researcher's own literal translations from public-domain Hebrew. Label them that way, or have them checked by a Hebrew reader before publication.
+6. **Matthew Henry has two commentaries.** The quotations marked "mhcw" come from the full _Commentary on the Whole Bible_. The "names that savoured of idolatry" line comes from the _Concise Commentary_ ("mhc"). Cite each by its correct title.
+7. **Barnes attributes the idol-food view to Calvin, but Calvin argues that fear of pollution was not the reason.** Do not repeat Barnes's attribution.
+8. **Framing of the three examples.** Daniel faced a foreign king. Ezekiel protested to God during a sign-act. Peter was in Joppa (not abroad) and was answering a divine command that overturned the food distinction. Present them as three different kinds of pressure, not three identical cases.
+9. **Daniel 10:3 uses different Hebrew from chapter 1** (_lechem chamudot_, _basar_, _yayin_, not _pathbag_). Commentators disagree on whether it shows Daniel later ate meat and drank wine normally: Calvin and Gill say yes, Barnes says no.
+10. **Researcher identifications not seen in the fetched sources:** the Collins volume as Hermeneia 1993, and the Davis volume as _The Message of Daniel_. These are **UNVERIFIED**.
+11. **No verified material from Chrysostom or Spurgeon on Daniel 1:8** was located in this session. Hippolytus' fragments on Daniel at New Advent were checked and do not cover 1:8.
+12. The B.1 retelling is original draft prose, not a quotation. It follows BSB details but paraphrases them.

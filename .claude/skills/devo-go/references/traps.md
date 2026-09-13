@@ -16,6 +16,8 @@ Each entry: the trap, how it bit, the guard. All are from the actual prayer-of-j
 7. **The banned-phrase regexes are aggressive**: `it's not X, it's Y` matches structurally; rhetorical-question-then-answer is an editor-level kill; "in today's" is fine only when not followed by "world". Grep before the validator does.
 8. **Editor findings that contradict verified research** usually mean the source pack is missing the verification, not that the text is wrong. Fix by adding the verified detail TO the pack (Müller's coin amounts were verified all along; the pack hadn't carried them).
 9. **Famous devotional stories are often folklore.** Verify against the primary text before drafting around them; the primary sources usually contain a better, dated, first-person incident.
+10. **A list whose items are the wrong shape renders blank, and no gate catches it.** `interactive.steps` must be `[{title?, description}]` and `vocab.relatedWords` must be `[{word, transliteration, meaning}]`. Plain strings pass the validator and the consistency checker (both shapes exist in the catalogue), and the page renders numbered steps with no text and an empty "See also". Sought and Crowned Day 4 is live that way (left as shipped — older devotionals are not changed). Guard: author the object shape; check the rendered page, not the JSON.
+11. **Anything in a spoken field is read aloud, including citations.** `insight.historicalContext` was being used for source lists ("Council of Trent, Session IV (1546); …"), which the narrator reads word for word. Guard: citations go in the day's `resource` module (`forDeeperStudy`), which is shown and never spoken. `preflight_narration.py` flags the symptoms (dotted numbers, ranges, Roman numerals).
 
 ## Authoring process
 

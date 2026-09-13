@@ -90,11 +90,26 @@ function expandRomanMatch(whole: string, cue: string, numeral: string): string {
   return `${cue} ${numToWords(n)}`
 }
 
+/**
+ * Reading contract versions.
+ *
+ * Contract 1 is what every track rendered before 2026-09-13 speaks, kept
+ * byte-for-byte so those tracks stay current and are never re-rendered.
+ * Contract 2 (SA-141, forward only) reads the lists the page renders, expands
+ * scripture citations inside prose, and makes each paragraph its own segment.
+ * The twin is `narration_extract.py`; a track's manifest entry records which
+ * contract it was rendered with, and the hash test recomputes with that one.
+ */
+export const NARRATION_CONTRACT_LATEST = 2
+
 function pushSegment(
   segments: TtsSegment[],
   label: string,
   text: string,
-  { allowSingleWord = false }: { allowSingleWord?: boolean } = {},
+  {
+    allowSingleWord = false,
+    contract = 1,
+  }: { allowSingleWord?: boolean; contract?: number } = {},
 ): void {
   const spoken = toSpeech(text)
   // A lone word mid-devotional is a label or a stray fragment, not prose. The
@@ -104,7 +119,235 @@ function pushSegment(
   if (!allowSingleWord && spoken.split(/\s+/).filter(Boolean).length < 2) {
     return
   }
-  segments.push({ id: `seg-${segments.length}`, label, text: spoken })
+  if (contract < 2) {
+    segments.push({ id: `seg-${segments.length}`, label, text: spoken })
+    return
+  }
+  // Contract 2: one segment per paragraph, citations expanded. The floor above
+  // still judges the whole field, so a short paragraph is never dropped.
+  // Paragraphs, and each markdown list line within one: a list line has no
+  // closing punctuation, so joined it runs into the next.
+  for (const paragraph of (text ?? '').split(
+    /\n\s*\n|\n(?=[ \t]*(?:[-*+]|\d+\.)[ \t])/,
+  )) {
+    const piece = toSpeech(paragraph)
+    if (!piece) continue
+    segments.push({
+      id: `seg-${segments.length}`,
+      label,
+      text: speechV2(piece),
+    })
+  }
+}
+
+/**
+ * Scripture citations inside prose (contract 2). Proved over the whole corpus
+ * in euangelion-voice-prototype/FINDINGS-inline-citations-2026-09-12.md: 3,904
+ * citations, zero false positives.
+ */
+const IN_PROSE_BOOK =
+  '(?:[123]\\s+|I{1,3}\\s+)?(?:[A-Z][a-z]+)(?:\\s+(?:of\\s+)?[A-Z][a-z]+)?'
+const IN_PROSE_BOOKED = new RegExp(
+  `\\b(${IN_PROSE_BOOK})\\s+(\\d+):([1-9]\\d*)(?:\\s*[-–]\\s*(\\d+))?(?!\\d)`,
+  'g',
+)
+const IN_PROSE_BARE =
+  /(?<![A-Za-z0-9_:])(\d+):([1-9]\d*)(?:\s*[-–]\s*(\d+))?(?!\s*[ap]\.?m\.?)(?![\d:])/g
+const NOT_A_BOOK = new Set([
+  'The',
+  'A',
+  'An',
+  'In',
+  'At',
+  'On',
+  'And',
+  'But',
+  'For',
+  'This',
+  'That',
+  'His',
+  'Her',
+  'Their',
+  'It',
+  'He',
+  'She',
+  'They',
+  'We',
+  'You',
+  'When',
+  'While',
+  'Verse',
+  'Verses',
+  'Chapter',
+  'See',
+  'Compare',
+  'Read',
+  'Also',
+  'From',
+  'Psalm',
+  'Psalms',
+])
+
+/**
+ * Contract 2: every spoken piece ends as a sentence, so a heading, reference or
+ * list item never runs into the next words. Mirrors `terminate` in Python.
+ */
+function terminate(text: string): string {
+  const t = text.replace(/\s+$/, '')
+  if (t && !'.!?:;"\')'.includes(t[t.length - 1])) return `${t}.`
+  return t
+}
+
+/** "1 Corinthians" → "First Corinthians". The 66 books only (SA-141). Mirrors `expand_book_ordinals`. */
+const NUMBERED_BOOK =
+  /\b([123]) (Samuel|Kings|Chronicles|Corinthians|Thessalonians|Timothy|Peter|John)\b/g
+const ORDINAL_WORD: Record<string, string> = {
+  '1': 'First',
+  '2': 'Second',
+  '3': 'Third',
+}
+
+function expandBookOrdinals(text: string): string {
+  return text.replace(
+    NUMBERED_BOOK,
+    (_m, n: string, book: string) => `${ORDINAL_WORD[n]} ${book}`,
+  )
+}
+
+/** "verse forty-four the order is" needs the comma a reader supplies. */
+function citationPause(whole: string, offset: number, source: string): string {
+  const next = source.slice(offset + whole.length, offset + whole.length + 2)
+  return /^ [a-z]/.test(next) ? ',' : ''
+}
+
+function expandInProse(text: string): string {
+  if (!text || !text.includes(':')) return text
+  return text
+    .replace(
+      IN_PROSE_BOOKED,
+      (
+        whole: string,
+        book: string,
+        ch: string,
+        v1: string,
+        v2: string | undefined,
+        offset: number,
+        source: string,
+      ) => {
+        if (NOT_A_BOOK.has(book.split(/\s+/)[0])) return whole
+        const arabic = book.replace(
+          /^(I{1,3})\s+/,
+          (_m, r: string) => `${r.length} `,
+        )
+        return (
+          expandReference(`${arabic} ${ch}:${v1}${v2 ? `-${v2}` : ''}`) +
+          citationPause(whole, offset, source)
+        )
+      },
+    )
+    .replace(
+      IN_PROSE_BARE,
+      (
+        whole: string,
+        ch: string,
+        v1: string,
+        v2: string | undefined,
+        offset: number,
+        source: string,
+      ) => {
+        const verses = v2
+          ? `verses ${numToWords(+v1)} to ${numToWords(+v2)}`
+          : `verse ${numToWords(+v1)}`
+        return (
+          `chapter ${numToWords(+ch)}, ${verses}` +
+          citationPause(whole, offset, source)
+        )
+      },
+    )
+}
+
+/**
+ * Contract 2 spoken form of one paragraph. Mirrors `speech_v2` in Python:
+ * changes what the voice is sent, never the page.
+ */
+function speechV2(text: string): string {
+  let s = expandBookOrdinals(expandInProse(text))
+  s = s.replace(/\bLORD\b/g, 'Lord').replace(/\bGOD\b/g, 'God')
+  // Greek schizo, "to tear": spelled as written it can come out as the slur.
+  s = s.replace(/\bschizo\b/g, 'skeezo')
+  s = s.replace(/\b([A-HJ-Z])\. (?=[A-Z])/g, '$1 ')
+  s = terminate(s)
+  return s.replace(/([?!])\./g, '$1')
+}
+
+/** Mirrors `strip_nonlatin` in narration_extract.py exactly. */
+function stripNonLatin(text: string): string {
+  if (!text) return text
+  return text
+    .replace(/[֐-׿Ͱ-Ͽἀ-῿יִ-ﭏ]/g, '')
+    .replace(/\(\s*\)/g, ' ')
+    .replace(/[—–-]\s*[—–-]/g, '—')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/^[ ,;—–-]+|[ ,;—–-]+$/g, '')
+}
+
+/** Lists the page renders, in page order, with the page's own labels. */
+const LIST_FIELDS: Record<string, Array<[string, string]>> = {
+  vocab: [['relatedWords', 'See also: ']],
+  reflection: [['additionalQuestions', '']],
+  interactive: [['steps', '']],
+  takeaway: [
+    ['leavingAtCross', 'What I leave at the cross: '],
+    ['receivingFromCross', 'What I receive from the cross: '],
+  ],
+  comprehension: [
+    ['forReflection', 'For reflection: '],
+    ['forAccountabilityPartners', 'For accountability partners: '],
+  ],
+}
+
+/**
+ * Spoken text for one list, one entry per item. Related words are one line on
+ * the page, so one spoken line; steps are numbered on the page, so aloud too.
+ */
+function listItems(field: string, items: unknown[]): string[] {
+  const s = (v: unknown) => (typeof v === 'string' ? v : '')
+  if (field === 'relatedWords') {
+    const parts: string[] = []
+    for (const it of items) {
+      let part: string
+      if (typeof it === 'string') part = it
+      else if (it && typeof it === 'object') {
+        const rec = it as Record<string, unknown>
+        const head = s(rec.transliteration).trim() || stripNonLatin(s(rec.word))
+        const meaning = s(rec.meaning).trim()
+        part = head && meaning ? `${head} means ${meaning}` : head || meaning
+      } else continue
+      part = part.trim()
+      if (part) parts.push(terminate(part[0].toUpperCase() + part.slice(1)))
+    }
+    return parts.length > 0 ? [parts.join(' ')] : []
+  }
+  if (field === 'leavingAtCross' || field === 'receivingFromCross') {
+    const parts = items
+      .filter((it): it is string => typeof it === 'string' && !!it.trim())
+      .map((it) => it.trim().replace(/\.+$/, ''))
+    return parts.length > 0 ? [terminate(parts.join('; '))] : []
+  }
+  const out: string[] = []
+  items.forEach((it, i) => {
+    let text = ''
+    if (typeof it === 'string') text = it
+    else if (it && typeof it === 'object') {
+      const rec = it as Record<string, unknown>
+      const title = s(rec.title).trim().replace(/\.+$/, '')
+      const desc = s(rec.description).trim()
+      text = title && desc ? `${title}. ${desc}` : title || desc
+    }
+    if (!text.trim()) return
+    out.push(field === 'steps' ? `Step ${numToWords(i + 1)}. ${text}` : text)
+  })
+  return out
 }
 
 // ── Catalog devotionals: Module[] ──────────────────────────────────
@@ -270,6 +513,14 @@ const FIELD_PREFIX: Record<string, string> = {
   'vocab.usage': 'In use: ',
 }
 
+/** Contract 2 lead-ins read as sentences, not labels (proofread 2026-09-13). */
+const FIELD_PREFIX_V2: Record<string, string> = {
+  'profile.name': 'The voice behind today is ',
+  'profile.title': 'The voice behind today is ',
+  'comprehension.explanation': 'Here is the answer. ',
+  'vocab.usage': '',
+}
+
 /** Read a possibly-untyped string field off a module. */
 function str(module: Module, key: string): string | undefined {
   const value = (module as unknown as Record<string, unknown>)[key]
@@ -433,7 +684,7 @@ const HEADING_NOT_SPOKEN = new Set([
 ])
 
 /** The ordered text blocks a module contributes, deduped. */
-function moduleBlocks(module: Module): string[] {
+function moduleBlocks(module: Module, contract = 1): string[] {
   const order = READING_ORDER[module.type]
   const blocks: string[] = []
 
@@ -444,9 +695,15 @@ function moduleBlocks(module: Module): string[] {
     blocks.push(module.heading)
   }
 
+  let vocabJoined = false
   if (module.type === 'vocab') {
     const head = vocabHeadword(module)
-    if (head) blocks.push(head)
+    const meaning = str(module, 'meaning') ?? str(module, 'definition')
+    if (contract >= 2 && head && meaning) {
+      // "The Hebrew word qadosh means holy; set apart for God."
+      blocks.push(`${head} means ${meaning}`)
+      vocabJoined = true
+    } else if (head) blocks.push(head)
   }
 
   if (!order) {
@@ -463,18 +720,48 @@ function moduleBlocks(module: Module): string[] {
   }
 
   const consumed = new Set<string>()
+  if (vocabJoined) {
+    consumed.add('meaning')
+    consumed.add('definition')
+  }
   for (const group of order) {
+    if (group.some((f) => consumed.has(f))) continue
     for (const field of group) {
       const value = str(module, field)
       if (value === undefined) continue
-      const prefix = FIELD_PREFIX[`${module.type}.${field}`] ?? ''
-      const text =
+      let prefix = FIELD_PREFIX[`${module.type}.${field}`] ?? ''
+      if (contract >= 2) {
+        prefix = FIELD_PREFIX_V2[`${module.type}.${field}`] ?? prefix
+      }
+      let text =
         module.type === 'scripture' && field === 'reference'
           ? expandReference(value)
           : value
+      const era = str(module, 'era')
+      if (
+        contract >= 2 &&
+        module.type === 'profile' &&
+        (field === 'name' || field === 'title') &&
+        era
+      ) {
+        text = `${text}, ${era.trim()}`
+        consumed.add('era')
+      }
       blocks.push(prefix + text)
       group.forEach((f) => consumed.add(f)) // mirrors are covered too
       break // mirrored variants: first present wins
+    }
+  }
+
+  if (contract >= 2) {
+    const record = module as unknown as Record<string, unknown>
+    for (const [field, lead] of LIST_FIELDS[module.type] ?? []) {
+      const items = record[field]
+      if (!Array.isArray(items)) continue
+      consumed.add(field)
+      listItems(field, items).forEach((item, i) => {
+        blocks.push((i === 0 ? lead : '') + item)
+      })
     }
   }
 
@@ -516,11 +803,12 @@ export function buildModuleSegments(
   title: string,
   modules: Module[],
   subtitle?: string,
+  { contract = 1 }: { contract?: number } = {},
 ): TtsSegment[] {
   const segments: TtsSegment[] = []
   const seen = new Set<string>()
   const opening = openingLine(title, subtitle)
-  pushSegment(segments, 'Title', opening, { allowSingleWord: true })
+  pushSegment(segments, 'Title', opening, { allowSingleWord: true, contract })
   // The opening line counts as read. Several days repeat the devotional's own
   // title as the heading of a module inside it; without this the listener
   // hears it announced twice in a row.
@@ -532,7 +820,7 @@ export function buildModuleSegments(
   modules.forEach((module, index) => {
     if (NAV_TYPES.has(module.type)) return
     const label = moduleLabel(module, index)
-    for (const block of moduleBlocks(module)) {
+    for (const block of moduleBlocks(module, contract)) {
       // Never speak the same prose twice (pull quotes repeat body text, and
       // mirrored fields can survive the group check across module types).
       const key = dedupKey(block)
@@ -542,6 +830,7 @@ export function buildModuleSegments(
       // single word ("Sabbath"). Only stray prose fragments are floored.
       pushSegment(segments, label, block, {
         allowSingleWord: block === module.heading,
+        contract,
       })
     }
   })

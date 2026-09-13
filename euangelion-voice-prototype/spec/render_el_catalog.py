@@ -70,7 +70,65 @@ def credits_left(key):
     return sub["character_limit"] - sub["character_count"], sub["character_limit"]
 
 
-def chunks(segments):
+# Contract 2 requests (SA-141). Long eleven_v3 requests are where phrases went
+# missing, so a request is at most about one long paragraph. A paragraph longer
+# than this is cut at sentence ends only; a sentence is never split.
+CHUNK_CHARS_V2 = 900
+INTRA_PARAGRAPH_GAP = 0.25     # a seam inside a paragraph is a breath, not a stop
+_SENTENCE_END = re.compile(r"(?<=[.!?])[\"')\]]?\s+(?=[\"(\[]?[A-Z0-9])")
+_ABBREV_TAIL = re.compile(r"\b(?:c|ca|cf|ch|vol|pp|p|ff|St|Dr|Mr|Mrs|vs|e\.g|i\.e)\.$")
+
+
+def sentences(text):
+    """Split at sentence ends without breaking after an abbreviation."""
+    out = []
+    pos = 0
+    for m in _SENTENCE_END.finditer(text):
+        piece = text[pos:m.end()].rstrip()
+        if out and _ABBREV_TAIL.search(out[-1]):
+            out[-1] = out[-1] + " " + piece
+        else:
+            out.append(piece)
+        pos = m.end()
+    tail = text[pos:].strip()
+    if tail:
+        if out and _ABBREV_TAIL.search(out[-1]):
+            out[-1] = out[-1] + " " + tail
+        else:
+            out.append(tail)
+    return out or [text]
+
+
+def split_long(seg):
+    """One segment, as pieces no longer than CHUNK_CHARS_V2 where possible."""
+    if len(seg["text"]) <= CHUNK_CHARS_V2:
+        return [seg]
+    pieces, cur = [], ""
+    for sent in sentences(seg["text"]):
+        if cur and len(cur) + 1 + len(sent) > CHUNK_CHARS_V2:
+            pieces.append(cur)
+            cur = sent
+        else:
+            cur = f"{cur} {sent}" if cur else sent
+    if cur:
+        pieces.append(cur)
+    out = []
+    for i, text in enumerate(pieces):
+        piece = dict(seg, text=text)
+        piece["joins_next"] = i < len(pieces) - 1
+        out.append(piece)
+    return out
+
+
+def gap_after(group):
+    """Silence after a request. A seam inside one paragraph is a breath."""
+    last = group[-1]
+    if last.get("joins_next"):
+        return INTRA_PARAGRAPH_GAP
+    return PAUSE_AFTER.get(last["register"], 0.55)
+
+
+def chunks(segments, contract=1):
     """Group segments into requests.
 
     Two rules, both about where a seam is allowed to fall:
@@ -81,10 +139,20 @@ def chunks(segments):
         before it — which is what turns chapters from an estimate into a
         measurement. Billing is per character, so the extra requests are free.
     """
+    limit = CHUNK_CHARS
+    if contract >= 2:
+        # Contract 2 segments are paragraphs. A paragraph that ends a request
+        # never continues into the next, and a long one is cut at sentences.
+        segments = [p for seg in segments for p in split_long(seg)]
+        limit = CHUNK_CHARS_V2
     out, cur, size, mod = [], [], 0, None
     for seg in segments:
         n = len(seg["text"])
-        if cur and (size + n > CHUNK_CHARS or seg["module_index"] != mod):
+        # A short lead (a heading, a reference) rides with what follows it
+        # rather than going out as a request of its own.
+        over = size + n > limit and not (contract >= 2 and size < 120)
+        if cur and (over or seg["module_index"] != mod
+                    or cur[-1].get("joins_next") or seg.get("break_before")):
             out.append(cur)
             cur, size = [], 0
         cur.append(seg)
@@ -202,11 +270,11 @@ def decode(src, dst, sr=SR):
     return a
 
 
-def render(slug, key, vid, music=True):
+def render(slug, key, vid, music=True, contract=ne.CONTRACT_LATEST):
     dev_path = os.path.join(DEVOTIONALS, f"{slug}.json")
     dev = json.load(open(dev_path))
-    segments = ne.extract(dev)
-    groups = chunks(segments)
+    segments = ne.extract(dev, contract)
+    groups = chunks(segments, contract)
     words = sum(len(s["text"].split()) for s in segments)
 
     tmp = os.path.join(PROTO, f"_{slug}")
@@ -220,7 +288,7 @@ def render(slug, key, vid, music=True):
             raise RuntimeError(f"chunk {i}/{len(groups)} failed after retries")
         frames.extend(decode(tmp + ".mp3", tmp + ".wav"))
         if i < len(groups):
-            frames.extend([0] * int(PAUSE_AFTER.get(group[-1]["register"], 0.55) * SR))
+            frames.extend([0] * int(gap_after(group) * SR))
         print(f"    [{i}/{len(groups)}] {(time.time()-t0)/60:.1f}m", flush=True)
     frames.extend([0] * int(TRAILING_PAD * SR))
 
@@ -269,8 +337,9 @@ def render(slug, key, vid, music=True):
         "voice": "chris-james-thca-master",
         "engine": "elevenlabs",
         "bytes": os.path.getsize(out),
-        "textHash": ne.text_hash(dev),
+        "textHash": ne.text_hash(dev, contract),
         "chapters": chapters_from(groups, starts, dev),
+        "contract": contract,
     }
     tmp_m = MANIFEST + ".tmp"
     json.dump(dict(sorted(manifest.items())), open(tmp_m, "w"), indent=1)
@@ -287,6 +356,16 @@ def main():
     if not slugs:
         raise SystemExit("usage: render_el_catalog.py <slug> [<slug> ...]")
 
+    # Never re-render (founder, 2026-09-13): a slug that already has a track is
+    # refused. Older devotionals keep the recording and contract they shipped
+    # with. --rerender exists for a founder-approved exception only.
+    if "--rerender" not in sys.argv and os.path.exists(MANIFEST):
+        have = json.load(open(MANIFEST))
+        refused = [s for s in slugs if s in have]
+        if refused:
+            raise SystemExit("REFUSED: already rendered, never re-render: "
+                             + " ".join(refused))
+
     key = api_key()
     vid = open(VOICE_FILE).read().strip()
     left, limit = credits_left(key)
@@ -294,7 +373,8 @@ def main():
     cost = 0
     for slug in slugs:
         dev = json.load(open(os.path.join(DEVOTIONALS, f"{slug}.json")))
-        cost += sum(len(s["text"]) for s in ne.extract(dev))
+        cost += sum(len(s["text"])
+                    for s in ne.extract(dev, ne.CONTRACT_LATEST))
     print(f"{len(slugs)} devotional(s) | {cost:,} characters")
     print(f"credits: {left:,} of {limit:,} remaining")
     if cost > left:

@@ -22,6 +22,7 @@ import ClipButton from '@/components/ClipButton'
 import PushOptIn from '@/components/PushOptIn'
 import CompletionBeat from '@/components/CompletionBeat'
 import { buildModuleSegments, buildPanelSegments } from '@/lib/audio/segments'
+import { getNarrationTrack } from '@/lib/audio/tracks'
 import TextHighlightTrigger from '@/components/TextHighlightTrigger'
 import { ReaderProvider } from '@/components/reader/ReaderContext'
 import JournalField from '@/components/reader/JournalField'
@@ -269,13 +270,22 @@ export default function DevotionalPageClient({
   const audioSegments = useMemo(() => {
     if (!devotional) return []
     if (modules && modules.length > 0) {
-      return buildModuleSegments(devotional.title, modules, devotional.subtitle)
+      // Read with the contract the recorded track used, so the on-page reader
+      // and the recording speak the same words (SA-141).
+      return buildModuleSegments(
+        devotional.title,
+        modules,
+        devotional.subtitle,
+        {
+          contract: getNarrationTrack(slug)?.contract ?? 1,
+        },
+      )
     }
     if (panels && panels.length > 0) {
       return buildPanelSegments(devotional.title, panels, devotional.subtitle)
     }
     return []
-  }, [devotional, modules, panels])
+  }, [devotional, modules, panels, slug])
 
   useEffect(() => {
     setIsCompleted(isRead(slug))

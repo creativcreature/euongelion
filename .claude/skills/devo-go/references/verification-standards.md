@@ -4,6 +4,7 @@ Everything reader-facing traces to a verified source recorded in the source pack
 
 ## 1. Scripture (do this yourself — never delegate, never trust memory)
 
+- **The 66-book Protestant canon only (founder ruling 2026-09-13, SA-141).** No apocryphal or deuterocanonical book is quoted, retold, pictured or used as a historical source — not Maccabees, Tobit, Judith, Sirach, Wisdom, Baruch, Esdras, or the additions to Esther and Daniel. Put this sentence in every research-agent brief, because agents reach for 2 Maccabees on any food-law or martyrdom theme.
 - ONLY source: `public/bibles/<TRANSLATION>/<BOOK>.json` (BSB/WEB/KJV/ASV/YLT/DARBY/BBE all present, keyed `[chapter][verse]`).
 - Copy text EXACTLY, including divine-name casing: this repo's KJV prints "the Lord"; BSB prints "the LORD". Partial quotes with ellipses are fine; silent wording changes are not.
 - YLT contains `<FI>…<Fi>` italics markers — strip or avoid block-quoting YLT.

@@ -721,6 +721,20 @@ export const DEVOTIONAL_TEASERS: Record<string, string> = {
     'Solomon asks for a listening heart, then builds God a house — and stands inside it knowing heaven itself cannot hold the One who came to dwell there.',
   'bible-365-day-99':
     "Solomon, the wisest king, drifts a thousand small steps from God. The kingdom tears. But a single tribe is held back — a lamp God refuses to extinguish for David's sake.",
+  'by-the-heel-day-1':
+    'Leviticus 11 tells Israel not to eat the camel, the rabbit or the pig, and it gives one reason twice. Before anyone argues about whether the list still applies, that reason has to be heard.',
+  'by-the-heel-day-2':
+    'Esau sold his birthright for a bowl of lentils, and Jacob took the blessing by dressing up as his brother. Neither brother comes out of Genesis 27 well, and Christians have seen the gospel in it anyway.',
+  'by-the-heel-day-3':
+    "Jacob got his father's blessing by pretending to be the firstborn while his father was still alive. Hebrews says believers receive their inheritance a different way: the firstborn died, and his death secured the inheritance.",
+  'by-the-heel-day-4':
+    'Paul says he is fully persuaded that nothing is unclean in itself. In the same breath he tells the people who agree with him that they carry the heavier duty.',
+  'by-the-heel-day-5':
+    'Jacob had spent his life taking what he wanted. The night before he met his brother, he held on to God instead, and he walked away blessed and limping. The next morning Esau ran to him.',
+  'by-the-heel-day-6':
+    'Paul says believers were called to freedom, and in the next breath he tells them to serve one another in love.',
+  'by-the-heel-day-7':
+    'At Jerusalem, Peter warned against placing on Gentile disciples a yoke that, in his words, “neither we nor our fathers have been able to bear.” Jesus offers his own yoke, and he calls it easy.',
   'coming-to-the-end-of-ourselves-day-1':
     'When our plans crumble, true faith finds its foundation',
   'coming-to-the-end-of-ourselves-day-2':
@@ -1513,6 +1527,13 @@ export const DEVOTIONAL_TITLES: Record<string, string> = {
   'bible-365-day-97': 'A listening heart, a house too small for God',
   'bible-365-day-98': 'A house too small for God',
   'bible-365-day-99': 'The Lamp He Would Not Let Go Out',
+  'by-the-heel-day-1': 'Be Holy, Because I Am Holy',
+  'by-the-heel-day-2': 'Sold For A Single Meal',
+  'by-the-heel-day-3': 'Through The Curtain Of His Body',
+  'by-the-heel-day-4': 'Who Are You To Judge?',
+  'by-the-heel-day-5': 'I Will Not Let You Go',
+  'by-the-heel-day-6': 'Called To Freedom',
+  'by-the-heel-day-7': 'An Easy Yoke',
   'coming-to-the-end-of-ourselves-day-1': 'The Breaking Point',
   'coming-to-the-end-of-ourselves-day-2': 'The Turning Point',
   'coming-to-the-end-of-ourselves-day-3': 'The Surrender',

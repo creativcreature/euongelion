@@ -31,6 +31,69 @@ Under SA-031 the founder reviews live output and requests revisions after
 deploy. That is fine — a revised day simply re-renders, and the resume is
 content-addressed, so only the changed days cost anything.
 
+## Rendered once, never again (SA-141, 2026-09-13)
+
+Founder: _"I never want to re-render audio — the transcripts and planning to
+create the final piece needs to be fully conceived and verified before running
+so regeneration never has to occur."_ And: _"Do not change older devotionals.
+This is just moving forward."_
+
+So the order is: prove the script on text → show the cost → render once →
+prove the audio from a transcript → score. `render_el_catalog.py` refuses a
+slug that already has a manifest entry.
+
+### Reading contract 2 (new tracks only)
+
+`narration_extract.py` and `src/lib/audio/segments.ts` both take a `contract`.
+Contract 1 is byte-for-byte what every track before 2026-09-13 speaks, so none
+of them goes stale. Contract 2 adds:
+
+- **Every list the page renders**, with the page's own labels read as sentences:
+  "Step one. …", "See also: Tahor means clean.", "What I leave at the cross: …",
+  extra reflection questions, comprehension lists. Contract 1 skipped all of
+  them because the catch-all only reads strings — every exercise went unread.
+- **Scripture citations in prose expanded** ("Romans, chapter fourteen, verse
+  seventeen,"), with the comma a reader supplies when the sentence runs on. A
+  verse with a leading zero ("8:07") is a duration, never a verse. "2 Maccabees"
+  style numbered names become "Second …".
+- **One segment per paragraph and per markdown list line**, each ending as a
+  sentence, so a heading, reference or list item never runs into the next words.
+- **Spoken lead-ins as sentences**: "The Hebrew word qadosh means holy…", "The
+  voice behind today is John Bunyan, Bedfordshire, England, 1628 to 1688.",
+  "Here is the answer."
+- **Speech-only fixes** that never touch the page: `LORD` → Lord, initials
+  ("C. H. Spurgeon") without sentence-ending stops, `schizo` → "skeezo".
+
+The two twins must agree on every devotional in the catalogue for both
+contracts. Check with a hash sweep (TS vs Python) after ANY change to either.
+
+### Requests (contract 2)
+
+At most ~900 characters, cut at paragraph breaks, and a long paragraph only at
+sentence ends — never mid-sentence. A short lead (heading, reference) rides with
+what follows. The note after a Bible reading starts its own request so the
+listener hears where Scripture stops. A seam inside a paragraph gets a 0.25 s
+breath; a paragraph seam gets the register pause.
+
+### Before rendering
+
+1. `preflight_narration.py <slugs> --out <dir>` — ALL PASS. Coverage, speakability,
+   request plan, and the full script written out request by request.
+2. A read-only proofreading agent reads every script file end to end for run-ons,
+   fragments, labels that sound wrong aloud, unmatched quotes and pronunciation
+   risks. Fix the content of the new days; re-run step 1.
+3. Dry-run the cost and report it.
+
+### After rendering
+
+`verify_transcript.py <slugs>` (needs torch + transformers; run from a venv)
+transcribes each request from the chunk cache with Whisper large-v3-turbo and
+aligns it against the text sent. It fails a request that dropped 3+ consecutive
+words, lost its ending, or ran at an implausible rate. Proved on a planted cut
+ending and a planted dropped phrase before first use. **Use float32 on MPS**:
+float16 returns "!" and generates to the token limit (17 minutes for a 2-minute
+track). Whisper cannot judge transliterations, so those are listed, not failed.
+
 ## The two passes
 
 ### 1. Narration
