@@ -14,7 +14,9 @@ import {
   queueDuration,
   queueForReading,
 } from '@/lib/audio/queue-builder'
-import { formatTime, getNarrationTrack } from '@/lib/audio/tracks'
+import { chapterAt, formatTime, getNarrationTrack, sectionBack } from '@/lib/audio/tracks'
+import SectionRule from '@/components/audio/SectionRule'
+import DriveMode from '@/components/audio/DriveMode'
 import SpeedSheet, {
   type Speed,
   type SkipSeconds,
@@ -150,10 +152,13 @@ export default function AudioDrawer() {
   const jumpTo = useAudioStore((s) => s.jumpTo)
   const remove = useAudioStore((s) => s.remove)
   const reorder = useAudioStore((s) => s.reorder)
-  const goNext = useAudioStore((s) => s.next)
-  const goPrev = useAudioStore((s) => s.previous)
+  // Queue movement is no longer on the transport — the flanking buttons step
+  // SECTIONS now. It lives in the queue list below, the header button, and
+  // Media Session's next/previous, which is what a car's own buttons send.
   const savePlaylist = usePlaylistsStore((s) => s.save)
 
+  const barDismissed = useAudioStore((s) => s.barDismissed)
+  const setBarDismissed = useAudioStore((s) => s.setBarDismissed)
   const open = useAudioStore((s) => s.panelOpen)
   const setOpen = useAudioStore((s) => s.setPanelOpen)
   const [saved, setSaved] = useState<string | null>(null)
@@ -165,6 +170,7 @@ export default function AudioDrawer() {
   const [speedOpen, setSpeedOpen] = useState(false)
   const [sleepOpen, setSleepOpen] = useState(false)
   const [chaptersOpen, setChaptersOpen] = useState(false)
+  const [driveOpen, setDriveOpen] = useState(false)
   /**
    * Read through to the stored preference, exactly as the reading's own panel
    * does, rather than starting at 1x and 15s every time the drawer mounts. The
@@ -301,12 +307,34 @@ export default function AudioDrawer() {
 
   // The handle needs something playing; the sidebar itself does not — it is
   // openable with an empty queue, because that is where discovery now lives.
-  const showHandle = !!item && started && !(pathname === item.href) && !open
+  //
+  // It used to hide itself on the reading it was playing (`pathname ===
+  // item.href`), on the reasoning that the page's own panel owns the transport
+  // there. In practice that removed the persistent control at exactly the place
+  // a listener is most likely to be standing, and the page's panel is one row
+  // since SA-120. What replaced that rule is an explicit dismiss, which is what
+  // the 19 Aug pattern sweep called the one clear defect in this build.
+  const showHandle = !!item && started && !barDismissed && !open
   if (!open && !showHandle) return null
-  // On the reading it is playing, the reader's own panel is the better surface.
 
   const audio = () => getAudioElement()
   const upNext = queue.length - index - 1
+  const chapters = item ? (getNarrationTrack(item.slug)?.chapters ?? []) : []
+  // The bar's first line: WHERE you are, not just what is playing.
+  const handleSection = chapterAt(chapters, elapsed)?.label ?? null
+  /**
+   * Where an armed sleep timer will stop, as a position ON THE TRACK.
+   *
+   * End-of-chapter is already a track position. A minutes timer is a wall
+   * clock, so it is projected onto the track at the current rate — close
+   * enough to draw, and it moves with the reader if they seek.
+   */
+  const sleepStopAt =
+    sleepMode === 'end-of-chapter'
+      ? (chapters.find((chapter) => chapter.t > elapsed + 0.001)?.t ?? null)
+      : sleepLeft !== null
+        ? elapsed + (sleepLeft / 1000) * speed
+        : null
 
   return (
     <>
@@ -327,7 +355,15 @@ export default function AudioDrawer() {
                 <i />
                 <i />
               </span>
-              <span className="lsn-handle-title">{item.title}</span>
+              <span className="lsn-handle-lines">
+                <span className="lsn-handle-title">
+                  {handleSection ?? item.title}
+                </span>
+                <span className="lsn-handle-sub">
+                  {handleSection ? item.title : (item.context ?? 'Euangelion')}
+                  {remaining !== null ? ` · ${formatTime(remaining)} left` : ''}
+                </span>
+              </span>
               {upNext > 0 && (
                 <span className="lsn-handle-count">+{upNext}</span>
               )}
@@ -352,6 +388,21 @@ export default function AudioDrawer() {
                   <path d="M8 5v14l11-7z" />
                 </svg>
               )}
+            </button>
+            <button
+              type="button"
+              className="lsn-handle-close"
+              aria-label="Stop showing the player"
+              onClick={() => setBarDismissed(true)}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M6 6l12 12M18 6L6 18"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  fill="none"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -462,9 +513,35 @@ export default function AudioDrawer() {
 
             {item && (
               <div className="lsn-transport">
+                {/* Previous FIRST. Every surveyed player orders it prev ·
+                    back · play · forward · next, and this shipped with
+                    previous LAST, to the right of next — eyes-free use is
+                    entirely muscle memory, so the order is the feature.
+                    These step SECTIONS now; moving between readings is what
+                    the queue list below and the car's own next/previous do. */}
                 <button
                   type="button"
-                  className="lsn-btn"
+                  className="lsn-btn lsn-btn-step"
+                  aria-label="Previous section"
+                  disabled={!chapters.length}
+                  onClick={() => {
+                    const a = audio()
+                    const to = sectionBack(
+                      chapters,
+                      a?.currentTime ?? elapsed,
+                      total || item.duration,
+                    )
+                    if (a && to !== null) a.currentTime = to
+                    if (to !== null) setElapsed(to)
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 6 8 12l10 6V6zM6 6h2v12H6z" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  className="lsn-btn lsn-btn-skip"
                   aria-label="Back 15 seconds"
                   onClick={() => {
                     const a = audio()
@@ -499,7 +576,7 @@ export default function AudioDrawer() {
                 </button>
                 <button
                   type="button"
-                  className="lsn-btn"
+                  className="lsn-btn lsn-btn-skip"
                   aria-label="Forward 15 seconds"
                   onClick={() => {
                     const a = audio()
@@ -512,47 +589,79 @@ export default function AudioDrawer() {
                 </button>
                 <button
                   type="button"
-                  className="lsn-btn"
-                  aria-label="Next in queue"
-                  disabled={index >= queue.length - 1}
-                  onClick={() => goNext()}
+                  className="lsn-btn lsn-btn-step"
+                  aria-label="Next section"
+                  disabled={
+                    !chapters.length ||
+                    elapsed >= (chapters[chapters.length - 1]?.t ?? 0)
+                  }
+                  onClick={() => {
+                    const a = audio()
+                    const at = a?.currentTime ?? elapsed
+                    const to = chapters.find((chapter) => chapter.t > at + 0.001)
+                    if (!to) return
+                    if (a) a.currentTime = to.t
+                    setElapsed(to.t)
+                  }}
                 >
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M6 6l10 6-10 6V6zM16 6h2v12h-2z" />
                   </svg>
                 </button>
-                <button
-                  type="button"
-                  className="lsn-btn"
-                  aria-label="Previous in queue"
-                  disabled={index === 0}
-                  onClick={() => goPrev()}
-                >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M18 6 8 12l10 6V6zM6 6h2v12H6z" />
-                  </svg>
-                </button>
               </div>
+            )}
+
+            {/* The founder's report was that this is hardest "especially when
+                I am driving", and Media Session cannot give a web app a
+                browsable list in the car. So the list lives here. */}
+            {item && chapters.length > 1 && (
+              <button
+                type="button"
+                className="lsn-drive-enter"
+                onClick={() => setDriveOpen(true)}
+              >
+                Drive mode
+              </button>
             )}
 
             {/* Drag to a position. The page keeps only a slim row now, so this
                 is the one place a listener can move within a reading. */}
             {item && (
               <div className="lsn-seek">
-                <label className="lsn-seek-label">
-                  <span className="sr-only">Seek within the reading</span>
-                  <input
-                    type="range"
-                    min={0}
-                    max={Math.max(1, Math.round(total || item.duration))}
-                    value={Math.round(elapsed)}
-                    onChange={(e) => {
+                {chapters.length > 1 ? (
+                  <SectionRule
+                    chapters={chapters}
+                    currentTime={elapsed}
+                    duration={total || item.duration}
+                    stopAt={sleepStopAt}
+                    onSeek={(seconds) => {
                       const a = audio()
-                      if (a) a.currentTime = Number(e.target.value)
-                      setElapsed(Number(e.target.value))
+                      if (a) a.currentTime = seconds
+                      setElapsed(seconds)
                     }}
                   />
-                </label>
+                ) : (
+                  /* Tracks rendered before chapters existed carry none, and the
+                     rule has nothing to draw. Every reading in the catalog has
+                     at least five marks, so this is not a state the site
+                     produces today — but the type allows it, and losing the
+                     ability to seek at all is a far worse failure than showing
+                     the plainer control. */
+                  <label className="lsn-seek-label">
+                    <span className="sr-only">Seek within the reading</span>
+                    <input
+                      type="range"
+                      min={0}
+                      max={Math.max(1, Math.round(total || item.duration))}
+                      value={Math.round(elapsed)}
+                      onChange={(e) => {
+                        const a = audio()
+                        if (a) a.currentTime = Number(e.target.value)
+                        setElapsed(Number(e.target.value))
+                      }}
+                    />
+                  </label>
+                )}
                 <div className="lsn-times oldstyle-nums">
                   <span>{formatTime(elapsed)}</span>
                   <span>
@@ -590,7 +699,7 @@ export default function AudioDrawer() {
                     className="lsn-chip"
                     onClick={() => setChaptersOpen(true)}
                   >
-                    Chapters
+                    {chapters.length ? `All ${chapters.length} sections` : 'Chapters'}
                   </button>
                   {/* Four of the eight players surveyed carry share; a
                       devotional is a thing people send to someone. The system
@@ -805,6 +914,29 @@ export default function AudioDrawer() {
         />
       )}
 
+      {driveOpen && item && (
+        <DriveMode
+          title={item.title}
+          context={item.context ?? label ?? ''}
+          chapters={chapters}
+          currentTime={elapsed}
+          duration={total || item.duration}
+          playing={playing}
+          onSeek={(seconds) => {
+            const a = audio()
+            if (a) a.currentTime = seconds
+            setElapsed(seconds)
+          }}
+          onTogglePlay={() => {
+            const a = audio()
+            if (!a) return
+            if (playing) a.pause()
+            else void a.play().catch(() => {})
+          }}
+          onExit={() => setDriveOpen(false)}
+        />
+      )}
+
       {chaptersOpen && item && (
         <NarrationChapters
           title={item.title}
@@ -896,16 +1028,43 @@ export default function AudioDrawer() {
         }
         .lsn-handle-title {
           font-family: var(--font-family-serif, Georgia, serif);
-          font-size: 0.86rem;
+          font-size: var(--ts-base);
           color: var(--color-text-primary, var(--color-fg));
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
         .lsn-handle-count {
-          font-size: 0.58rem;
+          font-size: var(--ts-xs);
           letter-spacing: 0.08em;
           color: var(--color-text-muted, var(--color-text-secondary));
+        }
+        .lsn-handle-lines {
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+        }
+        .lsn-handle-sub {
+          font-family: var(--font-family-ui);
+          font-size: var(--ts-xs);
+          color: var(--color-text-muted, var(--color-text-secondary));
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .lsn-handle-close {
+          display: grid;
+          place-items: center;
+          min-width: 44px;
+          min-height: 44px;
+          background: transparent;
+          border: 0;
+          color: var(--color-text-muted, var(--color-text-secondary));
+          cursor: pointer;
+        }
+        .lsn-handle-close svg {
+          width: 15px;
+          height: 15px;
         }
         .lsn-handle-play {
           display: grid;
@@ -923,6 +1082,7 @@ export default function AudioDrawer() {
           fill: currentColor;
         }
         .lsn-handle-open:focus-visible,
+        .lsn-handle-close:focus-visible,
         .lsn-handle-play:focus-visible {
           outline: 2px solid var(--color-gold);
           outline-offset: -2px;
@@ -1010,7 +1170,7 @@ export default function AudioDrawer() {
           border-bottom: 1px solid var(--color-border);
         }
         .lsn-eyebrow {
-          font-size: 0.53rem;
+          font-size: var(--ts-xs);
           letter-spacing: 0.16em;
           text-transform: uppercase;
           color: var(--color-gold);
@@ -1020,14 +1180,14 @@ export default function AudioDrawer() {
         .lsn-head :global(.lsn-now) {
           font-family: var(--font-family-serif, Georgia, serif);
           font-style: italic;
-          font-size: 1.15rem;
+          font-size: var(--ts-md);
           line-height: 1.2;
           color: var(--color-text-primary, var(--color-fg));
           text-decoration: none;
         }
         .lsn-remaining {
           margin-top: 0.2rem;
-          font-size: 0.6rem;
+          font-size: var(--ts-sm);
           letter-spacing: 0.06em;
           color: var(--color-text-muted, var(--color-text-secondary));
         }
@@ -1036,7 +1196,7 @@ export default function AudioDrawer() {
           min-height: 44px;
           background: transparent;
           border: 0;
-          font-size: 0.58rem;
+          font-size: var(--ts-xs);
           letter-spacing: 0.12em;
           text-transform: uppercase;
           color: var(--color-text-secondary, var(--color-fg));
@@ -1045,36 +1205,78 @@ export default function AudioDrawer() {
         .lsn-transport {
           display: flex;
           align-items: center;
-          justify-content: center;
-          gap: 0.35rem;
-          padding: 0.6rem 0;
+          justify-content: space-between;
+          gap: 0.2rem;
+          padding: 0.6rem 0.9rem;
           border-bottom: 1px solid var(--color-border);
         }
+        /* Three sizes, so the hand can tell them apart without the eye.
+           All five shipped at 44px with only the play GLYPH larger, which is
+           indistinguishable by feel — and feel is all a driver has. */
         .lsn-btn {
           display: grid;
           place-items: center;
-          min-width: 44px;
-          min-height: 44px;
+          min-width: 54px;
+          min-height: 54px;
           background: transparent;
           border: 0;
-          color: var(--color-text-primary, var(--color-fg));
+          color: var(--color-text-secondary, var(--color-fg));
           cursor: pointer;
         }
         .lsn-btn svg {
-          width: 20px;
-          height: 20px;
+          width: 22px;
+          height: 22px;
           fill: currentColor;
         }
+        .lsn-btn-step {
+          color: var(--color-text-secondary, var(--color-fg));
+        }
+        .lsn-btn-skip {
+          min-width: 60px;
+          min-height: 60px;
+          color: var(--color-text-primary, var(--color-fg));
+        }
+        .lsn-btn-skip svg {
+          width: 28px;
+          height: 28px;
+        }
+        .lsn-btn-play {
+          min-width: 78px;
+          min-height: 78px;
+          background: var(--color-gold);
+          border-radius: 50%;
+          /* The ground, not a literal: --color-gold is cobalt in light and
+             amber in dark, so the glyph has to be whatever the page is. */
+          color: var(--color-bg);
+        }
         .lsn-btn-play svg {
-          width: 26px;
-          height: 26px;
+          width: 30px;
+          height: 30px;
         }
         .lsn-btn:disabled {
           opacity: 0.3;
         }
+        .lsn-drive-enter {
+          display: block;
+          width: calc(100% - 2.4rem);
+          min-height: 52px;
+          margin: 0.8rem 1.2rem 0;
+          background: transparent;
+          border: 1.5px solid var(--color-gold);
+          font-family: var(--font-family-ui);
+          font-size: var(--ts-xs);
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: var(--color-gold);
+          cursor: pointer;
+        }
+        .lsn-drive-enter:focus-visible {
+          outline: 2px solid var(--color-gold);
+          outline-offset: 2px;
+        }
         .lsn-uplabel {
           padding: 0.7rem 1.2rem 0.3rem;
-          font-size: 0.55rem;
+          font-size: var(--ts-xs);
           letter-spacing: 0.15em;
           text-transform: uppercase;
           color: var(--color-text-muted, var(--color-text-secondary));
@@ -1134,14 +1336,14 @@ export default function AudioDrawer() {
           text-decoration: none;
         }
         .lsn-context {
-          font-size: 0.5rem;
+          font-size: var(--ts-xs);
           letter-spacing: 0.13em;
           text-transform: uppercase;
           color: var(--color-text-muted, var(--color-text-secondary));
         }
         .lsn-name {
           font-family: var(--font-family-serif, Georgia, serif);
-          font-size: 0.95rem;
+          font-size: var(--ts-base);
           line-height: 1.25;
           color: var(--color-text-primary, var(--color-fg));
           overflow: hidden;
@@ -1150,13 +1352,13 @@ export default function AudioDrawer() {
         }
         .lsn-dur {
           flex: 0 0 auto;
-          font-size: 0.58rem;
+          font-size: var(--ts-sm);
           color: var(--color-text-muted, var(--color-text-secondary));
         }
         .lsn-icon {
           display: grid;
           place-items: center;
-          min-width: 38px;
+          min-width: 44px;
           min-height: 44px;
           background: transparent;
           border: 0;
@@ -1189,7 +1391,7 @@ export default function AudioDrawer() {
           background: transparent;
           border: 0;
           padding: 0;
-          font-size: 0.58rem;
+          font-size: var(--ts-xs);
           letter-spacing: 0.13em;
           text-transform: uppercase;
           cursor: pointer;
@@ -1211,7 +1413,7 @@ export default function AudioDrawer() {
           background: transparent;
           border: 1px solid var(--color-gold);
           border-radius: 999px;
-          font-size: 0.6rem;
+          font-size: var(--ts-xs);
           letter-spacing: 0.13em;
           text-transform: uppercase;
           color: var(--color-gold);
@@ -1258,7 +1460,7 @@ export default function AudioDrawer() {
           justify-content: space-between;
           gap: 1rem;
           margin-top: 0.2rem;
-          font-size: 0.62rem;
+          font-size: var(--ts-sm);
           letter-spacing: 0.04em;
           color: var(--color-text-muted, var(--color-text-secondary));
         }
@@ -1273,13 +1475,13 @@ export default function AudioDrawer() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          min-height: 34px;
-          padding: 0 0.7rem;
+          min-height: 48px;
+          padding: 0 0.8rem;
           background: transparent;
           border: 1px solid
             var(--color-rule, var(--color-text-muted, currentColor));
           border-radius: 999px;
-          font-size: 0.6rem;
+          font-size: var(--ts-xs);
           letter-spacing: 0.11em;
           text-transform: uppercase;
           color: var(--color-text-secondary, var(--color-text-primary));

@@ -5,6 +5,49 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-12 — The listening player, rebuilt for a phone in a car — SA-139 (F-182)
+
+Founder: "I want the audio player more like audible. Right now its hard to
+navigate on mobile — especially when I am driving."
+
+- **The section rule** replaces one `<input type="range">` spanning a whole
+  reading, which at 350px is **3.6 seconds per pixel** with chapter marks ~15px
+  apart. 2px rule, 26px thumb, 56px touch strip, snap to section starts, arrow
+  keys and Home/End. Two earlier shapes were rejected: a rail with no scrubber
+  (could not reach an arbitrary section) and a segmented bar (needed ~9px per
+  segment, so it stopped showing real time). The founder's "the line is too
+  thick" is what made true linear time possible — ticks need no width.
+- **Tiered ticks, and the first plan's premise was wrong.** "Our sections carry
+  editorial names" holds for 44% of them. Measured over all 6,132 chapter marks,
+  **3,451 (56.3%) are module labels**, and 13% of readings repeat a label —
+  `bible-365-day-1` says "Scripture" seven times. Editorial headings take the
+  tall tick; module labels take the short tick and a timecode. Exactly two
+  readings have a single editorial chapter (`all-these-things-day-7`,
+  `drawing-near-day-7`, both day-7 sabbath), pinned so a third fails the build.
+- **The car.** `seekbackward` / `seekforward` / `seekto`, `setPositionState` and
+  artwork now ship. Before this there was **no skip-back on any lock screen,
+  steering-wheel control or head unit**, the OS progress bar was empty and the
+  artwork square blank. `seekto` is deliberately not snapped.
+- **Drive mode** switches to any section rather than stepping — the founder's
+  correction. Rule on top, every section a 68px row, play 132px, Escape exits,
+  wake lock held. It exists because Media Session cannot give a web app a
+  browsable CarPlay list without a native shell.
+- **Type from the ladder.** The player shipped labels at 8, 8.5, 9.3 and 9.9px —
+  the literal content of "hard to navigate on mobile". The first plan proposed an
+  11px floor, which is itself a defect under SA-092. A test now fails the build
+  on any literal rem or hex in a listening surface.
+- **Transport** runs prev · back · play · forward · next at 54/60/78px. It
+  shipped with previous LAST, right of next, and all five at 44px.
+- **The docked bar** stays visible on the reading it is playing and can be
+  dismissed without clearing the queue (session-only, resets on `start()`).
+- 112 tests across 7 suites. Full suite: 3 failures, all pre-existing and
+  unrelated (soul-audit retrieval, narration manifest, an edition puzzle) —
+  down from 4 before this work.
+- **UNVERIFIED:** actual use in a car, and the visual of `/admin/lab/audio-player`
+  — the admin gate needs an allowlisted Supabase session.
+
+---
+
 ## 2026-09-12 — The listening player, as a real route — SA-114 (F-158)
 
 Founder: "I want the audio player more like audible. Right now its hard to

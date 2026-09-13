@@ -103,12 +103,47 @@ describe('the tucked handle', () => {
     expect(within(drawer).getByText('Like a Morning Cloud')).toBeTruthy()
   })
 
-  it('stands aside on the reading it is playing', () => {
+  /**
+   * CHANGED, deliberately. This used to assert the opposite: the handle hid
+   * itself on the reading it was playing, because the reader's own panel owned
+   * the transport there.
+   *
+   * Two things undid that reasoning. The page's panel is one row since SA-120,
+   * so there is no longer a second transport to collide with; and the 19 Aug
+   * pattern sweep found that what this build actually lacked was a way to
+   * DISMISS the bar — it called that "the one clear defect". Hiding the
+   * persistent control at the very place a listener is most likely to be
+   * standing solved the wrong problem.
+   */
+  it('stays put on the reading it is playing', () => {
     startTwo()
     pathname = '/devotional/a'
     render(<AudioDrawer />)
-    // The reader's own panel owns the transport there; two on one screen is a bug.
-    expect(screen.queryByText('+1')).toBeNull()
+    expect(screen.getByText('+1')).toBeTruthy()
+  })
+
+  it('can be dismissed, and dismissing is not clearing', () => {
+    startTwo()
+    render(<AudioDrawer />)
+    act(() =>
+      screen.getByRole('button', { name: /stop showing the player/i }).click(),
+    )
+    expect(screen.queryByRole('button', { name: /open the queue/i })).toBeNull()
+    // The queue survives — a reader who hides the bar has not cancelled
+    // anything, and the header button still brings it back.
+    expect(useAudioStore.getState().queue).toHaveLength(2)
+  })
+
+  it('brings the bar back when something new is played', () => {
+    startTwo()
+    render(<AudioDrawer />)
+    act(() =>
+      screen.getByRole('button', { name: /stop showing the player/i }).click(),
+    )
+    act(() => startTwo())
+    expect(
+      screen.getByRole('button', { name: /open the queue/i }),
+    ).toBeTruthy()
   })
 
   it('offers both skip directions in the drawer', () => {
@@ -362,7 +397,25 @@ describe('the sidebar carries the whole player', () => {
     startPlaying()
     render(<AudioDrawer />)
     const panel = screen.getByRole('dialog')
+    // These fixtures are not real slugs, so they carry no chapter marks and
+    // the plain range input is what renders. Both shapes are seekable and
+    // both answer to /seek/i; the section rule itself is covered in
+    // audio-section-rule.test.tsx.
     expect(within(panel).getByRole('slider', { name: /seek/i })).toBeTruthy()
+  })
+
+  it('gives a real reading the section rule rather than a whole-track slider', () => {
+    act(() =>
+      useAudioStore.getState().start({
+        items: [item('abiding-in-his-presence-day-1', 'From Visiting to Dwelling')],
+        source: 'single',
+        label: 'Abiding in His Presence',
+      }),
+    )
+    act(() => useAudioStore.getState().setPanelOpen(true))
+    const { container } = render(<AudioDrawer />)
+    expect(container.querySelector('.lsn-rule-strip')).not.toBeNull()
+    expect(container.querySelector("input[type='range'][max='600']")).toBeNull()
   })
 
   it('shows elapsed as well as remaining', () => {
@@ -385,13 +438,32 @@ describe('the sidebar carries the whole player', () => {
     ).toBeTruthy()
   })
 
-  it('can step back to the previous reading', () => {
+  /**
+   * The flanking controls step SECTIONS now, not queue items.
+   *
+   * Moving between readings has three other homes — the queue list right below
+   * this, the header button, and the car's own next/previous through Media
+   * Session — while moving within a 21-minute reading had none that could be
+   * aimed. The order changed with it: this shipped back · play · forward ·
+   * next · PREVIOUS, with previous last and to the right of next, which no
+   * surveyed player does and which eyes-free use cannot survive.
+   */
+  it('orders the transport prev, back, play, forward, next', () => {
     startPlaying()
-    render(<AudioDrawer />)
-    const panel = screen.getByRole('dialog')
+    const { container } = render(<AudioDrawer />)
+    const transport = container.querySelector('.lsn-transport')
+    expect(transport).not.toBeNull()
     expect(
-      within(panel).getByRole('button', { name: /previous/i }),
-    ).toBeTruthy()
+      [...transport!.querySelectorAll('button')].map((b) =>
+        b.getAttribute('aria-label'),
+      ),
+    ).toEqual([
+      'Previous section',
+      'Back 15 seconds',
+      expect.stringMatching(/the reading$/),
+      'Forward 15 seconds',
+      'Next section',
+    ])
   })
 })
 

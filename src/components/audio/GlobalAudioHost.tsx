@@ -1,9 +1,11 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { registerAudioElement } from '@/lib/audio/audio-element'
 import { listenForDownloadEvents, requestList } from '@/lib/audio/downloads'
 import { pushPosition, readLocalPosition } from '@/lib/audio/listening-progress'
+import { coverForReading } from '@/lib/audio/queue-builder'
+import { chapterAt, getNarrationTrack } from '@/lib/audio/tracks'
 import { currentItem, useAudioStore } from '@/stores/audioStore'
 
 const SPEED_KEY = 'euangelion:narration-speed'
@@ -12,6 +14,16 @@ function storedSpeed(): number {
   if (typeof window === 'undefined') return 1
   const raw = Number(window.localStorage.getItem(SPEED_KEY))
   return Number.isFinite(raw) && raw > 0 ? raw : 1
+}
+
+
+/** The OS wants a type with its artwork; derive it rather than assume webp. */
+function artworkType(src: string): string {
+  const ext = src.split('?')[0].split('.').pop()?.toLowerCase()
+  if (ext === 'png') return 'image/png'
+  if (ext === 'jpg' || ext === 'jpeg') return 'image/jpeg'
+  if (ext === 'avif') return 'image/avif'
+  return 'image/webp'
 }
 
 /**
@@ -33,6 +45,9 @@ export default function GlobalAudioHost() {
   const next = useAudioStore((s) => s.next)
   const setPlaying = useAudioStore((s) => s.setPlaying)
   const item = currentItem({ queue, index })
+  /** The section being read, so the lock screen can name it. Updated only
+   *  when the boundary is crossed — roughly once a minute, not 4x/second. */
+  const [sectionLabel, setSectionLabel] = useState<string | null>(null)
 
   // Publish the element so the reader panel and the bar drive this one.
   useEffect(() => {
@@ -220,19 +235,82 @@ export default function GlobalAudioHost() {
     }
   }, [])
 
+  /**
+   * Feed the OS scrub bar, and track which section is being read.
+   *
+   * `setActionHandler` alone leaves the lock-screen progress bar empty, and
+   * then `seekto` has nothing to aim at — the bar is not decoration, it is the
+   * control surface. One listener does both jobs because both are per-item and
+   * both key off `timeupdate`.
+   */
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+    const chapters = item ? getNarrationTrack(item.slug)?.chapters : undefined
+
+    const push = () => {
+      const duration = audio.duration
+      if (
+        Number.isFinite(duration) &&
+        duration > 0 &&
+        typeof navigator !== 'undefined' &&
+        'mediaSession' in navigator
+      ) {
+        try {
+          navigator.mediaSession.setPositionState({
+            duration,
+            playbackRate: audio.playbackRate || 1,
+            position: Math.min(audio.currentTime, duration),
+          })
+        } catch {
+          // Safari throws when position briefly exceeds duration mid-seek.
+          // Skipping one tick is correct; the next carries a valid pair.
+        }
+      }
+      const here = chapterAt(chapters, audio.currentTime)?.label ?? null
+      setSectionLabel((was) => (was === here ? was : here))
+    }
+
+    push()
+    audio.addEventListener('loadedmetadata', push)
+    audio.addEventListener('timeupdate', push)
+    return () => {
+      audio.removeEventListener('loadedmetadata', push)
+      audio.removeEventListener('timeupdate', push)
+    }
+  }, [item])
+
   // Lock screen and hardware keys. This is what a media element buys that
   // speechSynthesis never could.
   useEffect(() => {
     if (typeof navigator === 'undefined' || !('mediaSession' in navigator))
       return
     if (!item) return
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: item.title,
-      artist: item.context ?? 'Euangelion',
-      album: useAudioStore.getState().label ?? 'Euangelion',
-    })
     const audio = audioRef.current
-    const set = (action: MediaSessionAction, handler: (() => void) | null) => {
+
+    // What the biggest text on a car's Now Playing screen carries. The section
+    // is what a driver needs — where they ARE — and it changes about once a
+    // minute, which is what Audible does with chapters. To lead with the
+    // reading instead, swap `title` and `artist` here; nothing else depends on
+    // the choice.
+    const section =
+      sectionLabel ??
+      chapterAt(getNarrationTrack(item.slug)?.chapters, audio?.currentTime ?? 0)?.label ??
+      null
+    const cover = coverForReading(item.slug)
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: section ?? item.title,
+      artist: section ? item.title : (item.context ?? 'Euangelion'),
+      album: item.context ?? useAudioStore.getState().label ?? 'Euangelion',
+      // Without this the OS draws a blank square where the plate should be.
+      artwork: cover
+        ? [{ src: cover.src, sizes: '512x512', type: artworkType(cover.src) }]
+        : [],
+    })
+    const set = (
+      action: MediaSessionAction,
+      handler: ((details?: MediaSessionActionDetails) => void) | null,
+    ) => {
       try {
         navigator.mediaSession.setActionHandler(action, handler)
       } catch {
@@ -244,13 +322,40 @@ export default function GlobalAudioHost() {
     set('pause', () => audio?.pause())
     set('nexttrack', () => useAudioStore.getState().next())
     set('previoustrack', () => useAudioStore.getState().previous())
+
+    // A car is the one place a reader cannot look at the screen at all, and
+    // until this there was no skip-back on a lock screen, a steering-wheel
+    // control or a head unit. `seekOffset` is what the OS suggests; the 15s
+    // fallback matches the in-app skip so the two cannot drift apart.
+    const nudge = (seconds: number) => {
+      if (!audio) return
+      const limit = audio.duration || item.duration
+      audio.currentTime = Math.max(0, Math.min(audio.currentTime + seconds, limit))
+    }
+    set('seekbackward', (details?: MediaSessionActionDetails) =>
+      nudge(-(details?.seekOffset ?? 15)),
+    )
+    set('seekforward', (details?: MediaSessionActionDetails) =>
+      nudge(details?.seekOffset ?? 15),
+    )
+    // Deliberately NOT snapped to a section. The in-app rule snaps; the OS bar
+    // is continuous, and rounding a driver's own nudge would give them a jump
+    // they did not ask for.
+    set('seekto', (details?: MediaSessionActionDetails) => {
+      const at = details?.seekTime
+      if (audio && typeof at === 'number') audio.currentTime = at
+    })
+
     return () => {
       set('play', null)
       set('pause', null)
       set('nexttrack', null)
       set('previoustrack', null)
+      set('seekbackward', null)
+      set('seekforward', null)
+      set('seekto', null)
     }
-  }, [item])
+  }, [item, sectionLabel])
 
   return <audio ref={audioRef} preload="metadata" hidden />
 }

@@ -130,15 +130,17 @@ describe('the section rule', () => {
     expect(slider.getAttribute('aria-valuetext')).toMatch(/Section 1 of 10/)
   })
 
-  it('tiers the ticks so a repeated module label cannot own the headline', () => {
+  it('renders the SHIPPED section rule, not a copy of it', () => {
     const { container } = mount()
-    const structural = container.querySelectorAll('.lap-tick--struct')
-    // Six of these ten are module furniture: Opening, Scripture, Word study,
-    // Reflect, Prayer, Takeaway. The seventh, the current one, is marked
-    // lap-tick--now instead, so five short ticks are drawn.
-    expect(structural.length).toBe(5)
-    expect(container.querySelectorAll('.lap-tick--now').length).toBe(1)
-    expect(container.querySelectorAll('.lap-tick').length).toBe(CHAPTERS.length)
+    // Tiering, snapping and the keyboard belong to the component and are
+    // pinned in audio-section-rule.test.tsx. What this PAGE owes is that it
+    // shows the real one — a review surface that has drifted from the thing
+    // being reviewed is worse than none, and drift is exactly what the founder
+    // caught the first time round.
+    expect(container.querySelector('.lsn-rule-strip')).not.toBeNull()
+    expect(container.querySelectorAll('.lsn-rule-tick').length).toBe(
+      CHAPTERS.length,
+    )
   })
 })
 
@@ -160,11 +162,12 @@ describe('drive mode', () => {
     expect(screen.queryByRole('dialog', { name: 'Drive mode' })).not.toBeInTheDocument()
   })
 
-  it('puts nothing in the car under 68px', () => {
-    const drive = SOURCE.slice(SOURCE.indexOf('/* ── drive mode ── */'))
-    const heights = [...drive.matchAll(/(?:min-)?height:\s*(\d+)px/g)].map((m) => Number(m[1]))
-    expect(heights.length).toBeGreaterThan(3)
-    expect(Math.min(...heights)).toBeGreaterThanOrEqual(68)
+  it('opens the SHIPPED drive mode', async () => {
+    // Target sizes, Escape and the wake lock are the component's contract and
+    // are pinned in audio-drive-mode.test.tsx.
+    mount()
+    await userEvent.click(screen.getByRole('button', { name: 'DRIVE MODE' }))
+    expect(screen.getByRole('dialog', { name: 'Drive mode' })).toBeInTheDocument()
   })
 })
 

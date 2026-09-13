@@ -98,6 +98,44 @@ export function formatTime(seconds: number): string {
 }
 
 /**
+ * Labels that are module furniture rather than an editorial title.
+ *
+ * Measured over all 6,132 chapter marks in the manifest: Scripture 687,
+ * Reflect 592, Word study 590, Opening 568, Prayer 520, Takeaway 487, plus 4
+ * "Reflection" and 3 "Title" — 3,451 marks, 56.3% of the catalog. And 13% of
+ * readings repeat a label;
+ * `bible-365-day-1` says "Scripture" seven times.
+ *
+ * This matters because the player asks a listener to navigate by section NAME.
+ * A name appearing three times in one reading cannot be the thing they aim at,
+ * so these stay reachable — you may well want the prayer — but they never own
+ * the headline, they take the short tick on the section rule, and they carry a
+ * timecode to tell the repeats apart.
+ *
+ * Deliberately a fixed list rather than a heuristic: these come from the module
+ * types in `narration_extract.py`, so the set is known instead of guessed, and
+ * a new module type shows up as a failing tier test rather than as a chapter
+ * that quietly changes tier. `__tests__/audio-chapter-tiers.test.ts` pins both
+ * the 6,132/3,444 split and the two readings this leaves with a single
+ * editorial chapter.
+ */
+const STRUCTURAL_LABELS = new Set([
+  'opening',
+  'title',
+  'scripture',
+  'word study',
+  'reflect',
+  'reflection',
+  'prayer',
+  'takeaway',
+])
+
+/** True when a chapter label is module furniture rather than an editorial title. */
+export function isStructuralChapter(label: string): boolean {
+  return STRUCTURAL_LABELS.has(label.trim().toLowerCase())
+}
+
+/**
  * The chapter containing `seconds`, or null before the first one.
  *
  * A linear scan is deliberate: chapter lists top out around two dozen entries,
@@ -147,4 +185,26 @@ export function chapterBounds(
     start: chapters[index].t,
     end: chapters[index + 1]?.t ?? duration,
   }
+}
+
+/**
+ * Where "back a section" should land.
+ *
+ * Restart the current section unless it has only just begun, which is what
+ * every audiobook player does and what a listener means by "back". Shared by
+ * the section rule and drive mode so the grace period cannot drift between
+ * two copies of the same rule.
+ *
+ * Returns null when there are no chapters, rather than guessing a position.
+ */
+export function sectionBack(
+  chapters: NarrationChapter[] | undefined,
+  seconds: number,
+  duration: number,
+  graceSeconds = 4,
+): number | null {
+  const bounds = chapterBounds(chapters, seconds, duration)
+  if (!bounds || !chapters?.length) return null
+  if (seconds - bounds.start > graceSeconds) return bounds.start
+  return chapters[bounds.index - 1]?.t ?? bounds.start
 }

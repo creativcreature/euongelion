@@ -51,6 +51,14 @@ interface AudioState {
    * has been taken off the browse surfaces.
    */
   panelOpen: boolean
+  /**
+   * The reader closed the docked bar for this session.
+   *
+   * Deliberately NOT persisted, and reset by `start()`: a bar dismissed
+   * yesterday coming back tomorrow is right, and playing something new must
+   * always show it again. Dismissing is not clearing — the queue survives.
+   */
+  barDismissed: boolean
 
   start: (params: {
     items: QueueItem[]
@@ -68,6 +76,7 @@ interface AudioState {
   clear: () => void
   setPlaying: (playing: boolean) => void
   setPanelOpen: (open: boolean) => void
+  setBarDismissed: (dismissed: boolean) => void
 }
 
 export const useAudioStore = create<AudioState>()(
@@ -80,6 +89,7 @@ export const useAudioStore = create<AudioState>()(
       playing: false,
       started: false,
       panelOpen: false,
+      barDismissed: false,
 
       start: ({ items, index = 0, source, label = null }) =>
         set({
@@ -88,6 +98,8 @@ export const useAudioStore = create<AudioState>()(
           source,
           label,
           started: true,
+          // Playing something new always shows the bar again.
+          barDismissed: false,
         }),
 
       next: () => {
@@ -158,13 +170,16 @@ export const useAudioStore = create<AudioState>()(
       setPlaying: (playing) => set({ playing }),
 
       setPanelOpen: (panelOpen) => set({ panelOpen }),
+
+      setBarDismissed: (barDismissed) => set({ barDismissed }),
     }),
     {
       name: 'euangelion:listening-queue',
       // `playing` is deliberately NOT persisted: restoring it would claim audio
       // is sounding when nothing is, and nothing on this site autoplays on load.
       // `panelOpen` is not persisted either: a sidebar that reopens itself on
-      // every load is exactly the intrusion this redesign removed.
+      // every load is exactly the intrusion this redesign removed. Nor is
+      // `barDismissed` — a dismissal is for this session, not forever.
       partialize: (s) => ({
         queue: s.queue,
         index: s.index,

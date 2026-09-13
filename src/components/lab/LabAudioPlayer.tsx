@@ -22,43 +22,26 @@
  *
  * Plan: docs/superpowers/plans/2026-09-10-audible-style-audio-player.md
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { formatTime, type NarrationChapter } from '@/lib/audio/tracks'
+import { useCallback, useMemo, useRef, useState } from 'react'
+import {
+  formatTime,
+  isStructuralChapter,
+  sectionBack as sectionBackOf,
+  type NarrationChapter,
+} from '@/lib/audio/tracks'
+import SectionRule from '@/components/audio/SectionRule'
+import DriveMode from '@/components/audio/DriveMode'
 
 /**
- * Labels that are module furniture rather than an editorial title.
- *
- * Measured over all 6,132 chapter marks in the manifest: Scripture 687,
- * Reflect 592, Word study 590, Opening 568, Prayer 520, Takeaway 487 — 3,444
- * marks, 56% of the catalog. 13% of readings repeat a label, and
- * bible-365-day-1 says "Scripture" seven times.
- *
- * This is the premise of the whole design: the player asks the reader to
- * navigate by section NAME, so a name that appears three times in one reading
- * cannot be the thing they aim at. These stay reachable — you may well want the
- * prayer — but they never own the headline, they take the short tick, and they
- * carry a timecode to tell repeats apart.
+ * NOTE: this page used to carry its own copies of the tier list, the section
+ * rule and drive mode. They now ship in `@/lib/audio/tracks`,
+ * `@/components/audio/SectionRule` and `@/components/audio/DriveMode`, and
+ * this page imports them — a review surface that has drifted from the thing
+ * being reviewed is worse than no review surface, and drift is exactly what
+ * the founder caught the first time round.
  */
-const STRUCTURAL = new Set([
-  'opening',
-  'title',
-  'scripture',
-  'word study',
-  'reflect',
-  'reflection',
-  'prayer',
-  'takeaway',
-])
-
 function isStructural(label: string): boolean {
-  return STRUCTURAL.has(label.trim().toLowerCase())
-}
-
-/** Where "back a section" lands: restart this one unless it only just began. */
-function sectionBack(chapters: NarrationChapter[], at: number): number {
-  const i = indexAt(chapters, at)
-  if (at - chapters[i].t > 4) return chapters[i].t
-  return chapters[i - 1]?.t ?? 0
+  return isStructuralChapter(label)
 }
 
 function indexAt(chapters: NarrationChapter[], at: number): number {
@@ -76,215 +59,6 @@ export interface LabAudioPlayerProps {
   src: string
   duration: number
   chapters: NarrationChapter[]
-}
-
-/* ── the section rule ───────────────────────────────────────────────── */
-
-const THUMB = 26
-
-function SectionRule({
-  chapters,
-  at,
-  duration,
-  onSeek,
-  tall = false,
-}: {
-  chapters: NarrationChapter[]
-  at: number
-  duration: number
-  onSeek: (seconds: number) => void
-  tall?: boolean
-}) {
-  const strip = useRef<HTMLDivElement | null>(null)
-  const index = indexAt(chapters, at)
-
-  // The track is inset by the thumb's radius at both ends, or a handle sitting
-  // at 0:00 hangs half off the control.
-  const pos = useCallback(
-    (seconds: number) => `calc(${THUMB / 2}px + (100% - ${THUMB}px) * ${Math.max(0, Math.min(1, seconds / duration))})`,
-    [duration],
-  )
-
-  const seekFromEvent = useCallback(
-    (clientX: number) => {
-      const box = strip.current?.getBoundingClientRect()
-      if (!box) return
-      const usable = Math.max(1, box.width - THUMB)
-      const ratio = (clientX - box.left - THUMB / 2) / usable
-      const wanted = Math.max(0, Math.min(1, ratio)) * duration
-      // Snap to the nearest section start. Fine positioning is what ±15 is
-      // for; this control exists to get to the right part of the reading.
-      let best = 0
-      for (let i = 1; i < chapters.length; i += 1) {
-        if (Math.abs(chapters[i].t - wanted) < Math.abs(chapters[best].t - wanted)) best = i
-      }
-      onSeek(chapters[best].t)
-    },
-    [chapters, duration, onSeek],
-  )
-
-  const onKey = (event: React.KeyboardEvent) => {
-    const keys: Record<string, number | undefined> = {
-      ArrowRight: chapters[index + 1]?.t,
-      ArrowUp: chapters[index + 1]?.t,
-      ArrowLeft: chapters[index - 1]?.t ?? 0,
-      ArrowDown: chapters[index - 1]?.t ?? 0,
-      Home: 0,
-      End: chapters[chapters.length - 1].t,
-    }
-    if (!(event.key in keys)) return
-    event.preventDefault()
-    const to = keys[event.key]
-    if (typeof to === 'number') onSeek(to)
-  }
-
-  const current = chapters[index]
-  const valueText = `Section ${index + 1} of ${chapters.length}, ${current.label}${
-    isStructural(current.label) ? ` at ${formatTime(current.t)}` : ''
-  }`
-
-  return (
-    <div className={`lap-rule${tall ? ' lap-rule--tall' : ''}`}>
-      <div
-        ref={strip}
-        className="lap-strip"
-        role="slider"
-        tabIndex={0}
-        aria-label="Section"
-        aria-valuemin={0}
-        aria-valuemax={chapters.length - 1}
-        aria-valuenow={index}
-        aria-valuetext={valueText}
-        onKeyDown={onKey}
-        onPointerDown={(event) => {
-          event.currentTarget.setPointerCapture(event.pointerId)
-          seekFromEvent(event.clientX)
-        }}
-        onPointerMove={(event) => {
-          if (event.currentTarget.hasPointerCapture(event.pointerId)) seekFromEvent(event.clientX)
-        }}
-      >
-        <span className="lap-track" aria-hidden="true" />
-        <span className="lap-fill" style={{ width: pos(at) }} aria-hidden="true" />
-        {chapters.map((chapter, i) => (
-          <span
-            key={chapter.t}
-            aria-hidden="true"
-            className={`lap-tick${i === index ? ' lap-tick--now' : isStructural(chapter.label) ? ' lap-tick--struct' : ''}`}
-            style={{ left: pos(chapter.t) }}
-          />
-        ))}
-        <span className="lap-thumb" style={{ left: pos(at) }} aria-hidden="true" />
-      </div>
-
-      <p className="lap-now">
-        <span className="lap-kicker">
-          Section {index + 1} of {chapters.length}
-        </span>
-        <span className="lap-name">{current.label}</span>
-      </p>
-      <p className="lap-times">
-        <span>{formatTime(at)}</span>
-        <span>−{formatTime(Math.max(0, duration - at))}</span>
-      </p>
-
-      <style jsx>{`
-        .lap-rule {
-          padding: 0.5rem 1.1rem 0.75rem;
-        }
-        /* 56px of touch for a 2px rule — the rule is what you SEE, the strip
-           is what you hit. */
-        .lap-strip {
-          position: relative;
-          display: block;
-          height: 56px;
-          cursor: pointer;
-          touch-action: none;
-        }
-        .lap-strip:focus-visible {
-          outline: var(--mock-stroke, 1.5px) solid var(--color-amber);
-          outline-offset: 2px;
-        }
-        .lap-track,
-        .lap-fill {
-          position: absolute;
-          top: 50%;
-          height: 2px;
-          margin-top: -1px;
-        }
-        .lap-track {
-          left: ${THUMB / 2}px;
-          right: ${THUMB / 2}px;
-          background: var(--color-border-strong, var(--color-border));
-        }
-        .lap-fill {
-          left: ${THUMB / 2}px;
-          background: var(--color-amber);
-        }
-        /* Two tiers. A tall tick is a section you would navigate BY; a short
-           one is module furniture that repeats. */
-        .lap-tick {
-          position: absolute;
-          top: 50%;
-          width: var(--mock-stroke, 1.5px);
-          height: 13px;
-          margin: -6.5px 0 0 -0.75px;
-          background: var(--color-text-secondary);
-        }
-        .lap-tick--struct {
-          height: 7px;
-          margin-top: -3.5px;
-          opacity: 0.45;
-        }
-        .lap-tick--now {
-          height: 15px;
-          margin-top: -7.5px;
-          background: var(--color-amber);
-        }
-        .lap-thumb {
-          position: absolute;
-          top: 50%;
-          width: ${THUMB}px;
-          height: ${THUMB}px;
-          margin: -${THUMB / 2}px 0 0 -${THUMB / 2}px;
-          border: var(--mock-stroke, 1.5px) solid var(--color-amber);
-          border-radius: 50%;
-          background: var(--color-bg);
-        }
-        .lap-now {
-          display: flex;
-          flex-direction: column;
-          gap: 0.1rem;
-        }
-        .lap-kicker {
-          font-family: var(--font-family-ui);
-          font-size: var(--ts-xs);
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: var(--color-amber);
-        }
-        .lap-name {
-          font-size: var(--ts-md);
-          line-height: 1.15;
-          color: var(--color-text-primary);
-        }
-        .lap-times {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 0.35rem;
-          font-family: var(--font-family-ui);
-          font-size: var(--ts-sm);
-          color: var(--color-text-secondary);
-        }
-        .lap-rule--tall .lap-strip {
-          height: 78px;
-        }
-        .lap-rule--tall .lap-name {
-          font-size: var(--ts-xl);
-        }
-      `}</style>
-    </div>
-  )
 }
 
 /* ── glyphs ─────────────────────────────────────────────────────────── */
@@ -378,34 +152,8 @@ export default function LabAudioPlayer({
     }
   }, [])
 
-  // Escape leaves drive mode. A driver cannot fight an accidental modal.
-  useEffect(() => {
-    if (!drive) return
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setDrive(false)
-    }
-    document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [drive])
-
-  // Keep the screen awake in drive mode. Absent on iOS Safari before 16.4,
-  // where the promise rejects and nothing else should break.
-  useEffect(() => {
-    if (!drive) return
-    let sentinel: { release: () => Promise<void> } | null = null
-    const nav = navigator as Navigator & {
-      wakeLock?: { request: (kind: 'screen') => Promise<{ release: () => Promise<void> }> }
-    }
-    void nav.wakeLock
-      ?.request('screen')
-      .then((granted) => {
-        sentinel = granted
-      })
-      .catch(() => {})
-    return () => {
-      void sentinel?.release().catch(() => {})
-    }
-  }, [drive])
+  // Escape and the wake lock live in DriveMode itself now, so this page
+  // exercises the same code a reader will.
 
   const transport = (
     <div className="lap-transport">
@@ -413,7 +161,10 @@ export default function LabAudioPlayer({
         type="button"
         className="lap-btn lap-btn--step"
         aria-label="Previous section"
-        onClick={() => seek(sectionBack(chapters, at))}
+        onClick={() => {
+          const to = sectionBackOf(chapters, at, total)
+          if (to !== null) seek(to)
+        }}
       >
         <Icon d={Glyph.prev} />
       </button>
@@ -482,7 +233,12 @@ export default function LabAudioPlayer({
         <div className="lap-phone">
           <p className="lap-eyebrow">{context}</p>
           <h3 className="lap-title">{title}</h3>
-          <SectionRule chapters={chapters} at={at} duration={total} onSeek={seek} />
+          <SectionRule
+            chapters={chapters}
+            currentTime={at}
+            duration={total}
+            onSeek={seek}
+          />
           {transport}
           <button type="button" className="lab-btn lap-wide" onClick={() => setDrive(true)}>
             DRIVE MODE
@@ -587,55 +343,18 @@ export default function LabAudioPlayer({
         </p>
       </section>
 
-      {/* ── drive mode ───────────────────────────────────────────── */}
       {drive && (
-        <div className="lap-drive" role="dialog" aria-modal="true" aria-label="Drive mode">
-          <p className="lap-drive-eyebrow">{context}</p>
-          <SectionRule chapters={chapters} at={at} duration={total} onSeek={seek} tall />
-          <div className="lap-drive-list">
-            {chapters.map((chapter, i) => (
-              <button
-                key={chapter.t}
-                type="button"
-                className={`lap-drive-row${i === index ? ' lap-drive-row--now' : ''}`}
-                aria-label={`Section ${i + 1}, ${chapter.label}`}
-                onClick={() => seek(chapter.t)}
-              >
-                <span>{chapter.label}</span>
-                <span className="lap-drive-t">{formatTime(chapter.t)}</span>
-              </button>
-            ))}
-          </div>
-          <div className="lap-drive-transport">
-            <button
-              type="button"
-              className="lap-drive-side"
-              aria-label="Back 15 seconds"
-              onClick={() => seek(Math.max(0, at - 15))}
-            >
-              <Skip back />
-            </button>
-            <button
-              type="button"
-              className="lap-drive-play"
-              aria-label={playing ? 'Pause the reading' : 'Resume the reading'}
-              onClick={toggle}
-            >
-              <Icon d={playing ? Glyph.pause : Glyph.play} />
-            </button>
-            <button
-              type="button"
-              className="lap-drive-side"
-              aria-label="Forward 15 seconds"
-              onClick={() => seek(Math.min(total, at + 15))}
-            >
-              <Skip />
-            </button>
-          </div>
-          <button type="button" className="lap-drive-exit" onClick={() => setDrive(false)}>
-            EXIT DRIVE MODE
-          </button>
-        </div>
+        <DriveMode
+          title={title}
+          context={context}
+          chapters={chapters}
+          currentTime={at}
+          duration={total}
+          playing={playing}
+          onSeek={seek}
+          onTogglePlay={toggle}
+          onExit={() => setDrive(false)}
+        />
       )}
 
       <style jsx>{`
