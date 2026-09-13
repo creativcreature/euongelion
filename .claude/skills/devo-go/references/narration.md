@@ -94,6 +94,15 @@ ending and a planted dropped phrase before first use. **Use float32 on MPS**:
 float16 returns "!" and generates to the token limit (17 minutes for a 2-minute
 track). Whisper cannot judge transliterations, so those are listed, not failed.
 
+**Read a FAIL before believing it (By the Heel, 2026-09-13).** Every flag on the
+first real week was the transcriber, not the voice: whole-request Whisper skipped
+parenthetical citations and list lines, and slices still misspell names
+(Elazar ben Azariah, Bartholomäus Pur) and archaic spellings ("to-day"). Each
+prose flag was then heard word for word by re-transcribing that one request in
+7-second slices at three offsets. Do that for every flag before calling a phrase
+missing; timing is a second witness (a real 50-word drop pulls a request far
+below the day's median wpm).
+
 ## The two passes
 
 ### 1. Narration
