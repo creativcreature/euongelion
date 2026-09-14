@@ -117,9 +117,23 @@ Every call writes a `PublicationAttempt`.
 | Order | Provider | Credential (server/CI only) | Transport |
 | --- | --- | --- | --- |
 | 1 | `claude-api` | `ANTHROPIC_API_KEY` | Messages API over fetch, `x-api-key` header |
-| 1 | `claude-cli` | `CLAUDE_CODE_OAUTH_TOKEN` | `claude -p`, prompt on stdin |
-| 2 | `gemini` | `GEMINI_API_KEY` / `GOOGLE_API_KEY` | `x-goog-api-key` header; never in the URL |
-| 3 | `deterministic` | none | committed banks + BSB context verses |
+| 1 | `claude-cli` | `CLAUDE_CODE_OAUTH_TOKEN` (or `DAILY_BREAD_CLAUDE_CLI_AUTH=login` locally) | `claude -p`, prompt on stdin, isolated (no settings, hooks or tools) |
+| 2 | `openai` (backup) | `OPENAI_API_KEY` | Chat Completions, bearer header; default `gpt-5-nano` |
+| 3 | `gemini` | `GEMINI_API_KEY` / `GOOGLE_API_KEY` | `x-goog-api-key` header; never in the URL |
+| 4 | `deterministic` | none | committed banks + BSB context verses |
+
+**Backup model choice** (founder: "figure out the best versions that are extremely
+cheap, basically free"). List prices were read from OpenAI's pricing page on
+2026-09-13. Each model then built three real editions with Claude turned off:
+
+| Model | $/1M in / out | Valid tasks | Cost per edition |
+| --- | --- | --- | --- |
+| `gpt-5-nano` | 0.05 / 0.40 | 6/6 | $0.0003–0.0005 |
+| `gpt-4o-mini` | 0.15 / 0.60 | 5/6 | $0.0005–0.0009 |
+| `gpt-4.1-nano` | 0.10 / 0.40 | 3/6 (comic vocabulary) | $0.0005 |
+| `gpt-5.4-nano` | 0.20 / 1.25 | 0/6 (rejects `reasoning_effort=minimal`) | — |
+
+A year of daily backup use at the measured rate costs about $0.20.
 
 `runProviderChain`:
 

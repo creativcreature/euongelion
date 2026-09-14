@@ -15,7 +15,7 @@ import {
 import { createClaudeApiProvider } from '@/lib/daily-bread/providers/claude-api'
 import { createGeminiProvider } from '@/lib/daily-bread/providers/gemini'
 import { cliChildEnv } from '@/lib/daily-bread/providers/claude-cli'
-import { createOpenAiProvider } from '@/lib/daily-bread/providers/openai'
+import { createOpenAiProvider, openAiCostUsd } from '@/lib/daily-bread/providers/openai'
 import {
   composeFrame,
   contextRabbitHoles,
@@ -337,9 +337,47 @@ describe('editorial frame', () => {
     expect(text).toMatch(/quotation/)
     expect(text).toMatch(/In today's world/)
     expect(text).toMatch(/unparseable reference|not found/)
-    expect(text).toMatch(/same as primary/)
+    expect(text).toMatch(/overlaps the primary Scripture/)
     expect(text).toMatch(/comicTemplateId/)
     expect(text).toMatch(/scene: unknown/)
+  })
+
+  it('a rabbit hole inside the day’s own passage is rejected (gpt-5-nano offered Matthew 6:26 for 6:25-30)', async () => {
+    const input = { ...INPUT, scripture: { ...INPUT.scripture, reference: 'Matthew 6:25-30' } }
+    const err = await resolveFrame(
+      {
+        deck: 'A plain question for the morning: what would it look like to put the kingdom ahead of the list today.',
+        rabbitHoles: [
+          { reference: 'Matthew 6:26', why: 'Shows creatures cared for by God, inviting trust beyond everyday worry.' },
+          { reference: 'Luke 12:24', why: 'Luke gives the ravens the same place in the argument against anxiety.' },
+          { reference: 'Luke 12:23-24', why: 'Overlaps the rabbit hole above and should be refused as a duplicate.' },
+        ],
+        comicTemplateId: 'the-lost-sheep',
+        scene: 'grain',
+        sceneLabel: 'Wheat under a low sun',
+      },
+      input,
+      bsbLookup,
+    ).catch((e) => e)
+    const text = (err as OutputValidationError).problems.join(' | ')
+    expect(text).toMatch(/rabbitHoles\[0\]: overlaps/)
+    expect(text).not.toMatch(/rabbitHoles\[1\]/)
+    expect(text).toMatch(/rabbitHoles\[2\]: overlaps/)
+  })
+
+  it('reasoning models get max_completion_tokens and no temperature; costs use verified list prices', async () => {
+    const fetchImpl = vi.fn(async () =>
+      Response.json({ model: 'gpt-5-nano-2025-08-07', choices: [{ message: { content: '{}' } }], usage: { prompt_tokens: 1000, completion_tokens: 1000 } }),
+    )
+    const out = await createOpenAiProvider({ env: { OPENAI_API_KEY: 'sk-proj-TESTKEY0000000000000000' }, fetchImpl })
+      .generate({ task: 't', system: 's', prompt: 'p', maxOutputTokens: 900, temperature: 0.5, signal: new AbortController().signal })
+    const body = JSON.parse(String((fetchImpl.mock.calls[0] as unknown as [string, RequestInit])[1].body))
+    expect(body).toMatchObject({ model: 'gpt-5-nano', max_completion_tokens: 4000, reasoning_effort: 'minimal' })
+    expect(body).not.toHaveProperty('temperature')
+    expect(body).not.toHaveProperty('max_tokens')
+    expect(out.estimatedCostUsd).toBeCloseTo(0.00045, 8)
+    expect(openAiCostUsd('gpt-4.1-nano-2025-04-14', 1_000_000, 0)).toBeCloseTo(0.1, 8)
+    expect(openAiCostUsd('unknown-model', 10, 10)).toBeUndefined()
   })
 
   it('the deterministic frame needs no provider and strips outline labels from the deck', async () => {

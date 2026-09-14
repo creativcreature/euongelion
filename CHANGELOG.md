@@ -31,9 +31,17 @@ Format: Reverse chronological, grouped by sprint/date.
   `DAILY_BREAD_V2=off` at build and runtime is the rollback.
 - **Test file fix.** A NUL byte in a security test made git store the file as binary;
   it is replaced with an escape.
-- **OpenAI secondary provider** (`gpt-4o-mini`), verified live: a normal-quality
-  edition for about $0.0004. Chain: Claude API → Claude CLI → OpenAI → Gemini →
-  deterministic.
+- **OpenAI backup provider,** verified live. Founder: "Open AI is a backup … figure
+  out the best versions that are extremely cheap."
+  - A measured bake-off picked `gpt-5-nano`: 6/6 tasks valid at $0.0003–0.0005 per
+    edition. `gpt-4o-mini` passed 5/6 at twice the cost, `gpt-4.1-nano` 3/6, and
+    `gpt-5.4-nano` failed every call.
+  - Reasoning models are sent `max_completion_tokens` and `reasoning_effort` with no
+    temperature. Cost uses the verified list prices.
+  - Chain: Claude API → Claude CLI → OpenAI → Gemini → deterministic.
+- **Rabbit holes may not overlap the day's passage.** `gpt-5-nano` offered
+  Matthew 6:26 for Matthew 6:25-30; overlaps with the passage or another rabbit
+  hole are now rejected.
 - **Generated strips need a caption.** A generated strip must be one continuous story
   and carry exactly one verbatim Scripture caption. OpenAI's first strip was three
   unrelated pictures with no caption.

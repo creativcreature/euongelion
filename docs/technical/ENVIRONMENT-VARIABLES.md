@@ -363,7 +363,7 @@ source. None of these is `NEXT_PUBLIC_*`, so none reaches a browser bundle.
 | `ANTHROPIC_API_KEY` | GitHub secret | optional | generator chain, Claude API transport |
 | `CLAUDE_CODE_OAUTH_TOKEN` | GitHub secret | optional | generator chain, Claude Code CLI transport |
 | `OPENAI_API_KEY` | GitHub secret | optional | generator chain, secondary provider (Chat Completions) |
-| `DAILY_BREAD_OPENAI_MODEL` | CI env | optional | OpenAI model override (default `gpt-4o-mini`) |
+| `DAILY_BREAD_OPENAI_MODEL` | CI env | optional | OpenAI backup model override (default `gpt-5-nano`, chosen by a measured bake-off) |
 | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) | GitHub secret | optional | generator chain, tertiary provider (default model `gemini-flash-lite-latest`) |
 | `DAILY_BREAD_CLAUDE_MODEL` | CI env | optional | API model override (default `claude-sonnet-5`) |
 | `DAILY_BREAD_CLAUDE_CLI_MODEL`, `DAILY_BREAD_CLAUDE_BIN` | CI env | optional | CLI model / binary override |

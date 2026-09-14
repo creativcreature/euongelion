@@ -124,6 +124,23 @@ export function parseFrame(text: string): RawFrame {
   return obj as RawFrame
 }
 
+interface VerseRange {
+  book: string
+  from: number
+  to: number
+}
+
+/** A parsed reference as a comparable span (chapter * 1000 + verse). */
+export function verseRange(p: NonNullable<ReturnType<typeof parseReference>>): VerseRange {
+  const from = p.startChapter * 1000 + (p.startVerse === 0 ? 1 : p.startVerse)
+  const to = p.endChapter * 1000 + (p.endVerse === 0 ? 999 : p.endVerse)
+  return { book: p.book, from, to }
+}
+
+export function rangesOverlap(a: VerseRange, b: VerseRange): boolean {
+  return a.book === b.book && a.from <= b.to && b.from <= a.to
+}
+
 /**
  * Validate a raw frame and resolve it into an EditorialFrame (verse text
  * filled from the BSB). Throws OutputValidationError with every problem.
@@ -147,8 +164,11 @@ export async function resolveFrame(
   problems.push(...proseProblems(sceneLabel, 'sceneLabel', { min: 8, max: 64 }))
 
   const holes: RabbitHole[] = []
-  const primary = parseReference(input.scripture.reference)?.canonical
-  const seen = new Set<string>(primary ? [primary] : [])
+  // A rabbit hole leads OUT of today's passage: it may not repeat or overlap
+  // the primary Scripture, or another rabbit hole.
+  const taken: VerseRange[] = []
+  const primaryParsed = parseReference(input.scripture.reference)
+  if (primaryParsed) taken.push(verseRange(primaryParsed))
   if (!Array.isArray(raw.rabbitHoles) || raw.rabbitHoles.length < 2 || raw.rabbitHoles.length > 4) {
     problems.push('rabbitHoles: expected 2-4 items')
   } else {
@@ -170,14 +190,15 @@ export async function resolveFrame(
         problems.push(`rabbitHoles[${i}]: reference must be 1-4 verses`)
         continue
       }
-      if (seen.has(parsed.canonical)) {
-        problems.push(`rabbitHoles[${i}]: duplicate or same as primary`)
+      const range = verseRange(parsed)
+      if (taken.some((t) => rangesOverlap(t, range))) {
+        problems.push(`rabbitHoles[${i}]: overlaps the primary Scripture or another rabbit hole (duplicate)`)
         continue
       }
       problems.push(...proseProblems(why, `rabbitHoles[${i}].why`, { min: 30, max: 160 }))
       try {
         const verse = await lookup(parsed.canonical)
-        seen.add(parsed.canonical)
+        taken.push(range)
         holes.push({ reference: verse.canonical, text: cleanText(verse.text, 700), why })
       } catch {
         problems.push(`rabbitHoles[${i}]: reference not found in BSB`)
