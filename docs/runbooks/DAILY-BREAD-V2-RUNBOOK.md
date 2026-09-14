@@ -35,18 +35,19 @@ root. Pipeline commands read secrets from the environment (CI) or `.env.local`
    ```
    A fresh `npm run deploy` rebuilds `.open-next`, so the fixture copy is never
    deployed.
-6. **Turn on the reader.** Set `DAILY_BREAD_V2=on` BOTH as a build variable and as a
-   Worker runtime variable, then deploy through the normal path (verify accounts
-   first; COMMIT-AND-DEPLOY-GUIDE.md). Both are needed because `/daily-bread` and
-   `/daily-bread/archive` are prerendered at build time (ISR 5 minutes). A build without
-   the flag bakes the SA-090 page into the first render, and readers see it until the
-   first revalidation.
-   Check the result with curl:
+6. **Turn on the reader.** Since the go-live commit, `DAILY_BREAD_V2_DEFAULT` in
+   `src/lib/daily-bread/flags.ts` is `'on'`, so a normal deploy turns the reader on.
+   No variable is needed, so build and runtime always agree. `/daily-bread` is
+   prerendered at build time, which is why this is a committed default and not a
+   runtime-only variable. Deploy through the normal path (verify accounts first;
+   COMMIT-AND-DEPLOY-GUIDE.md), then check the result with curl:
    `curl -s https://euangelion.app/daily-bread | grep -o 'Vol\. 1 · No\. [0-9]*'`.
    `/api/admin/daily-bread/health` with `X-Internal-Secret` returns `"status":"ok"`.
 
-**Rollback:** unset `DAILY_BREAD_V2`, or set it to `off`, and redeploy. `/daily-bread`
-is the SA-090 paper again. V2 data stays in its tables.
+**Rollback:** either set `DAILY_BREAD_V2=off` in the build environment (for example
+`DAILY_BREAD_V2=off npm run deploy`) and as a Worker variable, or change
+`DAILY_BREAD_V2_DEFAULT` to `'off'` and deploy. `/daily-bread` is the SA-090 paper
+again. V2 data stays in its tables.
 
 ## Daily operation
 

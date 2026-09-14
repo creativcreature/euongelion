@@ -147,7 +147,7 @@ describe('rendering the frozen edition', () => {
 describe('routes', () => {
   it('the date route 404s while the flag is off, and for bad slugs when on', async () => {
     const { default: Page } = await import('@/app/daily-bread/[date]/page')
-    vi.stubEnv('DAILY_BREAD_V2', '')
+    vi.stubEnv('DAILY_BREAD_V2', 'off')
     await expect(Page({ params: Promise.resolve({ date: '2026-09-14' }) })).rejects.toThrow(/NEXT_HTTP_ERROR_FALLBACK;404|NEXT_NOT_FOUND/)
     vi.stubEnv('DAILY_BREAD_V2', 'on')
     await expect(Page({ params: Promise.resolve({ date: 'not-a-date' }) })).rejects.toThrow(/NEXT_HTTP_ERROR_FALLBACK;404|NEXT_NOT_FOUND/)

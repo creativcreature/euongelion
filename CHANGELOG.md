@@ -26,6 +26,11 @@ Format: Reverse chronological, grouped by sprint/date.
 - **Archive links.** With V2 on, `/daily-bread/archive/[date]` redirects only when a V2
   edition exists for that date; otherwise the SA-114 paper still renders.
 - **Comic ink.** Comic linework prints in the one ink colour.
+- **Go-live default.** `DAILY_BREAD_V2_DEFAULT = 'on'`, so a build and its runtime
+  always agree without any variable, including builds from other sessions.
+  `DAILY_BREAD_V2=off` at build and runtime is the rollback.
+- **Test file fix.** A NUL byte in a security test made git store the file as binary;
+  it is replaced with an escape.
 
 ## 2026-09-13 — The Daily Bread V2: serialized, frozen, self-archiving (behind a flag) — SA-142 (F-184) — v0.8.33
 

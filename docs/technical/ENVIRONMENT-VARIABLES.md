@@ -355,7 +355,7 @@ source. None of these is `NEXT_PUBLIC_*`, so none reaches a browser bundle.
 
 | Name | Where | Required | Purpose |
 | --- | --- | --- | --- |
-| `DAILY_BREAD_V2` | Worker var | no (default off) | `on` renders V2 editions on `/daily-bread` and enables `/daily-bread/YYYY-MM-DD` |
+| `DAILY_BREAD_V2` | build env + Worker var | no (unset = committed default `DAILY_BREAD_V2_DEFAULT`, currently `on`) | `off` is the rollback: `/daily-bread` renders the SA-090 paper and V2 date routes 404. Set it at build AND runtime |
 | `DAILY_BREAD_V2_SOURCE` | Worker var | no (default `supabase`) | `fixture` only for local preview/QA; unknown values throw |
 | `DAILY_BREAD_V2_SCHEDULER` | GitHub repo variable | no (default off) | `enabled` lets `.github/workflows/daily-bread-v2.yml` run |
 | `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SUPABASE_URL` | Worker + GitHub secrets | yes | edition reads (Worker) and pipeline writes (CI) |
