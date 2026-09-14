@@ -80,6 +80,71 @@ describe('reader loaders', () => {
   })
 })
 
+describe('historical snapshots do not follow their sources (plan §13)', () => {
+  const EDITED = 'EDITED SOURCE TEXT: this sentence was written after publication.'
+  const edit = (devotional: Record<string, unknown>) => {
+    const copy = JSON.parse(JSON.stringify(devotional)) as {
+      modules?: { type: string; content?: unknown; body?: unknown }[]
+      panels?: { type: string; content?: unknown }[]
+    }
+    for (const m of copy.modules ?? []) {
+      if (['teaching', 'story', 'insight', 'bridge'].includes(m.type)) {
+        m.content = EDITED
+        m.body = EDITED
+      }
+    }
+    for (const p of copy.panels ?? []) if (p.type !== 'cover') p.content = EDITED
+    return copy
+  }
+  const readingText = (e: DailyEdition) =>
+    e.modules.flatMap((m) => (m.type === 'reading' ? m.blocks.map((b) => ('text' in b ? b.text : '')) : [])).join('\n')
+
+  it('publish → edit the source article → retrieve the issue → the published text is unchanged', async () => {
+    const date = '2026-09-16'
+    const snapRepo = new MemoryDailyBreadRepository()
+    const sources = offlineSources()
+    const d = (at: string) => ({
+      repo: snapRepo,
+      sources,
+      providers: [],
+      clock: fixedClock(at),
+      logger: createRunLogger(`snap-${at}`, { sink: () => {} }),
+      trigger: 'e2e' as const,
+      policy: 'deterministic-only' as const,
+    })
+
+    // 1. Publish.
+    expect(await createDailyBreadEdition(date, d('2026-09-15T23:00:00Z'))).toMatchObject({ result: 'ready' })
+    expect(await publishDailyBreadEdition(date, d('2026-09-16T11:30:00Z'))).toMatchObject({ result: 'published' })
+    const published = (await loadEditionForDate(date, snapRepo))!.edition
+    const originalText = readingText(published)
+    expect(originalText.length).toBeGreaterThan(200)
+
+    // 2. Edit the source article the reading was built from.
+    const original = sources.loadDevotional
+    sources.loadDevotional = async (slug) => {
+      const dev = await original(slug)
+      return dev ? (edit(dev as unknown as Record<string, unknown>) as unknown as typeof dev) : dev
+    }
+    // The edit is real: a fresh build from the edited source carries it.
+    const freshRepo = new MemoryDailyBreadRepository()
+    await createDailyBreadEdition(date, { ...d('2026-09-15T23:00:00Z'), repo: freshRepo })
+    expect(readingText((await freshRepo.getEdition(date, { includeUnpublished: true }))!)).toContain(EDITED)
+
+    // 3. Retrieve the historical issue — even after the scheduler runs again for that date.
+    expect(await createDailyBreadEdition(date, d('2026-09-17T02:15:00Z'))).toMatchObject({ result: 'skipped' })
+    const retrieved = (await loadEditionForDate(date, snapRepo))!.edition
+    const html = renderToStaticMarkup(
+      <DailyBreadEdition edition={retrieved} neighbors={{ previous: null, next: null }} mode="archive" />,
+    )
+
+    // 4. The published text did not silently change.
+    expect(readingText(retrieved)).toBe(originalText)
+    expect(html).not.toContain('EDITED SOURCE TEXT')
+    expect((await snapRepo.getRevisions(date)).map((r) => r.revision)).toEqual([1])
+  }, 180_000)
+})
+
 describe('rendering the frozen edition', () => {
   it('renders the serial, date, navigation and every placed module', () => {
     const html = renderToStaticMarkup(

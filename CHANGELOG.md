@@ -36,6 +36,12 @@ corrected in order, earliest first.
     `/devotional/<unknown>` too): the root `app/loading.tsx` streams the shell
     before `notFound()` runs. Changing it touches every route, so it is left for the
     founder to decide.
+- **Deviation 3 (plan §13), corrected.** Added the test the plan specifies:
+  - Publish an edition, then edit the source article its reading was built from.
+  - Prove the edit is real: a fresh build carries the edited text.
+  - Run the scheduler for that date again, then retrieve and render the issue.
+  - Result: the published reading text is byte-identical, the edited text is absent
+    from the page, and there is still one revision.
 
 ## 2026-09-14 — Daily Bread V2: the backup provider carries a real edition — SA-142 (F-184)
 
