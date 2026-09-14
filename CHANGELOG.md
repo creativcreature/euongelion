@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-13 — Daily Bread V2: real providers verified, archive links kept — SA-142 (F-184)
+
+- **Real generation verified.** A real Claude Code build produced a normal-quality
+  edition: the frame and a model-composed wordless strip both passed validation on the
+  first attempt.
+- **Provider fixes from that run.**
+  - The CLI child drops parent Claude Code session variables, which were making it
+    exit 1 as a nested session.
+  - With a subscription token or local login, the CLI no longer picks up an unfunded
+    API key.
+  - The CLI runs isolated: no user settings or hooks, no tools, no session file.
+- **Clearer provider errors.** Every provider error now carries the provider's own
+  redacted reason (for example "credit balance is too low"), and billing failures are
+  never retried.
+- **Gemini** moves to `gemini-flash-lite-latest`. The pinned 2.0 and 2.5 lite models
+  are withdrawn.
+- **Rabbit holes.** A reference that runs past a chapter's end now names only the
+  verses that exist ("Matthew 6:34", not "6:34-36").
+- **Archive links.** With V2 on, `/daily-bread/archive/[date]` redirects only when a V2
+  edition exists for that date; otherwise the SA-114 paper still renders.
+- **Comic ink.** Comic linework prints in the one ink colour.
+
 ## 2026-09-13 — The Daily Bread V2: serialized, frozen, self-archiving (behind a flag) — SA-142 (F-184) — v0.8.33
 
 Founder: _"There was a massive update happening to my Daily Bread feature on my

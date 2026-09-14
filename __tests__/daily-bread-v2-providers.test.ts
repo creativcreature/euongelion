@@ -14,6 +14,7 @@ import {
 } from '@/lib/daily-bread/providers/types'
 import { createClaudeApiProvider } from '@/lib/daily-bread/providers/claude-api'
 import { createGeminiProvider } from '@/lib/daily-bread/providers/gemini'
+import { cliChildEnv } from '@/lib/daily-bread/providers/claude-cli'
 import {
   composeFrame,
   contextRabbitHoles,
@@ -206,6 +207,54 @@ describe('transports', () => {
   it('unconfigured transports report unavailable', () => {
     expect(createClaudeApiProvider({ env: {} }).available()).toBe(false)
     expect(createGeminiProvider({ env: {} }).available()).toBe(false)
+  })
+
+  it('HTTP failures carry the provider’s redacted reason; billing is never retried', async () => {
+    const billing = vi.fn(async () =>
+      Response.json(
+        { type: 'error', error: { type: 'invalid_request_error', message: 'Your credit balance is too low to access the Anthropic API.' } },
+        { status: 400 },
+      ),
+    )
+    const err = await createClaudeApiProvider({ env: { ANTHROPIC_API_KEY: 'sk-ant-test-key-123456' }, fetchImpl: billing })
+      .generate({ task: 't', system: 's', prompt: 'p', maxOutputTokens: 5, signal: new AbortController().signal })
+      .catch((e) => e)
+    expect(err.message).toContain('(billing)')
+    expect(err.message).toContain('credit balance is too low')
+    expect(err.retryable).toBe(false)
+
+    const depleted = vi.fn(async () =>
+      Response.json({ error: { code: 429, message: 'Your prepayment credits are depleted. Manage your project and billing.' } }, { status: 429 }),
+    )
+    const gErr = await createGeminiProvider({ env: { GEMINI_API_KEY: 'AIzaTESTKEY000000000000000' }, fetchImpl: depleted })
+      .generate({ task: 't', system: 's', prompt: 'p', maxOutputTokens: 5, signal: new AbortController().signal })
+      .catch((e) => e)
+    expect(gErr.retryable).toBe(false)
+    expect(gErr.message).not.toContain('AIza')
+  })
+
+  it('the CLI child drops parent session variables and prefers the subscription over an API key', () => {
+    const child = cliChildEnv({
+      PATH: '/usr/bin',
+      CLAUDECODE: '1',
+      CLAUDE_CODE_ENTRYPOINT: 'cli',
+      CLAUDE_CODE_SESSION_ID: 'abc',
+      CLAUDE_CODE_OAUTH_TOKEN: 'oauth-token',
+      ANTHROPIC_API_KEY: 'sk-ant-unfunded',
+    })
+    expect(child).toMatchObject({ PATH: '/usr/bin', CLAUDE_CODE_OAUTH_TOKEN: 'oauth-token' })
+    expect(child).not.toHaveProperty('CLAUDECODE')
+    expect(child).not.toHaveProperty('CLAUDE_CODE_ENTRYPOINT')
+    expect(child).not.toHaveProperty('CLAUDE_CODE_SESSION_ID')
+    expect(child).not.toHaveProperty('ANTHROPIC_API_KEY')
+    expect(cliChildEnv({ ANTHROPIC_API_KEY: 'sk-ant-funded' })).toHaveProperty('ANTHROPIC_API_KEY')
+    expect(cliChildEnv({ ANTHROPIC_API_KEY: 'k', DAILY_BREAD_CLAUDE_CLI_AUTH: 'login' })).not.toHaveProperty('ANTHROPIC_API_KEY')
+  })
+
+  it('a lookup past the end of a chapter names only the verses that exist', async () => {
+    expect((await bsbLookup('Matthew 6:34-36')).canonical).toBe('Matthew 6:34')
+    expect((await bsbLookup('John 3:16')).canonical).toBe('John 3:16')
+    expect((await bsbLookup('Jude 3-5')).canonical).toBe('Jude 3-5')
   })
 })
 

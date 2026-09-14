@@ -5,7 +5,7 @@
  * Model: DAILY_BREAD_GEMINI_MODEL, default gemini-2.0-flash-lite.
  */
 import { estimateCostUsd } from '@/lib/brain/cost'
-import { ProviderError, retryableStatus, type TextProvider } from './types'
+import { httpFailure, ProviderError, type TextProvider } from './types'
 
 const API_ROOT = 'https://generativelanguage.googleapis.com/v1beta/models'
 
@@ -18,7 +18,10 @@ export function createGeminiProvider(
 ): TextProvider {
   const env = options.env ?? process.env
   const fetchImpl = options.fetchImpl ?? fetch
-  const model = options.model ?? env.DAILY_BREAD_GEMINI_MODEL ?? 'gemini-2.0-flash-lite'
+  // Pinned lite models keep being withdrawn (2.0 and 2.5 flash-lite both 404
+  // for this key on 2026-09-13: "no longer available to new users"). Google's
+  // maintained alias follows the current lite model.
+  const model = options.model ?? env.DAILY_BREAD_GEMINI_MODEL ?? 'gemini-flash-lite-latest'
   const key = () => (env.GEMINI_API_KEY ?? env.GOOGLE_API_KEY ?? '').trim()
 
   return {
@@ -51,10 +54,7 @@ export function createGeminiProvider(
         })
       }
       if (!response.ok) {
-        throw new ProviderError(`gemini: HTTP ${response.status}`, {
-          retryable: retryableStatus(response.status),
-          status: response.status,
-        })
+        throw await httpFailure('gemini', response)
       }
       const payload = (await response.json()) as {
         candidates?: { content?: { parts?: { text?: string }[] } }[]

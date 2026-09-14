@@ -4,7 +4,7 @@
  * default claude-sonnet-5.
  */
 import { estimateCostUsd } from '@/lib/brain/cost'
-import { ProviderError, retryableStatus, type TextProvider } from './types'
+import { httpFailure, ProviderError, type TextProvider } from './types'
 
 const API_URL = 'https://api.anthropic.com/v1/messages'
 
@@ -53,10 +53,7 @@ export function createClaudeApiProvider(
         )
       }
       if (!response.ok) {
-        throw new ProviderError(`claude-api: HTTP ${response.status}`, {
-          retryable: retryableStatus(response.status),
-          status: response.status,
-        })
+        throw await httpFailure('claude-api', response)
       }
       const payload = (await response.json()) as {
         content?: { type?: string; text?: string }[]

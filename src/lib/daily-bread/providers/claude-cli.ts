@@ -7,7 +7,34 @@
  * The prompt travels on stdin, so it never appears in a process listing.
  */
 import { spawn, spawnSync } from 'node:child_process'
+import { tmpdir } from 'node:os'
+import { errorMessage } from '../redact'
 import { ProviderError, type TextProvider } from './types'
+
+/**
+ * The child's environment. Three rules, each learned from a real failure
+ * (2026-09-13):
+ *  - Parent Claude Code session variables are dropped, or the child refuses
+ *    to start as a nested session (exit 1).
+ *  - With a subscription token (or DAILY_BREAD_CLAUDE_CLI_AUTH=login for a
+ *    locally logged-in CLI) ANTHROPIC_API_KEY is removed, because the CLI
+ *    prefers an API key and an unfunded one fails with "credit balance too low".
+ *  - Otherwise the API key, if any, authenticates the CLI.
+ */
+export function cliChildEnv(
+  env: Record<string, string | undefined>,
+): Record<string, string | undefined> {
+  const out: Record<string, string | undefined> = {}
+  for (const [k, v] of Object.entries(env)) {
+    if (k === 'CLAUDECODE' || k === 'CLAUDE_PID') continue
+    if (k.startsWith('CLAUDE_CODE_') && k !== 'CLAUDE_CODE_OAUTH_TOKEN') continue
+    out[k] = v
+  }
+  const subscription =
+    Boolean((env.CLAUDE_CODE_OAUTH_TOKEN ?? '').trim()) || env.DAILY_BREAD_CLAUDE_CLI_AUTH === 'login'
+  if (subscription) delete out.ANTHROPIC_API_KEY
+  return out
+}
 
 export function createClaudeCliProvider(
   options: {
@@ -22,7 +49,11 @@ export function createClaudeCliProvider(
   let binaryPresent: boolean | null = null
 
   const hasCredential = () =>
-    Boolean((env.CLAUDE_CODE_OAUTH_TOKEN ?? '').trim() || (env.ANTHROPIC_API_KEY ?? '').trim())
+    Boolean(
+      (env.CLAUDE_CODE_OAUTH_TOKEN ?? '').trim() ||
+        (env.ANTHROPIC_API_KEY ?? '').trim() ||
+        env.DAILY_BREAD_CLAUDE_CLI_AUTH === 'login',
+    )
 
   return {
     id: 'claude-cli',
@@ -40,12 +71,24 @@ export function createClaudeCliProvider(
       return binaryPresent
     },
     async generate(request) {
-      const args = ['-p', '--output-format', 'text']
+      // Isolated: no user/project settings (no hooks), no tools, no session
+      // file, and a neutral cwd so no CLAUDE.md is auto-loaded into the prompt.
+      const args = [
+        '-p',
+        '--output-format',
+        'text',
+        '--setting-sources',
+        '',
+        '--tools',
+        '',
+        '--no-session-persistence',
+      ]
       if (model) args.push('--model', model)
       const input = `${request.system}\n\n---\n\n${request.prompt}`
       return await new Promise((resolve, reject) => {
         const child = spawn(bin, args, {
-          env: { ...process.env, ...env },
+          env: cliChildEnv({ ...process.env, ...env }) as NodeJS.ProcessEnv,
+          cwd: tmpdir(),
           stdio: ['pipe', 'pipe', 'pipe'],
           signal: request.signal,
         })
@@ -73,12 +116,15 @@ export function createClaudeCliProvider(
             resolve({ text: stdout.trim(), model: model || 'claude-code-default' })
             return
           }
-          const authFailure = /invalid api key|oauth|unauthori[sz]ed|please run \/login|401/i.test(stderr)
-          const quota = /rate limit|usage limit|quota|429|overloaded/i.test(stderr)
+          const detail = `${stderr}\n${stdout}`
+          const authFailure = /invalid api key|oauth|unauthori[sz]ed|please run \/login|401/i.test(detail)
+          const billing = /credit balance|billing/i.test(detail)
+          const quota = /rate limit|usage limit|quota|429|overloaded/i.test(detail)
+          const reason = detail.trim().split('\n').filter(Boolean).slice(-1)[0] ?? ''
           reject(
             new ProviderError(
-              `claude-cli: exit ${code}${authFailure ? ' (auth)' : quota ? ' (quota)' : ''}`,
-              { retryable: !authFailure && !quota },
+              `claude-cli: exit ${code}${authFailure ? ' (auth)' : billing ? ' (billing)' : quota ? ' (quota)' : ''}${reason ? ` — ${errorMessage(reason, 160).replace(/^Error: /, '')}` : ''}`,
+              { retryable: !authFailure && !billing && !quota },
             ),
           )
         })

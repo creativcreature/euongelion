@@ -10,6 +10,17 @@
   color: var(--mock-ink, currentColor);
 }
 
+/* currentColor strokes inside the drawing print in the one ink (cobalt), not
+   the near-black text colour; the dark edition inverts to the cream ink. */
+.db2-comic svg {
+  color: var(--mock-blue, currentColor);
+}
+
+.dark .db2-comic svg,
+.mock-home.is-dark .db2-comic svg {
+  color: var(--mock-ink, currentColor);
+}
+
 .db2-comic-strip {
   display: block;
   width: 100%;

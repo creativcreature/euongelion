@@ -222,13 +222,13 @@ export async function contextRabbitHoles(
     const from = Math.max(1, parsed.startVerse - 3)
     candidates.push({
       ref: at(parsed.startChapter, from, parsed.startVerse - 1),
-      why: `The verses just before ${parsed.canonical}, which set the scene for today's passage.`,
+      why: `What comes just before ${parsed.canonical}, which sets the scene for today's passage.`,
     })
   }
   if (parsed.endVerse > 0) {
     candidates.push({
       ref: at(parsed.endChapter, parsed.endVerse + 1, parsed.endVerse + 3),
-      why: `The verses that follow ${parsed.canonical}, where the passage keeps going.`,
+      why: `What follows ${parsed.canonical}, where the passage keeps going.`,
     })
   } else if (!single) {
     candidates.push({

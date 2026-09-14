@@ -6,6 +6,7 @@
  * at call time and never stored on the provider object, so a provider can be
  * logged or serialized without leaking a key.
  */
+import { errorMessage } from '../redact'
 import type { ProviderId } from '../types'
 
 export interface TextGenerationRequest {
@@ -59,4 +60,41 @@ export class OutputValidationError extends Error {
 
 export function retryableStatus(status: number): boolean {
   return status === 408 || status === 409 || status === 429 || status >= 500
+}
+
+const BILLING_RE = /credit balance|billing|payment required|insufficient[_ ]quota|exceeded your current quota/i
+
+/**
+ * Turn a non-OK HTTP response into a ProviderError that says WHY (the
+ * provider's own error message, redacted and bounded), so an attempt row reads
+ * "credit balance is too low" rather than "HTTP 400". Billing failures are
+ * never retried.
+ */
+export async function httpFailure(provider: string, response: Response): Promise<ProviderError> {
+  let reason = ''
+  try {
+    const body = (await response.text()).slice(0, 4000)
+    try {
+      const parsed = JSON.parse(body) as { error?: { message?: unknown } | string; message?: unknown }
+      const msg =
+        typeof parsed.error === 'string'
+          ? parsed.error
+          : typeof parsed.error?.message === 'string'
+            ? parsed.error.message
+            : typeof parsed.message === 'string'
+              ? parsed.message
+              : ''
+      reason = msg || body
+    } catch {
+      reason = body
+    }
+  } catch {
+    reason = ''
+  }
+  const clean = reason ? errorMessage(reason, 200).replace(/^Error: /, '') : ''
+  const billing = BILLING_RE.test(reason)
+  return new ProviderError(
+    `${provider}: HTTP ${response.status}${billing ? ' (billing)' : ''}${clean ? ` — ${clean}` : ''}`,
+    { retryable: !billing && retryableStatus(response.status), status: response.status },
+  )
 }

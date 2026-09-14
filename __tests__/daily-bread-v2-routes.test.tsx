@@ -163,9 +163,21 @@ describe('routes', () => {
     vi.doUnmock('@/components/edition/EditionPage')
   })
 
-  it('the legacy archive date route redirects to the canonical date route when the flag is on', async () => {
+  it('the legacy archive date route redirects only when a V2 edition exists for that date', async () => {
     vi.stubEnv('DAILY_BREAD_V2', 'on')
+    vi.resetModules()
+    vi.doMock('@/lib/daily-bread/read', async (orig) => ({
+      ...(await orig<typeof import('@/lib/daily-bread/read')>()),
+      loadEditionForDate: async (date: string) => (date === '2026-09-14' ? { edition: {}, neighbors: {} } : null),
+    }))
+    vi.doMock('@/lib/edition/archive', () => ({ isArchivedEdition: () => true }))
+    vi.doMock('@/components/edition/EditionPage', () => ({ default: () => 'LEGACY_EDITION_PAGE' }))
     const { default: Page } = await import('@/app/daily-bread/archive/[date]/page')
     await expect(Page({ params: Promise.resolve({ date: '2026-09-14' }) })).rejects.toThrow(/NEXT_REDIRECT/)
+    const legacy = await Page({ params: Promise.resolve({ date: '2026-08-20' }) })
+    expect(renderToStaticMarkup(legacy as never)).toContain('LEGACY_EDITION_PAGE')
+    vi.doUnmock('@/lib/daily-bread/read')
+    vi.doUnmock('@/lib/edition/archive')
+    vi.doUnmock('@/components/edition/EditionPage')
   })
 })

@@ -85,9 +85,31 @@ export interface BaseEdition {
 
 export const MAX_PRIMARY_VERSES = 6
 
+/**
+ * BSB lookup whose reference names the verses actually returned: a range that
+ * runs past the end of a chapter ("Matthew 6:34-36") is reported as the verses
+ * that exist ("Matthew 6:34"), never as verses that are not there.
+ */
 export async function bsbLookup(reference: string) {
   const r = await getVerse(reference, 'BSB')
-  return { canonical: r.canonical, text: r.text }
+  const parsed = parseReference(reference)
+  const first = r.verses[0]
+  const last = r.verses[r.verses.length - 1]
+  if (!parsed || !first || !last) return { canonical: r.canonical, text: r.text }
+  const name = BIBLE_BOOK_META[parsed.book].name
+  const single = isSingleChapterBook(parsed.book)
+  let canonical: string
+  if (single) {
+    canonical = first.verse === last.verse ? `${name} ${first.verse}` : `${name} ${first.verse}-${last.verse}`
+  } else if (first.chapter === last.chapter) {
+    canonical =
+      first.verse === last.verse
+        ? `${name} ${first.chapter}:${first.verse}`
+        : `${name} ${first.chapter}:${first.verse}-${last.verse}`
+  } else {
+    canonical = `${name} ${first.chapter}:${first.verse}-${last.chapter}:${last.verse}`
+  }
+  return { canonical, text: r.text }
 }
 
 async function readDevotionalFromDisk(slug: string): Promise<Devotional | null> {

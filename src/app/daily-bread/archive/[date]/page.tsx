@@ -14,6 +14,8 @@ import EditionPage from '@/components/edition/EditionPage'
 import { isArchivedEdition } from '@/lib/edition/archive'
 import { dailyBreadV2Enabled } from '@/lib/daily-bread/flags'
 import { isValidDateSlug } from '@/lib/daily-bread/time'
+import { loadEditionForDate } from '@/lib/daily-bread/read'
+import { errorMessage } from '@/lib/daily-bread/redact'
 
 export const dynamic = 'force-dynamic'
 
@@ -38,7 +40,15 @@ export default async function ArchivedEditionPage({
   const { date } = await params
   if (dailyBreadV2Enabled()) {
     if (!isValidDateSlug(date)) notFound()
-    redirect(`/daily-bread/${date}`)
+    // Existing links keep working: a date with a V2 edition moves to its
+    // canonical address; a date without one still renders the SA-114 paper.
+    let hasV2 = false
+    try {
+      hasV2 = (await loadEditionForDate(date)) !== null
+    } catch (error) {
+      console.error('[daily-bread] archive redirect lookup failed', errorMessage(error))
+    }
+    if (hasV2) redirect(`/daily-bread/${date}`)
   }
   if (!isArchivedEdition(date)) {
     notFound()
