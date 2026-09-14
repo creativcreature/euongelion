@@ -36,6 +36,20 @@ export function cliChildEnv(
   return out
 }
 
+/**
+ * Why the CLI failed, when the reason makes a retry pointless. Seen in CI on
+ * 2026-09-14: "You've hit your weekly limit · resets Sep 16, 9am (UTC)" — two
+ * retries of that burned time for nothing. null = worth one retry.
+ */
+export function classifyCliFailure(detail: string): 'auth' | 'billing' | 'quota' | null {
+  if (/invalid api key|oauth|unauthori[sz]ed|please run \/login|\b401\b/i.test(detail)) return 'auth'
+  if (/credit balance|billing/i.test(detail)) return 'billing'
+  if (/rate limit|usage limit|weekly limit|daily limit|hit your .{0,20}limit|quota|\b429\b|resets? (on )?[A-Z][a-z]{2} \d/i.test(detail)) {
+    return 'quota'
+  }
+  return null
+}
+
 export function createClaudeCliProvider(
   options: {
     env?: Record<string, string | undefined>
@@ -117,14 +131,12 @@ export function createClaudeCliProvider(
             return
           }
           const detail = `${stderr}\n${stdout}`
-          const authFailure = /invalid api key|oauth|unauthori[sz]ed|please run \/login|401/i.test(detail)
-          const billing = /credit balance|billing/i.test(detail)
-          const quota = /rate limit|usage limit|quota|429|overloaded/i.test(detail)
+          const kind = classifyCliFailure(detail)
           const reason = detail.trim().split('\n').filter(Boolean).slice(-1)[0] ?? ''
           reject(
             new ProviderError(
-              `claude-cli: exit ${code}${authFailure ? ' (auth)' : billing ? ' (billing)' : quota ? ' (quota)' : ''}${reason ? ` — ${errorMessage(reason, 160).replace(/^Error: /, '')}` : ''}`,
-              { retryable: !authFailure && !billing && !quota },
+              `claude-cli: exit ${code}${kind ? ` (${kind})` : ''}${reason ? ` — ${errorMessage(reason, 160).replace(/^Error: /, '')}` : ''}`,
+              { retryable: kind === null },
             ),
           )
         })

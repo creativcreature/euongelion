@@ -14,7 +14,7 @@ import {
 } from '@/lib/daily-bread/providers/types'
 import { createClaudeApiProvider } from '@/lib/daily-bread/providers/claude-api'
 import { createGeminiProvider } from '@/lib/daily-bread/providers/gemini'
-import { cliChildEnv } from '@/lib/daily-bread/providers/claude-cli'
+import { classifyCliFailure, cliChildEnv } from '@/lib/daily-bread/providers/claude-cli'
 import { createOpenAiProvider, openAiCostUsd } from '@/lib/daily-bread/providers/openai'
 import {
   composeFrame,
@@ -251,6 +251,14 @@ describe('transports', () => {
       .catch((e) => e)
     expect(gErr.retryable).toBe(false)
     expect(gErr.message).not.toContain('AIza')
+  })
+
+  it('CLI failures that make a retry pointless are classified (the CI weekly limit)', () => {
+    expect(classifyCliFailure("You've hit your weekly limit · resets Sep 16, 9am (UTC)")).toBe('quota')
+    expect(classifyCliFailure('Claude usage limit reached. Your limit will reset at 5pm')).toBe('quota')
+    expect(classifyCliFailure('Invalid API key · Please run /login')).toBe('auth')
+    expect(classifyCliFailure('Your credit balance is too low to access the Anthropic API.')).toBe('billing')
+    expect(classifyCliFailure('Error: socket hang up')).toBeNull()
   })
 
   it('the CLI child drops parent session variables and prefers the subscription over an API key', () => {
