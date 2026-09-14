@@ -161,6 +161,27 @@ export async function httpImageAvailable(src: string, fetchImpl: typeof fetch = 
   }
 }
 
+/**
+ * The reprint bank from every strip row: founder-PUBLISHED strips only, and
+ * never one whose image file is shared with another strip row. A shared file
+ * means one strip was written over another in storage (2026-08-24: "No. 4: The
+ * Receipt" over the published No. 1's echo-dust-004.jpg), so the picture no
+ * longer matches the caption — reprinting it would print the wrong strip.
+ */
+export function publishedStripBank(
+  rows: { id: string; publish_date: string; status: string; payload: unknown }[],
+): StripBankEntry[] {
+  const users = new Map<string, number>()
+  for (const row of rows) {
+    const image = (row.payload as StripPayload | null)?.image
+    if (typeof image === 'string') users.set(image, (users.get(image) ?? 0) + 1)
+  }
+  return rows
+    .filter((row) => row.status === 'published')
+    .map(stripBankEntryFromRow)
+    .filter((e): e is StripBankEntry => e !== null && (users.get(e.image) ?? 0) <= 1)
+}
+
 /** The bank row mapper, shared by the Supabase source and tests. */
 export function stripBankEntryFromRow(row: { id: string; publish_date: string; payload: unknown }): StripBankEntry | null {
   return payloadEntry(row.id, row.publish_date, (row.payload ?? {}) as StripPayload)

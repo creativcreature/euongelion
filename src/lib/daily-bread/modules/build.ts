@@ -173,17 +173,15 @@ export function defaultEditionSources(): EditionSources {
     goodNews: (dateSlug) => goodNewsForDate(dateSlug),
     async publishedStrips() {
       const { createAdminClient } = await import('@/lib/supabase/admin')
-      const { stripBankEntryFromRow } = await import('../comic/chain')
+      const { publishedStripBank } = await import('../comic/chain')
       const { data, error } = await createAdminClient()
         .from('edition_items')
-        .select('id, publish_date, payload')
+        .select('id, publish_date, status, payload')
         .eq('kind', 'strip')
-        .eq('status', 'published')
         .order('publish_date', { ascending: true })
       if (error) throw new Error(`published strips read failed: ${error.message}`)
-      return ((data ?? []) as { id: string; publish_date: string; payload: unknown }[])
-        .map(stripBankEntryFromRow)
-        .filter((e): e is StripBankEntry => e !== null)
+      const rows = (data ?? []) as { id: string; publish_date: string; status: string; payload: unknown }[]
+      return publishedStripBank(rows)
     },
     async assetAvailable(src) {
       const { httpImageAvailable } = await import('../comic/chain')

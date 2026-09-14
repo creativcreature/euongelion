@@ -14,6 +14,7 @@ import { ModuleView } from '@/components/daily-bread/ModuleViews'
 import {
   composeComic,
   httpImageAvailable,
+  publishedStripBank,
   stripBankEntryFromRow,
   type StripBankEntry,
 } from '@/lib/daily-bread/comic/chain'
@@ -129,6 +130,19 @@ describe('the funnies are Echo & Dust', () => {
     expect(stripBankEntryFromRow({ id: 'x', publish_date: '2026-08-20', payload: { image: `${STORAGE}/a.jpg`, width: 1512, height: 745 } })).toBeNull()
     expect(BANK).toHaveLength(3)
     expect(BANK[1]).toMatchObject({ width: 1512, height: 745 })
+  })
+
+  it('a strip whose file another row also uses is never reprinted (the 2026-08-24 overwrite)', () => {
+    const rows = [
+      { ...PUBLISHED_ROWS[0], status: 'published', payload: { ...PUBLISHED_ROWS[0].payload, image: `${STORAGE}/echo-dust-004.jpg`, panelId: 'echo-dust-004' } },
+      { id: 'd4', publish_date: '2026-08-23', status: 'draft', payload: { image: `${STORAGE}/echo-dust-004.jpg`, alt: 'Echo & Dust', caption: 'Echo & Dust — No. 4: The Receipt', panelId: 'echo-dust-004', width: 1512, height: 745 } },
+      { ...PUBLISHED_ROWS[1], status: 'published' },
+      { id: 'r6', publish_date: '2026-08-25', status: 'rejected', payload: { image: `${STORAGE}/echo-dust-006.jpg`, alt: 'x', caption: 'Echo & Dust — No. 6', panelId: 'echo-dust-006', width: 1512, height: 745 } },
+    ]
+    expect(publishedStripBank(rows).map((e) => e.panelId)).toEqual(['echo-dust-005-windowseat'])
+    // Once No. 1's row points at its own restored file, it is back in the bank.
+    rows[0] = { ...PUBLISHED_ROWS[0], status: 'published' }
+    expect(publishedStripBank(rows).map((e) => e.panelId)).toEqual(['echo-dust-001-microwave-minute', 'echo-dust-005-windowseat'])
   })
 
   it('the build-time asset check wants a 200 image over https', async () => {

@@ -112,6 +112,10 @@ corrected in order, earliest first.
     Files are now named by date plus a run stamp and are never overwritten. The
     committed master was re-uploaded as `strip/echo-dust-001-microwave-minute.jpg`
     and verified byte-identical.
+  - **Shared-file guard.** A strip whose image file is shared with another strip row
+    is never reprinted. Until No. 1's row is repointed, No. 1 is kept out of the
+    bank, so the next build cannot print The Receipt captioned as The Microwave
+    Minute.
   - **New command.** `repair-comics` corrects published editions by revision. A
     production dry run lists 23 editions to correct: 21 get Echo & Dust reprints,
     and Aug 18–19 (before the first strip) lose the section. Aug 20–24 already carry
