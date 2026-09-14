@@ -153,6 +153,22 @@ describe('routes', () => {
     await expect(Page({ params: Promise.resolve({ date: 'not-a-date' }) })).rejects.toThrow(/NEXT_HTTP_ERROR_FALLBACK;404|NEXT_NOT_FOUND/)
   })
 
+  it('canonical metadata: /daily-bread and the dated route both name the dated issue URL', async () => {
+    vi.stubEnv('DAILY_BREAD_V2', 'on')
+    vi.resetModules()
+    vi.doMock('@/lib/daily-bread/read', async (orig) => ({
+      ...(await orig<typeof import('@/lib/daily-bread/read')>()),
+      loadLiveEdition: async () => ({ liveDate: '2026-09-14', edition, neighbors: { previous: null, next: null }, isFallbackToPrevious: false }),
+      loadEditionForDate: async (date: string) => (date === '2026-09-14' ? { edition, neighbors: { previous: null, next: null } } : null),
+    }))
+    const live = await (await import('@/app/daily-bread/page')).generateMetadata()
+    expect(live.alternates?.canonical).toBe('/daily-bread/2026-09-14')
+    expect(live.openGraph).toMatchObject({ url: 'https://euangelion.app/daily-bread/2026-09-14' })
+    const dated = await (await import('@/app/daily-bread/[date]/page')).generateMetadata({ params: Promise.resolve({ date: '2026-09-14' }) })
+    expect(dated.alternates?.canonical).toBe('/daily-bread/2026-09-14')
+    vi.doUnmock('@/lib/daily-bread/read')
+  })
+
   it('/daily-bread renders the SA-090 paper when the flag is off', async () => {
     vi.stubEnv('DAILY_BREAD_V2', 'off')
     vi.doMock('@/components/edition/EditionPage', () => ({ default: () => 'LEGACY_EDITION_PAGE' }))

@@ -37,16 +37,20 @@ export async function generateMetadata(): Promise<Metadata> {
       const { edition } = await liveV2()
       if (edition) {
         const title = `${edition.title} | The Daily Bread`
+        // Plan §10: the dated URL is the canonical issue address. /daily-bread
+        // is a pointer to today's issue, so it names that issue as canonical.
+        const canonical = `/daily-bread/${edition.editionDate}`
         return {
           title,
           description: edition.deck || 'The Daily Bread from Euangelion.',
-          alternates: { canonical: '/daily-bread' },
+          alternates: { canonical },
           openGraph: {
             title,
             description: edition.deck,
             type: 'article',
-            url: 'https://euangelion.app/daily-bread',
-            images: [`/daily-bread/${edition.editionDate}/opengraph-image`],
+            url: `https://euangelion.app${canonical}`,
+            publishedTime: edition.publishedAt ?? undefined,
+            images: [`${canonical}/opengraph-image`],
           },
         }
       }

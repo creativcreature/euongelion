@@ -26,6 +26,16 @@ corrected in order, earliest first.
     `leadPlateRegistryLink()`.
   - **Production check.** Reads verified: No. 001 returns 2 revisions; No. 002's
     plate links to `series-hero` / `kingdom`.
+- **Deviation 2 (plan §10), corrected in code, not yet deployed.**
+  - **Canonical URL.** `/daily-bread` now names the dated issue URL as canonical (and
+    in `og:url`, with `publishedTime`), as the dated route already did. Covered by
+    a route test.
+  - **Open decision: HTTP status.** Unpublished and unknown dates render the
+    not-found page with `noindex` and no edition content (checked on production for
+    Sep 15), but return HTTP 200. That is site-wide (`/series/<unknown>`,
+    `/devotional/<unknown>` too): the root `app/loading.tsx` streams the shell
+    before `notFound()` runs. Changing it touches every route, so it is left for the
+    founder to decide.
 
 ## 2026-09-14 — Daily Bread V2: the backup provider carries a real edition — SA-142 (F-184)
 
