@@ -15,6 +15,7 @@ import {
 import { createClaudeApiProvider } from '@/lib/daily-bread/providers/claude-api'
 import { createGeminiProvider } from '@/lib/daily-bread/providers/gemini'
 import { cliChildEnv } from '@/lib/daily-bread/providers/claude-cli'
+import { createOpenAiProvider } from '@/lib/daily-bread/providers/openai'
 import {
   composeFrame,
   contextRabbitHoles,
@@ -207,6 +208,25 @@ describe('transports', () => {
   it('unconfigured transports report unavailable', () => {
     expect(createClaudeApiProvider({ env: {} }).available()).toBe(false)
     expect(createGeminiProvider({ env: {} }).available()).toBe(false)
+    expect(createOpenAiProvider({ env: {} }).available()).toBe(false)
+  })
+
+  it('openai sends the key only as a bearer header, asks for JSON, and reports usage', async () => {
+    const fetchImpl = vi.fn(async () =>
+      Response.json({
+        model: 'gpt-4o-mini-2024-07-18',
+        choices: [{ message: { content: '{"ok":true}' } }],
+        usage: { prompt_tokens: 12, completion_tokens: 4 },
+      }),
+    )
+    const p = createOpenAiProvider({ env: { OPENAI_API_KEY: 'sk-proj-TESTKEY0000000000000000' }, fetchImpl })
+    const out = await p.generate({ task: 't', system: 's', prompt: 'p', maxOutputTokens: 5, json: true, signal: new AbortController().signal })
+    expect(out).toMatchObject({ text: '{"ok":true}', inputTokens: 12, outputTokens: 4 })
+    const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit]
+    expect(url).toBe('https://api.openai.com/v1/chat/completions')
+    expect(url).not.toContain('sk-proj')
+    expect((init.headers as Record<string, string>).authorization).toBe('Bearer sk-proj-TESTKEY0000000000000000')
+    expect(JSON.parse(String(init.body)).response_format).toEqual({ type: 'json_object' })
   })
 
   it('HTTP failures carry the provider’s redacted reason; billing is never retried', async () => {

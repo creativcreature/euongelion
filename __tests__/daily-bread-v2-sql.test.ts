@@ -27,6 +27,9 @@ async function freshDb(): Promise<PGlite> {
     CREATE ROLE service_role NOLOGIN BYPASSRLS;
     GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
     ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO anon, authenticated, service_role;
+    -- Supabase also grants EXECUTE on new functions to the client roles
+    -- directly; the migration must survive that (it did not on first apply).
+    ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT EXECUTE ON FUNCTIONS TO anon, authenticated, service_role;
   `)
   await db.exec(MIGRATION)
   return db

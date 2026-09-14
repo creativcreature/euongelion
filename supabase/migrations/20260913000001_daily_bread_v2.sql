@@ -478,6 +478,11 @@ BEGIN
 END;
 $$;
 
+-- Supabase's default privileges grant EXECUTE on every new public function to
+-- anon and authenticated DIRECTLY, so revoking from PUBLIC alone leaves the
+-- pipeline callable by anyone with the anon key (found in production on first
+-- apply, 2026-09-13, closed within a minute, no rows existed). Revoke from the
+-- client roles by name as well.
 REVOKE ALL ON FUNCTION public.daily_bread_acquire_assembly(DATE, TEXT, INTEGER, TEXT) FROM PUBLIC;
 REVOKE ALL ON FUNCTION public.daily_bread_release_assembly(DATE, TEXT) FROM PUBLIC;
 REVOKE ALL ON FUNCTION public.daily_bread_mark_ready(DATE, TEXT, JSONB) FROM PUBLIC;
@@ -485,6 +490,28 @@ REVOKE ALL ON FUNCTION public.daily_bread_reopen_ready(DATE) FROM PUBLIC;
 REVOKE ALL ON FUNCTION public.daily_bread_publish(DATE, TIMESTAMPTZ) FROM PUBLIC;
 REVOKE ALL ON FUNCTION public.daily_bread_create_revision(DATE, TEXT, JSONB) FROM PUBLIC;
 REVOKE ALL ON FUNCTION public.daily_bread_supersede(DATE, TEXT) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.daily_bread_edition_document(public.daily_bread_editions) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.daily_bread_revisions_immutable() FROM PUBLIC;
+
+DO $$
+DECLARE
+  r TEXT;
+BEGIN
+  FOREACH r IN ARRAY ARRAY['anon', 'authenticated'] LOOP
+    IF EXISTS (SELECT 1 FROM pg_roles WHERE rolname = r) THEN
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_acquire_assembly(DATE, TEXT, INTEGER, TEXT) FROM %I', r);
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_release_assembly(DATE, TEXT) FROM %I', r);
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_mark_ready(DATE, TEXT, JSONB) FROM %I', r);
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_reopen_ready(DATE) FROM %I', r);
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_publish(DATE, TIMESTAMPTZ) FROM %I', r);
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_create_revision(DATE, TEXT, JSONB) FROM %I', r);
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_supersede(DATE, TEXT) FROM %I', r);
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_edition_document(public.daily_bread_editions) FROM %I', r);
+      EXECUTE format('REVOKE ALL ON FUNCTION public.daily_bread_revisions_immutable() FROM %I', r);
+    END IF;
+  END LOOP;
+END;
+$$;
 
 DO $$
 BEGIN

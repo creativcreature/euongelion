@@ -332,7 +332,7 @@ export interface AssetManifest {
 
 /* ── Generation provenance ───────────────────────────────────────────── */
 
-export type ProviderId = 'claude-api' | 'claude-cli' | 'gemini' | 'deterministic'
+export type ProviderId = 'claude-api' | 'claude-cli' | 'openai' | 'gemini' | 'deterministic'
 
 export interface ProviderUsage {
   provider: ProviderId

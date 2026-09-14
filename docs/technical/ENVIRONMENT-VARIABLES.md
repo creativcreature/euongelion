@@ -362,7 +362,9 @@ source. None of these is `NEXT_PUBLIC_*`, so none reaches a browser bundle.
 | `INTERNAL_ROUTE_SECRET` | Worker + callers | for the endpoints | `X-Internal-Secret` for `/api/admin/daily-bread/{publish,health}` |
 | `ANTHROPIC_API_KEY` | GitHub secret | optional | generator chain, Claude API transport |
 | `CLAUDE_CODE_OAUTH_TOKEN` | GitHub secret | optional | generator chain, Claude Code CLI transport |
-| `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) | GitHub secret | optional | generator chain, secondary provider |
+| `OPENAI_API_KEY` | GitHub secret | optional | generator chain, secondary provider (Chat Completions) |
+| `DAILY_BREAD_OPENAI_MODEL` | CI env | optional | OpenAI model override (default `gpt-4o-mini`) |
+| `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) | GitHub secret | optional | generator chain, tertiary provider (default model `gemini-flash-lite-latest`) |
 | `DAILY_BREAD_CLAUDE_MODEL` | CI env | optional | API model override (default `claude-sonnet-5`) |
 | `DAILY_BREAD_CLAUDE_CLI_MODEL`, `DAILY_BREAD_CLAUDE_BIN` | CI env | optional | CLI model / binary override |
 | `DAILY_BREAD_GEMINI_MODEL` | CI env | optional | Gemini model override (default `gemini-2.0-flash-lite`) |

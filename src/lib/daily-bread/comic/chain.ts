@@ -82,13 +82,13 @@ function comicPrompt(
     `Date: ${date}`,
     `Primary Scripture (${scripture.reference}, BSB): ${scripture.text}`,
     '',
-    'Compose a gentle, WORDLESS three-panel strip for a Christian daily paper, staging a small visual moment that sits beside this Scripture.',
+    'Compose a gentle, WORDLESS three-panel strip for a Christian daily paper, staging ONE small visual moment that sits beside this Scripture. The three panels are one continuous little story (the same place or the same figure moving through it), not three unrelated pictures.',
     'No dialogue, no speech, no jokes, no named characters, no depiction of the face of Jesus. Figures are simple faceless silhouettes.',
     `Allowed settings: ${COMIC_SETTINGS.join(', ')}`,
     `Allowed figures: ${COMIC_FIGURES.join(', ')}`,
     'Each panel: 1-4 figures with x and y between 0 and 1 (0,0 = top-left), scale between 0.3 and 1.6, optional flip.',
     'description: one plain sentence (10-160 characters) describing what the panel shows, for a screen reader. No quotation marks.',
-    'caption (optional, at most ONE panel): an EXACT substring of the Primary Scripture text above, at most 140 characters.',
+    'caption (REQUIRED on exactly ONE panel, usually the last): an EXACT substring of the Primary Scripture text above, at most 140 characters. Other panels have no caption field.',
     '',
     'Here is an example of the exact JSON shape (a committed strip — do not copy it):',
     JSON.stringify(inspiration),
@@ -183,9 +183,11 @@ export async function composeComic(params: {
             }),
           ),
         )
-        if (script.panels.filter((p) => p.caption).length > 1) {
-          problems.push('at most one caption')
-        }
+        const captions = script.panels.filter((p) => p.caption).length
+        if (captions > 1) problems.push('at most one caption')
+        // Every committed strip carries its verbatim Scripture line; a
+        // generated one must too, or it is a picture with no anchor.
+        if (captions === 0) problems.push('exactly one panel must carry a verbatim Scripture caption')
         problems.push(
           ...(await verifyComicCaptions(
             script,

@@ -32,6 +32,7 @@ import type { DailyBreadRepository } from '../../src/lib/daily-bread/repository/
 import { createClaudeApiProvider } from '../../src/lib/daily-bread/providers/claude-api'
 import { createClaudeCliProvider } from '../../src/lib/daily-bread/providers/claude-cli'
 import { createGeminiProvider } from '../../src/lib/daily-bread/providers/gemini'
+import { createOpenAiProvider } from '../../src/lib/daily-bread/providers/openai'
 import type { TextProvider } from '../../src/lib/daily-bread/providers/types'
 import {
   addDays,
@@ -96,7 +97,7 @@ function supabaseRepo(): DailyBreadRepository {
 }
 
 function providers(): TextProvider[] {
-  return [createClaudeApiProvider(), createClaudeCliProvider(), createGeminiProvider()]
+  return [createClaudeApiProvider(), createClaudeCliProvider(), createOpenAiProvider(), createGeminiProvider()]
 }
 
 function sources(options: { editionItems: boolean }): EditionSources {

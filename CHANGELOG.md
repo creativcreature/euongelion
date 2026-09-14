@@ -31,6 +31,21 @@ Format: Reverse chronological, grouped by sprint/date.
   `DAILY_BREAD_V2=off` at build and runtime is the rollback.
 - **Test file fix.** A NUL byte in a security test made git store the file as binary;
   it is replaced with an escape.
+- **OpenAI secondary provider** (`gpt-4o-mini`), verified live: a normal-quality
+  edition for about $0.0004. Chain: Claude API → Claude CLI → OpenAI → Gemini →
+  deterministic.
+- **Generated strips need a caption.** A generated strip must be one continuous story
+  and carry exactly one verbatim Scripture caption. OpenAI's first strip was three
+  unrelated pictures with no caption.
+- **Migration grant fix.** Supabase grants EXECUTE on new functions to anon and
+  authenticated directly, so revoking from PUBLIC was not enough. On first apply to
+  production the anon key could call `daily_bread_publish`. This was found by the
+  post-apply check and closed within a minute, before any V2 row existed. The
+  migration now revokes from both roles by name, the database test reproduces
+  Supabase's default function grants, and production shows 0 of 9 functions callable
+  by client roles.
+- **Migration applied to production Supabase** (additive: three new tables and nine
+  functions).
 
 ## 2026-09-13 — The Daily Bread V2: serialized, frozen, self-archiving (behind a flag) — SA-142 (F-184) — v0.8.33
 
