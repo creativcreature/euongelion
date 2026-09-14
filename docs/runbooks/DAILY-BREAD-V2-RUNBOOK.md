@@ -63,8 +63,15 @@ starts the paper again at No. 001.
   A `down` status returns HTTP 503.
 - **Attempts:** see the most recent runs with
   `select target_date, lifecycle_stage, publication_result, quality, primary_provider, fallback_providers_used, errors from daily_bread_publication_attempts order by started_at desc limit 20;`
-- **Scheduler:** open the Actions tab and choose `daily-bread-v2`. A failed run or a
-  `down` health opens an issue.
+- **Scheduler:** there are two parts.
+  - **Builds:** open the Actions tab and choose `daily-bread-v2`. A failed run or a
+    `down` health opens an issue.
+  - **The 7am publish:** Cloudflare dashboard → Workers → `euangelion` → Logs; filter
+    for `cron_publish`. Expect `published` at 07:01 ET, then `already_published`.
+    `no-internal-secret` means the Worker secret `INTERNAL_ROUTE_SECRET` is missing.
+    `not_ready` means no build finished; run the fix in the first incident row.
+  - **Test the cron locally:** `npx wrangler dev --test-scheduled`, then
+    `curl "http://127.0.0.1:8787/__scheduled?cron=1,15,30,45+11,12+*+*+*"`.
 
 ## Incidents
 
@@ -106,5 +113,6 @@ summarize Good News.
 Each edition makes two small model calls (the frame, about 900 output tokens, and the
 comic storyboard, about 1,200). The subscription CLI transport costs $0 marginal. The
 API transport costs a few cents per day; the attempt rows carry `estimated_cost_usd`
-and health sums 7 days. The scheduler runs five short Actions jobs a day (about 1–2
-minutes each).
+and health sums 7 days. The workflow runs eight short Actions jobs a day (about 1–2
+minutes each; most are no-ops). The Worker cron is 8 invocations a day inside the
+free plan.

@@ -70,6 +70,27 @@ corrected in order, earliest first.
   Titles and serials stay under each link. Tested for today, past and a gap. Checked
   on a local dev server against production data at desktop and 390px dark; an empty
   third box on today's paper was fixed.
+- **Deviation 6 (plan §19, "publish at the correct rollover"), corrected in code, NOT
+  ACTIVE until deployed.**
+  - **The problem.** GitHub's scheduled runs are best-effort. Today the 11:05 publish
+    run had not fired 39 minutes after rollover, the 22:15 build never fired, and the
+    02:15 build ran at 07:55.
+  - **The Worker now publishes.** `worker-entry.mjs` wraps OpenNext's worker; fetch
+    is unchanged. It adds `scheduled()` for one Cloudflare Cron Trigger,
+    `1,15,30,45 11,12 * * *` in `wrangler.jsonc`. That posts the live date to the
+    internal publish route (`src/lib/daily-bread/scheduled.ts`): first firing 07:01
+    ET year-round, idempotent, other crons ignored.
+  - **GitHub builds with five attempts.** 22:15, 00:15, 02:15, 05:15 and 08:15 UTC,
+    all inside the build window in EDT and EST. The morning runs remain the
+    emergency build-and-publish path.
+  - **Verified in the local Workers runtime** (`wrangler dev --test-scheduled`,
+    production data):
+    - `/daily-bread` still serves through the wrapper.
+    - The Daily Bread cron posted to the publish route and got `already_published`,
+      issue 2.
+    - Another cron logged `cron_unhandled`.
+    - Unit tests pin the cron string to `wrangler.jsonc` and cover EDT, EST, a
+      missing secret, a network failure and a refusal.
 - **New item found while correcting (added to the list as 40):** a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request
   timeout of their own. On Workers the platform caps a request, but the read should

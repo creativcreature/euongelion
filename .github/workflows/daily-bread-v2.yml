@@ -10,12 +10,20 @@ name: daily-bread-v2
 # The database serializes concurrent runs (assembly lease + advisory lock on
 # issue allocation), so overlapping or duplicate triggers are harmless.
 #
-# Cloudflare Cron is inert in this project, so GitHub Actions is the clock.
-# Cron times (UTC) — cheap runs when there is nothing to do:
+# PUBLICATION on the minute is the Worker's job now: a Cloudflare Cron Trigger
+# (worker-entry.mjs → src/lib/daily-bread/scheduled.ts) publishes the READY
+# edition at 07:01 New York. GitHub's schedule is best-effort — on 2026-09-14
+# the 22:15 run never fired and the 02:15 run started at 07:55 — so this
+# workflow BUILDS with several attempts before rollover, and its morning runs
+# remain the emergency path (build-and-publish if nothing was ready).
+# Cron times (UTC) — cheap no-op runs once tomorrow is ready:
 #   22:15  evening build of tomorrow (18:15 EDT / 17:15 EST)
-#   02:15  retry build (22:15 EDT / 21:15 EST)
-#   11:05  publish after the EDT rollover (07:05 EDT)
-#   12:05  publish after the EST rollover (07:05 EST) — and an EDT safety net
+#   00:15  retry build
+#   02:15  retry build
+#   05:15  retry build
+#   08:15  last retry before rollover (04:15 EDT / 03:15 EST)
+#   11:05  emergency path after the EDT rollover (07:05 EDT)
+#   12:05  emergency path after the EST rollover (07:05 EST)
 #   13:05  late safety net
 #
 # SAFE ACTIVATION: nothing runs unless the repository variable
@@ -32,7 +40,10 @@ name: daily-bread-v2
 on:
   schedule:
     - cron: '15 22 * * *'
+    - cron: '15 0 * * *'
     - cron: '15 2 * * *'
+    - cron: '15 5 * * *'
+    - cron: '15 8 * * *'
     - cron: '5 11 * * *'
     - cron: '5 12 * * *'
     - cron: '5 13 * * *'

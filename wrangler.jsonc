@@ -1,6 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "main": ".open-next/worker.js",
+  // SA-142 / F-184: the entry wraps OpenNext's generated worker and adds a
+  // scheduled() handler for the Daily Bread 7am publication. Fetch handling is
+  // OpenNext's, unchanged.
+  "main": "worker-entry.mjs",
   "name": "euangelion",
   "compatibility_date": "2025-05-05",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -89,6 +92,13 @@
   //   { "tag": "v1", "new_classes": ["PlanOrchestrator"] }
   // ],
   // "triggers": { "crons": ["0 3 * * *"] },
+  //
+  // ACTIVE (SA-142 / F-184): the Daily Bread publication cron. The worker wrap
+  // above is now in place (worker-entry.mjs) and handles ONLY this expression
+  // (DAILY_BREAD_PUBLISH_CRON in src/lib/daily-bread/scheduled.ts — keep them
+  // identical). Adding the retention cron means adding it here AND a branch
+  // in worker-entry.mjs.
+  "triggers": { "crons": ["1,15,30,45 11,12 * * *"] },
 
   "workers_dev": true,
   "routes": [

@@ -14,7 +14,7 @@ export const EDITORIAL_TIMEZONE = 'America/New_York'
 export const ROLLOVER_HOUR = 7
 /**
  * How long before rollover the scheduler starts building the next paper.
- * 14h puts both evening cron runs (22:15 and 02:15 UTC) inside the window in
+ * 14h puts every build run (22:15, 00:15, 02:15, 05:15, 08:15 UTC) inside the window in
  * EDT and EST alike, so there is a build and a retry before the 7am flip.
  */
 export const BUILD_LEAD_HOURS = 14

@@ -116,6 +116,25 @@ runs fall inside it in EDT and EST).
    if it is missing.
 2. Inside the build window, build tomorrow.
 
+**Two clocks.** Each clock does the job it is reliable for.
+- **GitHub Actions** (`.github/workflows/daily-bread-v2.yml`) BUILDS tomorrow.
+  - It runs at 22:15, 00:15, 02:15, 05:15 and 08:15 UTC. Every run is inside the
+    14-hour window in both EDT and EST, and each is a no-op once tomorrow is ready.
+  - The build needs the Claude CLI and minutes of work.
+  - GitHub's schedule is best-effort: on 2026-09-14 the 22:15 run never fired and the
+    02:15 run started at 07:55. That is why there are five attempts.
+  - Its 11:05, 12:05 and 13:05 runs stay as the emergency path: if nothing was ready,
+    they build and publish.
+- **The Worker** PUBLISHES on the minute.
+  - A Cloudflare Cron Trigger (`1,15,30,45 11,12 * * *`, in `wrangler.jsonc`) fires
+    `scheduled()` in `worker-entry.mjs`. That entry wraps OpenNext's worker; its fetch
+    handling is unchanged.
+  - `publishDueEdition` (`scheduled.ts`) posts the live editorial date to the internal
+    publish route through the app handler: no network hop, `X-Internal-Secret`,
+    idempotent.
+  - In EDT the first live firing is 07:01, and in EST it is 07:01. Every later firing
+    is `already_published`. Each run logs one `cron_publish` line.
+
 Every call writes a `PublicationAttempt`.
 
 **Quality:**
