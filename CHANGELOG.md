@@ -5,6 +5,33 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-14 — Daily Bread V2: the backup provider carries a real edition — SA-142 (F-184)
+
+- **What happened.** The CI build of Sep 15 found the Claude Code account at its
+  weekly limit ("resets Sep 16, 9am UTC"). The CLI error was retried twice for
+  nothing, and `OPENAI_API_KEY` was not a GitHub secret. The edition was built by the
+  deterministic floor and marked `fallback`.
+- **Claude CLI limits are quota.** Usage, weekly and daily limit messages are now
+  non-retryable, so the chain moves straight to the backup.
+- **OpenAI backup in CI.** `OPENAI_API_KEY` is set as a repository secret (piped
+  from `.env.local`, never printed).
+- **Rejected output is fed back.** A retry after a validation failure now tells the
+  model exactly what was wrong: which passage a rabbit hole overlapped, which
+  template id was not offered.
+- **A withheld comic template no longer sinks the frame.** A model kept choosing a
+  parable that ran recently. The rotation pick replaces that id, and the model's
+  deck and rabbit holes stand. Anti-repeat is not bypassed.
+- **Blank comic captions** (`""` or `null` on uncaptioned panels) are read as no
+  caption. The exactly-one-caption rule still applies.
+- **Tighter deck rules.** The deck must be one sentence. It may not recite the
+  Scripture printed beside it (8+ shared words), open with an outline label, or end
+  with a reference. Model prose may not use first-person plural. A missing full stop
+  is added.
+- **Backup model is now `gpt-5-mini`.** Re-run bake-off on Sep 15:
+  - `gpt-5-nano` passed 0/3 frames, even with feedback.
+  - `gpt-5-mini` passed 3/3 frames and 3/3 comics on the first attempt, at about
+    $0.0013 per edition (about $0.50 a year used daily).
+
 ## 2026-09-13 — The Daily Bread V2 is live — SA-142 (F-184) — v0.8.33
 
 Founder: _"Deploy and commit."_

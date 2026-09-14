@@ -164,6 +164,15 @@ export async function composeComic(params: {
       },
       parse: (text) => {
         const raw = extractJsonObject(text) as Partial<ComicScript>
+        // A blank caption ("" or null) is a model's way of writing "no caption"
+        // on the uncaptioned panels; the exactly-one-caption rule still applies.
+        if (Array.isArray(raw.panels)) {
+          for (const panel of raw.panels as { caption?: unknown }[]) {
+            if (panel && typeof panel === 'object' && (panel.caption === null || (typeof panel.caption === 'string' && panel.caption.trim() === ''))) {
+              delete panel.caption
+            }
+          }
+        }
         return { ...raw, id: `gen-${params.dateSlug}` } as ComicScript
       },
       validate: async (script) => {

@@ -6,7 +6,7 @@
  * invented Scripture, BSB lookups) and the transports' credential handling.
  */
 import { describe, expect, it, vi } from 'vitest'
-import { runProviderChain, extractJsonObject } from '@/lib/daily-bread/providers/chain'
+import { runProviderChain, extractJsonObject, repairNote } from '@/lib/daily-bread/providers/chain'
 import {
   OutputValidationError,
   ProviderError,
@@ -20,7 +20,9 @@ import {
   composeFrame,
   contextRabbitHoles,
   deterministicScene,
+  framePrompt,
   resolveFrame,
+  stripOutlineLabel,
   type FrameInput,
 } from '@/lib/daily-bread/generate/frame'
 import { proseProblems } from '@/lib/daily-bread/generate/guards'
@@ -114,6 +116,59 @@ describe('runProviderChain', () => {
     })
     expect(claude.calls).toBe(2)
     expect(out.provider).toBe('gemini')
+  })
+
+  it('a retry after rejected output tells the model why; a transport retry resends the plain prompt', async () => {
+    const prompts: string[] = []
+    const replies = ['500', '5']
+    const nano: TextProvider = {
+      id: 'openai',
+      model: 'gpt-5-nano',
+      available: () => true,
+      async generate(request) {
+        prompts.push(request.prompt)
+        return { text: replies[prompts.length - 1] ?? '0', model: 'gpt-5-nano' }
+      },
+    }
+    const out = await runProviderChain({
+      task: 't',
+      providers: [nano],
+      request: { system: 's', prompt: 'p', maxOutputTokens: 10 },
+      parse: parseNumber,
+      validate: (n) => (n > 100 ? ['value: 500 is too big — choose a number under 100'] : []),
+      deterministic: () => 0,
+      sleep: noSleep,
+    })
+    expect(out).toMatchObject({ value: 5, provider: 'openai', deterministic: false })
+    expect(prompts[0]).toBe('p')
+    expect(prompts[1]).toBe(`p\n\n${repairNote(['value: 500 is too big — choose a number under 100'])}`)
+    expect(prompts[1]).toContain('- value: 500 is too big')
+
+    const flaky: string[] = []
+    let failed = false
+    await runProviderChain({
+      task: 't',
+      providers: [
+        {
+          id: 'claude-api',
+          model: 'm',
+          available: () => true,
+          async generate(request) {
+            flaky.push(request.prompt)
+            if (!failed) {
+              failed = true
+              throw new ProviderError('HTTP 529', { retryable: true, status: 529 })
+            }
+            return { text: '1', model: 'm' }
+          },
+        },
+      ],
+      request: { system: 's', prompt: 'p', maxOutputTokens: 10 },
+      parse: parseNumber,
+      deterministic: () => 0,
+      sleep: noSleep,
+    })
+    expect(flaky).toEqual(['p', 'p'])
   })
 
   it('times out a hung provider through the abort signal', async () => {
@@ -368,22 +423,62 @@ describe('editorial frame', () => {
       bsbLookup,
     ).catch((e) => e)
     const text = (err as OutputValidationError).problems.join(' | ')
-    expect(text).toMatch(/rabbitHoles\[0\]: overlaps/)
-    expect(text).not.toMatch(/rabbitHoles\[1\]/)
-    expect(text).toMatch(/rabbitHoles\[2\]: overlaps/)
+    // The reason names what was hit, because it is sent back on the retry.
+    expect(text).toMatch(/rabbitHoles\[0\]: Matthew 6:26 overlaps the primary Scripture Matthew 6:25-30/)
+    expect(text).not.toMatch(/rabbitHoles\[1\]:/)
+    expect(text).toMatch(/rabbitHoles\[2\]: Luke 12:23-24 overlaps rabbitHoles\[1\] Luke 12:24/)
+  })
+
+  it('a deck may not recite the Scripture beside it or keep an outline label; a why gets its full stop', async () => {
+    const frame = (deck: string) => ({
+      deck,
+      rabbitHoles: [
+        { reference: 'Luke 12:31', why: 'luke sets the same saying beside ravens and lilies and a worried crowd' },
+        { reference: 'Romans 14:17', why: 'Paul describes what that kingdom is made of when food is not the point.' },
+      ],
+      comicTemplateId: 'the-lost-sheep',
+      scene: 'grain',
+      sceneLabel: 'Wheat under a low sun',
+    })
+    const recite = await resolveFrame(
+      frame('Seek first the kingdom of God and His righteousness, and all these things will be added to you.'),
+      INPUT,
+      bsbLookup,
+    ).catch((e) => e)
+    expect((recite as OutputValidationError).problems.join(' | ')).toMatch(/deck: restates the primary Scripture/)
+
+    const label = await resolveFrame(frame('Resolution: when the kingdom comes first, all else falls into its proper place.'), INPUT, bsbLookup).catch((e) => e)
+    expect((label as OutputValidationError).problems.join(' | ')).toMatch(/deck: starts with an outline label \(Resolution:\)/)
+
+    const tacked = await resolveFrame(frame('Kingdom first shapes the day, and everything else lines up under it. Matthew 6:33'), INPUT, bsbLookup).catch((e) => e)
+    const tackedText = (tacked as OutputValidationError).problems.join(' | ')
+    expect(tackedText).toMatch(/deck: more than one sentence/)
+    expect(tackedText).toMatch(/deck: ends with a Scripture reference or number/)
+    expect(proseProblems('If we have food and clothing, contentment follows.', 'why', { min: 1, max: 200 })).toContain('why: first-person plural voice')
+
+    const ok = await resolveFrame(frame('Morning in Galilee: a worried crowd hears that the kingdom comes before the grocery list'), INPUT, bsbLookup)
+    expect(ok.deck.endsWith('grocery list.')).toBe(true)
+    expect(ok.rabbitHoles[0].why).toBe('Luke sets the same saying beside ravens and lilies and a worried crowd.')
+    expect(stripOutlineLabel('THE PIVOT: What would change')).toBe('What would change')
+  })
+
+  it('the frame prompt names the passage the rabbit holes must stay out of', () => {
+    const input = { ...INPUT, scripture: { ...INPUT.scripture, reference: 'Matthew 6:25-34' } }
+    expect(framePrompt(input)).toContain('No verse from Matthew 6:25-34 itself')
   })
 
   it('reasoning models get max_completion_tokens and no temperature; costs use verified list prices', async () => {
     const fetchImpl = vi.fn(async () =>
-      Response.json({ model: 'gpt-5-nano-2025-08-07', choices: [{ message: { content: '{}' } }], usage: { prompt_tokens: 1000, completion_tokens: 1000 } }),
+      Response.json({ model: 'gpt-5-mini-2025-08-07', choices: [{ message: { content: '{}' } }], usage: { prompt_tokens: 1000, completion_tokens: 1000 } }),
     )
     const out = await createOpenAiProvider({ env: { OPENAI_API_KEY: 'sk-proj-TESTKEY0000000000000000' }, fetchImpl })
       .generate({ task: 't', system: 's', prompt: 'p', maxOutputTokens: 900, temperature: 0.5, signal: new AbortController().signal })
     const body = JSON.parse(String((fetchImpl.mock.calls[0] as unknown as [string, RequestInit])[1].body))
-    expect(body).toMatchObject({ model: 'gpt-5-nano', max_completion_tokens: 4000, reasoning_effort: 'minimal' })
+    expect(body).toMatchObject({ model: 'gpt-5-mini', max_completion_tokens: 4000, reasoning_effort: 'minimal' })
     expect(body).not.toHaveProperty('temperature')
     expect(body).not.toHaveProperty('max_tokens')
-    expect(out.estimatedCostUsd).toBeCloseTo(0.00045, 8)
+    expect(out.estimatedCostUsd).toBeCloseTo(0.00225, 8)
+    expect(openAiCostUsd('gpt-5-nano-2025-08-07', 1000, 1000)).toBeCloseTo(0.00045, 8)
     expect(openAiCostUsd('gpt-4.1-nano-2025-04-14', 1_000_000, 0)).toBeCloseTo(0.1, 8)
     expect(openAiCostUsd('unknown-model', 10, 10)).toBeUndefined()
   })
@@ -424,6 +519,18 @@ describe('editorial frame', () => {
       sleep: noSleep,
     })
     expect(bad.deterministic).toBe(true)
+
+    // A withheld (recently run) template id costs only the template choice:
+    // the rotation pick replaces it and the model's deck and rabbit holes stand.
+    const withheld = await composeFrame(INPUT, {
+      providers: [provider('openai', async () => good.replace('the-lost-sheep', 'look-at-the-birds'))],
+      lookup: bsbLookup,
+      pickComic: () => 'lamp-on-a-stand',
+      sleep: noSleep,
+    })
+    expect(withheld).toMatchObject({ provider: 'openai', deterministic: false })
+    expect(withheld.value.comicTemplateId).toBe('lamp-on-a-stand')
+    expect(withheld.value.rabbitHoles.map((h) => h.reference)).toEqual(['Luke 12:31', 'Romans 14:17'])
   })
 
   it('context rabbit holes are the real neighbouring verses', async () => {

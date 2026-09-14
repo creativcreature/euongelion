@@ -43,6 +43,8 @@ export function proseProblems(
   if (QUOTE_RE.test(t)) problems.push(`${field}: contains a quotation (models may not quote)`)
   if (/[<>{}]/.test(t)) problems.push(`${field}: contains markup characters`)
   if (/\b(I|I['’]m|I['’]ve|my)\b/.test(t)) problems.push(`${field}: first-person voice`)
+  // Plural too: a model paraphrasing a verse slips into it ("If we have food and clothing").
+  if (/\b(we|we['’]re|we['’]ve|us|our|ours|ourselves)\b/i.test(t)) problems.push(`${field}: first-person plural voice`)
   for (const { re, label } of FORBIDDEN_PATTERNS) {
     if (re.test(t)) problems.push(`${field}: forbidden pattern ${label}`)
   }

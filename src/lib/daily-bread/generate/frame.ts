@@ -85,23 +85,59 @@ export const FRAME_SYSTEM = [
   'Return ONLY a JSON object. No prose before or after it.',
 ].join('\n')
 
+/**
+ * Catalog teasers sometimes open with a structural label ("THE PIVOT:",
+ * "Resolution:") meant for the series outline, not for a reader.
+ */
+// One capitalised word ("Resolution:") or an all-caps phrase ("THE PIVOT:").
+// A mixed-case phrase ("Morning in Galilee: ...") is ordinary prose.
+const OUTLINE_LABEL = /^(?:[A-Z][A-Z' ]{2,24}|[A-Z][a-z]{2,15}):\s+(?=\S)/
+
+export function stripOutlineLabel(text: string): string {
+  return text.replace(OUTLINE_LABEL, '')
+}
+
+const words = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+
+/** Longest run of consecutive words `a` shares with `b`. */
+export function sharedWordRun(a: string, b: string): number {
+  const x = words(a)
+  const y = words(b)
+  let best = 0
+  for (let i = 0; i < x.length; i++) {
+    for (let j = 0; j < y.length; j++) {
+      let k = 0
+      while (i + k < x.length && j + k < y.length && x[i + k] === y[j + k]) k++
+      if (k > best) best = k
+    }
+  }
+  return best
+}
+
 export function framePrompt(input: FrameInput): string {
   return [
     `Date: ${input.dateSlug}`,
     `Liturgical day: ${input.liturgicalLabel}`,
     `Today's reading: "${input.title}" from the series ${input.seriesTitle}.`,
-    `The reading's one-line teaser: ${input.teaser}`,
+    `The reading's one-line teaser: ${stripOutlineLabel(input.teaser)}`,
     `Primary Scripture (${input.scripture.reference}, BSB): ${input.scripture.text}`,
     '',
     'Produce this JSON object:',
     '{',
-    '  "deck": "ONE sentence (60-200 characters) that sets up today\'s paper around the primary Scripture. No quotation marks.",',
+    '  "deck": "ONE sentence (60-200 characters) that sets up today\'s paper around the primary Scripture, in fresh words. The verse is printed right beside it, so do not restate it. No quotation marks, no leading label.",',
     '  "rabbitHoles": [ { "reference": "Book C:V", "why": "8-22 words: what following this passage opens up, stated plainly" } ],',
     '  "comicTemplateId": "one id from the list below whose parable best sits beside today\'s Scripture",',
     '  "scene": "living-water | grain | wilderness-stars",',
     '  "sceneLabel": "3-8 words describing that scene"',
     '}',
-    'rabbitHoles: exactly 3 items, all different from the primary Scripture and from each other.',
+    'rabbitHoles: exactly 3 items that lead AWAY from today\'s passage.',
+    `  - No verse from ${input.scripture.reference} itself, not even one verse inside that range.`,
+    '  - No two rabbit holes may share a verse. Prefer passages from other books.',
     '',
     'Comic templates (id — title — reference):',
     ...input.comicCandidates.map((c) => `- ${c.id} — ${c.title} — ${c.scriptureReference}`),
@@ -149,14 +185,44 @@ export async function resolveFrame(
   raw: RawFrame,
   input: FrameInput,
   lookup: VerseLookup,
+  options: { rotationComicId?: string } = {},
 ): Promise<EditorialFrame> {
   const problems: string[] = []
-  const deck = typeof raw.deck === 'string' ? cleanText(raw.deck, 400) : ''
+  const rawDeck = typeof raw.deck === 'string' ? cleanText(raw.deck, 400) : ''
+  const deck = rawDeck && !/[.!?]$/.test(rawDeck) ? `${rawDeck}.` : rawDeck
   problems.push(...proseProblems(deck, 'deck', { min: 60, max: 220 }))
+  // One sentence, and no reference tacked on the end (gpt-5-nano appended
+  // "Matthew 6:33" and a bare "33"); the paper prints the reference itself.
+  if (/[.!?]\s+\S/.test(deck)) problems.push('deck: more than one sentence — write exactly one')
+  if (/(?:\b[1-3]?\s?[A-Z][a-z]+\s+)?\d+(?::\d+(?:[-–]\d+)?)?\.?$/.test(deck)) {
+    problems.push('deck: ends with a Scripture reference or number — end on words')
+  }
+  if (OUTLINE_LABEL.test(deck)) {
+    problems.push(`deck: starts with an outline label (${deck.split(':')[0]}:) — write the sentence without it`)
+  }
+  // The Scripture is printed beside the deck; a deck that recites it adds
+  // nothing (gpt-5-nano, 2026-09-14). A short allusion is fine.
+  if (sharedWordRun(deck, input.scripture.text) >= 8) {
+    problems.push('deck: restates the primary Scripture — set the day up in fresh words instead')
+  }
 
   const comicIds = new Set(input.comicCandidates.map((c) => c.id))
-  const comicTemplateId = typeof raw.comicTemplateId === 'string' ? raw.comicTemplateId : ''
-  if (!comicIds.has(comicTemplateId)) problems.push('comicTemplateId: not one of the offered templates')
+  let comicTemplateId = typeof raw.comicTemplateId === 'string' ? raw.comicTemplateId : ''
+  if (!comicIds.has(comicTemplateId)) {
+    // A model reaches for the obvious parable even when it ran recently and is
+    // withheld from the list (gpt-5-nano kept choosing look-at-the-birds for
+    // Matthew 6, even when told why). The template is the lowest-stakes field,
+    // so with a rotation pick available it takes that pick — the same choice the
+    // deterministic frame makes — instead of discarding a valid deck and
+    // rabbit holes. Anti-repeat is never bypassed.
+    if (options.rotationComicId && comicIds.has(options.rotationComicId)) {
+      comicTemplateId = options.rotationComicId
+    } else {
+      problems.push(
+        `comicTemplateId: ${JSON.stringify(cleanText(comicTemplateId, 60))} is not one of the offered templates — copy one id exactly from the list`,
+      )
+    }
+  }
 
   const scene = raw.scene as ProceduralSceneId
   if (!PROCEDURAL_SCENES.includes(scene)) problems.push('scene: unknown scene')
@@ -166,9 +232,13 @@ export async function resolveFrame(
   const holes: RabbitHole[] = []
   // A rabbit hole leads OUT of today's passage: it may not repeat or overlap
   // the primary Scripture, or another rabbit hole.
-  const taken: VerseRange[] = []
+  // Each taken range carries a label so a rejection says exactly what it hit —
+  // the reason is sent back to the model on its retry.
+  const taken: { range: VerseRange; label: string }[] = []
   const primaryParsed = parseReference(input.scripture.reference)
-  if (primaryParsed) taken.push(verseRange(primaryParsed))
+  if (primaryParsed) {
+    taken.push({ range: verseRange(primaryParsed), label: `the primary Scripture ${primaryParsed.canonical}` })
+  }
   if (!Array.isArray(raw.rabbitHoles) || raw.rabbitHoles.length < 2 || raw.rabbitHoles.length > 4) {
     problems.push('rabbitHoles: expected 2-4 items')
   } else {
@@ -176,9 +246,12 @@ export async function resolveFrame(
       const ref = typeof (item as { reference?: unknown })?.reference === 'string'
         ? cleanText((item as { reference: string }).reference, 40)
         : ''
-      const why = typeof (item as { why?: unknown })?.why === 'string'
+      const rawWhy = typeof (item as { why?: unknown })?.why === 'string'
         ? cleanText((item as { why: string }).why, 200)
         : ''
+      // Printed as a sentence; small models often drop the capital or full stop.
+      const capped = rawWhy.charAt(0).toUpperCase() + rawWhy.slice(1)
+      const why = capped && !/[.!?]$/.test(capped) ? `${capped}.` : capped
       const parsed = parseReference(ref)
       if (!parsed) {
         problems.push(`rabbitHoles[${i}]: unparseable reference`)
@@ -191,14 +264,15 @@ export async function resolveFrame(
         continue
       }
       const range = verseRange(parsed)
-      if (taken.some((t) => rangesOverlap(t, range))) {
-        problems.push(`rabbitHoles[${i}]: overlaps the primary Scripture or another rabbit hole (duplicate)`)
+      const clash = taken.find((t) => rangesOverlap(t.range, range))
+      if (clash) {
+        problems.push(`rabbitHoles[${i}]: ${parsed.canonical} overlaps ${clash.label} — choose a different passage`)
         continue
       }
       problems.push(...proseProblems(why, `rabbitHoles[${i}].why`, { min: 30, max: 160 }))
       try {
         const verse = await lookup(parsed.canonical)
-        taken.push(range)
+        taken.push({ range, label: `rabbitHoles[${i}] ${parsed.canonical}` })
         holes.push({ reference: verse.canonical, text: cleanText(verse.text, 700), why })
       } catch {
         problems.push(`rabbitHoles[${i}]: reference not found in BSB`)
@@ -275,11 +349,8 @@ export async function deterministicFrame(
   pickComic: (seed: number) => string,
 ): Promise<EditorialFrame> {
   const scene = deterministicScene(input)
-  const deck = cleanText(input.teaser, 220)
   return {
-    // Catalog teasers sometimes open with a structural label ("THE PIVOT:",
-    // "Application:") meant for the series outline, not for a reader.
-    deck: deck.replace(/^[A-Za-z][A-Za-z' ]{2,24}:\s+(?=[A-Z0-9])/, ''),
+    deck: stripOutlineLabel(cleanText(input.teaser, 220)),
     rabbitHoles: await contextRabbitHoles(input.scripture.reference, lookup),
     comicTemplateId: pickComic(input.seed),
     scene,
@@ -315,7 +386,9 @@ export async function composeFrame(
     },
     validate: async (value) => {
       try {
-        const resolved = await resolveFrame(value as unknown as RawFrame, input, deps.lookup)
+        const resolved = await resolveFrame(value as unknown as RawFrame, input, deps.lookup, {
+          rotationComicId: deps.pickComic(input.seed),
+        })
         Object.assign(value, resolved)
         return []
       } catch (error) {

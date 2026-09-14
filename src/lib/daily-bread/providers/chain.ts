@@ -54,6 +54,19 @@ export interface ChainOptions<T> {
 
 const defaultSleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 
+/**
+ * Appended to the prompt when a provider's previous output failed validation.
+ * Resending the identical prompt lets a small model repeat the same mistake
+ * (gpt-5-nano, CI 2026-09-14: the same overlapping rabbit hole twice).
+ */
+export function repairNote(problems: readonly string[]): string {
+  const listed = problems.slice(0, 10).map((p) => `- ${p.slice(0, 240)}`)
+  return [
+    'Your previous answer was rejected by the validator. Fix every problem below and return the complete corrected JSON object:',
+    ...listed,
+  ].join('\n')
+}
+
 /** Pull the first JSON object out of model text (tolerates ``` fences / prose). */
 export function extractJsonObject(text: string): unknown {
   const fenced = /```(?:json)?\s*([\s\S]*?)```/i.exec(text)
@@ -98,6 +111,7 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
     let inputTokens = 0
     let outputTokens = 0
     let cost = 0
+    let repair = ''
 
     while (attempts <= retries) {
       attempts += 1
@@ -107,6 +121,7 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
         const result = await provider.generate({
           task: options.task,
           ...options.request,
+          prompt: repair ? `${options.request.prompt}\n\n${repair}` : options.request.prompt,
           signal: controller.signal,
         })
         inputTokens += result.inputTokens ?? 0
@@ -141,6 +156,7 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
         }
       } catch (error) {
         lastError = errorMessage(error, 300)
+        repair = error instanceof OutputValidationError ? repairNote(error.problems) : ''
         const retryable =
           error instanceof ProviderError
             ? error.retryable

@@ -119,7 +119,7 @@ Every call writes a `PublicationAttempt`.
 | --- | --- | --- | --- |
 | 1 | `claude-api` | `ANTHROPIC_API_KEY` | Messages API over fetch, `x-api-key` header |
 | 1 | `claude-cli` | `CLAUDE_CODE_OAUTH_TOKEN` (or `DAILY_BREAD_CLAUDE_CLI_AUTH=login` locally) | `claude -p`, prompt on stdin, isolated (no settings, hooks or tools) |
-| 2 | `openai` (backup) | `OPENAI_API_KEY` | Chat Completions, bearer header; default `gpt-5-nano` |
+| 2 | `openai` (backup) | `OPENAI_API_KEY` | Chat Completions, bearer header; default `gpt-5-mini` |
 | 3 | `gemini` | `GEMINI_API_KEY` / `GOOGLE_API_KEY` | `x-goog-api-key` header; never in the URL |
 | 4 | `deterministic` | none | committed banks + BSB context verses |
 
@@ -134,13 +134,30 @@ cheap, basically free"). List prices were read from OpenAI's pricing page on
 | `gpt-4.1-nano` | 0.10 / 0.40 | 3/6 (comic vocabulary) | $0.0005 |
 | `gpt-5.4-nano` | 0.20 / 1.25 | 0/6 (rejects `reasoning_effort=minimal`) | — |
 
-A year of daily backup use at the measured rate costs about $0.20.
+That first bake-off measured validity only. On 2026-09-14 the CI Claude account hit
+its weekly limit and the backup ran for real. Its content showed the gap: decks of
+several sentences, decks reciting the verse printed beside them, a reference tacked
+on the end. The deck rules were tightened (one sentence, no recited verse, no
+leading label or trailing reference, no first-person plural), and failed output is
+now fed back to the model on its retry. Re-run against 2026-09-15, three editions each:
+
+| Model | Frames valid | Comics valid | Cost per edition |
+| --- | --- | --- | --- |
+| `gpt-5-nano` | 0/3 (fed-back retries too) | 3/3 | $0.0004 |
+| `gpt-5-mini` | 3/3, first attempt | 3/3 | $0.0012–0.0014 |
+
+**Default: `gpt-5-mini`.** A year of daily backup use costs about $0.50. Override
+with `DAILY_BREAD_OPENAI_MODEL`.
 
 `runProviderChain`:
 
 - Skips providers that are not configured.
 - Aborts each attempt at the timeout (default 90 s).
-- Retries once on a retryable failure or a validation failure, with backoff.
+- Retries once on a retryable failure or a validation failure, with backoff. A
+  validation retry carries the rejection reasons in the prompt; a transport retry
+  resends the prompt unchanged.
+- Treats the Claude CLI's usage, weekly or daily limit messages as quota (never
+  retried), like auth and billing failures.
 - Does not retry auth failures.
 - Records `ProviderUsage` for every attempt.
 - Lands on the deterministic floor last. If the floor throws, the task fails loudly.

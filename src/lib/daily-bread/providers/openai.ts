@@ -14,12 +14,16 @@ const API_URL = 'https://api.openai.com/v1/chat/completions'
 
 /**
  * Bake-off 2026-09-13 (3 real editions each, frame + comic tasks, Claude off):
- *   gpt-5-nano    6/6 tasks valid, ~$0.0003–0.0005 per edition   ← chosen
+ *   gpt-5-nano    6/6 tasks valid, ~$0.0003–0.0005 per edition
  *   gpt-4o-mini   5/6 valid, ~$0.0005–0.0009
  *   gpt-4.1-nano  3/6 valid (comic vocabulary failures every time)
  *   gpt-5.4-nano  rejected reasoning_effort=minimal; higher list price
+ * Re-run 2026-09-14 after the first real CI fallback, with the editorial deck
+ * rules (one sentence, no recited verse, no trailing reference):
+ *   gpt-5-nano    0/3 frames valid even with the rejection fed back
+ *   gpt-5-mini    3/3 frames and 3/3 comics valid first try, ~$0.0012–0.0014  ← chosen
  */
-export const DEFAULT_OPENAI_MODEL = 'gpt-5-nano'
+export const DEFAULT_OPENAI_MODEL = 'gpt-5-mini'
 
 /**
  * Standard per-1M-token list prices [input, output] in USD, from
