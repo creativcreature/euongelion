@@ -42,6 +42,23 @@ corrected in order, earliest first.
   - Run the scheduler for that date again, then retrieve and render the issue.
   - Result: the published reading text is byte-identical, the edited text is absent
     from the page, and there is still one revision.
+- **Deviation 4 (plan §14), corrected in code, not yet deployed.** The archive now
+  shows one month per page (`?month=YYYY-MM`), defaulting to the newest month:
+  - a month heading and an edition count;
+  - editions in date order, each with its serial, date, title and layout, and the
+    feast kept that day (the liturgical indicator);
+  - previous/next month links top and bottom, which skip empty months;
+  - old `?before=` links open the month they pointed into.
+  
+  `listArchive` gained an `onOrAfter` bound, and archive entries carry `feast`.
+  Verified against production data in a local dev server:
+  - September 2026 shows 14 editions with Exaltation of the Holy Cross.
+  - August 2026 shows 14 editions with Beheading of John the Baptist, linked forward
+    to September.
+  - Desktop, 390px and dark screenshots were checked, and a missing space before the
+    → arrow was fixed.
+  - The calendar view and thumbnails (both "desirable") are not built. Thumbnails
+    belong to deviation 25.
 
 ## 2026-09-14 — Daily Bread V2: the backup provider carries a real edition — SA-142 (F-184)
 

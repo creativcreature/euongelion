@@ -13,7 +13,7 @@
  */
 import type { DailyEdition, PublicationAttempt } from '../types'
 import { MemoryDailyBreadRepository } from './memory'
-import type { DailyBreadRepository } from './types'
+import type { ArchiveListOptions, DailyBreadRepository } from './types'
 
 const ASSET_PATH = '__daily-bread-fixtures/fixtures.json'
 
@@ -114,7 +114,7 @@ export class FixtureDailyBreadRepository implements DailyBreadRepository {
   async getNeighbors(date: string) {
     return (await this.repo()).getNeighbors(date)
   }
-  async listArchive(options: { limit: number; before?: string }) {
+  async listArchive(options: ArchiveListOptions) {
     return (await this.repo()).listArchive(options)
   }
   async recentCompositions(before: string, days: number) {

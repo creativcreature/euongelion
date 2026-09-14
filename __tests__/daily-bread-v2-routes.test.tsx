@@ -15,7 +15,13 @@ import { createDailyBreadEdition } from '@/lib/daily-bread/orchestrator'
 import { publishDailyBreadEdition } from '@/lib/daily-bread/publish'
 import { MemoryDailyBreadRepository } from '@/lib/daily-bread/repository/memory'
 import { offlineSources } from '@/lib/daily-bread/e2e'
-import { loadArchivePage, loadEditionForDate, loadLiveEdition, serialLabel } from '@/lib/daily-bread/read'
+import {
+  formatArchiveMonth,
+  loadArchiveMonth,
+  loadEditionForDate,
+  loadLiveEdition,
+  serialLabel,
+} from '@/lib/daily-bread/read'
 import { fixedClock } from '@/lib/daily-bread/time'
 import type { ArchetypeId, DailyEdition } from '@/lib/daily-bread/types'
 
@@ -70,12 +76,31 @@ describe('reader loaders', () => {
     expect(found?.neighbors.next?.editionDate).toBe('2026-09-15')
   })
 
-  it('archive pages newest first with a date cursor', async () => {
-    const page = await loadArchivePage(undefined, repo)
-    expect(page.entries.map((e) => e.editionDate)).toEqual(['2026-09-15', '2026-09-14', '2026-09-13'])
-    const older = await loadArchivePage('2026-09-14', repo)
-    expect(older.entries.map((e) => e.editionDate)).toEqual(['2026-09-13'])
-    expect(serialLabel(page.entries[0])).toBe('Vol. 1 · No. 003')
+  it('archive: one month per page in date order, adjacent months skip empty ones (plan §14)', async () => {
+    const monthRepo = new MemoryDailyBreadRepository()
+    const at = (date: string, extra: Partial<DailyEdition> = {}) =>
+      monthRepo.seedPublished({ ...edition, editionDate: date, slug: date, ...extra })
+    at('2026-07-31')
+    at('2026-09-14', { liturgical: { ...edition.liturgical, feast: 'Exaltation of the Holy Cross' } })
+    at('2026-09-01')
+    at('2026-11-02')
+
+    const newest = await loadArchiveMonth(undefined, monthRepo)
+    expect(newest).toMatchObject({ month: '2026-11', previousMonth: '2026-09', nextMonth: null })
+    expect(newest.entries.map((e) => e.editionDate)).toEqual(['2026-11-02'])
+
+    const september = await loadArchiveMonth('2026-09', monthRepo)
+    expect(september.entries.map((e) => e.editionDate)).toEqual(['2026-09-01', '2026-09-14'])
+    expect(september).toMatchObject({ previousMonth: '2026-07', nextMonth: '2026-11' })
+    expect(september.entries[1].feast).toBe('Exaltation of the Holy Cross')
+
+    expect(await loadArchiveMonth('2026-10', monthRepo)).toMatchObject({ entries: [], previousMonth: '2026-09', nextMonth: '2026-11' })
+    expect((await loadArchiveMonth('2026-13', monthRepo)).month).toBe('2026-11')
+    expect(await loadArchiveMonth(undefined, new MemoryDailyBreadRepository())).toEqual({ month: null, entries: [], previousMonth: null, nextMonth: null })
+    expect(formatArchiveMonth('2026-09')).toBe('September 2026')
+
+    const page = await loadArchiveMonth(undefined, repo)
+    expect(serialLabel(page.entries[page.entries.length - 1])).toBe('Vol. 1 · No. 003')
     expect(serialLabel({ archiveOrigin: 'backfilled', volume: null, issue: null })).toBe('From the archive · unnumbered')
   })
 })
@@ -231,6 +256,41 @@ describe('routes', () => {
     expect(live.openGraph).toMatchObject({ url: 'https://euangelion.app/daily-bread/2026-09-14' })
     const dated = await (await import('@/app/daily-bread/[date]/page')).generateMetadata({ params: Promise.resolve({ date: '2026-09-14' }) })
     expect(dated.alternates?.canonical).toBe('/daily-bread/2026-09-14')
+    vi.doUnmock('@/lib/daily-bread/read')
+  })
+
+  it('the archive page renders the month heading, its editions, the feast, and month links; old ?before= links still land', async () => {
+    vi.stubEnv('DAILY_BREAD_V2', 'on')
+    vi.resetModules()
+    const view = {
+      month: '2026-09',
+      entries: [
+        { ...(await loadArchiveMonth('2026-09', repo)).entries[1], feast: 'Exaltation of the Holy Cross' },
+      ],
+      previousMonth: '2026-08',
+      nextMonth: '2026-10',
+    }
+    vi.doMock('@/lib/daily-bread/read', async (orig) => ({
+      ...(await orig<typeof import('@/lib/daily-bread/read')>()),
+      loadArchiveMonth: async () => view,
+    }))
+    const archive = await import('@/app/daily-bread/archive/page')
+    const html = renderToStaticMarkup((await archive.default({ searchParams: Promise.resolve({ month: '2026-09' }) })) as never)
+    expect(html).toContain('<h2 id="db2-archive-month-heading" class="db2-archive-monthname">September 2026</h2>')
+    expect(html).toContain('1 edition')
+    expect(html).toContain('href="/daily-bread/2026-09-14"')
+    expect(html).toContain('Exaltation of the Holy Cross')
+    expect(html).toContain('href="/daily-bread/archive?month=2026-08"')
+    expect(html).toContain('href="/daily-bread/archive?month=2026-10"')
+    expect((await archive.generateMetadata({ searchParams: Promise.resolve({ month: '2026-09' }) })).alternates?.canonical).toBe(
+      '/daily-bread/archive?month=2026-09',
+    )
+    expect((await archive.generateMetadata({ searchParams: Promise.resolve({ before: '2026-09-01' }) })).alternates?.canonical).toBe(
+      '/daily-bread/archive?month=2026-08',
+    )
+    expect((await archive.generateMetadata({ searchParams: Promise.resolve({ month: '../../etc' }) })).alternates?.canonical).toBe(
+      '/daily-bread/archive',
+    )
     vi.doUnmock('@/lib/daily-bread/read')
   })
 

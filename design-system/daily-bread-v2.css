@@ -296,8 +296,67 @@
   font-size: var(--mock-type-1);
 }
 
-.db2-archive-more {
+/* One month per archive page (plan §14). */
+.db2-archive-monthhead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
   margin-top: 1.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--db2-accent, var(--mock-blue, currentColor));
+}
+
+.db2-archive-monthname {
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-2, 1.75rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.db2-archive-monthcount,
+.db2-archive-monthlink {
+  font-family: var(--font-family-ui);
+  font-size: var(--type-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.db2-archive-monthnav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.db2-archive-monthnav--bottom {
+  margin-top: 1rem;
+  border-top: var(--ed-hair);
+  padding-top: 1rem;
+}
+
+.db2-archive-monthlink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--db2-accent, var(--mock-blue, currentColor));
+  text-decoration: none;
+}
+
+.db2-archive-monthlink:hover,
+.db2-archive-monthlink:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.db2-archive-monthlink--next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.db2-archive-feast {
+  font-style: italic;
 }
 
 .db2-preview-bar {

@@ -16,6 +16,7 @@ import type {
 import {
   recentFromEdition,
   toArchiveEntry,
+  type ArchiveListOptions,
   type DailyBreadRepository,
   type MarkReadyResult,
   type RecentComposition,
@@ -313,11 +314,12 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     return { previous: entry(prev), next: entry(next) }
   }
 
-  async listArchive(options: { limit: number; before?: string }) {
+  async listArchive(options: ArchiveListOptions) {
     this.check('listArchive')
     return this.publicRows()
       .reverse()
       .filter((r) => !options.before || r.date < options.before)
+      .filter((r) => !options.onOrAfter || r.date >= options.onOrAfter)
       .slice(0, options.limit)
       .map((r) => toArchiveEntry(this.toEdition(r) as DailyEdition))
   }

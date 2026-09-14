@@ -3,7 +3,7 @@
  * providers. Failures THROW (the route renders a visible failure state).
  */
 import { getDailyBreadRepository, type DailyBreadRepository } from './repository'
-import { editorialDate, isValidDateSlug, systemClock, type EditorialClock } from './time'
+import { addDays, editorialDate, isValidDateSlug, systemClock, type EditorialClock } from './time'
 import type { ArchiveEntry, DailyEdition } from './types'
 
 export interface LiveEditionView {
@@ -42,17 +42,63 @@ export async function loadEditionForDate(
   return { edition, neighbors }
 }
 
-export const ARCHIVE_PAGE_SIZE = 30
+/** A month key, YYYY-MM. */
+export function isValidMonthSlug(value: unknown): value is string {
+  return typeof value === 'string' && /^\d{4}-(0[1-9]|1[0-2])$/.test(value)
+}
 
-export async function loadArchivePage(
-  before: string | undefined,
+function firstOfNextMonth(month: string): string {
+  const [y, m] = month.split('-').map(Number)
+  return m === 12 ? `${y + 1}-01-01` : `${y}-${String(m + 1).padStart(2, '0')}-01`
+}
+
+/** "September 2026". */
+export function formatArchiveMonth(month: string): string {
+  return new Date(`${month}-01T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  })
+}
+
+export interface ArchiveMonthView {
+  /** The month shown; null only when nothing has been published. */
+  month: string | null
+  /** That month's editions in date order (1st → last). */
+  entries: ArchiveEntry[]
+  /** The nearest earlier / later month that has an edition. */
+  previousMonth: string | null
+  nextMonth: string | null
+}
+
+/**
+ * The archive, one month at a time (plan §14). No month (or an invalid one)
+ * means the newest month with an edition. Adjacent-month links skip months
+ * with nothing in them, so they never lead to an empty page.
+ */
+export async function loadArchiveMonth(
+  month: string | undefined,
   repo: DailyBreadRepository = getDailyBreadRepository(),
-): Promise<{ entries: ArchiveEntry[]; nextBefore: string | null }> {
-  const cursor = before && isValidDateSlug(before) ? before : undefined
-  const entries = await repo.listArchive({ limit: ARCHIVE_PAGE_SIZE + 1, before: cursor })
-  const page = entries.slice(0, ARCHIVE_PAGE_SIZE)
-  const nextBefore = entries.length > ARCHIVE_PAGE_SIZE ? page[page.length - 1].editionDate : null
-  return { entries: page, nextBefore }
+): Promise<ArchiveMonthView> {
+  let shown = isValidMonthSlug(month) ? month : undefined
+  if (!shown) {
+    const [latest] = await repo.listArchive({ limit: 1 })
+    if (!latest) return { month: null, entries: [], previousMonth: null, nextMonth: null }
+    shown = latest.editionDate.slice(0, 7)
+  }
+  const start = `${shown}-01`
+  const nextStart = firstOfNextMonth(shown)
+  const [inMonth, earlier, neighbors] = await Promise.all([
+    repo.listArchive({ limit: 31, onOrAfter: start, before: nextStart }),
+    repo.listArchive({ limit: 1, before: start }),
+    repo.getNeighbors(addDays(nextStart, -1)),
+  ])
+  return {
+    month: shown,
+    entries: [...inMonth].reverse(),
+    previousMonth: earlier[0]?.editionDate.slice(0, 7) ?? null,
+    nextMonth: neighbors.next?.editionDate.slice(0, 7) ?? null,
+  }
 }
 
 /** "Vol. 1 · No. 001" for native editions; archive entries are unnumbered. */

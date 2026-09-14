@@ -18,7 +18,15 @@ export type MarkReadyResult =
   | 'already_published'
   | 'already_superseded'
 
-export type PublishResult = 'published' | 'already_published' | 'not_ready' | 'missing'
+export interface ArchiveListOptions {
+  limit: number
+  /** Exclusive upper bound (YYYY-MM-DD). */
+  before?: string
+  /** Inclusive lower bound (YYYY-MM-DD). */
+  onOrAfter?: string
+}
+
+export type PublishResult ='published' | 'already_published' | 'not_ready' | 'missing'
 
 export interface RecentComposition {
   editionDate: string
@@ -61,7 +69,8 @@ export interface DailyBreadRepository {
   getEdition(date: string, options?: { includeUnpublished?: boolean }): Promise<DailyEdition | null>
   getLatestPublished(onOrBefore: string): Promise<DailyEdition | null>
   getNeighbors(date: string): Promise<{ previous: ArchiveEntry | null; next: ArchiveEntry | null }>
-  listArchive(options: { limit: number; before?: string }): Promise<ArchiveEntry[]>
+  /** Published/withdrawn entries, newest first, within [onOrAfter, before). */
+  listArchive(options: ArchiveListOptions): Promise<ArchiveEntry[]>
   recentCompositions(before: string, days: number): Promise<RecentComposition[]>
   getLifecycle(date: string): Promise<EditionLifecycle | null>
   /** Internal read (service role): every immutable revision of an edition, oldest first. */
@@ -81,6 +90,7 @@ export function toArchiveEntry(edition: DailyEdition): ArchiveEntry {
     quality: edition.quality,
     archetype: edition.composition.archetype,
     lifecycle: edition.lifecycle === 'superseded' ? 'superseded' : 'published',
+    ...(edition.liturgical?.feast ? { feast: edition.liturgical.feast } : {}),
   }
 }
 

@@ -432,6 +432,8 @@ export interface ArchiveEntry {
   quality: EditionQuality
   archetype: ArchetypeId
   lifecycle: 'published' | 'superseded'
+  /** The feast kept that day, when there is one (archive liturgical indicator). */
+  feast?: string
 }
 
 export interface PublicationAttempt {

@@ -13,6 +13,7 @@ import type {
   PublicationAttempt,
 } from '../types'
 import type {
+  ArchiveListOptions,
   DailyBreadRepository,
   MarkReadyResult,
   PublishResult,
@@ -28,7 +29,7 @@ const EDITION_COLUMNS =
   'id, edition_date, slug, archive_origin, volume, issue, lifecycle, quality, active_revision, title, deck, primary_scripture, liturgical, seed, archetype, composition, modules, assets, generation, schema_version, renderer_version, superseded_reason, created_at, ready_at, published_at, updated_at'
 
 const ARCHIVE_COLUMNS =
-  'edition_date, issue, volume, archive_origin, title, quality, archetype, lifecycle'
+  'edition_date, issue, volume, archive_origin, title, quality, archetype, lifecycle, liturgical'
 
 interface EditionRow {
   id: string
@@ -99,7 +100,9 @@ function rowToArchive(row: {
   quality: ArchiveEntry['quality']
   archetype: ArchiveEntry['archetype']
   lifecycle: 'published' | 'superseded'
+  liturgical?: { feast?: string } | null
 }): ArchiveEntry {
+  const feast = row.liturgical?.feast
   return {
     editionDate: row.edition_date,
     issue: row.issue,
@@ -109,6 +112,7 @@ function rowToArchive(row: {
     quality: row.quality,
     archetype: row.archetype,
     lifecycle: row.lifecycle,
+    ...(typeof feast === 'string' && feast ? { feast } : {}),
   }
 }
 
@@ -289,7 +293,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
     }
   }
 
-  async listArchive(options: { limit: number; before?: string }) {
+  async listArchive(options: ArchiveListOptions) {
     const { data, error } = await this.read(() => {
       let query = this.client
         .from('daily_bread_editions')
@@ -298,6 +302,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
         .order('edition_date', { ascending: false })
         .limit(Math.min(Math.max(1, options.limit), 100))
       if (options.before) query = query.lt('edition_date', options.before)
+      if (options.onOrAfter) query = query.gte('edition_date', options.onOrAfter)
       return query
     })
     if (error) fail('read archive', error)
