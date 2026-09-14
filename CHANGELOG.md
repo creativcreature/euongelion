@@ -59,6 +59,21 @@ corrected in order, earliest first.
     → arrow was fixed.
   - The calendar view and thumbnails (both "desirable") are not built. Thumbnails
     belong to deviation 25.
+- **Deviation 5 (plan §15), corrected in code, not yet deployed.** Every edition now
+  ends with the plan's copy:
+  - **Today's paper:** "That’s today’s bread." then "← Yesterday" (or the date, when
+    the previous paper is not yesterday's) and "Browse the archive", with no
+    "next".
+  - **A past paper:** "This was the Daily Bread for September 13, 2026." then
+    "← September 12" and "September 14 →".
+  
+  Titles and serials stay under each link. Tested for today, past and a gap. Checked
+  on a local dev server against production data at desktop and 390px dark; an empty
+  third box on today's paper was fixed.
+- **New item found while correcting (added to the list as 40):** a local reader
+  request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request
+  timeout of their own. On Workers the platform caps a request, but the read should
+  fail fast.
 
 ## 2026-09-14 — Daily Bread V2: the backup provider carries a real edition — SA-142 (F-184)
 

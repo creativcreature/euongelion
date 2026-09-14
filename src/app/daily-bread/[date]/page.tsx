@@ -11,7 +11,7 @@ import { cache } from 'react'
 import DailyBreadEdition from '@/components/daily-bread/DailyBreadEdition'
 import { dailyBreadV2Enabled } from '@/lib/daily-bread/flags'
 import { loadEditionForDate, serialLabel } from '@/lib/daily-bread/read'
-import { isValidDateSlug } from '@/lib/daily-bread/time'
+import { editorialDate, isValidDateSlug } from '@/lib/daily-bread/time'
 
 // A published edition is immutable except for an explicit revision; an hour
 // of ISR lets a correction land without re-rendering on every request.
@@ -54,5 +54,12 @@ export default async function DailyBreadEditionPage({
   if (!dailyBreadV2Enabled() || !isValidDateSlug(date)) notFound()
   const found = await load(date)
   if (!found) notFound()
-  return <DailyBreadEdition edition={found.edition} neighbors={found.neighbors} mode="archive" />
+  return (
+    <DailyBreadEdition
+      edition={found.edition}
+      neighbors={found.neighbors}
+      mode="archive"
+      current={date === editorialDate(new Date())}
+    />
+  )
 }

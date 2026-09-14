@@ -14,6 +14,7 @@ import { createRunLogger } from '@/lib/daily-bread/log'
 import { createDailyBreadEdition } from '@/lib/daily-bread/orchestrator'
 import { publishDailyBreadEdition } from '@/lib/daily-bread/publish'
 import { MemoryDailyBreadRepository } from '@/lib/daily-bread/repository/memory'
+import { toArchiveEntry } from '@/lib/daily-bread/repository/types'
 import { offlineSources } from '@/lib/daily-bread/e2e'
 import {
   formatArchiveMonth,
@@ -186,6 +187,38 @@ describe('rendering the frozen edition', () => {
     // The only injected HTML is the escaped JSON-LD block.
     const scripts = html.match(/<script[^>]*>/g) ?? []
     expect(scripts.every((s) => s.includes('application/ld+json'))).toBe(true)
+  })
+
+  it('ends with the plan’s copy: today’s paper vs a past paper (plan §15)', async () => {
+    const sep13 = (await repo.getEdition('2026-09-13'))!
+    const sep15 = (await repo.getEdition('2026-09-15'))!
+    const text = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')
+    const neighbors = { previous: toArchiveEntry(sep13), next: toArchiveEntry(sep15) }
+
+    const today = text(
+      renderToStaticMarkup(
+        <DailyBreadEdition edition={edition} neighbors={{ previous: neighbors.previous, next: null }} mode="live" current />,
+      ),
+    )
+    expect(today).toContain('That’s today’s bread.')
+    expect(today).toContain('← Yesterday')
+    expect(today).toContain('Browse the archive')
+    expect(today).not.toContain('This was the Daily Bread')
+
+    const past = renderToStaticMarkup(<DailyBreadEdition edition={edition} neighbors={neighbors} mode="archive" />)
+    expect(text(past)).toContain('This was the Daily Bread for September 14, 2026.')
+    expect(text(past)).toContain('← September 13')
+    expect(text(past)).toContain('September 15 →')
+    expect(past).toContain('href="/daily-bread/2026-09-15"')
+    expect(text(past)).not.toContain('Yesterday')
+
+    // A gap before today's paper names the date instead of "Yesterday".
+    const gap = text(
+      renderToStaticMarkup(
+        <DailyBreadEdition edition={sep15} neighbors={{ previous: toArchiveEntry(sep13), next: null }} mode="live" current />,
+      ),
+    )
+    expect(gap).toContain('← September 13')
   })
 
   it('renders every one of the eight archetypes from the same modules', () => {

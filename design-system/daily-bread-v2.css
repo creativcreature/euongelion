@@ -200,12 +200,31 @@
   border: var(--ed-hair);
 }
 
+/* The edition's ending (plan §15): one closing line, then the way onward. */
+.db2-ending {
+  margin: 2.4rem var(--db2-gap) 0;
+}
+
+.db2-ending-line {
+  margin: 0 0 1rem;
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-2);
+  font-style: italic;
+  text-align: center;
+  color: var(--mock-ink);
+}
+
 .db2-editionnav {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: stretch;
   gap: var(--db2-gap);
-  margin: 2.4rem var(--db2-gap) 0;
+}
+
+/* Holds the third column open on today's paper; draws nothing. */
+.db2-editionnav .db2-editionnav-link--blank {
+  border: 0;
+  padding: 0;
 }
 
 .db2-editionnav-link {
@@ -599,6 +618,10 @@
 
   .db2-editionnav-link--next {
     text-align: left;
+  }
+
+  .db2-editionnav-link--blank {
+    display: none;
   }
 
   .db2-archive-list .db2-archive-link {

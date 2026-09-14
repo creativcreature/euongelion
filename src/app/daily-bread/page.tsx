@@ -105,6 +105,7 @@ export default async function DailyBreadPage() {
       edition={view.edition}
       neighbors={view.neighbors}
       mode="live"
+      current={!view.isFallbackToPrevious}
       notice={
         view.isFallbackToPrevious
           ? `Today’s paper (${formatEditorialDate(view.liveDate)}) is still on the press. This is the most recent edition.`

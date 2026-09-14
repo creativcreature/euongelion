@@ -10,7 +10,7 @@ import EuangelionShellHeader from '@/components/EuangelionShellHeader'
 import SiteBottom from '@/components/SiteBottom'
 import { ARCHETYPES } from '@/lib/daily-bread/composition/archetypes'
 import { serialLabel } from '@/lib/daily-bread/read'
-import { formatEditorialDate } from '@/lib/daily-bread/time'
+import { addDays, formatEditorialDate } from '@/lib/daily-bread/time'
 import type { ArchiveEntry, DailyEdition, EditionModule, Placement } from '@/lib/daily-bread/types'
 import { MODULE_ANCHORS, ModuleView } from './ModuleViews'
 
@@ -38,47 +38,73 @@ function groupBands(placements: Placement[]) {
   return bands
 }
 
-function EditionNav({
+/** "August 2" — the short date the plan's ending uses. */
+function shortDate(dateSlug: string): string {
+  return new Date(`${dateSlug}T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  })
+}
+
+/**
+ * The edition's ending (plan §15). Today's paper closes with
+ *   That’s today’s bread.   ← Yesterday   Browse the archive
+ * and a past paper with
+ *   This was the Daily Bread for August 3, 2026.   ← August 2   August 4 →
+ * Links only ever point at published editions.
+ */
+function EditionEnding({
+  editionDate,
+  current,
   previous,
   next,
 }: {
+  editionDate: string
+  current: boolean
   previous: ArchiveEntry | null
   next: ArchiveEntry | null
 }) {
+  const previousLabel = previous
+    ? current && previous.editionDate === addDays(editionDate, -1)
+      ? '← Yesterday'
+      : `← ${shortDate(previous.editionDate)}`
+    : null
   return (
-    <nav className="db2-editionnav" aria-label="Other editions">
-      {previous ? (
-        <Link href={`/daily-bread/${previous.editionDate}`} className="db2-editionnav-link" rel="prev">
-          <span className="db2-editionnav-dir">&larr; Previous edition</span>
-          <span className="db2-editionnav-title">{previous.title}</span>
-          <span className="db2-editionnav-meta">
-            {formatEditorialDate(previous.editionDate)} · {serialLabel(previous)}
-          </span>
+    <section className="db2-ending" aria-label="End of this edition">
+      <p className="db2-ending-line">
+        {current
+          ? 'That’s today’s bread.'
+          : `This was the Daily Bread for ${formatEditorialDate(editionDate).replace(/^[A-Za-z]+, /, '')}.`}
+      </p>
+      <nav className="db2-editionnav" aria-label="Other editions">
+        {previous ? (
+          <Link href={`/daily-bread/${previous.editionDate}`} className="db2-editionnav-link" rel="prev">
+            <span className="db2-editionnav-dir">{previousLabel}</span>
+            <span className="db2-editionnav-title">{previous.title}</span>
+            <span className="db2-editionnav-meta">{serialLabel(previous)}</span>
+          </Link>
+        ) : (
+          <span className="db2-editionnav-link db2-editionnav-link--none">The first edition</span>
+        )}
+        <Link href="/daily-bread/archive" className="db2-editionnav-archive text-label">
+          Browse the archive
         </Link>
-      ) : (
-        <span className="db2-editionnav-link db2-editionnav-link--none">The first edition</span>
-      )}
-      <Link href="/daily-bread/archive" className="db2-editionnav-archive text-label">
-        The archive
-      </Link>
-      {next ? (
-        <Link
-          href={`/daily-bread/${next.editionDate}`}
-          className="db2-editionnav-link db2-editionnav-link--next"
-          rel="next"
-        >
-          <span className="db2-editionnav-dir">Next edition &rarr;</span>
-          <span className="db2-editionnav-title">{next.title}</span>
-          <span className="db2-editionnav-meta">
-            {formatEditorialDate(next.editionDate)} · {serialLabel(next)}
-          </span>
-        </Link>
-      ) : (
-        <span className="db2-editionnav-link db2-editionnav-link--none db2-editionnav-link--next">
-          The newest edition
-        </span>
-      )}
-    </nav>
+        {next && !current ? (
+          <Link
+            href={`/daily-bread/${next.editionDate}`}
+            className="db2-editionnav-link db2-editionnav-link--next"
+            rel="next"
+          >
+            <span className="db2-editionnav-dir">{`${shortDate(next.editionDate)} →`}</span>
+            <span className="db2-editionnav-title">{next.title}</span>
+            <span className="db2-editionnav-meta">{serialLabel(next)}</span>
+          </Link>
+        ) : (
+          <span className="db2-editionnav-link db2-editionnav-link--blank" aria-hidden="true" />
+        )}
+      </nav>
+    </section>
   )
 }
 
@@ -86,11 +112,14 @@ export default function DailyBreadEdition({
   edition,
   neighbors,
   mode,
+  current = false,
   notice,
 }: {
   edition: DailyEdition
   neighbors: { previous: ArchiveEntry | null; next: ArchiveEntry | null }
   mode: 'live' | 'archive' | 'preview'
+  /** This is today's paper (the ending says so and offers no "next"). */
+  current?: boolean
   notice?: string
 }) {
   const archetype = ARCHETYPES[edition.composition.archetype]
@@ -209,7 +238,12 @@ export default function DailyBreadEdition({
           </>
         )}
 
-        <EditionNav previous={neighbors.previous} next={neighbors.next} />
+        <EditionEnding
+          editionDate={edition.editionDate}
+          current={current}
+          previous={neighbors.previous}
+          next={neighbors.next}
+        />
 
         <footer className="today-colophon db2-colophon">
           <p className="vw-small text-secondary">
