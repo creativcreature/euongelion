@@ -23,6 +23,13 @@ Founder: _"Deploy and commit."_
     `/`, `/series`, `/today` and `/sunday` return 200.
 - Rollback: `npx wrangler rollback e9197b29-d8b8-4c73-aecf-f99e03955a2f --name euangelion`
   (the previous live version), or build with `DAILY_BREAD_V2=off`.
+- **Scheduler enabled** (`DAILY_BREAD_V2_SCHEDULER=enabled`); `main` and
+  `series/by-the-heel-live` fast-forwarded to the live commit.
+  - The first CI health run succeeded, then its second read hit a real Supabase 504
+    "Gateway Timeout", and the alert opened an issue as designed.
+  - Repository reads now retry transient upstream errors (gateway, timeout, network),
+    up to 3 attempts with a fresh query each time. Writes are never retried, because a
+    write whose response was lost may already have landed.
 
 ## 2026-09-13 — Daily Bread V2: real providers verified, archive links kept — SA-142 (F-184)
 

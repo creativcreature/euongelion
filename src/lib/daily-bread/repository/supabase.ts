@@ -110,9 +110,41 @@ function fail(op: string, error: { message?: string } | null | undefined): never
   throw new Error(`daily-bread ${op} failed: ${errorMessage(error?.message ?? 'unknown')}`)
 }
 
+type ReadResult = { data: unknown; error: { message?: string; code?: string } | null }
+
+/** Upstream hiccups worth one or two quick retries (a real 504 hit the first CI run). */
+export function isTransientReadError(error: { message?: string; code?: string } | null | undefined): boolean {
+  if (!error) return false
+  return /gateway|timeout|timed out|fetch failed|network|econnreset|socket|502|503|504|service unavailable/i.test(
+    `${error.code ?? ''} ${error.message ?? ''}`,
+  )
+}
+
 export class SupabaseDailyBreadRepository implements DailyBreadRepository {
   readonly kind = 'supabase' as const
-  constructor(private readonly client: SupabaseLike) {}
+  constructor(
+    private readonly client: SupabaseLike,
+    private readonly readRetry: { attempts: number; delayMs: number } = { attempts: 3, delayMs: 400 },
+  ) {}
+
+  /**
+   * Reads only: build a FRESH query per attempt (a PostgREST builder re-sends on
+   * each await) and retry transient upstream errors. Writes are never retried
+   * here — a write whose response was lost may already have landed.
+   */
+  private async read<T extends ReadResult>(make: () => PromiseLike<T>): Promise<T> {
+    let last: T | null = null
+    for (let attempt = 1; attempt <= this.readRetry.attempts; attempt++) {
+      try {
+        last = await make()
+      } catch (thrown) {
+        last = { data: null, error: { message: errorMessage(thrown) } } as T
+      }
+      if (!last.error || !isTransientReadError(last.error) || attempt === this.readRetry.attempts) return last
+      await new Promise((r) => setTimeout(r, this.readRetry.delayMs * attempt))
+    }
+    return last as T
+  }
 
   async acquireAssembly(
     date: string,
@@ -194,23 +226,27 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
   }
 
   async getEdition(date: string, options: { includeUnpublished?: boolean } = {}) {
-    let query = this.client.from('daily_bread_editions').select(EDITION_COLUMNS).eq('edition_date', date)
-    if (!options.includeUnpublished) {
-      query = query.in('lifecycle', ['published', 'superseded'])
-    }
-    const { data, error } = await query.maybeSingle()
+    const { data, error } = await this.read(() => {
+      let query = this.client.from('daily_bread_editions').select(EDITION_COLUMNS).eq('edition_date', date)
+      if (!options.includeUnpublished) {
+        query = query.in('lifecycle', ['published', 'superseded'])
+      }
+      return query.maybeSingle()
+    })
     if (error) fail('read edition', error)
     return data ? rowToEdition(data as EditionRow) : null
   }
 
   async getLatestPublished(onOrBefore: string) {
-    const { data, error } = await this.client
-      .from('daily_bread_editions')
-      .select(EDITION_COLUMNS)
-      .eq('lifecycle', 'published')
-      .lte('edition_date', onOrBefore)
-      .order('edition_date', { ascending: false })
-      .limit(1)
+    const { data, error } = await this.read(() =>
+      this.client
+        .from('daily_bread_editions')
+        .select(EDITION_COLUMNS)
+        .eq('lifecycle', 'published')
+        .lte('edition_date', onOrBefore)
+        .order('edition_date', { ascending: false })
+        .limit(1),
+    )
     if (error) fail('read latest edition', error)
     const row = (data as EditionRow[] | null)?.[0]
     return row ? rowToEdition(row) : null
@@ -218,38 +254,46 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
 
   async getNeighbors(date: string) {
     const [prev, next] = await Promise.all([
-      this.client
-        .from('daily_bread_editions')
-        .select(ARCHIVE_COLUMNS)
-        .in('lifecycle', ['published', 'superseded'])
-        .lt('edition_date', date)
-        .order('edition_date', { ascending: false })
-        .limit(1),
-      this.client
-        .from('daily_bread_editions')
-        .select(ARCHIVE_COLUMNS)
-        .in('lifecycle', ['published', 'superseded'])
-        .gt('edition_date', date)
-        .order('edition_date', { ascending: true })
-        .limit(1),
+      this.read(() =>
+        this.client
+          .from('daily_bread_editions')
+          .select(ARCHIVE_COLUMNS)
+          .in('lifecycle', ['published', 'superseded'])
+          .lt('edition_date', date)
+          .order('edition_date', { ascending: false })
+          .limit(1),
+      ),
+      this.read(() =>
+        this.client
+          .from('daily_bread_editions')
+          .select(ARCHIVE_COLUMNS)
+          .in('lifecycle', ['published', 'superseded'])
+          .gt('edition_date', date)
+          .order('edition_date', { ascending: true })
+          .limit(1),
+      ),
     ])
     if (prev.error) fail('read previous edition', prev.error)
     if (next.error) fail('read next edition', next.error)
+    const prevRows = prev.data as Parameters<typeof rowToArchive>[0][] | null
+    const nextRows = next.data as Parameters<typeof rowToArchive>[0][] | null
     return {
-      previous: prev.data?.[0] ? rowToArchive(prev.data[0]) : null,
-      next: next.data?.[0] ? rowToArchive(next.data[0]) : null,
+      previous: prevRows?.[0] ? rowToArchive(prevRows[0]) : null,
+      next: nextRows?.[0] ? rowToArchive(nextRows[0]) : null,
     }
   }
 
   async listArchive(options: { limit: number; before?: string }) {
-    let query = this.client
-      .from('daily_bread_editions')
-      .select(ARCHIVE_COLUMNS)
-      .in('lifecycle', ['published', 'superseded'])
-      .order('edition_date', { ascending: false })
-      .limit(Math.min(Math.max(1, options.limit), 100))
-    if (options.before) query = query.lt('edition_date', options.before)
-    const { data, error } = await query
+    const { data, error } = await this.read(() => {
+      let query = this.client
+        .from('daily_bread_editions')
+        .select(ARCHIVE_COLUMNS)
+        .in('lifecycle', ['published', 'superseded'])
+        .order('edition_date', { ascending: false })
+        .limit(Math.min(Math.max(1, options.limit), 100))
+      if (options.before) query = query.lt('edition_date', options.before)
+      return query
+    })
     if (error) fail('read archive', error)
     return ((data ?? []) as Parameters<typeof rowToArchive>[0][]).map(rowToArchive)
   }
@@ -258,13 +302,15 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
     const floor = new Date(Date.parse(`${before}T00:00:00Z`) - days * 86_400_000)
       .toISOString()
       .slice(0, 10)
-    const { data, error } = await this.client
-      .from('daily_bread_editions')
-      .select('edition_date, archetype, modules, assets')
-      .in('lifecycle', ['ready', 'published', 'superseded'])
-      .lt('edition_date', before)
-      .gte('edition_date', floor)
-      .order('edition_date', { ascending: false })
+    const { data, error } = await this.read(() =>
+      this.client
+        .from('daily_bread_editions')
+        .select('edition_date, archetype, modules, assets')
+        .in('lifecycle', ['ready', 'published', 'superseded'])
+        .lt('edition_date', before)
+        .gte('edition_date', floor)
+        .order('edition_date', { ascending: false }),
+    )
     if (error) fail('read recent compositions', error)
     return ((data ?? []) as {
       edition_date: string
@@ -285,13 +331,11 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
   }
 
   async getLifecycle(date: string) {
-    const { data, error } = await this.client
-      .from('daily_bread_editions')
-      .select('lifecycle')
-      .eq('edition_date', date)
-      .maybeSingle()
+    const { data, error } = await this.read(() =>
+      this.client.from('daily_bread_editions').select('lifecycle').eq('edition_date', date).maybeSingle(),
+    )
     if (error) fail('read lifecycle', error)
-    return (data?.lifecycle as EditionLifecycle | undefined) ?? null
+    return ((data as { lifecycle?: EditionLifecycle } | null)?.lifecycle as EditionLifecycle | undefined) ?? null
   }
 
   async recordAttempt(attempt: PublicationAttempt) {
@@ -318,11 +362,13 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
   }
 
   async recentAttempts(limit: number) {
-    const { data, error } = await this.client
-      .from('daily_bread_publication_attempts')
-      .select('*')
-      .order('started_at', { ascending: false })
-      .limit(Math.min(Math.max(1, limit), 200))
+    const { data, error } = await this.read(() =>
+      this.client
+        .from('daily_bread_publication_attempts')
+        .select('*')
+        .order('started_at', { ascending: false })
+        .limit(Math.min(Math.max(1, limit), 200)),
+    )
     if (error) fail('read attempts', error)
     return ((data ?? []) as Record<string, unknown>[]).map(
       (r): PublicationAttempt => ({
