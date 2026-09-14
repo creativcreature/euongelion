@@ -31,6 +31,18 @@ Format: Reverse chronological, grouped by sprint/date.
   - `gpt-5-nano` passed 0/3 frames, even with feedback.
   - `gpt-5-mini` passed 3/3 frames and 3/3 comics on the first attempt, at about
     $0.0013 per edition (about $0.50 a year used daily).
+- **Sep 15 rebuilt in CI with the new code:**
+  - Claude CLI was skipped on quota, and OpenAI `gpt-5-mini` wrote the frame and the comic.
+  - The edition is `ready` at quality `normal`, at a cost of $0.0013.
+  - Deck: "When the kingdom takes first place, daily needs find their place without
+    frantic rearranging."
+- **Deployed** `3020722a` as Worker version `1ff29569`. It carries the read retries
+  that landed after the first deploy.
+  - Verified in the local Workers preview and on euangelion.app by page body and
+    screenshots.
+  - Anonymous health calls return 401, the service worker is v169, and the bundle
+    secret scan is clean.
+  - Rollback: `npx wrangler rollback 44ee9459-a9c1-4b28-8c81-e1f1dfe9c7a3 --name euangelion`.
 
 ## 2026-09-13 — The Daily Bread V2 is live — SA-142 (F-184) — v0.8.33
 
