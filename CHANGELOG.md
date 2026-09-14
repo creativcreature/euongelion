@@ -39,6 +39,23 @@ Format: Reverse chronological, grouped by sprint/date.
   - Reasoning models are sent `max_completion_tokens` and `reasoning_effort` with no
     temperature. Cost uses the verified list prices.
   - Chain: Claude API → Claude CLI → OpenAI → Gemini → deterministic.
+- **Lead plate policy (no arbitrary image use).** Keyword matching against the print
+  library chose Bosch's *Ship of Fools* for the Emmaus Sunday feature and Vermeer's
+  *Girl with a Pearl Earring* for a kingdom reading.
+  - A V2 lead plate is now the day's generated plate or the series' own riso art.
+  - Authored features carry no plate unless one was made for them, as in the SA-090
+    paper. Prints remain in the Gallery.
+  - The 16 published editions affected were corrected through revisions
+    (`npm run daily-bread -- repair-lead-plates`). Issue numbers are unchanged, and
+    the page shows "Corrected edition".
+- **Illuminated layout.** The front scene is a band (4:1), and a long Scripture passage
+  is set as a readable text block, not centred display type, stepping down again on
+  phones.
+- **Production data.**
+  - Aug 18 – Sep 12 backfilled as 26 unnumbered archive editions.
+  - Sep 13 published as Vol. 1 · No. 001: the Emmaus Sunday feature, with the frame
+    and strip written by Claude.
+  - Sep 14 built ready for its 7am rollover.
 - **Rabbit holes may not overlap the day's passage.** `gpt-5-nano` offered
   Matthew 6:26 for Matthew 6:25-30; overlaps with the passage or another rabbit
   hole are now rejected.

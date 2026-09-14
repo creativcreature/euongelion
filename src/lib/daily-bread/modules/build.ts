@@ -25,7 +25,6 @@ import { getSeriesHero } from '@/lib/series-hero'
 import type { Edition } from '@/lib/edition/store'
 import { pageArchive, pageB365, pageProverb } from '@/lib/edition/page-modules'
 import { buildWordSearch } from '@/lib/edition/wordsearch'
-import { pickLeadArt } from '@/lib/edition/lead-art'
 import type { GeneratedLeadArt } from '@/lib/edition/lead-art-generated'
 import { generatePractice } from '@/lib/edition/generators/practice'
 import { generateWord } from '@/lib/edition/generators/word'
@@ -283,14 +282,7 @@ function sanitizeGoodNews(dateSlug: string, entries: readonly GoodNewsEntry[]): 
  * Build everything except the frame-dependent modules (comic, scene,
  * rabbit holes), which the orchestrator adds after the provider chain runs.
  */
-export async function buildBaseEdition(
-  dateSlug: string,
-  sources: EditionSources,
-  options: { recentLeadPlateIds?: string[] } = {},
-): Promise<BaseEdition> {
-  const recentPrintFiles = (options.recentLeadPlateIds ?? [])
-    .filter((id) => id.startsWith('print:'))
-    .map((id) => id.slice('print:'.length))
+export async function buildBaseEdition(dateSlug: string, sources: EditionSources): Promise<BaseEdition> {
   const date = slugToUtcDate(dateSlug)
   const failures: ModuleFailure[] = []
   const assetFallbacks: string[] = []
@@ -432,22 +424,19 @@ export async function buildBaseEdition(
           kind: 'generated-plate',
         }
       }
-      assetFallbacks.push('lead-plate: no generated plate; matched a print')
-      // The BEST match only (no arbitrary image use): if that print led the
-      // paper in the last two weeks, the series' own art leads instead of a
-      // weaker second choice.
-      const print = pickLeadArt(dateSlug, [title, teaser, scripture.text].join(' '))
-      if (print && recentPrintFiles.includes(print.file)) {
-        assetFallbacks.push(`lead-plate: best print ${print.file} ran recently`)
-      } else if (print) {
-        return {
-          id: `print:${print.file}`,
-          src: print.image,
-          alt: cleanText(print.shown, 140),
-          kind: 'print',
-        }
+      // LEAD PLATE POLICY (CLAUDE.md "no arbitrary image use"): a plate is
+      // either made for the day (above) or the series' own riso art. Keyword
+      // matching against the print library was tried and printed Bosch's Ship
+      // of Fools over the Emmaus feature and Vermeer's Girl with a Pearl
+      // Earring over a kingdom reading, so V2 does not use it for the lead;
+      // prints appear in the Gallery, where they are presented as prints. An
+      // authored Sunday feature carries no plate unless one was made for it,
+      // as in the SA-090 paper.
+      if (lead.authored) {
+        assetFallbacks.push('lead-plate: authored feature without a generated plate')
+        return undefined
       }
-      assetFallbacks.push('lead-plate: no print matched; series art')
+      assetFallbacks.push('lead-plate: no generated plate; series art')
       const hero = lead.seriesSlug ? getSeriesHero(lead.seriesSlug) : undefined
       const heroSrc = hero ? safeAssetSrc(hero.src) : null
       if (hero && heroSrc) {

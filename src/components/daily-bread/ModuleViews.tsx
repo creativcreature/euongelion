@@ -178,7 +178,10 @@ export function ModuleView({
 
     case 'scripture':
       return (
-        <section className="db2-scripture" aria-label="Today's Scripture">
+        <section
+          className={`db2-scripture${module.scripture.text.length > 280 ? ' db2-scripture--long' : ''}`}
+          aria-label="Today's Scripture"
+        >
           <p className="edition-kicker">Today&rsquo;s Scripture</p>
           <blockquote className="db2-scripture-text" cite={module.scripture.reference}>
             {module.scripture.text}

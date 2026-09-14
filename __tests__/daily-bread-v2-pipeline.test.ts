@@ -20,6 +20,7 @@ import { failingProvider, offlineSources, runInMemoryE2E } from '@/lib/daily-bre
 import { runBackfill } from '@/lib/daily-bread/backfill'
 import { getDailyBreadHealth } from '@/lib/daily-bread/health'
 import { fixedClock } from '@/lib/daily-bread/time'
+import { buildBaseEdition } from '@/lib/daily-bread/modules/build'
 import type { TextProvider } from '@/lib/daily-bread/providers/types'
 
 const quietLogger = (id: string) => createRunLogger(id, { sink: () => {} })
@@ -74,6 +75,51 @@ describe('quality is orthogonal to lifecycle', () => {
     expect(pub).toMatchObject({ result: 'published', issue: 1 })
     const e = await repo.getEdition('2026-09-14')
     expect(e).toMatchObject({ lifecycle: 'published', quality: 'fallback', issue: 1, volume: 1 })
+  }, 60_000)
+})
+
+describe('lead plate policy (no arbitrary image use)', () => {
+  it('rotation days lead with the series art; no keyword-matched library print is ever the lead', async () => {
+    for (const date of ['2026-09-12', '2026-09-13', '2026-09-14', '2026-09-15']) {
+      const base = await buildBaseEdition(date, offlineSources())
+      const plate = base.lead?.plate
+      expect(plate?.kind, date).not.toBe('print')
+      if (base.lead && !base.lead.authored && plate) expect(plate.kind).toBe('series-hero')
+    }
+  }, 60_000)
+
+  it('an authored Sunday feature carries no plate unless one was made for it', async () => {
+    const sources = offlineSources()
+    sources.liveEditionItems = async () => ({
+      lead: [
+        {
+          id: '22222222-2222-2222-2222-222222222222',
+          kind: 'lead',
+          publishDate: '2026-09-13',
+          slot: 0,
+          status: 'published',
+          payload: {
+            mode: 'authored',
+            title: 'The Stranger Who Was Never Gone',
+            standfirst: 'Two travelers and a stranger on the road.',
+            body: 'First paragraph.\n\nSecond paragraph.',
+            scriptureReference: 'Luke 24:13-18',
+          },
+        },
+      ],
+    })
+    const without = await buildBaseEdition('2026-09-13', sources)
+    expect(without.lead).toMatchObject({ authored: true })
+    expect(without.lead?.plate).toBeUndefined()
+    sources.generatedLeadArt = async () => ({
+      src: '/images/edition/guide-lectio.webp',
+      width: 1200,
+      height: 800,
+      subject: 's',
+      alt: 'A made-for-the-day plate',
+    })
+    const withPlate = await buildBaseEdition('2026-09-13', sources)
+    expect(withPlate.lead?.plate).toMatchObject({ kind: 'generated-plate' })
   }, 60_000)
 })
 

@@ -44,6 +44,7 @@ import {
 } from '../../src/lib/daily-bread/time'
 import { runBackfill } from '../../src/lib/daily-bread/backfill'
 import { runInMemoryE2E } from '../../src/lib/daily-bread/e2e'
+import { repairLeadPlates } from '../../src/lib/daily-bread/maintenance'
 import type { DailyEdition } from '../../src/lib/daily-bread/types'
 
 const ROOT = process.cwd()
@@ -184,6 +185,13 @@ async function main() {
         liveDate: editorialDate(systemClock.now()),
         deps: deps(repo, logger, { trigger: 'backfill', policy: 'deterministic-only' }),
       })
+      console.log(JSON.stringify(result, null, 2))
+      process.exit(result.failed.length > 0 ? 1 : 0)
+    }
+    case 'repair-lead-plates': {
+      const from = requireDate('from')
+      const to = requireDate('to')
+      const result = await repairLeadPlates({ repo: supabaseRepo(), from, to, dryRun: flag('dry-run') })
       console.log(JSON.stringify(result, null, 2))
       process.exit(result.failed.length > 0 ? 1 : 0)
     }

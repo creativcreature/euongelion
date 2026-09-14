@@ -338,8 +338,10 @@
   background: transparent;
 }
 
+/* A band, not a wall: the scene opens the page without pushing the Scripture
+   below the first screen. */
 .db2-arch--illuminated .db2-region--front .db2-scene--full {
-  aspect-ratio: 5 / 2;
+  aspect-ratio: 4 / 1;
 }
 
 .db2-arch--illuminated .db2-cell--scripture {
@@ -351,6 +353,15 @@
 .db2-arch--illuminated .db2-scripture-text {
   font-size: var(--mock-type-3);
   line-height: 1.2;
+}
+
+/* A long passage (several verses) at display size becomes a wall of centred
+   type; it reads as a set-in text block instead. */
+.db2-arch--illuminated .db2-scripture--long .db2-scripture-text,
+.db2-arch--quiet .db2-scripture--long .db2-scripture-text {
+  font-size: var(--mock-type-2);
+  line-height: 1.4;
+  text-align: left;
 }
 
 .db2-arch--illuminated .db2-scripture-text::first-letter {
@@ -509,7 +520,18 @@
 
   .db2-scene--full,
   .db2-arch--illuminated .db2-region--front .db2-scene--full {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 2 / 1;
+  }
+
+  /* Display-size Scripture steps down on a phone; long passages step further. */
+  .db2-arch--illuminated .db2-scripture-text,
+  .db2-arch--quiet .db2-scripture-text {
+    font-size: var(--mock-type-2);
+  }
+
+  .db2-arch--illuminated .db2-scripture--long .db2-scripture-text,
+  .db2-arch--quiet .db2-scripture--long .db2-scripture-text {
+    font-size: var(--mock-type-1);
   }
 
   .db2-editionnav {

@@ -141,11 +141,7 @@ export async function createDailyBreadEdition(
     leased = true
 
     const recent = await log.stage('history', () => deps.repo.recentCompositions(dateSlug, 14))
-    const base = await log.stage('modules', () =>
-      buildBaseEdition(dateSlug, deps.sources, {
-        recentLeadPlateIds: recent.map((r) => r.leadPlateId).filter((x): x is string => Boolean(x)),
-      }),
-    )
+    const base = await log.stage('modules', () => buildBaseEdition(dateSlug, deps.sources))
     attempt.moduleFailures.push(...base.failures)
     attempt.assetFallbacks.push(...base.assetFallbacks)
 
