@@ -570,6 +570,23 @@
   margin-right: 1.4rem;
 }
 
+/* Echo & Dust: the strip's title line, then — for a reprint — its first run on
+   a line of its own, set as a label so it never competes with the title. */
+.db2-comic-section .edition-strip-caption {
+  flex-wrap: wrap;
+  row-gap: 0.2rem;
+}
+
+.db2-comic-section .db2-comic-archive {
+  flex-basis: 100%;
+  font-family: var(--font-family-ui);
+  font-size: var(--type-label);
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mock-muted);
+}
+
 /* ═══ SMALL SCREENS ═════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
