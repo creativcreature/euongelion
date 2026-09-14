@@ -65,7 +65,8 @@ The SQL itself is tested in real Postgres by `__tests__/daily-bread-v2-sql.test.
 The rollover is 07:00 America/New_York, resolved per instant with Intl, so it is
 DST-safe. `__tests__/daily-bread-v2-time.test.ts` checks it against the SA-114
 `effectiveEditionDate` every 37 minutes across 2026. `schedulePlan` returns the live
-date, the next date and whether the 12-hour build window is open.
+date, the next date and whether the 14-hour build window is open (both evening cron
+runs fall inside it in EDT and EST).
 
 ## 4. The pipeline
 

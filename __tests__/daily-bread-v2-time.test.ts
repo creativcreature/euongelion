@@ -53,10 +53,17 @@ describe('editorial clock', () => {
     expect(addDays('2028-03-01', -1)).toBe('2028-02-29')
   })
 
-  it('the build window opens 12 hours before the next rollover', () => {
+  it('the build window opens 14 hours before the next rollover', () => {
     const outside = schedulePlan(fixedClock('2026-09-14T11:05:00Z'))
     expect(outside).toMatchObject({ liveDate: '2026-09-14', nextDate: '2026-09-15', inBuildWindow: false })
     const inside = schedulePlan(fixedClock('2026-09-14T23:30:00Z'))
     expect(inside).toMatchObject({ liveDate: '2026-09-14', nextDate: '2026-09-15', inBuildWindow: true })
+  })
+
+  it('both evening cron runs (22:15 and 02:15 UTC) fall inside the window in EDT and EST', () => {
+    expect(schedulePlan(fixedClock('2026-09-14T22:15:00Z')).inBuildWindow).toBe(true)
+    expect(schedulePlan(fixedClock('2026-09-15T02:15:00Z')).inBuildWindow).toBe(true)
+    expect(schedulePlan(fixedClock('2026-01-14T22:15:00Z')).inBuildWindow).toBe(true)
+    expect(schedulePlan(fixedClock('2026-01-15T02:15:00Z')).inBuildWindow).toBe(true)
   })
 })

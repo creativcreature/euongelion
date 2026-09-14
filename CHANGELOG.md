@@ -30,6 +30,9 @@ Founder: _"Deploy and commit."_
   - Repository reads now retry transient upstream errors (gateway, timeout, network),
     up to 3 attempts with a fresh query each time. Writes are never retried, because a
     write whose response was lost may already have landed.
+  - The build window is widened from 12 to 14 hours. The 22:15 UTC evening run fell
+    45 minutes outside the 12-hour window; now both evening runs (22:15 build, 02:15
+    retry) land inside it in EDT and EST.
 
 ## 2026-09-13 — Daily Bread V2: real providers verified, archive links kept — SA-142 (F-184)
 

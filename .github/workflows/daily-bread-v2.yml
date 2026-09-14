@@ -5,7 +5,7 @@ name: daily-bread-v2
 # Every run executes ONE idempotent step (`npm run daily-bread -- run`):
 #   1. the edition live now (7am New York rule) is published if it is ready,
 #      or built and published immediately if it is missing;
-#   2. inside the 12 hours before the next 7am rollover, tomorrow's edition is
+#   2. inside the 14 hours before the next 7am rollover, tomorrow's edition is
 #      built and frozen as READY so it can publish on time.
 # The database serializes concurrent runs (assembly lease + advisory lock on
 # issue allocation), so overlapping or duplicate triggers are harmless.
