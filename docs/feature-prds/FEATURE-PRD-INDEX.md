@@ -186,4 +186,4 @@ Canonical feature PRD registry. Every feature change must update the matching PR
 | F-181 | Content pipeline  | Mannered prose (tell 10) + restored PRD integrity gate      | 0/10     | shipped  | [F-181.md](./F-181.md) |
 | F-182 | Audio             | Listening player rebuilt for a phone in a car               | 0/10     | shipped  | [F-182.md](./F-182.md) |
 | F-183 | Content           | By the Heel — seven days on law and freedom                 | 0/10     | shipped  | [F-183.md](./F-183.md) |
-| F-184 | Daily Bread       | Daily Bread V2 — serialized, self-archiving daily paper      | 0/10     | wip      | [F-184.md](./F-184.md) |
+| F-184 | Daily Bread       | Daily Bread V2 — serialized, self-archiving daily paper      | 0/10     | shipped  | [F-184.md](./F-184.md) |

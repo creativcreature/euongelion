@@ -5,6 +5,25 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-13 — The Daily Bread V2 is live — SA-142 (F-184) — v0.8.33
+
+Founder: _"Deploy and commit."_
+
+- Deployed to Cloudflare from `feat/daily-bread-v2` at `883b6214` (Worker version
+  `44ee9459`). The build used the production app URL, and the bundle secret scan was
+  clean.
+- Verified on euangelion.app by page body and screenshots:
+  - `/daily-bread` is Vol. 1 · No. 001, the Emmaus Sunday feature, set as an
+    Illuminated page.
+  - The strip is present with its verbatim caption, and the placeholder frame is gone.
+  - Previous/next and the archive (27 editions) work, and the legacy archive link
+    redirects.
+  - Sep 14 stays unpublished until 7am ET.
+  - Anonymous health and publish calls are refused, the service worker is v169, and
+    `/`, `/series`, `/today` and `/sunday` return 200.
+- Rollback: `npx wrangler rollback e9197b29-d8b8-4c73-aecf-f99e03955a2f --name euangelion`
+  (the previous live version), or build with `DAILY_BREAD_V2=off`.
+
 ## 2026-09-13 — Daily Bread V2: real providers verified, archive links kept — SA-142 (F-184)
 
 - **Real generation verified.** A real Claude Code build produced a normal-quality
