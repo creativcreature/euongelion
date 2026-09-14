@@ -5,6 +5,28 @@ Format: Reverse chronological, grouped by sprint/date.
 
 ---
 
+## 2026-09-14 — Daily Bread V2 realignment against the plan — SA-142 (F-184)
+
+An audit against every section of the V2 plan found 37 deviations. They are being
+corrected in order, earliest first.
+
+- **No. 002 published late.** GitHub's scheduled runs fired hours late, so Sep 14 was
+  still `ready` at 11:39 UTC. It was published by dispatching the scheduler's own
+  `run` step and is live as Vol. 1 · No. 002 (page body and mobile screenshot
+  checked). The timing fix is deviation 6.
+- **Deviation 1 (plan §9), corrected.**
+  - **Reversible schema.** `database/ROLLBACK-2026-09-13-daily-bread-v2.sql` is
+    guarded, runs in one transaction, and is tested: it refuses without
+    confirmation, removes exactly 3 tables and 9 functions, leaves other tables
+    intact, and the migration re-applies cleanly.
+  - **Domain records.** `DailyEdition` now carries `id`, `createdAt` and
+    `updatedAt`. There is a new `EditionRevision` type, and
+    `repository.getRevisions(date)` reads it on all three repositories.
+  - **Asset registry linkage.** It is typed: `leadPlateId()` and
+    `leadPlateRegistryLink()`.
+  - **Production check.** Reads verified: No. 001 returns 2 revisions; No. 002's
+    plate links to `series-hero` / `kingdom`.
+
 ## 2026-09-14 — Daily Bread V2: the backup provider carries a real edition — SA-142 (F-184)
 
 - **What happened.** The CI build of Sep 15 found the Claude Code account at its

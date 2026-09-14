@@ -59,6 +59,19 @@ implementations:
 The SQL itself is tested in real Postgres by `__tests__/daily-bread-v2-sql.test.ts`
 (PGlite).
 
+**Reversal.** The Supabase CLI runs migrations forward only. The reverse is
+`database/ROLLBACK-2026-09-13-daily-bread-v2.sql`: one transaction that drops exactly
+the 3 tables and 9 functions above. It refuses to run until the session sets
+`daily_bread.confirm_rollback = 'destroy-archive'`, because it deletes the archive.
+The SQL suite tests the refusal, the removal, and a clean re-apply afterwards.
+
+**Domain records** (`types.ts`): `DailyEdition` carries its row `id`, `createdAt` and
+`updatedAt`. `EditionRevision` is one immutable revision `{ editionId, revision,
+createdAt, reason, snapshot }`, readable internally through
+`repository.getRevisions(date)`. Lead plates link to their registry through their id
+(`generated:<date>` is the generated lead-art manifest, `series:<slug>` is the series
+hero art). `leadPlateRegistryLink()` in `modules/build.ts` resolves the link.
+
 ## 3. Time
 
 `src/lib/daily-bread/time.ts` is the only place an instant becomes an editorial date.

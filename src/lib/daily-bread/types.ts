@@ -363,6 +363,8 @@ export interface GenerationProvenance {
 /* ── The edition ─────────────────────────────────────────────────────── */
 
 export interface DailyEdition {
+  /** Row identity (daily_bread_editions.id); revisions reference it. */
+  id: string
   schemaVersion: number
   editionDate: string
   slug: string
@@ -383,13 +385,35 @@ export interface DailyEdition {
   generation: GenerationProvenance
   rendererVersion: string
   supersededReason?: string
+  createdAt: string
   readyAt: string | null
   publishedAt: string | null
+  updatedAt: string
 }
+
+/**
+ * One immutable revision of a published edition (daily_bread_edition_revisions).
+ * Revision 1 is written at publication; each correction appends the next.
+ * The snapshot is the frozen document as it stood at that revision.
+ */
+export interface EditionRevision {
+  editionId: string
+  revision: number
+  createdAt: string
+  reason: string
+  snapshot: EditionSnapshot
+}
+
+/** What a revision freezes: the document plus its serial identity at the time. */
+export type EditionSnapshot = EditionDocument &
+  Pick<DailyEdition, 'volume' | 'issue' | 'readyAt' | 'publishedAt'>
 
 /** The document handed to `daily_bread_mark_ready` (no serial fields yet). */
 export type EditionDocument = Omit<
   DailyEdition,
+  | 'id'
+  | 'createdAt'
+  | 'updatedAt'
   | 'volume'
   | 'issue'
   | 'lifecycle'

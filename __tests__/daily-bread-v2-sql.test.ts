@@ -18,6 +18,11 @@ const MIGRATION = readFileSync(
   'utf8',
 )
 
+const ROLLBACK = readFileSync(
+  path.join(process.cwd(), 'database/ROLLBACK-2026-09-13-daily-bread-v2.sql'),
+  'utf8',
+)
+
 async function freshDb(): Promise<PGlite> {
   const db = new PGlite()
   // Mirror the Supabase role model so the REVOKE/GRANT blocks and RLS run.
@@ -250,5 +255,30 @@ describe('daily bread v2 schema (PGlite)', () => {
     const [acq] = await rows(db, `select * from daily_bread_acquire_assembly('2026-09-14', 'svc')`)
     expect(acq.acquired).toBe(true)
     await db.exec(`RESET ROLE`)
+  })
+
+  it('is reversible: the rollback refuses without confirmation, then removes exactly what the migration made', async () => {
+    const objects = async () => ({
+      tables: (await rows(db, `select tablename from pg_tables where schemaname = 'public' and tablename like 'daily_bread%' order by 1`)).map((r) => r.tablename),
+      functions: (await rows(db, `select proname from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'public' and proname like 'daily_bread%' order by 1`)).map((r) => r.proname),
+    })
+    await db.exec(`CREATE TABLE public.unrelated (id int); INSERT INTO public.unrelated VALUES (1);`)
+    await assembleReady(db, '2026-09-14')
+    await rows(db, `select * from daily_bread_publish('2026-09-14')`)
+    const before = await objects()
+    expect(before.tables).toEqual(['daily_bread_edition_revisions', 'daily_bread_editions', 'daily_bread_publication_attempts'])
+    expect(before.functions).toHaveLength(9)
+
+    await expect(db.exec(ROLLBACK)).rejects.toThrow(/rollback refused/)
+    await db.exec('ROLLBACK') // clear the aborted transaction, as psql would
+    expect(await objects()).toEqual(before)
+
+    await db.exec(`SET daily_bread.confirm_rollback = 'destroy-archive'; ${ROLLBACK}`)
+    expect(await objects()).toEqual({ tables: [], functions: [] })
+    expect(await rows(db, `select id from public.unrelated`)).toEqual([{ id: 1 }])
+
+    // And forward again: the migration re-applies cleanly after a rollback.
+    await db.exec(MIGRATION)
+    expect(await objects()).toEqual(before)
   })
 })

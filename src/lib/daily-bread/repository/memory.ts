@@ -9,6 +9,8 @@ import type {
   DailyEdition,
   EditionDocument,
   EditionLifecycle,
+  EditionRevision,
+  EditionSnapshot,
   PublicationAttempt,
 } from '../types'
 import {
@@ -30,8 +32,10 @@ interface Row {
   issue: number | null
   volume: number | null
   activeRevision: number
+  createdAt: string
   readyAt: string | null
   publishedAt: string | null
+  updatedAt: string
   supersededReason?: string
 }
 
@@ -48,7 +52,7 @@ function clone<T>(v: T): T {
 export class MemoryDailyBreadRepository implements DailyBreadRepository {
   readonly kind = 'memory' as const
   private rows = new Map<string, Row>()
-  private revisions: { editionId: string; revision: number; reason: string; snapshot: DailyEdition }[] = []
+  private revisions: EditionRevision[] = []
   private attempts: PublicationAttempt[] = []
   private seq = 0
   private readonly now: () => Date
@@ -64,17 +68,37 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     if (err) throw err
   }
 
+  /** Mirrors `updated_at = now()` in every SQL mutation. */
+  private touch(row: Row, at: Date = this.now()) {
+    row.updatedAt = at.toISOString()
+  }
+
   private toEdition(row: Row): DailyEdition | null {
+    if (!row.document) return null
+    return clone({
+      ...row.document,
+      id: row.id,
+      volume: row.volume,
+      issue: row.issue,
+      lifecycle: row.lifecycle,
+      activeRevision: row.activeRevision,
+      createdAt: row.createdAt,
+      readyAt: row.readyAt,
+      publishedAt: row.publishedAt,
+      updatedAt: row.updatedAt,
+      ...(row.supersededReason ? { supersededReason: row.supersededReason } : {}),
+    })
+  }
+
+  /** Mirrors `daily_bread_edition_document`: the frozen document plus serial identity. */
+  private toSnapshot(row: Row): EditionSnapshot | null {
     if (!row.document) return null
     return clone({
       ...row.document,
       volume: row.volume,
       issue: row.issue,
-      lifecycle: row.lifecycle,
-      activeRevision: row.activeRevision,
       readyAt: row.readyAt,
       publishedAt: row.publishedAt,
-      ...(row.supersededReason ? { supersededReason: row.supersededReason } : {}),
     })
   }
 
@@ -87,6 +111,7 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     const ttl = options.ttlSeconds ?? 900
     let row = this.rows.get(date)
     if (!row) {
+      const created = this.now().toISOString()
       row = {
         id: `mem-${++this.seq}`,
         date,
@@ -98,8 +123,10 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
         issue: null,
         volume: null,
         activeRevision: 0,
+        createdAt: created,
         readyAt: null,
         publishedAt: null,
+        updatedAt: created,
       }
       this.rows.set(date, row)
     }
@@ -118,6 +145,7 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     row.archiveOrigin = options.archiveOrigin ?? 'native'
     row.lockOwner = owner
     row.lockExpiresAt = nowMs + ttl * 1000
+    this.touch(row)
     return { acquired: true, lifecycle: 'assembling' as const, editionId: row.id }
   }
 
@@ -128,6 +156,7 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     row.lifecycle = 'draft'
     row.lockOwner = null
     row.lockExpiresAt = null
+    this.touch(row)
     return true
   }
 
@@ -147,6 +176,7 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     row.readyAt = this.now().toISOString()
     row.lockOwner = null
     row.lockExpiresAt = null
+    this.touch(row)
     return 'ready'
   }
 
@@ -156,6 +186,7 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     if (!row || row.lifecycle !== 'ready') return false
     row.lifecycle = 'draft'
     row.readyAt = null
+    this.touch(row)
     return true
   }
 
@@ -184,9 +215,16 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     row.activeRevision = 1
     row.lockOwner = null
     row.lockExpiresAt = null
-    const snapshot = this.toEdition(row)
+    this.touch(row, now)
+    const snapshot = this.toSnapshot(row)
     if (snapshot) {
-      this.revisions.push({ editionId: row.id, revision: 1, reason: 'initial publication', snapshot })
+      this.revisions.push({
+        editionId: row.id,
+        revision: 1,
+        createdAt: now.toISOString(),
+        reason: 'initial publication',
+        snapshot,
+      })
     }
     return { result: 'published' as const, issue: row.issue, volume: row.volume }
   }
@@ -204,9 +242,16 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     if (!reason || reason.length > 500) throw new Error('daily_bread_create_revision: reason required')
     row.document = { ...row.document, ...clone(patch) }
     row.activeRevision += 1
-    const snapshot = this.toEdition(row)
+    this.touch(row)
+    const snapshot = this.toSnapshot(row)
     if (snapshot) {
-      this.revisions.push({ editionId: row.id, revision: row.activeRevision, reason, snapshot })
+      this.revisions.push({
+        editionId: row.id,
+        revision: row.activeRevision,
+        createdAt: row.updatedAt,
+        reason,
+        snapshot,
+      })
     }
     return { result: 'revised' as const, revision: row.activeRevision }
   }
@@ -217,7 +262,19 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
     if (!row || row.lifecycle !== 'published') return 'not_published' as const
     row.lifecycle = 'superseded'
     row.supersededReason = reason
+    this.touch(row)
     return 'superseded' as const
+  }
+
+  async getRevisions(date: string) {
+    this.check('getRevisions')
+    const row = this.rows.get(date)
+    if (!row) return []
+    return clone(
+      this.revisions
+        .filter((r) => r.editionId === row.id)
+        .sort((a, b) => a.revision - b.revision),
+    )
   }
 
   async getEdition(date: string, options: { includeUnpublished?: boolean } = {}) {
@@ -299,9 +356,15 @@ export class MemoryDailyBreadRepository implements DailyBreadRepository {
    * Load an already-published edition as-is (fixture sets, archive imports in
    * tests). Keeps its recorded issue/volume; no numbering is performed.
    */
-  seedPublished(edition: DailyEdition) {
+  seedPublished(
+    edition: Omit<DailyEdition, 'id' | 'createdAt' | 'updatedAt'> &
+      Partial<Pick<DailyEdition, 'id' | 'createdAt' | 'updatedAt'>>,
+  ) {
+    const stamp = edition.publishedAt ?? edition.readyAt ?? this.now().toISOString()
     const row: Row = {
-      id: `mem-${++this.seq}`,
+      id: edition.id ?? `mem-${++this.seq}`,
+      createdAt: edition.createdAt ?? stamp,
+      updatedAt: edition.updatedAt ?? stamp,
       date: edition.editionDate,
       lifecycle: edition.lifecycle,
       archiveOrigin: edition.archiveOrigin,

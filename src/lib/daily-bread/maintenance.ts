@@ -4,6 +4,7 @@
  * as an immutable revision and the page says "Corrected edition").
  */
 import { getSeriesHero } from '@/lib/series-hero'
+import { leadPlateId } from './modules/build'
 import type { DailyBreadRepository } from './repository/types'
 import { safeAssetSrc } from './safe'
 import { addDays, isValidDateSlug } from './time'
@@ -20,7 +21,7 @@ export function correctedLeadPlate(edition: DailyEdition): { plate: AssetRef | u
   const hero = lead.seriesSlug ? getSeriesHero(lead.seriesSlug) : undefined
   const src = hero ? safeAssetSrc(hero.src) : null
   return {
-    plate: hero && src ? { id: `series:${lead.seriesSlug}`, src, alt: '', kind: 'series-hero' } : undefined,
+    plate: hero && src ? { id: leadPlateId('series-hero', lead.seriesSlug), src, alt: '', kind: 'series-hero' } : undefined,
   }
 }
 

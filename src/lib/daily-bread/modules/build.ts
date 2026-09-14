@@ -127,6 +127,30 @@ export function goodNewsForDate(dateSlug: string, entries: readonly GoodNewsEntr
   return entries.filter((e) => e.runOn === dateSlug)
 }
 
+/**
+ * Asset registry linkage (plan §9). A lead plate's id names the registry it
+ * came from and its key there, so a frozen edition can always be traced back:
+ *   generated:YYYY-MM-DD → the generated lead-art manifest (edition-assets
+ *                          pipeline/lead-art.json), keyed by date
+ *   series:<slug>        → the series hero art (src/lib/series-hero.ts)
+ */
+export type LeadPlateRegistry = 'lead-art-generated' | 'series-hero'
+
+const REGISTRY_PREFIX: Record<LeadPlateRegistry, string> = {
+  'lead-art-generated': 'generated',
+  'series-hero': 'series',
+}
+
+export function leadPlateId(registry: LeadPlateRegistry, key: string): string {
+  return `${REGISTRY_PREFIX[registry]}:${key}`
+}
+
+export function leadPlateRegistryLink(ref: Pick<AssetRef, 'id'>): { registry: LeadPlateRegistry; key: string } | null {
+  const match = /^(generated|series):(.+)$/.exec(ref.id)
+  if (!match) return null
+  return { registry: match[1] === 'generated' ? 'lead-art-generated' : 'series-hero', key: match[2] }
+}
+
 /** Default sources: the committed corpus + the live edition_items table. */
 export function defaultEditionSources(): EditionSources {
   return {
@@ -416,7 +440,7 @@ export async function buildBaseEdition(dateSlug: string, sources: EditionSources
       const genSrc = generated ? safeAssetSrc(generated.src) : null
       if (generated && genSrc) {
         return {
-          id: `generated:${dateSlug}`,
+          id: leadPlateId('lead-art-generated', dateSlug),
           src: genSrc,
           width: generated.width,
           height: generated.height,
@@ -440,7 +464,7 @@ export async function buildBaseEdition(dateSlug: string, sources: EditionSources
       const hero = lead.seriesSlug ? getSeriesHero(lead.seriesSlug) : undefined
       const heroSrc = hero ? safeAssetSrc(hero.src) : null
       if (hero && heroSrc) {
-        return { id: `series:${lead.seriesSlug}`, src: heroSrc, alt: '', kind: 'series-hero' }
+        return { id: leadPlateId('series-hero', lead.seriesSlug), src: heroSrc, alt: '', kind: 'series-hero' }
       }
       assetFallbacks.push('lead-plate: none')
       return undefined

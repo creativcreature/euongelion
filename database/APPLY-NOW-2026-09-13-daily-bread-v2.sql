@@ -14,7 +14,9 @@
 -- Backfilled editions (dates before V2 launched) are archive entries only:
 -- they never take an issue number, so "No. 001" is the first native paper.
 --
--- Idempotent: safe to paste twice. No down migration (house style).
+-- Idempotent: safe to paste twice. The Supabase CLI runs migrations forward
+-- only; the reverse is database/ROLLBACK-2026-09-13-daily-bread-v2.sql
+-- (guarded, one transaction, tested in __tests__/daily-bread-v2-sql.test.ts).
 
 CREATE TABLE IF NOT EXISTS public.daily_bread_editions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

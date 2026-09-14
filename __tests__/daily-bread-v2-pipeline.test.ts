@@ -20,7 +20,8 @@ import { failingProvider, offlineSources, runInMemoryE2E } from '@/lib/daily-bre
 import { runBackfill } from '@/lib/daily-bread/backfill'
 import { getDailyBreadHealth } from '@/lib/daily-bread/health'
 import { fixedClock } from '@/lib/daily-bread/time'
-import { buildBaseEdition } from '@/lib/daily-bread/modules/build'
+import { buildBaseEdition, leadPlateRegistryLink } from '@/lib/daily-bread/modules/build'
+import { getSeriesHero } from '@/lib/series-hero'
 import type { TextProvider } from '@/lib/daily-bread/providers/types'
 
 const quietLogger = (id: string) => createRunLogger(id, { sink: () => {} })
@@ -84,7 +85,13 @@ describe('lead plate policy (no arbitrary image use)', () => {
       const base = await buildBaseEdition(date, offlineSources())
       const plate = base.lead?.plate
       expect(plate?.kind, date).not.toBe('print')
-      if (base.lead && !base.lead.authored && plate) expect(plate.kind).toBe('series-hero')
+      if (base.lead && !base.lead.authored && plate) {
+        expect(plate.kind).toBe('series-hero')
+        // Registry linkage: the frozen id resolves back to the art it came from.
+        const link = leadPlateRegistryLink(plate)
+        expect(link, date).toEqual({ registry: 'series-hero', key: base.lead.seriesSlug })
+        expect(getSeriesHero(link!.key)?.src).toBe(plate.src)
+      }
     }
   }, 60_000)
 
@@ -120,6 +127,38 @@ describe('lead plate policy (no arbitrary image use)', () => {
     })
     const withPlate = await buildBaseEdition('2026-09-13', sources)
     expect(withPlate.lead?.plate).toMatchObject({ kind: 'generated-plate' })
+    expect(leadPlateRegistryLink(withPlate.lead!.plate!)).toEqual({ registry: 'lead-art-generated', key: '2026-09-13' })
+    expect(leadPlateRegistryLink({ id: 'print:vasari-12' })).toBeNull()
+  }, 60_000)
+})
+
+describe('domain records (plan §9)', () => {
+  it('a persisted edition carries its id and timestamps; its revisions are readable, oldest first', async () => {
+    let now = new Date('2026-09-14T11:05:00Z')
+    const repo = new MemoryDailyBreadRepository({ now: () => now })
+    const d = deps(repo, '2026-09-14T11:05:00Z')
+    expect(await createDailyBreadEdition('2026-09-14', d)).toMatchObject({ result: 'ready' })
+    await publishDailyBreadEdition('2026-09-14', d)
+    const published = await repo.getEdition('2026-09-14')
+    expect(published?.id).toMatch(/^mem-/)
+    expect(published?.createdAt).toBe('2026-09-14T11:05:00.000Z')
+    expect(published?.updatedAt).toBe('2026-09-14T11:05:00.000Z')
+
+    now = new Date('2026-09-14T15:00:00Z')
+    await repo.createRevision('2026-09-14', 'a typo in the deck', { deck: 'Corrected deck.' })
+    const revised = await repo.getEdition('2026-09-14')
+    expect(revised?.updatedAt).toBe('2026-09-14T15:00:00.000Z')
+    expect(revised?.createdAt).toBe(published?.createdAt)
+
+    const revisions = await repo.getRevisions('2026-09-14')
+    expect(revisions.map((r) => [r.revision, r.reason, r.editionId])).toEqual([
+      [1, 'initial publication', published!.id],
+      [2, 'a typo in the deck', published!.id],
+    ])
+    expect(revisions[0].snapshot.deck).toBe(published!.deck)
+    expect(revisions[1].snapshot).toMatchObject({ deck: 'Corrected deck.', issue: 1, volume: 1 })
+    expect(revisions[1].createdAt).toBe('2026-09-14T15:00:00.000Z')
+    expect(await repo.getRevisions('2030-01-01')).toEqual([])
   }, 60_000)
 })
 

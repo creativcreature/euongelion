@@ -9,6 +9,7 @@ import type {
   DailyEdition,
   EditionDocument,
   EditionLifecycle,
+  EditionRevision,
   PublicationAttempt,
 } from '../types'
 import type {
@@ -24,7 +25,7 @@ import { errorMessage } from '../redact'
 export type SupabaseLike = { from: (table: string) => any; rpc: (fn: string, args?: Record<string, unknown>) => any }
 
 const EDITION_COLUMNS =
-  'id, edition_date, slug, archive_origin, volume, issue, lifecycle, quality, active_revision, title, deck, primary_scripture, liturgical, seed, archetype, composition, modules, assets, generation, schema_version, renderer_version, superseded_reason, ready_at, published_at'
+  'id, edition_date, slug, archive_origin, volume, issue, lifecycle, quality, active_revision, title, deck, primary_scripture, liturgical, seed, archetype, composition, modules, assets, generation, schema_version, renderer_version, superseded_reason, created_at, ready_at, published_at, updated_at'
 
 const ARCHIVE_COLUMNS =
   'edition_date, issue, volume, archive_origin, title, quality, archetype, lifecycle'
@@ -52,13 +53,16 @@ interface EditionRow {
   schema_version: number
   renderer_version: string | null
   superseded_reason: string | null
+  created_at: string
   ready_at: string | null
   published_at: string | null
+  updated_at: string
 }
 
 function rowToEdition(row: EditionRow): DailyEdition | null {
   if (!row.title || !row.modules || !row.composition || !row.quality) return null
   return {
+    id: row.id,
     schemaVersion: row.schema_version,
     editionDate: row.edition_date,
     slug: row.slug,
@@ -79,8 +83,10 @@ function rowToEdition(row: EditionRow): DailyEdition | null {
     generation: row.generation as DailyEdition['generation'],
     rendererVersion: row.renderer_version ?? '',
     ...(row.superseded_reason ? { supersededReason: row.superseded_reason } : {}),
+    createdAt: row.created_at,
     readyAt: row.ready_at,
     publishedAt: row.published_at,
+    updatedAt: row.updated_at,
   }
 }
 
@@ -336,6 +342,36 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
     )
     if (error) fail('read lifecycle', error)
     return ((data as { lifecycle?: EditionLifecycle } | null)?.lifecycle as EditionLifecycle | undefined) ?? null
+  }
+
+  async getRevisions(date: string) {
+    const { data: edition, error: editionError } = await this.read(() =>
+      this.client.from('daily_bread_editions').select('id').eq('edition_date', date).maybeSingle(),
+    )
+    if (editionError) fail('read edition id', editionError)
+    const id = (edition as { id?: string } | null)?.id
+    if (!id) return []
+    const { data, error } = await this.read(() =>
+      this.client
+        .from('daily_bread_edition_revisions')
+        .select('edition_id, revision, created_at, reason, snapshot')
+        .eq('edition_id', id)
+        .order('revision', { ascending: true }),
+    )
+    if (error) fail('read revisions', error)
+    return ((data ?? []) as {
+      edition_id: string
+      revision: number
+      created_at: string
+      reason: string
+      snapshot: EditionRevision['snapshot']
+    }[]).map((r) => ({
+      editionId: r.edition_id,
+      revision: r.revision,
+      createdAt: r.created_at,
+      reason: r.reason,
+      snapshot: r.snapshot,
+    }))
   }
 
   async recordAttempt(attempt: PublicationAttempt) {

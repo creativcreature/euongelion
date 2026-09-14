@@ -5,6 +5,7 @@ import type {
   DailyEdition,
   EditionDocument,
   EditionLifecycle,
+  EditionRevision,
   ProceduralSceneId,
   PublicationAttempt,
 } from '../types'
@@ -63,6 +64,8 @@ export interface DailyBreadRepository {
   listArchive(options: { limit: number; before?: string }): Promise<ArchiveEntry[]>
   recentCompositions(before: string, days: number): Promise<RecentComposition[]>
   getLifecycle(date: string): Promise<EditionLifecycle | null>
+  /** Internal read (service role): every immutable revision of an edition, oldest first. */
+  getRevisions(date: string): Promise<EditionRevision[]>
 
   recordAttempt(attempt: PublicationAttempt): Promise<void>
   recentAttempts(limit: number): Promise<PublicationAttempt[]>

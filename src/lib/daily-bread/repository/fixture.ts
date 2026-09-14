@@ -123,6 +123,9 @@ export class FixtureDailyBreadRepository implements DailyBreadRepository {
   async getLifecycle(date: string) {
     return (await this.repo()).getLifecycle(date)
   }
+  async getRevisions(date: string) {
+    return (await this.repo()).getRevisions(date)
+  }
   async recentAttempts(limit: number) {
     return (await this.repo()).recentAttempts(limit)
   }

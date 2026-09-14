@@ -49,6 +49,13 @@ root. Pipeline commands read secrets from the environment (CI) or `.env.local`
 `DAILY_BREAD_V2_DEFAULT` to `'off'` and deploy. `/daily-bread` is the SA-090 paper
 again. V2 data stays in its tables.
 
+**Removing the schema** (only after the reader rollback above, with the scheduler
+variable not `enabled`, and after exporting the tables if the archive should
+survive): run `database/ROLLBACK-2026-09-13-daily-bread-v2.sql` in the Supabase SQL
+editor with `SET daily_bread.confirm_rollback = 'destroy-archive';` first. It
+deletes every edition, revision and attempt. Re-applying the migration afterwards
+starts the paper again at No. 001.
+
 ## Daily operation
 
 - **Health:** `npm run daily-bread -- health`, or
