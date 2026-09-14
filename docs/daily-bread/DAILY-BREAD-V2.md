@@ -219,19 +219,42 @@ because no strip rows existed. These faults stopped the rows from being made:
 
 Items 2–5 are repaired. `STRIP_MACHINE` is unchanged: it is a founder switch.
 
-**V2** (`src/lib/daily-bread/comic/`):
-- **Script:** a `ComicScript` of 3 panels. Each panel has a setting, 1–4 figures, a
-  screen-reader description and an optional verbatim BSB caption.
-- **Render:** `render.ts` produces a deterministic SVG tree with a halftone pattern
-  and a single crimson spot. `svg.ts` allowlists tags and attributes.
-  `ComicStrip.tsx` maps the tree to React elements (no innerHTML). It renders a wide
-  strip on desktop and stacked panels below 700px, with an sr-only panel list.
-- **Fallback chain:**
-  1. Approved strip art from `edition_items`.
-  2. A generated script, validated and render-checked.
-  3. One of 17 committed templates, skipping any used in the last 14 days.
-  4. An archive reprint, credited.
-  5. Omitted. The composition closes the gap, and no placeholder is printed.
+**Correction (2026-09-14): the funnies are ECHO & DUST.** The founder's strip is Teddy,
+Echo and Dust, locked in `content/strip-reference/ECHO-AND-DUST-CANON.md` and drawn by
+the SA-114 strip machine from the locked character sheet. The first V2 build treated
+the paused machine as a fault and printed a generic wordless silhouette strip in its
+place, on 23 of 28 editions. Founder: "the comic strip is completely wrong… where is
+Dust and Echo?" That strip is gone from the pipeline.
+
+`src/lib/daily-bread/comic/chain.ts`:
+1. **approved-art.** The date's Echo & Dust strip row, live at rollover under the
+   SA-114 rule (published, or an unrejected draft).
+2. **archive-reprint.** A strip the founder PUBLISHED that first ran before the
+   edition's date, least recently printed first. The page credits it: "A reprint —
+   first ran ...".
+3. **omitted.** No strip, and the composition closes the gap. Never a stand-in
+   drawing.
+
+Every image is checked at build: HTTP 200 and an `image/*` type.
+
+No model is called for the comic. The strip is written and drawn upstream against the
+canon, and it passes the founder's review queue.
+
+**Correcting published editions.** `npm run daily-bread -- repair-comics
+--from=... --to=... [--dry-run]` recomputes each published edition's comic with the
+chain above. It writes a revision only where the level or image a reader sees would
+change.
+
+The frozen silhouette scripts still render (`render.ts`, `svg.ts`, `ComicStrip.tsx`)
+until those editions are revised. After that, that code is removed.
+
+**Strip storage.** `generate-strip.mjs` used to name files by strip number. On
+2026-08-24, "No. 4: The Receipt" was written over `echo-dust-004.jpg`, the file behind
+the published No. 1 "The Microwave Minute". Files are now named
+`echo-dust-<date>-<stamp>.jpg` and uploaded with no overwrite. The Microwave Minute
+master (`content/strip-reference/workshop/echo-dust-004.jpg`) is re-uploaded as
+`strip/echo-dust-001-microwave-minute.jpg`. Pointing No. 1's row at it is a pending
+production step.
 
 ## 7. Composition
 

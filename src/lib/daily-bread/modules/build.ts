@@ -36,6 +36,7 @@ import { generateVerse, verseForWeek } from '@/lib/edition/generators/verse'
 import { generateQuestion } from '@/lib/edition/generators/question'
 import { findSeriesForSlug, pickTodaySlug } from '@/lib/today-devotional'
 import type { Devotional, Module, Panel } from '@/types'
+import type { StripBankEntry } from '../comic/chain'
 import { errorMessage } from '../redact'
 import { addDays, slugToUtcDate } from '../time'
 import { cleanParagraphs, cleanText, safeAssetSrc, safeHref } from '../safe'
@@ -57,6 +58,10 @@ export interface EditionSources {
   liveEditionItems(dateSlug: string): Promise<Edition>
   generatedLeadArt(dateSlug: string): Promise<GeneratedLeadArt | null>
   goodNews(dateSlug: string): readonly GoodNewsEntry[]
+  /** Echo & Dust strips the founder PUBLISHED, any date (the reprint bank). */
+  publishedStrips(): Promise<StripBankEntry[]>
+  /** Build-time check that an image URL is really there. */
+  assetAvailable(src: string): Promise<boolean>
 }
 
 export interface ModuleFailure {
@@ -166,6 +171,24 @@ export function defaultEditionSources(): EditionSources {
       return getGeneratedLeadArt(dateSlug)
     },
     goodNews: (dateSlug) => goodNewsForDate(dateSlug),
+    async publishedStrips() {
+      const { createAdminClient } = await import('@/lib/supabase/admin')
+      const { stripBankEntryFromRow } = await import('../comic/chain')
+      const { data, error } = await createAdminClient()
+        .from('edition_items')
+        .select('id, publish_date, payload')
+        .eq('kind', 'strip')
+        .eq('status', 'published')
+        .order('publish_date', { ascending: true })
+      if (error) throw new Error(`published strips read failed: ${error.message}`)
+      return ((data ?? []) as { id: string; publish_date: string; payload: unknown }[])
+        .map(stripBankEntryFromRow)
+        .filter((e): e is StripBankEntry => e !== null)
+    },
+    async assetAvailable(src) {
+      const { httpImageAvailable } = await import('../comic/chain')
+      return httpImageAvailable(src)
+    },
   }
 }
 

@@ -4,7 +4,8 @@
  * as an immutable revision and the page says "Corrected edition").
  */
 import { getSeriesHero } from '@/lib/series-hero'
-import { leadPlateId } from './modules/build'
+import { composeComic } from './comic/chain'
+import { leadPlateId, type EditionSources } from './modules/build'
 import type { DailyBreadRepository } from './repository/types'
 import { safeAssetSrc } from './safe'
 import { addDays, isValidDateSlug } from './time'
@@ -23,6 +24,99 @@ export function correctedLeadPlate(edition: DailyEdition): { plate: AssetRef | u
   return {
     plate: hero && src ? { id: leadPlateId('series-hero', lead.seriesSlug), src, alt: '', kind: 'series-hero' } : undefined,
   }
+}
+
+export const ECHO_DUST_REVISION_REASON =
+  'Echo & Dust restored (SA-142): the funnies are Echo & Dust. A stand-in silhouette strip, or a strip file overwritten in storage, is replaced by the correct Echo & Dust strip or a credited reprint; before the first strip ran, the section is removed.'
+
+export interface ComicRepairChange {
+  date: string
+  from: string
+  to: string
+}
+
+/**
+ * Put Echo & Dust back on published editions (founder 2026-09-14: "the comic
+ * strip is completely wrong… where is Dust and Echo?"). For each published
+ * edition, oldest first, the comic is recomputed with the Echo & Dust chain —
+ * the date's strip, else a reprint of a strip published before the date
+ * (anti-repeat against the editions already corrected in this pass), else
+ * none — and written as a revision only when it differs from what is frozen.
+ * Issue numbers, dates and every other module are untouched.
+ */
+export async function repairComics(params: {
+  repo: DailyBreadRepository
+  sources: Pick<EditionSources, 'liveEditionItems' | 'publishedStrips' | 'assetAvailable'>
+  from: string
+  to: string
+  dryRun: boolean
+}): Promise<{ revised: ComicRepairChange[]; unchanged: string[]; missing: string[]; failed: { date: string; reason: string }[] }> {
+  if (!isValidDateSlug(params.from) || !isValidDateSlug(params.to) || params.from > params.to) {
+    throw new Error('repair-comics: --from and --to must be dates with from <= to')
+  }
+  const out = {
+    revised: [] as ComicRepairChange[],
+    unchanged: [] as string[],
+    missing: [] as string[],
+    failed: [] as { date: string; reason: string }[],
+  }
+  const bank = await params.sources.publishedStrips()
+  // Strip ids printed per date in this pass, for the 14-day anti-repeat.
+  const printed = new Map<string, string>()
+  const describe = (m: EditionModule | undefined) =>
+    m && m.type === 'comic' ? `${m.level}:${m.stripId ?? m.script?.id ?? m.image?.src ?? '?'}` : 'none'
+
+  for (let date = params.from; date <= params.to; date = addDays(date, 1)) {
+    const edition = await params.repo.getEdition(date)
+    if (!edition || edition.lifecycle !== 'published') {
+      out.missing.push(date)
+      continue
+    }
+    try {
+      const recentComicIds: string[] = []
+      for (let back = 1; back <= 14; back++) {
+        const id = printed.get(addDays(date, -back))
+        if (id) recentComicIds.push(id)
+      }
+      const comic = await composeComic({
+        dateSlug: date,
+        liveItems: await params.sources.liveEditionItems(date),
+        bank,
+        recentComicIds,
+        assetAvailable: (src) => params.sources.assetAvailable(src),
+      })
+      const current = edition.modules.find((m) => m.type === 'comic')
+      if (comic.module?.stripId) printed.set(date, comic.module.stripId)
+      const before = describe(current)
+      const after = describe(comic.module ?? undefined)
+      // Only what a reader sees counts: the level (strip vs reprint) and the
+      // image. A frozen strip that merely lacks the newer stripId field is left
+      // alone rather than given a pointless "Corrected edition".
+      const unchanged =
+        current?.type === 'comic' && comic.module
+          ? !current.script && current.level === comic.module.level && current.image?.src === comic.module.image?.src
+          : !current && !comic.module
+      if (unchanged) {
+        out.unchanged.push(date)
+        continue
+      }
+      const modules: EditionModule[] = edition.modules.filter((m) => m.type !== 'comic')
+      if (comic.module) modules.push(comic.module)
+      if (params.dryRun) {
+        out.revised.push({ date, from: before, to: after })
+        continue
+      }
+      const res = await params.repo.createRevision(date, ECHO_DUST_REVISION_REASON, {
+        modules,
+        generation: { ...edition.generation, comicLevel: comic.level },
+      })
+      if (res.result === 'revised') out.revised.push({ date, from: before, to: after })
+      else out.failed.push({ date, reason: res.result })
+    } catch (error) {
+      out.failed.push({ date, reason: error instanceof Error ? error.message : String(error) })
+    }
+  }
+  return out
 }
 
 export async function repairLeadPlates(params: {

@@ -44,7 +44,7 @@ import {
 } from '../../src/lib/daily-bread/time'
 import { runBackfill } from '../../src/lib/daily-bread/backfill'
 import { runInMemoryE2E } from '../../src/lib/daily-bread/e2e'
-import { repairLeadPlates } from '../../src/lib/daily-bread/maintenance'
+import { repairComics, repairLeadPlates } from '../../src/lib/daily-bread/maintenance'
 import type { DailyEdition } from '../../src/lib/daily-bread/types'
 
 const ROOT = process.cwd()
@@ -192,6 +192,19 @@ async function main() {
       const from = requireDate('from')
       const to = requireDate('to')
       const result = await repairLeadPlates({ repo: supabaseRepo(), from, to, dryRun: flag('dry-run') })
+      console.log(JSON.stringify(result, null, 2))
+      process.exit(result.failed.length > 0 ? 1 : 0)
+    }
+    case 'repair-comics': {
+      const from = requireDate('from')
+      const to = requireDate('to')
+      const result = await repairComics({
+        repo: supabaseRepo(),
+        sources: defaultEditionSources(),
+        from,
+        to,
+        dryRun: flag('dry-run'),
+      })
       console.log(JSON.stringify(result, null, 2))
       process.exit(result.failed.length > 0 ? 1 : 0)
     }

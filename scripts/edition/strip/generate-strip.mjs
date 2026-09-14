@@ -180,7 +180,12 @@ if (!/^PASS/m.test(verdict)) {
 
 // 5 — crop + encode (imagemagick on linux, sips on darwin)
 const cropPng = path.join(work, 'crop.png')
-const jpg = path.join(work, `echo-dust-${String(nextNumber).padStart(3, '0')}.jpg`)
+// The storage key names the DATE and a run stamp, never just the strip number:
+// numbers came from the log and collided with hand-installed strips —
+// 2026-08-24 "No. 4: The Receipt" was written over echo-dust-004.jpg, which was
+// the published No. 1 "The Microwave Minute" (SA-142 realignment).
+const stem = `echo-dust-${date}-${Date.now().toString(36)}`
+const jpg = path.join(work, `${stem}.jpg`)
 if (platform() === 'darwin') {
   execSync(`sips -c 745 1512 --cropOffset 140 12 "${outPng}" --out "${cropPng}"`, { stdio: 'pipe' })
   execSync(`sips -s format jpeg -s formatOptions 85 "${cropPng}" --out "${jpg}"`, { stdio: 'pipe' })
@@ -200,10 +205,11 @@ const [width, height] = dims
 if (!width || !height) throw new Error('could not measure the encoded strip')
 
 // 6 — upload + draft row
-const key = `strip/echo-dust-${String(nextNumber).padStart(3, '0')}.jpg`
+const key = `strip/${stem}.jpg`
 const up = await fetch(sb(`/storage/v1/object/edition-assets/${key}`), {
   method: 'POST',
-  headers: { ...H, 'Content-Type': 'image/jpeg', 'x-upsert': 'true' },
+  // Never overwrite: an existing strip file is someone's printed paper.
+  headers: { ...H, 'Content-Type': 'image/jpeg', 'x-upsert': 'false' },
   body: readFileSync(jpg),
 })
 if (!up.ok) throw new Error(`storage upload failed: ${up.status} ${await up.text()}`)
@@ -220,7 +226,7 @@ const row = {
     image: sb(`/storage/v1/object/public/edition-assets/${key}`),
     alt: `Echo & Dust: ${alt}`,
     caption: `Echo & Dust — No. ${nextNumber}: ${script.title}`,
-    panelId: `echo-dust-${String(nextNumber).padStart(3, '0')}`,
+    panelId: stem,
     width,
     height,
   },

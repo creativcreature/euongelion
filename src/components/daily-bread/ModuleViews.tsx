@@ -30,6 +30,7 @@ import ColoringClient from '@/components/edition/puzzles/ColoringClient'
 import ComicStrip from '@/components/daily-bread/ComicStrip'
 import ProceduralScene from '@/components/daily-bread/visual/ProceduralScene'
 import { boldSegments, paragraphs } from '@/lib/daily-bread/safe'
+import { formatEditorialDate } from '@/lib/daily-bread/time'
 import type {
   DailyEdition,
   EditionModule,
@@ -235,10 +236,10 @@ export function ModuleView({
             <h2 className="edition-section-head" id={anchor?.id}>
               The funnies
             </h2>
-            <p className="edition-section-note">A wordless strip</p>
+            <p className="edition-section-note">{module.image ? 'Echo & Dust' : 'From the archive'}</p>
           </div>
           {module.image ? (
-            <figure className="edition-strip">
+            <figure className="edition-strip" aria-label="Echo & Dust">
               <span className="edition-strip-plate edition-strip-plate--intrinsic">
                 <Image
                   src={module.image.src}
@@ -251,9 +252,16 @@ export function ModuleView({
               </span>
               <figcaption className="edition-strip-caption">
                 <span className="edition-strip-line">{module.caption}</span>
+                {module.level === 'archive-reprint' && module.firstRan ? (
+                  <span className="edition-strip-line db2-comic-archive">
+                    {`A reprint — first ran ${formatEditorialDate(module.firstRan)}`}
+                  </span>
+                ) : null}
               </figcaption>
             </figure>
           ) : module.script && module.level !== 'approved-art' ? (
+            // LEGACY: a frozen silhouette strip from before 2026-09-14, shown
+            // only until its edition is corrected by revision.
             <ComicStrip
               script={module.script}
               caption={module.caption}

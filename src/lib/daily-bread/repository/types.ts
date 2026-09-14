@@ -101,7 +101,7 @@ export function recentFromEdition(edition: DailyEdition): RecentComposition {
     editionDate: edition.editionDate,
     archetype: edition.composition.archetype,
     scene: scene && scene.type === 'scene' ? scene.scene : undefined,
-    comicId: comic && comic.type === 'comic' ? comic.script?.id : undefined,
+    comicId: comic && comic.type === 'comic' ? (comic.stripId ?? comic.script?.id) : undefined,
     leadPlateId: edition.assets.leadPlate?.id,
   }
 }

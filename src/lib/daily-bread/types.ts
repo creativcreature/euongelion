@@ -129,8 +129,15 @@ export interface ComicScript {
 }
 
 /**
- * The comic fallback chain (5 levels). The level is recorded on the module so
- * the archive can show how every day's strip was made.
+ * How the day's comic was sourced; recorded on the module and in provenance.
+ * The funnies are Echo & Dust (comic/chain.ts):
+ *   approved-art     the date's Echo & Dust strip
+ *   archive-reprint  a founder-published Echo & Dust strip, reprinted
+ *   omitted          no strip
+ * LEGACY, never produced since 2026-09-14: 'generated-script' and
+ * 'deterministic-script' were a wordless silhouette strip that replaced Echo &
+ * Dust by mistake. They remain only so frozen snapshots still type-check until
+ * those editions are corrected by revision.
  */
 export type ComicSourceLevel =
   | 'approved-art'
@@ -144,8 +151,11 @@ export interface ComicModule {
   level: Exclude<ComicSourceLevel, 'omitted'>
   title: string
   caption: string
+  /** LEGACY silhouette strip script (frozen snapshots only). */
   script?: ComicScript
   image?: { src: string; width: number; height: number; alt: string }
+  /** The Echo & Dust strip's panel id (edition_items payload.panelId); anti-repeat key. */
+  stripId?: string
   /** For an archive reprint: the date the strip first ran. */
   firstRan?: string
 }

@@ -16,7 +16,6 @@
 import type { Edition } from '@/lib/edition/store'
 import { composeFrame, type EditorialFrame, type FrameInput } from './generate/frame'
 import { composeComic } from './comic/chain'
-import { COMIC_TEMPLATES, pickComicTemplate } from './comic/templates'
 import { composeEdition } from './composition/compose'
 import { buildBaseEdition, type EditionSources } from './modules/build'
 import type { RunLogger } from './log'
@@ -148,12 +147,6 @@ export async function createDailyBreadEdition(
     const seedString = editionSeed(dateSlug)
     const seed = hashString(seedString)
     const recentComicIds = recent.map((r) => r.comicId).filter((x): x is string => Boolean(x))
-    const comicCandidates = COMIC_TEMPLATES.filter((t) => !recentComicIds.includes(t.id))
-    const offered = (comicCandidates.length > 0 ? comicCandidates : COMIC_TEMPLATES).map((t) => ({
-      id: t.id,
-      title: t.title,
-      scriptureReference: t.scriptureReference,
-    }))
 
     const frameInput: FrameInput = {
       dateSlug,
@@ -162,7 +155,6 @@ export async function createDailyBreadEdition(
       teaser: base.teaser || base.scripture.text,
       seriesTitle: base.seriesTitle,
       liturgicalLabel: base.liturgical.feast ?? base.liturgical.dayLabel,
-      comicCandidates: offered,
       recentScenes: recent.map((r) => r.scene).filter((s): s is NonNullable<typeof s> => Boolean(s)),
       seed,
     }
@@ -171,7 +163,6 @@ export async function createDailyBreadEdition(
       composeFrame(frameInput, {
         providers,
         lookup: deps.sources.lookupVerse,
-        pickComic: (s) => pickComicTemplate(s, recentComicIds).id,
         logger: log,
         timeoutMs: deps.providerTimeoutMs,
         retries: deps.providerRetries,
@@ -182,21 +173,13 @@ export async function createDailyBreadEdition(
     attempt.providerUsage.push(...frame.usage)
 
     const liveItems: Edition = base.liveItems
-    const comic = await log.stage('comic', () =>
+    const comic = await log.stage('comic', async () =>
       composeComic({
         dateSlug,
-        scripture: base.scripture,
         liveItems,
-        frameTemplateId: frameValue.comicTemplateId,
+        bank: await deps.sources.publishedStrips(),
         recentComicIds,
-        recentEditionDates: recent.map((r) => r.editionDate),
-        providers,
-        lookup: deps.sources.lookupVerse,
-        repo: deps.repo,
-        logger: log,
-        timeoutMs: deps.providerTimeoutMs,
-        retries: deps.providerRetries,
-        sleep: deps.sleep,
+        assetAvailable: (src) => deps.sources.assetAvailable(src),
       }),
     )
     attempt.providerUsage.push(...comic.usage)
@@ -237,7 +220,7 @@ export async function createDailyBreadEdition(
 
     const primary: ProviderId =
       frame.usage.find((u) => u.provider !== 'deterministic' && u.attempts > 0)?.provider ?? 'deterministic'
-    const fallbackUsed = [...new Set([...frame.fallbackProvidersUsed, ...(comic.providerDeterministic && comic.level !== 'approved-art' && providers.length > 0 ? (['deterministic'] as const) : [])])]
+    const fallbackUsed = [...new Set(frame.fallbackProvidersUsed)]
     const quality = decideQuality({
       policy,
       frameDeterministic: frame.deterministic,

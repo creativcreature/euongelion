@@ -335,7 +335,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
         editionDate: r.edition_date,
         archetype: r.archetype,
         scene: scene && scene.type === 'scene' ? scene.scene : undefined,
-        comicId: comic && comic.type === 'comic' ? comic.script?.id : undefined,
+        comicId: comic && comic.type === 'comic' ? (comic.stripId ?? comic.script?.id) : undefined,
         leadPlateId: r.assets?.leadPlate?.id,
       }
     })

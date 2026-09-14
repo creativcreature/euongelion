@@ -6,7 +6,6 @@
  *   rabbitHoles  2–4 Scripture references to follow, each with a short
  *                reason; the VERSE TEXT is looked up in the BSB, never written
  *                by the model
- *   comic        a choice from the committed wordless strip templates
  *   scene        a choice from the three procedural scenes
  *
  * No devotional theology, no quotations, no reported facts. The reading, the
@@ -34,12 +33,6 @@ export const PROCEDURAL_SCENES: readonly ProceduralSceneId[] = [
   'wilderness-stars',
 ]
 
-export interface ComicCandidate {
-  id: string
-  title: string
-  scriptureReference: string
-}
-
 export interface FrameInput {
   dateSlug: string
   scripture: PrimaryScripture
@@ -47,7 +40,6 @@ export interface FrameInput {
   teaser: string
   seriesTitle: string
   liturgicalLabel: string
-  comicCandidates: ComicCandidate[]
   recentScenes: ProceduralSceneId[]
   seed: number
 }
@@ -55,7 +47,6 @@ export interface FrameInput {
 export interface EditorialFrame {
   deck: string
   rabbitHoles: RabbitHole[]
-  comicTemplateId: string
   scene: ProceduralSceneId
   sceneLabel: string
 }
@@ -131,23 +122,18 @@ export function framePrompt(input: FrameInput): string {
     '{',
     '  "deck": "ONE sentence (60-200 characters) that sets up today\'s paper around the primary Scripture, in fresh words. The verse is printed right beside it, so do not restate it. No quotation marks, no leading label.",',
     '  "rabbitHoles": [ { "reference": "Book C:V", "why": "8-22 words: what following this passage opens up, stated plainly" } ],',
-    '  "comicTemplateId": "one id from the list below whose parable best sits beside today\'s Scripture",',
     '  "scene": "living-water | grain | wilderness-stars",',
     '  "sceneLabel": "3-8 words describing that scene"',
     '}',
     'rabbitHoles: exactly 3 items that lead AWAY from today\'s passage.',
     `  - No verse from ${input.scripture.reference} itself, not even one verse inside that range.`,
     '  - No two rabbit holes may share a verse. Prefer passages from other books.',
-    '',
-    'Comic templates (id — title — reference):',
-    ...input.comicCandidates.map((c) => `- ${c.id} — ${c.title} — ${c.scriptureReference}`),
   ].join('\n')
 }
 
 interface RawFrame {
   deck?: unknown
   rabbitHoles?: unknown
-  comicTemplateId?: unknown
   scene?: unknown
   sceneLabel?: unknown
 }
@@ -185,7 +171,6 @@ export async function resolveFrame(
   raw: RawFrame,
   input: FrameInput,
   lookup: VerseLookup,
-  options: { rotationComicId?: string } = {},
 ): Promise<EditorialFrame> {
   const problems: string[] = []
   const rawDeck = typeof raw.deck === 'string' ? cleanText(raw.deck, 400) : ''
@@ -204,24 +189,6 @@ export async function resolveFrame(
   // nothing (gpt-5-nano, 2026-09-14). A short allusion is fine.
   if (sharedWordRun(deck, input.scripture.text) >= 8) {
     problems.push('deck: restates the primary Scripture — set the day up in fresh words instead')
-  }
-
-  const comicIds = new Set(input.comicCandidates.map((c) => c.id))
-  let comicTemplateId = typeof raw.comicTemplateId === 'string' ? raw.comicTemplateId : ''
-  if (!comicIds.has(comicTemplateId)) {
-    // A model reaches for the obvious parable even when it ran recently and is
-    // withheld from the list (gpt-5-nano kept choosing look-at-the-birds for
-    // Matthew 6, even when told why). The template is the lowest-stakes field,
-    // so with a rotation pick available it takes that pick — the same choice the
-    // deterministic frame makes — instead of discarding a valid deck and
-    // rabbit holes. Anti-repeat is never bypassed.
-    if (options.rotationComicId && comicIds.has(options.rotationComicId)) {
-      comicTemplateId = options.rotationComicId
-    } else {
-      problems.push(
-        `comicTemplateId: ${JSON.stringify(cleanText(comicTemplateId, 60))} is not one of the offered templates — copy one id exactly from the list`,
-      )
-    }
   }
 
   const scene = raw.scene as ProceduralSceneId
@@ -281,7 +248,7 @@ export async function resolveFrame(
   }
 
   if (problems.length > 0) throw new OutputValidationError(problems)
-  return { deck, rabbitHoles: holes, comicTemplateId, scene, sceneLabel }
+  return { deck, rabbitHoles: holes, scene, sceneLabel }
 }
 
 /** Scene choice without a model: Scripture keywords, then anti-repeat rotation. */
@@ -346,13 +313,11 @@ export async function contextRabbitHoles(
 export async function deterministicFrame(
   input: FrameInput,
   lookup: VerseLookup,
-  pickComic: (seed: number) => string,
 ): Promise<EditorialFrame> {
   const scene = deterministicScene(input)
   return {
     deck: stripOutlineLabel(cleanText(input.teaser, 220)),
     rabbitHoles: await contextRabbitHoles(input.scripture.reference, lookup),
-    comicTemplateId: pickComic(input.seed),
     scene,
     sceneLabel: SCENE_LABELS[scene],
   }
@@ -363,7 +328,6 @@ export async function composeFrame(
   deps: {
     providers: TextProvider[]
     lookup: VerseLookup
-    pickComic: (seed: number) => string
     logger?: RunLogger
     timeoutMs?: number
     retries?: number
@@ -386,16 +350,14 @@ export async function composeFrame(
     },
     validate: async (value) => {
       try {
-        const resolved = await resolveFrame(value as unknown as RawFrame, input, deps.lookup, {
-          rotationComicId: deps.pickComic(input.seed),
-        })
+        const resolved = await resolveFrame(value as unknown as RawFrame, input, deps.lookup)
         Object.assign(value, resolved)
         return []
       } catch (error) {
         return error instanceof OutputValidationError ? error.problems : ['frame resolution failed']
       }
     },
-    deterministic: () => deterministicFrame(input, deps.lookup, deps.pickComic),
+    deterministic: () => deterministicFrame(input, deps.lookup),
     timeoutMs: deps.timeoutMs,
     retries: deps.retries,
     logger: deps.logger,

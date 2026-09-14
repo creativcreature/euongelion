@@ -19,7 +19,8 @@ import { MemoryDailyBreadRepository } from '@/lib/daily-bread/repository/memory'
 import { failingProvider, offlineSources, runInMemoryE2E } from '@/lib/daily-bread/e2e'
 import { runBackfill } from '@/lib/daily-bread/backfill'
 import { getDailyBreadHealth } from '@/lib/daily-bread/health'
-import { fixedClock } from '@/lib/daily-bread/time'
+import { addDays, fixedClock } from '@/lib/daily-bread/time'
+import { repairComics } from '@/lib/daily-bread/maintenance'
 import { buildBaseEdition, leadPlateRegistryLink } from '@/lib/daily-bread/modules/build'
 import { getSeriesHero } from '@/lib/series-hero'
 import type { TextProvider } from '@/lib/daily-bread/providers/types'
@@ -130,6 +131,63 @@ describe('lead plate policy (no arbitrary image use)', () => {
     expect(leadPlateRegistryLink(withPlate.lead!.plate!)).toEqual({ registry: 'lead-art-generated', key: '2026-09-13' })
     expect(leadPlateRegistryLink({ id: 'print:vasari-12' })).toBeNull()
   }, 60_000)
+})
+
+describe('Echo & Dust restored on published editions', () => {
+  it('replaces stand-in strips by revision, keeps correct ones, removes the section before the first strip ran', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const published = async (date: string) => {
+      const d = deps(repo, `${date}T11:30:00Z`)
+      expect(await createDailyBreadEdition(date, { ...d, clock: fixedClock(`${addDays(date, -1)}T23:00:00Z`) })).toMatchObject({ result: 'ready' })
+      await publishDailyBreadEdition(date, d)
+      return (await repo.getEdition(date))!
+    }
+    // Three published editions, each frozen with a LEGACY silhouette strip.
+    for (const date of ['2026-08-19', '2026-08-21', '2026-08-22']) {
+      const e = await published(date)
+      await repo.createRevision(date, 'seed legacy comic', {
+        modules: [
+          ...e.modules.filter((m) => m.type !== 'comic'),
+          { type: 'comic', level: 'deterministic-script', title: 'The Lost Sheep', caption: '', script: { id: 'the-lost-sheep', title: 'The Lost Sheep', scriptureReference: 'Luke 15:4-5', panels: [] } },
+        ],
+      })
+    }
+    const img = (n: string) => `/images/edition/strip/${n}.jpg`
+    const bank = [
+      { id: 'r1', publishDate: '2026-08-20', panelId: 'echo-dust-001-microwave-minute', image: img('a'), width: 1512, height: 745, alt: 'Echo & Dust', caption: 'Echo & Dust — No. 1: The Microwave Minute' },
+      { id: 'r2', publishDate: '2026-08-21', panelId: 'echo-dust-005-windowseat', image: img('b'), width: 1512, height: 745, alt: 'Echo & Dust', caption: 'Echo & Dust — No. 2: The Window Seat' },
+    ]
+    const sources = {
+      liveEditionItems: async (date: string) =>
+        date === '2026-08-21'
+          ? ({ strip: [{ id: 'r2', kind: 'strip', publishDate: date, slot: 0, status: 'published', payload: { image: img('b'), alt: 'Echo & Dust', caption: 'Echo & Dust — No. 2: The Window Seat', panelId: 'echo-dust-005-windowseat', width: 1512, height: 745 } }] } as never)
+          : {},
+      publishedStrips: async () => bank,
+      assetAvailable: async () => true,
+    }
+
+    const dry = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-23', dryRun: true })
+    expect(dry.revised.map((c) => [c.date, c.to])).toEqual([
+      ['2026-08-19', 'none'],
+      ['2026-08-21', 'approved-art:echo-dust-005-windowseat'],
+      ['2026-08-22', 'archive-reprint:echo-dust-001-microwave-minute'],
+    ])
+    expect(dry.missing).toEqual(['2026-08-20', '2026-08-23'])
+    expect((await repo.getEdition('2026-08-22'))!.modules.find((m) => m.type === 'comic')).toMatchObject({ script: { id: 'the-lost-sheep' } })
+
+    const real = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-23', dryRun: false })
+    expect(real.failed).toEqual([])
+    const aug22 = (await repo.getEdition('2026-08-22'))!
+    expect(aug22.modules.find((m) => m.type === 'comic')).toMatchObject({ level: 'archive-reprint', stripId: 'echo-dust-001-microwave-minute', firstRan: '2026-08-20' })
+    expect(aug22.generation.comicLevel).toBe('archive-reprint')
+    expect(aug22.issue).toBe(3)
+    expect((await repo.getEdition('2026-08-19'))!.modules.some((m) => m.type === 'comic')).toBe(false)
+    expect((await repo.getRevisions('2026-08-22')).map((r) => r.revision)).toEqual([1, 2, 3])
+
+    // Idempotent: a second pass changes nothing.
+    const again = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-23', dryRun: false })
+    expect(again.revised).toEqual([])
+  }, 180_000)
 })
 
 describe('domain records (plan §9)', () => {
@@ -283,7 +341,23 @@ describe('health', () => {
     const down = await getDailyBreadHealth(repo, fixedClock('2026-09-14T13:00:00Z'))
     expect(down.status).toBe('down')
     expect(down.alerts[0]).toContain('2026-09-14')
-    await runDailyBread(deps(repo, '2026-09-14T13:00:00Z'))
+    // A complete paper includes the day's Echo & Dust strip; without one the
+    // edition is honestly a fallback edition and health says so.
+    const sources = offlineSources()
+    sources.liveEditionItems = async (date) => ({
+      strip: [
+        {
+          id: 'strip-row',
+          kind: 'strip',
+          publishDate: date,
+          slot: 0,
+          status: 'published',
+          payload: { image: '/images/edition/strip/echo-dust-001b.jpg', alt: 'Echo & Dust', caption: 'Echo & Dust — test', panelId: `echo-dust-${date}`, width: 1745, height: 850 },
+        },
+      ],
+    }) as unknown as Awaited<ReturnType<typeof sources.liveEditionItems>>
+    sources.assetAvailable = async () => true
+    await runDailyBread(deps(repo, '2026-09-14T13:00:00Z', { sources }))
     const ok = await getDailyBreadHealth(repo, fixedClock('2026-09-14T13:05:00Z'))
     expect(ok.status).toBe('ok')
     expect(ok.live).toMatchObject({ lifecycle: 'published', issue: 1 })

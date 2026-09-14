@@ -32,6 +32,9 @@ export function offlineSources(): EditionSources {
   s.liveEditionItems = async () => ({})
   s.generatedLeadArt = async () => null
   s.lookupVerse = bsbLookup
+  // Offline there is no strip bank: the comic is honestly omitted.
+  s.publishedStrips = async () => []
+  s.assetAvailable = async () => false
   return s
 }
 
@@ -117,7 +120,13 @@ export async function runInMemoryE2E(options: { logger?: RunLogger } = {}): Prom
     check(`outage: ${date} is a fallback edition`, e.quality === 'fallback', e.quality)
     check(`outage: ${date} frame fell to deterministic`, e.generation.fallbackProvidersUsed.includes('deterministic'))
     check(`outage: ${date} provider failures recorded`, e.generation.usage.some((u) => !u.ok))
-    check(`outage: ${date} still has a comic`, e.modules.some((m) => m.type === 'comic'))
+    // The funnies are Echo & Dust or nothing: offline there is no strip bank,
+    // so the comic is omitted — never a stand-in drawing.
+    check(
+      `outage: ${date} comic is Echo & Dust or omitted, never a stand-in`,
+      e.modules.every((m) => m.type !== 'comic' || (Boolean(m.image && m.stripId) && !m.script)) &&
+        e.modules.some((m) => m.type === 'comic') === (e.generation.comicLevel !== 'omitted'),
+    )
     check(`outage: ${date} document validates`, validateEditionDocument(doc).length === 0, validateEditionDocument(doc).join('; '))
   }
 

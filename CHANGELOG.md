@@ -91,7 +91,39 @@ corrected in order, earliest first.
     - Another cron logged `cron_unhandled`.
     - Unit tests pin the cron string to `wrangler.jsonc` and cover EDT, EST, a
       missing secret, a network failure and a refusal.
-- **New item found while correcting (added to the list as 40):** a local reader
+- **Deviations 13 and 13b (plan §32–36 and the founder's "the style of the comic is
+  not good"), corrected in code.** Taken out of order at the founder's direction:
+  "the comic strip is completely wrong… where is Dust and Echo?"
+  - **What happened.** The funnies are ECHO & DUST (Teddy, Echo, Dust), under the
+    canon locked 2026-08-20. The first V2 build read the paused strip machine as a
+    fault, not the founder's switch. It printed a generic wordless silhouette strip
+    instead, on 23 of 28 editions.
+  - **The chain is Echo & Dust only.** In order: the date's strip; else a credited
+    reprint of a founder-PUBLISHED strip that ran before the date, least recently
+    printed; else no comic. Images are checked at build.
+  - **Removed.**
+    - The silhouette templates and validator are gone.
+    - The frame no longer picks a comic, and the comic-script model call is gone.
+  - **Label and credit.** The section reads "Echo & Dust", and a reprint is credited
+    "A reprint — first ran <date>".
+  - **Found and fixed at the source.** `generate-strip.mjs` named files by strip
+    number, and on 2026-08-24 "No. 4: The Receipt" was written over
+    `echo-dust-004.jpg`, the file behind the published No. 1 "The Microwave Minute".
+    Files are now named by date plus a run stamp and are never overwritten. The
+    committed master was re-uploaded as `strip/echo-dust-001-microwave-minute.jpg`
+    and verified byte-identical.
+  - **New command.** `repair-comics` corrects published editions by revision. A
+    production dry run lists 23 editions to correct: 21 get Echo & Dust reprints,
+    and Aug 18–19 (before the first strip) lose the section. Aug 20–24 already carry
+    Echo & Dust and are untouched.
+  - **Pending founder approval (production writes).**
+    - Repoint strip No. 1's row to the restored image. The permission classifier
+      refused the SQL update.
+    - Run `repair-comics`.
+    - Rebuild Sep 15, which is still ready with a silhouette strip.
+    - Deploy.
+- **New items found while correcting (added to the list):** 41: the procedural shader
+  animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request
   timeout of their own. On Workers the platform caps a request, but the read should
   fail fast.

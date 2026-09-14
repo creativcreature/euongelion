@@ -1,192 +1,162 @@
+/**
+ * The funnies are ECHO & DUST (SA-114 canon; SA-142 / F-184 correction,
+ * founder 2026-09-14: "the comic strip is completely wrong… where is Dust and
+ * Echo?"). The chain prints the day's Echo & Dust strip, else a credited
+ * reprint of a founder-published strip that ran before the date, else
+ * nothing — never a stand-in drawing. The SVG safety and legacy renderer tests
+ * remain only while frozen silhouette strips await correction.
+ */
 import { cleanup, render, screen } from '@testing-library/react'
-import { afterEach, describe, expect, it } from 'vitest'
+import { renderToStaticMarkup } from 'react-dom/server'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import ComicStrip from '@/components/daily-bread/ComicStrip'
+import { ModuleView } from '@/components/daily-bread/ModuleViews'
 import {
-  renderComicPanel,
-  renderComicPanelSvg,
-  renderComicStrip,
-} from '@/lib/daily-bread/comic/render'
-import {
-  assertSafeSvgTree,
-  svgToString,
-  type SvgNode,
-} from '@/lib/daily-bread/comic/svg'
-import {
-  COMIC_TEMPLATES,
-  pickComicTemplate,
-} from '@/lib/daily-bread/comic/templates'
-import {
-  COMIC_FIGURES,
-  COMIC_SETTINGS,
-  validateComicScript,
-  verifyComicCaptions,
-} from '@/lib/daily-bread/comic/validate'
-import type { ComicScript } from '@/lib/daily-bread/types'
+  composeComic,
+  httpImageAvailable,
+  stripBankEntryFromRow,
+  type StripBankEntry,
+} from '@/lib/daily-bread/comic/chain'
+import { renderComicPanelSvg, renderComicStrip } from '@/lib/daily-bread/comic/render'
+import { assertSafeSvgTree, svgToString, type SvgNode } from '@/lib/daily-bread/comic/svg'
+import type { ComicModule, ComicScript, DailyEdition, Placement } from '@/lib/daily-bread/types'
+import type { Edition } from '@/lib/edition/store'
 
 afterEach(() => cleanup())
-
-function clone<T>(value: T): T {
-  return JSON.parse(JSON.stringify(value)) as T
-}
-
-const base = COMIC_TEMPLATES[0]
 
 function svg(children: SvgNode[], attrs: SvgNode['attrs'] = {}): SvgNode {
   return { tag: 'svg', attrs: { viewBox: '0 0 10 10', ...attrs }, children }
 }
 
-describe('comic templates', () => {
-  it('ships at least 14 templates with unique ids', () => {
-    expect(COMIC_TEMPLATES.length).toBeGreaterThanOrEqual(14)
-    const ids = COMIC_TEMPLATES.map((t) => t.id)
-    expect(new Set(ids).size).toBe(ids.length)
-  })
+// The asset policy admits only the project's own storage bucket.
+vi.stubEnv('NEXT_PUBLIC_SUPABASE_URL', 'https://ovivwbopjfruikehrlgm.supabase.co')
+const STORAGE = 'https://ovivwbopjfruikehrlgm.supabase.co/storage/v1/object/public/edition-assets/strip'
 
-  it('every template validates', () => {
-    for (const template of COMIC_TEMPLATES) {
-      expect(validateComicScript(template), template.id).toEqual([])
-    }
-  })
+/** The three founder-published strips, as their edition_items rows read. */
+const PUBLISHED_ROWS = [
+  { id: 'a1', publish_date: '2026-08-20', payload: { image: `${STORAGE}/echo-dust-001-microwave-minute.jpg`, alt: 'Echo & Dust: Teddy: Why does a microwave minute feel longer than a real one?', caption: 'Echo & Dust — No. 1: The Microwave Minute', panelId: 'echo-dust-001-microwave-minute', width: 1512, height: 745 } },
+  { id: 'a2', publish_date: '2026-08-21', payload: { image: `${STORAGE}/echo-dust-005-windowseat.jpg`, alt: 'Echo & Dust: Teddy: I prayed for the window seat and got it.', caption: 'Echo & Dust — No. 2: The Window Seat', panelId: 'echo-dust-005-windowseat', width: '1512', height: '745' } },
+  { id: 'a3', publish_date: '2026-08-22', payload: { image: `${STORAGE}/echo-dust-006-leftovers.jpg`, alt: 'Echo & Dust: Teddy: The fast starts at midnight.', caption: 'Echo & Dust — No. 3: The Leftovers', panelId: 'echo-dust-006-leftovers', width: 1512, height: 745 } },
+]
+const BANK = PUBLISHED_ROWS.map(stripBankEntryFromRow).filter((e): e is StripBankEntry => e !== null)
+const reachable = async () => true
 
-  it('every caption is plain text with at most one caption per strip', () => {
-    for (const template of COMIC_TEMPLATES) {
-      const captions = template.panels.filter((p) => p.caption !== undefined)
-      expect(captions.length, template.id).toBeLessThanOrEqual(1)
-    }
-  })
+function stripItem(date: string, panelId: string, caption: string): Edition {
+  return {
+    strip: [
+      {
+        id: `row-${date}`,
+        kind: 'strip',
+        publishDate: date,
+        slot: 0,
+        status: 'draft',
+        payload: { image: `${STORAGE}/${panelId}.jpg`, alt: `Echo & Dust: ${caption}`, caption, panelId, width: 1512, height: 745 },
+      },
+    ],
+  } as unknown as Edition
+}
 
-  it('pickComicTemplate is deterministic', () => {
-    for (const seed of [0, 1, 7, 20260913, 4294967295]) {
-      expect(pickComicTemplate(seed, []).id).toBe(
-        pickComicTemplate(seed, []).id,
-      )
-    }
-    const picks = new Set(
-      Array.from({ length: 60 }, (_, i) => pickComicTemplate(i, []).id),
-    )
-    expect(picks.size).toBeGreaterThan(5)
-  })
-
-  it('pickComicTemplate skips excluded ids unless all are excluded', () => {
-    const allIds = COMIC_TEMPLATES.map((t) => t.id)
-    for (let seed = 0; seed < 40; seed++) {
-      const exclude = allIds.slice(0, allIds.length - 2)
-      const pick = pickComicTemplate(seed, exclude)
-      expect(exclude).not.toContain(pick.id)
-    }
-    const fallback = pickComicTemplate(3, allIds)
-    expect(allIds).toContain(fallback.id)
-    expect(pickComicTemplate(3, allIds).id).toBe(fallback.id)
-  })
-})
-
-describe('validateComicScript', () => {
-  it('knows every setting and figure id', () => {
-    expect(COMIC_SETTINGS).toHaveLength(8)
-    expect(COMIC_FIGURES).toHaveLength(17)
-  })
-
-  it('rejects a non-object', () => {
-    expect(validateComicScript(null)).not.toEqual([])
-    expect(validateComicScript('strip')).not.toEqual([])
-  })
-
-  it('rejects a bad id and title', () => {
-    const bad = clone(base)
-    bad.id = 'Bad Id!'
-    bad.title = 'x'
-    const problems = validateComicScript(bad)
-    expect(problems.some((p) => p.includes('id'))).toBe(true)
-    expect(problems.some((p) => p.includes('title'))).toBe(true)
-  })
-
-  it('rejects an unknown setting', () => {
-    const bad = clone(base) as unknown as { panels: { setting: string }[] }
-    bad.panels[0].setting = 'spaceship'
-    expect(validateComicScript(bad).join(' ')).toContain('unknown setting')
-  })
-
-  it('rejects an unknown figure', () => {
-    const bad = clone(base) as unknown as {
-      panels: { figures: { figure: string }[] }[]
-    }
-    bad.panels[1].figures[0].figure = 'dragon'
-    expect(validateComicScript(bad).join(' ')).toContain('unknown figure')
-  })
-
-  it('rejects out-of-range coordinates and scale', () => {
-    const bad = clone(base)
-    bad.panels[0].figures[0].x = 1.2
-    bad.panels[0].figures[0].y = -0.1
-    bad.panels[0].figures[0].scale = 2
-    const problems = validateComicScript(bad).join(' ')
-    expect(problems).toContain('x must be 0-1')
-    expect(problems).toContain('y must be 0-1')
-    expect(problems).toContain('scale must be 0.3-1.6')
-  })
-
-  it('rejects too many or too few figures', () => {
-    const bad = clone(base)
-    bad.panels[0].figures = []
-    expect(validateComicScript(bad).join(' ')).toContain('1-4 figures')
-    const crowd = clone(base)
-    crowd.panels[0].figures = Array.from({ length: 5 }, () => ({
-      figure: 'sheep' as const,
-      x: 0.5,
-      y: 0.5,
-      scale: 1,
-    }))
-    expect(validateComicScript(crowd).join(' ')).toContain('1-4 figures')
-  })
-
-  it('rejects a wrong panel count', () => {
-    const two = clone(base)
-    two.panels = two.panels.slice(0, 2)
-    expect(validateComicScript(two).join(' ')).toContain('exactly 3 panels')
-    const four = clone(base)
-    four.panels = [...four.panels, four.panels[0]]
-    expect(validateComicScript(four).join(' ')).toContain('exactly 3 panels')
-  })
-
-  it('rejects unsafe captions and bad descriptions', () => {
-    const bad = clone(base)
-    bad.panels[0].caption = '<b>see https://example.com</b>'
-    bad.panels[1].caption = 'He said "hello"'
-    bad.panels[2].description = 'short'
-    const problems = validateComicScript(bad).join(' ')
-    expect(problems).toContain('< or >')
-    expect(problems).toContain('link')
-    expect(problems).toContain('quote marks')
-    expect(problems).toContain('description')
-    const long = clone(base)
-    long.panels[0].caption = 'a'.repeat(141)
-    expect(validateComicScript(long).join(' ')).toContain('140')
-  })
-})
-
-describe('verifyComicCaptions', () => {
-  const verse =
-    'And He told them many things in parables, saying, “A farmer went out to sow his seed.'
-
-  it('accepts a verbatim caption after whitespace normalisation', async () => {
-    const script = clone(base)
-    script.panels[0].caption = 'A farmer went  out\nto sow his seed.'
-    expect(await verifyComicCaptions(script, async () => verse)).toEqual([])
-  })
-
-  it('rejects an invented caption', async () => {
-    const script = clone(base)
-    script.panels[0].caption = 'A farmer went out to plant corn.'
-    const problems = await verifyComicCaptions(script, async () => verse)
-    expect(problems).toHaveLength(1)
-  })
-
-  it('reports a lookup failure instead of passing', async () => {
-    const script = clone(base)
-    const problems = await verifyComicCaptions(script, async () => {
-      throw new Error('corpus missing')
+describe('the funnies are Echo & Dust', () => {
+  it('prints the day’s Echo & Dust strip when one was drawn for the date', async () => {
+    const out = await composeComic({
+      dateSlug: '2026-08-24',
+      liveItems: stripItem('2026-08-24', 'echo-dust-005', 'Echo & Dust — No. 5: Are You Still Watching?'),
+      bank: BANK,
+      recentComicIds: [],
+      assetAvailable: reachable,
     })
-    expect(problems.join(' ')).toContain('corpus missing')
+    expect(out.level).toBe('approved-art')
+    expect(out.module).toMatchObject({
+      type: 'comic',
+      level: 'approved-art',
+      stripId: 'echo-dust-005',
+      caption: 'Echo & Dust — No. 5: Are You Still Watching?',
+      image: { src: `${STORAGE}/echo-dust-005.jpg`, width: 1512, height: 745 },
+    })
+    expect(out.module).not.toHaveProperty('script')
+    expect(out.sourceItemIds).toEqual(['row-2026-08-24'])
+  })
+
+  it('otherwise reprints a published strip that ran BEFORE the date, least recently printed first', async () => {
+    const out = await composeComic({
+      dateSlug: '2026-09-15',
+      liveItems: {},
+      bank: BANK,
+      recentComicIds: ['echo-dust-006-leftovers', 'echo-dust-001-microwave-minute'],
+      assetAvailable: reachable,
+    })
+    expect(out.level).toBe('archive-reprint')
+    expect(out.module).toMatchObject({ stripId: 'echo-dust-005-windowseat', firstRan: '2026-08-21' })
+
+    // All recent: the one printed longest ago comes back first.
+    const allRecent = await composeComic({
+      dateSlug: '2026-09-15',
+      liveItems: {},
+      bank: BANK,
+      recentComicIds: ['echo-dust-006-leftovers', 'echo-dust-005-windowseat', 'echo-dust-001-microwave-minute'],
+      assetAvailable: reachable,
+    })
+    expect(allRecent.module?.stripId).toBe('echo-dust-001-microwave-minute')
+
+    // Never a strip that first ran after the edition's date.
+    const early = await composeComic({ dateSlug: '2026-08-21', liveItems: {}, bank: BANK, recentComicIds: [], assetAvailable: reachable })
+    expect(early.module?.stripId).toBe('echo-dust-001-microwave-minute')
+  })
+
+  it('an unreachable image is skipped; with nothing left the comic is omitted — never a stand-in drawing', async () => {
+    const skip = await composeComic({
+      dateSlug: '2026-09-15',
+      liveItems: stripItem('2026-09-15', 'echo-dust-099', 'Echo & Dust — No. 99'),
+      bank: BANK,
+      recentComicIds: [],
+      assetAvailable: async (src) => !src.includes('echo-dust-099') && !src.includes('microwave'),
+    })
+    expect(skip.level).toBe('archive-reprint')
+    expect(skip.module?.stripId).toBe('echo-dust-005-windowseat')
+    expect(skip.notes.join(' ')).toMatch(/not reachable \(echo-dust-099\)/)
+
+    const before = await composeComic({ dateSlug: '2026-08-18', liveItems: {}, bank: BANK, recentComicIds: [], assetAvailable: reachable })
+    expect(before).toMatchObject({ level: 'omitted', module: null })
+    expect(before.notes.join(' ')).toMatch(/none published before it/)
+
+    const down = await composeComic({ dateSlug: '2026-09-15', liveItems: {}, bank: BANK, recentComicIds: [], assetAvailable: async () => false })
+    expect(down).toMatchObject({ level: 'omitted', module: null })
+    expect(down.usage).toEqual([])
+  })
+
+  it('rows that fail the asset policy never enter the bank', () => {
+    expect(stripBankEntryFromRow({ id: 'x', publish_date: '2026-08-20', payload: { image: 'javascript:alert(1)', panelId: 'p', width: 1, height: 1 } })).toBeNull()
+    expect(stripBankEntryFromRow({ id: 'x', publish_date: '2026-08-20', payload: { image: `${STORAGE}/a.jpg`, width: 1512, height: 745 } })).toBeNull()
+    expect(BANK).toHaveLength(3)
+    expect(BANK[1]).toMatchObject({ width: 1512, height: 745 })
+  })
+
+  it('the build-time asset check wants a 200 image over https', async () => {
+    const answer = (status: number, type: string) => (async () => new Response(null, { status, headers: { 'content-type': type } })) as unknown as typeof fetch
+    expect(await httpImageAvailable(`${STORAGE}/a.jpg`, answer(200, 'image/jpeg'))).toBe(true)
+    expect(await httpImageAvailable(`${STORAGE}/a.jpg`, answer(404, 'text/html'))).toBe(false)
+    expect(await httpImageAvailable(`${STORAGE}/a.jpg`, answer(200, 'text/html'))).toBe(false)
+    expect(await httpImageAvailable('http://example.com/a.jpg', answer(200, 'image/jpeg'))).toBe(false)
+    expect(await httpImageAvailable('/images/edition/strip/echo-dust-001b.jpg')).toBe(true)
+  })
+
+  it('the page labels the section Echo & Dust and credits a reprint with its first run', () => {
+    const reprint: ComicModule = {
+      type: 'comic',
+      level: 'archive-reprint',
+      title: 'Echo & Dust — No. 2: The Window Seat',
+      caption: 'Echo & Dust — No. 2: The Window Seat',
+      stripId: 'echo-dust-005-windowseat',
+      firstRan: '2026-08-21',
+      image: { src: `${STORAGE}/echo-dust-005-windowseat.jpg`, width: 1512, height: 745, alt: 'Echo & Dust: Teddy: I prayed for the window seat and got it.' },
+    }
+    const placement = { module: 'comic', span: 6, band: 3, beat: 'open', region: 'feature', tier: 'feature' } as unknown as Placement
+    const html = renderToStaticMarkup(<>{ModuleView({ module: reprint, placement, edition: {} as DailyEdition })}</>)
+    expect(html).toContain('Echo &amp; Dust')
+    expect(html).toContain('Echo &amp; Dust — No. 2: The Window Seat')
+    expect(html).toContain('A reprint — first ran Friday, August 21, 2026')
+    expect(html).not.toContain('wordless')
+    expect(html).not.toContain('<svg')
   })
 })
 
@@ -271,130 +241,25 @@ describe('assertSafeSvgTree', () => {
   })
 })
 
-describe('comic renderer', () => {
-  it('is deterministic and safe for every template', () => {
-    for (const template of COMIC_TEMPLATES) {
-      const a = renderComicStrip(template)
-      const b = renderComicStrip(clone(template))
-      expect(() => assertSafeSvgTree(a), template.id).not.toThrow()
-      const markup = svgToString(a)
-      expect(markup, template.id).toBe(svgToString(b))
-      expect(markup).not.toMatch(/<script|href|style=|\son[a-z]+=/i)
-      template.panels.forEach((_, index) => {
-        expect(() =>
-          assertSafeSvgTree(renderComicPanelSvg(template, index)),
-        ).not.toThrow()
-      })
-    }
-  })
+describe('LEGACY silhouette strips (frozen snapshots awaiting correction)', () => {
+  const script: ComicScript = {
+    id: 'the-lost-sheep',
+    title: 'The Lost Sheep',
+    scriptureReference: 'Luke 15:4-5',
+    panels: [
+      { setting: 'hillside', figures: [{ figure: 'shepherd', x: 0.2, y: 0.88, scale: 1.1 }, { figure: 'sheep', x: 0.46, y: 0.84, scale: 1.1 }], description: 'A shepherd stands with his flock on a green hillside, counting them.' },
+      { setting: 'road', figures: [{ figure: 'shepherd', x: 0.6, y: 0.66, scale: 0.8 }], description: 'He sets off alone down the long road toward one small sheep far away.', caption: 'go after the one that is lost' },
+      { setting: 'hillside', figures: [{ figure: 'sheep', x: 0.47, y: 0.58, scale: 1.1 }, { figure: 'shepherd', x: 0.46, y: 0.94, scale: 1.3 }], description: 'The shepherd walks home with the found sheep carried across his shoulders.' },
+    ],
+  }
 
-  it('draws a 1260x320 strip with a title, a halftone pattern and three panels', () => {
-    const tree = renderComicStrip(base)
-    expect(tree.attrs.viewBox).toBe('0 0 1260 320')
-    expect(tree.attrs.role).toBe('img')
-    const title = tree.children?.find((c) => c.tag === 'title')
-    expect(title?.text).toBe(base.title)
-    const markup = svgToString(tree)
-    expect(markup).toContain(`<pattern id="db2-halftone-${base.id}"`)
-    expect(markup.match(/class="db2-panel db2-panel-/g)).toHaveLength(3)
-  })
-
-  it('draws every setting and figure without throwing', () => {
-    for (const setting of COMIC_SETTINGS) {
-      const node = renderComicPanel(
-        {
-          setting,
-          figures: COMIC_FIGURES.slice(0, 4).map((figure, i) => ({
-            figure,
-            x: 0.2 + i * 0.2,
-            y: 0.8,
-            scale: 1,
-          })),
-          description: 'Every figure on every setting.',
-        },
-        0,
-        'coverage-strip',
-      )
-      expect(() => assertSafeSvgTree(svg([node]))).not.toThrow()
-    }
-    for (const figure of COMIC_FIGURES) {
-      const node = renderComicPanel(
-        {
-          setting: 'field',
-          figures: [{ figure, x: 0.5, y: 0.8, scale: 1.6, flip: true }],
-          description: 'One figure, flipped, at full scale.',
-        },
-        2,
-        'coverage-strip',
-      )
-      expect(() => assertSafeSvgTree(svg([node])), figure).not.toThrow()
-    }
-  })
-
-  it('never uses Math.random', () => {
-    const original = Math.random
-    Math.random = () => {
-      throw new Error('Math.random called')
-    }
-    try {
-      expect(() => renderComicStrip(COMIC_TEMPLATES[4])).not.toThrow()
-    } finally {
-      Math.random = original
-    }
-  })
-})
-
-describe('<ComicStrip />', () => {
-  const script: ComicScript = COMIC_TEMPLATES.find(
-    (t) => t.id === 'the-lost-sheep',
-  )!
-
-  it('renders an accessible SVG strip with its title and panel descriptions', () => {
-    const { container } = render(
-      <ComicStrip
-        script={script}
-        caption="go after the one that is lost"
-        level="deterministic-script"
-      />,
-    )
-    const images = screen.getAllByRole('img')
-    expect(images.length).toBe(4)
-    const strip = container.querySelector('svg.db2-comic-strip')
-    expect(strip).not.toBeNull()
-    expect(strip?.getAttribute('role')).toBe('img')
-    expect(strip?.querySelector('title')?.textContent).toBe(script.title)
-
-    const labelledBy = strip?.getAttribute('aria-labelledby')?.split(' ') ?? []
-    expect(labelledBy).toHaveLength(2)
-    const list = container.querySelector(`[id="${labelledBy[1]}"]`)
-    expect(list?.tagName).toBe('OL')
-    expect(list?.className).toBe('sr-only')
-    for (const panel of script.panels) {
-      expect(list?.textContent).toContain(panel.description)
-    }
-    expect(images[0]).toHaveAccessibleName(
-      expect.stringContaining(script.panels[0].description),
-    )
-
-    expect(container.querySelectorAll('.db2-comic-stack svg')).toHaveLength(3)
-    expect(
-      container.querySelector('.db2-comic-caption')?.textContent,
-    ).toContain('go after the one that is lost')
-    expect(container.innerHTML).not.toMatch(/<script/i)
-    expect(container.textContent).not.toContain('From the archive')
-  })
-
-  it('shows the archive line for a reprint', () => {
-    render(
-      <ComicStrip
-        script={script}
-        caption=""
-        level="archive-reprint"
-        firstRan="2026-08-01"
-      />,
-    )
-    expect(
-      screen.getByText('From the archive — first ran 2026-08-01'),
-    ).toBeInTheDocument()
+  it('still render safely until their editions are revised', () => {
+    const tree = renderComicStrip(script)
+    expect(() => assertSafeSvgTree(tree)).not.toThrow()
+    expect(svgToString(tree)).not.toMatch(/<script|href|style=|\son[a-z]+=/i)
+    script.panels.forEach((_, index) => expect(() => assertSafeSvgTree(renderComicPanelSvg(script, index))).not.toThrow())
+    const { container } = render(<ComicStrip script={script} caption="go after the one that is lost" level="deterministic-script" />)
+    expect(container.querySelector('svg.db2-comic-strip')).not.toBeNull()
+    expect(screen.getAllByRole('img').length).toBeGreaterThan(0)
   })
 })

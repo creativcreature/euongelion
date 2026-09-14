@@ -352,10 +352,6 @@ const INPUT: FrameInput = {
   teaser: 'THE PIVOT: What would change if the kingdom came first today.',
   seriesTitle: 'Kingdom',
   liturgicalLabel: 'Ordinary Time',
-  comicCandidates: [
-    { id: 'the-lost-sheep', title: 'The Lost Sheep', scriptureReference: 'Luke 15:4-5' },
-    { id: 'lamp-on-a-stand', title: 'A Lamp on a Stand', scriptureReference: 'Matthew 5:15' },
-  ],
   recentScenes: ['grain'],
   seed: 12345,
 }
@@ -369,7 +365,6 @@ describe('editorial frame', () => {
           { reference: 'Luke 12:31', why: 'Luke sets the same saying beside ravens and lilies and a worried crowd.' },
           { reference: 'Romans 14:17', why: 'Paul describes what that kingdom is made of when food is not the point.' },
         ],
-        comicTemplateId: 'the-lost-sheep',
         scene: 'grain',
         sceneLabel: 'Wheat under a low sun',
       },
@@ -380,7 +375,7 @@ describe('editorial frame', () => {
     expect(frame.rabbitHoles[0].text).toContain('seek His kingdom')
   })
 
-  it('rejects quotations, invented references, unknown templates, and forbidden patterns', async () => {
+  it('rejects quotations, invented references, unknown scenes, and forbidden patterns', async () => {
     const err = await resolveFrame(
       {
         deck: 'In today\'s world, "seek first" is hard, and at the end of the day that matters.',
@@ -388,7 +383,6 @@ describe('editorial frame', () => {
           { reference: 'Hezekiah 3:16', why: 'A verse that does not exist in any Bible at all, invented.' },
           { reference: 'Matthew 6:33', why: 'Same as the primary Scripture, which is not a rabbit hole.' },
         ],
-        comicTemplateId: 'echo-and-dust-001',
         scene: 'volcano',
         sceneLabel: 'x',
       },
@@ -401,7 +395,8 @@ describe('editorial frame', () => {
     expect(text).toMatch(/In today's world/)
     expect(text).toMatch(/unparseable reference|not found/)
     expect(text).toMatch(/overlaps the primary Scripture/)
-    expect(text).toMatch(/comicTemplateId/)
+    // The frame no longer picks a comic: Echo & Dust is not the model's to choose.
+    expect(text).not.toMatch(/comic/)
     expect(text).toMatch(/scene: unknown/)
   })
 
@@ -415,7 +410,6 @@ describe('editorial frame', () => {
           { reference: 'Luke 12:24', why: 'Luke gives the ravens the same place in the argument against anxiety.' },
           { reference: 'Luke 12:23-24', why: 'Overlaps the rabbit hole above and should be refused as a duplicate.' },
         ],
-        comicTemplateId: 'the-lost-sheep',
         scene: 'grain',
         sceneLabel: 'Wheat under a low sun',
       },
@@ -436,7 +430,6 @@ describe('editorial frame', () => {
         { reference: 'Luke 12:31', why: 'luke sets the same saying beside ravens and lilies and a worried crowd' },
         { reference: 'Romans 14:17', why: 'Paul describes what that kingdom is made of when food is not the point.' },
       ],
-      comicTemplateId: 'the-lost-sheep',
       scene: 'grain',
       sceneLabel: 'Wheat under a low sun',
     })
@@ -484,10 +477,10 @@ describe('editorial frame', () => {
   })
 
   it('the deterministic frame needs no provider and strips outline labels from the deck', async () => {
-    const out = await composeFrame(INPUT, { providers: [], lookup: bsbLookup, pickComic: () => 'lamp-on-a-stand' })
+    const out = await composeFrame(INPUT, { providers: [], lookup: bsbLookup })
     expect(out.deterministic).toBe(true)
     expect(out.value.deck.startsWith('What would change')).toBe(true)
-    expect(out.value.comicTemplateId).toBe('lamp-on-a-stand')
+    expect(out.value).not.toHaveProperty('comicTemplateId')
     expect(out.value.rabbitHoles.length).toBeGreaterThan(0)
     expect(out.value.scene).not.toBe('grain') // yesterday was grain
   })
@@ -499,14 +492,12 @@ describe('editorial frame', () => {
         { reference: 'Luke 12:31', why: 'Luke sets the same saying beside ravens and lilies and a worried crowd.' },
         { reference: 'Romans 14:17', why: 'Paul describes what that kingdom is made of when food is not the point.' },
       ],
-      comicTemplateId: 'the-lost-sheep',
       scene: 'living-water',
       sceneLabel: 'Slow water at first light',
     })
     const ok = await composeFrame(INPUT, {
       providers: [provider('claude-api', async () => good)],
       lookup: bsbLookup,
-      pickComic: () => 'lamp-on-a-stand',
       sleep: noSleep,
     })
     expect(ok).toMatchObject({ provider: 'claude-api', deterministic: false })
@@ -515,22 +506,9 @@ describe('editorial frame', () => {
     const bad = await composeFrame(INPUT, {
       providers: [provider('claude-api', async () => '{"deck":"\\"quoted\\""}')],
       lookup: bsbLookup,
-      pickComic: () => 'lamp-on-a-stand',
       sleep: noSleep,
     })
     expect(bad.deterministic).toBe(true)
-
-    // A withheld (recently run) template id costs only the template choice:
-    // the rotation pick replaces it and the model's deck and rabbit holes stand.
-    const withheld = await composeFrame(INPUT, {
-      providers: [provider('openai', async () => good.replace('the-lost-sheep', 'look-at-the-birds'))],
-      lookup: bsbLookup,
-      pickComic: () => 'lamp-on-a-stand',
-      sleep: noSleep,
-    })
-    expect(withheld).toMatchObject({ provider: 'openai', deterministic: false })
-    expect(withheld.value.comicTemplateId).toBe('lamp-on-a-stand')
-    expect(withheld.value.rabbitHoles.map((h) => h.reference)).toEqual(['Luke 12:31', 'Romans 14:17'])
   })
 
   it('context rabbit holes are the real neighbouring verses', async () => {

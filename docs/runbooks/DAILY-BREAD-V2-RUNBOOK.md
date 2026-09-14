@@ -84,7 +84,7 @@ starts the paper again at No. 001.
 | A published edition has an error | Write a revision with `select * from daily_bread_create_revision('<date>', '<reason>', '{"deck":"..."}'::jsonb);`. The number and date are kept, and the page shows "Corrected edition". |
 | A published edition must come down | Withdraw it with `select daily_bread_supersede('<date>', '<reason shown to readers>');`. Its number stays retired. |
 | The founder rejected a reviewed item after the build | Nothing to do. Publish sees the rejection, reopens the edition and the next run rebuilds it. |
-| The comic is missing | The edition's `generation.comicLevel` tells you why. `omitted` means every level failed; the attempt's `warnings` name each failure. |
+| The comic is missing or wrong | The funnies are Echo & Dust only. `generation.comicLevel`: `approved-art` is the day's strip; `archive-reprint` means no strip was drawn for the date (the strip machine is the founder's `STRIP_MACHINE` switch); `omitted` means no published strip ran before that date or none was reachable. The attempt's `warnings` name each skip. To fix published editions after a strip row is corrected: `npm run daily-bread -- repair-comics --from=<date> --to=<date> --dry-run`, check the list, then run without `--dry-run`. |
 
 ## Local development
 
@@ -110,8 +110,8 @@ summarize Good News.
 
 ## Cost
 
-Each edition makes two small model calls (the frame, about 900 output tokens, and the
-comic storyboard, about 1,200). The subscription CLI transport costs $0 marginal. The
+Each edition makes one small model call (the frame, about 900 output tokens). The
+comic calls no model: it is Echo & Dust, drawn upstream. The subscription CLI transport costs $0 marginal. The
 API transport costs a few cents per day; the attempt rows carry `estimated_cost_usd`
 and health sums 7 days. The workflow runs eight short Actions jobs a day (about 1–2
 minutes each; most are no-ops). The Worker cron is 8 invocations a day inside the
