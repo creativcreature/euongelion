@@ -28,6 +28,7 @@ import QuizClient from '@/components/edition/puzzles/QuizClient'
 import WordSearchClient from '@/components/edition/puzzles/WordSearchClient'
 import ColoringClient from '@/components/edition/puzzles/ColoringClient'
 import ComicStrip from '@/components/daily-bread/ComicStrip'
+import PlateImage from '@/components/daily-bread/PlateImage'
 import ProceduralScene from '@/components/daily-bread/visual/ProceduralScene'
 import { ARCHETYPES } from '@/lib/daily-bread/composition/archetypes'
 import { boldSegments, paragraphs } from '@/lib/daily-bread/safe'
@@ -149,16 +150,16 @@ export function ModuleView({
       return (
         <section className="edition-lead db2-lead" aria-label="Today's lead">
           {module.plate ? (
-            <span className="edition-lead-plate">
-              <Image
-                src={module.plate.src}
-                alt={module.plate.alt}
-                fill
-                sizes={placement.span === 'full' ? '100vw' : '(max-width: 900px) 100vw, 64vw'}
-                className="edition-lead-img"
-                priority
-              />
-            </span>
+            <PlateImage
+              wrapperClassName="edition-lead-plate"
+              fallback={null}
+              src={module.plate.src}
+              alt={module.plate.alt}
+              fill
+              sizes={placement.span === 'full' ? '100vw' : '(max-width: 900px) 100vw, 64vw'}
+              className="edition-lead-img"
+              priority
+            />
           ) : null}
           <p className="edition-kicker">{module.scriptureReference}</p>
           <h2 className="edition-lead-head">{module.title}</h2>
@@ -242,16 +243,17 @@ export function ModuleView({
           </div>
           {module.image ? (
             <figure className="edition-strip" aria-label="Echo & Dust">
-              <span className="edition-strip-plate edition-strip-plate--intrinsic">
-                <Image
-                  src={module.image.src}
-                  alt={module.image.alt}
-                  width={module.image.width}
-                  height={module.image.height}
-                  sizes="(max-width: 900px) 100vw, 62vw"
-                  className="edition-strip-img edition-strip-img--intrinsic"
-                />
-              </span>
+              <PlateImage
+                wrapperClassName="edition-strip-plate edition-strip-plate--intrinsic"
+                // The strip's words, set as type, when its image cannot load.
+                fallback={<p className="db2-comic-text">{module.image.alt}</p>}
+                src={module.image.src}
+                alt={module.image.alt}
+                width={module.image.width}
+                height={module.image.height}
+                sizes="(max-width: 900px) 100vw, 62vw"
+                className="edition-strip-img edition-strip-img--intrinsic"
+              />
               <figcaption className="edition-strip-caption">
                 <span className="edition-strip-line">{module.caption}</span>
                 {module.level === 'archive-reprint' && module.firstRan ? (

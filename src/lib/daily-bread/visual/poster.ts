@@ -13,6 +13,8 @@ import type { ProceduralSceneId } from '@/lib/daily-bread/types'
 import { hash2, normalizeSeed, sceneField } from './field'
 import { SCENE_PALETTE, type SceneTheme } from './palette'
 
+const KNOWN_SCENES: ReadonlySet<string> = new Set<ProceduralSceneId>(['living-water', 'grain', 'wilderness-stars'])
+
 /**
  * The halftone screen, shared with the GLSL (`shaders.ts`) so print and pixel
  * agree. Radius is `sqrt(density) * rMax * cell`: dot AREA tracks density.
@@ -142,6 +144,9 @@ export function scenePosterDots(
   seed: number,
   opts: { width?: number; height?: number; cell?: number } = {},
 ): ScenePoster {
+  // A scene this renderer version does not know draws nothing honest: refuse,
+  // and the component falls to its texture tier (plan §52).
+  if (!KNOWN_SCENES.has(scene)) throw new Error(`[daily-bread:visual] unknown scene: ${String(scene)}`)
   const width = positive(opts.width, POSTER_DEFAULTS.width)
   const height = positive(opts.height, POSTER_DEFAULTS.height)
   // Start no finer than the lattice the cap could ever hold.

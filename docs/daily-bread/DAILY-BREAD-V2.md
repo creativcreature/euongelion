@@ -522,7 +522,43 @@ composition, negative space, ASCII). The engine below fails most of them as of
   - Capped at 30 fps and DPR 1.5.
   - On `webglcontextlost` the scene shows the poster and rebuilds on restore.
   - The canvas is `aria-hidden` and needs no CSP change.
-- No runtime image generation and no third-party rendering library.
+- No runtime image generation and no third-party rendering library. Licences and the
+  audit run are in `DEPENDENCIES-AND-LICENCES.md` (plan §46).
+
+**Fallback tiers (plan §52).** Each tier is reached as follows:
+1. **Live frame:** WebGL, or the Canvas2D ASCII overlay.
+2. **Static poster:** the SVG halftone. Readers get it with no JS, with reduced motion,
+   without WebGL or 2D canvas, with a `still` motion level, or after context loss.
+3. **CSS texture:** a halftone screen drawn in CSS, when no poster can be drawn (a scene
+   this renderer version does not know).
+4. **Typography only:** the scene's label, set as a rubric, under
+   `forced-colors: active` and in print.
+
+No essential content lives in the canvas.
+
+**Stored images degrade to type (plan §55).**
+- At build: a generated lead plate is used only if its file answers 200 with an image.
+  Otherwise the series art is used, with an asset-fallback note. The comic already has
+  this check (§6).
+- At read time: `PlateImage` replaces a plate that fails to load. A lead plate simply
+  goes, and the headline carries the lead. The Echo & Dust strip prints its own words
+  as type.
+
+**The asset reservoir (plan §53).** `npm run daily-bread -- reservoir [--usage]`
+writes `docs/daily-bread/asset-reservoir.json`. It holds 192 assets: 145 audited
+historical prints, 42 series riso plates, 3 procedural posters and 2 approved Echo &
+Dust strips. Each carries tags, Scripture affinity, liturgical affinity, artist,
+rights, aspect ratio, usage count and last use. Only recorded facts are filled in:
+- The print audit records no rights, so those prints say `unrecorded`.
+- No source records liturgical affinity yet.
+- Usage comes from the published editions.
+
+**Waiting on the scenes verdict** (`daily-bread-scenes-a-vs-b`, §4 of the constraints
+document):
+- the approved preset system (§50–51);
+- the dither, grain and typography module split (§47).
+
+Option B would replace the procedural engine with series art, so both wait.
 
 ## 9. Security
 

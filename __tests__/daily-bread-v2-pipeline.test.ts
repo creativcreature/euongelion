@@ -122,6 +122,8 @@ describe('lead plate policy (no arbitrary image use)', () => {
     const without = await buildBaseEdition('2026-09-13', sources)
     expect(without.lead).toMatchObject({ authored: true })
     expect(without.lead?.plate).toBeUndefined()
+    // A plate made for the day, and really there (plan §55 checks it at build).
+    sources.assetAvailable = async () => true
     sources.generatedLeadArt = async () => ({
       src: '/images/edition/guide-lectio.webp',
       width: 1200,

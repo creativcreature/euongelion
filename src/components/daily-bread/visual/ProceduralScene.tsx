@@ -97,14 +97,23 @@ export default function ProceduralScene({
 }: ProceduralSceneProps) {
   const figureRef = useRef<HTMLElement | null>(null)
   const { shouldAnimate: appAllowsMotion } = useAnimation()
-  const poster = useMemo(() => scenePosterDots(scene, seed), [scene, seed])
+  // Plan §52: live frame → static poster → CSS texture → typography. A poster
+  // that cannot be drawn (a scene this renderer version does not know, in an
+  // older frozen edition) drops to the texture tier instead of breaking the page.
+  const poster = useMemo(() => {
+    try {
+      return scenePosterDots(scene, seed)
+    } catch {
+      return null
+    }
+  }, [scene, seed])
   const posterPalette = SCENE_PALETTE[theme ?? 'light']
 
   useEffect(() => {
     const figureEl = figureRef.current
     // No provider reads as shouldAnimate=false: the poster stays, by design.
     // A `still` paper keeps the poster too.
-    if (!figureEl || !appAllowsMotion || motion === 'still') return
+    if (!figureEl || !poster || !appAllowsMotion || motion === 'still') return
     if (typeof window.matchMedia !== 'function') return
     const motionQuery = window.matchMedia(REDUCED_MOTION_QUERY)
     if (motionQuery.matches) return
@@ -376,7 +385,7 @@ export default function ProceduralScene({
       ctx2d = null
       liveCanvas.remove()
     }
-  }, [appAllowsMotion, scene, renderer, seed, theme, motion])
+  }, [appAllowsMotion, poster, scene, renderer, seed, theme, motion])
 
   const classes = className ? `db2-scene ${className}` : 'db2-scene'
 
@@ -390,35 +399,42 @@ export default function ProceduralScene({
       data-theme={theme}
       aria-hidden="true"
     >
-      <svg
-        className="db2-scene-poster"
-        viewBox={`0 0 ${poster.width} ${poster.height}`}
-        preserveAspectRatio="xMidYMid slice"
-        aria-hidden="true"
-        focusable="false"
-        fill={posterPalette.ink}
-      >
-        <rect
-          className="db2-scene-paper"
-          width={poster.width}
-          height={poster.height}
-          fill={posterPalette.paper}
-        />
-        {poster.dots.map((dot, i) =>
-          dot.spot ? (
-            <circle
-              key={i}
-              className="db2-scene-spot"
-              cx={dot.cx}
-              cy={dot.cy}
-              r={dot.r}
-              fill={posterPalette.spot}
-            />
-          ) : (
-            <circle key={i} cx={dot.cx} cy={dot.cy} r={dot.r} />
-          ),
-        )}
-      </svg>
+      {poster ? (
+        <svg
+          className="db2-scene-poster"
+          viewBox={`0 0 ${poster.width} ${poster.height}`}
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
+          focusable="false"
+          fill={posterPalette.ink}
+        >
+          <rect
+            className="db2-scene-paper"
+            width={poster.width}
+            height={poster.height}
+            fill={posterPalette.paper}
+          />
+          {poster.dots.map((dot, i) =>
+            dot.spot ? (
+              <circle
+                key={i}
+                className="db2-scene-spot"
+                cx={dot.cx}
+                cy={dot.cy}
+                r={dot.r}
+                fill={posterPalette.spot}
+              />
+            ) : (
+              <circle key={i} cx={dot.cx} cy={dot.cy} r={dot.r} />
+            ),
+          )}
+        </svg>
+      ) : (
+        <span className="db2-scene-texture" data-fallback="texture" />
+      )}
+      {/* The typography tier: shown by CSS when colours and images are stripped
+          (forced colours, print), so the band still says what it was. */}
+      <span className="db2-scene-type">{label}</span>
     </figure>
   )
 }

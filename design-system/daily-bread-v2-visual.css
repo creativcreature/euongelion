@@ -63,3 +63,48 @@
     display: none;
   }
 }
+
+/* ── Fallback tiers (plan §52): live → poster → texture → typography ──── */
+
+/* Texture: a CSS halftone screen in the paper's own tokens, when no poster
+   can be drawn. */
+.db2-scene-texture {
+  position: absolute;
+  inset: 0;
+  background-color: var(--mock-paper, #f5eee3);
+  background-image: radial-gradient(circle, var(--mock-blue, #1f2a8d) 0 28%, transparent 30%);
+  background-size: 7px 7px;
+  opacity: 0.55;
+}
+
+/* Typography: hidden while the art shows. */
+.db2-scene-type {
+  display: none;
+}
+
+/* Forced colours strip fills and backgrounds, and print should not flood a
+   page with ink: the band becomes its label, set as a rubric. */
+@media (forced-colors: active), print {
+  .db2-scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: auto;
+    min-height: 5.5rem;
+    border-block: 1px solid CanvasText;
+  }
+
+  .db2-scene-poster,
+  .db2-scene-canvas,
+  .db2-scene-texture {
+    display: none;
+  }
+
+  .db2-scene-type {
+    display: block;
+    padding: 1.2rem 1rem;
+    font-family: var(--font-family-serif, Georgia, serif);
+    font-style: italic;
+    text-align: center;
+  }
+}

@@ -309,6 +309,66 @@ async function main() {
       }
       process.exit(0)
     }
+    case 'reservoir': {
+      // Plan §53. Local sources always; --usage also reads the published paper
+      // and the approved strips from the database.
+      const { buildReservoir } = await import('../../src/lib/daily-bread/assets/reservoir')
+      const { SERIES_DATA } = await import('../../src/data/series')
+      const { PROCEDURAL_SCENES } = await import('../../src/lib/daily-bread/generate/frame')
+      const audit = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/print-audit-2026-08-18.json'), 'utf8')) as {
+        prints: { file: string; artist: string; verdict: string }[]
+      }
+      const vasariRaw = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/gallery-vasari.json'), 'utf8')) as {
+        entries: { file: string; title: string }[]
+      }
+      const prints = audit.prints.filter((p) => p.verdict === 'clean')
+      const series = Object.entries(SERIES_DATA).map(([slug, s]) => ({ slug, ...s }))
+      const sharp = (await import('sharp')).default
+      const dimensions = new Map<string, { width: number; height: number }>()
+      const unmeasured: string[] = []
+      for (const src of [...prints.map((p) => `/images/devotional-prints/${p.file}`), ...series.flatMap((s) => (s.heroImage ? [s.heroImage] : []))]) {
+        try {
+          const meta = await sharp(path.join(ROOT, 'public', src)).metadata()
+          if (meta.width && meta.height) dimensions.set(src, { width: meta.width, height: meta.height })
+          else unmeasured.push(src)
+        } catch {
+          unmeasured.push(src)
+        }
+      }
+      let strips: { panelId: string; image: string; caption: string; width: number; height: number }[] = []
+      let editions: DailyEdition[] | undefined
+      if (flag('usage')) {
+        strips = await defaultEditionSources().publishedStrips()
+        const repo = supabaseRepo()
+        const entries = await repo.listArchive({ limit: 500 })
+        editions = []
+        for (const entry of entries) {
+          const e = await repo.getEdition(entry.editionDate)
+          if (e) editions.push(e)
+        }
+      }
+      const assets = buildReservoir({
+        prints,
+        vasari: new Map(vasariRaw.entries.map((e) => [e.file, { title: e.title }])),
+        series,
+        scenes: PROCEDURAL_SCENES,
+        strips,
+        dimensions,
+        editions,
+      })
+      const out = {
+        generatedAt: new Date().toISOString(),
+        usageFrom: editions ? `${editions.length} published editions` : 'not read (run with --usage)',
+        counts: Object.fromEntries(
+          ['historical-art', 'euangelion-art', 'procedural-poster', 'comic'].map((k) => [k, assets.filter((a) => a.kind === k).length]),
+        ),
+        assets,
+      }
+      fs.writeFileSync(path.join(ROOT, 'docs/daily-bread/asset-reservoir.json'), `${JSON.stringify(out, null, 2)}\n`)
+      console.log(`[reservoir] ${assets.length} assets ${JSON.stringify(out.counts)}; usage: ${out.usageFrom}`)
+      if (unmeasured.length > 0) console.warn(`[reservoir] ${unmeasured.length} file(s) could not be measured: ${unmeasured.slice(0, 5).join(', ')}`)
+      process.exit(0)
+    }
     case 'sunday-lead': {
       const dryRun = flag('dry-run')
       const sundays = draftWindow().filter((d) => new Date(`${d}T00:00:00Z`).getUTCDay() === 0)

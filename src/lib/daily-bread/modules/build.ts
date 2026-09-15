@@ -473,7 +473,10 @@ export async function buildBaseEdition(
     const plate = await attempt('lead-plate', failures, async (): Promise<AssetRef | undefined> => {
       const generated = await sources.generatedLeadArt(dateSlug).catch(() => null)
       const genSrc = generated ? safeAssetSrc(generated.src) : null
-      if (generated && genSrc) {
+      // Plan §55: a stored plate is used only if it is really there at build.
+      if (generated && genSrc && !(await sources.assetAvailable(genSrc))) {
+        assetFallbacks.push(`lead-plate: generated plate not reachable (${genSrc.split('/').pop()})`)
+      } else if (generated && genSrc) {
         return {
           id: leadPlateId('lead-art-generated', dateSlug),
           src: genSrc,

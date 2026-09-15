@@ -1,0 +1,3813 @@
+{
+  "generatedAt": "2026-09-15T02:34:59.709Z",
+  "usageFrom": "28 published editions",
+  "counts": {
+    "historical-art": 145,
+    "euangelion-art": 42,
+    "procedural-poster": 3,
+    "comic": 2
+  },
+  "assets": [
+    {
+      "id": "comic:echo-dust-005-windowseat",
+      "kind": "comic",
+      "src": "https://ovivwbopjfruikehrlgm.supabase.co/storage/v1/object/public/edition-assets/strip/echo-dust-005-windowseat.jpg",
+      "title": "Echo & Dust — No. 2: The Window Seat",
+      "artist": "Echo & Dust",
+      "tags": [
+        "echo-and-dust"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 2.03,
+      "usageCount": 1,
+      "lastUsed": "2026-08-21"
+    },
+    {
+      "id": "comic:echo-dust-006-leftovers",
+      "kind": "comic",
+      "src": "https://ovivwbopjfruikehrlgm.supabase.co/storage/v1/object/public/edition-assets/strip/echo-dust-006-leftovers.jpg",
+      "title": "Echo & Dust — No. 3: The Leftovers",
+      "artist": "Echo & Dust",
+      "tags": [
+        "echo-and-dust"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 2.03,
+      "usageCount": 1,
+      "lastUsed": "2026-08-22"
+    },
+    {
+      "id": "euangelion-art:abiding-in-his-presence",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/abiding-in-his-presence.webp",
+      "title": "Abiding in His Presence",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "presence",
+        "abiding",
+        "dwelling",
+        "intimacy",
+        "connection",
+        "communion",
+        "relationship",
+        "refuge",
+        "rest",
+        "stillness"
+      ],
+      "scriptureAffinity": [
+        "John 15:4"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:all-these-things",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/all-these-things.webp",
+      "title": "All These Things",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "anxiety",
+        "worry",
+        "money",
+        "provision",
+        "fear of the future",
+        "unanswered prayer",
+        "God's silence",
+        "doubt",
+        "trust",
+        "peace",
+        "cannot sleep",
+        "scarcity",
+        "control",
+        "waiting",
+        "burnout",
+        "priorities",
+        "seek first"
+      ],
+      "scriptureAffinity": [
+        "Matthew 6:25-34 and Philippians 4:4-7"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:anointed",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/anointed.webp",
+      "title": "Anointed",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "anointing",
+        "chosen",
+        "purpose",
+        "empowerment",
+        "calling",
+        "Holy Spirit",
+        "set apart"
+      ],
+      "scriptureAffinity": [
+        "1 Samuel 16:13 / Acts 1:8"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:bible-365",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/bible-365.webp",
+      "title": "Bible in a Year",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "bible in a year",
+        "bible-in-a-year",
+        "daily",
+        "devotional",
+        "scripture",
+        "reading plan",
+        "old testament",
+        "new testament",
+        "whole bible",
+        "365"
+      ],
+      "scriptureAffinity": [
+        "52 weeks · canonical sweep · weekly rhythm: hook → turning point → application → sabbath"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:by-the-heel",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/by-the-heel.webp",
+      "title": "By the Heel",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "law",
+        "freedom",
+        "legalism",
+        "guilt",
+        "conscience",
+        "judging others",
+        "food",
+        "rules",
+        "inheritance",
+        "blessing",
+        "brothers",
+        "reconciliation",
+        "family division",
+        "grace",
+        "reverence"
+      ],
+      "scriptureAffinity": [
+        "Romans 14:17"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 2,
+      "lastUsed": "2026-08-22"
+    },
+    {
+      "id": "euangelion-art:coming-to-the-end-of-ourselves",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/coming-to-the-end-of-ourselves.webp",
+      "title": "Coming to the End of Ourselves",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "surrender",
+        "weakness",
+        "limitation",
+        "grace",
+        "suffering",
+        "purpose",
+        "letting go",
+        "brokenness"
+      ],
+      "scriptureAffinity": [
+        "2 Corinthians 12:9-10"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:community",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/community.webp",
+      "title": "Community",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "lonely",
+        "alone",
+        "isolated",
+        "friends",
+        "community",
+        "church",
+        "people",
+        "relationships",
+        "trust",
+        "betrayed"
+      ],
+      "scriptureAffinity": [
+        "Matthew 18:20"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 4,
+      "lastUsed": "2026-09-10"
+    },
+    {
+      "id": "euangelion-art:drawing-near",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/drawing-near.webp",
+      "title": "Drawing Near",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "distance",
+        "unworthiness",
+        "access",
+        "shame",
+        "hiding",
+        "freedom",
+        "belonging",
+        "adoption",
+        "reverence",
+        "welcome"
+      ],
+      "scriptureAffinity": [
+        "Hebrews 10:1-25 read against Genesis 1-3 and Leviticus 17:11"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:genesis-two-stories-of-creation",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/genesis-two-stories-of-creation.webp",
+      "title": "Genesis: Two Stories of Creation?",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "creation",
+        "identity",
+        "purpose",
+        "image of God",
+        "community",
+        "genesis",
+        "contradiction"
+      ],
+      "scriptureAffinity": [
+        "Genesis 1-2"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:he-cannot-deny-himself",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/he-cannot-deny-himself.webp",
+      "title": "He Cannot Deny Himself",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "self-reliance",
+        "control",
+        "my own way",
+        "doing it alone",
+        "distant from God",
+        "dry",
+        "guilt",
+        "shame",
+        "broken promises",
+        "failed again",
+        "keep relapsing",
+        "unfaithful",
+        "covenant",
+        "God’s faithfulness",
+        "accountability",
+        "repentance",
+        "hard heart",
+        "pride",
+        "why keep trying",
+        "God gave up on me",
+        "backsliding",
+        "steadfast"
+      ],
+      "scriptureAffinity": [
+        "2 Timothy 2:13"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:hearing-god-in-the-noise",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/hearing-god-in-the-noise.webp",
+      "title": "Hearing God in the Noise",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "distracted",
+        "confused",
+        "overwhelmed",
+        "noise",
+        "voices",
+        "discernment",
+        "listening",
+        "quiet",
+        "still"
+      ],
+      "scriptureAffinity": [
+        "John 10:27"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:hope",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/hope.webp",
+      "title": "Hope",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "hope",
+        "hopeless",
+        "dark",
+        "despair",
+        "pessimistic",
+        "depressed",
+        "grief",
+        "loss",
+        "tired",
+        "exhausted",
+        "doubt"
+      ],
+      "scriptureAffinity": [
+        "Lamentations 3:22-23"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:identity",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/identity.webp",
+      "title": "Identity Crisis",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "identity",
+        "who am i",
+        "lost",
+        "shaken",
+        "labels",
+        "defined",
+        "purpose",
+        "meaning",
+        "self",
+        "belong"
+      ],
+      "scriptureAffinity": [
+        "Matthew 6:33"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 4,
+      "lastUsed": "2026-08-31"
+    },
+    {
+      "id": "euangelion-art:in-the-beginning-week-1",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/in-the-beginning-week-1.webp",
+      "title": "In the Beginning",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "creation",
+        "beginning",
+        "origin",
+        "purpose",
+        "chaos",
+        "order",
+        "word",
+        "genesis"
+      ],
+      "scriptureAffinity": [
+        "Genesis 1:1 / John 1:1"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:kingdom",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/kingdom.webp",
+      "title": "Kingdom",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "politics",
+        "government",
+        "system",
+        "searching",
+        "looking",
+        "refuge",
+        "power",
+        "kingdom",
+        "world",
+        "broken"
+      ],
+      "scriptureAffinity": [
+        "Luke 17:21 + Matthew 6:33"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 3,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "euangelion-art:looking-at-the-sun",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/looking-at-the-sun.webp",
+      "title": "Looking at the Sun",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "healing",
+        "patience",
+        "rest",
+        "waiting",
+        "weary",
+        "tired",
+        "exhausted",
+        "burned out",
+        "wilderness",
+        "dry season",
+        "distracted",
+        "too busy",
+        "doing too much",
+        "martha",
+        "serving",
+        "grace",
+        "slow down",
+        "endurance",
+        "sick",
+        "recovery",
+        "still",
+        "attention"
+      ],
+      "scriptureAffinity": [
+        "Hebrews 12:1-2"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:once-saved-always-saved",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/once-saved-always-saved.webp",
+      "title": "Once Saved, Always Saved?",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "security",
+        "salvation",
+        "perseverance",
+        "doubt",
+        "faith",
+        "backsliding",
+        "eternal security"
+      ],
+      "scriptureAffinity": [
+        "Hebrews 6:4-6 / John 10:28-29"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:peace",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/peace.webp",
+      "title": "Peace",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "peace",
+        "anxious",
+        "anxiety",
+        "control",
+        "worry",
+        "stressed",
+        "overwhelmed",
+        "restless",
+        "fear",
+        "panic"
+      ],
+      "scriptureAffinity": [
+        "John 14:27"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 5,
+      "lastUsed": "2026-09-05"
+    },
+    {
+      "id": "euangelion-art:prayer-of-jabez",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/prayer-of-jabez.webp",
+      "title": "The Prayer of Jabez",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "transition",
+        "new season",
+        "change",
+        "waiting",
+        "promise",
+        "promises kept",
+        "stability",
+        "provision",
+        "blessing",
+        "breakthrough",
+        "finally happening",
+        "moving",
+        "new job",
+        "new home",
+        "insecurity",
+        "scared to lose it",
+        "prayer",
+        "asking God",
+        "Jabez"
+      ],
+      "scriptureAffinity": [
+        "1 Chronicles 4:10"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:present-in-the-chaos",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/present-in-the-chaos.webp",
+      "title": "Present in the Chaos",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "busyness",
+        "presence",
+        "stillness",
+        "chaos",
+        "overwhelmed",
+        "rest",
+        "peace",
+        "burnout"
+      ],
+      "scriptureAffinity": [
+        "Psalm 46:10"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:provision",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/provision.webp",
+      "title": "Provision",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "money",
+        "finances",
+        "job",
+        "work",
+        "provide",
+        "enough",
+        "scarcity",
+        "poor",
+        "rich",
+        "economy",
+        "inflation"
+      ],
+      "scriptureAffinity": [
+        "Matthew 6:33"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:rekindled",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/rekindled.webp",
+      "title": "Rekindled",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "burned out",
+        "gone cold",
+        "lost my spark",
+        "drifting",
+        "dry",
+        "going through the motions",
+        "faith feels dead",
+        "lost my fire",
+        "distant from God",
+        "inherited faith",
+        "doubting",
+        "transition",
+        "starting over",
+        "empty",
+        "tired of trying",
+        "rekindle"
+      ],
+      "scriptureAffinity": [
+        "2 Timothy 1:6"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:rooted",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/rooted.webp",
+      "title": "Rooted",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "faith",
+        "roots",
+        "perseverance",
+        "suffering",
+        "resilience",
+        "foundation",
+        "unshakeable"
+      ],
+      "scriptureAffinity": [
+        "Colossians 2:6-7"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:signs-boldness-opposition-integrity",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/signs-boldness-opposition-integrity.webp",
+      "title": "Signs, Boldness & Integrity",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "boldness",
+        "courage",
+        "integrity",
+        "honesty",
+        "persecution",
+        "public faith",
+        "witness"
+      ],
+      "scriptureAffinity": [
+        "Acts 4:29-31"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:sought-and-crowned",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/sought-and-crowned.webp",
+      "title": "Sought and Crowned",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "reconciliation",
+        "healing",
+        "mercy",
+        "shame",
+        "unworthy",
+        "adoption",
+        "restoration",
+        "being found",
+        "estranged",
+        "disability",
+        "exile",
+        "inheritance",
+        "sonship",
+        "dignity",
+        "forgiveness",
+        "hiding"
+      ],
+      "scriptureAffinity": [
+        "2 Samuel 9:1"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 2,
+      "lastUsed": "2026-08-19"
+    },
+    {
+      "id": "euangelion-art:standing-strong",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/standing-strong.webp",
+      "title": "Standing Strong",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "doubt",
+        "conviction",
+        "strength",
+        "Philippians",
+        "endurance",
+        "faith",
+        "perseverance",
+        "standing firm"
+      ],
+      "scriptureAffinity": [
+        "Philippians 4:13"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:surrender-to-gods-will",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/surrender-to-gods-will.webp",
+      "title": "Surrender to God's Will",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "surrender",
+        "control",
+        "obedience",
+        "will",
+        "submission",
+        "trust",
+        "letting go",
+        "freedom"
+      ],
+      "scriptureAffinity": [
+        "Luke 22:42"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:the-blueprint-of-community",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/the-blueprint-of-community.webp",
+      "title": "The Blueprint of Community",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "lonely",
+        "disconnected",
+        "isolated",
+        "community",
+        "church",
+        "fellowship",
+        "belonging"
+      ],
+      "scriptureAffinity": [
+        "Acts 2:42-47"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:the-harvest",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/the-harvest.webp",
+      "title": "The Harvest",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "praying for family",
+        "unbelieving family",
+        "prodigal",
+        "God’s patience",
+        "hope for the lost",
+        "evangelism",
+        "witness",
+        "sharing my faith",
+        "judging others",
+        "wrote them off",
+        "second chances",
+        "deathbed conversion",
+        "judgment",
+        "harvest",
+        "kingdom",
+        "wheat and tares"
+      ],
+      "scriptureAffinity": [
+        "Matthew 13:30"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:the-nature-of-belief",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/the-nature-of-belief.webp",
+      "title": "The Nature of Belief",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "doubt",
+        "faith",
+        "trials",
+        "testing",
+        "wisdom",
+        "perseverance",
+        "suffering"
+      ],
+      "scriptureAffinity": [
+        "James 1:2-4"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:the-word-before-words",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/the-word-before-words.webp",
+      "title": "The Word Before Words",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "beginning",
+        "creation",
+        "purpose",
+        "identity",
+        "meaning",
+        "word",
+        "genesis",
+        "christ in genesis"
+      ],
+      "scriptureAffinity": [
+        "John 1:1"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:the-work-of-god",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/the-work-of-god.webp",
+      "title": "The Work of God",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "hunger",
+        "satisfaction",
+        "belief",
+        "works",
+        "grace",
+        "striving",
+        "enough"
+      ],
+      "scriptureAffinity": [
+        "John 6:28-29"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:too-busy-for-god",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/too-busy-for-god.webp",
+      "title": "Too Busy for God",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "busy",
+        "overwhelmed",
+        "exhausted",
+        "no time",
+        "distracted",
+        "hurry",
+        "rest",
+        "margin",
+        "priorities"
+      ],
+      "scriptureAffinity": [
+        "Luke 10:38-42"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:truth",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/truth.webp",
+      "title": "Truth",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "truth",
+        "lies",
+        "misinformation",
+        "confused",
+        "real",
+        "fake",
+        "trust",
+        "media",
+        "believe",
+        "discern"
+      ],
+      "scriptureAffinity": [
+        "John 14:6"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:valued",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/valued.webp",
+      "title": "Valued",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "worth",
+        "value",
+        "identity",
+        "self-worth",
+        "image of God",
+        "beloved",
+        "enough"
+      ],
+      "scriptureAffinity": [
+        "Psalm 139:14"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:what-does-it-mean-to-believe",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/what-does-it-mean-to-believe.webp",
+      "title": "What Does It Mean to Believe?",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "doubt",
+        "faith",
+        "belief",
+        "trust",
+        "skepticism",
+        "intellectual",
+        "head vs heart"
+      ],
+      "scriptureAffinity": [
+        "John 3:16"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:what-happens-when-you-repeatedly-sin",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/what-happens-when-you-repeatedly-sin.webp",
+      "title": "What Happens When You Repeatedly Sin?",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "sin",
+        "guilt",
+        "shame",
+        "addiction",
+        "struggle",
+        "repeated sin",
+        "forgiveness",
+        "grace"
+      ],
+      "scriptureAffinity": [
+        "Romans 7:15-25"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:what-is-carrying-a-cross",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/what-is-carrying-a-cross.webp",
+      "title": "What Is Carrying a Cross?",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "sacrifice",
+        "cost",
+        "discipleship",
+        "cross",
+        "suffering",
+        "commitment",
+        "following Jesus"
+      ],
+      "scriptureAffinity": [
+        "Luke 9:23"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:what-is-christianity",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/what-is-christianity.webp",
+      "title": "What is Christianity?",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "christianity",
+        "gospel",
+        "grace",
+        "freedom",
+        "performance",
+        "doubt",
+        "skepticism",
+        "Galatians",
+        "Dennis Quaid",
+        "addiction",
+        "recovery"
+      ],
+      "scriptureAffinity": [
+        "Galatians 1-5"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:what-is-the-gospel",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/what-is-the-gospel.webp",
+      "title": "What is the Gospel?",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "searching",
+        "skeptical",
+        "curious",
+        "seeking",
+        "questioning",
+        "gospel",
+        "good news",
+        "basics"
+      ],
+      "scriptureAffinity": [
+        "Mark 1:1"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:why-jesus",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/why-jesus.webp",
+      "title": "Why Jesus?",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "why Jesus",
+        "is Jesus necessary",
+        "savior",
+        "messiah",
+        "salvation",
+        "purpose of Jesus",
+        "who is Jesus",
+        "why believe"
+      ],
+      "scriptureAffinity": [
+        "Luke 2:10-11"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "euangelion-art:witness-under-pressure-expansion",
+      "kind": "euangelion-art",
+      "src": "/images/site/series/witness-under-pressure-expansion.webp",
+      "title": "Witness Under Pressure",
+      "artist": "Euangelion riso series art",
+      "tags": [
+        "persecution",
+        "pressure",
+        "cost",
+        "witness",
+        "expansion",
+        "suffering",
+        "faithfulness"
+      ],
+      "scriptureAffinity": [
+        "Acts 5:41"
+      ],
+      "liturgicalAffinity": [],
+      "rights": "Original (Euangelion)",
+      "aspectRatio": 1.835,
+      "usageCount": 0,
+      "lastUsed": null
+    },
+    {
+      "id": "historical-art:aivazovsky-ninth-wave",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/aivazovsky-ninth-wave.webp",
+      "title": "The Ninth Wave",
+      "artist": "Aivazovsky",
+      "tags": [
+        "ninth",
+        "wave"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 2,
+      "lastUsed": "2026-09-08"
+    },
+    {
+      "id": "historical-art:aivazovsky-ninth-wave-rooted",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/aivazovsky-ninth-wave-rooted.webp",
+      "title": "The Ninth Wave, in Blue",
+      "artist": "Aivazovsky",
+      "tags": [
+        "ninth",
+        "wave",
+        "rooted"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-09-07"
+    },
+    {
+      "id": "historical-art:allston-elijah-desert",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/allston-elijah-desert.webp",
+      "title": "Elijah Fed by the Ravens",
+      "artist": "Allston",
+      "tags": [
+        "elijah",
+        "desert"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 2,
+      "lastUsed": "2026-09-10"
+    },
+    {
+      "id": "historical-art:allston-elijah-desert-present",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/allston-elijah-desert-present.webp",
+      "title": "Elijah in the Desert",
+      "artist": "Allston",
+      "tags": [
+        "elijah",
+        "desert",
+        "present"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 2,
+      "lastUsed": "2026-09-09"
+    },
+    {
+      "id": "historical-art:angelico-annunciation-present",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/angelico-annunciation-present.webp",
+      "title": "The Annunciation",
+      "artist": "Angelico",
+      "tags": [
+        "annunciation",
+        "present"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 2,
+      "lastUsed": "2026-09-11"
+    },
+    {
+      "id": "historical-art:arch-alhambra-gardens-granada",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-alhambra-gardens-granada.webp",
+      "title": "The Water Stair of the Generalife",
+      "artist": "Unknown",
+      "tags": [
+        "alhambra",
+        "gardens",
+        "granada"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 2,
+      "lastUsed": "2026-09-12"
+    },
+    {
+      "id": "historical-art:arch-ancient-bread-oven-israel",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-ancient-bread-oven-israel.webp",
+      "title": "Woman at the Old Door",
+      "artist": "Unknown",
+      "tags": [
+        "ancient",
+        "bread",
+        "oven",
+        "israel"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 2,
+      "lastUsed": "2026-09-13"
+    },
+    {
+      "id": "historical-art:arch-ancient-gaza-road-negev",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-ancient-gaza-road-negev.webp",
+      "title": "Ruins on the Negev Road",
+      "artist": "Unknown",
+      "tags": [
+        "ancient",
+        "gaza",
+        "road",
+        "negev"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 2,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "historical-art:arch-ancient-olive-trees-gethsemane",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-ancient-olive-trees-gethsemane.webp",
+      "title": "Olive Trees at Gethsemane",
+      "artist": "Unknown",
+      "tags": [
+        "ancient",
+        "olive",
+        "trees",
+        "gethsemane"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-08-26"
+    },
+    {
+      "id": "historical-art:arch-ancient-quarry-golgotha",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-ancient-quarry-golgotha.webp",
+      "title": "Ornamental Interlace Band",
+      "artist": "Unknown",
+      "tags": [
+        "ancient",
+        "quarry",
+        "golgotha"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 3.529,
+      "usageCount": 1,
+      "lastUsed": "2026-08-27"
+    },
+    {
+      "id": "historical-art:arch-arch-constantine",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-arch-constantine.webp",
+      "title": "The Colosseum and the Arch of Constantine",
+      "artist": "Unknown",
+      "tags": [
+        "arch",
+        "constantine"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-08-28"
+    },
+    {
+      "id": "historical-art:arch-arch-titus-relief",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-arch-titus-relief.webp",
+      "title": "The Spoils of Jerusalem, After the Arch of Titus",
+      "artist": "Unknown",
+      "tags": [
+        "arch",
+        "titus",
+        "relief"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.752,
+      "usageCount": 1,
+      "lastUsed": "2026-08-29"
+    },
+    {
+      "id": "historical-art:arch-areopagus-mars-hill",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-areopagus-mars-hill.webp",
+      "title": "The Areopagus Below the Acropolis",
+      "artist": "Unknown",
+      "tags": [
+        "areopagus",
+        "mars",
+        "hill"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-08-30"
+    },
+    {
+      "id": "historical-art:arch-baptistery-florence",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-baptistery-florence.webp",
+      "title": "The Baptistery Vault of Florence",
+      "artist": "Unknown",
+      "tags": [
+        "baptistery",
+        "florence"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1,
+      "usageCount": 1,
+      "lastUsed": "2026-08-31"
+    },
+    {
+      "id": "historical-art:arch-basilica-tabor",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-basilica-tabor.webp",
+      "title": "The Basilica of the Transfiguration, Mount Tabor",
+      "artist": "Unknown",
+      "tags": [
+        "basilica",
+        "tabor"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-09-01"
+    },
+    {
+      "id": "historical-art:arch-canterbury-cathedral-nave",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-canterbury-cathedral-nave.webp",
+      "title": "The Nave of Canterbury",
+      "artist": "Unknown",
+      "tags": [
+        "canterbury",
+        "cathedral",
+        "nave"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-09-02"
+    },
+    {
+      "id": "historical-art:arch-capernaum-synagogue",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-capernaum-synagogue.webp",
+      "title": "The White Synagogue at Capernaum",
+      "artist": "Unknown",
+      "tags": [
+        "capernaum",
+        "synagogue"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-09-03"
+    },
+    {
+      "id": "historical-art:arch-catacombs-good-shepherd",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-catacombs-good-shepherd.webp",
+      "title": "The Good Shepherd",
+      "artist": "Unknown",
+      "tags": [
+        "catacombs",
+        "good",
+        "shepherd"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1,
+      "usageCount": 1,
+      "lastUsed": "2026-09-04"
+    },
+    {
+      "id": "historical-art:arch-chartres-labyrinth",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-chartres-labyrinth.webp",
+      "title": "The Labyrinth at Chartres",
+      "artist": "Unknown",
+      "tags": [
+        "chartres",
+        "labyrinth"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-09-05"
+    },
+    {
+      "id": "historical-art:arch-church-annunciation-nazareth",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-church-annunciation-nazareth.webp",
+      "title": "The Lantern Dome of the Annunciation",
+      "artist": "Unknown",
+      "tags": [
+        "church",
+        "annunciation",
+        "nazareth"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-09-06"
+    },
+    {
+      "id": "historical-art:arch-colosseum-arena-floor",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-colosseum-arena-floor.webp",
+      "title": "On the Arena Floor of the Colosseum",
+      "artist": "Unknown",
+      "tags": [
+        "colosseum",
+        "arena",
+        "floor"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-09-07"
+    },
+    {
+      "id": "historical-art:arch-dome-rock-interior",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-dome-rock-interior.webp",
+      "title": "The Dome of the Rock",
+      "artist": "Unknown",
+      "tags": [
+        "dome",
+        "rock",
+        "interior"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.133,
+      "usageCount": 2,
+      "lastUsed": "2026-09-08"
+    },
+    {
+      "id": "historical-art:arch-garden-tomb-exterior",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-garden-tomb-exterior.webp",
+      "title": "The Garden Tomb",
+      "artist": "Unknown",
+      "tags": [
+        "garden",
+        "tomb",
+        "exterior"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 2,
+      "lastUsed": "2026-09-09"
+    },
+    {
+      "id": "historical-art:arch-garden-tomb-jerusalem",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-garden-tomb-jerusalem.webp",
+      "title": "A City Above the Bay",
+      "artist": "Unknown",
+      "tags": [
+        "garden",
+        "tomb",
+        "jerusalem"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.752,
+      "usageCount": 2,
+      "lastUsed": "2026-09-10"
+    },
+    {
+      "id": "historical-art:arch-gethsemane-end-ourselves",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-gethsemane-end-ourselves.webp",
+      "title": "Olive Trees After Van Gogh",
+      "artist": "Unknown",
+      "tags": [
+        "gethsemane",
+        "end",
+        "ourselves"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 2,
+      "lastUsed": "2026-09-11"
+    },
+    {
+      "id": "historical-art:arch-gethsemane-olive-trees",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-gethsemane-olive-trees.webp",
+      "title": "The Olive Grove",
+      "artist": "Unknown",
+      "tags": [
+        "gethsemane",
+        "olive",
+        "trees"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 2,
+      "lastUsed": "2026-09-12"
+    },
+    {
+      "id": "historical-art:arch-hagia-sophia-apse",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-hagia-sophia-apse.webp",
+      "title": "Virgin and Child Enthroned, After the Apse Mosaic",
+      "artist": "Unknown",
+      "tags": [
+        "hagia",
+        "sophia",
+        "apse"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 2,
+      "lastUsed": "2026-09-13"
+    },
+    {
+      "id": "historical-art:arch-holy-sepulchre-dome",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-holy-sepulchre-dome.webp",
+      "title": "A Parlor with Portraits and a Birdcage",
+      "artist": "Unknown",
+      "tags": [
+        "holy",
+        "sepulchre",
+        "dome"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 2,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "historical-art:arch-judean-desert-engraving",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-judean-desert-engraving.webp",
+      "title": "The Temple Seen Between Columns",
+      "artist": "Unknown",
+      "tags": [
+        "judean",
+        "desert",
+        "engraving"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-08-26"
+    },
+    {
+      "id": "historical-art:arch-lascaux-cave-paintings",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-lascaux-cave-paintings.webp",
+      "title": "The White Horse in a Field of Flowers",
+      "artist": "Unknown",
+      "tags": [
+        "lascaux",
+        "cave",
+        "paintings"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-08-27"
+    },
+    {
+      "id": "historical-art:arch-library-celsus-ephesus-2",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-library-celsus-ephesus-2.webp",
+      "title": "The Library of Celsus",
+      "artist": "Unknown",
+      "tags": [
+        "library",
+        "celsus",
+        "ephesus",
+        "2"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-08-28"
+    },
+    {
+      "id": "historical-art:arch-maria-laach-choir-stalls",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-maria-laach-choir-stalls.webp",
+      "title": "The Abbey of Maria Laach",
+      "artist": "Unknown",
+      "tags": [
+        "maria",
+        "laach",
+        "choir",
+        "stalls"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 1,
+      "lastUsed": "2026-08-29"
+    },
+    {
+      "id": "historical-art:arch-monastery-sinai-burning-bush",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-monastery-sinai-burning-bush.webp",
+      "title": "The Monastery of Saint Catherine, Sinai",
+      "artist": "Unknown",
+      "tags": [
+        "monastery",
+        "sinai",
+        "burning",
+        "bush"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-08-30"
+    },
+    {
+      "id": "historical-art:arch-mont-saint-michel-cloister",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-mont-saint-michel-cloister.webp",
+      "title": "The Cloister of Mont-Saint-Michel",
+      "artist": "Unknown",
+      "tags": [
+        "mont",
+        "saint",
+        "michel",
+        "cloister"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.914,
+      "usageCount": 1,
+      "lastUsed": "2026-08-31"
+    },
+    {
+      "id": "historical-art:arch-old-bailey-london",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-old-bailey-london.webp",
+      "title": "Justice Above the Old Bailey",
+      "artist": "Unknown",
+      "tags": [
+        "old",
+        "bailey",
+        "london"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-09-01"
+    },
+    {
+      "id": "historical-art:arch-palatine-hill-ruins",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-palatine-hill-ruins.webp",
+      "title": "The Stone Pine on the Palatine",
+      "artist": "Unknown",
+      "tags": [
+        "palatine",
+        "hill",
+        "ruins"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-09-02"
+    },
+    {
+      "id": "historical-art:arch-pantheon-dome-oculus",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-pantheon-dome-oculus.webp",
+      "title": "The Oculus of the Pantheon",
+      "artist": "Unknown",
+      "tags": [
+        "pantheon",
+        "dome",
+        "oculus"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-09-03"
+    },
+    {
+      "id": "historical-art:arch-philippi-ruins-greece",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-philippi-ruins-greece.webp",
+      "title": "The Plain of Philippi",
+      "artist": "Unknown",
+      "tags": [
+        "philippi",
+        "ruins",
+        "greece"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-09-04"
+    },
+    {
+      "id": "historical-art:arch-ravenna-good-shepherd-mosaic",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-ravenna-good-shepherd-mosaic.webp",
+      "title": "The Good Shepherd of Ravenna",
+      "artist": "Unknown",
+      "tags": [
+        "ravenna",
+        "good",
+        "shepherd",
+        "mosaic"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.6,
+      "usageCount": 1,
+      "lastUsed": "2026-09-05"
+    },
+    {
+      "id": "historical-art:arch-roman-forum-chaos",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-roman-forum-chaos.webp",
+      "title": "Columns Among the Apartments",
+      "artist": "Unknown",
+      "tags": [
+        "roman",
+        "forum",
+        "chaos"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.6,
+      "usageCount": 1,
+      "lastUsed": "2026-09-06"
+    },
+    {
+      "id": "historical-art:arch-san-thome-basilica",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-san-thome-basilica.webp",
+      "title": "San Thome Basilica, Madras",
+      "artist": "Unknown",
+      "tags": [
+        "san",
+        "thome",
+        "basilica"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-09-07"
+    },
+    {
+      "id": "historical-art:arch-scriptorium-medieval",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-scriptorium-medieval.webp",
+      "title": "The Monastery Garth",
+      "artist": "Unknown",
+      "tags": [
+        "scriptorium",
+        "medieval"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.065,
+      "usageCount": 2,
+      "lastUsed": "2026-09-08"
+    },
+    {
+      "id": "historical-art:arch-shepherds-field-chapel",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-shepherds-field-chapel.webp",
+      "title": "The Excavation at Shepherds' Field",
+      "artist": "Unknown",
+      "tags": [
+        "shepherds",
+        "field",
+        "chapel"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 2,
+      "lastUsed": "2026-09-09"
+    },
+    {
+      "id": "historical-art:arch-tabgha-loaves-mosaic",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-tabgha-loaves-mosaic.webp",
+      "title": "The Loaves and Fishes of Tabgha",
+      "artist": "Unknown",
+      "tags": [
+        "tabgha",
+        "loaves",
+        "mosaic"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 2,
+      "lastUsed": "2026-09-10"
+    },
+    {
+      "id": "historical-art:arch-trajan-market-ruins",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-trajan-market-ruins.webp",
+      "title": "The Markets of Trajan",
+      "artist": "Unknown",
+      "tags": [
+        "trajan",
+        "market",
+        "ruins"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 2,
+      "lastUsed": "2026-09-11"
+    },
+    {
+      "id": "historical-art:arch-via-sacra-rome",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-via-sacra-rome.webp",
+      "title": "The Via Sacra",
+      "artist": "Unknown",
+      "tags": [
+        "via",
+        "sacra",
+        "rome"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 2,
+      "lastUsed": "2026-09-12"
+    },
+    {
+      "id": "historical-art:arch-westminster-cloister",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-westminster-cloister.webp",
+      "title": "The Cloister Garth at Westminster",
+      "artist": "Unknown",
+      "tags": [
+        "westminster",
+        "cloister"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1,
+      "usageCount": 2,
+      "lastUsed": "2026-09-13"
+    },
+    {
+      "id": "historical-art:arch-yardenit-jordan-site",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/arch-yardenit-jordan-site.webp",
+      "title": "The Baptismal Site at Yardenit",
+      "artist": "Unknown",
+      "tags": [
+        "yardenit",
+        "jordan",
+        "site"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 2,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "historical-art:blake-glad-day-albion",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/blake-glad-day-albion.webp",
+      "title": "Glad Day, After Blake",
+      "artist": "Blake",
+      "tags": [
+        "glad",
+        "day",
+        "albion"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-08-26"
+    },
+    {
+      "id": "historical-art:bosch-ship-fools",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/bosch-ship-fools.webp",
+      "title": "The Ship of Fools",
+      "artist": "Bosch",
+      "tags": [
+        "ship",
+        "fools"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.523,
+      "usageCount": 1,
+      "lastUsed": "2026-08-28"
+    },
+    {
+      "id": "historical-art:bosch-ship-fools-tongue",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/bosch-ship-fools-tongue.webp",
+      "title": "The Ship of Fools, with the Pink Ensign",
+      "artist": "Bosch",
+      "tags": [
+        "ship",
+        "fools",
+        "tongue"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.523,
+      "usageCount": 1,
+      "lastUsed": "2026-08-27"
+    },
+    {
+      "id": "historical-art:bosch-the-conjurer",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/bosch-the-conjurer.webp",
+      "title": "The Conjurer",
+      "artist": "Bosch",
+      "tags": [
+        "the",
+        "conjurer"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.207,
+      "usageCount": 1,
+      "lastUsed": "2026-08-29"
+    },
+    {
+      "id": "historical-art:bouguereau-difficult-lesson",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/bouguereau-difficult-lesson.webp",
+      "title": "The Difficult Lesson, After Bouguereau",
+      "artist": "Bouguereau",
+      "tags": [
+        "difficult",
+        "lesson"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-08-30"
+    },
+    {
+      "id": "historical-art:bruegel-pentecost-expansion",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/bruegel-pentecost-expansion.webp",
+      "title": "The Peasant Wedding",
+      "artist": "Bruegel",
+      "tags": [
+        "pentecost",
+        "expansion"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-08-31"
+    },
+    {
+      "id": "historical-art:bruegel-tower-babel",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/bruegel-tower-babel.webp",
+      "title": "The Tower of Babel with the King's Visit",
+      "artist": "Bruegel",
+      "tags": [
+        "tower",
+        "babel"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-09-02"
+    },
+    {
+      "id": "historical-art:bruegel-tower-babel-1563",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/bruegel-tower-babel-1563.webp",
+      "title": "The Tower of Babel",
+      "artist": "Bruegel",
+      "tags": [
+        "tower",
+        "babel",
+        "1563"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-09-01"
+    },
+    {
+      "id": "historical-art:brueghel-garden-eden-elder",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/brueghel-garden-eden-elder.webp",
+      "title": "The Garden of Eden",
+      "artist": "Brueghel",
+      "tags": [
+        "garden",
+        "eden",
+        "elder"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-09-03"
+    },
+    {
+      "id": "historical-art:brueghel-garden-eden-young",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/brueghel-garden-eden-young.webp",
+      "title": "Paradise with a Scarlet Parrot",
+      "artist": "Brueghel",
+      "tags": [
+        "garden",
+        "eden",
+        "young"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-09-04"
+    },
+    {
+      "id": "historical-art:campi-still-life-vine",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/campi-still-life-vine.webp",
+      "title": "The Fruit Market",
+      "artist": "Campi",
+      "tags": [
+        "still",
+        "life",
+        "vine"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-09-05"
+    },
+    {
+      "id": "historical-art:caravaggio-incredulity-thomas",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/caravaggio-incredulity-thomas.webp",
+      "title": "The Incredulity of Saint Thomas",
+      "artist": "Caravaggio",
+      "tags": [
+        "incredulity",
+        "thomas"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-09-06"
+    },
+    {
+      "id": "historical-art:carracci-stoning-stephen",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/carracci-stoning-stephen.webp",
+      "title": "The Stoning of Saint Stephen",
+      "artist": "Carracci",
+      "tags": [
+        "stoning",
+        "stephen"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-09-07"
+    },
+    {
+      "id": "historical-art:cassatt-mother-child",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/cassatt-mother-child.webp",
+      "title": "Mother and Child with a Hand Mirror",
+      "artist": "Cassatt",
+      "tags": [
+        "mother",
+        "child"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 2,
+      "lastUsed": "2026-09-08"
+    },
+    {
+      "id": "historical-art:chardin-grace-anointed",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/chardin-grace-anointed.webp",
+      "title": "The Grace",
+      "artist": "Chardin",
+      "tags": [
+        "grace",
+        "anointed"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 2,
+      "lastUsed": "2026-09-09"
+    },
+    {
+      "id": "historical-art:chardin-grace-at-table",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/chardin-grace-at-table.webp",
+      "title": "Grace at Table",
+      "artist": "Chardin",
+      "tags": [
+        "grace",
+        "at",
+        "table"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 2,
+      "lastUsed": "2026-09-10"
+    },
+    {
+      "id": "historical-art:chardin-grace-before-meal",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/chardin-grace-before-meal.webp",
+      "title": "Grace Before the Meal",
+      "artist": "Chardin",
+      "tags": [
+        "grace",
+        "before",
+        "meal"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 2,
+      "lastUsed": "2026-09-11"
+    },
+    {
+      "id": "historical-art:chardin-still-life-bread",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/chardin-still-life-bread.webp",
+      "title": "Still Life with Bread and Eggs",
+      "artist": "Chardin",
+      "tags": [
+        "still",
+        "life",
+        "bread"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.207,
+      "usageCount": 2,
+      "lastUsed": "2026-09-12"
+    },
+    {
+      "id": "historical-art:chardin-still-life-stillness",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/chardin-still-life-stillness.webp",
+      "title": "Still Life with Jug and Basket",
+      "artist": "Chardin",
+      "tags": [
+        "still",
+        "life",
+        "stillness"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.207,
+      "usageCount": 2,
+      "lastUsed": "2026-09-13"
+    },
+    {
+      "id": "historical-art:church-twilight-wilderness",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/church-twilight-wilderness.webp",
+      "title": "Twilight in the Wilderness",
+      "artist": "Church",
+      "tags": [
+        "twilight",
+        "wilderness"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.6,
+      "usageCount": 2,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "historical-art:cole-sunny-morning-hudson",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/cole-sunny-morning-hudson.webp",
+      "title": "Sunny Morning on the Hudson",
+      "artist": "Cole",
+      "tags": [
+        "sunny",
+        "morning",
+        "hudson"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-08-26"
+    },
+    {
+      "id": "historical-art:cole-voyage-life-childhood",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/cole-voyage-life-childhood.webp",
+      "title": "The Voyage of Life: Childhood",
+      "artist": "Cole",
+      "tags": [
+        "voyage",
+        "life",
+        "childhood"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-08-27"
+    },
+    {
+      "id": "historical-art:cortona-god-creating-animals",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/cortona-god-creating-animals.webp",
+      "title": "The Creator on the Clouds",
+      "artist": "Cortona",
+      "tags": [
+        "god",
+        "creating",
+        "animals"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-08-28"
+    },
+    {
+      "id": "historical-art:daumier-good-samaritan",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/daumier-good-samaritan.webp",
+      "title": "The Good Samaritan",
+      "artist": "Daumier",
+      "tags": [
+        "good",
+        "samaritan"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 1,
+      "lastUsed": "2026-08-29"
+    },
+    {
+      "id": "historical-art:daumier-third-class-carriage",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/daumier-third-class-carriage.webp",
+      "title": "The Third-Class Carriage",
+      "artist": "Daumier",
+      "tags": [
+        "third",
+        "class",
+        "carriage"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-08-30"
+    },
+    {
+      "id": "historical-art:daumier-third-class-chaos",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/daumier-third-class-chaos.webp",
+      "title": "The Passengers",
+      "artist": "Daumier",
+      "tags": [
+        "third",
+        "class",
+        "chaos"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-08-31"
+    },
+    {
+      "id": "historical-art:daumier-third-class-truth",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/daumier-third-class-truth.webp",
+      "title": "The Carriage at Dusk",
+      "artist": "Daumier",
+      "tags": [
+        "third",
+        "class",
+        "truth"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-09-01"
+    },
+    {
+      "id": "historical-art:daumier-third-class-valued",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/daumier-third-class-valued.webp",
+      "title": "The Old Man in the Carriage",
+      "artist": "Daumier",
+      "tags": [
+        "third",
+        "class",
+        "valued"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-09-02"
+    },
+    {
+      "id": "historical-art:daumier-washerwoman",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/daumier-washerwoman.webp",
+      "title": "The Washerwoman",
+      "artist": "Daumier",
+      "tags": [
+        "washerwoman"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-09-03"
+    },
+    {
+      "id": "historical-art:del-sarto-last-supper",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/del-sarto-last-supper.webp",
+      "title": "The Last Supper",
+      "artist": "Del",
+      "tags": [
+        "sarto",
+        "last",
+        "supper"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.752,
+      "usageCount": 1,
+      "lastUsed": "2026-09-04"
+    },
+    {
+      "id": "historical-art:durer-prodigal-son-swine-end",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/durer-prodigal-son-swine-end.webp",
+      "title": "The Return of the Prodigal Son",
+      "artist": "Durer",
+      "tags": [
+        "prodigal",
+        "son",
+        "swine",
+        "end"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 1,
+      "lastUsed": "2026-09-05"
+    },
+    {
+      "id": "historical-art:el-greco-pentecost",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/el-greco-pentecost.webp",
+      "title": "The Descent of the Holy Spirit",
+      "artist": "El",
+      "tags": [
+        "greco",
+        "pentecost"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.438,
+      "usageCount": 1,
+      "lastUsed": "2026-09-07"
+    },
+    {
+      "id": "historical-art:el-greco-pentecost-anointed",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/el-greco-pentecost-anointed.webp",
+      "title": "Pentecost",
+      "artist": "El",
+      "tags": [
+        "greco",
+        "pentecost",
+        "anointed"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.438,
+      "usageCount": 1,
+      "lastUsed": "2026-09-06"
+    },
+    {
+      "id": "historical-art:el-greco-portrait-man",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/el-greco-portrait-man.webp",
+      "title": "Portrait of a Gentleman with a Ruff",
+      "artist": "El",
+      "tags": [
+        "greco",
+        "portrait",
+        "man"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.882,
+      "usageCount": 1,
+      "lastUsed": "2026-09-08"
+    },
+    {
+      "id": "historical-art:friedrich-monk-by-sea",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/friedrich-monk-by-sea.webp",
+      "title": "The Monk by the Sea",
+      "artist": "Friedrich",
+      "tags": [
+        "monk",
+        "by",
+        "sea"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.6,
+      "usageCount": 1,
+      "lastUsed": "2026-09-09"
+    },
+    {
+      "id": "historical-art:friedrich-monk-sea-end",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/friedrich-monk-sea-end.webp",
+      "title": "The Monk and the Far Sail",
+      "artist": "Friedrich",
+      "tags": [
+        "monk",
+        "sea",
+        "end"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.6,
+      "usageCount": 1,
+      "lastUsed": "2026-09-10"
+    },
+    {
+      "id": "historical-art:friedrich-wanderer-fog",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/friedrich-wanderer-fog.webp",
+      "title": "The Wanderer Above the Fog",
+      "artist": "Friedrich",
+      "tags": [
+        "wanderer",
+        "fog"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 1,
+      "lastUsed": "2026-09-11"
+    },
+    {
+      "id": "historical-art:friedrich-woman-rising-sun",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/friedrich-woman-rising-sun.webp",
+      "title": "Woman Before the Rising Sun",
+      "artist": "Friedrich",
+      "tags": [
+        "woman",
+        "rising",
+        "sun"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 2,
+      "lastUsed": "2026-09-12"
+    },
+    {
+      "id": "historical-art:ge-what-is-truth",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/ge-what-is-truth.webp",
+      "title": "What Is Truth?",
+      "artist": "Ge",
+      "tags": [
+        "what",
+        "is",
+        "truth"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 2,
+      "lastUsed": "2026-09-13"
+    },
+    {
+      "id": "historical-art:grunewald-resurrection-isenheim",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/grunewald-resurrection-isenheim.webp",
+      "title": "The Resurrection",
+      "artist": "Grunewald",
+      "tags": [
+        "resurrection",
+        "isenheim"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.523,
+      "usageCount": 2,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "historical-art:guercino-god-father-angels",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/guercino-god-father-angels.webp",
+      "title": "God the Father with an Angel and the Orb",
+      "artist": "Guercino",
+      "tags": [
+        "god",
+        "father",
+        "angels"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-08-21"
+    },
+    {
+      "id": "historical-art:hammershoi-five-portraits",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/hammershoi-five-portraits.webp",
+      "title": "Five Portraits at a Table",
+      "artist": "Hammershoi",
+      "tags": [
+        "five",
+        "portraits"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-08-22"
+    },
+    {
+      "id": "historical-art:hooch-interior-woman-window",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/hooch-interior-woman-window.webp",
+      "title": "Interior with a Mother Beside the Cradle",
+      "artist": "Hooch",
+      "tags": [
+        "interior",
+        "woman",
+        "window"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.207,
+      "usageCount": 1,
+      "lastUsed": "2026-08-23"
+    },
+    {
+      "id": "historical-art:lippi-music-making-angels",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/lippi-music-making-angels.webp",
+      "title": "Swans and the Abandoned Pipes",
+      "artist": "Lippi",
+      "tags": [
+        "music",
+        "making",
+        "angels"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.207,
+      "usageCount": 1,
+      "lastUsed": "2026-08-24"
+    },
+    {
+      "id": "historical-art:lotto-adoration-christ-child",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/lotto-adoration-christ-child.webp",
+      "title": "The Adoration of the Christ Child with Saints",
+      "artist": "Lotto",
+      "tags": [
+        "adoration",
+        "christ",
+        "child"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-08-25"
+    },
+    {
+      "id": "historical-art:mantegna-agony-in-garden",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/mantegna-agony-in-garden.webp",
+      "title": "The Agony in the Garden",
+      "artist": "Mantegna",
+      "tags": [
+        "agony",
+        "in",
+        "garden"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-08-26"
+    },
+    {
+      "id": "historical-art:millet-man-with-hoe-anointed",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/millet-man-with-hoe-anointed.webp",
+      "title": "The Man with the Hoe",
+      "artist": "Millet",
+      "tags": [
+        "man",
+        "with",
+        "hoe",
+        "anointed"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.207,
+      "usageCount": 1,
+      "lastUsed": "2026-08-27"
+    },
+    {
+      "id": "historical-art:millet-sower-work",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/millet-sower-work.webp",
+      "title": "The Sower",
+      "artist": "Millet",
+      "tags": [
+        "sower",
+        "work"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 1,
+      "lastUsed": "2026-08-28"
+    },
+    {
+      "id": "historical-art:moreau-salome-dancing",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/moreau-salome-dancing.webp",
+      "title": "Salome Dancing Before Herod",
+      "artist": "Moreau",
+      "tags": [
+        "salome",
+        "dancing"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-08-29"
+    },
+    {
+      "id": "historical-art:murillo-loaves-fishes",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/murillo-loaves-fishes.webp",
+      "title": "Girl with Flowers in Her Lap",
+      "artist": "Murillo",
+      "tags": [
+        "loaves",
+        "fishes"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 1,
+      "lastUsed": "2026-08-30"
+    },
+    {
+      "id": "historical-art:raphael-apostle-paul-preaching",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/raphael-apostle-paul-preaching.webp",
+      "title": "Paul Preaching at Athens",
+      "artist": "Raphael",
+      "tags": [
+        "apostle",
+        "paul",
+        "preaching"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-08-31"
+    },
+    {
+      "id": "historical-art:raphael-healing-lame-man-2",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/raphael-healing-lame-man-2.webp",
+      "title": "The Healing of the Lame Man",
+      "artist": "Raphael",
+      "tags": [
+        "healing",
+        "lame",
+        "man",
+        "2"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.6,
+      "usageCount": 1,
+      "lastUsed": "2026-09-01"
+    },
+    {
+      "id": "historical-art:raphael-paul-preaching-athens",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/raphael-paul-preaching-athens.webp",
+      "title": "St. Paul at the Areopagus",
+      "artist": "Raphael",
+      "tags": [
+        "paul",
+        "preaching",
+        "athens"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-09-02"
+    },
+    {
+      "id": "historical-art:raphael-school-athens-standing",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/raphael-school-athens-standing.webp",
+      "title": "The School of Athens",
+      "artist": "Raphael",
+      "tags": [
+        "school",
+        "athens",
+        "standing"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-09-03"
+    },
+    {
+      "id": "historical-art:raphael-school-of-athens",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/raphael-school-of-athens.webp",
+      "title": "The School of Athens, with Touches of Color",
+      "artist": "Raphael",
+      "tags": [
+        "school",
+        "of",
+        "athens"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 1,
+      "lastUsed": "2026-09-04"
+    },
+    {
+      "id": "historical-art:raphael-transfiguration",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/raphael-transfiguration.webp",
+      "title": "The Transfiguration",
+      "artist": "Raphael",
+      "tags": [
+        "transfiguration"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 1,
+      "lastUsed": "2026-09-05"
+    },
+    {
+      "id": "historical-art:rembrandt-abraham-isaac",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-abraham-isaac.webp",
+      "title": "The Sacrifice of Isaac",
+      "artist": "Rembrandt",
+      "tags": [
+        "abraham",
+        "isaac"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-09-06"
+    },
+    {
+      "id": "historical-art:rembrandt-adam-eve-etching",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-adam-eve-etching.webp",
+      "title": "The Elephant in Eden",
+      "artist": "Rembrandt",
+      "tags": [
+        "adam",
+        "eve",
+        "etching"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.939,
+      "usageCount": 1,
+      "lastUsed": "2026-09-07"
+    },
+    {
+      "id": "historical-art:rembrandt-christ-cross-etching",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-christ-cross-etching.webp",
+      "title": "Christ Led Away",
+      "artist": "Rembrandt",
+      "tags": [
+        "christ",
+        "cross",
+        "etching"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.286,
+      "usageCount": 2,
+      "lastUsed": "2026-09-08"
+    },
+    {
+      "id": "historical-art:rembrandt-jacob-wrestling-angel",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-jacob-wrestling-angel.webp",
+      "title": "Jacob Wrestling with the Angel",
+      "artist": "Rembrandt",
+      "tags": [
+        "jacob",
+        "wrestling",
+        "angel"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 2,
+      "lastUsed": "2026-09-09"
+    },
+    {
+      "id": "historical-art:rembrandt-jacob-wrestling-rooted",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-jacob-wrestling-rooted.webp",
+      "title": "Jacob Wrestling the Angel",
+      "artist": "Rembrandt",
+      "tags": [
+        "jacob",
+        "wrestling",
+        "rooted"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 2,
+      "lastUsed": "2026-09-10"
+    },
+    {
+      "id": "historical-art:rembrandt-raising-lazarus",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-raising-lazarus.webp",
+      "title": "The Raising of Lazarus",
+      "artist": "Rembrandt",
+      "tags": [
+        "raising",
+        "lazarus"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 2,
+      "lastUsed": "2026-09-11"
+    },
+    {
+      "id": "historical-art:rembrandt-return-prodigal-grace",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-return-prodigal-grace.webp",
+      "title": "The Return of the Prodigal Son",
+      "artist": "Rembrandt",
+      "tags": [
+        "return",
+        "prodigal",
+        "grace"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 2,
+      "lastUsed": "2026-09-12"
+    },
+    {
+      "id": "historical-art:rembrandt-samuel-anointing-david",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-samuel-anointing-david.webp",
+      "title": "The Anointing of David",
+      "artist": "Rembrandt",
+      "tags": [
+        "samuel",
+        "anointing",
+        "david"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 2,
+      "lastUsed": "2026-09-13"
+    },
+    {
+      "id": "historical-art:rembrandt-self-portrait-old",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-self-portrait-old.webp",
+      "title": "Self-Portrait in a Red Gown",
+      "artist": "Rembrandt",
+      "tags": [
+        "self",
+        "portrait",
+        "old"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 2,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "historical-art:rembrandt-self-portrait-valued",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-self-portrait-valued.webp",
+      "title": "Self-Portrait in a Flat Cap",
+      "artist": "Rembrandt",
+      "tags": [
+        "self",
+        "portrait",
+        "valued"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.939,
+      "usageCount": 1,
+      "lastUsed": "2026-08-26"
+    },
+    {
+      "id": "historical-art:rembrandt-storm-sea-galilee",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-storm-sea-galilee.webp",
+      "title": "The Storm on the Sea of Galilee",
+      "artist": "Rembrandt",
+      "tags": [
+        "storm",
+        "sea",
+        "galilee"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 1,
+      "lastUsed": "2026-08-27"
+    },
+    {
+      "id": "historical-art:rembrandt-supper-emmaus",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-supper-emmaus.webp",
+      "title": "The Supper at Emmaus",
+      "artist": "Rembrandt",
+      "tags": [
+        "supper",
+        "emmaus"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.939,
+      "usageCount": 1,
+      "lastUsed": "2026-08-28"
+    },
+    {
+      "id": "historical-art:rembrandt-thomas-apostle",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-thomas-apostle.webp",
+      "title": "The Apostle Thomas in His Study",
+      "artist": "Rembrandt",
+      "tags": [
+        "thomas",
+        "apostle"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-08-29"
+    },
+    {
+      "id": "historical-art:rembrandt-titus-reading",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-titus-reading.webp",
+      "title": "Titus Reading",
+      "artist": "Rembrandt",
+      "tags": [
+        "titus",
+        "reading"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.939,
+      "usageCount": 1,
+      "lastUsed": "2026-08-30"
+    },
+    {
+      "id": "historical-art:rembrandt-workers-vineyard",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rembrandt-workers-vineyard.webp",
+      "title": "The Payment of the Labourers in the Vineyard",
+      "artist": "Rembrandt",
+      "tags": [
+        "workers",
+        "vineyard"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-08-31"
+    },
+    {
+      "id": "historical-art:rubens-washing-of-feet",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/rubens-washing-of-feet.webp",
+      "title": "Christ Washing the Feet of Peter",
+      "artist": "Rubens",
+      "tags": [
+        "washing",
+        "of",
+        "feet"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.065,
+      "usageCount": 1,
+      "lastUsed": "2026-09-01"
+    },
+    {
+      "id": "historical-art:scheffer-temptation-christ",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/scheffer-temptation-christ.webp",
+      "title": "The Temptation of Christ",
+      "artist": "Scheffer",
+      "tags": [
+        "temptation",
+        "christ"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-09-02"
+    },
+    {
+      "id": "historical-art:sculpt-bernini-saint-teresa",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-bernini-saint-teresa.webp",
+      "title": "The Ecstasy of Saint Teresa, After Bernini",
+      "artist": "Unknown",
+      "tags": [
+        "bernini",
+        "saint",
+        "teresa"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.625,
+      "usageCount": 1,
+      "lastUsed": "2026-09-03"
+    },
+    {
+      "id": "historical-art:sculpt-bourdelle-beethoven",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-bourdelle-beethoven.webp",
+      "title": "Beethoven, Tragic Mask, After Bourdelle",
+      "artist": "Unknown",
+      "tags": [
+        "bourdelle",
+        "beethoven"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-09-05"
+    },
+    {
+      "id": "historical-art:sculpt-bourdelle-beethoven-endure",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-bourdelle-beethoven-endure.webp",
+      "title": "Head of Beethoven, After Bourdelle",
+      "artist": "Unknown",
+      "tags": [
+        "bourdelle",
+        "beethoven",
+        "endure"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-09-04"
+    },
+    {
+      "id": "historical-art:sculpt-donatello-marble-david",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-donatello-marble-david.webp",
+      "title": "David, After Donatello's Marble",
+      "artist": "Unknown",
+      "tags": [
+        "donatello",
+        "marble",
+        "david"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.571,
+      "usageCount": 1,
+      "lastUsed": "2026-09-06"
+    },
+    {
+      "id": "historical-art:sculpt-donatello-saint-george",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-donatello-saint-george.webp",
+      "title": "Saint George, After Donatello",
+      "artist": "Unknown",
+      "tags": [
+        "donatello",
+        "saint",
+        "george"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-09-07"
+    },
+    {
+      "id": "historical-art:sculpt-ghiberti-gates-detail",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-ghiberti-gates-detail.webp",
+      "title": "A Panel from the Gates of Paradise",
+      "artist": "Unknown",
+      "tags": [
+        "ghiberti",
+        "gates",
+        "detail"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.6,
+      "usageCount": 2,
+      "lastUsed": "2026-09-08"
+    },
+    {
+      "id": "historical-art:sculpt-ghiberti-gates-paradise-manna",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-ghiberti-gates-paradise-manna.webp",
+      "title": "The Gates of Paradise Seen from Below",
+      "artist": "Unknown",
+      "tags": [
+        "ghiberti",
+        "gates",
+        "paradise",
+        "manna"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 2,
+      "lastUsed": "2026-09-09"
+    },
+    {
+      "id": "historical-art:sculpt-laocoon-sons",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-laocoon-sons.webp",
+      "title": "Laocoön and His Sons",
+      "artist": "Unknown",
+      "tags": [
+        "laocoon",
+        "sons"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.939,
+      "usageCount": 2,
+      "lastUsed": "2026-09-10"
+    },
+    {
+      "id": "historical-art:sculpt-michelangelo-david-standing",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-michelangelo-david-standing.webp",
+      "title": "David in the Tribune",
+      "artist": "Unknown",
+      "tags": [
+        "michelangelo",
+        "david",
+        "standing"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.625,
+      "usageCount": 2,
+      "lastUsed": "2026-09-11"
+    },
+    {
+      "id": "historical-art:sculpt-rodin-prodigal-son",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-rodin-prodigal-son.webp",
+      "title": "The Prodigal Son",
+      "artist": "Unknown",
+      "tags": [
+        "rodin",
+        "prodigal",
+        "son"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 2,
+      "lastUsed": "2026-09-12"
+    },
+    {
+      "id": "historical-art:sculpt-rodin-thinker",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-rodin-thinker.webp",
+      "title": "The Thinker",
+      "artist": "Unknown",
+      "tags": [
+        "rodin",
+        "thinker"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.882,
+      "usageCount": 2,
+      "lastUsed": "2026-09-13"
+    },
+    {
+      "id": "historical-art:sculpt-winged-victory-samothrace",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/sculpt-winged-victory-samothrace.webp",
+      "title": "The Winged Victory of Samothrace",
+      "artist": "Unknown",
+      "tags": [
+        "winged",
+        "victory",
+        "samothrace"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 2,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "historical-art:tintoretto-creation-animals",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/tintoretto-creation-animals.webp",
+      "title": "The Creation of the Animals",
+      "artist": "Tintoretto",
+      "tags": [
+        "creation",
+        "animals"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.752,
+      "usageCount": 1,
+      "lastUsed": "2026-08-26"
+    },
+    {
+      "id": "historical-art:tissot-christ-appears-apostles",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/tissot-christ-appears-apostles.webp",
+      "title": "Christ Appears on the Shore of Galilee",
+      "artist": "Tissot",
+      "tags": [
+        "christ",
+        "appears",
+        "apostles"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.5,
+      "usageCount": 1,
+      "lastUsed": "2026-08-27"
+    },
+    {
+      "id": "historical-art:tissot-gathering-manna",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/tissot-gathering-manna.webp",
+      "title": "The Gathering of the Manna",
+      "artist": "Tissot",
+      "tags": [
+        "gathering",
+        "manna"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 1,
+      "lastUsed": "2026-08-28"
+    },
+    {
+      "id": "historical-art:tissot-saint-john-baptist",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/tissot-saint-john-baptist.webp",
+      "title": "The Youth Among the Gazelles",
+      "artist": "Tissot",
+      "tags": [
+        "saint",
+        "john",
+        "baptist"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.667,
+      "usageCount": 1,
+      "lastUsed": "2026-08-29"
+    },
+    {
+      "id": "historical-art:turner-evening-deluge",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/turner-evening-deluge.webp",
+      "title": "The Evening of the Deluge",
+      "artist": "Turner",
+      "tags": [
+        "evening",
+        "deluge"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1,
+      "usageCount": 1,
+      "lastUsed": "2026-08-30"
+    },
+    {
+      "id": "historical-art:van-dyck-martyrdom-sebastian",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/van-dyck-martyrdom-sebastian.webp",
+      "title": "Sebastian Bound for Martyrdom",
+      "artist": "Van",
+      "tags": [
+        "dyck",
+        "martyrdom",
+        "sebastian"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.73,
+      "usageCount": 1,
+      "lastUsed": "2026-08-31"
+    },
+    {
+      "id": "historical-art:vermeer-christ-martha-mary",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/vermeer-christ-martha-mary.webp",
+      "title": "Christ in the House of Martha and Mary",
+      "artist": "Vermeer",
+      "tags": [
+        "christ",
+        "martha",
+        "mary"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.882,
+      "usageCount": 1,
+      "lastUsed": "2026-09-01"
+    },
+    {
+      "id": "historical-art:vermeer-girl-pearl-earring",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/vermeer-girl-pearl-earring.webp",
+      "title": "Girl with a Pearl Earring",
+      "artist": "Vermeer",
+      "tags": [
+        "girl",
+        "pearl",
+        "earring"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 1,
+      "lastUsed": "2026-09-02"
+    },
+    {
+      "id": "historical-art:vermeer-girl-pearl-standing",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/vermeer-girl-pearl-standing.webp",
+      "title": "Girl in a Turban, with a Thread of Red",
+      "artist": "Vermeer",
+      "tags": [
+        "girl",
+        "pearl",
+        "standing"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.829,
+      "usageCount": 1,
+      "lastUsed": "2026-09-03"
+    },
+    {
+      "id": "historical-art:vermeer-woman-pearl-necklace",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/vermeer-woman-pearl-necklace.webp",
+      "title": "Woman with a Pearl Necklace",
+      "artist": "Vermeer",
+      "tags": [
+        "woman",
+        "pearl",
+        "necklace"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.882,
+      "usageCount": 1,
+      "lastUsed": "2026-09-04"
+    },
+    {
+      "id": "historical-art:watteau-gilles-pierrot",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/watteau-gilles-pierrot.webp",
+      "title": "Gilles",
+      "artist": "Watteau",
+      "tags": [
+        "gilles",
+        "pierrot"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 0.778,
+      "usageCount": 1,
+      "lastUsed": "2026-09-05"
+    },
+    {
+      "id": "historical-art:wright-philosopher-orrery",
+      "kind": "historical-art",
+      "src": "/images/devotional-prints/wright-philosopher-orrery.webp",
+      "title": "A Philosopher Lecturing on the Orrery",
+      "artist": "Wright",
+      "tags": [
+        "philosopher",
+        "orrery"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "unrecorded",
+      "aspectRatio": 1.37,
+      "usageCount": 1,
+      "lastUsed": "2026-09-06"
+    },
+    {
+      "id": "procedural-poster:grain",
+      "kind": "procedural-poster",
+      "src": "procedural:grain",
+      "title": "grain",
+      "artist": null,
+      "tags": [
+        "grain"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "First-party code (this repository)",
+      "aspectRatio": 2,
+      "usageCount": 9,
+      "lastUsed": "2026-09-14"
+    },
+    {
+      "id": "procedural-poster:living-water",
+      "kind": "procedural-poster",
+      "src": "procedural:living-water",
+      "title": "living-water",
+      "artist": null,
+      "tags": [
+        "living",
+        "water"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "First-party code (this repository)",
+      "aspectRatio": 2,
+      "usageCount": 10,
+      "lastUsed": "2026-09-12"
+    },
+    {
+      "id": "procedural-poster:wilderness-stars",
+      "kind": "procedural-poster",
+      "src": "procedural:wilderness-stars",
+      "title": "wilderness-stars",
+      "artist": null,
+      "tags": [
+        "wilderness",
+        "stars"
+      ],
+      "scriptureAffinity": [],
+      "liturgicalAffinity": [],
+      "rights": "First-party code (this repository)",
+      "aspectRatio": 2,
+      "usageCount": 9,
+      "lastUsed": "2026-09-11"
+    }
+  ]
+}

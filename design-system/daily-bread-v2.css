@@ -587,6 +587,16 @@
   color: var(--mock-muted);
 }
 
+/* The strip as type, when its stored image cannot load (plan §55). */
+.db2-comic-section .db2-comic-text {
+  margin: 0;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid var(--mock-line);
+  font-family: var(--font-family-serif);
+  font-size: var(--mock-type-1, 1.15rem);
+  line-height: 1.5;
+}
+
 /* ═══ SMALL SCREENS ═════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {

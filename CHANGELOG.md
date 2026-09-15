@@ -390,6 +390,28 @@ corrected in order, earliest first.
     - The scenes verdict is still pending.
     - The older style note names crimson as the spot colour; the approved anchors use
       gold.
+- **Deviations 18–20 (plan §46–47, §50–53, §55), corrected except for the parts that
+  wait on the scenes verdict.**
+  - **Licences (§46).** `docs/daily-bread/DEPENDENCIES-AND-LICENCES.md`:
+    - V2 added one package, PGlite (a devDependency, Apache-2.0).
+    - The visual stack is first-party; no aiscii, asciigen or copied shader code.
+    - `npm audit --omit=dev` finds 12 issues (1 critical), none from V2. **Next.js
+      16.2.10 has a critical group fixed in 16.2.11**, including a middleware bypass.
+      Upgrading is a site-wide step for the founder to schedule.
+  - **Fallback tiers (§52).** The scene degrades from live frame to poster to CSS
+    texture to typography. An unknown scene draws the texture instead of NaN dots;
+    forced colours and print show the label.
+  - **Image failure (§55).**
+    - A generated lead plate that is not really there is never frozen.
+    - At read time `PlateImage` drops a failed lead plate and prints the failed strip's
+      own words.
+    - Tests cover both, plus the build check.
+  - **Asset reservoir (§53).** `npm run daily-bread -- reservoir --usage` indexes 192
+    assets with usage from 28 published editions. Only recorded facts are filled in;
+    print rights read `unrecorded`.
+  - **Waiting on the scenes verdict.** The approved presets (§50–51) and the
+    dither/grain/typography module split (§47).
+  - **Tests.** 269 Daily Bread tests pass.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request
