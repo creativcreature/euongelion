@@ -145,6 +145,36 @@ corrected in order, earliest first.
       gentle motion (B), with 10-second recordings of each (`daily-bread-scenes-a-vs-b`).
   - **On hold** until the founder verifies the comic style: every production step (the
     No. 1 repoint, `repair-comics`, the Sep 15 rebuild, deploy).
+- **Deviation 7 (plan §21, "Implement the existing Claude workflow behind this
+  interface"), corrected in code.**
+  - **What was wrong.** V2 wrote a new frame prompt on its own chain. The Claude
+    workflows that already existed kept calling `claude -p` themselves, outside any
+    interface: the SA-100 Sunday lead (`compose-lead-claude.mjs`) and the SA-114
+    How-to-Read guides (`compose-guides-claude.mjs`).
+  - **The interface.** `generate/editorial.ts` defines `EditorialGenerator.generate()`.
+    The V2 frame, the Sunday lead and the guides all go through it, and no caller
+    names a provider.
+  - **Prompts kept.** The prompts, checks and draft rows are unchanged, with two
+    exceptions:
+    - The lead returns its JSON instead of writing `/tmp/sunday-lead.json`.
+    - A provider that cannot read the repository gets the lead's rules without the
+      file references, and no historic quotes. Claude Code keeps read-only access
+      (Read, Grep) and the rules verbatim.
+  - **Scripts replaced.** The two scripts became `npm run daily-bread -- sunday-lead`
+    and `-- guides` (with `--dry-run`). `daily-edition.yml` and `daily-gapfill.yml`
+    call them.
+  - **Chain changes.** A task with no deterministic floor now fails with every
+    provider's reason (`ProviderChainExhausted`). An empty system prompt is omitted,
+    not sent blank.
+  - **Verified.**
+    - 14 new tests, including the Claude CLI's real arguments and working directory
+      through a stand-in binary.
+    - A dry run for Sunday Sep 20 went through Claude Code with repo access: 1,050
+      words, grounded on John 3, no em-dashes. Its one historic quote (Hannah
+      Whitall Smith) is verbatim in `public/reference-index.json`. Nothing was
+      written to the database.
+    - A guides dry run for Sep 16 went through Claude Code: three articles that
+      passed the SA-114 rules on the first attempt. Nothing was written.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

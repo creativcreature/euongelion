@@ -8,6 +8,13 @@
  *   npm run daily-bread -- backfill  --from=YYYY-MM-DD --to=YYYY-MM-DD [--dry-run]
  *   npm run daily-bread -- e2e       (full pipeline in memory, no network, no secrets)
  *   npm run daily-bread -- fixtures  --from=YYYY-MM-DD --days=7 [--assets-dir=.open-next/assets] [--providers]
+ *   npm run daily-bread -- sunday-lead --days=N [--from=YYYY-MM-DD] [--dry-run]
+ *   npm run daily-bread -- guides      --days=N [--from=YYYY-MM-DD] [--force] [--dry-run]
+ *
+ * sunday-lead and guides are the pre-V2 Claude workflows (SA-100, SA-114),
+ * now behind the editorial generation interface. They write DRAFT
+ * edition_items rows for the founder's queue; --dry-run writes nothing and
+ * saves the result under .daily-bread-local/.
  *
  * Secrets come from the environment (GitHub secrets in CI, .env.local
  * locally). Values are never printed; every log line is redacted.
@@ -45,7 +52,10 @@ import {
 import { runBackfill } from '../../src/lib/daily-bread/backfill'
 import { runInMemoryE2E } from '../../src/lib/daily-bread/e2e'
 import { repairComics, repairLeadPlates } from '../../src/lib/daily-bread/maintenance'
-import type { DailyEdition } from '../../src/lib/daily-bread/types'
+import type { DailyEdition, ProviderUsage } from '../../src/lib/daily-bread/types'
+import { createEditorialGenerator } from '../../src/lib/daily-bread/generate/editorial'
+import { composeSundayLead, sundayLeadPayload, sundayLeadWordCount } from '../../src/lib/daily-bread/generate/sunday-lead'
+import { composeGuides } from '../../src/lib/daily-bread/generate/guides'
 
 const ROOT = process.cwd()
 
@@ -77,7 +87,7 @@ const flag = (name: string) => process.argv.includes(`--${name}`)
 
 function usage(message: string): never {
   console.error(`[daily-bread] ${message}`)
-  console.error('usage: npm run daily-bread -- <build|publish|run|health|backfill|e2e|fixtures> [flags]')
+  console.error('usage: npm run daily-bread -- <build|publish|run|health|backfill|e2e|fixtures|sunday-lead|guides> [flags]')
   process.exit(2)
 }
 
@@ -99,6 +109,52 @@ function supabaseRepo(): DailyBreadRepository {
 
 function providers(): TextProvider[] {
   return [createClaudeApiProvider(), createClaudeCliProvider(), createOpenAiProvider(), createGeminiProvider()]
+}
+
+/**
+ * The draft writers put Claude Code first: it is the subscription transport
+ * the SA-100/SA-114 workflows used, and the only one that can search the repo.
+ */
+function draftProviders(): TextProvider[] {
+  return [createClaudeCliProvider(), createClaudeApiProvider(), createOpenAiProvider(), createGeminiProvider()]
+}
+
+function usageLine(usage: ProviderUsage[]): string {
+  return usage.map((u) => `${u.provider}${u.ok ? ' ok' : `: ${u.error ?? 'failed'}`}`).join(' → ')
+}
+
+/** Dates in the window, starting --from (default: tomorrow, UTC). */
+function draftWindow(): string[] {
+  const days = Number(arg('days') ?? '1')
+  if (!Number.isInteger(days) || days < 1 || days > 31) usage('--days must be 1-31')
+  const from = arg('from')
+  if (from !== undefined && !isValidDateSlug(from)) usage('--from must be YYYY-MM-DD')
+  const start = from ?? new Date(Date.now() + 86_400_000).toISOString().slice(0, 10)
+  return Array.from({ length: days }, (_, i) => addDays(start, i))
+}
+
+function supabaseRest(): { url: (p: string) => string; headers: Record<string, string> } {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!url || !key) throw new Error('NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required (or use --dry-run)')
+  return { url: (p) => `${url}${p}`, headers: { apikey: key, Authorization: `Bearer ${key}` } }
+}
+
+async function upsertDraftRows(rows: object[]): Promise<void> {
+  const sb = supabaseRest()
+  const res = await fetch(sb.url('/rest/v1/edition_items?on_conflict=kind,publish_date,slot'), {
+    method: 'POST',
+    headers: { ...sb.headers, 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates' },
+    body: JSON.stringify(rows),
+  })
+  if (!res.ok) throw new Error(`draft upsert failed ${res.status}: ${errorMessage(await res.text(), 300)}`)
+}
+
+function saveLocal(name: string, value: unknown): void {
+  const dir = path.join(ROOT, '.daily-bread-local')
+  fs.mkdirSync(dir, { recursive: true })
+  fs.writeFileSync(path.join(dir, name), JSON.stringify(value, null, 2))
+  console.log(`[daily-bread] wrote .daily-bread-local/${name}`)
 }
 
 function sources(options: { editionItems: boolean }): EditionSources {
@@ -250,6 +306,81 @@ async function main() {
         fs.mkdirSync(target, { recursive: true })
         fs.writeFileSync(path.join(target, 'fixtures.json'), payload)
         console.log(`[daily-bread] copied fixtures into ${path.relative(ROOT, target)}`)
+      }
+      process.exit(0)
+    }
+    case 'sunday-lead': {
+      const dryRun = flag('dry-run')
+      const sundays = draftWindow().filter((d) => new Date(`${d}T00:00:00Z`).getUTCDay() === 0)
+      if (sundays.length === 0) {
+        console.log('[sunday-lead] no Sunday in the window — nothing to compose')
+        process.exit(0)
+      }
+      const { SUNDAY_BRIEFS, isoWeekUTC } = await import('../../src/lib/edition/generators/lead')
+      const { getVerse } = await import('../../src/lib/bible/getVerse')
+      const generator = createEditorialGenerator({ providers: draftProviders(), logger, retries: 1 })
+      for (const date of sundays) {
+        const brief = SUNDAY_BRIEFS[(isoWeekUTC(new Date(`${date}T00:00:00Z`)) - 1) % SUNDAY_BRIEFS.length]
+        const verse = await getVerse(brief.scriptureReference, 'BSB')
+        const scripture = { canonical: verse.canonical, text: verse.text }
+        console.log(`[sunday-lead] composing ${date}: ${brief.theme}`)
+        const out = await composeSundayLead({ generator, brief, scripture, repoDir: ROOT })
+        const payload = sundayLeadPayload(brief, scripture, out.value)
+        const words = sundayLeadWordCount(out.value.body)
+        console.log(`[sunday-lead] ${date}: ${words} words via ${out.provider} (${usageLine(out.usage)})`)
+        if (dryRun) {
+          saveLocal(`sunday-lead-${date}.json`, { date, provider: out.provider, model: out.model, usage: out.usage, payload })
+          continue
+        }
+        await upsertDraftRows([{ kind: 'lead', publish_date: date, slot: 0, status: 'draft', payload }])
+        console.log(`[sunday-lead] ${date} draft inserted`)
+      }
+      process.exit(0)
+    }
+    case 'guides': {
+      const dryRun = flag('dry-run')
+      const dates = draftWindow()
+      // The bank's plates, reused in rotation — no image generation here (SA-114).
+      const PLATES = [
+        { image: '/images/edition/guide-whole-book.webp', alt: 'A hand holding an open scroll' },
+        { image: '/images/edition/guide-who-speaks.webp', alt: 'Two travellers on a road, joined by a stranger' },
+        { image: '/images/edition/guide-scripture-interprets.webp', alt: 'Two stone tablets' },
+      ]
+      const sb = supabaseRest()
+      let log: { date: string; title: string; kicker: string }[] = []
+      const logRes = await fetch(sb.url('/storage/v1/object/edition-assets/pipeline/guides-log.json'), { headers: sb.headers })
+      if (logRes.ok) log = (await logRes.json()) as typeof log
+      const generator = createEditorialGenerator({ providers: draftProviders(), logger, retries: 1 })
+      for (const date of dates) {
+        const existing = (await fetch(sb.url(`/rest/v1/edition_items?kind=eq.guide&publish_date=eq.${date}&select=id`), {
+          headers: sb.headers,
+        }).then((r) => r.json())) as unknown[]
+        if (existing.length > 0 && !flag('force')) {
+          console.log(`[guides] ${date} already has ${existing.length} — skipping`)
+          continue
+        }
+        const out = await composeGuides({ generator, date, coveredTitles: log.map((e) => e.title) })
+        const rows = out.value.map((g, i) => ({
+          kind: 'guide',
+          publish_date: date,
+          slot: i,
+          status: 'draft',
+          payload: { ...g, ...PLATES[i % PLATES.length] },
+        }))
+        console.log(`[guides] ${date}: ${out.value.map((g) => g.title).join(' · ')} via ${out.provider} (${usageLine(out.usage)})`)
+        if (dryRun) {
+          saveLocal(`guides-${date}.json`, { date, provider: out.provider, model: out.model, usage: out.usage, rows })
+          continue
+        }
+        await upsertDraftRows(rows)
+        log.push(...out.value.map((g) => ({ date, title: g.title, kicker: g.kicker })))
+        const lg = await fetch(sb.url('/storage/v1/object/edition-assets/pipeline/guides-log.json'), {
+          method: 'POST',
+          headers: { ...sb.headers, 'Content-Type': 'application/json', 'x-upsert': 'true' },
+          body: JSON.stringify(log, null, 2),
+        })
+        if (!lg.ok) throw new Error(`[guides] log write failed: ${lg.status}`)
+        console.log(`[guides] ${date}: 3 drafts inserted`)
       }
       process.exit(0)
     }

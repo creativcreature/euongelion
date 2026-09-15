@@ -37,7 +37,7 @@ export function createGeminiProvider(
           method: 'POST',
           headers: { 'content-type': 'application/json', 'x-goog-api-key': apiKey },
           body: JSON.stringify({
-            systemInstruction: { role: 'system', parts: [{ text: request.system }] },
+            ...(request.system ? { systemInstruction: { role: 'system', parts: [{ text: request.system }] } } : {}),
             contents: [{ role: 'user', parts: [{ text: request.prompt }] }],
             generationConfig: {
               maxOutputTokens: request.maxOutputTokens,

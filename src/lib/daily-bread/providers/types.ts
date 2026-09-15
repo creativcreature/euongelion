@@ -17,6 +17,11 @@ export interface TextGenerationRequest {
   temperature?: number
   /** Ask the provider for a JSON object when it supports a JSON mode. */
   json?: boolean
+  /**
+   * Read-only access to this directory (Read and Grep) for a provider that can
+   * use tools. The chain sends it only to a provider with `canReadFiles`.
+   */
+  readOnlyDir?: string
   signal: AbortSignal
 }
 
@@ -31,6 +36,8 @@ export interface TextGenerationResult {
 export interface TextProvider {
   readonly id: ProviderId
   readonly model: string
+  /** True when the provider can search files it is pointed at (claude-cli). */
+  readonly canReadFiles?: boolean
   /** Cheap, synchronous: are the credentials/binary for this provider present? */
   available(): boolean
   generate(request: TextGenerationRequest): Promise<TextGenerationResult>

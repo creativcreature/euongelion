@@ -150,7 +150,7 @@ Every call writes a `PublicationAttempt`.
 | Order | Provider | Credential (server/CI only) | Transport |
 | --- | --- | --- | --- |
 | 1 | `claude-api` | `ANTHROPIC_API_KEY` | Messages API over fetch, `x-api-key` header |
-| 1 | `claude-cli` | `CLAUDE_CODE_OAUTH_TOKEN` (or `DAILY_BREAD_CLAUDE_CLI_AUTH=login` locally) | `claude -p`, prompt on stdin, isolated (no settings, hooks or tools) |
+| 1 | `claude-cli` | `CLAUDE_CODE_OAUTH_TOKEN` (or `DAILY_BREAD_CLAUDE_CLI_AUTH=login` locally) | `claude -p`, prompt on stdin, isolated (no settings or hooks; no tools, except Read and Grep for a task that searches the repo) |
 | 2 | `openai` (backup) | `OPENAI_API_KEY` | Chat Completions, bearer header; default `gpt-5-mini` |
 | 3 | `gemini` | `GEMINI_API_KEY` / `GOOGLE_API_KEY` | `x-goog-api-key` header; never in the URL |
 | 4 | `deterministic` | none | committed banks + BSB context verses |
@@ -193,12 +193,41 @@ with `DAILY_BREAD_OPENAI_MODEL`.
 - Does not retry auth failures.
 - Records `ProviderUsage` for every attempt.
 - Lands on the deterministic floor last. If the floor throws, the task fails loudly.
+  A task with no floor throws `ProviderChainExhausted`, naming every provider's reason.
+
+**The editorial generation interface (plan §21).** `generate/editorial.ts` defines
+`EditorialGenerator.generate(request)`. A caller describes the task (prompt, parser,
+validator, optional floor) and never names a provider or spawns a CLI. Three tasks
+use it:
+
+| Task | Writes | Floor | Where it runs |
+| --- | --- | --- | --- |
+| `editorial-frame` | the edition's deck, rabbit holes, scene | deterministic frame | the V2 build |
+| `sunday-lead` (SA-100) | the Sunday feature, a DRAFT `lead` row | none: the rotation lead prints | `npm run daily-bread -- sunday-lead` in `daily-edition.yml` |
+| `guides` (SA-114) | three How-to-Read articles, DRAFT `guide` rows | none: the guide bank prints | `npm run daily-bread -- guides` in `daily-edition.yml` and `daily-gapfill.yml` |
+
+The last two are the Claude workflows that existed before V2. They ran as
+`scripts/edition/compose-lead-claude.mjs` and `compose-guides-claude.mjs`, each calling
+`claude -p` itself; those scripts are removed. Their prompts, checks and rows are
+unchanged, with two exceptions the interface requires:
+- **Output.** The Sunday lead used to write `/tmp/sunday-lead.json` with Claude's
+  Write tool. It now returns the same JSON as its answer.
+- **Files.** The Sunday lead's rules send the model to `docs/PUBLIC-FACING-LANGUAGE.md`
+  and `public/reference-index.json`. Claude Code still gets read-only access (Read,
+  Grep) and those rules verbatim. A provider that cannot read files gets the rules
+  without the file references, and may not quote historic voices, because the rule
+  forbids quoting from memory.
+
+The draft writers try `claude-cli` first (the subscription transport, and the only
+one that can search the repo), then `claude-api`, `openai` and `gemini`. `--dry-run`
+writes nothing to the database.
 
 The model writes only the frame:
 - **Deck:** 60–220 characters, one sentence.
 - **Rabbit holes:** 2–4 references with a reason; the verse text is looked up.
-- **Comic:** a storyboard in the fixed vocabulary.
 - **Scene:** one of three.
+
+The comic is not written by a model at build time (§6).
 
 `generate/guards.ts` rejects:
 - quotation marks

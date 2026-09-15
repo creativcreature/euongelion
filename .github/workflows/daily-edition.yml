@@ -133,8 +133,10 @@ jobs:
             # is unset on tiers 1-2 (nothing silently bills the API) and set on
             # tier 3, where the metered floor is the deliberate choice. Do NOT
             # unset it here — that would break tier 3.
-            node scripts/edition/compose-lead-claude.mjs --days="$EDITION_DAYS" $FROM_FLAG
-            node scripts/edition/compose-guides-claude.mjs --days="$EDITION_DAYS" $FROM_FLAG
+            # SA-142 §21: both run behind the editorial generation interface
+            # (Claude Code first, then any configured backup provider).
+            npm run daily-bread -- sunday-lead --days="$EDITION_DAYS" $FROM_FLAG
+            npm run daily-bread -- guides --days="$EDITION_DAYS" $FROM_FLAG
             node scripts/edition/build.mjs --days="$EDITION_DAYS" $FROM_FLAG \
               --kinds=rail,season,word,practice,strip,crossword,unscramble,quiz,gallery,prayer
           else

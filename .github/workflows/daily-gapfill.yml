@@ -79,7 +79,7 @@ jobs:
           TODAY=$(date -u +%Y-%m-%d)
 
           # Guides: idempotent per date — composes only missing days.
-          node scripts/edition/compose-guides-claude.mjs --from="$TODAY" --days="$GAP_DAYS"
+          npm run daily-bread -- guides --from="$TODAY" --days="$GAP_DAYS"
 
           if [ "$HAS_CODEX" != "true" ]; then
             echo "::warning::no CODEX_AUTH_JSON — lead plates and strips not drawable this run."

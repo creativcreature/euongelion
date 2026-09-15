@@ -23,8 +23,9 @@ import type {
   ProceduralSceneId,
   RabbitHole,
 } from '../types'
-import { extractJsonObject, runProviderChain, type ChainOutcome } from '../providers/chain'
+import { extractJsonObject, type ChainOutcome } from '../providers/chain'
 import { OutputValidationError, type TextProvider } from '../providers/types'
+import { createEditorialGenerator } from './editorial'
 import { proseProblems } from './guards'
 
 export const PROCEDURAL_SCENES: readonly ProceduralSceneId[] = [
@@ -334,16 +335,14 @@ export async function composeFrame(
     sleep?: (ms: number) => Promise<void>
   },
 ): Promise<ChainOutcome<EditorialFrame>> {
-  return runProviderChain<EditorialFrame>({
+  const generator = createEditorialGenerator(deps)
+  return generator.generate<EditorialFrame>({
     task: 'editorial-frame',
-    providers: deps.providers,
-    request: {
-      system: FRAME_SYSTEM,
-      prompt: framePrompt(input),
-      maxOutputTokens: 900,
-      temperature: 0.5,
-      json: true,
-    },
+    system: FRAME_SYSTEM,
+    prompt: framePrompt(input),
+    maxOutputTokens: 900,
+    temperature: 0.5,
+    json: true,
     parse: (text) => {
       // Resolution needs async lookups, so parse only shapes; validate resolves.
       return parseFrame(text) as unknown as EditorialFrame
@@ -358,9 +357,5 @@ export async function composeFrame(
       }
     },
     deterministic: () => deterministicFrame(input, deps.lookup),
-    timeoutMs: deps.timeoutMs,
-    retries: deps.retries,
-    logger: deps.logger,
-    sleep: deps.sleep,
   })
 }

@@ -22,6 +22,12 @@ export interface ChainRequest {
   maxOutputTokens: number
   temperature?: number
   json?: boolean
+  /**
+   * A task whose prompt asks the model to search files (the Sunday lead's
+   * reference-index rule). A provider that can read files gets `dir`; any
+   * other gets `promptWithoutFiles`, which must not ask for what it cannot do.
+   */
+  files?: { dir: string; promptWithoutFiles: string }
 }
 
 export interface ChainOutcome<T> {
@@ -43,7 +49,12 @@ export interface ChainOptions<T> {
   parse: (text: string) => T
   /** Semantic validation (e.g. Scripture lookups). Empty array = valid. */
   validate?: (value: T) => Promise<string[]> | string[]
-  deterministic: () => T | Promise<T>
+  /**
+   * The zero-provider floor. Omit only for a task that has none (a draft the
+   * founder reviews, never printed on its own): the chain then throws
+   * ProviderChainExhausted with every provider's reason.
+   */
+  deterministic?: () => T | Promise<T>
   timeoutMs?: number
   /** Extra attempts per provider for retryable failures (default 1). */
   retries?: number
@@ -53,6 +64,22 @@ export interface ChainOptions<T> {
 }
 
 const defaultSleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
+
+/** Every provider failed a task that has no deterministic floor. */
+export class ProviderChainExhausted extends Error {
+  readonly usage: ProviderUsage[]
+  constructor(task: string, usage: ProviderUsage[]) {
+    const reasons = usage
+      .map((u) => {
+        const reason = (u.error ?? 'failed').replace(/^\w*Error: /, '').replace(`${u.provider}: `, '')
+        return `${u.provider}: ${reason}`
+      })
+      .join('; ')
+    super(`${task}: no provider produced valid output — ${reasons || 'no providers configured'}`)
+    this.name = 'ProviderChainExhausted'
+    this.usage = usage
+  }
+}
 
 /**
  * Appended to the prompt when a provider's previous output failed validation.
@@ -90,8 +117,11 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
   const now = options.now ?? (() => Date.now())
   const usage: ProviderUsage[] = []
   const tried: ProviderId[] = []
+  const { files, ...request } = options.request
 
   for (const provider of options.providers) {
+    const readsFiles = Boolean(files && provider.canReadFiles)
+    const prompt = files && !readsFiles ? files.promptWithoutFiles : request.prompt
     if (!provider.available()) {
       usage.push({
         provider: provider.id,
@@ -120,8 +150,9 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
       try {
         const result = await provider.generate({
           task: options.task,
-          ...options.request,
-          prompt: repair ? `${options.request.prompt}\n\n${repair}` : options.request.prompt,
+          ...request,
+          prompt: repair ? `${prompt}\n\n${repair}` : prompt,
+          ...(readsFiles && files ? { readOnlyDir: files.dir } : {}),
           signal: controller.signal,
         })
         inputTokens += result.inputTokens ?? 0
@@ -191,6 +222,11 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
 
   // The floor. If this throws, the task genuinely cannot be done and the
   // caller must surface it — there is nothing beneath deterministic.
+  if (!options.deterministic) {
+    const exhausted = new ProviderChainExhausted(options.task, usage)
+    options.logger?.error('provider_chain_exhausted', exhausted, { task: options.task })
+    throw exhausted
+  }
   const started = now()
   const value = await options.deterministic()
   usage.push({

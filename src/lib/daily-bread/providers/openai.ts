@@ -76,7 +76,7 @@ export function createOpenAiProvider(
       const body = {
         model,
         messages: [
-          { role: 'system', content: request.system },
+          ...(request.system ? [{ role: 'system', content: request.system }] : []),
           { role: 'user', content: request.prompt },
         ],
         ...(reasoning

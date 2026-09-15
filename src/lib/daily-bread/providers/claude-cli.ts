@@ -72,6 +72,7 @@ export function createClaudeCliProvider(
   return {
     id: 'claude-cli',
     model: model || 'claude-code-default',
+    canReadFiles: true,
     available() {
       if (!hasCredential()) return false
       if (binaryPresent === null) {
@@ -85,8 +86,11 @@ export function createClaudeCliProvider(
       return binaryPresent
     },
     async generate(request) {
-      // Isolated: no user/project settings (no hooks), no tools, no session
-      // file, and a neutral cwd so no CLAUDE.md is auto-loaded into the prompt.
+      // Isolated: no user/project settings (no hooks), no session file, and by
+      // default no tools and a neutral cwd so no CLAUDE.md is auto-loaded into
+      // the prompt. A task that searches files (readOnlyDir) runs there with
+      // Read and Grep only — the SA-100 Sunday lead ran with repo read access.
+      const tools = request.readOnlyDir ? 'Read,Grep' : ''
       const args = [
         '-p',
         '--output-format',
@@ -94,15 +98,16 @@ export function createClaudeCliProvider(
         '--setting-sources',
         '',
         '--tools',
-        '',
+        tools,
+        ...(tools ? ['--allowedTools', tools] : []),
         '--no-session-persistence',
       ]
       if (model) args.push('--model', model)
-      const input = `${request.system}\n\n---\n\n${request.prompt}`
+      const input = request.system ? `${request.system}\n\n---\n\n${request.prompt}` : request.prompt
       return await new Promise((resolve, reject) => {
         const child = spawn(bin, args, {
           env: cliChildEnv({ ...process.env, ...env }) as NodeJS.ProcessEnv,
-          cwd: tmpdir(),
+          cwd: request.readOnlyDir ?? tmpdir(),
           stdio: ['pipe', 'pipe', 'pipe'],
           signal: request.signal,
         })

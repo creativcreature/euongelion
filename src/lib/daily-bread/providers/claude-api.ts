@@ -40,7 +40,7 @@ export function createClaudeApiProvider(
             model,
             max_tokens: request.maxOutputTokens,
             temperature: request.temperature ?? 0.6,
-            system: request.system,
+            ...(request.system ? { system: request.system } : {}),
             messages: [{ role: 'user', content: request.prompt }],
           }),
           signal: request.signal,
