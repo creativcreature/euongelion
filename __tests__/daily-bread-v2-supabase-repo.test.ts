@@ -62,6 +62,46 @@ describe('supabase repository', () => {
     expect(builds.count).toBe(1)
   })
 
+  it('times out a read that never answers, cancels it, and retries', async () => {
+    // A local reader request once hung 7.6 minutes on a Supabase fetch.
+    const signals: AbortSignal[] = []
+    let call = 0
+    const builder = () => {
+      const b: Record<string, unknown> = {}
+      for (const m of ['select', 'eq', 'in', 'order', 'limit']) b[m] = () => b
+      b.maybeSingle = () => b
+      b.abortSignal = (signal: AbortSignal) => {
+        signals.push(signal)
+        return b
+      }
+      b.then = (resolve: (v: unknown) => unknown) => {
+        call += 1
+        if (call === 1) return undefined // never settles
+        return resolve({ data: { lifecycle: 'published' }, error: null })
+      }
+      return b
+    }
+    const client = { from: () => builder(), rpc: vi.fn() } as unknown as SupabaseLike
+    const repo = new SupabaseDailyBreadRepository(client, { attempts: 3, delayMs: 1, timeoutMs: 20 })
+    expect(await repo.getLifecycle('2026-09-13')).toBe('published')
+    expect(call).toBe(2)
+    expect(signals[0].aborted).toBe(true)
+    expect(signals[1].aborted).toBe(false)
+  })
+
+  it('fails loudly when every read attempt times out', async () => {
+    const builder = () => {
+      const b: Record<string, unknown> = {}
+      for (const m of ['select', 'eq', 'in', 'lte', 'order', 'limit']) b[m] = () => b
+      b.maybeSingle = () => b
+      b.then = () => undefined
+      return b
+    }
+    const client = { from: () => builder(), rpc: vi.fn() } as unknown as SupabaseLike
+    const repo = new SupabaseDailyBreadRepository(client, { attempts: 2, delayMs: 1, timeoutMs: 10 })
+    await expect(repo.getLatestPublished('2026-09-13')).rejects.toThrow(/read timed out after 10 ms/)
+  })
+
   it('never retries a write, even on a transient error', async () => {
     const { client, rpc } = fakeClient([{ data: null, error: { message: 'TypeError: fetch failed' } }])
     const repo = new SupabaseDailyBreadRepository(client, { attempts: 3, delayMs: 1 })

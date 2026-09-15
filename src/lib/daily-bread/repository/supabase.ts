@@ -131,23 +131,58 @@ export function isTransientReadError(error: { message?: string; code?: string } 
   )
 }
 
+/**
+ * Per-attempt limit on a read. A local reader request once hung 7.6 minutes on
+ * a Supabase fetch that never answered. Three attempts at this limit, with the
+ * retry delays, stay inside a Worker request's 30 s wall clock.
+ */
+export const READ_TIMEOUT_MS = 8_000
+
+/**
+ * Await one read attempt, but give up after `timeoutMs`. A PostgREST builder
+ * is lazy, so the abort signal is attached before it sends, and a timed-out
+ * request is cancelled rather than left running.
+ */
+async function attemptWithTimeout<T extends ReadResult>(query: PromiseLike<T>, timeoutMs: number): Promise<T> {
+  const controller = new AbortController()
+  const withSignal = query as PromiseLike<T> & { abortSignal?: (signal: AbortSignal) => PromiseLike<T> }
+  const request = typeof withSignal.abortSignal === 'function' ? withSignal.abortSignal(controller.signal) : query
+  let timer: ReturnType<typeof setTimeout> | undefined
+  const timeout = new Promise<T>((resolve) => {
+    timer = setTimeout(() => {
+      controller.abort()
+      resolve({ data: null, error: { message: `read timed out after ${timeoutMs} ms` } } as T)
+    }, timeoutMs)
+  })
+  try {
+    return await Promise.race([Promise.resolve(request), timeout])
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
 export class SupabaseDailyBreadRepository implements DailyBreadRepository {
   readonly kind = 'supabase' as const
   constructor(
     private readonly client: SupabaseLike,
-    private readonly readRetry: { attempts: number; delayMs: number } = { attempts: 3, delayMs: 400 },
+    private readonly readRetry: { attempts: number; delayMs: number; timeoutMs?: number } = {
+      attempts: 3,
+      delayMs: 400,
+    },
   ) {}
 
   /**
    * Reads only: build a FRESH query per attempt (a PostgREST builder re-sends on
-   * each await) and retry transient upstream errors. Writes are never retried
-   * here — a write whose response was lost may already have landed.
+   * each await) and retry transient upstream errors, including an attempt that
+   * timed out. Writes are never retried here — a write whose response was lost
+   * may already have landed.
    */
   private async read<T extends ReadResult>(make: () => PromiseLike<T>): Promise<T> {
     let last: T | null = null
+    const timeoutMs = this.readRetry.timeoutMs ?? READ_TIMEOUT_MS
     for (let attempt = 1; attempt <= this.readRetry.attempts; attempt++) {
       try {
-        last = await make()
+        last = await attemptWithTimeout(make(), timeoutMs)
       } catch (thrown) {
         last = { data: null, error: { message: errorMessage(thrown) } } as T
       }
