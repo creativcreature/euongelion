@@ -33,6 +33,19 @@ export function validateEditionDocument(
     if (!types.has(p)) problems.push(`composition places absent module ${p}`)
   }
 
+  // Plan §29, the minimum publishable issue: core Scripture and the reading (above),
+  // a prayer or spiritual response the reader actually sees, a valid composition, and
+  // a visual treatment (the scene poster; typography is the page itself).
+  const readingPrays = doc.modules.some((m) => m.type === 'reading' && m.blocks.some((b) => b.kind === 'prayer'))
+  if (!placed.has('prayer') && !placed.has('practice') && !(placed.has('reading') && readingPrays)) {
+    problems.push('prayer or spiritual response missing from the printed paper')
+  }
+  if (!doc.composition.archetype || doc.composition.placements.length === 0) problems.push('composition invalid')
+  for (const core of ['scripture', 'reading'] as const) {
+    if (types.has(core) && !placed.has(core)) problems.push(`${core} is not placed`)
+  }
+  if (!doc.assets?.scenePoster?.scene) problems.push('visual treatment missing (scene poster)')
+
   for (const m of doc.modules) {
     if (m.type === 'goodNews') {
       for (const item of m.items) {

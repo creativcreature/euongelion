@@ -202,6 +202,37 @@ corrected in order, earliest first.
     - 235 Daily Bread tests pass.
     - The real Claude outputs from the deviation 7 dry runs pass the stricter checks.
   - **Pending founder approval (production write).** Apply the migration.
+- **Deviation 9 (plan §28–29, the publication pipeline and the minimum issue),
+  corrected in code, except two steps named below.**
+  - **Minimum publishable issue (§29).** `validateEditionDocument` refuses to mark an
+    edition ready without these:
+    - placed Scripture and reading;
+    - a prayer or spiritual response the reader sees (a placed prayer or practice, or
+      a prayer inside the reading);
+    - a composition;
+    - the scene poster.
+
+    The prayer comes from the committed scripture canon, so a total AI outage still
+    meets the minimum. Every existing build path (fixtures, outage, backfill) passes.
+  - **Metrics (step 34).** A new publication logs one `edition_published` event: serial,
+    quality, fallback level, frame provider, comic level, module failures, and seconds
+    after rollover. The logs are the metric; the repo has no metrics backend.
+  - **Cache refresh (step 31).** The publish route revalidates `/daily-bread`, the dated
+    page and the archive, on both `published` and `already_published`.
+    - Checked in production first: the Worker has no incremental cache (every
+      `/daily-bread` request is `x-nextjs-cache: MISS`; the dated page and the archive
+      are `no-store`), so a publication is already visible on the next request.
+    - The `s-maxage=300, stale-while-revalidate=31535700` header on `/daily-bread` is
+      recorded as a risk if a Cloudflare cache rule is ever added.
+  - **Not built, with reasons.**
+    - **Step 25, freezing the poster at build.** Waits for the scenes verdict
+      (`daily-bread-scenes-a-vs-b`).
+    - **Step 32, a stored current-edition pointer.** Decided with §31 in deviation 11:
+      the page resolves today's paper by query, and §31 governs what it shows when
+      today is missing.
+  - **Tests.** 238 pass. New tests cover the minimum rules (including a prayer built but
+    never placed), the three refreshed paths (and none for "not ready"), and a single
+    metrics event with its lateness.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

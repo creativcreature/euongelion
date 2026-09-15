@@ -104,7 +104,17 @@ runs fall inside it in EDT and EST).
 7. **Composition** (`composition/`). See section 7.
 8. **Validation** (`validate.ts`). Checks required modules, placements against
    modules, safe links and assets, a 900 KB size cap, no script-like content, and no
-   credential values or credential-shaped strings.
+   credential values or credential-shaped strings. It also enforces the plan's
+   **minimum publishable issue (§29)**:
+   - core Scripture and the reading, both placed;
+   - a prayer or spiritual response the reader sees: a placed `prayer` or `practice`,
+     or a prayer inside the placed reading;
+   - a composition with an archetype and placements;
+   - a visual treatment (the scene poster).
+
+   The prayer comes from a scripture canon in the committed BSB corpus, so a total AI
+   outage still meets the minimum. The optional modules (comic, crossword, image, Good
+   News, gallery, extra games, motion) never block.
 9. **Mark ready.** Only the lease holder can mark ready. The document is frozen.
 
 `publish.ts`:
@@ -113,6 +123,24 @@ runs fall inside it in EDT and EST).
 2. Reviewed `edition_items` used by the build are re-checked. A row rejected since the
    build sends the edition back to draft for a rebuild.
 3. `daily_bread_publish` runs.
+4. A new publication logs one `edition_published` event (plan §28 step 34): date,
+   issue, volume, quality, fallback level, frame provider, comic level, module failures
+   and `secondsAfterRollover`. There is no metrics backend, so this log line is the
+   metric.
+
+The internal publish route then calls `revalidatePath` for `/daily-bread`, the dated
+page and the archive (plan §28 step 31). It does this on `published` and on
+`already_published`, so the Worker cron's call after a CI publish refreshes too.
+
+**Plan §28 steps not built here:**
+- **Step 25, static visual fallbacks frozen at build.** The poster is drawn from the
+  frozen scene and seed by versioned code. Freezing its drawing waits for the founder's
+  verdict on the scene direction (`daily-bread-scenes-a-vs-b`); freezing it now would
+  lock in the scenes the founder called "not great".
+- **Step 32, the current-edition pointer.** Today `/daily-bread` is resolved by a query
+  (newest published on or before today). Whether that query or a stored pointer is
+  right belongs with the last-known-good rules of §31 (deviation 11), and is decided
+  there.
 
 `runDailyBread`, the scheduler step:
 
@@ -402,6 +430,16 @@ and any quality note. CSS lives in `design-system/daily-bread-v2.css`.
 | `/daily-bread/archive` | SA-114 date list | persisted index, `?before=` cursor | ISR 300 s (dynamic with cursor) |
 | `/daily-bread/archive/[date]` | SA-114 re-render | redirect to `/daily-bread/[date]` | dynamic |
 | `/daily-bread/[date]/opengraph-image` | house card | serial + title + verse card | 3600 s |
+
+**What the Cache column means in production (checked 2026-09-14).** The Worker has no
+OpenNext incremental cache (`open-next.config.ts` configures none). `/daily-bread`
+answers `x-nextjs-cache: MISS` on every request. The dated page and the archive answer
+`no-store`. Nothing sits in Cloudflare's cache in front of the Worker. A publication
+or revision is therefore visible on the next request. `/daily-bread` still sends
+`s-maxage=300, stale-while-revalidate=31535700`. If a Cloudflare cache rule is ever
+added for these paths, that header would let a shared cache serve a stale paper.
+Review it at that time; the publish route's `revalidatePath` does not purge
+Cloudflare's CDN.
 
 ## 12. Tests
 

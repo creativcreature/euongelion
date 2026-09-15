@@ -305,6 +305,28 @@ describe('failure injection', () => {
   }, 60_000)
 })
 
+describe('publication metrics (plan §28 step 34)', () => {
+  it('a publication emits one success event with serial, quality, fallback level and lateness', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    await createDailyBreadEdition('2026-09-14', deps(repo, '2026-09-13T23:00:00Z'))
+    const lines: string[] = []
+    const logger = createRunLogger('t-metrics', { sink: (_level, line) => lines.push(line) })
+    const at = '2026-09-14T11:15:00Z' // 7:15am EDT: 15 minutes after the 7:00 rollover
+    await publishDailyBreadEdition('2026-09-14', { ...deps(repo, at), logger })
+    await publishDailyBreadEdition('2026-09-14', { ...deps(repo, at), logger }) // already published: no second event
+    const events = lines.map((l) => JSON.parse(l.slice(l.indexOf('{')))).filter((e) => e.event === 'edition_published')
+    expect(events).toHaveLength(1)
+    expect(events[0]).toMatchObject({
+      dateSlug: '2026-09-14',
+      issue: 1,
+      quality: expect.stringMatching(/^(normal|fallback|minimum)$/),
+      fallbackLevel: 2,
+      frameProvider: 'deterministic',
+      secondsAfterRollover: 900,
+    })
+  }, 60_000)
+})
+
 describe('scheduler', () => {
   it('publishes the live paper and builds tomorrow, idempotently', async () => {
     const repo = new MemoryDailyBreadRepository()

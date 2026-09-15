@@ -1,3 +1,4 @@
+import { revalidatePath } from 'next/cache'
 import { NextResponse, type NextRequest } from 'next/server'
 import {
   createRequestId,
@@ -78,6 +79,15 @@ export async function POST(request: NextRequest) {
       trigger: 'manual',
       rejectedSourceItems: rejectedEditionItemIds,
     })
+    if (outcome.result === 'published' || outcome.result === 'already_published') {
+      // Plan §28 step 31. Today the Worker has no incremental cache (responses are
+      // x-nextjs-cache MISS or no-store, verified 2026-09-14), so this is a no-op.
+      // It keeps a future cache layer honest. already_published revalidates too:
+      // the Worker cron runs after a CI publish, so its call refreshes that as well.
+      for (const path of ['/daily-bread', `/daily-bread/${date}`, '/daily-bread/archive']) {
+        revalidatePath(path)
+      }
+    }
     const status = outcome.result === 'failed' ? 500 : 200
     return withRequestIdHeaders(
       NextResponse.json(

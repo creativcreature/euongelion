@@ -155,6 +155,52 @@ describe('edition document validation', () => {
     const scripted = validateEditionDocument({ ...base, title: '<script>alert(1)</script>', modules: base.modules.slice(0, 2) })
     expect(scripted.join(' ')).toMatch(/script-like/)
   })
+
+  it('enforces the minimum publishable issue: a printed prayer or response, a composition, a visual treatment (plan §29)', () => {
+    const scripture = { reference: 'John 1:1', text: 'In the beginning', translation: 'BSB' as const }
+    const place = (module: string) => ({ module, band: 0, span: 'full' }) as never
+    const doc = (modules: unknown[], placements: string[], extra: Record<string, unknown> = {}) =>
+      ({
+        schemaVersion: 1,
+        editionDate: '2026-09-14',
+        slug: '2026-09-14',
+        archiveOrigin: 'native',
+        quality: 'minimum',
+        title: 'T',
+        deck: '',
+        primaryScripture: scripture,
+        liturgical: { season: 'ordinary', seasonLabel: 'Ordinary Time', dayLabel: 'Ordinary Time', color: 'green' },
+        seed: 's',
+        composition: { archetype: 'quiet', seed: 1, rhythm: [], placements: placements.map(place), scoring: [] },
+        modules,
+        assets: { scenePoster: { scene: 'grain', seed: 1 }, og: { title: 'T', kicker: 'k' }, fallbacks: [] },
+        generation: { runId: 'r', builtAt: 'x', primaryProvider: 'deterministic', fallbackProvidersUsed: [], usage: [], moduleFailures: [], assetFallbacks: [], comicLevel: 'omitted', sourceItemIds: [] },
+        rendererVersion: 'db2-r1',
+        ...extra,
+      }) as never
+    const scriptureModule = { type: 'scripture', scripture }
+    const reading = (blocks: unknown[]) => ({ type: 'reading', devotionalSlug: 'x', title: 'T', blocks })
+    const prayer = { type: 'prayer', prayer: { reference: 'Psalm 141:1-4', text: 'O LORD, I call upon You.' } }
+
+    const minimum = doc([scriptureModule, reading([{ kind: 'paragraph', text: 'p' }]), prayer], ['scripture', 'reading', 'prayer'])
+    expect(validateEditionDocument(minimum)).toEqual([])
+
+    // A prayer printed inside the reading counts as the response.
+    expect(validateEditionDocument(doc([scriptureModule, reading([{ kind: 'prayer', text: 'Amen.' }])], ['scripture', 'reading']))).toEqual([])
+
+    // No prayer or response anywhere, or one that is built but never placed on the page.
+    const bare = doc([scriptureModule, reading([{ kind: 'paragraph', text: 'p' }])], ['scripture', 'reading'])
+    expect(validateEditionDocument(bare)).toContain('prayer or spiritual response missing from the printed paper')
+    const unplaced = doc([scriptureModule, reading([{ kind: 'paragraph', text: 'p' }]), prayer], ['scripture', 'reading'])
+    expect(validateEditionDocument(unplaced)).toContain('prayer or spiritual response missing from the printed paper')
+
+    // Core modules must be placed; composition and poster must exist.
+    expect(validateEditionDocument(doc([scriptureModule, reading([]), prayer], ['reading', 'prayer']))).toContain('scripture is not placed')
+    const noPoster = doc([scriptureModule, reading([]), prayer], ['scripture', 'reading', 'prayer'], {
+      assets: { og: { title: 'T', kicker: 'k' }, fallbacks: [] },
+    })
+    expect(validateEditionDocument(noPoster)).toContain('visual treatment missing (scene poster)')
+  })
 })
 
 describe('protected endpoints', () => {
@@ -231,6 +277,39 @@ describe('protected endpoints', () => {
       last = res.status
     }
     expect(last).toBe(429)
+  })
+
+  it('a publication refreshes the paper, its dated page and the archive (plan §28 step 31)', async () => {
+    mockSession(null)
+    const revalidatePath = vi.fn()
+    vi.doMock('next/cache', () => ({ revalidatePath }))
+    vi.doMock('@/lib/daily-bread/source-review', () => ({ rejectedEditionItemIds: async () => [] }))
+    const { editorialDate } = await import('@/lib/daily-bread/time')
+    const date = editorialDate(new Date())
+    const results = ['published', 'already_published', 'not_ready']
+    const repo = {
+      publish: vi.fn(async () => ({ result: results.shift(), issue: 3, volume: 1 })),
+      getEdition: vi.fn(async () => null),
+      recordAttempt: vi.fn(async () => {}),
+    }
+    vi.doMock('@/lib/daily-bread/repository', () => ({ getDailyBreadRepository: () => repo }))
+    const { POST } = await import('@/app/api/admin/daily-bread/publish/route')
+    const call = (ip: string) =>
+      POST(
+        new Request('http://x/api/admin/daily-bread/publish', {
+          method: 'POST',
+          body: JSON.stringify({ date }),
+          headers: { 'x-internal-secret': 'the-internal-secret-value', 'cf-connecting-ip': ip },
+        }) as never,
+      )
+    expect((await call('10.2.0.1')).status).toBe(200)
+    expect(revalidatePath.mock.calls.map((c) => c[0])).toEqual(['/daily-bread', `/daily-bread/${date}`, '/daily-bread/archive'])
+    await call('10.2.0.2') // already_published: the Worker cron's call after a CI publish
+    expect(revalidatePath).toHaveBeenCalledTimes(6)
+    await call('10.2.0.3') // not ready: nothing changed, nothing refreshed
+    expect(revalidatePath).toHaveBeenCalledTimes(6)
+    vi.doUnmock('next/cache')
+    vi.doUnmock('@/lib/daily-bread/source-review')
   })
 
   it('health requires the secret or an allowlisted founder session', async () => {

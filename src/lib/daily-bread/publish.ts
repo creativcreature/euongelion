@@ -71,6 +71,32 @@ export async function finishAttempt(
   }
 }
 
+/**
+ * Plan §28 step 34: one structured success event per publication, carrying the
+ * numbers an operator watches (serial, quality, fallback level, how late after
+ * the 7am rollover). The repo has no metrics backend; logs are the metric. A
+ * failure to read the edition back is logged, never allowed to undo a
+ * publication that already committed.
+ */
+async function logPublishedMetrics(deps: PublishDeps, dateSlug: string, now: Date): Promise<void> {
+  try {
+    const edition = await deps.repo.getEdition(dateSlug)
+    deps.logger.info('edition_published', {
+      dateSlug,
+      issue: edition?.issue ?? null,
+      volume: edition?.volume ?? null,
+      quality: edition?.quality ?? null,
+      fallbackLevel: edition?.generation.fallbackLevel ?? null,
+      frameProvider: edition?.generation.provider ?? null,
+      comicLevel: edition?.generation.comicLevel ?? null,
+      moduleFailures: edition?.generation.moduleFailures.length ?? null,
+      secondsAfterRollover: Math.round((now.getTime() - rolloverInstant(dateSlug).getTime()) / 1000),
+    })
+  } catch (error) {
+    deps.logger.warn('edition_published_metrics_unavailable', { dateSlug, error: errorMessage(error) })
+  }
+}
+
 export async function publishDailyBreadEdition(
   dateSlug: string,
   deps: PublishDeps,
@@ -110,6 +136,7 @@ export async function publishDailyBreadEdition(
           ? 'already_published'
           : 'skipped'
     log.info('publish_result', { dateSlug, ...published })
+    if (published.result === 'published') await logPublishedMetrics(deps, dateSlug, now)
     return { result: published.result, issue: published.issue, volume: published.volume }
   } catch (error) {
     attempt.errors.push({ stage: 'publish', message: errorMessage(error) })
