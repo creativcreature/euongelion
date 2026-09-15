@@ -13,7 +13,6 @@
  * Every call writes one PublicationAttempt, success or failure. Nothing here
  * ever runs on a reader request.
  */
-import type { Edition } from '@/lib/edition/store'
 import { composeFrame, type EditorialFrame, type FrameInput } from './generate/frame'
 import { composeComic } from './comic/chain'
 import { composeEdition } from './composition/compose'
@@ -24,7 +23,7 @@ import { errorMessage } from './redact'
 import type { DailyBreadRepository } from './repository/types'
 import type { TextProvider } from './providers/types'
 import { finishAttempt, newAttempt as baseNewAttempt, publishDailyBreadEdition } from './publish'
-import { schedulePlan, slugToUtcDate, type EditorialClock } from './time'
+import { addDays, schedulePlan, slugToUtcDate, type EditorialClock } from './time'
 import {
   DAILY_BREAD_RENDERER_VERSION,
   DAILY_BREAD_SCHEMA_VERSION,
@@ -139,14 +138,16 @@ export async function createDailyBreadEdition(
     }
     leased = true
 
-    const recent = await log.stage('history', () => deps.repo.recentCompositions(dateSlug, 14))
+    // 28 days of history: the comic's reprint cooldown looks three weeks back
+    // from the start of the week; everything else uses the last 14 days.
+    const history = await log.stage('history', () => deps.repo.recentCompositions(dateSlug, 28))
+    const recent = history.filter((r) => r.editionDate >= addDays(dateSlug, -14))
     const base = await log.stage('modules', () => buildBaseEdition(dateSlug, deps.sources))
     attempt.moduleFailures.push(...base.failures)
     attempt.assetFallbacks.push(...base.assetFallbacks)
 
     const seedString = editionSeed(dateSlug)
     const seed = hashString(seedString)
-    const recentComicIds = recent.map((r) => r.comicId).filter((x): x is string => Boolean(x))
 
     const frameInput: FrameInput = {
       dateSlug,
@@ -172,13 +173,11 @@ export async function createDailyBreadEdition(
     const frameValue: EditorialFrame = frame.value
     attempt.providerUsage.push(...frame.usage)
 
-    const liveItems: Edition = base.liveItems
     const comic = await log.stage('comic', async () =>
       composeComic({
         dateSlug,
-        liveItems,
         bank: await deps.sources.publishedStrips(),
-        recentComicIds,
+        recent: history.map((r) => ({ editionDate: r.editionDate, comicId: r.comicId })),
         assetAvailable: (src) => deps.sources.assetAvailable(src),
       }),
     )

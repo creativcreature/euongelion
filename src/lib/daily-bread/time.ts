@@ -129,6 +129,16 @@ export function slugToUtcDate(dateSlug: string): Date {
   return new Date(`${dateSlug}T00:00:00Z`)
 }
 
+/**
+ * The Monday that starts an editorial date's week (Monday–Sunday). Echo & Dust
+ * runs one strip per week (founder, 2026-09-14): the strip is stored under this
+ * date and printed every day of the week.
+ */
+export function weekStart(dateSlug: string): string {
+  const day = slugToUtcDate(dateSlug).getUTCDay() // 0 Sunday … 6 Saturday
+  return addDays(dateSlug, day === 0 ? -6 : 1 - day)
+}
+
 /** "Sunday, September 13, 2026" for a slug (calendar date, not an instant). */
 export function formatEditorialDate(dateSlug: string): string {
   return slugToUtcDate(dateSlug).toLocaleDateString('en-US', {

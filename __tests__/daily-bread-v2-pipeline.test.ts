@@ -142,8 +142,8 @@ describe('Echo & Dust restored on published editions', () => {
       await publishDailyBreadEdition(date, d)
       return (await repo.getEdition(date))!
     }
-    // Three published editions, each frozen with a LEGACY silhouette strip.
-    for (const date of ['2026-08-19', '2026-08-21', '2026-08-22']) {
+    // Four published editions, each frozen with a LEGACY silhouette strip.
+    for (const date of ['2026-08-19', '2026-08-21', '2026-08-22', '2026-08-25', '2026-08-26']) {
       const e = await published(date)
       await repo.createRevision(date, 'seed legacy comic', {
         modules: [
@@ -153,39 +153,35 @@ describe('Echo & Dust restored on published editions', () => {
       })
     }
     const img = (n: string) => `/images/edition/strip/${n}.jpg`
+    // The founder-APPROVED strips (daily-strip era), as publishedStripBank returns them.
     const bank = [
       { id: 'r1', publishDate: '2026-08-20', panelId: 'echo-dust-001-microwave-minute', image: img('a'), width: 1512, height: 745, alt: 'Echo & Dust', caption: 'Echo & Dust — No. 1: The Microwave Minute' },
       { id: 'r2', publishDate: '2026-08-21', panelId: 'echo-dust-005-windowseat', image: img('b'), width: 1512, height: 745, alt: 'Echo & Dust', caption: 'Echo & Dust — No. 2: The Window Seat' },
     ]
-    const sources = {
-      liveEditionItems: async (date: string) =>
-        date === '2026-08-21'
-          ? ({ strip: [{ id: 'r2', kind: 'strip', publishDate: date, slot: 0, status: 'published', payload: { image: img('b'), alt: 'Echo & Dust', caption: 'Echo & Dust — No. 2: The Window Seat', panelId: 'echo-dust-005-windowseat', width: 1512, height: 745 } }] } as never)
-          : {},
-      publishedStrips: async () => bank,
-      assetAvailable: async () => true,
-    }
+    const sources = { publishedStrips: async () => bank, assetAvailable: async () => true }
 
-    const dry = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-23', dryRun: true })
+    const dry = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-26', dryRun: true })
     expect(dry.revised.map((c) => [c.date, c.to])).toEqual([
-      ['2026-08-19', 'none'],
-      ['2026-08-21', 'approved-art:echo-dust-005-windowseat'],
-      ['2026-08-22', 'archive-reprint:echo-dust-001-microwave-minute'],
+      ['2026-08-19', 'none'], // before any approved strip
+      ['2026-08-21', 'approved-art:echo-dust-005-windowseat'], // its own approved strip
+      ['2026-08-22', 'none'], // same week, nothing approved before the week began
+      ['2026-08-25', 'archive-reprint:echo-dust-001-microwave-minute'], // the week of Aug 24: one reprint…
+      ['2026-08-26', 'archive-reprint:echo-dust-001-microwave-minute'], // …all week
     ])
-    expect(dry.missing).toEqual(['2026-08-20', '2026-08-23'])
-    expect((await repo.getEdition('2026-08-22'))!.modules.find((m) => m.type === 'comic')).toMatchObject({ script: { id: 'the-lost-sheep' } })
+    expect(dry.missing).toEqual(['2026-08-20', '2026-08-23', '2026-08-24'])
+    expect((await repo.getEdition('2026-08-25'))!.modules.find((m) => m.type === 'comic')).toMatchObject({ script: { id: 'the-lost-sheep' } })
 
-    const real = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-23', dryRun: false })
+    const real = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-26', dryRun: false })
     expect(real.failed).toEqual([])
-    const aug22 = (await repo.getEdition('2026-08-22'))!
-    expect(aug22.modules.find((m) => m.type === 'comic')).toMatchObject({ level: 'archive-reprint', stripId: 'echo-dust-001-microwave-minute', firstRan: '2026-08-20' })
-    expect(aug22.generation.comicLevel).toBe('archive-reprint')
-    expect(aug22.issue).toBe(3)
+    const aug25 = (await repo.getEdition('2026-08-25'))!
+    expect(aug25.modules.find((m) => m.type === 'comic')).toMatchObject({ level: 'archive-reprint', stripId: 'echo-dust-001-microwave-minute', firstRan: '2026-08-20' })
+    expect(aug25.generation.comicLevel).toBe('archive-reprint')
+    expect(aug25.issue).toBe(4)
     expect((await repo.getEdition('2026-08-19'))!.modules.some((m) => m.type === 'comic')).toBe(false)
-    expect((await repo.getRevisions('2026-08-22')).map((r) => r.revision)).toEqual([1, 2, 3])
+    expect((await repo.getRevisions('2026-08-25')).map((r) => r.revision)).toEqual([1, 2, 3])
 
     // Idempotent: a second pass changes nothing.
-    const again = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-23', dryRun: false })
+    const again = await repairComics({ repo, sources, from: '2026-08-19', to: '2026-08-26', dryRun: false })
     expect(again.revised).toEqual([])
   }, 180_000)
 })
@@ -341,21 +337,12 @@ describe('health', () => {
     const down = await getDailyBreadHealth(repo, fixedClock('2026-09-14T13:00:00Z'))
     expect(down.status).toBe('down')
     expect(down.alerts[0]).toContain('2026-09-14')
-    // A complete paper includes the day's Echo & Dust strip; without one the
+    // A complete paper includes the week's approved Echo & Dust strip; without one the
     // edition is honestly a fallback edition and health says so.
     const sources = offlineSources()
-    sources.liveEditionItems = async (date) => ({
-      strip: [
-        {
-          id: 'strip-row',
-          kind: 'strip',
-          publishDate: date,
-          slot: 0,
-          status: 'published',
-          payload: { image: '/images/edition/strip/echo-dust-001b.jpg', alt: 'Echo & Dust', caption: 'Echo & Dust — test', panelId: `echo-dust-${date}`, width: 1745, height: 850 },
-        },
-      ],
-    }) as unknown as Awaited<ReturnType<typeof sources.liveEditionItems>>
+    sources.publishedStrips = async () => [
+      { id: 'strip-row', publishDate: '2026-09-14', panelId: 'echo-dust-2026-09-14-test', image: '/images/edition/strip/echo-dust-001b.jpg', width: 1745, height: 850, alt: 'Echo & Dust', caption: 'Echo & Dust — test' },
+    ]
     sources.assetAvailable = async () => true
     await runDailyBread(deps(repo, '2026-09-14T13:00:00Z', { sources }))
     const ok = await getDailyBreadHealth(repo, fixedClock('2026-09-14T13:05:00Z'))

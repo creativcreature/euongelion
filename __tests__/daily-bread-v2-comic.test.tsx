@@ -21,7 +21,6 @@ import {
 import { renderComicPanelSvg, renderComicStrip } from '@/lib/daily-bread/comic/render'
 import { assertSafeSvgTree, svgToString, type SvgNode } from '@/lib/daily-bread/comic/svg'
 import type { ComicModule, ComicScript, DailyEdition, Placement } from '@/lib/daily-bread/types'
-import type { Edition } from '@/lib/edition/store'
 
 afterEach(() => cleanup())
 
@@ -42,85 +41,87 @@ const PUBLISHED_ROWS = [
 const BANK = PUBLISHED_ROWS.map(stripBankEntryFromRow).filter((e): e is StripBankEntry => e !== null)
 const reachable = async () => true
 
-function stripItem(date: string, panelId: string, caption: string): Edition {
-  return {
-    strip: [
-      {
-        id: `row-${date}`,
-        kind: 'strip',
-        publishDate: date,
-        slot: 0,
-        status: 'draft',
-        payload: { image: `${STORAGE}/${panelId}.jpg`, alt: `Echo & Dust: ${caption}`, caption, panelId, width: 1512, height: 745 },
-      },
-    ],
-  } as unknown as Edition
+/** A founder-APPROVED weekly strip, dated its week's Monday. */
+function weekly(monday: string, panelId: string, caption: string): StripBankEntry {
+  return { id: `row-${monday}`, publishDate: monday, panelId, image: `${STORAGE}/${panelId}.jpg`, width: 1512, height: 745, alt: `Echo & Dust: ${caption}`, caption }
 }
 
-describe('the funnies are Echo & Dust', () => {
-  it('prints the day’s Echo & Dust strip when one was drawn for the date', async () => {
-    const out = await composeComic({
-      dateSlug: '2026-08-24',
-      liveItems: stripItem('2026-08-24', 'echo-dust-005', 'Echo & Dust — No. 5: Are You Still Watching?'),
-      bank: BANK,
-      recentComicIds: [],
-      assetAvailable: reachable,
-    })
-    expect(out.level).toBe('approved-art')
-    expect(out.module).toMatchObject({
-      type: 'comic',
-      level: 'approved-art',
-      stripId: 'echo-dust-005',
-      caption: 'Echo & Dust — No. 5: Are You Still Watching?',
-      image: { src: `${STORAGE}/echo-dust-005.jpg`, width: 1512, height: 745 },
-    })
-    expect(out.module).not.toHaveProperty('script')
-    expect(out.sourceItemIds).toEqual(['row-2026-08-24'])
+describe('the funnies are Echo & Dust, one strip per week', () => {
+  it('every day of a week prints that week’s approved strip', async () => {
+    const bank = [...BANK, weekly('2026-09-21', 'echo-dust-2026-09-21-x1', 'Echo & Dust — The Button')]
+    for (const date of ['2026-09-21', '2026-09-23', '2026-09-27']) {
+      const out = await composeComic({ dateSlug: date, bank, recent: [], assetAvailable: reachable })
+      expect(out.level, date).toBe('approved-art')
+      expect(out.module, date).toMatchObject({ stripId: 'echo-dust-2026-09-21-x1', caption: 'Echo & Dust — The Button' })
+      expect(out.module).not.toHaveProperty('script')
+      expect(out.sourceItemIds).toEqual(['row-2026-09-21'])
+    }
+    // The next Monday starts a new week: no approved strip → a reprint.
+    expect((await composeComic({ dateSlug: '2026-09-28', bank, recent: [], assetAvailable: reachable })).level).toBe('archive-reprint')
+    // The daily-strip era: an approved strip dated that very day still prints that day.
+    expect((await composeComic({ dateSlug: '2026-08-21', bank: BANK, recent: [], assetAvailable: reachable })).module?.stripId).toBe('echo-dust-005-windowseat')
   })
 
-  it('otherwise reprints a published strip that ran BEFORE the date, least recently printed first', async () => {
-    const out = await composeComic({
-      dateSlug: '2026-09-15',
-      liveItems: {},
+  it('a week without an approved strip reprints ONE strip all week, least recently printed, never from inside the cooldown', async () => {
+    const monday = await composeComic({
+      dateSlug: '2026-09-14',
       bank: BANK,
-      recentComicIds: ['echo-dust-006-leftovers', 'echo-dust-001-microwave-minute'],
+      recent: [
+        { editionDate: '2026-09-10', comicId: 'echo-dust-006-leftovers' },
+        { editionDate: '2026-09-01', comicId: 'echo-dust-001-microwave-minute' },
+      ],
       assetAvailable: reachable,
     })
-    expect(out.level).toBe('archive-reprint')
-    expect(out.module).toMatchObject({ stripId: 'echo-dust-005-windowseat', firstRan: '2026-08-21' })
+    expect(monday.level).toBe('archive-reprint')
+    expect(monday.module).toMatchObject({ stripId: 'echo-dust-005-windowseat', firstRan: '2026-08-21' })
 
-    // All recent: the one printed longest ago comes back first.
-    const allRecent = await composeComic({
-      dateSlug: '2026-09-15',
-      liveItems: {},
+    // Wednesday of the same week keeps Monday's reprint, whatever else is fresher.
+    const wednesday = await composeComic({
+      dateSlug: '2026-09-16',
       bank: BANK,
-      recentComicIds: ['echo-dust-006-leftovers', 'echo-dust-005-windowseat', 'echo-dust-001-microwave-minute'],
+      recent: [
+        { editionDate: '2026-09-14', comicId: 'echo-dust-005-windowseat' },
+        { editionDate: '2026-09-15', comicId: 'echo-dust-005-windowseat' },
+      ],
       assetAvailable: reachable,
     })
-    expect(allRecent.module?.stripId).toBe('echo-dust-001-microwave-minute')
+    expect(wednesday.module?.stripId).toBe('echo-dust-005-windowseat')
 
-    // Never a strip that first ran after the edition's date.
-    const early = await composeComic({ dateSlug: '2026-08-21', liveItems: {}, bank: BANK, recentComicIds: [], assetAvailable: reachable })
+    // Everything inside the cooldown: the one printed longest ago comes back.
+    const crowded = await composeComic({
+      dateSlug: '2026-09-21',
+      bank: BANK,
+      recent: [
+        { editionDate: '2026-09-18', comicId: 'echo-dust-005-windowseat' },
+        { editionDate: '2026-09-10', comicId: 'echo-dust-006-leftovers' },
+        { editionDate: '2026-09-03', comicId: 'echo-dust-001-microwave-minute' },
+      ],
+      assetAvailable: reachable,
+    })
+    expect(crowded.module?.stripId).toBe('echo-dust-001-microwave-minute')
+
+    // Never a strip that first ran on or after the week began.
+    const early = await composeComic({ dateSlug: '2026-08-25', bank: BANK, recent: [], assetAvailable: reachable })
     expect(early.module?.stripId).toBe('echo-dust-001-microwave-minute')
   })
 
-  it('an unreachable image is skipped; with nothing left the comic is omitted — never a stand-in drawing', async () => {
+  it('an unreachable image is skipped; with nothing approved before the week the comic is omitted — never a stand-in', async () => {
+    const bank = [...BANK, weekly('2026-09-14', 'echo-dust-2026-09-14-gone', 'Echo & Dust — Gone')]
     const skip = await composeComic({
       dateSlug: '2026-09-15',
-      liveItems: stripItem('2026-09-15', 'echo-dust-099', 'Echo & Dust — No. 99'),
-      bank: BANK,
-      recentComicIds: [],
-      assetAvailable: async (src) => !src.includes('echo-dust-099') && !src.includes('microwave'),
+      bank,
+      recent: [],
+      assetAvailable: async (src) => !src.includes('gone') && !src.includes('microwave'),
     })
     expect(skip.level).toBe('archive-reprint')
     expect(skip.module?.stripId).toBe('echo-dust-005-windowseat')
-    expect(skip.notes.join(' ')).toMatch(/not reachable \(echo-dust-099\)/)
+    expect(skip.notes.join(' ')).toMatch(/not reachable \(echo-dust-2026-09-14-gone\)/)
 
-    const before = await composeComic({ dateSlug: '2026-08-18', liveItems: {}, bank: BANK, recentComicIds: [], assetAvailable: reachable })
+    const before = await composeComic({ dateSlug: '2026-08-19', bank: BANK, recent: [], assetAvailable: reachable })
     expect(before).toMatchObject({ level: 'omitted', module: null })
-    expect(before.notes.join(' ')).toMatch(/none published before it/)
+    expect(before.notes.join(' ')).toMatch(/none before it/)
 
-    const down = await composeComic({ dateSlug: '2026-09-15', liveItems: {}, bank: BANK, recentComicIds: [], assetAvailable: async () => false })
+    const down = await composeComic({ dateSlug: '2026-09-15', bank: BANK, recent: [], assetAvailable: async () => false })
     expect(down).toMatchObject({ level: 'omitted', module: null })
     expect(down.usage).toEqual([])
   })

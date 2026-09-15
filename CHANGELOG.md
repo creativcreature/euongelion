@@ -126,6 +126,25 @@ corrected in order, earliest first.
     - Run `repair-comics`.
     - Rebuild Sep 15, which is still ready with a silhouette strip.
     - Deploy.
+- **Echo & Dust becomes weekly** (founder, 2026-09-14: "the comic should be weekly and the
+  bread daily. One comic per week", "One strip shown all week", "I want to approve the
+  months of comics at once").
+  - **One approved strip per week.** It is dated that Monday and printed every day of the
+    week. Only strips the founder has approved print.
+  - **Reprints.** A week without one reprints a single approved strip all week,
+    avoiding strips from the three weeks before.
+  - **Batch approval.** `/admin/comics` lists last week plus the next twelve, with Approve,
+    Reject, and a confirmed "Approve all".
+  - **Tests.** Weekly selection, same-week reprint, cooldown, batch approve and error
+    display.
+  - **Style tests published for the founder's verdict** (pitch site; no production
+    change):
+    - Straight-code Echo & Dust against Codex drawings of the same script, "The Button"
+      (`echo-dust-weekly-code-vs-codex`).
+    - Procedural scenes rebuilt toward the riso anchors (A) against series riso art with
+      gentle motion (B), with 10-second recordings of each (`daily-bread-scenes-a-vs-b`).
+  - **On hold** until the founder verifies the comic style: every production step (the
+    No. 1 repoint, `repair-comics`, the Sep 15 rebuild, deploy).
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

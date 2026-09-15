@@ -226,14 +226,24 @@ the paused machine as a fault and printed a generic wordless silhouette strip in
 place, on 23 of 28 editions. Founder: "the comic strip is completely wrong… where is
 Dust and Echo?" That strip is gone from the pipeline.
 
-`src/lib/daily-bread/comic/chain.ts`:
-1. **approved-art.** The date's Echo & Dust strip row, live at rollover under the
-   SA-114 rule (published, or an unrejected draft).
-2. **archive-reprint.** A strip the founder PUBLISHED that first ran before the
-   edition's date, least recently printed first. The page credits it: "A reprint —
-   first ran ...".
-3. **omitted.** No strip, and the composition closes the gap. Never a stand-in
-   drawing.
+**One strip per week** (founder, 2026-09-14: "the comic should be weekly and the bread
+daily… One strip shown all week"; "I want to approve the months of comics at once"). A
+week's strip is an `edition_items` `strip` row dated that week's Monday. It prints only
+after the founder APPROVES it (status `published`); a draft never prints on its own.
+
+`src/lib/daily-bread/comic/chain.ts`, for an edition date:
+1. **approved-art.** The week's approved strip. For the daily-strip era, the approved
+   strip dated that very day also counts.
+2. **archive-reprint.** Otherwise, one approved strip from before the week, reprinted
+   every day of that week and credited ("A reprint — first ran ..."). The least
+   recently printed strip goes first. A strip printed in the three weeks before is
+   never chosen while another one is available.
+3. **omitted.** Nothing approved ran before the week. Never a stand-in drawing.
+
+**Batch approval.** `/admin/comics` (admin-gated) lays out last week and the next twelve,
+each with its strip or the gap. It records verdicts one week at a time, or every draft
+on the page with one confirmed click, through the existing `/api/admin/edition` review
+endpoint.
 
 Every image is checked at build: HTTP 200 and an `image/*` type.
 

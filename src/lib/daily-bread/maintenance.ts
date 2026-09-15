@@ -38,15 +38,15 @@ export interface ComicRepairChange {
 /**
  * Put Echo & Dust back on published editions (founder 2026-09-14: "the comic
  * strip is completely wrong… where is Dust and Echo?"). For each published
- * edition, oldest first, the comic is recomputed with the Echo & Dust chain —
- * the date's strip, else a reprint of a strip published before the date
- * (anti-repeat against the editions already corrected in this pass), else
- * none — and written as a revision only when it differs from what is frozen.
+ * edition, oldest first, the comic is recomputed with the weekly Echo & Dust
+ * chain — the week's approved strip, else the week's reprint of an approved
+ * strip from before it, else none — and written as a revision only when what
+ * a reader sees differs from what is frozen.
  * Issue numbers, dates and every other module are untouched.
  */
 export async function repairComics(params: {
   repo: DailyBreadRepository
-  sources: Pick<EditionSources, 'liveEditionItems' | 'publishedStrips' | 'assetAvailable'>
+  sources: Pick<EditionSources, 'publishedStrips' | 'assetAvailable'>
   from: string
   to: string
   dryRun: boolean
@@ -61,8 +61,16 @@ export async function repairComics(params: {
     failed: [] as { date: string; reason: string }[],
   }
   const bank = await params.sources.publishedStrips()
-  // Strip ids printed per date in this pass, for the 14-day anti-repeat.
+  // What this pass has printed per date (oldest first), for the weekly reprint
+  // choice and its cooldown; seeded with the edition's frozen neighbours
+  // before `from` so a partial range stays consistent with what precedes it.
   const printed = new Map<string, string>()
+  for (let back = 1; back <= 28; back++) {
+    const before = addDays(params.from, -back)
+    const e = await params.repo.getEdition(before)
+    const c = e?.modules.find((m) => m.type === 'comic')
+    if (c?.type === 'comic' && c.stripId) printed.set(before, c.stripId)
+  }
   const describe = (m: EditionModule | undefined) =>
     m && m.type === 'comic' ? `${m.level}:${m.stripId ?? m.script?.id ?? m.image?.src ?? '?'}` : 'none'
 
@@ -73,16 +81,13 @@ export async function repairComics(params: {
       continue
     }
     try {
-      const recentComicIds: string[] = []
-      for (let back = 1; back <= 14; back++) {
-        const id = printed.get(addDays(date, -back))
-        if (id) recentComicIds.push(id)
-      }
+      const recent = [...printed.entries()]
+        .filter(([d]) => d < date && d >= addDays(date, -35))
+        .map(([editionDate, comicId]) => ({ editionDate, comicId }))
       const comic = await composeComic({
         dateSlug: date,
-        liveItems: await params.sources.liveEditionItems(date),
         bank,
-        recentComicIds,
+        recent,
         assetAvailable: (src) => params.sources.assetAvailable(src),
       })
       const current = edition.modules.find((m) => m.type === 'comic')

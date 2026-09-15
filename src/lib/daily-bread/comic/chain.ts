@@ -1,28 +1,31 @@
 /**
  * The funnies are ECHO & DUST — the Daily Bread's own strip, locked by the
  * founder (content/strip-reference/ECHO-AND-DUST-CANON.md, 2026-08-20):
- * Teddy, Echo and Dust, drawn from the locked character sheet by the SA-114
- * strip machine (scripts/edition/strip/generate-strip.mjs) and reviewed in the
- * founder's queue. Nothing else is Echo & Dust, so nothing else is printed in
- * its place (SA-142 / F-184, founder 2026-09-14: "the comic strip is
+ * Teddy, Echo and Dust. Nothing else is Echo & Dust, so nothing else is printed
+ * in its place (SA-142 / F-184, founder 2026-09-14: "the comic strip is
  * completely wrong… where is Dust and Echo?").
  *
- * The chain:
- *   1. approved-art     the date's Echo & Dust strip, live at the rollover under
- *                       the SA-114 rule (published, or an unrejected draft)
- *   2. archive-reprint  a strip the founder PUBLISHED that first ran before this
- *                       edition's date, least recently printed — credited on
- *                       the page as a reprint with its first-run date
- *   3. omitted          no strip; the composition closes the gap
+ * ONE STRIP PER WEEK (founder, 2026-09-14: "the comic should be weekly and the
+ * bread daily… One strip shown all week"; "I want to approve the months of
+ * comics at once"). A week's strip is an edition_items `strip` row dated that
+ * week's Monday, and it prints only once the founder has APPROVED it
+ * (status published) — a draft never prints on its own.
  *
- * Every image is checked at build (HTTP 200, image/*) so a frozen edition never
- * points at a missing file. No model is called here: the strip is written and
- * drawn upstream, against the canon.
+ * The chain, for an edition date:
+ *   1. approved-art     the week's approved strip (or, for the daily-strip era,
+ *                       the approved strip dated that very day)
+ *   2. archive-reprint  otherwise ONE approved strip from before the week,
+ *                       reprinted every day of the week and credited with its
+ *                       first run; the least recently printed first, never one
+ *                       printed in the three weeks before
+ *   3. omitted          nothing approved ran before the week
+ *
+ * Every image is checked at build (HTTP 200, image/*). No model is called: the
+ * strip is written and drawn upstream, and approved by the founder.
  */
-import type { Edition } from '@/lib/edition/store'
 import { cleanText, safeAssetSrc } from '../safe'
+import { addDays, weekStart } from '../time'
 import type { ComicModule, ComicSourceLevel, ProviderUsage } from '../types'
-
 export interface ComicChainResult {
   module: ComicModule | null
   level: ComicSourceLevel
@@ -87,52 +90,73 @@ function payloadEntry(id: string | undefined, publishDate: string, p: StripPaylo
   }
 }
 
+/** How far back a reprint may not repeat (the three weeks before its week). */
+export const REPRINT_COOLDOWN_DAYS = 21
+
 export async function composeComic(params: {
   dateSlug: string
-  liveItems: Edition
-  /** Founder-published strips (any date); filtered to those that ran before dateSlug. */
+  /** Founder-APPROVED strips, any date (publishedStripBank). */
   bank: StripBankEntry[]
-  /** Strip ids printed in recent editions, newest first. */
-  recentComicIds: string[]
+  /** What recent editions printed: date and strip id, any order. */
+  recent: { editionDate: string; comicId?: string }[]
   /** True when the image URL answers 200 with an image. */
   assetAvailable: (src: string) => Promise<boolean>
 }): Promise<ComicChainResult> {
   const notes: string[] = []
   const base = { usage: [] as ProviderUsage[], providerDeterministic: true, notes }
+  const week = weekStart(params.dateSlug)
+  const reachable = async (entry: StripBankEntry, what: string) => {
+    if (await params.assetAvailable(entry.image)) return true
+    notes.push(`comic: ${what} image not reachable (${entry.panelId})`)
+    return false
+  }
 
-  // 1. Today's Echo & Dust strip.
-  const today = params.liveItems.strip?.[0]
-  if (today) {
-    const entry = payloadEntry(today.id, params.dateSlug, today.payload as StripPayload)
-    if (!entry) {
-      notes.push('comic: the day’s strip row failed the asset policy')
-    } else if (!(await params.assetAvailable(entry.image))) {
-      notes.push(`comic: the day’s strip image is not reachable (${entry.panelId})`)
-    } else {
+  // 1. The week's approved strip (the daily-strip era: the day's own).
+  const own =
+    params.bank.find((s) => s.publishDate === week) ??
+    params.bank.find((s) => s.publishDate === params.dateSlug)
+  if (own && (await reachable(own, 'the week’s strip'))) {
+    return {
+      ...base,
+      module: stripModule(own, 'approved-art'),
+      level: 'approved-art',
+      providerDeterministic: false,
+      sourceItemIds: own.id ? [own.id] : [],
+    }
+  }
+
+  // 2. The week's reprint. Earlier in the same week → the same strip again.
+  const byId = new Map(params.bank.map((s) => [s.panelId, s]))
+  const sameWeek = params.recent
+    .filter((r) => r.editionDate >= week && r.editionDate < params.dateSlug && r.comicId)
+    .sort((a, b) => a.editionDate.localeCompare(b.editionDate))
+  for (const r of sameWeek) {
+    const entry = byId.get(r.comicId!)
+    if (entry && entry.publishDate < week && (await reachable(entry, 'this week’s reprint'))) {
       return {
         ...base,
-        module: stripModule(entry, 'approved-art'),
-        level: 'approved-art',
-        providerDeterministic: false,
-        sourceItemIds: today.id ? [today.id] : [],
+        module: stripModule(entry, 'archive-reprint', entry.publishDate),
+        level: 'archive-reprint',
+        sourceItemIds: entry.id ? [entry.id] : [],
       }
     }
   }
-
-  // 2. A reprint from the founder-published strips that ran before today,
-  //    least recently printed first (never printed in the window beats all).
-  const recency = (panelId: string) => {
-    const i = params.recentComicIds.indexOf(panelId)
-    return i === -1 ? Number.POSITIVE_INFINITY : i
+  const lastPrinted = new Map<string, string>()
+  for (const r of params.recent) {
+    if (!r.comicId || r.editionDate >= week) continue
+    if ((lastPrinted.get(r.comicId) ?? '') < r.editionDate) lastPrinted.set(r.comicId, r.editionDate)
   }
+  const cooldownFrom = addDays(week, -REPRINT_COOLDOWN_DAYS)
   const candidates = params.bank
-    .filter((s) => s.publishDate < params.dateSlug)
-    .sort((a, b) => recency(b.panelId) - recency(a.panelId) || a.publishDate.localeCompare(b.publishDate))
-  for (const candidate of candidates) {
-    if (!(await params.assetAvailable(candidate.image))) {
-      notes.push(`comic: reprint candidate image not reachable (${candidate.panelId})`)
-      continue
-    }
+    .filter((s) => s.publishDate < week)
+    .sort((a, b) => {
+      const la = lastPrinted.get(a.panelId) ?? ''
+      const lb = lastPrinted.get(b.panelId) ?? ''
+      return la.localeCompare(lb) || a.publishDate.localeCompare(b.publishDate)
+    })
+  const fresh = candidates.filter((s) => (lastPrinted.get(s.panelId) ?? '') < cooldownFrom)
+  for (const candidate of fresh.length > 0 ? fresh : candidates) {
+    if (!(await reachable(candidate, 'reprint candidate'))) continue
     return {
       ...base,
       module: stripModule(candidate, 'archive-reprint', candidate.publishDate),
@@ -141,11 +165,11 @@ export async function composeComic(params: {
     }
   }
 
-  // 3. Nothing to print — never a stand-in drawing.
+  // 3. Nothing approved to print — never a stand-in drawing.
   notes.push(
     candidates.length === 0
-      ? 'comic: omitted (no Echo & Dust strip for the date and none published before it)'
-      : 'comic: omitted (no reachable Echo & Dust strip)',
+      ? 'comic: omitted (no approved Echo & Dust strip for the week and none before it)'
+      : 'comic: omitted (no reachable approved Echo & Dust strip)',
   )
   return { ...base, module: null, level: 'omitted', sourceItemIds: [] }
 }

@@ -242,3 +242,22 @@ export async function getRecentPayloads(
     throw new Error(`recent payloads read failed (${kind}): ${error.message}`)
   return (data ?? []).map((r) => r.payload)
 }
+
+/**
+ * Every Echo & Dust strip row from `fromDate` onward, whatever its status —
+ * the founder's batch approval page lists weeks of strips at once (SA-142 /
+ * F-184, founder 2026-09-14: "I want to approve the months of comics at
+ * once"). THROWS on a database failure (Rule 1).
+ */
+export async function getStripsFrom(fromDate: string): Promise<EditionItem<'strip'>[]> {
+  const supabase = createAdminClient()
+  const { data, error } = await supabase
+    .from('edition_items')
+    .select('id, kind, publish_date, slot, status, payload, source_name, source_url')
+    .eq('kind', 'strip')
+    .gte('publish_date', fromDate)
+    .order('publish_date', { ascending: true })
+
+  if (error) throw new Error(`strip read failed from ${fromDate}: ${error.message}`)
+  return ((data ?? []) as EditionRow[]).map((row) => rowToItem(row) as EditionItem<'strip'>)
+}
