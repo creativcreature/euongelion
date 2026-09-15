@@ -259,6 +259,91 @@ function readCleanPool(auditPath: string): AuditPrint[] {
   return pool
 }
 
+/** A plate a recent edition printed, for the Daily Bread V2 cooldowns (plan §42). */
+export interface RecentPlate {
+  image: string
+  artist: string
+  daysAgo: number
+}
+
+/** The SA-090 arms: seven prints spaced a seventh of the pool apart, stepped by day. */
+function armPicks(poolSize: number, day: number, spacing: number, slots: number): number[] {
+  const used = new Set<number>()
+  const picks: number[] = []
+  for (let slot = 0; slot < slots; slot += 1) {
+    let idx = (day + slot * spacing) % poolSize
+    // Small pools could collide arms; walk forward to the next unused print.
+    while (used.has(idx)) idx = (idx + 1) % poolSize
+    used.add(idx)
+    picks.push(idx)
+  }
+  return picks
+}
+
+/** Days a printed work rests before the Gallery may hang it again (plan §42: "around 60"). */
+export const GALLERY_WORK_COOLDOWN_DAYS = 60
+/** Days an artist rests, as a soft preference (plan §42 soft penalties). */
+export const GALLERY_ARTIST_COOLDOWN_DAYS = 7
+
+/**
+ * Daily Bread V2 (plan §42). The same arms, but each slot walks forward past
+ * works hung in the last 60 days and, where the pool allows, past artists hung
+ * in the last week or already on today's wall. "Adjust based on actual library
+ * size": 145 audited prints at seven a day cannot always rest 60 days, so when
+ * fewer than three days' worth of works remain eligible, the longest-rested
+ * works come back first, and a note says so.
+ */
+function pickWithCooldown(
+  pool: AuditPrint[],
+  day: number,
+  spacing: number,
+  slots: number,
+  recent: RecentPlate[],
+  notes: string[] = [],
+): number[] {
+  const image = (p: AuditPrint) => `${PRINT_DIR}/${p.file}`
+  const resting = new Map<string, number>()
+  for (const r of recent) {
+    if (r.daysAgo > GALLERY_WORK_COOLDOWN_DAYS) continue
+    resting.set(r.image, Math.min(resting.get(r.image) ?? Infinity, r.daysAgo))
+  }
+  const eligible = () => pool.filter((p) => !resting.has(image(p))).length
+  let released = 0
+  while (eligible() < slots * 3 && resting.size > 0) {
+    const oldest = Math.max(...resting.values())
+    for (const [img, d] of resting) if (d === oldest) resting.delete(img)
+    released = oldest
+  }
+  if (released > 0) notes.push(`gallery: the pool is small for a 60-day rest; works last hung ${released}+ days ago may return`)
+  if (resting.size > 0) notes.push(`gallery: ${resting.size} work(s) resting, hung within the last ${GALLERY_WORK_COOLDOWN_DAYS} days`)
+  const recentArtists = new Set(recent.filter((r) => r.daysAgo <= GALLERY_ARTIST_COOLDOWN_DAYS).map((r) => r.artist))
+  const used = new Set<number>()
+  const todayArtists = new Set<string>()
+  const picks: number[] = []
+  let artistRepeats = 0
+  for (let slot = 0; slot < slots; slot += 1) {
+    const start = (day + slot * spacing) % pool.length
+    const find = (ok: (p: AuditPrint) => boolean) => {
+      for (let step = 0; step < pool.length; step += 1) {
+        const idx = (start + step) % pool.length
+        if (!used.has(idx) && !resting.has(image(pool[idx])) && ok(pool[idx])) return idx
+      }
+      return -1
+    }
+    let idx = find((p) => !recentArtists.has(p.artist) && !todayArtists.has(p.artist))
+    if (idx === -1) {
+      idx = find((p) => !todayArtists.has(p.artist))
+      if (idx !== -1) artistRepeats += 1
+    }
+    if (idx === -1) idx = find(() => true)
+    used.add(idx)
+    todayArtists.add(pool[idx].artist)
+    picks.push(idx)
+  }
+  if (artistRepeats > 0) notes.push(`gallery: ${artistRepeats} plate(s) by an artist hung in the last week (no rested artist left)`)
+  return picks
+}
+
 /**
  * The Gallery for one UTC date. Always exactly one item, slot 0, approved —
  * the pick is a modulo over an audited pool, and the looking paragraph is
@@ -271,6 +356,7 @@ function readCleanPool(auditPath: string): AuditPrint[] {
 export async function generateGallery(
   date: Date,
   auditPath: string = join(process.cwd(), AUDIT_PATH),
+  options: { recent?: RecentPlate[]; notes?: string[] } = {},
 ): Promise<EditionItem<'gallery'>[]> {
   const pool = readCleanPool(auditPath)
   const publishDate = new Date(
@@ -289,12 +375,10 @@ export async function generateGallery(
   const rand = mulberry32(hashSeed(`${publishDate}:gallery`))
 
   const items: EditionItem<'gallery'>[] = []
-  const used = new Set<number>()
-  for (let slot = 0; slot < SLOTS; slot += 1) {
-    let idx = (day + slot * spacing) % pool.length
-    // Small pools could collide arms; walk forward to the next unused print.
-    while (used.has(idx)) idx = (idx + 1) % pool.length
-    used.add(idx)
+  const picks = options.recent
+    ? pickWithCooldown(pool, day, spacing, SLOTS, options.recent, options.notes)
+    : armPicks(pool.length, day, spacing, SLOTS)
+  for (const [slot, idx] of picks.entries()) {
     const print = pool[idx]
     const vasari = vasariFor(print.file)
     const looking =

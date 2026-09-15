@@ -35,7 +35,10 @@ const MS_PER_UTC_DAY = 86_400_000
  * Same UTC day in, same entry out — never random, never time-of-day
  * dependent. Throws on an empty bank rather than inventing a fallback.
  */
-export function pickVoiceForDay(date: Date): VoiceEntry {
+export function pickVoiceForDay(
+  date: Date,
+  options: { recent?: { quote: string; author: string; daysAgo: number }[] } = {},
+): VoiceEntry {
   if (VOICES.length === 0) {
     throw new Error(
       'voices-bank.json has no entries — regenerate it with scripts/edition/build-voices-bank.mjs',
@@ -47,5 +50,19 @@ export function pickVoiceForDay(date: Date): VoiceEntry {
   )
   const index =
     ((daysSinceEpoch % VOICES.length) + VOICES.length) % VOICES.length
-  return VOICES[index]
+  if (!options.recent) return VOICES[index]
+
+  // Daily Bread V2 (plan §42): walk forward from the day's voice past any
+  // quote printed in the last 30 days and, where the bank allows, any author
+  // printed in the last week (a soft penalty: the bank has 15 authors).
+  const quotes = new Set(options.recent.filter((r) => r.daysAgo <= 30).map((r) => r.quote))
+  const authors = new Set(options.recent.filter((r) => r.daysAgo <= 7).map((r) => r.author))
+  const walk = (ok: (v: VoiceEntry) => boolean) => {
+    for (let step = 0; step < VOICES.length; step += 1) {
+      const v = VOICES[(index + step) % VOICES.length]
+      if (!quotes.has(v.quote) && ok(v)) return v
+    }
+    return null
+  }
+  return walk((v) => !authors.has(v.author)) ?? walk(() => true) ?? VOICES[index]
 }

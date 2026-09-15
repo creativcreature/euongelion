@@ -12,12 +12,13 @@ import type {
   EditionRevision,
   PublicationAttempt,
 } from '../types'
-import type {
-  ArchiveListOptions,
-  DailyBreadRepository,
-  MarkReadyResult,
-  PublishResult,
-  RecentComposition,
+import {
+  recentFromParts,
+  type ArchiveListOptions,
+  type DailyBreadRepository,
+  type MarkReadyResult,
+  type PublishResult,
+  type RecentComposition,
 } from './types'
 import { errorMessage } from '../redact'
 
@@ -329,18 +330,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
       modules: DailyEdition['modules'] | null
       assets: DailyEdition['assets'] | null
       composition: DailyEdition['composition'] | null
-    }[]).map((r) => {
-      const scene = r.modules?.find((m) => m.type === 'scene')
-      const comic = r.modules?.find((m) => m.type === 'comic')
-      return {
-        editionDate: r.edition_date,
-        archetype: r.archetype,
-        scene: scene && scene.type === 'scene' ? scene.scene : undefined,
-        comicId: comic && comic.type === 'comic' ? (comic.stripId ?? comic.script?.id) : undefined,
-        leadPlateId: r.assets?.leadPlate?.id,
-        printed: r.composition?.placements?.map((p) => p.module),
-      }
-    })
+    }[]).map((r) => recentFromParts(r.edition_date, r.archetype, r.modules, r.assets, r.composition))
   }
 
   async getLifecycle(date: string) {

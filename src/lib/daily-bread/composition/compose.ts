@@ -35,6 +35,8 @@ export interface CompositionContext {
   recentArchetypes: ArchetypeId[]
   /** Module types printed on recent days, most recent first (plan §40 rotation). */
   recentPrinted?: EditionModuleType[][]
+  /** Hero treatments of recent days, most recent first (plan §42). */
+  recentHeroes?: (HeroVariant | undefined)[]
 }
 
 const GOSPELS = /^(Matthew|Mark|Luke|John)\b/
@@ -89,31 +91,65 @@ export function eligible(def: ArchetypeDefinition, present: Set<EditionModuleTyp
 export function scoreArchetypes(
   ctx: CompositionContext,
   present: Set<EditionModuleType>,
-): { archetype: ArchetypeId; score: number }[] {
+): { archetype: ArchetypeId; score: number; why: string }[] {
   const rng = createRng(ctx.seed ^ 0xa4c3)
+  const r2 = (n: number) => Math.round(n * 100) / 100
   return ARCHETYPE_IDS.map((id) => {
     const jitter = rng.next() * 0.6
-    if (!eligible(ARCHETYPES[id], present)) return { archetype: id, score: -Infinity }
-    const score = affinity(id, ctx, present) + jitter - recencyPenalty(id, ctx.recentArchetypes)
-    return { archetype: id, score: Math.round(score * 1000) / 1000 }
+    const missing = ARCHETYPES[id].requires.filter((m) => !present.has(m))
+    if (missing.length > 0) return { archetype: id, score: -Infinity, why: `not eligible: needs ${missing.join(', ')}` }
+    const a = affinity(id, ctx, present)
+    const r = recencyPenalty(id, ctx.recentArchetypes)
+    const score = a + jitter - r
+    return {
+      archetype: id,
+      score: Math.round(score * 1000) / 1000,
+      why: `affinity ${r2(a)} + jitter ${r2(jitter)} − recency ${r2(r)}`,
+    }
   }).sort((a, b) => b.score - a.score || a.archetype.localeCompare(b.archetype))
 }
 
+/** The hero an archetype would open with, given the modules on hand. */
+export function expectedHero(def: ArchetypeDefinition, present: Set<EditionModuleType>): HeroVariant {
+  return heroVariant(place(def.front, 'front', present, new Set(), 0).placements)
+}
+
+/**
+ * Plan §42 hard exclusions: never yesterday's archetype, and never yesterday's
+ * hero treatment (Broadsheet and Field Notes both open on the lead and its
+ * rail; Illuminated and Joy both open on the scene). Each gives way only when
+ * nothing else is eligible, and the manifest's scoring says why a higher score
+ * was passed over.
+ */
 export function chooseArchetype(
   ctx: CompositionContext,
   present: Set<EditionModuleType>,
-): { archetype: ArchetypeId; scoring: { archetype: ArchetypeId; score: number }[] } {
+): { archetype: ArchetypeId; scoring: { archetype: ArchetypeId; score: number; why: string }[] } {
   const scoring = scoreArchetypes(ctx, present)
   const yesterday = ctx.recentArchetypes[0]
+  const yesterdayHero = ctx.recentHeroes?.[0]
   const viable = scoring.filter((s) => Number.isFinite(s.score))
-  const pick = viable.find((s) => s.archetype !== yesterday) ?? viable[0]
+  const sameHero = (id: ArchetypeId) => Boolean(yesterdayHero) && expectedHero(ARCHETYPES[id], present) === yesterdayHero
+  const pick =
+    viable.find((s) => s.archetype !== yesterday && !sameHero(s.archetype)) ??
+    viable.find((s) => s.archetype !== yesterday) ??
+    viable[0]
   if (!pick) {
     // Every archetype requires the reading; a paper without it is not composed.
     throw new Error('composition: no archetype is eligible for these modules')
   }
   return {
     archetype: pick.archetype,
-    scoring: scoring.map((s) => ({ ...s, score: Number.isFinite(s.score) ? s.score : -1 })),
+    scoring: scoring.map((s) => ({
+      ...s,
+      score: Number.isFinite(s.score) ? s.score : -1,
+      why:
+        s.archetype === pick.archetype
+          ? `${s.why} — chosen`
+          : Number.isFinite(s.score) && s.score > pick.score
+            ? `${s.why} — passed over: ${s.archetype === yesterday ? 'printed yesterday' : `same hero as yesterday (${yesterdayHero})`}`
+            : s.why,
+    })),
   }
 }
 

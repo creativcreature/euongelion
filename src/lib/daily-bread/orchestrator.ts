@@ -149,11 +149,19 @@ export async function createDailyBreadEdition(
     }
     leased = true
 
-    // 28 days of history: the comic's reprint cooldown looks three weeks back
-    // from the start of the week; everything else uses the last 14 days.
-    const history = await log.stage('history', () => deps.repo.recentCompositions(dateSlug, 28))
+    // 90 days of history (plan §42): the Gallery rests a work about 60 days;
+    // the comic's reprint cooldown looks three weeks back from the week's start;
+    // archetype, hero, scene and department rotation use the last 14 days.
+    const history = await log.stage('history', () => deps.repo.recentCompositions(dateSlug, 90))
     const recent = history.filter((r) => r.editionDate >= addDays(dateSlug, -14))
-    const base = await log.stage('modules', () => buildBaseEdition(dateSlug, deps.sources))
+    const daysAgo = (d: string) => Math.round((slugToUtcDate(dateSlug).getTime() - slugToUtcDate(d).getTime()) / 86_400_000)
+    const explanations: string[] = []
+    const cooldowns = {
+      plates: history.flatMap((r) => (r.galleryPlates ?? []).map((p) => ({ ...p, daysAgo: daysAgo(r.editionDate) }))),
+      voices: history.flatMap((r) => (r.voice ? [{ ...r.voice, daysAgo: daysAgo(r.editionDate) }] : [])),
+      notes: explanations,
+    }
+    const base = await log.stage('modules', () => buildBaseEdition(dateSlug, deps.sources, cooldowns))
     attempt.moduleFailures.push(...base.failures)
     attempt.assetFallbacks.push(...base.assetFallbacks)
 
@@ -200,10 +208,17 @@ export async function createDailyBreadEdition(
     }
 
     const modules: EditionModule[] = [...base.modules]
+    // Plan §42: the procedural treatment does not repeat yesterday's renderer.
+    const RENDERERS = ['riso', 'halftone', 'ascii'] as const
+    let renderer = RENDERERS[seed % 3]
+    if (recent[0]?.renderer === renderer) {
+      renderer = RENDERERS[(seed + 1) % 3]
+      explanations.push(`scene: renderer moved off yesterday's ${recent[0].renderer} to ${renderer}`)
+    }
     modules.push({
       type: 'scene',
       scene: frameValue.scene,
-      renderer: (['riso', 'halftone', 'ascii'] as const)[seed % 3],
+      renderer,
       seed: hashString(`${seedString}:${frameValue.scene}`) % 100_000,
       label: frameValue.sceneLabel,
     })
@@ -225,6 +240,7 @@ export async function createDailyBreadEdition(
           primaryReference: base.scripture.reference,
           recentArchetypes: recent.map((r) => r.archetype),
           recentPrinted: recent.map((r) => r.printed ?? []),
+          recentHeroes: recent.map((r) => r.heroVariant),
         },
         modules.map((m) => m.type),
       ),
@@ -264,6 +280,11 @@ export async function createDailyBreadEdition(
         ...composition,
         ...sceneManifest(printedModules),
         rendererVersion: DAILY_BREAD_RENDERER_VERSION,
+        // Only what explains the printed paper: a resting Gallery's cooldown is not news.
+        explanations: explanations.filter((note) => {
+          const subject = ({ gallery: 'gallery', voices: 'voices', scene: 'scene' } as const)[note.split(':')[0] as 'gallery' | 'voices' | 'scene']
+          return !subject || printedTypes.has(subject)
+        }),
       },
       modules: printedModules,
       assets: {

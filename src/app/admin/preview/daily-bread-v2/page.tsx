@@ -60,6 +60,22 @@ export default async function DailyBreadV2Preview({
                   ? `${edition.composition.archetype} · hero ${edition.composition.heroVariant} · ${edition.composition.density} · accent ${edition.composition.accentStrategy} · separators ${edition.composition.separatorStyle} · motion ${edition.composition.motionLevel}${edition.composition.procedural ? ` · scene ${edition.composition.procedural.scene}/${edition.composition.procedural.renderer}/${edition.composition.procedural.seed}` : ''} · renderer ${edition.composition.rendererVersion}`
                   : `${edition.composition.archetype} (manifest fields not recorded: composed before 2026-09-14)`}
               </dd>
+              <dt>Why this archetype</dt>
+              <dd>
+                {edition.composition.scoring
+                  .map((s) => `${s.archetype}: ${s.why ?? `score ${s.score}`}`)
+                  .join(' · ')}
+              </dd>
+              <dt>Rotation</dt>
+              <dd>
+                {edition.composition.rotation
+                  ? `rested ${edition.composition.rotation.rested
+                      .map((r) => `${r.module} (${r.lastPrintedDaysAgo === null ? 'not in 14 days' : `${r.lastPrintedDaysAgo}d ago`})`)
+                      .join(', ') || 'nothing'}`
+                  : 'not recorded (composed before 2026-09-14)'}
+              </dd>
+              <dt>Cooldowns</dt>
+              <dd>{edition.composition.explanations?.join(' · ') || 'none needed'}</dd>
               <dt>Comic</dt>
               <dd>{edition.generation.comicLevel}</dd>
               <dt>Module failures</dt>

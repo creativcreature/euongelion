@@ -320,8 +320,8 @@ export interface CompositionManifest {
   /** Scroll rhythm (the plan's visualRhythm), one beat per band. */
   rhythm: ('dense' | 'open' | 'pause')[]
   placements: Placement[]
-  /** Why this archetype won (anti-repeat scoring), for the archive record. */
-  scoring: { archetype: ArchetypeId; score: number }[]
+  /** Why this archetype won (anti-repeat scoring), for the archive record. `why` since 2026-09-14. */
+  scoring: { archetype: ArchetypeId; score: number; why?: string }[]
   /*
    * Plan §37, archived with the issue. Absent on editions composed before
    * 2026-09-14; readers fall back to the archetype's definition.
@@ -346,6 +346,8 @@ export interface CompositionManifest {
     printed: EditionModuleType[]
     rested: { module: EditionModuleType; lastPrintedDaysAgo: number | null }[]
   }
+  /** Plan §43 debug explanation: every cooldown decision the build made, in plain words. */
+  explanations?: string[]
 }
 
 /* ── Visual engine ───────────────────────────────────────────────────── */

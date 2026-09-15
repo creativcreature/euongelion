@@ -342,6 +342,34 @@ corrected in order, earliest first.
     altered layouts" (2026-08-20) gives way to the plan's "Do not render every
     department every day" (2026-09-13). "Games never adjacent" still holds.
   - **Tests.** 254 pass.
+- **Deviation 16 (plan §42–43, anti-repetition and the selection engine), corrected in
+  code, not deployed.**
+  - **What was wrong.**
+    - Only 14 days and 4 dimensions were checked.
+    - A Gallery work could return after about 20 days, and nothing penalised artists,
+      authors or renderers.
+    - Two archetypes could open with the same hero on consecutive days.
+    - The preview gave no reasons.
+  - **Now, reading 90 days of history.**
+    - **Gallery:** a work rests 60 days, sized to the 145-print library with a note
+      when the pool runs short; artists rest a week where the pool allows. It re-picks
+      over its own auto-approved rows.
+    - **Voices:** no quote within 30 days, no author within a week where the bank
+      allows.
+    - **Day to day:** the hero and the scene renderer never repeat.
+  - **Explanations** are stored with each issue and shown in the admin preview:
+    - `scoring[].why` (affinity + jitter − recency, chosen or passed over and why);
+    - `rotation.rested`;
+    - `explanations`, covering only what printed.
+  - **Tests** (296 pass):
+    - Gallery rest, artist preference and the small-pool release;
+    - voice quote and author rules;
+    - no consecutive hero or archetype, and no module order repeated within 14 days
+      over 60 simulated days;
+    - a six-day in-memory build with no Gallery work rehung and renderer and hero never
+      repeating.
+  - **Not verified by eye.** The admin preview's new rows were not screenshotted: the
+    page needs a founder login.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

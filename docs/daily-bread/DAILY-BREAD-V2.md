@@ -446,6 +446,32 @@ department every day", and this rotation follows the later instruction. The earl
 rule that games are never adjacent still holds: in every archetype, games sit in
 separate bands.
 
+**Anti-repetition (plan §42) and the selection engine (§43).** The build reads 90
+days of history.
+
+| Dimension | Rule | Kind |
+| --- | --- | --- |
+| Archetype | not yesterday's; recency penalty 3.0 / 1.6 / 1.0 over the last three days | hard + soft |
+| Hero treatment | not yesterday's (Broadsheet and Field Notes share `lead-with-rail`; Illuminated and Joy share `scene`) | hard |
+| Gallery work | not hung within 60 days. With 145 audited prints at 7 a day that cannot always hold, so when fewer than three days' worth remain, the longest-rested return first and a note says so | hard, sized to the library |
+| Gallery artist | not hung this week, and not twice on one wall, where the pool allows | soft |
+| Historical voice | not a quote from the last 30 days; not an author from the last week, where the 15-author bank allows | hard + soft |
+| Procedural renderer | not yesterday's | hard |
+| Scene | the frame avoids recent scenes | soft |
+| Comic | the Echo & Dust reprint cooldown (§6) | hard |
+| Games and departments | the longest-rested wins (§40) | soft |
+| Module order | follows from the rules above; a 60-day simulation finds no order repeated within 14 days | tested |
+| Reusable art (lead plates) | a series' hero art repeats for the days of its series by design; generated plates are per date | n/a |
+
+Every pick uses the seeded PRNG, so the same inputs always give the same paper. The
+debug explanation is stored with the issue:
+- each archetype's `scoring[].why`, with the chosen one and any higher score passed
+  over;
+- `rotation.rested`, with how long ago each rested module last ran;
+- `explanations`, with every cooldown that changed what printed.
+
+`/admin/preview/daily-bread-v2` shows all three.
+
 **Scroll rhythm (plan §41).** `composition.beats` gives each band one of the plan's
 ten beats, read from what it holds. The order of precedence is: interactive, then
 immersive (the front band), prayer, longform, dense, scriptural, visual, playful, quiet

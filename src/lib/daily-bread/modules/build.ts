@@ -29,7 +29,7 @@ import type { GeneratedLeadArt } from '@/lib/edition/lead-art-generated'
 import { generatePractice } from '@/lib/edition/generators/practice'
 import { generateWord } from '@/lib/edition/generators/word'
 import { generatePrayer } from '@/lib/edition/generators/prayer'
-import { generateGallery } from '@/lib/edition/generators/gallery'
+import { generateGallery, type RecentPlate } from '@/lib/edition/generators/gallery'
 import { generateCrossword, generateQuiz, generateUnscramble } from '@/lib/edition/generators/puzzles'
 import { generateRedLetter } from '@/lib/edition/generators/redletter'
 import { generateVerse, verseForWeek } from '@/lib/edition/generators/verse'
@@ -327,7 +327,21 @@ function sanitizeGoodNews(dateSlug: string, entries: readonly GoodNewsEntry[]): 
  * Build everything except the frame-dependent modules (comic, scene,
  * rabbit holes), which the orchestrator adds after the provider chain runs.
  */
-export async function buildBaseEdition(dateSlug: string, sources: EditionSources): Promise<BaseEdition> {
+/**
+ * Plan §42 cooldowns for the rotating content a bank picks by date: what recent
+ * editions printed, and a place to say what the cooldown had to give way on.
+ */
+export interface BuildCooldowns {
+  plates: RecentPlate[]
+  voices: { quote: string; author: string; daysAgo: number }[]
+  notes: string[]
+}
+
+export async function buildBaseEdition(
+  dateSlug: string,
+  sources: EditionSources,
+  cooldowns?: BuildCooldowns,
+): Promise<BaseEdition> {
   const date = slugToUtcDate(dateSlug)
   const failures: ModuleFailure[] = []
   const assetFallbacks: string[] = []
@@ -523,7 +537,13 @@ export async function buildBaseEdition(dateSlug: string, sources: EditionSources
   const question = await attempt('question', failures, async () => (await generateQuestion(date))[0]?.payload)
   if (question) modules.push({ type: 'question', question: question.question })
 
-  const voice = await attempt('voices', failures, async () => pickVoiceForDay(date))
+  const voice = await attempt('voices', failures, async () => pickVoiceForDay(date, cooldowns ? { recent: cooldowns.voices } : {}))
+  if (voice && cooldowns) {
+    const natural = pickVoiceForDay(date)
+    if (natural.quote !== voice.quote) {
+      cooldowns.notes.push(`voices: ${natural.author} passed over (that quote or author ran recently); ${voice.author} instead`)
+    }
+  }
   if (voice) modules.push({ type: 'voices', quote: voice.quote, author: voice.author, work: voice.work })
 
   const season = await attempt('season', failures, async () => getSeasonEssay(lit))
@@ -556,11 +576,17 @@ export async function buildBaseEdition(dateSlug: string, sources: EditionSources
     })
   }
 
-  const galleryRows = note(live.gallery).map((g) => g.payload)
+  // The Gallery's rows are the generator's own output (approved automatically,
+  // "nothing here to review"), so with cooldowns V2 re-picks with them (plan §42).
+  const galleryRows = cooldowns ? [] : note(live.gallery).map((g) => g.payload)
   const plates =
     galleryRows.length > 0
       ? galleryRows
-      : ((await attempt('gallery', failures, async () => (await generateGallery(date)).map((g) => g.payload))) ?? [])
+      : ((await attempt('gallery', failures, async () =>
+          (await generateGallery(date, undefined, cooldowns ? { recent: cooldowns.plates, notes: cooldowns.notes } : {})).map(
+            (g) => g.payload,
+          ),
+        )) ?? [])
   const safePlates = plates.filter((p) => safeAssetSrc(p.image))
   if (safePlates.length > 0) modules.push({ type: 'gallery', plates: safePlates })
 

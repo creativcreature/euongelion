@@ -7,6 +7,8 @@ import type {
   EditionLifecycle,
   EditionModuleType,
   EditionRevision,
+  HeroVariant,
+  ProceduralRendererId,
   ProceduralSceneId,
   PublicationAttempt,
 } from '../types'
@@ -37,6 +39,37 @@ export interface RecentComposition {
   leadPlateId?: string
   /** The module types the paper actually printed (its placements), for department rotation. */
   printed?: EditionModuleType[]
+  /* Plan §42 anti-repeat dimensions. */
+  heroVariant?: HeroVariant
+  renderer?: ProceduralRendererId
+  galleryPlates?: { image: string; artist: string }[]
+  voice?: { quote: string; author: string }
+}
+
+/** The anti-repeat facts one frozen edition carries (shared by every repository). */
+export function recentFromParts(
+  editionDate: string,
+  archetype: ArchetypeId,
+  modules: DailyEdition['modules'] | null | undefined,
+  assets: DailyEdition['assets'] | null | undefined,
+  composition: DailyEdition['composition'] | null | undefined,
+): RecentComposition {
+  const scene = modules?.find((m) => m.type === 'scene')
+  const comic = modules?.find((m) => m.type === 'comic')
+  const gallery = modules?.find((m) => m.type === 'gallery')
+  const voice = modules?.find((m) => m.type === 'voices')
+  return {
+    editionDate,
+    archetype,
+    scene: scene && scene.type === 'scene' ? scene.scene : undefined,
+    renderer: scene && scene.type === 'scene' ? scene.renderer : undefined,
+    comicId: comic && comic.type === 'comic' ? (comic.stripId ?? comic.script?.id) : undefined,
+    leadPlateId: assets?.leadPlate?.id,
+    printed: composition?.placements?.map((p) => p.module),
+    heroVariant: composition?.heroVariant,
+    galleryPlates: gallery && gallery.type === 'gallery' ? gallery.plates.map((p) => ({ image: p.image, artist: p.artist })) : undefined,
+    voice: voice && voice.type === 'voices' ? { quote: voice.quote, author: voice.author } : undefined,
+  }
 }
 
 /**
@@ -98,14 +131,5 @@ export function toArchiveEntry(edition: DailyEdition): ArchiveEntry {
 }
 
 export function recentFromEdition(edition: DailyEdition): RecentComposition {
-  const scene = edition.modules.find((m) => m.type === 'scene')
-  const comic = edition.modules.find((m) => m.type === 'comic')
-  return {
-    editionDate: edition.editionDate,
-    archetype: edition.composition.archetype,
-    scene: scene && scene.type === 'scene' ? scene.scene : undefined,
-    comicId: comic && comic.type === 'comic' ? (comic.stripId ?? comic.script?.id) : undefined,
-    leadPlateId: edition.assets.leadPlate?.id,
-    printed: edition.composition.placements.map((p) => p.module),
-  }
+  return recentFromParts(edition.editionDate, edition.composition.archetype, edition.modules, edition.assets, edition.composition)
 }
