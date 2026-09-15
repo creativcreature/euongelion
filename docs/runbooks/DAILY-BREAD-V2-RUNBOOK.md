@@ -82,7 +82,7 @@ starts the paper again at No. 001.
 
 | Symptom | Do this |
 | --- | --- |
-| Today shows "still on the press" after 08:30 ET | Run `npm run daily-bread -- run`. It builds and publishes the live date. Check `errors` in the newest attempt. |
+| Today shows "is delayed", or Workers Logs show `last_known_good_served` or a `cron_publish` line at `level: critical` | Readers are getting the previous paper, under its own date, more than 35 minutes after 7am (plan §31). Run `npm run daily-bread -- run`. It builds and publishes the live date. Check `errors` in the newest attempt. ("Still on the press" inside the first 35 minutes is normal.) |
 | Health `degraded`: tomorrow not ready | Run `npm run daily-bread -- build --date=<tomorrow>`. |
 | A build is stuck `assembling` | The lease expires after 15 minutes, then the next run takes over. Nothing to delete. |
 | Every edition is `fallback` | The providers are failing. Check `provider_usage[].error` in the attempts: `unavailable` means a secret is missing; `HTTP 401` means a bad key; timeouts mean slow providers. The paper is still publishing. |

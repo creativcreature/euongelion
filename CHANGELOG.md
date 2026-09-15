@@ -249,6 +249,28 @@ corrected in order, earliest first.
       comic.
     - Both fixes wait on the Sep 15 rebuild, which is on hold with the other
       production steps.
+- **Deviation 11 (plan §31, last-known-good), corrected in code, not deployed.**
+  - **What was wrong.**
+    - `/daily-bread` showed the previous paper whenever today's wasn't published, with
+      the same "still on the press" notice at 7:01 or 4pm.
+    - Nothing on the reader side raised an alert.
+  - **The states.** `loadLiveEdition` now reports one of three:
+    - `current`;
+    - `on-press`, within 35 minutes of rollover, covering the cron's :01, :15 and
+      :30 attempts;
+    - `last-known-good`, past that window.
+  - **Past the window.**
+    - The notice says the paper "is delayed".
+    - Every render logs a critical `last_known_good_served` line to Workers Logs.
+    - A cron firing that still cannot publish logs `cron_publish` at `level: critical`
+      (inside the window it is `error`).
+  - **Dates.** Both notices name today's date and the date of the paper shown, so
+    yesterday's paper is never passed off as today's.
+  - **Current-edition pointer (§28 step 32).** Resolved: the query for the newest
+    published paper on or before today is the pointer, so there is no second copy to
+    drift.
+  - **Tests.** 241 pass: loader states and boundaries, both notices with a single
+    critical line only past the window, and cron log levels in EDT and EST.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

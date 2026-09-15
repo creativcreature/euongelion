@@ -3,14 +3,35 @@
  * providers. Failures THROW (the route renders a visible failure state).
  */
 import { getDailyBreadRepository, type DailyBreadRepository } from './repository'
-import { addDays, editorialDate, isValidDateSlug, systemClock, type EditorialClock } from './time'
+import {
+  addDays,
+  editorialDate,
+  isValidDateSlug,
+  PRESS_GRACE_MINUTES,
+  rolloverInstant,
+  systemClock,
+  type EditorialClock,
+} from './time'
 import type { ArchiveEntry, DailyEdition } from './types'
+
+/**
+ * Plan §31. `current`: today's paper. `on-press`: inside the grace window
+ * after rollover, the previous paper is shown while today's is published.
+ * `last-known-good`: past the grace window with no paper for today, which is a
+ * failure. The previous paper is shown under its own date, and the route raises
+ * a critical alert. The route resolves by query (the newest published paper on
+ * or before today), so there is no separate pointer to drift out of step.
+ */
+export type LiveEditionStatus = 'current' | 'on-press' | 'last-known-good'
 
 export interface LiveEditionView {
   edition: DailyEdition | null
   liveDate: string
+  status: LiveEditionStatus
   /** True when today's paper is not published yet and an older one is shown. */
   isFallbackToPrevious: boolean
+  /** Minutes since today's rollover (negative never happens: liveDate has rolled over). */
+  minutesAfterRollover: number
   neighbors: { previous: ArchiveEntry | null; next: ArchiveEntry | null }
 }
 
@@ -18,15 +39,21 @@ export async function loadLiveEdition(
   clock: EditorialClock = systemClock,
   repo: DailyBreadRepository = getDailyBreadRepository(),
 ): Promise<LiveEditionView> {
-  const liveDate = editorialDate(clock.now())
+  const now = clock.now()
+  const liveDate = editorialDate(now)
   const edition = await repo.getLatestPublished(liveDate)
   const neighbors = edition
     ? await repo.getNeighbors(edition.editionDate)
     : { previous: null, next: null }
+  const minutesAfterRollover = Math.floor((now.getTime() - rolloverInstant(liveDate).getTime()) / 60_000)
+  const isToday = edition?.editionDate === liveDate
+  const isFallbackToPrevious = Boolean(edition) && !isToday
   return {
     edition,
     liveDate,
-    isFallbackToPrevious: Boolean(edition && edition.editionDate !== liveDate),
+    status: isToday ? 'current' : minutesAfterRollover < PRESS_GRACE_MINUTES ? 'on-press' : 'last-known-good',
+    isFallbackToPrevious,
+    minutesAfterRollover,
     neighbors,
   }
 }

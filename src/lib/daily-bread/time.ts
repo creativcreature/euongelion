@@ -78,6 +78,14 @@ export function addDays(dateSlug: string, days: number): string {
   return new Date(t).toISOString().slice(0, 10)
 }
 
+/**
+ * Plan §31: how long after the 7am rollover today's paper may still be going to
+ * press before showing the previous paper counts as a failure. The Worker cron
+ * publishes at :01 and retries at :15 and :30, so 35 minutes covers three
+ * attempts.
+ */
+export const PRESS_GRACE_MINUTES = 35
+
 /** The instant (UTC) at which `dateSlug`'s edition goes live. */
 export function rolloverInstant(dateSlug: string): Date {
   if (!isValidDateSlug(dateSlug)) {

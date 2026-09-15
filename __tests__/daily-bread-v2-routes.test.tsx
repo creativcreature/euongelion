@@ -68,6 +68,54 @@ describe('reader loaders', () => {
     expect(tomorrow.edition?.editionDate).toBe('2026-09-15')
   })
 
+  it('plan §31: the previous paper is "on the press" inside the grace window, then last-known-good', async () => {
+    expect((await loadLiveEdition(fixedClock('2026-09-15T12:00:00Z'), repo)).status).toBe('current')
+    // 7:10am EDT on Sep 16, nothing published yet: still going to press.
+    expect(await loadLiveEdition(fixedClock('2026-09-16T11:10:00Z'), repo)).toMatchObject({ status: 'on-press', minutesAfterRollover: 10 })
+    // 8:00am: past the 35-minute grace window. A failure, not a default.
+    expect(await loadLiveEdition(fixedClock('2026-09-16T12:00:00Z'), repo)).toMatchObject({ status: 'last-known-good', minutesAfterRollover: 60 })
+    // Before 7am the live date is still Sep 15, and Sep 15's paper is current.
+    expect((await loadLiveEdition(fixedClock('2026-09-16T10:30:00Z'), repo)).status).toBe('current')
+  })
+
+  it('the live page names both dates over an older paper, and raises a critical alert only past the grace window', async () => {
+    vi.stubEnv('DAILY_BREAD_V2', 'on')
+    const render = async (status: string) => {
+      vi.resetModules()
+      vi.doMock('@/lib/daily-bread/read', async (orig) => ({
+        ...(await orig<typeof import('@/lib/daily-bread/read')>()),
+        loadLiveEdition: async () => ({
+          liveDate: '2026-09-15',
+          edition,
+          neighbors: { previous: null, next: null },
+          status,
+          isFallbackToPrevious: status !== 'current',
+          minutesAfterRollover: status === 'on-press' ? 10 : 90,
+        }),
+      }))
+      const errors = vi.spyOn(console, 'error').mockImplementation(() => {})
+      const { default: Page } = await import('@/app/daily-bread/page')
+      const html = renderToStaticMarkup(await Page())
+      const critical = errors.mock.calls.map((c) => String(c[0])).filter((l) => l.includes('last_known_good_served'))
+      errors.mockRestore()
+      vi.doUnmock('@/lib/daily-bread/read')
+      return { html, critical }
+    }
+    const onPress = await render('on-press')
+    expect(onPress.html).toContain('Today’s paper (Tuesday, September 15, 2026) is still on the press. This is the most recent edition, from Monday, September 14, 2026.')
+    expect(onPress.critical).toHaveLength(0)
+    const lkg = await render('last-known-good')
+    expect(lkg.html).toContain('Today’s paper (Tuesday, September 15, 2026) is delayed. This is the most recent edition, from Monday, September 14, 2026.')
+    expect(lkg.html).not.toContain('That’s today’s bread.')
+    expect(lkg.critical).toHaveLength(1)
+    expect(JSON.parse(lkg.critical[0].slice(lkg.critical[0].indexOf('{')))).toMatchObject({
+      level: 'critical',
+      liveDate: '2026-09-15',
+      servedDate: '2026-09-14',
+      minutesAfterRollover: 90,
+    })
+  })
+
   it('date loader rejects invalid slugs and unpublished dates', async () => {
     expect(await loadEditionForDate('2026-02-30', repo)).toBeNull()
     expect(await loadEditionForDate('../../etc', repo)).toBeNull()
@@ -281,7 +329,7 @@ describe('routes', () => {
     vi.resetModules()
     vi.doMock('@/lib/daily-bread/read', async (orig) => ({
       ...(await orig<typeof import('@/lib/daily-bread/read')>()),
-      loadLiveEdition: async () => ({ liveDate: '2026-09-14', edition, neighbors: { previous: null, next: null }, isFallbackToPrevious: false }),
+      loadLiveEdition: async () => ({ liveDate: '2026-09-14', edition, neighbors: { previous: null, next: null }, status: 'current', isFallbackToPrevious: false, minutesAfterRollover: 60 }),
       loadEditionForDate: async (date: string) => (date === '2026-09-14' ? { edition, neighbors: { previous: null, next: null } } : null),
     }))
     const live = await (await import('@/app/daily-bread/page')).generateMetadata()

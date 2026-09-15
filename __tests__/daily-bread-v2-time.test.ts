@@ -160,4 +160,25 @@ describe('the Worker cron publishes on the minute (plan §19)', () => {
     })
     expect(refused).toMatchObject({ status: 403, result: 'INTERNAL_SECRET_REQUIRED' })
   })
+
+  it('a firing that cannot publish is an error inside the press grace window and critical past it (plan §31)', async () => {
+    const levelAt = async (now: string, body: object, status = 200) => {
+      const lines: string[] = []
+      await publishDueEdition({
+        now: new Date(now),
+        appUrl: 'https://euangelion.app',
+        secret: SECRET,
+        log: (line) => lines.push(line),
+        fetch: async () => Response.json(body, { status }),
+      })
+      return JSON.parse(lines[0]).level
+    }
+    expect(await levelAt('2026-09-14T11:01:00Z', { result: 'published', issue: 2 })).toBe('info')
+    expect(await levelAt('2026-09-14T11:45:00Z', { result: 'already_published', issue: 2 })).toBe('info')
+    expect(await levelAt('2026-09-14T11:01:00Z', { result: 'not_ready' })).toBe('error')
+    expect(await levelAt('2026-09-14T11:15:00Z', { result: 'not_ready' })).toBe('error')
+    expect(await levelAt('2026-09-14T11:45:00Z', { result: 'not_ready' })).toBe('critical')
+    // EST: 7am is 12:00 UTC, so 12:45 is past the window and 11:45 is the day before's hour.
+    expect(await levelAt('2026-12-01T12:45:00Z', { error: 'Publish failed.', code: 'PUBLISH_FAILED' }, 500)).toBe('critical')
+  })
 })

@@ -13,7 +13,7 @@
  * Pure apart from the injected fetch: no Next, no Supabase import, so the
  * Worker entry can bundle it directly.
  */
-import { editorialDate } from './time'
+import { editorialDate, PRESS_GRACE_MINUTES, rolloverInstant } from './time'
 
 /**
  * The Worker's Daily Bread cron (UTC). 07:00 New York is 11:00 UTC in EDT and
@@ -40,7 +40,12 @@ export async function publishDueEdition(params: {
   const log = params.log ?? ((line: string) => console.log(line))
   const date = editorialDate(params.now)
   const record = (outcome: ScheduledPublishResult) => {
-    log(JSON.stringify({ scope: 'daily-bread', event: 'cron_publish', ts: params.now.toISOString(), ...outcome }))
+    // Plan §31: a firing past the press grace window that still could not
+    // publish means readers are being served the previous paper — critical.
+    const published = outcome.result === 'published' || outcome.result === 'already_published'
+    const late = params.now.getTime() - rolloverInstant(date).getTime() >= PRESS_GRACE_MINUTES * 60_000
+    const level = published ? 'info' : late ? 'critical' : 'error'
+    log(JSON.stringify({ scope: 'daily-bread', event: 'cron_publish', level, ts: params.now.toISOString(), ...outcome }))
     return outcome
   }
   if (!params.secret) return record({ date, status: 0, result: 'no-internal-secret' })

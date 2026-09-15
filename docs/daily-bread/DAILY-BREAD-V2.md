@@ -137,10 +137,23 @@ page and the archive (plan §28 step 31). It does this on `published` and on
   frozen scene and seed by versioned code. Freezing its drawing waits for the founder's
   verdict on the scene direction (`daily-bread-scenes-a-vs-b`); freezing it now would
   lock in the scenes the founder called "not great".
-- **Step 32, the current-edition pointer.** Today `/daily-bread` is resolved by a query
-  (newest published on or before today). Whether that query or a stored pointer is
-  right belongs with the last-known-good rules of §31 (deviation 11), and is decided
-  there.
+- **Step 32, the current-edition pointer.** `/daily-bread` resolves the current paper
+  by query: the newest published edition on or before today's editorial date. The
+  published row is the pointer, so a separate stored pointer could only drift from it.
+
+**Last-known-good (plan §31)**, in `read.ts` `loadLiveEdition`:
+- `current`: today's paper is published.
+- `on-press`: less than `PRESS_GRACE_MINUTES` (35) after rollover, with no paper for
+  today. The previous paper shows under "Today's paper (date) is still on the
+  press. This is the most recent edition, from (date)." The Worker cron publishes at
+  :01 and retries at :15 and :30.
+- `last-known-good`: past the grace window. The notice says "is delayed". Every
+  render logs a `last_known_good_served` line at `level: critical` to Workers Logs.
+  A cron firing past the window that cannot publish logs `cron_publish` at
+  `level: critical`. Health reports `down` 90 minutes after rollover, and the
+  scheduler workflow files an issue.
+- An older paper always carries its own date and never the "That's today's bread"
+  ending.
 
 `runDailyBread`, the scheduler step:
 

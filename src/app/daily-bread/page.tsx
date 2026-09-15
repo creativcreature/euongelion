@@ -20,7 +20,7 @@ import { pickTodaySlug, findSeriesForSlug } from '@/lib/today-devotional'
 import { DEVOTIONAL_TEASERS } from '@/data/devotional-teasers'
 import { effectiveEditionDate } from '@/lib/edition/deadline'
 import { dailyBreadV2Enabled } from '@/lib/daily-bread/flags'
-import { loadLiveEdition } from '@/lib/daily-bread/read'
+import { loadLiveEdition, type LiveEditionStatus } from '@/lib/daily-bread/read'
 import { errorMessage } from '@/lib/daily-bread/redact'
 import { formatEditorialDate } from '@/lib/daily-bread/time'
 
@@ -88,6 +88,16 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
+/** The notice above an older paper. It always names both dates, so yesterday's paper is never passed off as today's. */
+function liveNotice(status: LiveEditionStatus, liveDate: string, servedDate: string): string | undefined {
+  if (status === 'current') return undefined
+  const today = formatEditorialDate(liveDate)
+  const served = formatEditorialDate(servedDate)
+  return status === 'on-press'
+    ? `Today’s paper (${today}) is still on the press. This is the most recent edition, from ${served}.`
+    : `Today’s paper (${today}) is delayed. This is the most recent edition, from ${served}.`
+}
+
 export default async function DailyBreadPage() {
   if (!dailyBreadV2Enabled()) {
     return <EditionPage date={new Date()} />
@@ -99,18 +109,29 @@ export default async function DailyBreadPage() {
     console.error('[daily-bread] live read failed', errorMessage(error))
     return <DailyBreadUnavailable reason="read-failed" />
   }
+  if (view.status === 'last-known-good') {
+    // Plan §31: serving the previous paper past the grace window is a failure,
+    // never a quiet default. One structured critical line per render reaches
+    // Workers Logs (observability is on in wrangler.jsonc).
+    console.error(
+      `[daily-bread] ${JSON.stringify({
+        scope: 'daily-bread',
+        level: 'critical',
+        event: 'last_known_good_served',
+        liveDate: view.liveDate,
+        servedDate: view.edition?.editionDate ?? null,
+        minutesAfterRollover: view.minutesAfterRollover,
+      })}`,
+    )
+  }
   if (!view.edition) return <DailyBreadUnavailable reason="none-published" />
   return (
     <DailyBreadEdition
       edition={view.edition}
       neighbors={view.neighbors}
       mode="live"
-      current={!view.isFallbackToPrevious}
-      notice={
-        view.isFallbackToPrevious
-          ? `Today’s paper (${formatEditorialDate(view.liveDate)}) is still on the press. This is the most recent edition.`
-          : undefined
-      }
+      current={view.status === 'current'}
+      notice={liveNotice(view.status, view.liveDate, view.edition.editionDate)}
     />
   )
 }
