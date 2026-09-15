@@ -370,6 +370,26 @@ corrected in order, earliest first.
       repeating.
   - **Not verified by eye.** The admin preview's new rows were not screenshotted: the
     page needs a founder login.
+- **Deviation 17 (plan §44, the visual-language audit), written.**
+  `docs/daily-bread/VISUAL-ENGINE-CONSTRAINTS.md` was built from pixel measurements of
+  the four style anchors, 16 more series heroes and the engine's current posters.
+  - **The anchors.**
+    - Cobalt ink `#103989`–`#285898` on warm cream `#e3d5bb`–`#eedca6`.
+    - A fine screen of about 256 dots across at 1024px.
+    - A gold light source in 16 of 20 heroes; crimson only as a hairline.
+    - 3–12% grain, and 64–100% calm sky in the top third.
+    - One small figure facing the light.
+  - **Thirteen measurable constraints** follow from them.
+  - **The engine today fails most of them.**
+    - Violet-navy `#242e8f` on cool `#f4ede3`.
+    - A screen 3.75× coarser.
+    - Scattered crimson dots.
+    - No horizon, subject or light.
+    - A visible ASCII glyph field.
+  - **Flagged for the founder.**
+    - The scenes verdict is still pending.
+    - The older style note names crimson as the spot colour; the approved anchors use
+      gold.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

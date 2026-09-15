@@ -503,6 +503,11 @@ archetype's definition, and the admin preview shows the manifest.
 
 ## 8. Procedural visual engine
 
+**Read first: `docs/daily-bread/VISUAL-ENGINE-CONSTRAINTS.md` (plan §44).** It
+measures the founder's style anchors and sets 13 constraints (palette, screen, grain,
+composition, negative space, ASCII). The engine below fails most of them as of
+2026-09-14; the rebuild waits on the scenes verdict.
+
 `src/lib/daily-bread/visual/` and `src/components/daily-bread/visual/ProceduralScene.tsx`:
 
 - **Scenes:** Living Water, Grain and Wilderness Stars. Each is a pure seeded scalar
