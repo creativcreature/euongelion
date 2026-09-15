@@ -576,6 +576,22 @@ corrected in order, earliest first.
   - **Architecture doc.** History is 90 days (was 14). The archive is monthly (was a
     cursor) and the sitemap is listed. A new §13 points to environment, recovery,
     revisions, backfill and the QA records, so each plan §88 topic has a home.
+- **Deviation 30 (plan §90, CI), PARTIAL: one repository secret is needed.**
+  - **What was wrong.** CI has not passed since 2026-07-12. Since 2026-08-19, every run
+    stopped at Build: `check-public-config.mjs` (SA-102) refuses to build without the
+    three `NEXT_PUBLIC_*` values, and a runner has no `.env.local`. The bundle audit,
+    the tests and the Daily Bread end-to-end step were skipped on every push.
+  - **Changed.** Test and the end-to-end step now run before Build, which needs
+    neither. Build reads `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+    from repository secrets, and uses the public `https://euangelion.app` URL.
+  - **Needs the founder.** The repository has no `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+    secret. The permission classifier refused to store it. Until it is set, Build
+    still fails.
+  - **Still red after that, not caused by V2.** In a clean environment 2 tests fail:
+    `audio-chapter-tiers` (the corpus now has 6,267 chapters, not 6,132) and
+    `narration-manifest-current` (14 All These Things tracks lack a content-versioned
+    key). Both came with SA-123/SA-124 content. The audit step fails on the critical
+    Next.js 16.2.10 advisory until the 16.2.11 upgrade is decided.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

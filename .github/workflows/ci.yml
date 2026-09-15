@@ -47,12 +47,8 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Build
-        run: npm run build
-
-      - name: Bundle secret audit
-        run: npm run verify:bundle-secrets
-
+      # Tests and the end-to-end run need no build and no secrets, so they run
+      # before Build: a build configuration failure must not hide them.
       - name: Test
         run: npm test
 
@@ -61,6 +57,19 @@ jobs:
       # No network, no secrets.
       - name: Daily Bread V2 end-to-end
         run: npm run daily-bread -- e2e
+
+      # NEXT_PUBLIC_* is inlined at build time and check-public-config.mjs
+      # refuses to build without it (SA-102). A runner has no .env.local, so
+      # the values come from repository secrets. The app URL is public.
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_APP_URL: https://euangelion.app
+
+      - name: Bundle secret audit
+        run: npm run verify:bundle-secrets
 
       - name: Dependency vulnerability audit
         run: npm audit --audit-level=high
