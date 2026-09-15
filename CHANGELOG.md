@@ -563,6 +563,19 @@ corrected in order, earliest first.
   - **Still weak, recorded.**
     - Series art repeats on non-consecutive days (partly a fixture artifact).
     - The Joy front opens on the failing ASCII scene (waits on the scenes verdict).
+- **Deviation 29 (plan §88–89, documentation and runbook), corrected.**
+  - **Environment reference.** The backup default now reads `gpt-5-mini` (was
+    `gpt-5-nano`) and the Gemini default `gemini-flash-lite-latest` (was
+    `gemini-2.0-flash-lite`). Added `DAILY_BREAD_CLAUDE_CLI_AUTH`,
+    `NEXT_PUBLIC_APP_URL` (Worker cron origin), `ADMIN_EMAIL_ALLOWLIST` and the draft
+    task timeouts, checked against every variable the code reads.
+  - **Runbook.** It now covers each plan §89 scenario: Claude fails, all AI fails, no
+    issue publishes (safe reruns, reopening a ready date), duplicate crons, comic
+    failure, WebGL failure, corrections. It also covers backfilled-edition correction
+    and the new local commands (health, draft dry runs, reservoir, bundle scan).
+  - **Architecture doc.** History is 90 days (was 14). The archive is monthly (was a
+    cursor) and the sitemap is listed. A new §13 points to environment, recovery,
+    revisions, backfill and the QA records, so each plan §88 topic has a home.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

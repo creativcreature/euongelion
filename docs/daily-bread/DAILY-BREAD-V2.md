@@ -91,8 +91,9 @@ runs fall inside it in EDT and EST).
 
 1. **Lease.** `acquireAssembly` gives one owner per invocation. A duplicate job gets
    `skipped`.
-2. **History.** The last 14 days of archetypes, scenes, comic ids and lead plates,
-   used for anti-repeat.
+2. **History.** 90 days of what printed: archetypes, heroes, scenes and renderers,
+   comic ids, lead plates, Gallery works, voices, printed modules, titles and
+   references. Used for anti-repeat (§7), rotation and rabbit-hole threads.
 3. **Modules** (`modules/build.ts`). Every module is built in isolation, and a failure
    is recorded without stopping the build. Sources, in order: `edition_items` rows
    live at the rollover (the SA-114 review queue), then the SA-090/092 generators and
@@ -637,9 +638,10 @@ Option B would replace the procedural engine with series art, so both wait.
 
 | Route | Flag off | Flag on | Cache |
 | --- | --- | --- | --- |
-| `/daily-bread` | SA-090 paper | newest published ≤ today; notice if today is still on the press | ISR 300 s |
+| `/daily-bread` | SA-090 paper | today's paper; within 35 min of 7am the previous one "still on the press", after that "delayed" plus a critical log (§4) | ISR 300 s |
 | `/daily-bread/YYYY-MM-DD` | 404 | frozen edition, prev/next | ISR 3600 s |
-| `/daily-bread/archive` | SA-114 date list | persisted index, `?before=` cursor | ISR 300 s (dynamic with cursor) |
+| `/daily-bread/archive` | SA-114 date list | one month per page (`?month=YYYY-MM`), month links; old `?before=` links land on their month | ISR 300 s (dynamic with a month) |
+| `/sitemap.xml` | static pages | adds every published issue and the archive | dynamic |
 | `/daily-bread/archive/[date]` | SA-114 re-render | redirect to `/daily-bread/[date]` | dynamic |
 | `/daily-bread/[date]/opengraph-image` | house card | serial + title + verse card | 3600 s |
 
@@ -730,3 +732,23 @@ It has Scripture, its reading, a prayer or practice, a visual, a dated URL and a
 archive entry.
 
 CI also runs `npm run daily-bread -- e2e`.
+
+## 13. Operations, revisions, backfill, environment
+
+- **Environment variables:** `docs/technical/ENVIRONMENT-VARIABLES.md`, "The Daily Bread
+  V2". It lists names only, never values.
+- **Manual recovery, reruns, duplicate crons, Claude or total AI failure, comic failure,
+  WebGL failure, corrections:** `docs/runbooks/DAILY-BREAD-V2-RUNBOOK.md`, Incidents.
+- **Revisions:** a published edition is never rebuilt. A correction is
+  `daily_bread_create_revision(date, reason, patch)`, which appends an immutable
+  revision, keeps the number and date, and makes the page say "Corrected edition".
+  The maintenance commands revise only what a reader would see differently:
+  - `repair-comics`: native editions;
+  - `repair-lead-plates`;
+  - `reimport-backfill`: backfilled editions.
+- **Backfill (plan §81):** `npm run daily-bread -- backfill --from --to [--dry-run]`
+  imports past papers from their dated sources as unnumbered, `backfilled` archive
+  entries (§4 import mode). It never publishes a native ready row.
+- **QA records:** `QA-2026-09-14-MOBILE-ACCESSIBILITY.md` (plan §75, §77, §87),
+  `QA-2026-09-14-SEVEN-DAY.md` (§86), `VISUAL-ENGINE-CONSTRAINTS.md` (§44),
+  `DEPENDENCIES-AND-LICENCES.md` (§46).

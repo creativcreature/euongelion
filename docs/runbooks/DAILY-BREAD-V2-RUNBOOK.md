@@ -79,8 +79,8 @@ starts the paper again at No. 001.
 - **Attempts:** see the most recent runs with
   `select target_date, lifecycle_stage, publication_result, quality, primary_provider, fallback_providers_used, errors from daily_bread_publication_attempts order by started_at desc limit 20;`
 - **Scheduler:** there are two parts.
-  - **Builds:** open the Actions tab and choose `daily-bread-v2`. A failed run or a
-    `down` health opens an issue.
+  - **Builds:** open the Actions tab and choose `daily-bread-v2`. A failed run, a
+    `down` health or a `critical` alert opens an issue.
   - **The 7am publish:** Cloudflare dashboard → Workers → `euangelion` → Logs; filter
     for `cron_publish`. Expect `published` at 07:01 ET, then `already_published`.
     `no-internal-secret` means the Worker secret `INTERNAL_ROUTE_SECRET` is missing.
@@ -99,7 +99,13 @@ starts the paper again at No. 001.
 | A published edition has an error | Write a revision with `select * from daily_bread_create_revision('<date>', '<reason>', '{"deck":"..."}'::jsonb);`. The number and date are kept, and the page shows "Corrected edition". |
 | A published edition must come down | Withdraw it with `select daily_bread_supersede('<date>', '<reason shown to readers>');`. Its number stays retired. |
 | The founder rejected a reviewed item after the build | Nothing to do. Publish sees the rejection, reopens the edition and the next run rebuilds it. |
-| The comic is missing or wrong | The funnies are Echo & Dust only. `generation.comicLevel`: `approved-art` is the day's strip; `archive-reprint` means no strip was drawn for the date (the strip machine is the founder's `STRIP_MACHINE` switch); `omitted` means no published strip ran before that date or none was reachable. The attempt's `warnings` name each skip. To fix published editions after a strip row is corrected: `npm run daily-bread -- repair-comics --from=<date> --to=<date> --dry-run`, check the list, then run without `--dry-run`. |
+| The comic is missing or wrong | The funnies are Echo & Dust only, one approved strip per week. `generation.comicLevel`: `approved-art` is the week's approved strip; `archive-reprint` means the week has none approved (approve strips at `/admin/comics`); `omitted` means nothing approved ran before, no image was reachable, or the strip bank could not be read (`moduleFailures` names `comic`). An omitted comic never blocks the paper: its band closes. To fix published native editions after a strip row is corrected: `npm run daily-bread -- repair-comics --from=<date> --to=<date> --dry-run`, check the list, then run without `--dry-run`. Backfilled editions: `reimport-backfill`. |
+| Claude fails (plan §89) | Expected: the chain moves on by itself. Claude API, then Claude Code, then OpenAI (`gpt-5-mini`), then Gemini, then the deterministic frame. A quota, auth or billing message is never retried. The edition is `fallback`. Inspect: health `providers.claude` gives the reason, `warnings` says "Claude failed and the backup wrote the frame", and Actions logs show `fallback_generation`. Nothing to do unless it persists: then check the Claude token or quota. |
+| Every AI provider fails (plan §89) | Expected: the paper still publishes. The deterministic frame has the devotional's teaser as its standfirst, the real neighbouring verses as rabbit holes, and a keyword-chosen scene. Every other module comes from committed banks, reviewed rows and the BSB, so Scripture, the reading, the prayer and the visual are all present (the end-to-end test asserts it). The edition is `fallback`, and `generation.fallbackProvidersUsed` ends in `deterministic`. |
+| No issue publishes (plan §89) | Rerunning is safe: every step checks the stored lifecycle first. `npm run daily-bread -- run` publishes a ready live date, or builds and publishes a missing one. For a specific date: `npm run daily-bread -- build --date=<date>` then `npm run daily-bread -- publish --date=<date>` (publish refuses before 7am). A ready date is never rebuilt; to rebuild one (for example after a source correction) reopen it with `select daily_bread_reopen_ready('<date>');` first. A published date cannot be rebuilt, only revised. |
+| A cron fires twice, or two jobs overlap (plan §89) | Nothing to do. `daily_bread_acquire_assembly` gives one lease per date, so the second build gets `skipped`. `daily_bread_publish` takes an advisory lock and returns `already_published` with the same number, so an issue is never numbered twice. Health raises a critical alert only if 3 or more jobs keep colliding on one date. |
+| WebGL fails on a reader's device (plan §89) | Expected: the static halftone poster stays. It is drawn first and the canvas only fades in over it. The same happens with reduced motion (OS or in-app), no WebGL or 2D canvas, a lost GPU context, or a `still` paper. An unknown scene draws a CSS texture; forced colours and print show the scene's label. No text lives in the canvas, so nothing is lost. There are no server logs: the page is fine. |
+| Old backfilled editions show a written standfirst, rabbit holes or a scene | Built by the first backfill. `npm run daily-bread -- reimport-backfill --from=<date> --to=<date> --dry-run`, then without. Each is corrected by revision to what the paper printed that day; native editions are skipped. |
 
 ## Local development
 
@@ -109,6 +115,11 @@ npm run daily-bread -- build --date=2026-09-14 --dry-run     # writes .daily-bre
 npm run daily-bread -- fixtures --from=2026-09-13 --days=7   # 7 published editions for the fixture source
 DAILY_BREAD_V2=on DAILY_BREAD_V2_SOURCE=fixture npm run dev  # then open /daily-bread
 npx vitest run __tests__/daily-bread-v2-*                    # the V2 suites
+npm run daily-bread -- health                                # health JSON; exit 1 on down or critical
+npm run daily-bread -- sunday-lead --from=<sunday> --days=1 --dry-run   # the SA-100 draft, nothing written
+npm run daily-bread -- guides --from=<date> --days=1 --force --dry-run  # the SA-114 drafts, nothing written
+npm run daily-bread -- reservoir --usage                     # rebuild docs/daily-bread/asset-reservoir.json
+npm run daily-bread -- bundle-scan                           # after an OpenNext build: no credential in the bundle
 ```
 
 ## Good News

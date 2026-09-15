@@ -359,16 +359,19 @@ source. None of these is `NEXT_PUBLIC_*`, so none reaches a browser bundle.
 | `DAILY_BREAD_V2_SOURCE` | Worker var | no (default `supabase`) | `fixture` only for local preview/QA; unknown values throw |
 | `DAILY_BREAD_V2_SCHEDULER` | GitHub repo variable | no (default off) | `enabled` lets `.github/workflows/daily-bread-v2.yml` run |
 | `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SUPABASE_URL` | Worker + GitHub secrets | yes | edition reads (Worker) and pipeline writes (CI) |
-| `INTERNAL_ROUTE_SECRET` | Worker + callers | for the endpoints | `X-Internal-Secret` for `/api/admin/daily-bread/{publish,health}` |
+| `INTERNAL_ROUTE_SECRET` | Worker + callers | for the endpoints | `X-Internal-Secret` for `/api/admin/daily-bread/{publish,health}`; the Worker's 7am Cron Trigger sends it to the publish route |
+| `NEXT_PUBLIC_APP_URL` | Worker var | no (default `https://euangelion.app`) | origin the Worker cron posts the publish request to (`worker-entry.mjs`) |
+| `ADMIN_EMAIL_ALLOWLIST` | Worker secret | for admin pages | who may open `/admin/preview/daily-bread-v2` and `/admin/comics`; empty = nobody (fail closed) |
 | `ANTHROPIC_API_KEY` | GitHub secret | optional | generator chain, Claude API transport |
-| `CLAUDE_CODE_OAUTH_TOKEN` | GitHub secret | optional | generator chain, Claude Code CLI transport |
+| `CLAUDE_CODE_OAUTH_TOKEN` | GitHub secret | optional | generator chain, Claude Code CLI transport (subscription); also the Sunday lead and guides drafts |
+| `DAILY_BREAD_CLAUDE_CLI_AUTH` | local shell | optional | `login` uses a locally logged-in `claude` CLI instead of a token (and removes `ANTHROPIC_API_KEY` from the CLI child) |
 | `OPENAI_API_KEY` | GitHub secret | optional | generator chain, secondary provider (Chat Completions) |
-| `DAILY_BREAD_OPENAI_MODEL` | CI env | optional | OpenAI backup model override (default `gpt-5-nano`, chosen by a measured bake-off) |
+| `DAILY_BREAD_OPENAI_MODEL` | CI env | optional | OpenAI backup model override (default `gpt-5-mini`; `gpt-5-nano` failed the tightened deck rules in the 2026-09-14 bake-off, see DAILY-BREAD-V2.md §5) |
 | `GEMINI_API_KEY` (or `GOOGLE_API_KEY`) | GitHub secret | optional | generator chain, tertiary provider (default model `gemini-flash-lite-latest`) |
 | `DAILY_BREAD_CLAUDE_MODEL` | CI env | optional | API model override (default `claude-sonnet-5`) |
 | `DAILY_BREAD_CLAUDE_CLI_MODEL`, `DAILY_BREAD_CLAUDE_BIN` | CI env | optional | CLI model / binary override |
-| `DAILY_BREAD_GEMINI_MODEL` | CI env | optional | Gemini model override (default `gemini-2.0-flash-lite`) |
-| `DAILY_BREAD_PROVIDER_TIMEOUT_MS` | CI env | optional | per-attempt provider timeout (default 90000) |
+| `DAILY_BREAD_GEMINI_MODEL` | CI env | optional | Gemini model override (default `gemini-flash-lite-latest`; pinned lite models were withdrawn) |
+| `DAILY_BREAD_PROVIDER_TIMEOUT_MS` | CI env | optional | per-attempt provider timeout for the frame (default 90000; the Sunday lead allows 15 minutes and the guides 7) |
 
 With no model credential at all the pipeline still publishes (deterministic floor),
 and the edition is marked as a fallback edition.
