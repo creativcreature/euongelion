@@ -171,8 +171,10 @@ Every call writes a `PublicationAttempt`.
 
 **Quality:**
 - `minimum`: no lead or reading, or at least half the standing and play modules failed.
-- `fallback`: the frame fell to deterministic under the full policy, the Scripture
-  came from the weekly verse, the comic was reprinted or omitted, or any module failed.
+- `fallback`: under the full policy, Claude did not write the frame (the backup
+  provider or the deterministic floor did: plan §30, "meaningful alternate providers").
+  Also when the Scripture came from the weekly verse, the comic was reprinted or
+  omitted, or any module failed.
 - `normal`: otherwise.
 
 ## 5. Generator chain

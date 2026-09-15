@@ -47,16 +47,19 @@ describe('quality is orthogonal to lifecycle', () => {
   it('decides normal / fallback / minimum from what happened', () => {
     const base = {
       policy: 'full' as const,
-      frameDeterministic: false,
-      comicLevel: 'generated-script' as const,
+      frameFallbackLevel: 0 as const,
+      comicLevel: 'approved-art' as const,
       scriptureSource: 'devotional' as const,
       hasLead: true,
       hasReading: true,
       failedModules: [] as string[],
     }
     expect(decideQuality(base)).toBe('normal')
-    expect(decideQuality({ ...base, frameDeterministic: true })).toBe('fallback')
-    expect(decideQuality({ ...base, policy: 'deterministic-only', frameDeterministic: true, comicLevel: 'deterministic-script' })).toBe('normal')
+    // Plan §30: the backup provider writing the frame is a meaningful alternate provider.
+    expect(decideQuality({ ...base, frameFallbackLevel: 1 })).toBe('fallback')
+    expect(decideQuality({ ...base, frameFallbackLevel: 2 })).toBe('fallback')
+    expect(decideQuality({ ...base, policy: 'deterministic-only', frameFallbackLevel: 2 })).toBe('normal')
+    expect(decideQuality({ ...base, comicLevel: 'archive-reprint' })).toBe('fallback')
     expect(decideQuality({ ...base, comicLevel: 'omitted' })).toBe('fallback')
     expect(decideQuality({ ...base, failedModules: ['crossword'] })).toBe('fallback')
     expect(decideQuality({ ...base, hasReading: false })).toBe('minimum')

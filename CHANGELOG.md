@@ -233,6 +233,22 @@ corrected in order, earliest first.
   - **Tests.** 238 pass. New tests cover the minimum rules (including a prayer built but
     never placed), the three refreshed paths (and none for "not ready"), and a single
     metrics event with its lateness.
+- **Deviation 10 (plan §30, quality assignment), corrected in code.**
+  - **What was wrong.** `quality` became `fallback` only when the frame fell to the
+    deterministic floor. An edition whose frame the backup provider wrote was labelled
+    `normal`, but the plan says `fallback` "when meaningful alternate providers/assets
+    were used".
+  - **The fix.** `decideQuality` now takes the frame's fallback level. Under the full
+    policy, anything but Claude is `fallback`. A deliberate deterministic-only build
+    (backfill) is unchanged.
+  - **Production, read only.**
+    - No. 001 (Sep 13) and No. 002 (Sep 14): Claude Code wrote both frames, so
+      `normal` is right on this rule.
+    - Sep 15, ready: OpenAI wrote the frame after both Claude transports failed, so it
+      is labelled `normal` and should be `fallback`. It still carries the silhouette
+      comic.
+    - Both fixes wait on the Sep 15 rebuild, which is on hold with the other
+      production steps.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

@@ -33,6 +33,7 @@ import {
   type EditionDocument,
   type EditionModule,
   type EditionQuality,
+  type FallbackLevel,
   type ProviderId,
   type ProviderUsage,
   type PublicationAttempt,
@@ -79,14 +80,17 @@ const finish = finishAttempt
 /**
  * Quality is decided by what actually happened relative to the policy:
  *  minimum  — no reading/lead, or at least half of the standing/play modules failed
- *  fallback — the frame fell to deterministic under a 'full' policy, the
- *             primary Scripture came from the weekly verse, the comic fell to a
+ *  fallback — under a 'full' policy the frame was NOT written by Claude (the
+ *             secondary provider or the deterministic floor: plan §30, "when
+ *             meaningful alternate providers/assets were used"), the primary
+ *             Scripture came from the weekly verse, the comic fell to a
  *             reprint/omission, or any module failed
  *  normal   — otherwise
  */
 export function decideQuality(input: {
   policy: GenerationPolicy
-  frameDeterministic: boolean
+  /** Who wrote the frame: 0 Claude, 1 secondary remote, 2 deterministic. */
+  frameFallbackLevel: FallbackLevel
   comicLevel: ComicSourceLevel
   scriptureSource: 'lead' | 'devotional' | 'weekly-verse'
   hasLead: boolean
@@ -98,7 +102,7 @@ export function decideQuality(input: {
     return 'minimum'
   }
   if (
-    (input.policy === 'full' && input.frameDeterministic) ||
+    (input.policy === 'full' && input.frameFallbackLevel > 0) ||
     input.scriptureSource === 'weekly-verse' ||
     input.comicLevel === 'archive-reprint' ||
     input.comicLevel === 'omitted' ||
@@ -224,7 +228,7 @@ export async function createDailyBreadEdition(
     const fallbackUsed = [...new Set(frame.fallbackProvidersUsed)]
     const quality = decideQuality({
       policy,
-      frameDeterministic: frame.deterministic,
+      frameFallbackLevel: fallbackLevel(frame.provider),
       comicLevel: comic.level,
       scriptureSource: base.scriptureSource,
       hasLead: Boolean(base.lead),
