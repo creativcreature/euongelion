@@ -205,7 +205,8 @@ function place(
 export function composeEdition(
   ctx: CompositionContext,
   moduleTypes: EditionModuleType[],
-  options: { archetype?: ArchetypeId } = {},
+  /** rotate: false prints every module present (a backfilled import of a past paper). */
+  options: { archetype?: ArchetypeId; rotate?: boolean } = {},
 ): CompositionManifest {
   const present = new Set(moduleTypes)
   const chosen = chooseArchetype(ctx, present)
@@ -218,7 +219,7 @@ export function composeEdition(
   const def = ARCHETYPES[archetype]
   // Plan §40: anchors always; departments and interactives rotate within the
   // archetype's budget, the longest-rested first.
-  const rotation = selectModules(def, present, ctx)
+  const rotation = options.rotate === false ? { printed: [...present], rested: [] } : selectModules(def, present, ctx)
   const printing = new Set(rotation.printed)
   const placed = new Set<EditionModuleType>()
   const front = place(def.front, 'front', printing, placed, 0)

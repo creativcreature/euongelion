@@ -374,6 +374,100 @@ describe('backfill', () => {
   }, 120_000)
 })
 
+describe('backfill imports, never invents, never numbers (plan §81)', () => {
+  it('a backfilled paper is the old paper: no written frame, rabbit holes, scene, reprint or rotation; no provider is called', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const calls: string[] = []
+    const tattletale: TextProvider = {
+      id: 'claude-api',
+      model: 'm',
+      available: () => true,
+      async generate() {
+        calls.push('called')
+        return { text: '{}', model: 'm' }
+      },
+    }
+    const sources = offlineSources()
+    // An approved strip from BEFORE the date: a native paper would reprint it.
+    sources.publishedStrips = async () => [
+      { id: 'old-strip', publishDate: '2026-08-20', panelId: 'echo-dust-001', image: '/images/edition/strip/echo-dust-001b.jpg', width: 1745, height: 850, alt: 'Echo & Dust', caption: 'Echo & Dust — No. 1' },
+    ]
+    sources.assetAvailable = async () => true
+    const result = await runBackfill({
+      from: '2026-09-10',
+      to: '2026-09-10',
+      liveDate: '2026-09-13',
+      deps: deps(repo, '2026-09-13T20:00:00Z', { sources, providers: [tattletale], policy: 'full' }),
+    })
+    expect(result.published).toEqual(['2026-09-10'])
+    expect(calls).toEqual([])
+    const e = (await repo.getEdition('2026-09-10'))!
+    expect(e).toMatchObject({ archiveOrigin: 'backfilled', issue: null, deck: '' })
+    const types = e.modules.map((m) => m.type)
+    expect(types).not.toContain('rabbitHoles')
+    expect(types).not.toContain('scene')
+    expect(types).not.toContain('comic')
+    expect(e.composition.rotation?.rested).toEqual([])
+    expect(e.composition.placements.map((p) => p.module).sort()).toEqual([...types].sort())
+    expect(e.generation.provider).toBeUndefined()
+  }, 120_000)
+
+  it('never publishes a native ready paper for a past date (that would spend an issue number)', async () => {
+    const repo = new MemoryDailyBreadRepository()
+    const d = deps(repo, '2026-09-11T23:00:00Z')
+    expect((await createDailyBreadEdition('2026-09-12', d)).result).toBe('ready') // native, not yet published
+    const result = await runBackfill({ from: '2026-09-12', to: '2026-09-12', liveDate: '2026-09-14', deps: deps(repo, '2026-09-14T20:00:00Z') })
+    expect(result.published).toEqual([])
+    expect(result.skipped[0]).toMatchObject({ date: '2026-09-12', reason: expect.stringContaining('never publishes a numbered paper') })
+    expect(await repo.getLifecycle('2026-09-12')).toBe('ready')
+    // The next native publication is still No. 1.
+    expect((await publishDailyBreadEdition('2026-09-12', deps(repo, '2026-09-12T11:05:00Z'))).issue).toBe(1)
+  }, 120_000)
+
+  it('reimport-backfill revises an old-style backfilled edition to the import, never a native one, and a dry run writes nothing', async () => {
+    const { reimportBackfilled, REIMPORT_REVISION_REASON } = await import('@/lib/daily-bread/maintenance')
+    const repo = new MemoryDailyBreadRepository()
+    // The first backfill built past dates like native papers (a written deck, rabbit holes, a scene).
+    const native = deps(repo, '2026-09-09T23:00:00Z')
+    expect((await createDailyBreadEdition('2026-09-10', native, { archiveOrigin: 'native' })).result).toBe('ready')
+    const oldStyle = (await repo.getEdition('2026-09-10', { includeUnpublished: true }))!
+    repo.seedPublished({
+      ...oldStyle,
+      id: undefined,
+      editionDate: '2026-09-09',
+      slug: '2026-09-09',
+      lifecycle: 'published',
+      archiveOrigin: 'backfilled',
+      issue: null,
+      volume: null,
+      activeRevision: 1,
+      publishedAt: '2026-09-13T20:00:00Z',
+      deck: 'A written standfirst.',
+    })
+    await publishDailyBreadEdition('2026-09-10', deps(repo, '2026-09-10T11:05:00Z'))
+    const buildImport = async (date: string) => {
+      const mem = new MemoryDailyBreadRepository()
+      const out = await createDailyBreadEdition(date, deps(mem, `${date}T11:00:00Z`), { archiveOrigin: 'backfilled' })
+      return out.document!
+    }
+    const dry = await reimportBackfilled({ repo, buildImport, from: '2026-09-09', to: '2026-09-10', dryRun: true })
+    expect(dry.revised.map((r) => r.date)).toEqual(['2026-09-09'])
+    expect(dry.revised[0]).toMatchObject({ deck: 'removed' })
+    expect(dry.revised[0].removed).toEqual(expect.arrayContaining(['scene', 'rabbitHoles']))
+    expect(dry.skipped).toEqual([{ date: '2026-09-10', reason: 'native edition' }])
+    expect(await repo.getRevisions('2026-09-09')).toHaveLength(0)
+    const real = await reimportBackfilled({ repo, buildImport, from: '2026-09-09', to: '2026-09-10', dryRun: false })
+    expect(real.revised.map((r) => r.date)).toEqual(['2026-09-09'])
+    const revisions = await repo.getRevisions('2026-09-09')
+    expect(revisions.at(-1)?.reason).toBe(REIMPORT_REVISION_REASON)
+    const fixed = (await repo.getEdition('2026-09-09'))!
+    expect(fixed).toMatchObject({ deck: '', issue: null, archiveOrigin: 'backfilled' })
+    expect(fixed.modules.map((m) => m.type)).not.toContain('rabbitHoles')
+    // Running it again finds nothing left to correct.
+    expect((await reimportBackfilled({ repo, buildImport, from: '2026-09-09', to: '2026-09-09', dryRun: false })).unchanged).toEqual(['2026-09-09'])
+  }, 180_000)
+})
+
 describe('health', () => {
   it('is down when today is missing long after rollover, ok once published', async () => {
     const repo = new MemoryDailyBreadRepository()

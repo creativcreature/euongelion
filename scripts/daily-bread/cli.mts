@@ -12,6 +12,7 @@
  *   npm run daily-bread -- guides      --days=N [--from=YYYY-MM-DD] [--force] [--dry-run]
  *   npm run daily-bread -- bundle-scan [--dir=.open-next]   (plan §56; exit 1 on a credential)
  *   npm run daily-bread -- reservoir [--usage]              (plan §53 asset index)
+ *   npm run daily-bread -- reimport-backfill --from --to [--dry-run]  (plan §81 archive correction)
  *
  * sunday-lead and guides are the pre-V2 Claude workflows (SA-100, SA-114),
  * now behind the editorial generation interface. They write DRAFT
@@ -263,6 +264,31 @@ async function main() {
         from,
         to,
         dryRun: flag('dry-run'),
+      })
+      console.log(JSON.stringify(result, null, 2))
+      process.exit(result.failed.length > 0 ? 1 : 0)
+    }
+    case 'reimport-backfill': {
+      // Plan §81: correct published backfilled editions to what the old paper printed.
+      const from = requireDate('from')
+      const to = requireDate('to')
+      const { reimportBackfilled } = await import('../../src/lib/daily-bread/maintenance')
+      const result = await reimportBackfilled({
+        repo: supabaseRepo(),
+        from,
+        to,
+        dryRun: flag('dry-run'),
+        buildImport: async (date) => {
+          const mem = new MemoryDailyBreadRepository()
+          const out = await createDailyBreadEdition(
+            date,
+            // The in-memory build must still read the dated edition_items rows: they ARE the old paper.
+            deps(mem, logger, { sources: sources({ editionItems: true }), policy: 'deterministic-only', trigger: 'backfill', clock: fixedClock(rolloverInstant(date)) }),
+            { archiveOrigin: 'backfilled' },
+          )
+          if (out.result !== 'ready' || !out.document) throw new Error(`import build ${out.result}: ${out.reason ?? ''}`)
+          return out.document
+        },
       })
       console.log(JSON.stringify(result, null, 2))
       process.exit(result.failed.length > 0 ? 1 : 0)

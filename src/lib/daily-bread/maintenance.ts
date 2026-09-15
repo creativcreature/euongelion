@@ -9,7 +9,7 @@ import { leadPlateId, type EditionSources } from './modules/build'
 import type { DailyBreadRepository } from './repository/types'
 import { safeAssetSrc } from './safe'
 import { addDays, isValidDateSlug } from './time'
-import type { AssetRef, DailyEdition, EditionModule, LeadModule } from './types'
+import type { AssetRef, DailyEdition, EditionDocument, EditionModule, LeadModule } from './types'
 
 export const LEAD_PLATE_REVISION_REASON =
   'Lead plate policy (SA-142): a keyword-matched library print is replaced by the series art, or removed from an authored feature.'
@@ -80,6 +80,12 @@ export async function repairComics(params: {
       out.missing.push(date)
       continue
     }
+    if (edition.archiveOrigin === 'backfilled') {
+      // A backfilled paper is corrected by re-importing it (plan §81), which
+      // keeps only that day's own approved strip and never adds a reprint.
+      out.unchanged.push(date)
+      continue
+    }
     try {
       const recent = [...printed.entries()]
         .filter(([d]) => d < date && d >= addDays(date, -35))
@@ -116,6 +122,93 @@ export async function repairComics(params: {
         generation: { ...edition.generation, comicLevel: comic.level },
       })
       if (res.result === 'revised') out.revised.push({ date, from: before, to: after })
+      else out.failed.push({ date, reason: res.result })
+    } catch (error) {
+      out.failed.push({ date, reason: error instanceof Error ? error.message : String(error) })
+    }
+  }
+  return out
+}
+
+export const REIMPORT_REVISION_REASON =
+  'Archive import corrected (SA-142, plan §81): this backfilled edition now carries only what the paper printed that day. A written standfirst, rabbit holes, a procedural scene or a reprinted comic added by the first backfill are removed.'
+
+export interface ReimportChange {
+  date: string
+  removed: string[]
+  added: string[]
+  deck: 'removed' | 'unchanged'
+}
+
+/**
+ * Re-import published BACKFILLED editions (plan §81). The first backfill built
+ * past dates like native papers, so they carry a model-shaped standfirst, rabbit
+ * holes, a scene and reprinted strips the old paper never had. Each is rebuilt
+ * in import mode from the same dated sources, in memory, and written as a
+ * revision only when what a reader sees differs. Native editions are never
+ * touched.
+ */
+export async function reimportBackfilled(params: {
+  repo: DailyBreadRepository
+  /** Builds the import document for a date (orchestrator, in memory). */
+  buildImport: (date: string) => Promise<EditionDocument>
+  from: string
+  to: string
+  dryRun: boolean
+}): Promise<{ revised: ReimportChange[]; unchanged: string[]; skipped: { date: string; reason: string }[]; failed: { date: string; reason: string }[] }> {
+  if (!isValidDateSlug(params.from) || !isValidDateSlug(params.to) || params.from > params.to) {
+    throw new Error('reimport-backfill: --from and --to must be dates with from <= to')
+  }
+  const out = {
+    revised: [] as ReimportChange[],
+    unchanged: [] as string[],
+    skipped: [] as { date: string; reason: string }[],
+    failed: [] as { date: string; reason: string }[],
+  }
+  for (let date = params.from; date <= params.to; date = addDays(date, 1)) {
+    const edition = await params.repo.getEdition(date)
+    if (!edition || edition.lifecycle !== 'published') {
+      out.skipped.push({ date, reason: edition ? edition.lifecycle : 'no published edition' })
+      continue
+    }
+    if (edition.archiveOrigin !== 'backfilled') {
+      out.skipped.push({ date, reason: 'native edition' })
+      continue
+    }
+    try {
+      const doc = await params.buildImport(date)
+      const before = edition.modules.map((m) => m.type)
+      const after = doc.modules.map((m) => m.type)
+      const change: ReimportChange = {
+        date,
+        removed: before.filter((t) => !after.includes(t)),
+        added: after.filter((t) => !before.includes(t)),
+        deck: edition.deck && !doc.deck ? 'removed' : 'unchanged',
+      }
+      const comicBefore = edition.modules.find((m) => m.type === 'comic')
+      const comicAfter = doc.modules.find((m) => m.type === 'comic')
+      const sameComic =
+        (!comicBefore && !comicAfter) ||
+        (comicBefore?.type === 'comic' && comicAfter?.type === 'comic' && !comicBefore.script && comicBefore.image?.src === comicAfter.image?.src)
+      if (change.removed.length === 0 && change.added.length === 0 && change.deck === 'unchanged' && sameComic) {
+        out.unchanged.push(date)
+        continue
+      }
+      if (!sameComic && !change.removed.includes('comic') && !change.added.includes('comic')) change.removed.push('comic (replaced)')
+      if (params.dryRun) {
+        out.revised.push(change)
+        continue
+      }
+      const res = await params.repo.createRevision(date, REIMPORT_REVISION_REASON, {
+        title: doc.title,
+        deck: doc.deck,
+        quality: doc.quality,
+        modules: doc.modules,
+        composition: doc.composition,
+        assets: doc.assets,
+        generation: doc.generation,
+      })
+      if (res.result === 'revised') out.revised.push(change)
       else out.failed.push({ date, reason: res.result })
     } catch (error) {
       out.failed.push({ date, reason: error instanceof Error ? error.message : String(error) })

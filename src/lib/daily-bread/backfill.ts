@@ -1,9 +1,17 @@
 /**
  * Backfill: archive editions for dates BEFORE Daily Bread V2 existed
- * (SA-142 / F-184). Backfilled editions are built with the deterministic
- * policy (no model spend), published as archive entries, and NEVER consume an
- * issue number — "No. 001" stays the first native paper. Dates that already
- * have a row, and dates on or after the live editorial date, are skipped.
+ * (SA-142 / F-184, plan §81). Each is an IMPORT of the paper that ran that day:
+ * the same dated edition_items rows and date-keyed banks the SA-114 paper
+ * printed from, snapshotted under its real date with archiveOrigin
+ * 'backfilled', one conservative layout, and nothing the old paper did not
+ * have (no written frame, rabbit holes, scene or reprint: orchestrator
+ * `importing`). A date whose content cannot be imported fails loudly instead
+ * of being filled in.
+ *
+ * It NEVER numbers an issue — "No. 001" stays the first native paper. A date
+ * that already has a published row, or a READY row that is native (a real paper
+ * waiting for the scheduler), is skipped and left alone; publishing that row here
+ * would spend a native number.
  */
 import { createDailyBreadEdition, type PipelineDeps } from './orchestrator'
 import { publishDailyBreadEdition } from './publish'
@@ -45,6 +53,13 @@ export async function runBackfill(params: {
     if (existing === 'published' || existing === 'superseded') {
       result.skipped.push({ date, reason: `already ${existing}` })
       continue
+    }
+    if (existing === 'ready') {
+      const ready = await deps.repo.getEdition(date, { includeUnpublished: true })
+      if (ready?.archiveOrigin !== 'backfilled') {
+        result.skipped.push({ date, reason: 'a native edition is ready for this date; backfill never publishes a numbered paper' })
+        continue
+      }
     }
     const dayDeps: PipelineDeps = {
       ...deps,

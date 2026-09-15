@@ -503,6 +503,36 @@ corrected in order, earliest first.
     configuration and cost decision for the founder, now recorded.
   - **Posters as archive thumbnails and OG images** wait on the scenes verdict; today's
     posters fail the visual constraints.
+- **Deviation 26 (plan §81, backfill), corrected in code. The production correction is
+  NOT run.**
+  - **What was wrong.**
+    - Backfill built past dates like native papers: a written deck, rabbit holes, a
+      procedural scene, and (with the weekly chain) reprinted strips the old paper
+      never had.
+    - Department rotation and Gallery cooldowns changed what those days printed.
+    - A leftover native READY row for a past date was published, spending an issue
+      number before the check caught it.
+  - **Now.**
+    - A backfilled edition imports the day's paper from the same dated sources:
+      edition_items, date-keyed banks and that day's own approved strip. It adds
+      nothing, and uses the Broadsheet layout with every module printed. No provider
+      is called (tested with one that records calls).
+    - Native READY rows are skipped, never published.
+  - **Correcting the archive.** `npm run daily-bread -- reimport-backfill` rebuilds
+    published backfilled editions in import mode and revises only those that differ.
+    It skips native editions, is idempotent, and is tested. `repair-comics` now leaves
+    backfilled editions to it.
+  - **Production dry run (read only).** 26 editions would be revised: Aug 18 – Sep 12,
+    each losing its invented deck, rabbit holes and scene. Aug 21 and 22 keep their
+    own strips; the rest lose reprints the old paper never printed. Aug 20 would lose
+    strip No. 1 until its row is repointed. No. 001, No. 002 and Sep 15 are skipped.
+  - **The held production steps, in order.**
+    1. Repoint strip No. 1's row.
+    2. `reimport-backfill` Aug 18 – Sep 12.
+    3. `repair-comics` Sep 13–14.
+    4. The Sep 15 rebuild.
+    5. The deploy.
+  - **Tests.** 286 pass.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

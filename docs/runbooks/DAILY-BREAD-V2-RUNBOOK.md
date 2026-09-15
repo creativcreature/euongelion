@@ -20,6 +20,15 @@ root. Pipeline commands read secrets from the environment (CI) or `.env.local`
 2. **Optional backfill** of archive entries before launch:
    `npm run daily-bread -- backfill --from=2026-08-18 --to=<day before launch> --dry-run`.
    Then run it again without `--dry-run`. These entries carry no issue numbers.
+   - Each entry imports that day's paper from its dated sources (plan §81). It gets no
+     written standfirst, rabbit holes, scene or reprinted comic, no rotation, and the
+     Broadsheet layout.
+   - A date that already has a native READY row is skipped, never published: publishing
+     it would spend an issue number.
+   - Entries built by the first backfill (before 2026-09-14) are corrected with
+     `npm run daily-bread -- reimport-backfill --from=2026-08-18 --to=2026-09-12
+     --dry-run`, then without `--dry-run`. Each is corrected by revision; native
+     editions are skipped. Repoint strip No. 1's row first, or Aug 20 loses its strip.
 3. **Build the first native edition**:
    `npm run daily-bread -- build --date=<launch date>`.
    Inspect it at `/admin/preview/daily-bread-v2?date=<launch date>`.

@@ -13,7 +13,8 @@
  * Every call writes one PublicationAttempt, success or failure. Nothing here
  * ever runs on a reader request.
  */
-import { composeFrame, FRAME_PROMPT_VERSION, type EditorialFrame, type FrameInput } from './generate/frame'
+import { composeFrame, deterministicScene, FRAME_PROMPT_VERSION, type EditorialFrame, type FrameInput } from './generate/frame'
+import type { ChainOutcome } from './providers/chain'
 import { fallbackLevel } from './providers/chain'
 import { withThreads } from './modules/threads'
 import { composeComic } from './comic/chain'
@@ -169,7 +170,12 @@ export async function createDailyBreadEdition(
       voices: history.flatMap((r) => (r.voice ? [{ ...r.voice, daysAgo: daysAgo(r.editionDate) }] : [])),
       notes: explanations,
     }
-    const base = await stage('asset_selection', () => buildBaseEdition(dateSlug, deps.sources, cooldowns))
+    // Plan §81: a backfilled edition IMPORTS the paper that ran that day. It reads
+    // the same dated sources the SA-114 paper printed from, and adds nothing the
+    // old paper did not have: no cooldown re-picks, no written frame, no rabbit
+    // holes, no scene, no reprinted comic, no rotation, one conservative layout.
+    const importing = options.archiveOrigin === 'backfilled'
+    const base = await stage('asset_selection', () => buildBaseEdition(dateSlug, deps.sources, importing ? undefined : cooldowns))
     attempt.moduleFailures.push(...base.failures)
     attempt.assetFallbacks.push(...base.assetFallbacks)
 
@@ -187,16 +193,26 @@ export async function createDailyBreadEdition(
       seed,
     }
 
-    const frame = await stage('primary_generation', () =>
-      composeFrame(frameInput, {
-        providers,
-        lookup: deps.sources.lookupVerse,
-        logger: log,
-        timeoutMs: deps.providerTimeoutMs,
-        retries: deps.providerRetries,
-        sleep: deps.sleep,
-      }),
-    )
+    const frame: ChainOutcome<EditorialFrame> = importing
+      ? {
+          // Nothing is written for a past paper. The scene only seeds the static
+          // poster record; it is not printed.
+          value: { deck: '', rabbitHoles: [], scene: deterministicScene(frameInput), sceneLabel: '' },
+          provider: 'deterministic',
+          usage: [],
+          fallbackProvidersUsed: [],
+          deterministic: true,
+        }
+      : await stage('primary_generation', () =>
+          composeFrame(frameInput, {
+            providers,
+            lookup: deps.sources.lookupVerse,
+            logger: log,
+            timeoutMs: deps.providerTimeoutMs,
+            retries: deps.providerRetries,
+            sleep: deps.sleep,
+          }),
+        )
     const frameValue: EditorialFrame = frame.value
     const frameGeneratedAt = deps.clock.now().toISOString()
     attempt.frameProvider = frame.provider
@@ -212,7 +228,7 @@ export async function createDailyBreadEdition(
     }
     attempt.providerUsage.push(...frame.usage)
 
-    const comic = await stage('comic_generation', async () =>
+    const composed = await stage('comic_generation', async () =>
       composeComic({
         dateSlug,
         bank: await deps.sources.publishedStrips(),
@@ -220,6 +236,11 @@ export async function createDailyBreadEdition(
         assetAvailable: (src) => deps.sources.assetAvailable(src),
       }),
     )
+    // An imported paper keeps only the strip approved for its own day or week.
+    const comic =
+      importing && composed.level === 'archive-reprint'
+        ? { ...composed, module: null, level: 'omitted' as const, sourceItemIds: [], notes: [...composed.notes, 'comic: backfill imports no reprint'] }
+        : composed
     attempt.providerUsage.push(...comic.usage)
     attempt.warnings.push(...comic.notes)
     if (comic.level === 'archive-reprint' || comic.level === 'omitted') {
@@ -234,13 +255,15 @@ export async function createDailyBreadEdition(
       renderer = RENDERERS[(seed + 1) % 3]
       explanations.push(`scene: renderer moved off yesterday's ${recent[0].renderer} to ${renderer}`)
     }
-    modules.push({
-      type: 'scene',
-      scene: frameValue.scene,
-      renderer,
-      seed: hashString(`${seedString}:${frameValue.scene}`) % 100_000,
-      label: frameValue.sceneLabel,
-    })
+    if (!importing) {
+      modules.push({
+        type: 'scene',
+        scene: frameValue.scene,
+        renderer,
+        seed: hashString(`${seedString}:${frameValue.scene}`) % 100_000,
+        label: frameValue.sceneLabel,
+      })
+    }
     if (comic.module) modules.push(comic.module)
     if (frameValue.rabbitHoles.length > 0) {
       // Plan §74: each rabbit hole links to where the site already followed that chapter.
@@ -270,6 +293,7 @@ export async function createDailyBreadEdition(
           recentHeroes: recent.map((r) => r.heroVariant),
         },
         modules.map((m) => m.type),
+        importing ? { archetype: 'broadsheet', rotate: false } : {},
       ),
     )
     // The frozen document keeps what the paper printed. A department resting
@@ -333,11 +357,15 @@ export async function createDailyBreadEdition(
         builtAt: deps.clock.now().toISOString(),
         primaryProvider: primary,
         fallbackProvidersUsed: fallbackUsed,
-        provider: frame.provider,
-        ...(frame.model ? { model: frame.model } : {}),
-        promptVersion: FRAME_PROMPT_VERSION,
-        generatedAt: frameGeneratedAt,
-        fallbackLevel: fallbackLevel(frame.provider),
+        ...(importing
+          ? {}
+          : {
+              provider: frame.provider,
+              ...(frame.model ? { model: frame.model } : {}),
+              promptVersion: FRAME_PROMPT_VERSION,
+              generatedAt: frameGeneratedAt,
+              fallbackLevel: fallbackLevel(frame.provider),
+            }),
         usage: [...frame.usage, ...comic.usage].map((u: ProviderUsage) => ({ ...u })),
         moduleFailures: base.failures,
         assetFallbacks: attempt.assetFallbacks.slice(),
