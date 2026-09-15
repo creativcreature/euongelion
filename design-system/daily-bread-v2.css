@@ -630,6 +630,32 @@
 
 /* ═══ SMALL SCREENS ═════════════════════════════════════════════════════ */
 
+/* The contents line on a phone (plan §87, measured 2026-09-14): wrapped, it
+   grew from one line to three when the UI font arrived and pushed the paper
+   down (CLS 0.146 on the Prayer Book edition). One scrollable line keeps its
+   height whatever the font, and each link is a 44px touch target. */
+@media (max-width: 700px) {
+  .db2 .edition-contents {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 44px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .db2 .edition-contents::-webkit-scrollbar {
+    display: none;
+  }
+
+  .db2 .edition-contents a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
 @media (max-width: 900px) {
   .db2-band,
   .db2-arch--field-notes .db2-band {

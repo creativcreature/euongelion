@@ -202,46 +202,49 @@ export default function CrosswordClient({
               aria-label="Crossword grid"
               style={{ gridTemplateColumns: `repeat(${size}, minmax(0, 1fr))` }}
             >
-              {grid.map((row, r) =>
-                row.map((cell, c) => {
-                  if (cell === null) {
+              {grid.map((row, r) => (
+                // Cells in rows, as a grid requires (display: contents keeps the layout).
+                <div key={`row-${r}`} role="row" className="puzzle-cw-row">
+                  {row.map((cell, c) => {
+                    if (cell === null) {
+                      return (
+                        <span
+                          key={`${r}:${c}`}
+                          className="puzzle-cw-block"
+                          aria-hidden="true"
+                        />
+                      )
+                    }
+                    const num = numberAt.get(`${r}:${c}`)
+                    const isActive = active?.row === r && active?.col === c
+                    const entry = entries[r][c]
+                    const wrong = checked && entry !== '' && entry !== cell
+                    const cls = [
+                      'puzzle-cw-cell',
+                      isActive ? 'puzzle-cw-active' : '',
+                      !isActive && inActiveWord(r, c) ? 'puzzle-cw-word' : '',
+                      wrong ? 'puzzle-cw-wrongcell' : '',
+                    ]
+                      .filter(Boolean)
+                      .join(' ')
                     return (
-                      <span
+                      <button
                         key={`${r}:${c}`}
-                        className="puzzle-cw-block"
-                        aria-hidden="true"
-                      />
+                        type="button"
+                        role="gridcell"
+                        className={cls}
+                        onClick={() => selectCell(r, c)}
+                        aria-label={`Row ${r + 1} column ${c + 1}${entry ? `, ${entry}` : ', empty'}`}
+                      >
+                        {num !== undefined && (
+                          <span className="puzzle-cw-num">{num}</span>
+                        )}
+                        <span className="puzzle-cw-letter">{entry}</span>
+                      </button>
                     )
-                  }
-                  const num = numberAt.get(`${r}:${c}`)
-                  const isActive = active?.row === r && active?.col === c
-                  const entry = entries[r][c]
-                  const wrong = checked && entry !== '' && entry !== cell
-                  const cls = [
-                    'puzzle-cw-cell',
-                    isActive ? 'puzzle-cw-active' : '',
-                    !isActive && inActiveWord(r, c) ? 'puzzle-cw-word' : '',
-                    wrong ? 'puzzle-cw-wrongcell' : '',
-                  ]
-                    .filter(Boolean)
-                    .join(' ')
-                  return (
-                    <button
-                      key={`${r}:${c}`}
-                      type="button"
-                      role="gridcell"
-                      className={cls}
-                      onClick={() => selectCell(r, c)}
-                      aria-label={`Row ${r + 1} column ${c + 1}${entry ? `, ${entry}` : ', empty'}`}
-                    >
-                      {num !== undefined && (
-                        <span className="puzzle-cw-num">{num}</span>
-                      )}
-                      <span className="puzzle-cw-letter">{entry}</span>
-                    </button>
-                  )
-                }),
-              )}
+                  })}
+                </div>
+              ))}
             </div>
 
             {/* One hidden input carries the keyboard for the whole grid. */}

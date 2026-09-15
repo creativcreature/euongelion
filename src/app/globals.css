@@ -16548,6 +16548,13 @@ html.dark .edition-quote-text--red {
   overflow-x: auto;
 }
 
+/* ARIA rows inside the puzzle grids: present for assistive technology, invisible
+   to layout, so the cells stay direct items of the CSS grid. */
+.puzzle-ws-row,
+.puzzle-cw-row {
+  display: contents;
+}
+
 .puzzle-ws-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(34px, 1fr));

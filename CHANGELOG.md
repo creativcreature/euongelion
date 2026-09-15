@@ -468,6 +468,29 @@ corrected in order, earliest first.
     different threads, understated. The first fixture run showed both holes linking
     to one page; that was fixed before commit.
   - **Tests.** 281 pass.
+- **Deviation 24 (plan §75, §77, §87, accessibility and mobile performance), measured
+  for the first time, with two fixes.** Record: `docs/daily-bread/QA-2026-09-14-MOBILE-ACCESSIBILITY.md`.
+  - **Method.** A local production build; iPhone 15, iPhone SE and Pixel 7; 4× CPU and
+    Slow 4G; three editions.
+  - **Passing.**
+    - INP 16–80 ms.
+    - No long tasks while scrolling, 12–14 MB heap, one canvas.
+    - Every tab stop has visible focus, clean reflow at 320px, one h1, no skipped
+      headings.
+  - **Fixed.**
+    - **Critical axe violations** in the word search and crossword (cells with no ARIA
+      row). Rows were added with `display: contents`; axe now reports 0. The shared
+      SA-114 puzzles gain the fix too.
+    - **Contents-line layout shift** on phones: it wrapped to three lines when the font
+      arrived. It is now one scrollable line with 44px links. Prayer Book CLS went from
+      0.146 to 0.061–0.108.
+  - **Still failing, founder decisions.**
+    - **LCP about 7.4 s** on plate-led editions: a 565 KB unoptimized series plate behind
+      2.2 MB of site-wide JavaScript. The options are in the record.
+    - **Prayer Book CLS 0.105–0.108** on two phones, from site-wide font swap and shell
+      header growth.
+  - **Not measured.** Real devices, Safari, production over the network, and a screen
+    reader pass.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

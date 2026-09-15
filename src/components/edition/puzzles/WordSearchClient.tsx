@@ -227,38 +227,42 @@ export default function WordSearchClient({
                 ))}
               </svg>
             )}
-            {grid.map((rowLetters, row) =>
-              rowLetters.map((letter, col) => {
-                const k = keyOf(row, col)
-                const isAnchor =
-                  anchor !== null && sameCell(anchor, { row, col })
-                const cls = [
-                  'puzzle-ws-cell',
-                  foundCells.has(k) ? 'puzzle-ws-cell-found' : '',
-                  previewKeys?.has(k) ? 'puzzle-ws-cell-path' : '',
-                  isAnchor ? 'puzzle-ws-cell-anchor' : '',
-                  missCells?.has(k) ? 'puzzle-ws-cell-miss' : '',
-                ]
-                  .filter(Boolean)
-                  .join(' ')
-                return (
-                  <button
-                    key={k}
-                    type="button"
-                    role="gridcell"
-                    className={cls}
-                    data-ws-cell=""
-                    data-row={row}
-                    data-col={col}
-                    onPointerDown={() => handlePointerDown(row, col)}
-                    onClick={() => handleClick(row, col)}
-                    aria-label={`Row ${row + 1} column ${col + 1}, ${letter}`}
-                  >
-                    {letter}
-                  </button>
-                )
-              }),
-            )}
+            {grid.map((rowLetters, row) => (
+              // A grid's cells must sit in rows (WAI-ARIA; axe
+              // aria-required-parent). display: contents keeps the CSS grid.
+              <div key={`row-${row}`} role="row" className="puzzle-ws-row">
+                {rowLetters.map((letter, col) => {
+                  const k = keyOf(row, col)
+                  const isAnchor =
+                    anchor !== null && sameCell(anchor, { row, col })
+                  const cls = [
+                    'puzzle-ws-cell',
+                    foundCells.has(k) ? 'puzzle-ws-cell-found' : '',
+                    previewKeys?.has(k) ? 'puzzle-ws-cell-path' : '',
+                    isAnchor ? 'puzzle-ws-cell-anchor' : '',
+                    missCells?.has(k) ? 'puzzle-ws-cell-miss' : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')
+                  return (
+                    <button
+                      key={k}
+                      type="button"
+                      role="gridcell"
+                      className={cls}
+                      data-ws-cell=""
+                      data-row={row}
+                      data-col={col}
+                      onPointerDown={() => handlePointerDown(row, col)}
+                      onClick={() => handleClick(row, col)}
+                      aria-label={`Row ${row + 1} column ${col + 1}, ${letter}`}
+                    >
+                      {letter}
+                    </button>
+                  )
+                })}
+              </div>
+            ))}
           </div>
         </div>
         <p className="puzzle-score" aria-live="polite">
