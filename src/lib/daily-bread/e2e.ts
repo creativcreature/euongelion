@@ -15,6 +15,7 @@ import { MemoryDailyBreadRepository } from './repository/memory'
 import { ProviderError, type TextProvider } from './providers/types'
 import { fixedClock, type EditorialClock } from './time'
 import { validateEditionDocument } from './validate'
+import { loadArchiveMonth, loadEditionForDate, loadLiveEdition } from './read'
 
 export interface E2ECheck {
   name: string
@@ -109,6 +110,28 @@ export async function runInMemoryE2E(options: { logger?: RunLogger } = {}): Prom
   const sep15 = await repo.getEdition('2026-09-15')
   check('run 6: Sep 15 published as No. 3', sep15?.issue === 3)
 
+  // Plan §83: retrieve the issue the way the routes do — the dated URL's loader
+  // and the archive's — and confirm the number, the modules, and no draft leak.
+  clock = fixedClock('2026-09-15T23:30:00Z')
+  await createDailyBreadEdition('2026-09-16', deps(logger('7'))) // tomorrow, ready but unpublished
+  const dated = await loadEditionForDate('2026-09-15', repo)
+  check('dated URL: /daily-bread/2026-09-15 resolves to No. 3', dated?.edition.issue === 3)
+  check(
+    'dated URL: the issue carries its Scripture, reading and printed modules',
+    Boolean(dated && ['scripture', 'reading'].every((t) => dated.edition.modules.some((m) => m.type === t)) &&
+      dated.edition.composition.placements.every((p) => dated.edition.modules.some((m) => m.type === p.module))),
+  )
+  const month = await loadArchiveMonth('2026-09', repo)
+  check(
+    'archive: September lists Nos. 1–3 in date order',
+    month.entries.map((e) => `${e.editionDate}:${e.issue}`).join(',') === '2026-09-13:1,2026-09-14:2,2026-09-15:3',
+    month.entries.map((e) => `${e.editionDate}:${e.issue}`).join(','),
+  )
+  check('no draft leak: the ready Sep 16 has no dated page', (await loadEditionForDate('2026-09-16', repo)) === null)
+  check('no draft leak: the archive does not list Sep 16', !month.entries.some((e) => e.editionDate === '2026-09-16'))
+  const live = await loadLiveEdition(fixedClock('2026-09-16T10:00:00Z'), repo)
+  check('no draft leak: before 7am Sep 16 the live paper is Sep 15', live.edition?.editionDate === '2026-09-15')
+
   // Total AI outage: every provider failed, yet every paper published.
   for (const date of ['2026-09-13', '2026-09-14', '2026-09-15']) {
     const e = await repo.getEdition(date)
@@ -129,6 +152,15 @@ export async function runInMemoryE2E(options: { logger?: RunLogger } = {}): Prom
         e.modules.some((m) => m.type === 'comic') === (e.generation.comicLevel !== 'omitted'),
     )
     check(`outage: ${date} document validates`, validateEditionDocument(doc).length === 0, validateEditionDocument(doc).join('; '))
+    // Plan §85, item by item.
+    const placed = new Set(e.composition.placements.map((p) => p.module))
+    check(`outage: ${date} has Scripture`, placed.has('scripture') && Boolean(e.primaryScripture.text))
+    check(`outage: ${date} has its reading from approved sources`, placed.has('reading') && e.modules.some((m) => m.type === 'reading' && m.blocks.length > 0))
+    check(`outage: ${date} has a prayer or spiritual response`, placed.has('prayer') || placed.has('practice'))
+    check(`outage: ${date} has an intentional visual`, placed.has('scene') && Boolean(e.assets.scenePoster.scene))
+    check(`outage: ${date} has a dated URL`, (await loadEditionForDate(date, repo))?.edition.editionDate === date)
+    const entries = (await loadArchiveMonth(date.slice(0, 7), repo)).entries
+    check(`outage: ${date} has an archive entry`, entries.some((x) => x.editionDate === date && x.issue === e.issue))
   }
 
   const neighbors = await repo.getNeighbors('2026-09-14')

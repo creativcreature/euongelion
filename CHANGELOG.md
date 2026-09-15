@@ -533,6 +533,23 @@ corrected in order, earliest first.
     4. The Sep 15 rebuild.
     5. The deploy.
   - **Tests.** 286 pass.
+- **Deviation 27 (plan §82–85, the test suite), corrected. One real bug found and
+  fixed.**
+  - **Bug.** A failure to read the Echo & Dust strip bank failed the whole edition.
+    Plan §29 says the comic never blocks publication. The comic is now omitted, the
+    failure recorded and quality set to fallback, and the paper builds and publishes
+    (tested).
+  - **End to end (§83).** It now retrieves the dated URL and the archive through the
+    route loaders, confirms Nos. 1–3 and their modules, and proves a ready tomorrow
+    never leaks into the dated page, the archive or the live paper.
+  - **Resilience (§85).** Now asserted item by item: Scripture, reading, prayer or
+    practice, visual, dated URL, archive entry.
+  - **Added.**
+    - The full lifecycle in Postgres, with fallback and minimum editions publishing.
+    - An unpublished (even ready) future date 404s with empty metadata.
+    - The V2 preview 404s for an anonymous visitor before anything is read.
+  - **Map.** DAILY-BREAD-V2.md §12 maps each plan item to its test. 290 Daily Bread
+    tests pass.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

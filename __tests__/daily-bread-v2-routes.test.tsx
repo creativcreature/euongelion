@@ -326,6 +326,47 @@ describe('routes', () => {
     await expect(Page({ params: Promise.resolve({ date: 'not-a-date' }) })).rejects.toThrow(/NEXT_HTTP_ERROR_FALLBACK;404|NEXT_NOT_FOUND/)
   })
 
+  it('plan §82: an unpublished future date 404s — even when its edition is built and ready', async () => {
+    vi.stubEnv('DAILY_BREAD_V2', 'on')
+    vi.resetModules()
+    const future = new MemoryDailyBreadRepository()
+    const d = {
+      repo: future,
+      sources: offlineSources(),
+      providers: [],
+      clock: fixedClock('2026-09-15T23:00:00Z'),
+      logger: createRunLogger('future', { sink: () => {} }),
+      trigger: 'e2e' as const,
+      policy: 'deterministic-only' as const,
+    }
+    expect((await createDailyBreadEdition('2026-09-16', d)).result).toBe('ready')
+    vi.doMock('@/lib/daily-bread/repository', () => ({ getDailyBreadRepository: () => future }))
+    const { default: Page, generateMetadata } = await import('@/app/daily-bread/[date]/page')
+    await expect(Page({ params: Promise.resolve({ date: '2026-09-16' }) })).rejects.toThrow(/NEXT_HTTP_ERROR_FALLBACK;404|NEXT_NOT_FOUND/)
+    await expect(Page({ params: Promise.resolve({ date: '2031-01-01' }) })).rejects.toThrow(/NEXT_HTTP_ERROR_FALLBACK;404|NEXT_NOT_FOUND/)
+    // Its metadata leaks nothing either.
+    expect(await generateMetadata({ params: Promise.resolve({ date: '2026-09-16' }) })).toEqual({})
+    vi.doUnmock('@/lib/daily-bread/repository')
+  }, 120_000)
+
+  it('plan §82: the V2 preview is inaccessible to an anonymous visitor', async () => {
+    vi.stubEnv('ADMIN_EMAIL_ALLOWLIST', 'founder@example.com')
+    vi.resetModules()
+    vi.doMock('@/lib/supabase/server', () => ({
+      createClient: async () => ({ auth: { getUser: async () => ({ data: { user: null }, error: null }) } }),
+    }))
+    const repoCalls: string[] = []
+    vi.doMock('@/lib/daily-bread/repository', () => ({
+      getDailyBreadRepository: () =>
+        new Proxy({}, { get: (_t, prop) => { repoCalls.push(String(prop)); return async () => null } }),
+    }))
+    const { default: Preview } = await import('@/app/admin/preview/daily-bread-v2/page')
+    await expect(Preview({ searchParams: Promise.resolve({ date: '2026-09-16' }) })).rejects.toThrow(/NEXT_HTTP_ERROR_FALLBACK;404|NEXT_NOT_FOUND/)
+    expect(repoCalls).toEqual([]) // nothing was read before the gate
+    vi.doUnmock('@/lib/supabase/server')
+    vi.doUnmock('@/lib/daily-bread/repository')
+  })
+
   it('canonical metadata: /daily-bread and the dated route both name the dated issue URL', async () => {
     vi.stubEnv('DAILY_BREAD_V2', 'on')
     vi.resetModules()

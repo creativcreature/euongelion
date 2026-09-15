@@ -62,15 +62,28 @@ describe('pipeline stages and attempt logs (plan §66–67)', () => {
 
   it('records a failure against the stage that failed, not "assemble"', async () => {
     const repo = new MemoryDailyBreadRepository()
+    repo.failOn.recentCompositions = new Error('history read failed: fetch failed')
+    const out = await createDailyBreadEdition('2026-09-14', deps(repo, '2026-09-13T23:00:00Z'))
+    expect(out.result).toBe('failed')
+    repo.failOn = {}
+    const [attempt] = await repo.recentAttempts(1)
+    expect(attempt.errors[0]).toMatchObject({ stage: 'sources_loaded' })
+    expect(attempt.errors[0].message).toContain('fetch failed')
+  }, 60_000)
+
+  it('plan §84 comic failure: an unreadable strip bank omits the comic, and the paper still builds and publishes', async () => {
+    const repo = new MemoryDailyBreadRepository()
     const d = deps(repo, '2026-09-13T23:00:00Z')
     d.sources.publishedStrips = async () => {
       throw new Error('published strips read failed: fetch failed')
     }
     const out = await createDailyBreadEdition('2026-09-14', d)
-    expect(out.result).toBe('failed')
-    const [attempt] = await repo.recentAttempts(1)
-    expect(attempt.errors[0]).toMatchObject({ stage: 'comic_generation' })
-    expect(attempt.errors[0].message).toContain('fetch failed')
+    expect(out.result).toBe('ready')
+    expect(out.document?.modules.some((m) => m.type === 'comic')).toBe(false)
+    expect(out.document?.generation).toMatchObject({ comicLevel: 'omitted' })
+    expect(out.document?.generation.moduleFailures.map((f) => f.module)).toContain('comic')
+    expect(out.quality).toBe('fallback')
+    expect((await publishDailyBreadEdition('2026-09-14', deps(repo, '2026-09-14T11:05:00Z'))).issue).toBe(1)
   }, 60_000)
 })
 

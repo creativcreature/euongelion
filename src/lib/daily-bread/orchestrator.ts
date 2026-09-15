@@ -228,14 +228,24 @@ export async function createDailyBreadEdition(
     }
     attempt.providerUsage.push(...frame.usage)
 
-    const composed = await stage('comic_generation', async () =>
-      composeComic({
-        dateSlug,
-        bank: await deps.sources.publishedStrips(),
-        recent: history.map((r) => ({ editionDate: r.editionDate, comicId: r.comicId })),
-        assetAvailable: (src) => deps.sources.assetAvailable(src),
-      }),
-    )
+    // Plan §29: the comic is optional and never blocks publication. A failure
+    // to read the strip bank omits the comic and records the module failure.
+    const comicFailures: { module: string; error: string }[] = []
+    const composed = await stage('comic_generation', async () => {
+      try {
+        return await composeComic({
+          dateSlug,
+          bank: await deps.sources.publishedStrips(),
+          recent: history.map((r) => ({ editionDate: r.editionDate, comicId: r.comicId })),
+          assetAvailable: (src) => deps.sources.assetAvailable(src),
+        })
+      } catch (error) {
+        comicFailures.push({ module: 'comic', error: errorMessage(error, 200) })
+        log.warn('comic_failed', { dateSlug, error: errorMessage(error, 200) })
+        return { module: null, level: 'omitted' as const, usage: [], providerDeterministic: true, notes: ['comic: strip bank unavailable'], sourceItemIds: [] }
+      }
+    })
+    attempt.moduleFailures.push(...comicFailures)
     // An imported paper keeps only the strip approved for its own day or week.
     const comic =
       importing && composed.level === 'archive-reprint'
@@ -311,7 +321,7 @@ export async function createDailyBreadEdition(
       scriptureSource: base.scriptureSource,
       hasLead: Boolean(base.lead),
       hasReading: Boolean(base.reading),
-      failedModules: base.failures.map((f) => f.module),
+      failedModules: [...base.failures, ...comicFailures].map((f) => f.module),
     })
 
     const title = base.lead?.title ?? base.scripture.reference
@@ -367,7 +377,7 @@ export async function createDailyBreadEdition(
               fallbackLevel: fallbackLevel(frame.provider),
             }),
         usage: [...frame.usage, ...comic.usage].map((u: ProviderUsage) => ({ ...u })),
-        moduleFailures: base.failures,
+        moduleFailures: [...base.failures, ...comicFailures],
         assetFallbacks: attempt.assetFallbacks.slice(),
         comicLevel: comic.level,
         sourceItemIds: [...base.sourceItemIds, ...comic.sourceItemIds],

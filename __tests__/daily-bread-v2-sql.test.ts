@@ -108,6 +108,24 @@ describe('daily bread v2 schema (PGlite)', () => {
     expect(c[0]).toMatchObject({ result: 'published', issue: 3 })
   })
 
+  it('plan §82 lifecycle: draft → assembling → ready → published, and fallback and minimum quality publish like normal', async () => {
+    const lifecycle = async (d: string) => (await rows(db, `select lifecycle from daily_bread_editions where edition_date = $1`, [d]))[0]?.lifecycle
+    for (const [date, quality] of [['2026-09-14', 'normal'], ['2026-09-15', 'fallback'], ['2026-09-16', 'minimum']] as const) {
+      await rows(db, `select * from daily_bread_acquire_assembly($1::date, 'job', 900, 'native')`, [date])
+      expect(await lifecycle(date)).toBe('assembling')
+      await rows(db, `select daily_bread_mark_ready($1::date, 'job', $2::jsonb) as r`, [date, doc(date, { quality })])
+      expect(await lifecycle(date)).toBe('ready')
+      const [pub] = await rows(db, `select * from daily_bread_publish($1::date)`, [date])
+      expect(pub.result).toBe('published')
+      const [row] = await rows(db, `select lifecycle, quality, issue from daily_bread_editions where edition_date = $1`, [date])
+      expect(row).toMatchObject({ lifecycle: 'published', quality })
+    }
+    // A released lease returns the row to draft: the first state of the cycle.
+    await rows(db, `select * from daily_bread_acquire_assembly('2026-09-17', 'job', 900, 'native')`)
+    await rows(db, `select daily_bread_release_assembly('2026-09-17', 'job')`)
+    expect(await lifecycle('2026-09-17')).toBe('draft')
+  })
+
   it('rolls the volume a year after the first native issue', async () => {
     await assembleReady(db, '2026-09-14')
     await rows(db, `select * from daily_bread_publish('2026-09-14')`)

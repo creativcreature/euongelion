@@ -681,14 +681,52 @@ and verse.
 
 | File | Covers |
 | --- | --- |
-| `daily-bread-v2-sql` | Postgres semantics, RLS, grants |
-| `daily-bread-v2-time` | Clock, DST, parity |
-| `daily-bread-v2-composition` | PRNG, archetypes, anti-repeat |
+| `daily-bread-v2-sql` | Postgres semantics: numbering, leases, the full lifecycle with normal/fallback/minimum publishing, revisions, RLS, private provenance, rollback |
+| `daily-bread-v2-time` | Clock, DST, parity, Worker cron and its alert levels |
+| `daily-bread-v2-composition` | PRNG, archetypes, manifest, rotation, rhythm, anti-repeat |
+| `daily-bread-v2-anti-repeat` | Gallery, voice, hero and renderer cooldowns; stored explanations |
 | `daily-bread-v2-providers` | Chain, transports, frame validation |
-| `daily-bread-v2-comic` and `-comic-verses` | Renderer, SVG safety, templates, verbatim captions |
-| `daily-bread-v2-procedural` | Fields, poster, shaders, frame gate, component lifecycle |
-| `daily-bread-v2-security` | Links, redaction, document validation, endpoint auth, rate limit |
-| `daily-bread-v2-pipeline` | Quality, failure injection, scheduler, backfill, health, E2E |
-| `daily-bread-v2-routes` | Loaders, rendering all eight archetypes, flag behaviour |
+| `daily-bread-v2-editorial-generator` | The §21 interface, Sunday lead, guides, output validation, prompt versions |
+| `daily-bread-v2-comic` | The Echo & Dust weekly chain, shared-file guard, asset check, legacy SVG safety |
+| `daily-bread-v2-comic-root-cause` | The six causes found behind "the comic doesn't load" |
+| `daily-bread-v2-comics-admin` | Batch approval |
+| `daily-bread-v2-procedural` | Fields, poster, shaders, frame gate, motion levels, component lifecycle |
+| `daily-bread-v2-visual-fallback` | Four scene tiers; failed plates and strips degrade to type |
+| `daily-bread-v2-security` | Links, redaction, document validation, the minimum issue, bundle scan, endpoint auth, rate limit, cache refresh |
+| `daily-bread-v2-observability` | Stage names, attempt log, health, alert levels, CLI cost, comic failure never blocking |
+| `daily-bread-v2-pipeline` | Quality, failure injection, scheduler, backfill import and re-import, health, publish metrics, E2E |
+| `daily-bread-v2-routes` | Loaders, last-known-good, archive, snapshots, all eight archetypes, unpublished future dates, anonymous preview |
+| `daily-bread-v2-threads`, `-sitemap`, `-reservoir`, `-supabase-repo` | Rabbit-hole threads and Good News verification, sitemap, asset reservoir, read retries |
+
+**Plan §82 map.**
+- **Serialization:** routes, "publish → edit the source → unchanged".
+- **Numbering:** SQL, "1, 2, 3 … never twice"; E2E run 3.
+- **Lifecycle and quality:** SQL, the plan §82 lifecycle test.
+- **Scheduler idempotency:** pipeline and E2E.
+- **Provider fallback:** providers, "uses the primary", "falls to the secondary", "total outage".
+- **Comic:** strip-bank failure (observability); missing asset (comic); substitution (the omitted comic closes its band, E2E outage).
+- **Routes:** current, historical, unpublished future, archive (routes).
+- **Security:** unauthorized publish, malformed date, script-like content, anonymous preview.
+- **Procedural:** seeds, reduced motion, no WebGL.
+
+**Plan §83 end to end.** `runInMemoryE2E` builds, publishes, and then retrieves the
+dated URL and the archive through the route loaders. It confirms the issue numbers
+and modules, and checks that a ready tomorrow never leaks into the dated page, the
+archive or the live paper.
+
+**Plan §84 failure injection:**
+
+| Failure | Test |
+| --- | --- |
+| Claude | failing providers |
+| Secondary | failing providers |
+| Comic | `publishedStrips` throws |
+| Image asset | `assetAvailable` false, `PlateImage` onError |
+| Poster | unknown scene |
+| WebGL absence | no context |
+
+**Plan §85 resilience.** With every provider off, each paper is serialized and numbered.
+It has Scripture, its reading, a prayer or practice, a visual, a dated URL and an
+archive entry.
 
 CI also runs `npm run daily-bread -- e2e`.
