@@ -1,8 +1,41 @@
 import type { MetadataRoute } from 'next'
 import { SERIES_DATA, ALL_SERIES_ORDER } from '@/data/series'
 import { AUTHOR_SLUGS } from '@/data/authors'
+import { dailyBreadV2Enabled } from '@/lib/daily-bread/flags'
+import { errorMessage } from '@/lib/daily-bread/redact'
+import { getDailyBreadRepository } from '@/lib/daily-bread/repository'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+/**
+ * Plan §78: every published Daily Bread issue at its canonical dated URL, and
+ * the archive. Withdrawn (superseded) issues are noindex, so they are left out.
+ * A failed read is logged and the rest of the sitemap still serves.
+ */
+async function dailyBreadPages(baseUrl: string): Promise<MetadataRoute.Sitemap> {
+  if (!dailyBreadV2Enabled()) return []
+  try {
+    const entries = await getDailyBreadRepository().listArchive({ limit: 5000 })
+    return [
+      { url: `${baseUrl}/daily-bread/archive`, changeFrequency: 'daily', priority: 0.6 },
+      ...entries
+        .filter((e) => e.lifecycle === 'published')
+        .map((e) => ({
+          url: `${baseUrl}/daily-bread/${e.editionDate}`,
+          lastModified: new Date(`${e.editionDate}T11:00:00Z`),
+          changeFrequency: 'yearly' as const,
+          priority: 0.6,
+        })),
+    ]
+  } catch (error) {
+    console.error('[sitemap] daily bread archive read failed', errorMessage(error))
+    return []
+  }
+}
+
+// Rendered per request: a sitemap prerendered at build would never list the
+// issues published after it, and the Worker has no incremental cache to refresh it.
+export const dynamic = 'force-dynamic'
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://euangelion.app'
   const now = new Date()
 
@@ -174,5 +207,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }))
 
-  return [...staticPages, ...seriesPages, ...devotionalPages, ...authorPages]
+  return [...staticPages, ...seriesPages, ...devotionalPages, ...authorPages, ...(await dailyBreadPages(baseUrl))]
 }

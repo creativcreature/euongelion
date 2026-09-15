@@ -491,6 +491,18 @@ corrected in order, earliest first.
       header growth.
   - **Not measured.** Real devices, Safari, production over the network, and a screen
     reader pass.
+- **Deviation 25 (plan §78–80, SEO, cache, posters), corrected where it can be now.**
+  - **Sitemap.** It now lists every published issue at its dated URL, plus the
+    archive, and leaves out withdrawn issues. It renders per request, and a failed read
+    leaves the rest serving. Tests cover both.
+  - **Per-issue SEO** was already complete. Production's HTML for No. 002 has a unique
+    title, description, canonical URL, publish time, OG image, Twitter card and
+    JSON-LD.
+  - **Cache refresh on publish** was done in deviation 9. **Long-lived caching of
+    historical issues** needs an OpenNext incremental cache on the Worker (R2 or KV): a
+    configuration and cost decision for the founder, now recorded.
+  - **Posters as archive thumbnails and OG images** wait on the scenes verdict; today's
+    posters fail the visual constraints.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

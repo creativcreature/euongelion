@@ -653,6 +653,30 @@ added for these paths, that header would let a shared cache serve a stale paper.
 Review it at that time; the publish route's `revalidatePath` does not purge
 Cloudflare's CDN.
 
+**SEO (plan §78).** Each dated issue carries:
+- a unique title (title, serial, paper name) and the deck as its description;
+- a canonical dated URL;
+- `og:type article` with `publishedTime`;
+- a 1200×630 OG card and `twitter:card summary_large_image`;
+- NewsArticle and PublicationIssue JSON-LD (checked in production's HTML on
+  2026-09-14).
+
+Withdrawn issues are `noindex`, and so is the admin preview. `sitemap.ts` now lists
+every published issue and the archive. It renders per request, so a new issue appears
+the morning it publishes, and a failed read leaves the rest of the sitemap serving.
+
+**Historical-issue caching (plan §79): a decision, not built.** Published issues could
+be cached for a long time, invalidating only a revised issue and the archive. The
+Worker has no OpenNext incremental cache today (§11). Turning one on means binding R2
+or KV plus a tag cache: a Cloudflare configuration and cost choice for the founder. The
+publish route already revalidates the right paths when a cache exists.
+
+**Posters as archive thumbnails and share images (plan §80): waiting.** The poster is
+already the reduced-motion and WebGL fallback. Using it for archive thumbnails and OG
+cards would spread art that fails `VISUAL-ENGINE-CONSTRAINTS.md`. That waits on the
+scenes verdict. Until then the OG card stays the house text card, with serial, title
+and verse.
+
 ## 12. Tests
 
 | File | Covers |
