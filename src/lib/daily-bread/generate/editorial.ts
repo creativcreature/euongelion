@@ -16,6 +16,8 @@ import type { TextProvider } from '../providers/types'
 
 export interface GenerationRequest<T> extends ChainRequest {
   task: string
+  /** Bump when the prompt's wording changes; recorded on every usage row (plan §27). */
+  promptVersion: number
   /** Parse raw text; throw OutputValidationError (or any error) to reject. */
   parse: (text: string) => T
   /** Semantic validation. Empty array = valid; problems go back to the model once. */
@@ -41,9 +43,10 @@ export function createEditorialGenerator(deps: {
 }): EditorialGenerator {
   return {
     generate<T>(request: GenerationRequest<T>) {
-      const { task, parse, validate, deterministic, timeoutMs, retries, ...chainRequest } = request
+      const { task, promptVersion, parse, validate, deterministic, timeoutMs, retries, ...chainRequest } = request
       return runProviderChain<T>({
         task,
+        promptVersion,
         providers: deps.providers,
         request: chainRequest,
         parse,

@@ -48,6 +48,12 @@ export default async function DailyBreadV2Preview({
               <dd>{edition.generation.primaryProvider}</dd>
               <dt>Fallbacks used</dt>
               <dd>{edition.generation.fallbackProvidersUsed.join(', ') || 'none'}</dd>
+              <dt>Frame written by</dt>
+              <dd>
+                {edition.generation.provider
+                  ? `${edition.generation.provider}${edition.generation.model ? ` (${edition.generation.model})` : ''} · prompt v${edition.generation.promptVersion} · fallback level ${edition.generation.fallbackLevel} · ${edition.generation.generatedAt}`
+                  : 'not recorded (built before 2026-09-14)'}
+              </dd>
               <dt>Comic</dt>
               <dd>{edition.generation.comicLevel}</dd>
               <dt>Module failures</dt>

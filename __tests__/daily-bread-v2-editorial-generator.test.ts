@@ -9,15 +9,24 @@ import os from 'node:os'
 import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { createEditorialGenerator } from '@/lib/daily-bread/generate/editorial'
+import { FRAME_PROMPT_VERSION } from '@/lib/daily-bread/generate/frame'
+import { generatedTextProblems } from '@/lib/daily-bread/generate/guards'
 import {
   composeSundayLead,
+  SUNDAY_LEAD_PROMPT_VERSION,
   sundayLeadPayload,
   sundayLeadProblems,
   sundayLeadPrompt,
   type SundayLead,
 } from '@/lib/daily-bread/generate/sunday-lead'
-import { composeGuides, guidesProblems, guidesPrompt, parseGuides } from '@/lib/daily-bread/generate/guides'
-import { ProviderChainExhausted } from '@/lib/daily-bread/providers/chain'
+import {
+  composeGuides,
+  GUIDES_PROMPT_VERSION,
+  guidesProblems,
+  guidesPrompt,
+  parseGuides,
+} from '@/lib/daily-bread/generate/guides'
+import { fallbackLevel, ProviderChainExhausted } from '@/lib/daily-bread/providers/chain'
 import { createClaudeCliProvider } from '@/lib/daily-bread/providers/claude-cli'
 import { ProviderError, type TextGenerationRequest, type TextProvider } from '@/lib/daily-bread/providers/types'
 
@@ -69,6 +78,7 @@ describe('EditorialGenerator', () => {
     const generator = createEditorialGenerator({ providers: [claude.provider, openai.provider], sleep: noSleep })
     const out = await generator.generate({
       task: 't',
+      promptVersion: 4,
       system: 's',
       prompt: 'p',
       maxOutputTokens: 10,
@@ -76,9 +86,9 @@ describe('EditorialGenerator', () => {
       deterministic: () => ({ n: 0 }),
     })
     expect(out).toMatchObject({ value: { n: 3 }, provider: 'openai', deterministic: false })
-    expect(out.usage.map((u) => [u.provider, u.ok])).toEqual([
-      ['claude-cli', false],
-      ['openai', true],
+    expect(out.usage.map((u) => [u.provider, u.ok, u.promptVersion])).toEqual([
+      ['claude-cli', false, 4],
+      ['openai', true, 4],
     ])
   })
 
@@ -88,7 +98,7 @@ describe('EditorialGenerator', () => {
     })
     const generator = createEditorialGenerator({ providers: [claude.provider], sleep: noSleep })
     const failure = await generator
-      .generate({ task: 'sunday-lead', system: '', prompt: 'p', maxOutputTokens: 10, parse: (t) => t })
+      .generate({ task: 'sunday-lead', promptVersion: 1, system: '', prompt: 'p', maxOutputTokens: 10, parse: (t) => t })
       .catch((e) => e)
     expect(failure).toBeInstanceOf(ProviderChainExhausted)
     expect(failure.message).toBe('sunday-lead: no provider produced valid output — claude-cli: exit 1 (quota)')
@@ -102,6 +112,7 @@ describe('EditorialGenerator', () => {
     const generator = createEditorialGenerator({ providers: [cli.provider, api.provider], sleep: noSleep })
     await generator.generate({
       task: 't',
+      promptVersion: 1,
       system: '',
       prompt: 'search the index',
       files: { dir: '/repo', promptWithoutFiles: 'no index' },
@@ -250,5 +261,74 @@ describe('claude-cli transport', () => {
     expect(out.text).toContain('arg=[--tools]\narg=[Read,Grep]\narg=[--allowedTools]\narg=[Read,Grep]\n')
     expect(out.text).toContain('arg=[--setting-sources]\narg=[]\n')
     expect(out.text.endsWith('stdin=sys\n\n---\n\nsearch')).toBe(true)
+  })
+})
+
+describe('output validation (plan §26)', () => {
+  it('flags placeholder residue, refusal text, HTML, unsafe links and malformed characters', () => {
+    expect(generatedTextProblems('A plain, finished sentence about bread.', 'deck')).toEqual([])
+    expect(generatedTextProblems('Read [insert verse here] slowly.', 'deck')).toEqual(['deck: placeholder text'])
+    expect(generatedTextProblems('Lorem ipsum dolor sit amet.', 'body')).toEqual(['body: placeholder text'])
+    expect(generatedTextProblems('TODO: finish the ending', 'body')).toEqual(['body: placeholder text'])
+    expect(generatedTextProblems('Welcome, {{name}}.', 'body')).toEqual(['body: placeholder text'])
+    expect(generatedTextProblems("I'm sorry, but I can't help with that.", 'body')).toEqual(['body: refusal text'])
+    expect(generatedTextProblems('As an AI, reflection is new to me.', 'body')).toEqual(['body: refusal text'])
+    expect(generatedTextProblems('Read <b>slowly</b>.', 'body')).toEqual(['body: contains HTML'])
+    expect(generatedTextProblems('Follow javascript:alert(1)', 'body')).toEqual(['body: unsafe link'])
+    expect(generatedTextProblems('Broken � text', 'body')).toEqual(['body: malformed characters'])
+    expect(generatedTextProblems('Broken \u0007 text', 'body')).toEqual(['body: malformed characters'])
+    expect(generatedTextProblems('   ', 'title')).toEqual(['title: empty'])
+    // Ordinary devotional prose is not a refusal or a placeholder.
+    expect(generatedTextProblems('You cannot enter the womb a second time. Nobody is asking you to.', 'body')).toEqual([])
+  })
+
+  it('a refusal is rejected as a refusal, fed back once, and the chain moves on', async () => {
+    const cli = recorder('claude-cli', () => "I'm sorry, but I can't write that article.")
+    const openai = recorder('openai', () => '{"n": 1}')
+    const generator = createEditorialGenerator({ providers: [cli.provider, openai.provider], sleep: noSleep })
+    const out = await generator.generate({
+      task: 't',
+      promptVersion: 1,
+      system: '',
+      prompt: 'p',
+      maxOutputTokens: 10,
+      parse: (text) => JSON.parse(text) as { n: number },
+    })
+    expect(out.provider).toBe('openai')
+    expect(cli.requests).toHaveLength(2)
+    expect(cli.requests[1].prompt).toContain('- refusal output')
+    expect(out.usage[0].error).toContain('refusal output')
+  })
+
+  it('an empty answer is rejected before parsing', async () => {
+    const cli = recorder('claude-cli', () => '   ')
+    const generator = createEditorialGenerator({ providers: [cli.provider], retries: 0, sleep: noSleep })
+    const failure = await generator
+      .generate({ task: 't', promptVersion: 1, system: '', prompt: 'p', maxOutputTokens: 10, parse: (t) => t })
+      .catch((e) => e)
+    expect(failure.message).toContain('empty output')
+  })
+
+  it('the Sunday lead and the guides apply the same text checks', () => {
+    expect(sundayLeadProblems({ ...GOOD_LEAD, title: 'TODO title' }, SCRIPTURE.text)).toEqual(['title: placeholder text'])
+    expect(sundayLeadProblems({ ...GOOD_LEAD, pullQuotes: ['Only one?'] }, SCRIPTURE.text)).toEqual(['composed lead needs 2 pull quotes'])
+    const set = [guide('Method'), guide('Practice'), { ...guide('Tools'), steps: ['Open <em>John</em>', 'Read', 'Pray'] }]
+    expect(guidesProblems(set)).toEqual(['article 3 step 1: contains HTML'])
+  })
+})
+
+describe('generation provenance (plan §27)', () => {
+  it('fallback level follows the plan’s chain: Claude 0, secondary 1, deterministic 2', () => {
+    expect(fallbackLevel('claude-cli')).toBe(0)
+    expect(fallbackLevel('claude-api')).toBe(0)
+    expect(fallbackLevel('openai')).toBe(1)
+    expect(fallbackLevel('gemini')).toBe(1)
+    expect(fallbackLevel('deterministic')).toBe(2)
+  })
+
+  it('each task declares its prompt version', () => {
+    expect(FRAME_PROMPT_VERSION).toBe(3)
+    expect(SUNDAY_LEAD_PROMPT_VERSION).toBe(2)
+    expect(GUIDES_PROMPT_VERSION).toBe(1)
   })
 })

@@ -13,7 +13,8 @@
  * Every call writes one PublicationAttempt, success or failure. Nothing here
  * ever runs on a reader request.
  */
-import { composeFrame, type EditorialFrame, type FrameInput } from './generate/frame'
+import { composeFrame, FRAME_PROMPT_VERSION, type EditorialFrame, type FrameInput } from './generate/frame'
+import { fallbackLevel } from './providers/chain'
 import { composeComic } from './comic/chain'
 import { composeEdition } from './composition/compose'
 import { buildBaseEdition, type EditionSources } from './modules/build'
@@ -171,6 +172,7 @@ export async function createDailyBreadEdition(
       }),
     )
     const frameValue: EditorialFrame = frame.value
+    const frameGeneratedAt = deps.clock.now().toISOString()
     attempt.providerUsage.push(...frame.usage)
 
     const comic = await log.stage('comic', async () =>
@@ -263,6 +265,11 @@ export async function createDailyBreadEdition(
         builtAt: deps.clock.now().toISOString(),
         primaryProvider: primary,
         fallbackProvidersUsed: fallbackUsed,
+        provider: frame.provider,
+        ...(frame.model ? { model: frame.model } : {}),
+        promptVersion: FRAME_PROMPT_VERSION,
+        generatedAt: frameGeneratedAt,
+        fallbackLevel: fallbackLevel(frame.provider),
         usage: [...frame.usage, ...comic.usage].map((u: ProviderUsage) => ({ ...u })),
         moduleFailures: base.failures,
         assetFallbacks: attempt.assetFallbacks.slice(),

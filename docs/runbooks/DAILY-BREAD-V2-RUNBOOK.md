@@ -12,6 +12,11 @@ root. Pipeline commands read secrets from the environment (CI) or `.env.local`
    Check the result:
    `select count(*) from daily_bread_editions;` returns 0.
    `select proname from pg_proc where proname like 'daily_bread_%';` lists 9 functions.
+   Then apply `supabase/migrations/20260914000001_daily_bread_v2_private_provenance.sql`
+   (plan §27). It is idempotent. Check it with the anon key: a REST request for
+   `daily_bread_editions?select=slug` returns 200, and requests for
+   `daily_bread_editions?select=generation` or `daily_bread_edition_revisions` return
+   401 or 403 (permission denied).
 2. **Optional backfill** of archive entries before launch:
    `npm run daily-bread -- backfill --from=2026-08-18 --to=<day before launch> --dry-run`.
    Then run it again without `--dry-run`. These entries carry no issue numbers.

@@ -293,6 +293,15 @@ describe('failure injection', () => {
     expect(out.result).toBe('ready')
     expect(Date.now() - started).toBeLessThan(30_000)
     expect(out.document?.generation.usage.some((u) => u.provider === 'claude-api' && !u.ok)).toBe(true)
+    // Plan §27: the frame's provenance names its writer, prompt version and fallback level.
+    expect(out.document?.generation).toMatchObject({
+      primaryProvider: 'claude-api',
+      provider: 'deterministic',
+      promptVersion: 3,
+      fallbackLevel: 2,
+      generatedAt: expect.any(String),
+    })
+    expect(out.document?.generation.usage.every((u) => u.task !== 'editorial-frame' || u.promptVersion === 3)).toBe(true)
   }, 60_000)
 })
 

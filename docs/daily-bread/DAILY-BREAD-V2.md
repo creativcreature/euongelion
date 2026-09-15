@@ -45,8 +45,12 @@ Nothing in the document is recomputed when a reader requests the page.
   - `daily_bread_publish(date, now)`: advisory lock, next issue number, revision 1
   - `daily_bread_create_revision(date, reason, patch)`
   - `daily_bread_supersede(date, reason)`
-- RLS: anon and authenticated may SELECT only published or superseded editions and
-  their revisions. They have no write grants and no access to attempts.
+- RLS: anon and authenticated may SELECT only published or superseded editions. They
+  have no write grants and no access to attempts.
+- Provenance is internal (plan §27; migration `20260914000001_daily_bread_v2_private_provenance`).
+  Client roles may read only the paper's public columns, not `generation`, `lock_owner`
+  or `lock_expires_at`, and cannot read revisions, whose snapshots embed `generation`.
+  The site reads with the service role, so nothing it renders changes.
 
 `src/lib/daily-bread/repository/`: one `DailyBreadRepository` interface with three
 implementations:
@@ -229,11 +233,32 @@ The model writes only the frame:
 
 The comic is not written by a model at build time (§6).
 
-`generate/guards.ts` rejects:
+`generate/guards.ts` rejects, in the deck and rabbit-hole reasons:
 - quotation marks
 - URLs, emoji and markup
 - first person
 - the AI-CONTENT-CONSTRAINTS §4.2 forbidden patterns
+
+**Output validation (plan §26).** For every task, before parsing, the chain rejects
+an empty answer or a refusal ("I'm sorry, I can't…", "as an AI…"). The rejection
+reason goes back to the model once, then the chain moves on. `generatedTextProblems`
+applies to every model-written field: the frame, and each field of the Sunday lead and
+the guides. It flags:
+- placeholder residue (`lorem ipsum`, `TODO`, `[insert …]`, `{{…}}`);
+- refusal text;
+- HTML tags;
+- `javascript:` and `data:text/html` links;
+- malformed characters.
+
+Schema, required fields, length, duplicate modules, unsafe links and missing Scripture
+are checked by each task's parser and by `validateEditionDocument`.
+
+**Provenance (plan §27).** Every usage row carries the task's `promptVersion`.
+`edition.generation` records who wrote the frame (`provider`, `model`), its
+`promptVersion`, `generatedAt`, and `fallbackLevel` (0 Claude, 1 secondary remote,
+2 deterministic). Prompt versions: frame 3, Sunday lead 2, guides 1. Bump the constant
+whenever a prompt's wording changes. Editions built before 2026-09-14 lack these
+fields. The admin preview shows them.
 
 ## 6. The comic
 

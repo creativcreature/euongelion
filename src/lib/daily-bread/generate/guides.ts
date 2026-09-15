@@ -9,8 +9,11 @@
  */
 import { OutputValidationError } from '../providers/types'
 import type { EditorialGenerator, GenerationResult } from './editorial'
+import { generatedTextProblems } from './guards'
 
 export const GUIDES_TASK = 'guides'
+/** 1 = the SA-114 prompt, unchanged. */
+export const GUIDES_PROMPT_VERSION = 1
 
 export const GUIDE_KICKERS = ['Method', 'Practice', 'Tools', 'Getting started'] as const
 
@@ -63,6 +66,17 @@ export function guidesProblems(set: unknown): string[] {
     } else if ((g.body as unknown[]).join(' ').split(/\s+/).length < 250) {
       problems.push(`${at}: body too thin`)
     }
+    // Plan §26: placeholder residue, refusal text, HTML, unsafe links, malformed characters.
+    for (const f of ['title', 'standfirst']) {
+      if (typeof g?.[f] === 'string') problems.push(...generatedTextProblems(g[f] as string, `${at} ${f}`))
+    }
+    for (const [list, name] of [[g?.steps, 'step'], [g?.body, 'paragraph']] as const) {
+      if (!Array.isArray(list)) continue
+      list.forEach((item: unknown, j: number) => {
+        if (typeof item !== 'string') problems.push(`${at} ${name} ${j + 1}: not text`)
+        else problems.push(...generatedTextProblems(item, `${at} ${name} ${j + 1}`))
+      })
+    }
   })
   return problems
 }
@@ -74,6 +88,7 @@ export function composeGuides(params: {
 }): Promise<GenerationResult<WrittenGuide[]>> {
   return params.generator.generate<WrittenGuide[]>({
     task: GUIDES_TASK,
+    promptVersion: GUIDES_PROMPT_VERSION,
     system: '',
     prompt: guidesPrompt(params.date, params.coveredTitles),
     maxOutputTokens: 4000,

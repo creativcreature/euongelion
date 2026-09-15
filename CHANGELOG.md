@@ -175,6 +175,33 @@ corrected in order, earliest first.
       written to the database.
     - A guides dry run for Sep 16 went through Claude Code: three articles that
       passed the SA-114 rules on the first attempt. Nothing was written.
+- **Deviation 8 (plan §26–27, output validation and provenance), corrected in code.
+  The migration is NOT applied to production.**
+  - **Validation.**
+    - The chain rejects an empty answer and a refusal before parsing, and feeds the
+      reason back once. Before this, a refusal only failed by accident, as "no JSON".
+    - `generatedTextProblems` flags placeholder residue, refusal text, HTML,
+      `javascript:`/`data:` links and malformed characters. It applies to the frame
+      and to every field of the Sunday lead and the guides.
+    - The Sunday lead now requires 2 pull quotes.
+  - **Provenance.**
+    - Every usage row carries its task's `promptVersion` (frame 3, from git history;
+      Sunday lead 2; guides 1).
+    - `edition.generation` records the frame's writer, model, prompt version,
+      `generatedAt` and `fallbackLevel`. The admin preview shows them.
+  - **Public exposure, found in production with the anon key.**
+    - Anyone with the public key could read each published edition's `generation`
+      (provider calls, redacted errors, models, costs) and lease columns.
+    - They could also read every revision snapshot.
+    - The page HTML never carried provenance (checked on No. 002).
+    - Migration `20260914000001_daily_bread_v2_private_provenance.sql` limits client
+      roles to the paper's public columns and removes their access to revisions.
+      Tested in PGlite: public columns readable; `generation`, the lease columns,
+      `select *` and revisions all denied.
+  - **Verified.**
+    - 235 Daily Bread tests pass.
+    - The real Claude outputs from the deviation 7 dry runs pass the stricter checks.
+  - **Pending founder approval (production write).** Apply the migration.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

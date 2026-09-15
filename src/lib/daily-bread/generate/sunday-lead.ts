@@ -20,8 +20,11 @@
 import { extractJsonObject } from '../providers/chain'
 import { OutputValidationError } from '../providers/types'
 import type { EditorialGenerator, GenerationResult } from './editorial'
+import { generatedTextProblems } from './guards'
 
 export const SUNDAY_LEAD_TASK = 'sunday-lead'
+/** 1 = SA-100 (answer written to a file); 2 = the JSON answer and file-less rules of §21. */
+export const SUNDAY_LEAD_PROMPT_VERSION = 2
 
 export interface SundayLeadBrief {
   theme: string
@@ -95,6 +98,10 @@ export function sundayLeadWordCount(body: string): number {
 export function sundayLeadProblems(lead: SundayLead, scriptureText: string): string[] {
   const problems: string[] = []
   if (!lead.title || !lead.body) problems.push('composed lead missing fields (title, body)')
+  // Plan §26: placeholder residue, refusal text, HTML, unsafe links, malformed characters.
+  problems.push(...generatedTextProblems(lead.title, 'title'), ...generatedTextProblems(lead.body, 'body'))
+  lead.pullQuotes.forEach((q, i) => problems.push(...generatedTextProblems(q, `pull quote ${i + 1}`)))
+  if (lead.pullQuotes.length < 2) problems.push('composed lead needs 2 pull quotes')
   const words = sundayLeadWordCount(lead.body)
   if (words < 700 || words > 1400) problems.push(`composed lead is ${words} words — outside 700–1400`)
   const scripWords = scriptureText.split(/\s+/)
@@ -118,6 +125,7 @@ export function composeSundayLead(params: {
   const { brief, scripture } = params
   return params.generator.generate<SundayLead>({
     task: SUNDAY_LEAD_TASK,
+    promptVersion: SUNDAY_LEAD_PROMPT_VERSION,
     system: '',
     prompt: sundayLeadPrompt(brief, scripture, { files: true }),
     files: { dir: params.repoDir, promptWithoutFiles: sundayLeadPrompt(brief, scripture, { files: false }) },

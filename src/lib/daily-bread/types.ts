@@ -348,6 +348,8 @@ export interface ProviderUsage {
   provider: ProviderId
   model?: string
   task: string
+  /** The task prompt's version (plan §27); absent on usage recorded before 2026-09-14. */
+  promptVersion?: number
   ok: boolean
   attempts: number
   durationMs: number
@@ -357,11 +359,25 @@ export interface ProviderUsage {
   error?: string
 }
 
+/** 0 = Claude, 1 = the secondary remote provider, 2 = the deterministic floor (plan §22, §27). */
+export type FallbackLevel = 0 | 1 | 2
+
 export interface GenerationProvenance {
   runId: string
   builtAt: string
+  /** The first provider the chain tried (not necessarily the writer). */
   primaryProvider: ProviderId
   fallbackProvidersUsed: ProviderId[]
+  /*
+   * Plan §27, recorded for the editorial frame (the model-written part).
+   * Absent on editions built before 2026-09-14 (No. 001, No. 002).
+   */
+  /** Who wrote the frame. */
+  provider?: ProviderId
+  model?: string
+  promptVersion?: number
+  generatedAt?: string
+  fallbackLevel?: FallbackLevel
   usage: ProviderUsage[]
   moduleFailures: { module: string; error: string }[]
   assetFallbacks: string[]

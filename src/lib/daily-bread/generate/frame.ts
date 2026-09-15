@@ -69,6 +69,12 @@ const SCENE_KEYWORDS: Record<ProceduralSceneId, RegExp> = {
     /\b(night|star|stars|wilderness|desert|dark|darkness|mountain|watch|dawn|morning|exile|lamp|light)\b/i,
 }
 
+/**
+ * Bump on any wording change to FRAME_SYSTEM or framePrompt (plan §27).
+ * 1 e6e4c714 first build · 2 3020722a deck rules tightened · 3 8394e590 comic removed.
+ */
+export const FRAME_PROMPT_VERSION = 3
+
 export const FRAME_SYSTEM = [
   'You are the desk editor of The Daily Bread, a quiet daily paper for Christians published by Euangelion.',
   'You write very little. You never quote anyone, never report news or facts about people, never write prayers or theology, and never invent Scripture text.',
@@ -338,6 +344,7 @@ export async function composeFrame(
   const generator = createEditorialGenerator(deps)
   return generator.generate<EditorialFrame>({
     task: 'editorial-frame',
+    promptVersion: FRAME_PROMPT_VERSION,
     system: FRAME_SYSTEM,
     prompt: framePrompt(input),
     maxOutputTokens: 900,

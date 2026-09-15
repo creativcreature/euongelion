@@ -18,6 +18,11 @@ const MIGRATION = readFileSync(
   'utf8',
 )
 
+const PRIVATE_PROVENANCE = readFileSync(
+  path.join(process.cwd(), 'supabase/migrations/20260914000001_daily_bread_v2_private_provenance.sql'),
+  'utf8',
+)
+
 const ROLLBACK = readFileSync(
   path.join(process.cwd(), 'database/ROLLBACK-2026-09-13-daily-bread-v2.sql'),
   'utf8',
@@ -37,6 +42,7 @@ async function freshDb(): Promise<PGlite> {
     ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT EXECUTE ON FUNCTIONS TO anon, authenticated, service_role;
   `)
   await db.exec(MIGRATION)
+  await db.exec(PRIVATE_PROVENANCE)
   return db
 }
 
@@ -238,6 +244,13 @@ describe('daily bread v2 schema (PGlite)', () => {
     await db.exec(`SET ROLE anon`)
     const visible = await rows(db, `select slug from daily_bread_editions order by slug`)
     expect(visible.map((r) => r.slug)).toEqual(['2026-09-14'])
+    // Plan §27: the paper's public columns stay readable; provenance and leases do not.
+    const [paper] = await rows(db, `select slug, issue, title, modules, published_at from daily_bread_editions`)
+    expect(paper).toMatchObject({ slug: '2026-09-14', issue: 1 })
+    for (const hidden of ['generation', 'lock_owner', 'lock_expires_at', '*']) {
+      await expect(db.query(`select ${hidden} from daily_bread_editions`)).rejects.toThrow(/permission denied/)
+    }
+    await expect(db.query(`select snapshot from daily_bread_edition_revisions`)).rejects.toThrow(/permission denied/)
     await expect(
       db.query(`insert into daily_bread_editions (edition_date, slug) values ('2026-10-01', '2026-10-01')`),
     ).rejects.toThrow(/permission denied/)

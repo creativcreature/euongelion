@@ -7,9 +7,10 @@
  * network and no credential, so a total AI outage still produces an edition —
  * one that records, in its provenance, exactly why.
  */
+import { looksLikeRefusal } from '../generate/guards'
 import type { RunLogger } from '../log'
 import { errorMessage } from '../redact'
-import type { ProviderId, ProviderUsage } from '../types'
+import type { FallbackLevel, ProviderId, ProviderUsage } from '../types'
 import {
   OutputValidationError,
   ProviderError,
@@ -43,6 +44,8 @@ export interface ChainOutcome<T> {
 
 export interface ChainOptions<T> {
   task: string
+  /** The task's prompt version, recorded on every usage row (plan §27). */
+  promptVersion?: number
   providers: TextProvider[]
   request: ChainRequest
   /** Parse raw text; throw OutputValidationError (or any error) to reject. */
@@ -64,6 +67,12 @@ export interface ChainOptions<T> {
 }
 
 const defaultSleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
+
+/** Where in the plan's chain a provider sits: Claude, secondary remote, deterministic. */
+export function fallbackLevel(provider: ProviderId): FallbackLevel {
+  if (provider === 'claude-api' || provider === 'claude-cli') return 0
+  return provider === 'deterministic' ? 2 : 1
+}
 
 /** Every provider failed a task that has no deterministic floor. */
 export class ProviderChainExhausted extends Error {
@@ -118,6 +127,7 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
   const usage: ProviderUsage[] = []
   const tried: ProviderId[] = []
   const { files, ...request } = options.request
+  const version = options.promptVersion === undefined ? {} : { promptVersion: options.promptVersion }
 
   for (const provider of options.providers) {
     const readsFiles = Boolean(files && provider.canReadFiles)
@@ -158,6 +168,10 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
         inputTokens += result.inputTokens ?? 0
         outputTokens += result.outputTokens ?? 0
         cost += result.estimatedCostUsd ?? 0
+        if (!result.text.trim()) throw new OutputValidationError(['empty output'])
+        if (looksLikeRefusal(result.text)) {
+          throw new OutputValidationError(['refusal output: the answer declined the task instead of doing it'])
+        }
         const value = options.parse(result.text)
         const problems = options.validate ? await options.validate(value) : []
         if (problems.length > 0) throw new OutputValidationError(problems)
@@ -165,6 +179,7 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
           provider: provider.id,
           model: result.model,
           task: options.task,
+          ...version,
           ok: true,
           attempts,
           durationMs: Math.max(0, now() - started),
@@ -210,6 +225,7 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
       provider: provider.id,
       model: provider.model,
       task: options.task,
+      ...version,
       ok: false,
       attempts,
       durationMs: Math.max(0, now() - started),
@@ -232,6 +248,7 @@ export async function runProviderChain<T>(options: ChainOptions<T>): Promise<Cha
   usage.push({
     provider: 'deterministic',
     task: options.task,
+    ...version,
     ok: true,
     attempts: 1,
     durationMs: Math.max(0, now() - started),
