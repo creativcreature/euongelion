@@ -317,7 +317,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
     const { data, error } = await this.read(() =>
       this.client
         .from('daily_bread_editions')
-        .select('edition_date, archetype, modules, assets, composition')
+        .select('edition_date, archetype, modules, assets, composition, title, primary_scripture')
         .in('lifecycle', ['ready', 'published', 'superseded'])
         .lt('edition_date', before)
         .gte('edition_date', floor)
@@ -330,7 +330,14 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
       modules: DailyEdition['modules'] | null
       assets: DailyEdition['assets'] | null
       composition: DailyEdition['composition'] | null
-    }[]).map((r) => recentFromParts(r.edition_date, r.archetype, r.modules, r.assets, r.composition))
+      title: string | null
+      primary_scripture: DailyEdition['primaryScripture'] | null
+    }[]).map((r) =>
+      recentFromParts(r.edition_date, r.archetype, r.modules, r.assets, r.composition, {
+        title: r.title,
+        primaryScripture: r.primary_scripture,
+      }),
+    )
   }
 
   async getLifecycle(date: string) {

@@ -178,7 +178,7 @@ describe('edition document validation', () => {
         { type: 'reading' as const, devotionalSlug: 'x', title: 'T', blocks: [{ kind: 'paragraph' as const, text: 'sk-ant-api03-leakedkeyvalue' }] },
         {
           type: 'goodNews' as const,
-          items: [{ headline: 'h', summary: 's', sourceName: 'n', sourceUrl: 'javascript:alert(1)', publishedOn: '2026-09-10' }],
+          items: [{ headline: 'h', summary: 's', sourceName: 'n', sourceUrl: 'javascript:alert(1)', publishedOn: '2026-09-10', verifiedAt: '2026-09-12T15:00:00Z' }],
         },
       ],
       assets: { scenePoster: { scene: 'grain' as const, seed: 1 }, og: { title: 'T', kicker: 'k' }, fallbacks: [] },

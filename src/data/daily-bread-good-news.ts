@@ -9,8 +9,10 @@
  *
  * To add an item: append an entry with `runOn` set to the editorial date it
  * should print, a headline and one-to-two-sentence summary in our own words,
- * the outlet name, the https link, and the report's own publication date
- * (within 30 days before runOn). The builder validates every field.
+ * the outlet name, the https link, the report's own publication date
+ * (within 30 days before runOn), and `verifiedAt`: the moment a person last
+ * opened the link and confirmed the report says what the summary says (plan
+ * §73). The builder validates every field and drops an entry that fails.
  */
 
 export interface GoodNewsEntry {
@@ -20,6 +22,8 @@ export interface GoodNewsEntry {
   sourceName: string
   sourceUrl: string
   publishedOn: string
+  /** ISO timestamp of the human check of the source; not after runOn, not before publishedOn. */
+  verifiedAt: string
 }
 
 export const GOOD_NEWS_ENTRIES: readonly GoodNewsEntry[] = []

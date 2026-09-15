@@ -62,6 +62,8 @@ export interface EditionSources {
   publishedStrips(): Promise<StripBankEntry[]>
   /** Build-time check that an image URL is really there. */
   assetAvailable(src: string): Promise<boolean>
+  /** Every devotional's slug, title and Scripture reference, for rabbit-hole threads (plan §74). */
+  devotionalReferences(): Promise<{ slug: string; title: string; reference: string }[]>
 }
 
 export interface ModuleFailure {
@@ -128,6 +130,22 @@ async function readDevotionalFromDisk(slug: string): Promise<Devotional | null> 
   }
 }
 
+/** Slug, title and reference of every committed devotional (public/devotionals). */
+async function readDevotionalReferences(): Promise<{ slug: string; title: string; reference: string }[]> {
+  const { promises: fs } = await import('node:fs')
+  const path = await import('node:path')
+  const dir = path.join(process.cwd(), 'public', 'devotionals')
+  const files = (await fs.readdir(dir)).filter((f) => /^[a-z0-9-]{1,120}\.json$/.test(f)).sort()
+  const out: { slug: string; title: string; reference: string }[] = []
+  for (const file of files) {
+    const d = JSON.parse(await fs.readFile(path.join(dir, file), 'utf8')) as { title?: unknown; scriptureReference?: unknown }
+    if (typeof d.title === 'string' && typeof d.scriptureReference === 'string') {
+      out.push({ slug: file.replace(/\.json$/, ''), title: d.title, reference: d.scriptureReference })
+    }
+  }
+  return out
+}
+
 export function goodNewsForDate(dateSlug: string, entries: readonly GoodNewsEntry[] = GOOD_NEWS_ENTRIES) {
   return entries.filter((e) => e.runOn === dateSlug)
 }
@@ -161,6 +179,7 @@ export function defaultEditionSources(): EditionSources {
   return {
     loadDevotional: readDevotionalFromDisk,
     lookupVerse: bsbLookup,
+    devotionalReferences: readDevotionalReferences,
     async liveEditionItems(dateSlug) {
       const { getLiveEdition } = await import('@/lib/edition/deadline')
       const { rolloverInstant } = await import('../time')
@@ -310,6 +329,7 @@ function sanitizeGoodNews(dateSlug: string, entries: readonly GoodNewsEntry[]): 
       sourceName: cleanText(e.sourceName, 80),
       sourceUrl: safeHref(e.sourceUrl) ?? '',
       publishedOn: e.publishedOn,
+      verifiedAt: typeof e.verifiedAt === 'string' ? e.verifiedAt : '',
     }))
     .filter(
       (e) =>
@@ -319,14 +339,14 @@ function sanitizeGoodNews(dateSlug: string, entries: readonly GoodNewsEntry[]): 
         e.sourceUrl.startsWith('https://') &&
         /^\d{4}-\d{2}-\d{2}$/.test(e.publishedOn) &&
         e.publishedOn <= dateSlug &&
-        e.publishedOn >= floor,
+        e.publishedOn >= floor &&
+        // Verified by a person, after the report appeared and before it prints.
+        Number.isFinite(Date.parse(e.verifiedAt)) &&
+        e.verifiedAt.slice(0, 10) >= e.publishedOn &&
+        e.verifiedAt.slice(0, 10) <= dateSlug,
     )
 }
 
-/**
- * Build everything except the frame-dependent modules (comic, scene,
- * rabbit holes), which the orchestrator adds after the provider chain runs.
- */
 /**
  * Plan §42 cooldowns for the rotating content a bank picks by date: what recent
  * editions printed, and a place to say what the cooldown had to give way on.
@@ -337,6 +357,10 @@ export interface BuildCooldowns {
   notes: string[]
 }
 
+/**
+ * Build everything except the frame-dependent modules (comic, scene,
+ * rabbit holes), which the orchestrator adds after the provider chain runs.
+ */
 export async function buildBaseEdition(
   dateSlug: string,
   sources: EditionSources,

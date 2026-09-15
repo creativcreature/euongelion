@@ -452,6 +452,22 @@ corrected in order, earliest first.
     twice and a deterministic frame. A later rebuild's attempt row never landed; the
     local Supabase timeouts earlier that night are the likely cause (UNVERIFIED).
   - **Tests.** 277 pass.
+- **Deviation 23 (plan §73–74, Good News and rabbit holes), corrected in code, not
+  deployed.**
+  - **Good News.**
+    - Every entry needs `verifiedAt`, a person's check of the source falling between
+      the report's date and the print date. Otherwise it is dropped. The paper prints
+      "Source checked <date>".
+    - The list stays empty. The module forbids a model finding good news, so filling
+      it is the founder's curation.
+  - **Rabbit holes.** Each now ends "Follow this thread →", linking to the newest past
+    Daily Bread edition on the same book and chapter, or else a devotional on it (604
+    committed devotionals indexed at build). Never the same thread twice in one
+    edition, same-site only (validated), no feed.
+  - **Checked by eye** on a fixture edition at desktop width and 390px: two holes, two
+    different threads, understated. The first fixture run showed both holes linking
+    to one page; that was fixed before commit.
+  - **Tests.** 281 pass.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

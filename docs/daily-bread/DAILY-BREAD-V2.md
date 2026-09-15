@@ -578,6 +578,14 @@ Option B would replace the procedural engine with series art, so both wait.
   bucket.
 - Good News is human-curated only (`src/data/daily-bread-good-news.ts`) and validated.
   Models never produce it.
+  - Each entry carries `verifiedAt` (plan §73): when a person checked the source. It must
+    fall after the report's date and on or before the print date; anything else is
+    dropped, and the paper prints "Source checked <date>".
+  - The list is empty today. Nothing prints until the founder adds a verified item.
+- Rabbit-hole threads (plan §74) are same-site links only: a past Daily Bread edition
+  (newest first) or a devotional on the same book and chapter. There is one per rabbit
+  hole, never the same thread twice in an edition, and never a feed.
+  `validateEditionDocument` rejects an off-site thread.
 
 ## 10. Observability
 

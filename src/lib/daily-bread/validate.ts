@@ -57,6 +57,11 @@ export function validateEditionDocument(
         if (!safeHref(item.sourceUrl)) problems.push('screening: unsafe link')
       }
     }
+    if (m.type === 'rabbitHoles') {
+      for (const hole of m.items) {
+        if (hole.thread && !safeHref(hole.thread.href)?.startsWith('/')) problems.push('rabbitHoles: thread link must be a same-site path')
+      }
+    }
     if (m.type === 'notices') {
       for (const n of m.notices) {
         if (n.href && !safeHref(n.href)) problems.push('notices: unsafe link')

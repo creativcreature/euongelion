@@ -166,6 +166,37 @@
   color: var(--mock-muted);
 }
 
+/* Plan §74: understated, one per rabbit hole. */
+.db2-rabbit-thread {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  align-items: baseline;
+  min-height: 44px;
+  padding-block: 0.6rem;
+  font-family: var(--font-family-ui);
+  font-size: var(--type-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mock-ink);
+  text-decoration: none;
+}
+
+.db2-rabbit-thread-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--type-meta);
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.db2-rabbit-thread:hover .db2-rabbit-thread-title,
+.db2-rabbit-thread:focus-visible .db2-rabbit-thread-title {
+  text-decoration-thickness: 2px;
+}
+
 /* ── Good news ─────────────────────────────────────────────────────────── */
 
 .db2-goodnews-list {

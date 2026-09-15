@@ -44,6 +44,9 @@ export interface RecentComposition {
   renderer?: ProceduralRendererId
   galleryPlates?: { image: string; artist: string }[]
   voice?: { quote: string; author: string }
+  /* Plan §74 threads. */
+  title?: string
+  primaryReference?: string
 }
 
 /** The anti-repeat facts one frozen edition carries (shared by every repository). */
@@ -53,6 +56,7 @@ export function recentFromParts(
   modules: DailyEdition['modules'] | null | undefined,
   assets: DailyEdition['assets'] | null | undefined,
   composition: DailyEdition['composition'] | null | undefined,
+  paper: { title?: string | null; primaryScripture?: DailyEdition['primaryScripture'] | null } = {},
 ): RecentComposition {
   const scene = modules?.find((m) => m.type === 'scene')
   const comic = modules?.find((m) => m.type === 'comic')
@@ -69,6 +73,8 @@ export function recentFromParts(
     heroVariant: composition?.heroVariant,
     galleryPlates: gallery && gallery.type === 'gallery' ? gallery.plates.map((p) => ({ image: p.image, artist: p.artist })) : undefined,
     voice: voice && voice.type === 'voices' ? { quote: voice.quote, author: voice.author } : undefined,
+    title: paper.title ?? undefined,
+    primaryReference: paper.primaryScripture?.reference,
   }
 }
 
@@ -131,5 +137,5 @@ export function toArchiveEntry(edition: DailyEdition): ArchiveEntry {
 }
 
 export function recentFromEdition(edition: DailyEdition): RecentComposition {
-  return recentFromParts(edition.editionDate, edition.composition.archetype, edition.modules, edition.assets, edition.composition)
+  return recentFromParts(edition.editionDate, edition.composition.archetype, edition.modules, edition.assets, edition.composition, edition)
 }

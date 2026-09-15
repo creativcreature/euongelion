@@ -15,6 +15,7 @@
  */
 import { composeFrame, FRAME_PROMPT_VERSION, type EditorialFrame, type FrameInput } from './generate/frame'
 import { fallbackLevel } from './providers/chain'
+import { withThreads } from './modules/threads'
 import { composeComic } from './comic/chain'
 import { composeEdition } from './composition/compose'
 import { buildBaseEdition, type EditionSources } from './modules/build'
@@ -242,7 +243,15 @@ export async function createDailyBreadEdition(
     })
     if (comic.module) modules.push(comic.module)
     if (frameValue.rabbitHoles.length > 0) {
-      modules.push({ type: 'rabbitHoles', items: frameValue.rabbitHoles })
+      // Plan §74: each rabbit hole links to where the site already followed that chapter.
+      const devotionals = await deps.sources.devotionalReferences()
+      const items = withThreads(frameValue.rabbitHoles, {
+        pastEditions: history.flatMap((r) =>
+          r.title && r.primaryReference ? [{ editionDate: r.editionDate, title: r.title, reference: r.primaryReference }] : [],
+        ),
+        devotionals,
+      })
+      modules.push({ type: 'rabbitHoles', items })
     }
 
     const date = slugToUtcDate(dateSlug)

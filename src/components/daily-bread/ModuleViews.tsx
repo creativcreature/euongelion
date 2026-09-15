@@ -31,7 +31,7 @@ import ComicStrip from '@/components/daily-bread/ComicStrip'
 import PlateImage from '@/components/daily-bread/PlateImage'
 import ProceduralScene from '@/components/daily-bread/visual/ProceduralScene'
 import { ARCHETYPES } from '@/lib/daily-bread/composition/archetypes'
-import { boldSegments, paragraphs } from '@/lib/daily-bread/safe'
+import { boldSegments, paragraphs, safeHref } from '@/lib/daily-bread/safe'
 import { formatEditorialDate } from '@/lib/daily-bread/time'
 import type {
   DailyEdition,
@@ -291,6 +291,11 @@ export function ModuleView({
                 <p className="db2-rabbit-ref">{item.reference}</p>
                 <blockquote className="db2-rabbit-text">{item.text}</blockquote>
                 <p className="db2-rabbit-why">{item.why}</p>
+                {item.thread && safeHref(item.thread.href)?.startsWith('/') ? (
+                  <Link href={item.thread.href} className="db2-rabbit-thread">
+                    Follow this thread &rarr; <span className="db2-rabbit-thread-title">{item.thread.label}</span>
+                  </Link>
+                ) : null}
               </li>
             ))}
           </ol>
@@ -311,6 +316,9 @@ export function ModuleView({
                     {item.sourceName}, {item.publishedOn} &rarr;
                   </a>
                 </p>
+                {item.verifiedAt ? (
+                  <p className="edition-item-source db2-goodnews-checked">Source checked {item.verifiedAt.slice(0, 10)}</p>
+                ) : null}
               </li>
             ))}
           </ul>

@@ -35,6 +35,7 @@ export function offlineSources(): EditionSources {
   // Offline there is no strip bank: the comic is honestly omitted.
   s.publishedStrips = async () => []
   s.assetAvailable = async () => false
+  // Devotional threads read the committed corpus from disk: no network.
   return s
 }
 

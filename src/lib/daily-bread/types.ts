@@ -164,6 +164,12 @@ export interface RabbitHole {
   reference: string
   text: string
   why: string
+  /**
+   * Plan §74 "Follow this thread →": a past Daily Bread edition or a devotional
+   * built on the same book and chapter. Absent when nothing in the archive or
+   * the devotional library shares it.
+   */
+  thread?: { href: string; label: string }
 }
 
 export interface RabbitHolesModule {
@@ -177,6 +183,8 @@ export interface GoodNewsItem {
   sourceName: string
   sourceUrl: string
   publishedOn: string
+  /** When a person verified the source (plan §73). */
+  verifiedAt: string
 }
 
 export interface GoodNewsModule {
