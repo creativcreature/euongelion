@@ -31,6 +31,7 @@ root. Pipeline commands read secrets from the environment (CI) or `.env.local`
    ```bash
    npm run daily-bread -- fixtures --from=2026-09-13 --days=7
    npx opennextjs-cloudflare build
+   npm run daily-bread -- bundle-scan   # plan §56: exits 1 on any credential in the build
    npm run daily-bread -- fixtures --from=2026-09-13 --days=7 --assets-dir=.open-next/assets
    DAILY_BREAD_V2=on DAILY_BREAD_V2_SOURCE=fixture npx wrangler dev --port 8799 \
      --var DAILY_BREAD_V2:on --var DAILY_BREAD_V2_SOURCE:fixture

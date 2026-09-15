@@ -11,6 +11,52 @@ import { createRunLogger } from '@/lib/daily-bread/log'
 import { validateEditionDocument } from '@/lib/daily-bread/validate'
 import { DAILY_BREAD_V2_DEFAULT, dailyBreadSource, dailyBreadV2Enabled } from '@/lib/daily-bread/flags'
 import { runInMemoryE2E } from '@/lib/daily-bread/e2e'
+import { scanForSecrets } from '@/lib/daily-bread/secret-scan'
+import { SECRET_ENV_NAMES } from '@/lib/daily-bread/redact'
+import { readdirSync, readFileSync, statSync } from 'node:fs'
+import { join } from 'node:path'
+
+describe('credentials never reach the browser (plan §56)', () => {
+  it('the bundle scan checks every secret by value, names the ones it cannot, and catches credential shapes', () => {
+    const env = {
+      SUPABASE_SERVICE_ROLE_KEY: 'service-role-value-0123456789',
+      GEMINI_API_KEY: 'gemini-value-that-is-long-enough',
+    }
+    const report = scanForSecrets(
+      [
+        { path: 'assets/_next/static/chunks/a.js', content: 'const x="service-role-value-0123456789"' },
+        { path: 'worker.js', content: 'fetch(u,{headers:{"x-api-key":"sk-ant-oat01-AAAAAAAAAAAAAAAAAAAAAAAAAAAA"}})' },
+        { path: 'assets/clean.js', content: 'export const ok = 1' },
+      ],
+      env,
+    )
+    expect(report.filesScanned).toBe(3)
+    expect(report.checkedByValue).toEqual(['SUPABASE_SERVICE_ROLE_KEY', 'GEMINI_API_KEY'])
+    // Unset names are reported, never silently counted as clean.
+    expect(report.notCheckableByValue).toContain('CLAUDE_CODE_OAUTH_TOKEN')
+    expect(report.checkedByValue.length + report.notCheckableByValue.length).toBe(SECRET_ENV_NAMES.length)
+    expect(report.valueHits).toEqual([{ name: 'SUPABASE_SERVICE_ROLE_KEY', file: 'assets/_next/static/chunks/a.js' }])
+    expect(report.shapeHits).toEqual([{ label: 'Anthropic OAuth token', file: 'worker.js' }])
+  })
+
+  it('no client component names a secret or imports a provider transport', () => {
+    const offenders: string[] = []
+    const walk = (dir: string) => {
+      for (const entry of readdirSync(dir)) {
+        const p = join(dir, entry)
+        if (statSync(p).isDirectory()) walk(p)
+        else if (/\.(tsx?|mts)$/.test(p)) {
+          const src = readFileSync(p, 'utf8')
+          if (!/^\s*['"]use client['"]/.test(src)) continue
+          for (const name of SECRET_ENV_NAMES) if (src.includes(name)) offenders.push(`${p}: ${name}`)
+          if (/daily-bread\/providers\//.test(src)) offenders.push(`${p}: imports a provider`)
+        }
+      }
+    }
+    walk(join(process.cwd(), 'src'))
+    expect(offenders).toEqual([])
+  })
+})
 
 describe('safe links and assets', () => {
   it('allows same-site paths and public https only', () => {

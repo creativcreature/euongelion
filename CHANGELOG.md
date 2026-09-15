@@ -412,6 +412,20 @@ corrected in order, earliest first.
   - **Waiting on the scenes verdict.** The approved presets (§50–51) and the
     dither/grain/typography module split (§47).
   - **Tests.** 269 Daily Bread tests pass.
+- **Deviation 21 (plan §56, secrets never reach the browser), corrected.**
+  - **What was wrong.** The earlier bundle scan was a scratch script. It checked only
+    the secrets set in the local environment, so it silently skipped the Claude OAuth
+    token and others, and it was never committed.
+  - **The new scan.** `npm run daily-bread -- bundle-scan` checks every name in
+    `SECRET_ENV_NAMES` by value, lists the names it could not check, and also matches
+    credential shapes (Anthropic API and OAuth tokens, Google keys, OpenAI project
+    keys). It exits 1 on any hit.
+  - **Result.** Run on the last OpenNext build (Sep 14 09:07): 4,864 files, no hits.
+    Six secrets were checked by value; five, including both Claude OAuth tokens, could
+    not be checked by value locally and were covered by shape only.
+  - **Tests.** A test pins the scan. A static test fails if any client component names
+    a secret or imports a provider transport. The runbook's pre-deploy step now runs the
+    scan.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

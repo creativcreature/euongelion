@@ -309,6 +309,25 @@ async function main() {
       }
       process.exit(0)
     }
+    case 'bundle-scan': {
+      // Plan §56: after `npx opennextjs-cloudflare build`, prove no credential is in
+      // the Worker or its static assets. Exit 1 on any hit.
+      const { scanForSecrets } = await import('../../src/lib/daily-bread/secret-scan')
+      const dir = path.resolve(ROOT, arg('dir') ?? '.open-next')
+      if (!fs.existsSync(dir)) usage(`${path.relative(ROOT, dir)} does not exist — build first`)
+      function* walk(d: string): Generator<{ path: string; content: string }> {
+        for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
+          const p = path.join(d, entry.name)
+          if (entry.isDirectory()) yield* walk(p)
+          else if (entry.isFile() && fs.statSync(p).size < 60_000_000 && !/\.(png|jpe?g|webp|gif|avif|woff2?|mp3|m4a|ogg)$/i.test(p)) {
+            yield { path: path.relative(ROOT, p), content: fs.readFileSync(p, 'latin1') }
+          }
+        }
+      }
+      const report = scanForSecrets(walk(dir), process.env)
+      console.log(JSON.stringify({ ...report, valueHits: report.valueHits.map((h) => `${h.name} in ${h.file}`), shapeHits: report.shapeHits.map((h) => `${h.label} in ${h.file}`) }, null, 2))
+      process.exit(report.valueHits.length + report.shapeHits.length > 0 ? 1 : 0)
+    }
     case 'reservoir': {
       // Plan §53. Local sources always; --usage also reads the published paper
       // and the approved strips from the database.
