@@ -315,6 +315,29 @@ because no strip rows existed. These faults stopped the rows from being made:
 - The failure alert had no `issues: write` permission.
 
 Items 2–5 are repaired. `STRIP_MACHINE` is unchanged: it is a founder switch.
+Under the weekly model, the founder approves strips at `/admin/comics`, and the
+machine stays paused until the founder rules on the drawing style
+(`echo-dust-weekly-code-vs-codex`).
+
+**The plan §32 trace**, checked on 2026-09-14 against every strip row in production:
+
+| Link | Finding |
+| --- | --- |
+| Generation, output parsing | `generate-strip.mjs` writes the script with `claude -p`, draws with Codex and inspects it. It never ran in CI (causes above). |
+| Asset creation, file format | 7 strip files, all `image/jpeg`, 0.70–0.85 MB, 1512×745. |
+| Storage, permissions, signed URLs | Public `edition-assets` bucket: every file answers 200 with no signature, so nothing expires. |
+| **Storage, stale path** | **Defect found.** Strip numbers named the files, and 2026-08-24 "No. 4: The Receipt" was written over `echo-dust-004.jpg`, the published No. 1. Files are now named by date and run stamp with `x-upsert: false`. A strip whose file another row shares is never reprinted. |
+| Database reference, missing DB field | Every row has `image`, `alt`, `caption`, `panelId`, `width` and `height`. |
+| **Database reference, overwrite** | **Defect found.** `--force` upserted the row, which could turn an approved strip back into a draft with a new picture. It now refuses when the date's strip is approved. |
+| URL construction, CDN, CORS | Absolute Supabase public URLs, served with `access-control-allow-origin: *` and `cache-control: no-cache`. |
+| Image-host allowlist, Next/Image | `images.unoptimized: true`, so there is no loader or host allowlist to fail. CSP `img-src 'self' data: https:` allows the host. |
+| Browser request, malformed image | The build checks each image with a HEAD request (200 and `image/*`) before it prints the strip (`httpImageAvailable`). |
+| Hydration, component rendering | Server-rendered with no client component, so hydration cannot fail. |
+| Cache | None in front of the page (§11). |
+
+`__tests__/daily-bread-v2-comic-root-cause.test.ts` pins each cause: the CLI installed
+before the probe, the 150-minute timeout, tier-3 composition, `issues: write`, files
+never overwritten, and approved strips never redrawn.
 
 **Correction (2026-09-14): the funnies are ECHO & DUST.** The founder's strip is Teddy,
 Echo and Dust, locked in `content/strip-reference/ECHO-AND-DUST-CANON.md` and drawn by

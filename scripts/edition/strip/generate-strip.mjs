@@ -54,6 +54,11 @@ const H = { apikey: KEY, Authorization: `Bearer ${KEY}` }
     { headers: H },
   )
   const rows = await r.json()
+  // --force redraws a draft or a rejected strip, never an approved one: the row
+  // upsert below would turn a printed strip back into a draft with a new picture.
+  if (rows.some((row) => row.status === 'published')) {
+    throw new Error(`[strip] ${date} has an APPROVED strip — reject it at /admin/comics before redrawing`)
+  }
   if (rows.length > 0 && !args.force) {
     console.log(`[strip] ${date} already has a strip (${rows[0].status}) — skipping (use --force to redraw)`)
     process.exit(0)

@@ -271,6 +271,28 @@ corrected in order, earliest first.
     drift.
   - **Tests.** 241 pass: loader states and boundaries, both notices with a single
     critical line only past the window, and cron log levels in EDT and EST.
+- **Deviation 12 (plan §32, comic root cause), corrected.**
+  - **The trace.** The plan's full chain was checked against every strip row in
+    production and recorded in DAILY-BREAD-V2.md §6.
+    - All 7 files answer 200 `image/jpeg` from a public bucket, so there are no
+      signed URLs to expire.
+    - CORS is `*`.
+    - Next Image is unoptimized, so there is no host allowlist.
+    - CSP allows `https:` images.
+    - No fields are missing.
+  - **A second overwrite path, found and fixed.** `generate-strip.mjs --force`
+    upserted the strip row, which could turn an approved strip back into a draft with
+    a new picture. It now refuses when the date's strip is approved.
+  - **Regression tests.** `daily-bread-v2-comic-root-cause.test.ts` pins all six causes
+    found:
+    - gapfill never installed the CLI;
+    - the 15-minute timeout;
+    - tier-3 composition;
+    - alerts without `issues: write`;
+    - strip files overwritten;
+    - approved strips redrawn.
+  - **Still paused.** `STRIP_MACHINE` stays off until the founder rules on the drawing
+    style.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request
