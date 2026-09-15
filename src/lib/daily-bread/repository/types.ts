@@ -5,6 +5,7 @@ import type {
   DailyEdition,
   EditionDocument,
   EditionLifecycle,
+  EditionModuleType,
   EditionRevision,
   ProceduralSceneId,
   PublicationAttempt,
@@ -34,6 +35,8 @@ export interface RecentComposition {
   scene?: ProceduralSceneId
   comicId?: string
   leadPlateId?: string
+  /** The module types the paper actually printed (its placements), for department rotation. */
+  printed?: EditionModuleType[]
 }
 
 /**
@@ -103,5 +106,6 @@ export function recentFromEdition(edition: DailyEdition): RecentComposition {
     scene: scene && scene.type === 'scene' ? scene.scene : undefined,
     comicId: comic && comic.type === 'comic' ? (comic.stripId ?? comic.script?.id) : undefined,
     leadPlateId: edition.assets.leadPlate?.id,
+    printed: edition.composition.placements.map((p) => p.module),
   }
 }

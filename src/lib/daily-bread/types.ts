@@ -277,6 +277,25 @@ export interface Placement {
   beat: 'dense' | 'open' | 'pause'
 }
 
+/**
+ * Plan §40: anchors print generally daily; departments rotate; interactives
+ * rotate within a small budget.
+ */
+export type ModuleRole = 'anchor' | 'department' | 'interactive'
+
+/** Plan §41: the presentation beat of one band, read from what it holds. */
+export type RhythmBeat =
+  | 'immersive'
+  | 'brief'
+  | 'interactive'
+  | 'quiet'
+  | 'visual'
+  | 'dense'
+  | 'playful'
+  | 'scriptural'
+  | 'longform'
+  | 'prayer'
+
 /** What opens the paper, read from the first band actually placed. */
 export type HeroVariant = 'lead-with-rail' | 'lead-with-word' | 'lead' | 'scene' | 'scripture' | 'red-letter' | 'prayer'
 export type CompositionDensity = 'dense' | 'standard' | 'sparse'
@@ -317,6 +336,16 @@ export interface CompositionManifest {
   /** The scene as printed: which scene, which renderer, which seed (the plan's proceduralPreset/Seed). */
   procedural?: { scene: ProceduralSceneId; renderer: ProceduralRendererId; seed: number }
   rendererVersion?: string
+  /** Plan §41: one presentation beat per band, in reading order. */
+  beats?: RhythmBeat[]
+  /**
+   * Plan §40: the day's rotation. `rested` are departments and interactives that
+   * were built but not printed today, with how long ago each last printed.
+   */
+  rotation?: {
+    printed: EditionModuleType[]
+    rested: { module: EditionModuleType; lastPrintedDaysAgo: number | null }[]
+  }
 }
 
 /* ── Visual engine ───────────────────────────────────────────────────── */

@@ -23,6 +23,7 @@ import type {
   CompositionDensity,
   EditionModuleType,
   ModuleTier,
+  ModuleRole,
   MotionLevel,
   Placement,
   SeparatorStyle,
@@ -56,7 +57,51 @@ export interface ArchetypeDefinition {
     accent: AccentStrategy
     separator: SeparatorStyle
     motion: MotionLevel
+    /** Plan §40: how many rotating departments and interactives this paper prints. */
+    departments: number
+    interactives: number
   }
+}
+
+/**
+ * Plan §40 roles. Anchors print whenever they exist: the Scripture, the
+ * reading and its lead, the response (practice) and the prayer (§29), the
+ * day's scene (the visual treatment), the day's rabbit holes (the edition's
+ * own frame), and the comic — the founder's weekly Echo & Dust strip "continues
+ * day to day" (2026-09-14). Everything else rotates.
+ */
+export const MODULE_ROLES: Record<EditionModuleType, ModuleRole> = {
+  lead: 'anchor',
+  reading: 'anchor',
+  scripture: 'anchor',
+  practice: 'anchor',
+  prayer: 'anchor',
+  scene: 'anchor',
+  rabbitHoles: 'anchor',
+  comic: 'anchor',
+  word: 'department',
+  redLetter: 'department',
+  catechism: 'department',
+  gallery: 'department',
+  hymn: 'department',
+  voices: 'department',
+  archivePull: 'department',
+  guides: 'department',
+  proverb: 'department',
+  goodNews: 'department',
+  season: 'department',
+  memoryVerse: 'department',
+  question: 'department',
+  planDay: 'department',
+  witness: 'department',
+  screening: 'department',
+  letters: 'department',
+  notices: 'department',
+  crossword: 'interactive',
+  unscramble: 'interactive',
+  quiz: 'interactive',
+  wordSearch: 'interactive',
+  coloring: 'interactive',
 }
 
 export const MODULE_TIERS: Record<EditionModuleType, ModuleTier> = {
@@ -150,7 +195,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'open', items: [['prayer', 'wide'], ['goodNews', 'narrow']] },
     ],
     omit: [],
-    presentation: { density: 'dense', accent: 'standard', separator: 'ruled-grid', motion: 'full' },
+    presentation: { density: 'dense', accent: 'standard', separator: 'ruled-grid', motion: 'full', departments: 7, interactives: 2 },
   },
   illuminated: {
     id: 'illuminated',
@@ -172,7 +217,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'dense', items: [['word', 'third'], ['redLetter', 'third'], ['memoryVerse', 'third']] },
     ],
     omit: ['quiz', 'unscramble', 'wordSearch'],
-    presentation: { density: 'standard', accent: 'drop-cap', separator: 'open-front', motion: 'full' },
+    presentation: { density: 'standard', accent: 'drop-cap', separator: 'open-front', motion: 'full', departments: 5, interactives: 1 },
   },
   quiet: {
     id: 'quiet',
@@ -213,7 +258,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       'letters',
       'notices',
     ],
-    presentation: { density: 'sparse', accent: 'none', separator: 'hairline', motion: 'gentle' },
+    presentation: { density: 'sparse', accent: 'none', separator: 'hairline', motion: 'gentle', departments: 3, interactives: 0 },
   },
   'field-notes': {
     id: 'field-notes',
@@ -231,7 +276,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'open', items: [['prayer', 'wide'], ['proverb', 'narrow']] },
     ],
     omit: ['wordSearch'],
-    presentation: { density: 'standard', accent: 'margin-notes', separator: 'dashed-margin', motion: 'full' },
+    presentation: { density: 'standard', accent: 'margin-notes', separator: 'dashed-margin', motion: 'full', departments: 5, interactives: 1 },
   },
   'red-letter': {
     id: 'red-letter',
@@ -251,7 +296,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'open', items: [['rabbitHoles', 'full']] },
     ],
     omit: [],
-    presentation: { density: 'standard', accent: 'red-letter', separator: 'ruled-grid', motion: 'full' },
+    presentation: { density: 'standard', accent: 'red-letter', separator: 'ruled-grid', motion: 'full', departments: 5, interactives: 1 },
   },
   'study-table': {
     id: 'study-table',
@@ -269,7 +314,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'pause', items: [['scene', 'full']] },
     ],
     omit: [],
-    presentation: { density: 'dense', accent: 'tinted-word', separator: 'ruled-grid', motion: 'full' },
+    presentation: { density: 'dense', accent: 'tinted-word', separator: 'ruled-grid', motion: 'full', departments: 4, interactives: 3 },
   },
   joy: {
     id: 'joy',
@@ -290,7 +335,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'dense', items: [['season', 'third'], ['question', 'third'], ['proverb', 'third']] },
     ],
     omit: [],
-    presentation: { density: 'standard', accent: 'bold-funnies', separator: 'ruled-grid', motion: 'full' },
+    presentation: { density: 'standard', accent: 'bold-funnies', separator: 'ruled-grid', motion: 'full', departments: 5, interactives: 2 },
   },
   'prayer-book': {
     id: 'prayer-book',
@@ -311,7 +356,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'open', items: [['rabbitHoles', 'full']] },
     ],
     omit: [...GAMES, 'goodNews', 'archivePull'],
-    presentation: { density: 'sparse', accent: 'rubric-numerals', separator: 'ruled-grid', motion: 'gentle' },
+    presentation: { density: 'sparse', accent: 'rubric-numerals', separator: 'ruled-grid', motion: 'gentle', departments: 4, interactives: 0 },
   },
 }
 

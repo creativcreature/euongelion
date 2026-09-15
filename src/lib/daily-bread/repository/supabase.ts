@@ -316,7 +316,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
     const { data, error } = await this.read(() =>
       this.client
         .from('daily_bread_editions')
-        .select('edition_date, archetype, modules, assets')
+        .select('edition_date, archetype, modules, assets, composition')
         .in('lifecycle', ['ready', 'published', 'superseded'])
         .lt('edition_date', before)
         .gte('edition_date', floor)
@@ -328,6 +328,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
       archetype: RecentComposition['archetype']
       modules: DailyEdition['modules'] | null
       assets: DailyEdition['assets'] | null
+      composition: DailyEdition['composition'] | null
     }[]).map((r) => {
       const scene = r.modules?.find((m) => m.type === 'scene')
       const comic = r.modules?.find((m) => m.type === 'comic')
@@ -337,6 +338,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
         scene: scene && scene.type === 'scene' ? scene.scene : undefined,
         comicId: comic && comic.type === 'comic' ? (comic.stripId ?? comic.script?.id) : undefined,
         leadPlateId: r.assets?.leadPlate?.id,
+        printed: r.composition?.placements?.map((p) => p.module),
       }
     })
   }

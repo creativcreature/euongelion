@@ -312,6 +312,36 @@ corrected in order, earliest first.
   - **Not verified by eye.** No screenshot was taken; the half-speed motion is covered
     only by a unit test. The admin preview lists the manifest.
   - **Tests.** 251 pass.
+- **Deviation 15 (plan §40–41, module tiers and scroll rhythm), corrected in code, not
+  deployed.**
+  - **What was wrong.**
+    - Four of the eight archetypes printed every department every day.
+    - The rhythm had 3 beats where the plan lists 10.
+    - Nothing checked for runs of same-sized cards.
+  - **Rotation.**
+    - Anchors print daily: Scripture, reading and lead, practice, prayer, scene,
+      rabbit holes, and the comic (the founder's weekly strip "continues day to day").
+    - Departments and interactives fill each archetype's budget. Broadsheet prints 7
+      and 2; Quiet prints 3 and 0. The longest-rested module wins each place.
+    - The frozen document keeps only what printed, and `composition.rotation` records
+      what rested and for how long.
+  - **Rhythm.**
+    - Each band carries one of the plan's ten beats.
+    - Back-sheet pairs alternate their proportions.
+    - A 60-day simulation uses all ten beats, never runs three identical bands, and
+      fills every row.
+  - **Found by screenshot and fixed.** When a department rested out of a three-piece
+    band, the other two kept their one-third widths and left an empty third of the row.
+    Bands now re-span to fill the row, and the simulation checks every printed band.
+  - **Checked by eye** in a local server on a fixture week: broadsheet and study table
+    at desktop width, prayer book at 390px, broadsheet and joy after the fix. Rows are
+    full and there is no horizontal overflow.
+  - **Seen but not caused here.** Next reports a hydration mismatch on the page header:
+    a site-wide reveal script adds classes after load.
+  - **Superseded ruling (for the founder).** SA-114's "same modules but slightly
+    altered layouts" (2026-08-20) gives way to the plan's "Do not render every
+    department every day" (2026-09-13). "Games never adjacent" still holds.
+  - **Tests.** 254 pass.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

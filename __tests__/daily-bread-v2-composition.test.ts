@@ -8,12 +8,14 @@ import { createRng, editionSeed, hashString } from '@/lib/daily-bread/prng'
 import {
   ARCHETYPES,
   ARCHETYPE_IDS,
+  MODULE_ROLES,
   MODULE_TIERS,
 } from '@/lib/daily-bread/composition/archetypes'
 import {
   chooseArchetype,
   composeEdition,
   recencyPenalty,
+  selectModules,
   type CompositionContext,
 } from '@/lib/daily-bread/composition/compose'
 import type { ArchetypeId, EditionModuleType } from '@/lib/daily-bread/types'
@@ -87,21 +89,95 @@ describe('archetypes', () => {
     }
   })
 
-  it('each archetype, when forced, places the reading and every non-omitted module exactly once', () => {
+  it('each archetype, when forced, places every anchor and requirement once, and rotates the rest within its budget (plan §40)', () => {
     for (const id of ARCHETYPE_IDS) {
-      const others = ARCHETYPE_IDS.filter((a) => a !== id)
-      // Force by penalising every other archetype heavily through recency.
-      const history = [...others, ...others, ...others]
-      const manifest = composeEdition(ctx('2026-09-16', history.slice(0, 7)), ALL_MODULES)
+      const manifest = composeEdition(ctx('2026-09-16'), ALL_MODULES, { archetype: id })
+      const def = ARCHETYPES[id]
       const placed = manifest.placements.map((p) => p.module)
       expect(new Set(placed).size).toBe(placed.length)
-      expect(placed).toContain('reading')
-      const omitted = new Set(ARCHETYPES[manifest.archetype].omit)
       for (const m of ALL_MODULES) {
-        if (!omitted.has(m)) expect(placed, `${manifest.archetype} missing ${m}`).toContain(m)
+        // Anchors print unless the archetype leaves them out by design (Quiet has no comic or games).
+        if ((MODULE_ROLES[m] === 'anchor' && !def.omit.includes(m)) || def.requires.includes(m)) {
+          expect(placed, `${id} missing anchor ${m}`).toContain(m)
+        }
+        if (def.omit.includes(m) && !def.requires.includes(m)) expect(placed, `${id} printed omitted ${m}`).not.toContain(m)
       }
+      const count = (role: string) => placed.filter((m) => MODULE_ROLES[m] === role).length
+      const required = (role: string) => def.requires.filter((m) => MODULE_ROLES[m] === role).length
+      expect(count('department'), id).toBe(Math.max(def.presentation.departments, required('department')))
+      expect(count('interactive'), id).toBe(Math.max(def.presentation.interactives, required('interactive')))
+      // Not every department every day: every archetype rests some.
+      expect(manifest.rotation?.rested.length, id).toBeGreaterThan(0)
+      expect(manifest.rotation?.printed).toEqual(placed)
       expect(manifest.rhythm.length).toBe(new Set(manifest.placements.map((p) => p.band)).size)
+      expect(manifest.beats?.length).toBe(manifest.rhythm.length)
     }
+  })
+
+  it('departments rotate: over two weeks every department prints and none prints on more than half the days', () => {
+    const departments = ALL_MODULES.filter((m) => MODULE_ROLES[m] === 'department')
+    const recentPrinted: EditionModuleType[][] = []
+    const recentArchetypes: ArchetypeId[] = []
+    const printedDays = new Map<EditionModuleType, number>()
+    for (let i = 0; i < 14; i++) {
+      const date = new Date(Date.UTC(2026, 8, 14 + i)).toISOString().slice(0, 10)
+      const m = composeEdition(ctx(date, recentArchetypes, { recentPrinted }), ALL_MODULES)
+      const printed = m.placements.map((p) => p.module)
+      for (const d of printed) printedDays.set(d, (printedDays.get(d) ?? 0) + 1)
+      recentPrinted.unshift(printed)
+      recentArchetypes.unshift(m.archetype)
+    }
+    for (const d of departments) {
+      expect(printedDays.get(d) ?? 0, `${d} never printed in 14 days`).toBeGreaterThan(0)
+      expect(printedDays.get(d) ?? 0, `${d} printed too often`).toBeLessThanOrEqual(7)
+    }
+  })
+
+  it('the longest-rested department wins; a never-printed one first; the same inputs always pick the same', () => {
+    const def = ARCHETYPES.quiet // 3 departments
+    const present = new Set<EditionModuleType>(['scripture', 'reading', 'lead', 'prayer', 'hymn', 'voices', 'season', 'question', 'memoryVerse'])
+    const history: EditionModuleType[][] = [
+      ['hymn', 'voices'], // yesterday
+      ['season'], // 2 days ago
+      ['question'], // 3 days ago
+    ]
+    const pick = selectModules(def, present, ctx('2026-09-16', [], { recentPrinted: history }))
+    const departments = pick.printed.filter((m) => MODULE_ROLES[m] === 'department')
+    // memoryVerse never printed, then question (3 days), then season (2 days); hymn and voices rest.
+    expect(departments).toEqual(['memoryVerse', 'question', 'season'])
+    expect(pick.rested.map((r) => [r.module, r.lastPrintedDaysAgo]).sort()).toEqual([
+      ['hymn', 1],
+      ['voices', 1],
+    ])
+    expect(selectModules(def, present, ctx('2026-09-16', [], { recentPrinted: history }))).toEqual(pick)
+  })
+
+  it('scroll rhythm uses the plan’s beats and never runs three same-sized, same-beat bands (plan §41)', () => {
+    const recentPrinted: EditionModuleType[][] = []
+    const recentArchetypes: ArchetypeId[] = []
+    const beatsSeen = new Set<string>()
+    for (let i = 0; i < 60; i++) {
+      const date = new Date(Date.UTC(2026, 8, 1 + i)).toISOString().slice(0, 10)
+      const m = composeEdition(ctx(date, recentArchetypes, { recentPrinted }), ALL_MODULES)
+      const bands = new Map<number, string[]>()
+      for (const p of m.placements) bands.set(p.band, [...(bands.get(p.band) ?? []), p.span])
+      // Every printed band fills its row, even after a department rested out of it
+      // (a resting third left a blank third of the row, seen in a screenshot).
+      const columns = { full: 6, wide: 4, half: 3, third: 2, narrow: 2 } as Record<string, number>
+      for (const [band, spans] of bands) {
+        expect(spans.reduce((s, x) => s + columns[x], 0), `${date} ${m.archetype} band ${band}: ${spans.join('+')}`).toBe(6)
+      }
+      const shape = [...bands.values()].map((spans, b) => `${spans.join('+')}|${m.beats![b]}`)
+      for (let b = 2; b < shape.length; b++) {
+        expect(shape[b] === shape[b - 1] && shape[b] === shape[b - 2], `${date} ${m.archetype} bands ${b - 2}-${b}: ${shape[b]}`).toBe(false)
+      }
+      m.beats!.forEach((beat) => beatsSeen.add(beat))
+      recentPrinted.unshift(m.placements.map((p) => p.module))
+      recentArchetypes.unshift(m.archetype)
+    }
+    expect([...beatsSeen].sort()).toEqual(
+      ['brief', 'dense', 'immersive', 'interactive', 'longform', 'playful', 'prayer', 'quiet', 'scriptural', 'visual'].sort(),
+    )
   })
 })
 

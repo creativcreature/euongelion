@@ -270,9 +270,11 @@ describe('rendering the frozen edition', () => {
   })
 
   it('renders every one of the eight archetypes from the same modules', () => {
-    const types = edition.modules.map((m) => m.type)
     const seen = new Set<ArchetypeId>()
     for (const target of ARCHETYPE_IDS) {
+      // The frozen document holds only what printed that day (plan §40), so the
+      // archetype's required modules are added to the module list it is set from.
+      const types = [...new Set([...edition.modules.map((m) => m.type), ...ARCHETYPES[target].requires])]
       const composition = composeEdition(
         {
           dateSlug: edition.editionDate,

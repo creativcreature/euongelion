@@ -10,10 +10,12 @@ import type {
   EditionModuleType,
   HeroVariant,
   Placement,
+  RhythmBeat,
 } from '../types'
 import {
   ARCHETYPES,
   ARCHETYPE_IDS,
+  MODULE_ROLES,
   MODULE_TIERS,
   STANDARD_ORDER,
   type ArchetypeDefinition,
@@ -31,6 +33,8 @@ export interface CompositionContext {
   primaryReference: string
   /** Most recent first (index 0 = yesterday's edition). */
   recentArchetypes: ArchetypeId[]
+  /** Module types printed on recent days, most recent first (plan §40 rotation). */
+  recentPrinted?: EditionModuleType[][]
 }
 
 const GOSPELS = /^(Matthew|Mark|Luke|John)\b/
@@ -113,6 +117,20 @@ export function chooseArchetype(
   }
 }
 
+const SPAN_COLUMNS: Record<Placement['span'], number> = { full: 6, wide: 4, half: 3, third: 2, narrow: 2 }
+
+/** Spans that fill the six-column row for the pieces a band kept. */
+export function fillRow(spans: Placement['span'][], designed: number): Placement['span'][] {
+  if (spans.length === designed || spans.reduce((s, x) => s + SPAN_COLUMNS[x], 0) === 6) return spans
+  if (spans.length === 1) return ['full']
+  if (spans.length === 2) {
+    if (spans[0] === 'wide' || spans[1] === 'narrow') return ['wide', 'narrow']
+    if (spans[1] === 'wide' || spans[0] === 'narrow') return ['narrow', 'wide']
+    return ['half', 'half']
+  }
+  return spans.map(() => 'third')
+}
+
 function place(
   bands: Band[],
   region: Placement['region'],
@@ -127,14 +145,17 @@ function place(
     const items = def.items.filter(([m]) => present.has(m) && !placed.has(m))
     if (items.length === 0) continue
     rhythm.push(def.beat)
-    // A band that lost a partner widens its remaining item to the full row.
-    const lone = items.length === 1 && def.items.length > 1
-    for (const [module, span] of items) {
+    // A band that lost a partner (a resting department) re-spans what is left
+    // so the row stays full: one piece takes the row, two pieces keep a
+    // wide/narrow pairing when they had one, else split it in half.
+    const spans = fillRow(items.map(([, span]) => span), def.items.length)
+    for (const [i, [module]] of items.entries()) {
+      const span = spans[i]
       placed.add(module)
       placements.push({
         module,
         region,
-        span: lone ? 'full' : span,
+        span,
         tier: MODULE_TIERS[module],
         band,
         beat: def.beat,
@@ -159,14 +180,22 @@ export function composeEdition(
   const archetype = forced ?? chosen.archetype
   const scoring = chosen.scoring
   const def = ARCHETYPES[archetype]
+  // Plan §40: anchors always; departments and interactives rotate within the
+  // archetype's budget, the longest-rested first.
+  const rotation = selectModules(def, present, ctx)
+  const printing = new Set(rotation.printed)
   const placed = new Set<EditionModuleType>()
-  const front = place(def.front, 'front', present, placed, 0)
-  const body = place(def.bands, 'sheet', present, placed, front.nextBand)
+  const front = place(def.front, 'front', printing, placed, 0)
+  const body = place(def.bands, 'sheet', printing, placed, front.nextBand)
   const omitted = new Set(def.omit)
 
   // Leftovers join the back sheet in standard order: full-width pieces take
   // their own band; standing pieces pair two to a band (a lone one widens).
-  const leftovers = STANDARD_ORDER.filter((m) => present.has(m) && !placed.has(m) && !omitted.has(m))
+  // Pairs alternate their proportions so the back sheet is never a run of
+  // same-sized cards (plan §41).
+  const PAIR_SPANS: [Placement['span'], Placement['span']][] = [['half', 'half'], ['wide', 'narrow'], ['narrow', 'wide']]
+  let pairs = 0
+  const leftovers = STANDARD_ORDER.filter((m) => printing.has(m) && !placed.has(m) && !omitted.has(m))
   const back: Placement[] = []
   const rhythm: CompositionManifest['rhythm'] = []
   let band = body.nextBand
@@ -199,8 +228,10 @@ export function composeEdition(
     } else if (pending) {
       const first: EditionModuleType = pending
       pending = null
-      push(first, 'half', 'dense')
-      push(m, 'half', 'dense')
+      const [a, b] = PAIR_SPANS[pairs % PAIR_SPANS.length]
+      pairs += 1
+      push(first, a, 'dense')
+      push(m, b, 'dense')
       rhythm.push('dense')
       band += 1
     } else {
@@ -222,7 +253,74 @@ export function composeEdition(
     accentStrategy: def.presentation.accent,
     separatorStyle: def.presentation.separator,
     motionLevel: def.presentation.motion,
+    beats: rhythmBeats(placements),
+    rotation: { printed: placements.map((p) => p.module), rested: rotation.rested },
   }
+}
+
+/**
+ * Plan §40. Anchors (and the archetype's own requirements) print whenever they
+ * exist. Departments and interactives compete for the archetype's budget:
+ * the one printed longest ago (or never) wins, ties broken by seeded jitter,
+ * so the same inputs always give the same paper.
+ */
+export function selectModules(
+  def: ArchetypeDefinition,
+  present: Set<EditionModuleType>,
+  ctx: CompositionContext,
+): { printed: EditionModuleType[]; rested: { module: EditionModuleType; lastPrintedDaysAgo: number | null }[] } {
+  const rng = createRng(ctx.seed ^ 0x51ec)
+  const recent = ctx.recentPrinted ?? []
+  const lastPrinted = (m: EditionModuleType): number | null => {
+    const i = recent.findIndex((day) => day.includes(m))
+    return i === -1 ? null : i + 1
+  }
+  const omitted = new Set(def.omit)
+  const keep = new Set([...present].filter((m) => MODULE_ROLES[m] === 'anchor' || def.requires.includes(m)))
+  const printed = [...keep]
+  const rested: { module: EditionModuleType; lastPrintedDaysAgo: number | null }[] = []
+  for (const [role, budget] of [
+    ['department', def.presentation.departments],
+    ['interactive', def.presentation.interactives],
+  ] as const) {
+    const candidates = [...present]
+      .filter((m) => MODULE_ROLES[m] === role && !keep.has(m) && !omitted.has(m))
+      .sort()
+      .map((m) => ({ module: m, lastPrintedDaysAgo: lastPrinted(m), jitter: rng.next() }))
+      .sort(
+        (a, b) =>
+          (b.lastPrintedDaysAgo ?? Infinity) - (a.lastPrintedDaysAgo ?? Infinity) || b.jitter - a.jitter,
+      )
+    const alreadyKept = [...keep].filter((m) => MODULE_ROLES[m] === role).length
+    const take = Math.max(0, budget - alreadyKept)
+    printed.push(...candidates.slice(0, take).map((c) => c.module))
+    rested.push(...candidates.slice(take).map(({ module, lastPrintedDaysAgo }) => ({ module, lastPrintedDaysAgo })))
+  }
+  return { printed, rested }
+}
+
+/** Plan §41: each band's presentation beat, read from what it holds. */
+export function rhythmBeats(placements: Placement[]): RhythmBeat[] {
+  const bands: Placement[][] = []
+  for (const p of placements) {
+    const last = bands[bands.length - 1]
+    if (last && last[0].band === p.band) last.push(p)
+    else bands.push([p])
+  }
+  return bands.map((items, i) => {
+    const has = (...ms: EditionModuleType[]) => items.some((p) => ms.includes(p.module))
+    if (has('crossword', 'unscramble', 'quiz', 'wordSearch')) return 'interactive'
+    if (i === 0) return 'immersive'
+    if (has('prayer')) return 'prayer'
+    if (has('reading', 'guides')) return 'longform'
+    if (items.length >= 3 || (items.length === 2 && items[0].beat === 'dense')) return 'dense'
+    if (has('scripture', 'redLetter', 'rabbitHoles', 'memoryVerse')) return 'scriptural'
+    if (has('scene', 'gallery')) return 'visual'
+    if (has('comic', 'coloring', 'goodNews')) return 'playful'
+    // A pause, or a single thing to sit with: the question, the practice.
+    if (items[0].beat === 'pause' || (items.length === 1 && has('question', 'practice'))) return 'quiet'
+    return 'brief'
+  })
 }
 
 /** What actually opens the paper: the first band's leading module and its partner. */

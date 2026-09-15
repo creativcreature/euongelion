@@ -405,6 +405,54 @@ Choosing an archetype (`compose.ts`):
 - An archetype repeats on consecutive days only if nothing else is eligible.
 - Modules left unplaced join a back sheet in standard order.
 
+**Module tiers and rotation (plan §40).** Not every department prints every day.
+`MODULE_ROLES` sorts modules into three roles:
+- **Anchors** print whenever they exist, unless the archetype leaves them out by
+  design. They are the Scripture, the reading and its lead, the practice, the prayer,
+  the scene, the rabbit holes, and the comic. The comic is an anchor because the
+  founder's weekly Echo & Dust strip "continues day to day" (2026-09-14).
+- **Departments** rotate: the Hebrew word, red letters, catechism, gallery, hymnal,
+  voices, archive pull, How to Read, proverb, Good News, season, memory verse,
+  question, the Bible-in-a-year plan, and the letters, witness, screening and notices
+  columns.
+- **Interactives** rotate: crossword, verse rebuild, quiz, word search, coloring.
+
+Each archetype prints a budget of departments and interactives:
+
+| Archetype | Departments | Interactives |
+| --- | --- | --- |
+| Broadsheet | 7 | 2 |
+| Illuminated, Field Notes, Red Letter | 5 | 1 |
+| Joy | 5 | 2 |
+| Study Table | 4 | 3 |
+| Prayer Book | 4 | 0 |
+| Quiet | 3 | 0 |
+
+How the budget is filled:
+- Required modules count toward it.
+- The rest go to whichever department or interactive printed longest ago, or never,
+  using the last 14 days of printed modules. Seeded jitter breaks ties.
+- The frozen document keeps only what printed.
+- `composition.rotation` lists what printed and what rested, with how long ago each
+  rested module last ran.
+- A band that loses a piece to rotation re-spans the rest so its row stays full.
+
+A 14-day simulation prints every department at least once and none on more than 7
+days.
+
+**Superseded ruling, recorded.** SA-114 (founder, 2026-08-20) asked for "same modules
+but slightly altered layouts". The V2 plan (2026-09-13) says "Do not render every
+department every day", and this rotation follows the later instruction. The earlier
+rule that games are never adjacent still holds: in every archetype, games sit in
+separate bands.
+
+**Scroll rhythm (plan §41).** `composition.beats` gives each band one of the plan's
+ten beats, read from what it holds. The order of precedence is: interactive, then
+immersive (the front band), prayer, longform, dense, scriptural, visual, playful, quiet
+and brief. A 60-day simulation uses all ten beats and never prints three bands in a row
+with the same shape and beat. Back-sheet pairs rotate half/half, wide/narrow and
+narrow/wide.
+
 Rendering: `DailyBreadEdition.tsx` shows a masthead with the persisted serial, the
 contents line, the bands, previous/next navigation, and a colophon naming the archetype
 and any quality note. CSS lives in `design-system/daily-bread-v2.css`.

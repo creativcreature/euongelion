@@ -224,10 +224,15 @@ export async function createDailyBreadEdition(
           feast: base.liturgical.feast,
           primaryReference: base.scripture.reference,
           recentArchetypes: recent.map((r) => r.archetype),
+          recentPrinted: recent.map((r) => r.printed ?? []),
         },
         modules.map((m) => m.type),
       ),
     )
+    // The frozen document keeps what the paper printed. A department resting
+    // today is not archived as if it ran (plan §40).
+    const printedTypes = new Set(composition.placements.map((p) => p.module))
+    const printedModules = modules.filter((m) => printedTypes.has(m.type))
 
     const primary: ProviderId =
       frame.usage.find((u) => u.provider !== 'deterministic' && u.attempts > 0)?.provider ?? 'deterministic'
@@ -257,10 +262,10 @@ export async function createDailyBreadEdition(
       // Plan §37: the manifest archives the scene exactly as printed and the renderer it was set with.
       composition: {
         ...composition,
-        ...sceneManifest(modules),
+        ...sceneManifest(printedModules),
         rendererVersion: DAILY_BREAD_RENDERER_VERSION,
       },
-      modules,
+      modules: printedModules,
       assets: {
         ...(base.lead?.plate ? { leadPlate: base.lead.plate } : {}),
         scenePoster: {
