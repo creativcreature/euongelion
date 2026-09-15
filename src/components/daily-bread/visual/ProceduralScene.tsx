@@ -23,6 +23,7 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { useAnimation } from '@/providers/AnimationProvider'
 import type {
+  MotionLevel,
   ProceduralRendererId,
   ProceduralSceneId,
 } from '@/lib/daily-bread/types'
@@ -50,6 +51,8 @@ export interface ProceduralSceneProps {
   label: string
   className?: string
   theme?: SceneTheme
+  /** The paper's motion level from its composition manifest (default full). */
+  motion?: MotionLevel
 }
 
 /** ASCII glyph cell, CSS px. */
@@ -73,6 +76,16 @@ function detectTheme(el: Element): SceneTheme {
   return 'light'
 }
 
+/**
+ * Seconds of scene time a frame advances (plan §37 motionLevel): `full` is real
+ * time, `gentle` half speed (the quiet and prayer-book papers), `still` never
+ * animates. Long gaps are capped so a scene never jumps after a pause.
+ */
+export function sceneTimeStep(deltaMs: number, motion: MotionLevel): number {
+  if (motion === 'still' || !(deltaMs > 0)) return 0
+  return (Math.min(deltaMs, MAX_FRAME_STEP_MS) / 1000) * (motion === 'gentle' ? 0.5 : 1)
+}
+
 export default function ProceduralScene({
   scene,
   renderer,
@@ -80,6 +93,7 @@ export default function ProceduralScene({
   label,
   className,
   theme,
+  motion = 'full',
 }: ProceduralSceneProps) {
   const figureRef = useRef<HTMLElement | null>(null)
   const { shouldAnimate: appAllowsMotion } = useAnimation()
@@ -89,7 +103,8 @@ export default function ProceduralScene({
   useEffect(() => {
     const figureEl = figureRef.current
     // No provider reads as shouldAnimate=false: the poster stays, by design.
-    if (!figureEl || !appAllowsMotion) return
+    // A `still` paper keeps the poster too.
+    if (!figureEl || !appAllowsMotion || motion === 'still') return
     if (typeof window.matchMedia !== 'function') return
     const motionQuery = window.matchMedia(REDUCED_MOTION_QUERY)
     if (motionQuery.matches) return
@@ -240,7 +255,7 @@ export default function ProceduralScene({
       raf = window.requestAnimationFrame(frame)
       if (!gate.shouldRender(now)) return
       if (lastNow > 0) {
-        sceneTime += Math.min(now - lastNow, MAX_FRAME_STEP_MS) / 1000
+        sceneTime += sceneTimeStep(now - lastNow, motion)
       }
       lastNow = now
       if (draw(sceneTime)) setLive(true)
@@ -361,7 +376,7 @@ export default function ProceduralScene({
       ctx2d = null
       liveCanvas.remove()
     }
-  }, [appAllowsMotion, scene, renderer, seed, theme])
+  }, [appAllowsMotion, scene, renderer, seed, theme, motion])
 
   const classes = className ? `db2-scene ${className}` : 'db2-scene'
 

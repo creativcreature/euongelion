@@ -8,6 +8,7 @@ import type {
   ArchetypeId,
   CompositionManifest,
   EditionModuleType,
+  HeroVariant,
   Placement,
 } from '../types'
 import {
@@ -208,11 +209,38 @@ export function composeEdition(
   }
   flush()
 
+  const placements = [...front.placements, ...body.placements, ...back]
   return {
     archetype,
     seed: ctx.seed,
     rhythm: [...front.rhythm, ...body.rhythm, ...rhythm],
-    placements: [...front.placements, ...body.placements, ...back],
+    placements,
     scoring,
+    heroVariant: heroVariant(placements),
+    density: def.presentation.density,
+    moduleOrder: placements.map((p) => p.module),
+    accentStrategy: def.presentation.accent,
+    separatorStyle: def.presentation.separator,
+    motionLevel: def.presentation.motion,
+  }
+}
+
+/** What actually opens the paper: the first band's leading module and its partner. */
+export function heroVariant(placements: Placement[]): HeroVariant {
+  const first = placements.filter((p) => p.band === placements[0]?.band)
+  const lead = first[0]?.module
+  switch (lead) {
+    case 'lead': {
+      const partner = first[1]?.module
+      return partner === 'word' ? 'lead-with-word' : partner ? 'lead-with-rail' : 'lead'
+    }
+    case 'scene':
+      return 'scene'
+    case 'redLetter':
+      return 'red-letter'
+    case 'prayer':
+      return 'prayer'
+    default:
+      return 'scripture'
   }
 }

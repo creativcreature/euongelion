@@ -56,7 +56,7 @@ vi.mock('@/providers/AnimationProvider', async (importOriginal) => {
 })
 
 // Imported after the mock is registered.
-import ProceduralScene from '@/components/daily-bread/visual/ProceduralScene'
+import ProceduralScene, { sceneTimeStep } from '@/components/daily-bread/visual/ProceduralScene'
 
 const SCENES: ProceduralSceneId[] = [
   'living-water',
@@ -695,6 +695,23 @@ describe('<ProceduralScene />', () => {
     expect(getContext).not.toHaveBeenCalled()
     expect(window.requestAnimationFrame).not.toHaveBeenCalled()
     expect(() => unmount()).not.toThrow()
+  })
+
+  it('a still paper keeps the poster; a gentle paper moves at half speed (plan §37 motionLevel)', () => {
+    mockMatchMedia(false)
+    motion.override = true
+    const getContext = vi.spyOn(HTMLCanvasElement.prototype, 'getContext')
+    const { container } = render(
+      <ProceduralScene scene="grain" renderer="riso" seed={3} label="Wheat" motion="still" />,
+    )
+    expect(container.querySelector('canvas')).toBeNull()
+    expect(getContext).not.toHaveBeenCalled()
+    expect(sceneTimeStep(40, 'full')).toBeCloseTo(0.04)
+    expect(sceneTimeStep(40, 'gentle')).toBeCloseTo(0.02)
+    expect(sceneTimeStep(40, 'still')).toBe(0)
+    // A long pause never jumps the scene, at any speed.
+    expect(sceneTimeStep(5_000, 'full')).toBeCloseTo(0.1)
+    expect(sceneTimeStep(5_000, 'gentle')).toBeCloseTo(0.05)
   })
 
   it('keeps the poster when the in-app setting turns motion off', () => {

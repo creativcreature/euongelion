@@ -18,10 +18,14 @@
  * failure, and the manifest records it).
  */
 import type {
+  AccentStrategy,
   ArchetypeId,
+  CompositionDensity,
   EditionModuleType,
   ModuleTier,
+  MotionLevel,
   Placement,
+  SeparatorStyle,
 } from '../types'
 
 export type Span = Placement['span']
@@ -42,6 +46,17 @@ export interface ArchetypeDefinition {
   front: Band[]
   bands: Band[]
   omit: EditionModuleType[]
+  /**
+   * The presentation this archetype is SET in (plan §37). Each value names
+   * what `.db2-arch--<id>` in design-system/daily-bread-v2.css does; the
+   * composition test holds them together.
+   */
+  presentation: {
+    density: CompositionDensity
+    accent: AccentStrategy
+    separator: SeparatorStyle
+    motion: MotionLevel
+  }
 }
 
 export const MODULE_TIERS: Record<EditionModuleType, ModuleTier> = {
@@ -135,6 +150,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'open', items: [['prayer', 'wide'], ['goodNews', 'narrow']] },
     ],
     omit: [],
+    presentation: { density: 'dense', accent: 'standard', separator: 'ruled-grid', motion: 'full' },
   },
   illuminated: {
     id: 'illuminated',
@@ -156,6 +172,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'dense', items: [['word', 'third'], ['redLetter', 'third'], ['memoryVerse', 'third']] },
     ],
     omit: ['quiz', 'unscramble', 'wordSearch'],
+    presentation: { density: 'standard', accent: 'drop-cap', separator: 'open-front', motion: 'full' },
   },
   quiet: {
     id: 'quiet',
@@ -196,6 +213,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       'letters',
       'notices',
     ],
+    presentation: { density: 'sparse', accent: 'none', separator: 'hairline', motion: 'gentle' },
   },
   'field-notes': {
     id: 'field-notes',
@@ -213,6 +231,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'open', items: [['prayer', 'wide'], ['proverb', 'narrow']] },
     ],
     omit: ['wordSearch'],
+    presentation: { density: 'standard', accent: 'margin-notes', separator: 'dashed-margin', motion: 'full' },
   },
   'red-letter': {
     id: 'red-letter',
@@ -232,6 +251,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'open', items: [['rabbitHoles', 'full']] },
     ],
     omit: [],
+    presentation: { density: 'standard', accent: 'red-letter', separator: 'ruled-grid', motion: 'full' },
   },
   'study-table': {
     id: 'study-table',
@@ -249,6 +269,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'pause', items: [['scene', 'full']] },
     ],
     omit: [],
+    presentation: { density: 'dense', accent: 'tinted-word', separator: 'ruled-grid', motion: 'full' },
   },
   joy: {
     id: 'joy',
@@ -269,6 +290,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'dense', items: [['season', 'third'], ['question', 'third'], ['proverb', 'third']] },
     ],
     omit: [],
+    presentation: { density: 'standard', accent: 'bold-funnies', separator: 'ruled-grid', motion: 'full' },
   },
   'prayer-book': {
     id: 'prayer-book',
@@ -289,6 +311,7 @@ export const ARCHETYPES: Record<ArchetypeId, ArchetypeDefinition> = {
       { beat: 'open', items: [['rabbitHoles', 'full']] },
     ],
     omit: [...GAMES, 'goodNews', 'archivePull'],
+    presentation: { density: 'sparse', accent: 'rubric-numerals', separator: 'ruled-grid', motion: 'gentle' },
   },
 }
 

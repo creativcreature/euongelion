@@ -29,6 +29,7 @@ import WordSearchClient from '@/components/edition/puzzles/WordSearchClient'
 import ColoringClient from '@/components/edition/puzzles/ColoringClient'
 import ComicStrip from '@/components/daily-bread/ComicStrip'
 import ProceduralScene from '@/components/daily-bread/visual/ProceduralScene'
+import { ARCHETYPES } from '@/lib/daily-bread/composition/archetypes'
 import { boldSegments, paragraphs } from '@/lib/daily-bread/safe'
 import { formatEditorialDate } from '@/lib/daily-bread/time'
 import type {
@@ -226,6 +227,7 @@ export function ModuleView({
           seed={module.seed}
           label={module.label}
           className={`db2-scene--${placement.span}`}
+          motion={edition.composition.motionLevel ?? ARCHETYPES[edition.composition.archetype].presentation.motion}
         />
       )
 

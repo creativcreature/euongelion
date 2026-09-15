@@ -305,6 +305,13 @@ describe('failure injection', () => {
       generatedAt: expect.any(String),
     })
     expect(out.document?.generation.usage.every((u) => u.task !== 'editorial-frame' || u.promptVersion === 3)).toBe(true)
+    // Plan §37: the manifest archives the scene as printed and the renderer version.
+    const scene = out.document?.modules.find((m) => m.type === 'scene')
+    expect(out.document?.composition).toMatchObject({
+      procedural: { scene: (scene as { scene: string }).scene, renderer: (scene as { renderer: string }).renderer, seed: (scene as { seed: number }).seed },
+      rendererVersion: out.document?.rendererVersion,
+      moduleOrder: out.document?.composition.placements.map((p) => p.module),
+    })
   }, 60_000)
 })
 

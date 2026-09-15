@@ -409,6 +409,24 @@ Rendering: `DailyBreadEdition.tsx` shows a masthead with the persisted serial, t
 contents line, the bands, previous/next navigation, and a colophon naming the archetype
 and any quality note. CSS lives in `design-system/daily-bread-v2.css`.
 
+**The composition manifest (plan §37)**, archived in `edition.composition`:
+
+| Plan field | Stored as | Source |
+| --- | --- | --- |
+| archetype | `archetype` | the scoring |
+| heroVariant | `heroVariant` | derived from the first band actually placed: `lead-with-rail`, `lead-with-word`, `lead`, `scene`, `scripture`, `red-letter`, `prayer` |
+| density | `density` | the archetype's `presentation` |
+| moduleOrder | `moduleOrder` | placements in reading order |
+| visualRhythm | `rhythm` | one beat per band |
+| accentStrategy | `accentStrategy` | `presentation`; each value names a real `.db2-arch--*` rule (a test checks the stylesheet) |
+| separatorStyle | `separatorStyle` | `presentation`, checked the same way |
+| motionLevel | `motionLevel` | `presentation`: `full`, or `gentle` (half speed) for Quiet and Prayer Book; `ProceduralScene` honours it, and `still` keeps the poster |
+| proceduralPreset, proceduralSeed | `procedural: { scene, renderer, seed }` | the scene module as printed; named presets arrive with §50–51 |
+| rendererVersion | `rendererVersion` | `DAILY_BREAD_RENDERER_VERSION` |
+
+Editions composed before 2026-09-14 lack these fields. Readers fall back to the
+archetype's definition, and the admin preview shows the manifest.
+
 ## 8. Procedural visual engine
 
 `src/lib/daily-bread/visual/` and `src/components/daily-bread/visual/ProceduralScene.tsx`:

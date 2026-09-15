@@ -293,6 +293,25 @@ corrected in order, earliest first.
     - approved strips redrawn.
   - **Still paused.** `STRIP_MACHINE` stays off until the founder rules on the drawing
     style.
+- **Deviation 14 (plan §37, the composition manifest), corrected in code, not
+  deployed.**
+  - **Archived with every issue.**
+    - `heroVariant`, taken from what actually printed first;
+    - `density`, `accentStrategy`, `separatorStyle` and `motionLevel`, from each
+      archetype's declared presentation;
+    - `moduleOrder`;
+    - `procedural` (scene, renderer, seed as printed);
+    - `rendererVersion`.
+
+    The plan's `visualRhythm` is the existing `rhythm`.
+  - **Nothing declared is decorative.**
+    - A test checks that each accent and separator names a rule that exists in the
+      stylesheet.
+    - `motionLevel` is wired in: `ProceduralScene` runs the Quiet and Prayer Book
+      scenes at half speed ("restrained motion", §38), and `still` keeps the poster.
+  - **Not verified by eye.** No screenshot was taken; the half-speed motion is covered
+    only by a unit test. The admin preview lists the manifest.
+  - **Tests.** 251 pass.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

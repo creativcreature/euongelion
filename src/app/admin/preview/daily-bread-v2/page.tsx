@@ -54,6 +54,12 @@ export default async function DailyBreadV2Preview({
                   ? `${edition.generation.provider}${edition.generation.model ? ` (${edition.generation.model})` : ''} · prompt v${edition.generation.promptVersion} · fallback level ${edition.generation.fallbackLevel} · ${edition.generation.generatedAt}`
                   : 'not recorded (built before 2026-09-14)'}
               </dd>
+              <dt>Composition</dt>
+              <dd>
+                {edition.composition.heroVariant
+                  ? `${edition.composition.archetype} · hero ${edition.composition.heroVariant} · ${edition.composition.density} · accent ${edition.composition.accentStrategy} · separators ${edition.composition.separatorStyle} · motion ${edition.composition.motionLevel}${edition.composition.procedural ? ` · scene ${edition.composition.procedural.scene}/${edition.composition.procedural.renderer}/${edition.composition.procedural.seed}` : ''} · renderer ${edition.composition.rendererVersion}`
+                  : `${edition.composition.archetype} (manifest fields not recorded: composed before 2026-09-14)`}
+              </dd>
               <dt>Comic</dt>
               <dd>{edition.generation.comicLevel}</dd>
               <dt>Module failures</dt>

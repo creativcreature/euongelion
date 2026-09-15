@@ -30,6 +30,7 @@ import {
   DAILY_BREAD_SCHEMA_VERSION,
   type ArchiveOrigin,
   type ComicSourceLevel,
+  type CompositionManifest,
   type EditionDocument,
   type EditionModule,
   type EditionQuality,
@@ -87,6 +88,11 @@ const finish = finishAttempt
  *             reprint/omission, or any module failed
  *  normal   — otherwise
  */
+function sceneManifest(modules: EditionModule[]): Pick<CompositionManifest, 'procedural'> {
+  const scene = modules.find((m): m is Extract<EditionModule, { type: 'scene' }> => m.type === 'scene')
+  return scene ? { procedural: { scene: scene.scene, renderer: scene.renderer, seed: scene.seed } } : {}
+}
+
 export function decideQuality(input: {
   policy: GenerationPolicy
   /** Who wrote the frame: 0 Claude, 1 secondary remote, 2 deterministic. */
@@ -248,7 +254,12 @@ export async function createDailyBreadEdition(
       primaryScripture: base.scripture,
       liturgical: base.liturgical,
       seed: seedString,
-      composition,
+      // Plan §37: the manifest archives the scene exactly as printed and the renderer it was set with.
+      composition: {
+        ...composition,
+        ...sceneManifest(modules),
+        rendererVersion: DAILY_BREAD_RENDERER_VERSION,
+      },
       modules,
       assets: {
         ...(base.lead?.plate ? { leadPlate: base.lead.plate } : {}),

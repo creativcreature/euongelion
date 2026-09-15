@@ -148,3 +148,62 @@ describe('anti-repeat scoring', () => {
     expect(a).toEqual(b)
   })
 })
+
+describe('composition manifest (plan §37)', () => {
+  const forced = (id: ArchetypeId, modules = ALL_MODULES) => composeEdition(ctx('2026-09-16'), modules, { archetype: id })
+
+  it('records hero, density, module order, accent, separator and motion for every archetype', () => {
+    const heroes: Record<ArchetypeId, string> = {
+      broadsheet: 'lead-with-rail',
+      illuminated: 'scene',
+      quiet: 'scripture',
+      'field-notes': 'lead-with-rail',
+      'red-letter': 'red-letter',
+      'study-table': 'lead-with-word',
+      joy: 'scene',
+      'prayer-book': 'prayer',
+    }
+    for (const id of ARCHETYPE_IDS) {
+      const m = forced(id)
+      expect(m.archetype).toBe(id)
+      expect(m.heroVariant, id).toBe(heroes[id])
+      expect(m).toMatchObject({
+        density: ARCHETYPES[id].presentation.density,
+        accentStrategy: ARCHETYPES[id].presentation.accent,
+        separatorStyle: ARCHETYPES[id].presentation.separator,
+        motionLevel: ARCHETYPES[id].presentation.motion,
+      })
+      expect(m.moduleOrder).toEqual(m.placements.map((p) => p.module))
+    }
+  })
+
+  it('the hero is what actually printed first, not what the archetype hoped for', () => {
+    // Joy without a scene opens on the lead and its rail.
+    expect(forced('joy', ALL_MODULES.filter((m) => m !== 'scene')).heroVariant).toBe('lead-with-rail')
+    // A broadsheet whose Scripture rail is missing opens on the lead alone.
+    expect(forced('broadsheet', ALL_MODULES.filter((m) => m !== 'scripture')).heroVariant).toBe('lead')
+  })
+
+  it('each declared presentation names a rule the stylesheet really has', async () => {
+    const { readFileSync } = await import('node:fs')
+    const css = readFileSync(`${process.cwd()}/design-system/daily-bread-v2.css`, 'utf8')
+    const hooks: Record<string, RegExp | null> = {
+      'drop-cap': /\.db2-arch--illuminated \.db2-scripture-text::first-letter[^}]*color: var\(--color-crimson\)/,
+      'rubric-numerals': /\.db2-arch--prayer-book \.db2-cell::before[^}]*counter\(db2-rubric, upper-roman\)[^}]*--color-crimson/,
+      'margin-notes': /\.db2-arch--field-notes \.db2-span--narrow/,
+      'tinted-word': /\.db2-arch--study-table \.db2-region--front \.db2-cell--word/,
+      'bold-funnies': /\.db2-arch--joy \.db2-cell--comic[^}]*border-width: 2px/,
+      'red-letter': /\.db2-arch--red-letter \.db2-cell--redLetter \.edition-redletter-text/,
+      hairline: /\.db2-arch--quiet \.db2-cell[^}]*border-bottom: var\(--ed-hair\)/,
+      'dashed-margin': /\.db2-arch--field-notes \.db2-span--narrow,[\s\S]*?border-style: dashed/,
+      'open-front': /\.db2-arch--illuminated \.db2-region--front \.db2-cell[^}]*border: 0/,
+    }
+    for (const id of ARCHETYPE_IDS) {
+      const { accent, separator } = ARCHETYPES[id].presentation
+      for (const key of [accent, separator]) {
+        const hook = hooks[key]
+        if (hook) expect(css, `${id}: ${key}`).toMatch(hook)
+      }
+    }
+  })
+})

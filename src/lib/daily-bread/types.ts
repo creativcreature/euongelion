@@ -277,14 +277,46 @@ export interface Placement {
   beat: 'dense' | 'open' | 'pause'
 }
 
+/** What opens the paper, read from the first band actually placed. */
+export type HeroVariant = 'lead-with-rail' | 'lead-with-word' | 'lead' | 'scene' | 'scripture' | 'red-letter' | 'prayer'
+export type CompositionDensity = 'dense' | 'standard' | 'sparse'
+/** How the archetype spends the crimson spot colour and emphasis (design-system/daily-bread-v2.css). */
+export type AccentStrategy =
+  | 'standard'
+  | 'drop-cap'
+  | 'none'
+  | 'margin-notes'
+  | 'red-letter'
+  | 'tinted-word'
+  | 'bold-funnies'
+  | 'rubric-numerals'
+/** What divides one piece from the next. */
+export type SeparatorStyle = 'ruled-grid' | 'open-front' | 'hairline' | 'dashed-margin'
+/** How much the procedural scene moves: full speed, half speed, or the still poster. */
+export type MotionLevel = 'full' | 'gentle' | 'still'
+
 export interface CompositionManifest {
   archetype: ArchetypeId
   seed: number
-  /** Scroll rhythm, one beat per band: dense / open / pause. */
+  /** Scroll rhythm (the plan's visualRhythm), one beat per band. */
   rhythm: ('dense' | 'open' | 'pause')[]
   placements: Placement[]
   /** Why this archetype won (anti-repeat scoring), for the archive record. */
   scoring: { archetype: ArchetypeId; score: number }[]
+  /*
+   * Plan §37, archived with the issue. Absent on editions composed before
+   * 2026-09-14; readers fall back to the archetype's definition.
+   */
+  heroVariant?: HeroVariant
+  density?: CompositionDensity
+  /** Module types in reading order. */
+  moduleOrder?: EditionModuleType[]
+  accentStrategy?: AccentStrategy
+  separatorStyle?: SeparatorStyle
+  motionLevel?: MotionLevel
+  /** The scene as printed: which scene, which renderer, which seed (the plan's proceduralPreset/Seed). */
+  procedural?: { scene: ProceduralSceneId; renderer: ProceduralRendererId; seed: number }
+  rendererVersion?: string
 }
 
 /* ── Visual engine ───────────────────────────────────────────────────── */
