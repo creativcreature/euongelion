@@ -69,8 +69,10 @@ phones, Slow 4G, CPU 4×).
 2. **Publish (7am ET).** The Worker's Cron Trigger (`1,15,30,45 11,12 * * *`) posts the
    live date to the internal publish route. Publishing is idempotent. It revalidates
    `/daily-bread`, the dated URL and the archive.
-3. **Emergency path.** GitHub runs at 11:05, 12:05 and 13:05 UTC build and publish
-   if the date is still not published.
+3. **Emergency path.** Every scheduler run first publishes the live edition if it is
+   ready, or builds and publishes it at once if it is missing. The runs at 11:05, 12:05
+   and 13:05 UTC exist for this. Concurrent runs are serialized by the lease and the
+   issue lock.
 4. **Reader.** `/daily-bread` serves the current issue. After rollover it shows
    "on press" for up to 35 minutes, then yesterday's issue with a notice and a
    critical `last_known_good_served` log.
@@ -85,8 +87,9 @@ phones, Slow 4G, CPU 4×).
   comic. A strip-bank failure omits the comic; the paper still publishes.
 - **Scene:** WebGL scene → static poster → CSS texture → type only (forced colours,
   print, no WebGL).
-- **Plates:** the day's generated plate → the series' own art → no plate. A missing
-  image falls back to its alt text.
+- **Plates:** the day's generated plate → the series' own art → no plate. If a
+  published plate's file later fails to load, the lead shows no image (the headline
+  carries it). A failed Echo & Dust image shows the strip's own words.
 - **Publication:** today's issue → "on press" → last known good.
 
 ## Comic
@@ -130,8 +133,9 @@ The art style is undecided.
 - Document validation rejects credential-shaped strings, script content, HTML,
   `javascript:` and `data:` links, and malformed characters. Links and assets are
   checked as safe.
-- Logs are redacted. The bundle scan checks every client file for secret names and
-  values, and a test forbids client components from importing secrets.
+- Logs are redacted. The bundle scan searches every built client file for each
+  provider secret's value (and reports any secret it could not check), and a test
+  forbids client components from importing secrets.
 
 ## Observability
 
@@ -205,6 +209,7 @@ These wait on founder decisions or approvals, not on external services:
 ## Devotional safety
 
 **Existing devotionals were not modified.** No file under `public/devotionals/` changed
-in any of the 44 SA-142 commits (`git diff-tree` for each commit, 2026-09-14). V2 only
+in any of the 44 SA-142 commits up to `5dba2546` (`git diff-tree` for each commit,
+2026-09-14). This report's own commit touches only documentation. V2 only
 reads the corpus: `devotionalReferences()` reads 604 devotionals for rabbit-hole
 threads.
