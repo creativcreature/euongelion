@@ -72,10 +72,11 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    const logger = createRunLogger(newRunId('db2-api'), { base: { requestId } })
     const outcome = await publishDailyBreadEdition(date, {
       repo: getDailyBreadRepository(),
       clock: systemClock,
-      logger: createRunLogger(newRunId('db2-api'), { base: { requestId } }),
+      logger,
       trigger: 'manual',
       rejectedSourceItems: rejectedEditionItemIds,
     })
@@ -84,9 +85,9 @@ export async function POST(request: NextRequest) {
       // x-nextjs-cache MISS or no-store, verified 2026-09-14), so this is a no-op.
       // It keeps a future cache layer honest. already_published revalidates too:
       // the Worker cron runs after a CI publish, so its call refreshes that as well.
-      for (const path of ['/daily-bread', `/daily-bread/${date}`, '/daily-bread/archive']) {
-        revalidatePath(path)
-      }
+      const paths = ['/daily-bread', `/daily-bread/${date}`, '/daily-bread/archive']
+      for (const path of paths) revalidatePath(path)
+      logger.info('cache_revalidated', { dateSlug: date, paths, result: outcome.result })
     }
     const status = outcome.result === 'failed' ? 500 : 200
     return withRequestIdHeaders(

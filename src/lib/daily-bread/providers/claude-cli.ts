@@ -9,7 +9,7 @@
 import { spawn, spawnSync } from 'node:child_process'
 import { tmpdir } from 'node:os'
 import { errorMessage } from '../redact'
-import { ProviderError, type TextProvider } from './types'
+import { ProviderError, type TextGenerationResult, type TextProvider } from './types'
 
 /**
  * The child's environment. Three rules, each learned from a real failure
@@ -48,6 +48,51 @@ export function classifyCliFailure(detail: string): 'auth' | 'billing' | 'quota'
     return 'quota'
   }
   return null
+}
+
+/**
+ * Read `claude -p --output-format json`: `{ type: 'result', is_error, result,
+ * usage: { input_tokens, cache_creation_input_tokens, cache_read_input_tokens,
+ * output_tokens }, total_cost_usd, modelUsage: { <model>: … } }` (shape checked
+ * against the CLI on 2026-09-14). `total_cost_usd` is the API-equivalent price;
+ * on the subscription it is a measure, not a bill. Output that is not that JSON
+ * is taken as plain text with no usage: missing cost never fails a task (§72).
+ */
+export function parseCliResult(
+  stdout: string,
+  fallbackModel: string,
+): { result: TextGenerationResult; error?: undefined } | { error: string; result?: undefined } {
+  let json: {
+    type?: unknown
+    is_error?: unknown
+    result?: unknown
+    usage?: Record<string, unknown>
+    total_cost_usd?: unknown
+    modelUsage?: Record<string, unknown>
+  }
+  try {
+    json = JSON.parse(stdout.trim())
+  } catch {
+    return { result: { text: stdout.trim(), model: fallbackModel } }
+  }
+  if (!json || typeof json !== 'object' || json.type !== 'result') {
+    return { result: { text: stdout.trim(), model: fallbackModel } }
+  }
+  if (json.is_error === true) return { error: typeof json.result === 'string' ? json.result : 'the CLI reported an error' }
+  const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : 0)
+  const u = json.usage ?? {}
+  const models = Object.keys(json.modelUsage ?? {})
+  // The CLI also bills a small helper model; name the one that wrote the answer.
+  const writer = models.find((m) => !/haiku/i.test(m)) ?? models[0] ?? fallbackModel
+  return {
+    result: {
+      text: typeof json.result === 'string' ? json.result.trim() : '',
+      model: writer,
+      inputTokens: num(u.input_tokens) + num(u.cache_creation_input_tokens) + num(u.cache_read_input_tokens),
+      outputTokens: num(u.output_tokens),
+      ...(typeof json.total_cost_usd === 'number' ? { estimatedCostUsd: json.total_cost_usd } : {}),
+    },
+  }
 }
 
 export function createClaudeCliProvider(
@@ -94,7 +139,8 @@ export function createClaudeCliProvider(
       const args = [
         '-p',
         '--output-format',
-        'text',
+        // JSON carries the answer plus token usage and cost (plan §72).
+        'json',
         '--setting-sources',
         '',
         '--tools',
@@ -132,7 +178,18 @@ export function createClaudeCliProvider(
         })
         child.on('close', (code) => {
           if (code === 0) {
-            resolve({ text: stdout.trim(), model: model || 'claude-code-default' })
+            const parsed = parseCliResult(stdout, model || 'claude-code-default')
+            if (parsed.error !== undefined) {
+              const kind = classifyCliFailure(parsed.error)
+              reject(
+                new ProviderError(
+                  `claude-cli: error result${kind ? ` (${kind})` : ''} — ${errorMessage(parsed.error, 160).replace(/^Error: /, '')}`,
+                  { retryable: kind === null },
+                ),
+              )
+              return
+            }
+            resolve(parsed.result as TextGenerationResult)
             return
           }
           const detail = `${stderr}\n${stdout}`

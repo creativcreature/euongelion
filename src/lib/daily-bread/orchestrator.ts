@@ -128,13 +128,19 @@ export async function createDailyBreadEdition(
   const providers = policy === 'deterministic-only' ? [] : deps.providers
   const log = deps.logger
   const attempt = newAttempt(deps, dateSlug, 'assemble')
+  // Plan §67 stage names. The attempt's lifecycleStage is the stage IN PROGRESS,
+  // so a failure is recorded against the stage that actually failed.
+  const stage = <T,>(name: string, fn: () => Promise<T>): Promise<T> => {
+    attempt.lifecycleStage = name
+    return log.stage(name, fn)
+  }
   // One lease owner per invocation: two concurrent builds in the same run must
   // not be able to "resume" each other's lease.
   const owner = `${log.runId}:${dateSlug}:${crypto.randomUUID().slice(0, 8)}`
   let leased = false
 
   try {
-    const lease = await log.stage('lease', () =>
+    const lease = await stage('lock_acquired', () =>
       deps.repo.acquireAssembly(dateSlug, owner, {
         ttlSeconds: deps.leaseSeconds ?? 900,
         archiveOrigin: options.archiveOrigin ?? 'native',
@@ -148,11 +154,12 @@ export async function createDailyBreadEdition(
       return { result: 'skipped', reason: lease.lifecycle }
     }
     leased = true
+    attempt.editionId = lease.editionId
 
     // 90 days of history (plan §42): the Gallery rests a work about 60 days;
     // the comic's reprint cooldown looks three weeks back from the week's start;
     // archetype, hero, scene and department rotation use the last 14 days.
-    const history = await log.stage('history', () => deps.repo.recentCompositions(dateSlug, 90))
+    const history = await stage('sources_loaded', () => deps.repo.recentCompositions(dateSlug, 90))
     const recent = history.filter((r) => r.editionDate >= addDays(dateSlug, -14))
     const daysAgo = (d: string) => Math.round((slugToUtcDate(dateSlug).getTime() - slugToUtcDate(d).getTime()) / 86_400_000)
     const explanations: string[] = []
@@ -161,7 +168,7 @@ export async function createDailyBreadEdition(
       voices: history.flatMap((r) => (r.voice ? [{ ...r.voice, daysAgo: daysAgo(r.editionDate) }] : [])),
       notes: explanations,
     }
-    const base = await log.stage('modules', () => buildBaseEdition(dateSlug, deps.sources, cooldowns))
+    const base = await stage('asset_selection', () => buildBaseEdition(dateSlug, deps.sources, cooldowns))
     attempt.moduleFailures.push(...base.failures)
     attempt.assetFallbacks.push(...base.assetFallbacks)
 
@@ -179,7 +186,7 @@ export async function createDailyBreadEdition(
       seed,
     }
 
-    const frame = await log.stage('frame', () =>
+    const frame = await stage('primary_generation', () =>
       composeFrame(frameInput, {
         providers,
         lookup: deps.sources.lookupVerse,
@@ -191,9 +198,20 @@ export async function createDailyBreadEdition(
     )
     const frameValue: EditorialFrame = frame.value
     const frameGeneratedAt = deps.clock.now().toISOString()
+    attempt.frameProvider = frame.provider
+    attempt.fallbackLevel = fallbackLevel(frame.provider)
+    if (attempt.fallbackLevel > 0) {
+      // Plan §67/§70: the chain moved past Claude. A warning, not a failure.
+      log.warn('fallback_generation', {
+        dateSlug,
+        provider: frame.provider,
+        fallbackLevel: attempt.fallbackLevel,
+        claude: frame.usage.filter((u) => u.provider.startsWith('claude')).map((u) => u.error ?? 'ok'),
+      })
+    }
     attempt.providerUsage.push(...frame.usage)
 
-    const comic = await log.stage('comic', async () =>
+    const comic = await stage('comic_generation', async () =>
       composeComic({
         dateSlug,
         bank: await deps.sources.publishedStrips(),
@@ -228,7 +246,7 @@ export async function createDailyBreadEdition(
     }
 
     const date = slugToUtcDate(dateSlug)
-    const composition = await log.stage('composition', async () =>
+    const composition = await stage('composition', async () =>
       composeEdition(
         {
           dateSlug,
@@ -324,12 +342,15 @@ export async function createDailyBreadEdition(
     attempt.fallbackProvidersUsed = fallbackUsed
     attempt.quality = quality
 
-    const problems = validateEditionDocument(document)
+    const problems = await stage('validation', async () => validateEditionDocument(document))
     if (problems.length > 0) {
       throw new Error(`edition document failed validation: ${problems.slice(0, 6).join('; ')}`)
     }
+    // Plan §67 static_capture: the poster is drawn from the frozen scene and seed
+    // at render; freezing the drawing waits on the scenes verdict (§28 step 25).
+    log.info('static_capture', { dateSlug, result: 'skipped', reason: 'poster drawn from the frozen scene at render' })
 
-    const marked = await log.stage('mark_ready', () => deps.repo.markReady(dateSlug, owner, document))
+    const marked = await stage('ready', () => deps.repo.markReady(dateSlug, owner, document))
     if (marked !== 'ready') {
       throw new Error(`mark ready returned ${marked}`)
     }
@@ -376,6 +397,7 @@ export interface RunSummary {
 export async function runDailyBread(deps: PipelineDeps): Promise<RunSummary> {
   const plan = schedulePlan(deps.clock)
   const actions: RunSummary['actions'] = []
+  deps.logger.info('scheduler_received', { trigger: deps.trigger, liveDate: plan.liveDate, nextDate: plan.nextDate })
 
   // 1. The live paper must exist and be published.
   let live = await deps.repo.getLifecycle(plan.liveDate)

@@ -126,4 +126,4 @@ jobs:
         run: |
           gh issue create \
             --title "Daily Bread V2: scheduler run failed or paper down ($(date -u +%F))" \
-            --body "The daily-bread-v2 run failed or the health check reported DOWN. Open the job log: every attempt is also recorded in daily_bread_publication_attempts."
+            --body "The daily-bread-v2 run failed, or the health check reported DOWN or a critical alert (no issue ready before the deadline, publication failing, a failed publication transaction, repeated duplicate attempts). Open the job log: the health JSON lists each alert, and every attempt is recorded in daily_bread_publication_attempts."

@@ -527,6 +527,11 @@ export interface ArchiveEntry {
 
 export interface PublicationAttempt {
   attemptId?: string
+  /* Logged with the attempt (plan §66); not columns of the attempts table. */
+  editionId?: string
+  issue?: number | null
+  frameProvider?: ProviderId
+  fallbackLevel?: FallbackLevel
   targetDate: string
   runId: string
   trigger: 'scheduler' | 'manual' | 'backfill' | 'e2e'

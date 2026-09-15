@@ -583,14 +583,47 @@ Option B would replace the procedural engine with series art, so both wait.
 
 - **Logs:** structured `[daily-bread] {json}` lines with run id, event, stage timings
   and redaction.
-- **Attempts:** the `daily_bread_publication_attempts` table.
-- **Health** (`health.ts`):
+  - Every attempt ends with one `attempt_completed` line (plan §66): `target_date`,
+    `attempt_id`, `edition_id`, `issue_number`, `stage`, `provider`, `fallback_level`,
+    `quality`, `duration_ms`, `result`. A failed attempt adds `failed_stage` and
+    `error`.
+- **Stages (plan §67):** `scheduler_received`, `lock_acquired`, `sources_loaded`,
+  `asset_selection`, `primary_generation`, `fallback_generation` (a warning, when the
+  chain moved past Claude), `comic_generation`, `composition`, `validation`,
+  `static_capture` (logged as skipped until the poster is frozen at build), `ready`,
+  `published`, `cache_revalidated`. The attempt records the stage in progress, so a
+  failure is filed against the stage that failed. Before 2026-09-14 every build failure
+  read "assemble".
+- **Attempts:** the `daily_bread_publication_attempts` table. `attempt_id` is now set by
+  the pipeline, so the log line and the row share it.
+- **Metrics (plan §68):** the repo has no metrics backend. The attempt line,
+  `edition_published` and the health JSON are the counters. No platform was added.
+- **Health** (`health.ts`, the CLI, and `/api/admin/daily-bread/health`):
   - `down` when today is unpublished 90 minutes after rollover.
   - `degraded` when today is fallback or minimum, tomorrow is not ready 2 hours before
     rollover, or 2 or more consecutive failures have occurred.
+  - Plan §69 fields: `latestPublished`; `next.rollover` (the next expected
+    publication); `next.lifecycle` (whether the next issue is ready); `live.quality`;
+    `latestFailure`, with stage and message; `providers.claude` (`ok`, `failing` with
+    the reason, `not configured` or `unknown`); `providers.secondary` (`configured` or
+    `not configured`). Provider state is read from the newest recorded frame
+    generation.
   - Also reports 7-day counts and estimated cost.
-- **Alerts:** the scheduler workflow files a GitHub issue when a run fails or health
-  is down.
+- **Alerts (plan §70):** `alertLevel` is `none`, `warning` or `critical`.
+  - **Critical:** today missing after rollover; no issue ready 2 hours before the
+    deadline; 2 or more consecutive failures; the database publication transaction
+    failed; 3 or more duplicate attempts on one date.
+  - **Warning:** Claude failed and the backup wrote the frame; the secondary provider
+    failed; the comic was omitted; today published at fallback or minimum quality.
+  - `npm run daily-bread -- health` exits 1 on `down` or `critical`. The scheduler
+    workflow then files a GitHub issue. Warnings are never shown to readers.
+- **Client visual failures (plan §71, optional):** not collected. The scene falls back
+  silently to its poster.
+- **Cost (plan §72):** API providers record tokens and estimated cost. The Claude CLI
+  now runs with `--output-format json` and records input tokens (including cache),
+  output tokens, the writing model and `total_cost_usd`. On the subscription, that
+  figure is the API-equivalent price, a measure rather than a bill. Output with no
+  usage never fails a task.
 
 ## 11. Routes and cache
 

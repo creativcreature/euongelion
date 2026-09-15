@@ -426,6 +426,32 @@ corrected in order, earliest first.
   - **Tests.** A test pins the scan. A static test fails if any client component names
     a secret or imports a provider transport. The runbook's pre-deploy step now runs the
     scan.
+- **Deviation 22 (plan §66–72, observability), corrected in code, not deployed.**
+  - **Failed-stage bug fixed.** A build failure was always filed as "assemble". Stages
+    now carry the plan's names (`lock_acquired` through `cache_revalidated`), and a
+    failure records the stage that failed. A test injects a comic-source failure and
+    reads back `comic_generation`.
+  - **Attempt log.** One `attempt_completed` line per attempt with `attempt_id` (now
+    shared with the row), `edition_id`, `issue_number`, `provider`, `fallback_level`,
+    `quality`, `duration_ms` and `result`.
+  - **Health.** Adds `latestPublished`, `latestFailure`, Claude status (with its reason)
+    and whether a secondary provider is configured.
+  - **Alert levels.** Critical: nothing ready before the deadline, publication failing,
+    a failed publication transaction, repeated duplicates. Warnings: Claude failed over
+    to the backup, the secondary failed, the comic was omitted, low quality. The CLI
+    exits 1 on critical, so the workflow files an issue.
+  - **Claude CLI cost.** `--output-format json` gives tokens, the writing model and
+    `total_cost_usd`. The JSON shape was checked with a one-word call first.
+  - **Checked against production (read only).**
+    - Status is `ok` with a warning.
+    - Claude is `failing` on "You've hit your weekly limit · resets Sep 16", and the
+      secondary is configured.
+    - The latest failure is Sep 4, recorded under the old "assemble" label.
+  - **Found while checking.** The ready Sep 15 edition says OpenAI wrote its frame, but
+    the newest recorded attempt for Sep 15 (02:28 UTC) shows OpenAI failing validation
+    twice and a deterministic frame. A later rebuild's attempt row never landed; the
+    local Supabase timeouts earlier that night are the likely cause (UNVERIFIED).
+  - **Tests.** 277 pass.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

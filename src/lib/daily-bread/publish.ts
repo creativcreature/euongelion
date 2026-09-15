@@ -38,6 +38,7 @@ export function newAttempt(
   stage: string,
 ): PublicationAttempt {
   return {
+    attemptId: crypto.randomUUID(),
     targetDate: dateSlug,
     runId: deps.logger.runId,
     trigger: deps.trigger,
@@ -61,6 +62,22 @@ export async function finishAttempt(
   attempt.completedAt = deps.clock.now().toISOString()
   attempt.stageTimings = deps.logger.timings()
   attempt.estimatedCostUsd = attempt.providerUsage.reduce((s, u) => s + (u.estimatedCostUsd ?? 0), 0)
+  // Plan §66: one structured line per attempt with the identifiers an operator
+  // searches by. Redacted like every log line; no secrets, no reader data.
+  const failed = attempt.publicationResult === 'failed'
+  deps.logger[failed ? 'warn' : 'info']('attempt_completed', {
+    target_date: attempt.targetDate,
+    attempt_id: attempt.attemptId ?? null,
+    edition_id: attempt.editionId ?? null,
+    issue_number: attempt.issue ?? null,
+    stage: attempt.lifecycleStage,
+    provider: attempt.frameProvider ?? null,
+    fallback_level: attempt.fallbackLevel ?? null,
+    quality: attempt.quality ?? null,
+    duration_ms: Math.max(0, Date.parse(attempt.completedAt) - Date.parse(attempt.startedAt)),
+    result: attempt.publicationResult ?? null,
+    ...(failed ? { failed_stage: attempt.errors[0]?.stage ?? attempt.lifecycleStage, error: attempt.errors[0]?.message ?? null } : {}),
+  })
   try {
     await deps.repo.recordAttempt(attempt)
   } catch (error) {
@@ -127,7 +144,9 @@ export async function publishDailyBreadEdition(
       }
     }
 
-    const published = await log.stage('publish', () => deps.repo.publish(dateSlug, now))
+    attempt.lifecycleStage = 'published'
+    const published = await log.stage('published', () => deps.repo.publish(dateSlug, now))
+    attempt.issue = published.issue
     attempt.lifecycleStage = `publish:${published.result}`
     attempt.publicationResult =
       published.result === 'published'
@@ -139,7 +158,8 @@ export async function publishDailyBreadEdition(
     if (published.result === 'published') await logPublishedMetrics(deps, dateSlug, now)
     return { result: published.result, issue: published.issue, volume: published.volume }
   } catch (error) {
-    attempt.errors.push({ stage: 'publish', message: errorMessage(error) })
+    // The stage in progress when it failed (the publish transaction, or the rebuild check before it).
+    attempt.errors.push({ stage: attempt.lifecycleStage, message: errorMessage(error) })
     attempt.publicationResult = 'failed'
     log.error('publish_failed', error, { dateSlug })
     return { result: 'failed', reason: errorMessage(error) }

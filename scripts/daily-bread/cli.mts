@@ -10,6 +10,8 @@
  *   npm run daily-bread -- fixtures  --from=YYYY-MM-DD --days=7 [--assets-dir=.open-next/assets] [--providers]
  *   npm run daily-bread -- sunday-lead --days=N [--from=YYYY-MM-DD] [--dry-run]
  *   npm run daily-bread -- guides      --days=N [--from=YYYY-MM-DD] [--force] [--dry-run]
+ *   npm run daily-bread -- bundle-scan [--dir=.open-next]   (plan §56; exit 1 on a credential)
+ *   npm run daily-bread -- reservoir [--usage]              (plan §53 asset index)
  *
  * sunday-lead and guides are the pre-V2 Claude workflows (SA-100, SA-114),
  * now behind the editorial generation interface. They write DRAFT
@@ -87,7 +89,7 @@ const flag = (name: string) => process.argv.includes(`--${name}`)
 
 function usage(message: string): never {
   console.error(`[daily-bread] ${message}`)
-  console.error('usage: npm run daily-bread -- <build|publish|run|health|backfill|e2e|fixtures|sunday-lead|guides> [flags]')
+  console.error('usage: npm run daily-bread -- <build|publish|run|health|backfill|e2e|fixtures|sunday-lead|guides|bundle-scan|reservoir|repair-comics|repair-lead-plates> [flags]')
   process.exit(2)
 }
 
@@ -226,9 +228,10 @@ async function main() {
       const health = await getDailyBreadHealth(supabaseRepo(), systemClock)
       console.log(JSON.stringify(health, null, 2))
       if (process.env.GITHUB_OUTPUT) {
-        fs.appendFileSync(process.env.GITHUB_OUTPUT, `status=${health.status}\n`)
+        fs.appendFileSync(process.env.GITHUB_OUTPUT, `status=${health.status}\nalert_level=${health.alertLevel}\n`)
       }
-      process.exit(health.status === 'down' ? 1 : 0)
+      // Plan §70: a critical alert fails the step, and the workflow files an issue.
+      process.exit(health.status === 'down' || health.alertLevel === 'critical' ? 1 : 0)
     }
     case 'backfill': {
       const from = requireDate('from')

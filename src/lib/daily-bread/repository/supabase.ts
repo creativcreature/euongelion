@@ -373,6 +373,7 @@ export class SupabaseDailyBreadRepository implements DailyBreadRepository {
 
   async recordAttempt(attempt: PublicationAttempt) {
     const { error } = await this.client.from('daily_bread_publication_attempts').insert({
+      ...(attempt.attemptId ? { attempt_id: attempt.attemptId } : {}),
       target_date: attempt.targetDate,
       run_id: attempt.runId,
       trigger: attempt.trigger,
