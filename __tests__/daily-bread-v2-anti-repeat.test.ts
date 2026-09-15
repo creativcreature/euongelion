@@ -7,7 +7,7 @@
  */
 import { describe, expect, it } from 'vitest'
 import { ARCHETYPES, MODULE_TIERS } from '@/lib/daily-bread/composition/archetypes'
-import { chooseArchetype, composeEdition, expectedHero, type CompositionContext } from '@/lib/daily-bread/composition/compose'
+import { chooseArchetype, composeEdition, expectedHero, heroGroup, type CompositionContext } from '@/lib/daily-bread/composition/compose'
 import { createRunLogger } from '@/lib/daily-bread/log'
 import { createDailyBreadEdition } from '@/lib/daily-bread/orchestrator'
 import { editionSeed, hashString } from '@/lib/daily-bread/prng'
@@ -101,7 +101,7 @@ describe('archetype and hero (plan §42 hard exclusions, §43 explanation)', () 
     const present = new Set(ALL_MODULES)
     for (const hero of ['scene', 'lead-with-rail', 'prayer', 'scripture'] as HeroVariant[]) {
       const choice = chooseArchetype(ctx('2026-09-20', { recentHeroes: [hero] }), present)
-      expect(expectedHero(ARCHETYPES[choice.archetype], present), `${hero} -> ${choice.archetype}`).not.toBe(hero)
+      expect(heroGroup(expectedHero(ARCHETYPES[choice.archetype], present)), `${hero} -> ${choice.archetype}`).not.toBe(heroGroup(hero))
       expect(choice.scoring.find((s) => s.archetype === choice.archetype)?.why).toMatch(/— chosen$/)
       for (const s of choice.scoring) {
         const top = choice.scoring.find((x) => x.archetype === choice.archetype)!
@@ -119,7 +119,8 @@ describe('archetype and hero (plan §42 hard exclusions, §43 explanation)', () 
     for (let i = 0; i < 60; i++) {
       const date = new Date(Date.UTC(2026, 8, 1 + i)).toISOString().slice(0, 10)
       const m = composeEdition(ctx(date, { recentArchetypes, recentHeroes, recentPrinted }), ALL_MODULES)
-      if (recentHeroes[0]) expect(m.heroVariant, date).not.toBe(recentHeroes[0])
+      // One lead-led front page never follows another: at phone width they look the same.
+      if (recentHeroes[0]) expect(heroGroup(m.heroVariant), date).not.toBe(heroGroup(recentHeroes[0]))
       if (recentArchetypes[0]) expect(m.archetype, date).not.toBe(recentArchetypes[0])
       const order = m.moduleOrder!.join(',')
       expect(orders.slice(0, 14), `${date} repeats a module order`).not.toContain(order)

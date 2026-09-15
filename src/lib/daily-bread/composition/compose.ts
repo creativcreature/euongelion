@@ -109,6 +109,17 @@ export function scoreArchetypes(
   }).sort((a, b) => b.score - a.score || a.archetype.localeCompare(b.archetype))
 }
 
+/**
+ * What a reader actually SEES first on a phone. Every lead-led opening
+ * (lead-with-rail, lead-with-word, lead) collapses to the same plate and
+ * headline at phone width — the rail drops below — so they are one hero for
+ * the day-to-day rule (plan §86 review, 2026-09-14: Study Table after Field
+ * Notes looked like the same paper with new text).
+ */
+export function heroGroup(hero: HeroVariant | undefined): string | undefined {
+  return hero?.startsWith('lead') ? 'lead' : hero
+}
+
 /** The hero an archetype would open with, given the modules on hand. */
 export function expectedHero(def: ArchetypeDefinition, present: Set<EditionModuleType>): HeroVariant {
   return heroVariant(place(def.front, 'front', present, new Set(), 0).placements)
@@ -129,7 +140,8 @@ export function chooseArchetype(
   const yesterday = ctx.recentArchetypes[0]
   const yesterdayHero = ctx.recentHeroes?.[0]
   const viable = scoring.filter((s) => Number.isFinite(s.score))
-  const sameHero = (id: ArchetypeId) => Boolean(yesterdayHero) && expectedHero(ARCHETYPES[id], present) === yesterdayHero
+  const sameHero = (id: ArchetypeId) =>
+    Boolean(yesterdayHero) && heroGroup(expectedHero(ARCHETYPES[id], present)) === heroGroup(yesterdayHero)
   const pick =
     viable.find((s) => s.archetype !== yesterday && !sameHero(s.archetype)) ??
     viable.find((s) => s.archetype !== yesterday) ??

@@ -550,6 +550,19 @@ corrected in order, earliest first.
     - The V2 preview 404s for an anonymous visitor before anything is read.
   - **Map.** DAILY-BREAD-V2.md §12 maps each plan item to its test. 290 Daily Bread
     tests pass.
+- **Deviation 28 (plan §86, the seven-day visual comparison), recorded, with one
+  failure found and fixed.** Record: `docs/daily-bread/QA-2026-09-14-SEVEN-DAY.md`, with
+  contact sheets.
+  - **Round 1 failed.** Sep 16 (Study Table) and Sep 17 (Field Notes) opened identically
+    on a phone: the same series plate and headline, because both rails drop below the
+    lead at phone width. The hero rule compared variant names, not what a phone shows.
+  - **Fix.** `heroGroup` treats every lead-led opening as one hero, so two never run
+    back to back. The 60-day simulation asserts it.
+  - **Round 2 passes.** Plate, red letters, plate, prayer, plate, scene, red letters:
+    no two consecutive days open the same way, and it is recognisably one paper.
+  - **Still weak, recorded.**
+    - Series art repeats on non-consecutive days (partly a fixture artifact).
+    - The Joy front opens on the failing ASCII scene (waits on the scenes verdict).
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request
