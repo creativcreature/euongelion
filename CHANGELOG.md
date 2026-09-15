@@ -615,6 +615,10 @@ corrected in order, earliest first.
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request
   timeout of their own. On Workers the platform caps a request, but the read should
   fail fast.
+- **Deviation 37 (plan §97), written.** `docs/daily-bread/FINAL-IMPLEMENTATION-REPORT.md`
+  has every §97 heading and states that the work is not complete. The open items wait
+  on founder verdicts and approvals. No SA-142 commit changed a file under
+  `public/devotionals/`.
 - **Item 40, corrected.** Every repository read now stops after 8 s
   (`READ_TIMEOUT_MS`) and cancels the request through the builder's abort signal. A
   timeout counts as transient, so the read is retried. Three attempts plus delays take
