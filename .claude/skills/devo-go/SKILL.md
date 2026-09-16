@@ -101,6 +101,17 @@ Not for: runtime-generated (Soul Audit) devotionals, edits to a single existing 
   language — Scripture is figurative throughout and explaining its images is the
   job. The test: is the figure CARRYING the idea, or STANDING IN for it? The
   validator catches only the stock flourish vocabulary; the class is an editor call.
+- **Writing rules the editor passes keep catching (SA-141, from the By the Heel build — 72 notes on the first pass, 34 on the second).** Every one of these shipped in a draft that had already passed the validator:
+  - **All sides means every side gets the same treatment.** If one view gets a weakness, they all do; if one gets its holders' own reasons, they all do. An "all sides" section that answers only the first view is advocacy with extra steps.
+  - **Never state a contested reading as settled.** Where traditions differ, say they differ. The draft had "Jesus moved the question from the plate to the heart, and nobody disputes that" over a real dispute.
+  - **Attribute at the strength of the source.** If the pack knows a modern scholar only through a survey, write "Soesilo reports that Baldwin argued…", never "Baldwin argued". Same for a view the pack gives to "most readers" and the draft gave to one named scholar.
+  - **Cut intensifiers the sources do not carry.** "At real cost", "worth dying for", "he admitted his faults" — each was removed because the cited text does not say it.
+  - **A heading must fit every example under it.** "Far From Home" broke because Peter was in Joppa, not abroad.
+  - **Never narrate the page.** "His story is below", "the section below", "surveyed for this series" — page furniture that also reaches the listener, where it means nothing.
+  - **Give every quotation a speaker, on the page.** A bare quote after "He said he had never defiled himself" reads as the narrator's own words aloud.
+  - **Count refrains across the whole week and thin them.** One image repeated 20 times ("grabbing") reads as a tic; four uses read as a theme.
+  - **Citations live in the `resource` module.** Anything in a spoken field is read aloud, so "Council of Trent, Session IV (1546);" becomes narration.
+  - **Check the quotation against the corpus before drafting around it.** Two misquotes (Romans 7:12, a KJV/BSB mix in Genesis 32:30) survived into a draft that read fine.
 - Videos: official channels only, oEmbed-verified AND embed-block-checked; never a video that blocks off-YouTube playback.
 - The Two-Minute Open is required on all new days (SA-030, forward-only): a reader who stops at the DEEP DIVE CTA must have had a complete devotional.
 - No arbitrary images — every slot needs a one-sentence contextual justification (the caption). (The pre-imagery reading PAUSE was retired by SA-031; the reading artifact itself is still mandatory.)
