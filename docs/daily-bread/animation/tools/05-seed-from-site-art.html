@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Bread scene test 05 — the life of a seed, from the site art</title>
+<style>
+  html, body { margin: 0; background: #f3ead3; color: #1d2433; }
+  body { font: 16px/1.5 Georgia, 'Times New Roman', serif; padding: 24px 16px 64px; }
+  main { max-width: 1120px; margin: 0 auto; }
+  h1 { font-weight: 400; font-size: clamp(28px, 5vw, 48px); margin: 0 0 4px; }
+  .meta { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .band { position: relative; width: 100%; background: #ebdcb2; overflow: hidden; margin-top: 18px; }
+  .band canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .label { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; margin: 8px 0 28px; opacity: .75; }
+  .phone { width: 390px; max-width: 100%; }
+  body.capture { padding: 0; background: #000; }
+  body.capture main { max-width: none; }
+</style>
+</head>
+<body>
+<main id="page">
+  <div class="meta">Daily Bread · scene test 05</div>
+  <h1>A sower went out to sow</h1>
+  <div class="meta">Matthew 13:3–8 · every frame computed · no images</div>
+  <div class="band" data-aspect="3"></div>
+  <div class="label">Front band (3:1)</div>
+  <div class="phone"><div class="band" data-aspect="2"></div><div class="label">Phone band (2:1)</div></div>
+</main>
+<script>
+window.ART_BASE = window.ART_BASE || (location.protocol === 'file:' ? 'file:///Users/jamesparker/Documents/app-projects/external/euangelion/public/images/site/series/' : '/images/site/series/');
+const HOR = .62;
+const FRAG = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform float u_dot;
+uniform sampler2D u_tone;
+uniform sampler2D u_line;
+uniform sampler2D u_reveal;
+uniform float u_revealT;
+uniform vec2 u_sap;
+const float TAU = 6.2831853;
+const vec3 PAPER = vec3(235., 220., 178.) / 255.;
+const vec3 COBALT = vec3(26., 77., 152.) / 255.;
+const vec3 GOLD = vec3(239., 188., 63.) / 255.;
+const vec3 CRIMSON = vec3(206., 52., 66.) / 255.;
+float hash(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+float vnoise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3. - 2. * f);
+  return mix(mix(hash(i), hash(i + vec2(1., 0.)), u.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), u.x), u.y); }
+float fbm(vec2 p){ float a = .5, s = 0.; for (int i = 0; i < 4; i++){ s += a * vnoise(p); p = p * 2.03 + 17.; a *= .5; } return s; }
+float spotInk(vec2 px, float k, float ang, float cell, float boil){
+  float c = cos(ang), s = sin(ang);
+  vec2 q = mat2(c, -s, s, c) * px / cell;
+  float spot = .5 - .25 * (cos(TAU * q.x) + cos(TAU * q.y));
+  spot += (hash(floor(px) + boil) - .5) * .14;
+  float aa = 1.6 / cell;
+  return smoothstep(spot - aa, spot + aa, k) * smoothstep(0., .025, k);
+}
+void main(){
+  vec2 R = u_resolution;
+  vec2 px = vec2(gl_FragCoord.x, R.y - gl_FragCoord.y);
+  float t = u_time;
+  float boil = floor(t * 8.);
+  float cell = u_dot, unit = cell / 5.;
+  // print-in on first play: gold, crimson, then cobalt springs into register
+  float spring = exp(-5.5 * max(t - .4, 0.)) * cos(11. * max(t - .4, 0.));
+  vec2 offB = vec2(24., -16.) * unit * spring + vec2(.0, .0);
+  vec2 offG = vec2(1.2, -.8) * unit;
+  vec2 offR = vec2(-1., 1.1) * unit;
+  vec3 tB = texture2D(u_tone, (px + offB) / R).rgb;
+  vec3 tG = texture2D(u_tone, (px + offG) / R).rgb;
+  vec3 tR = texture2D(u_tone, (px + offR) / R).rgb;
+  vec3 lB = texture2D(u_line, (px + offB) / R).rgb;
+  vec3 lG = texture2D(u_line, (px + offG) / R).rgb;
+  vec3 lR = texture2D(u_line, (px + offR) / R).rgb;
+  // growth: the drawing appears in the order its ink connects, with a fine gold tip where it grows
+  vec3 rv = texture2D(u_reveal, px / R).rgb;
+  float jit = (vnoise(px * .06) - .5) * .03;
+  float front = u_revealT + jit;
+  float shown = mix(1., smoothstep(rv.r - .01, rv.r + .01, front), rv.g);
+  float tip = rv.g * (1. - smoothstep(0., .012, abs(front - rv.r))) * step(u_revealT, 1.) * smoothstep(.04, .12, u_revealT) * smoothstep(.3, .6, tB.r);
+  tB *= shown; tG *= shown; tR *= shown;
+  float sap = rv.g * u_sap.y * (1. - smoothstep(0., .05, abs(fract(rv.r * 2.2 - u_sap.x * .42) - .5) * 2. - .9)) * smoothstep(.2, .6, tB.r);
+  float lay = fbm(px / 90. + 7.);
+  float inG = smoothstep(lay - .05, lay + .05, clamp(t / .6, 0., 1.) * 1.15 - .05);
+  float inR = smoothstep(lay - .05, lay + .05, clamp((t - .2) / .6, 0., 1.) * 1.15 - .05);
+  float inB = smoothstep(lay - .05, lay + .05, clamp((t - .4) / .6, 0., 1.) * 1.15 - .05);
+  float density = .84 + .16 * fbm(px / 160. + boil * .37);
+  float dB = spotInk(px, tB.r * inB, radians(15.), cell, boil) * density;
+  float dG = max(spotInk(px, max(tG.g, sap * .85) * inG, radians(75.), cell, boil) * (.92 + .08 * density), tip * .9);
+  float dR = spotInk(px, tR.b * inR, radians(45.), cell, boil) * (.9 + .1 * density);
+  dB *= 1. - .5 * step(.97, hash(floor(px / 1.6) + boil * 1.3));
+  float lineB = lB.r * inB * (.88 + .12 * density), lineG = lG.g * inG, lineR = lR.b * inR;
+  float grain = .955 + .045 * vnoise(px * .75 + boil * 13.1) + .02 * (fbm(px * vec2(.02, .3)) - .5);
+  vec3 col = PAPER * grain;
+  col *= mix(vec3(1.), min(vec3(1.), GOLD / PAPER), max(dG, lineG));
+  col *= mix(vec3(1.), CRIMSON / PAPER, max(dR, lineR) * .95);
+  col *= mix(vec3(1.), COBALT / PAPER, dB);
+  col *= mix(vec3(1.), COBALT / PAPER * .9, lineB);
+  gl_FragColor = vec4(col, 1.);
+}`;
+const VERT = `attribute vec2 a_position; void main(){ gl_Position = vec4(a_position, 0., 1.); }`;
+// ============================================================================
+// Utilities
+const TAU = Math.PI * 2;
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+const easeOut = (x) => 1 - Math.pow(1 - clamp01(x), 3);
+const easeIn = (x) => Math.pow(clamp01(x), 3);
+const easeInOut = (x) => { x = clamp01(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const backOut = (x) => { x = clamp01(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const fract = (x) => x - Math.floor(x);
+const rad = (d) => d * Math.PI / 180;
+function mulberry(seed){ let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const range = (seed, n) => { const r = mulberry(seed); return Array.from({ length: n }, () => r()); };
+function noise1(x, seed = 0){ const i = Math.floor(x), f = x - i; const h = (k) => fract(Math.sin((k + seed * 131.7) * 127.1) * 43758.5453); const u = f * f * (3 - 2 * f); return lerp(h(i), h(i + 1), u); }
+const quadPts = (a, c, b, n = 10) => Array.from({ length: n + 1 }, (_, i) => { const t = i / n, u = 1 - t; return [u * u * a[0] + 2 * u * t * c[0] + t * t * b[0], u * u * a[1] + 2 * u * t * c[1] + t * t * b[1]]; });
+
+// ============================================================================
+// Plates. Colours are ink coverages: [cobalt, gold, crimson].
+const tone = (b = 0, g = 0, r = 0) => `rgb(${Math.round(clamp01(b) * 255)},${Math.round(clamp01(g) * 255)},${Math.round(clamp01(r) * 255)})`;
+class Plates {
+  constructor(){
+    this.tc = document.createElement('canvas'); this.T = this.tc.getContext('2d');
+    this.lc = document.createElement('canvas'); this.L = this.lc.getContext('2d');
+  }
+  begin(W, H){
+    for (const c of [this.tc, this.lc]) { if (c.width !== W) c.width = W; if (c.height !== H) c.height = H; }
+    this.W = W; this.H = H; this.A = W / H;
+    for (const x of [this.T, this.L]) { x.setTransform(1, 0, 0, 1, 0, 0); x.globalCompositeOperation = 'source-over'; x.globalAlpha = 1; x.fillStyle = '#000'; x.fillRect(0, 0, W, H); }
+    this.L.globalCompositeOperation = 'lighter';
+    this.stage(0, .5, 1);
+  }
+  /** Stage camera: world x centred, y 0..1 down; (cx, cy) is the view centre. */
+  stage(cx, cy, z){
+    const s = this.H * z;
+    this.scale = s;
+    for (const x of [this.T, this.L]) x.setTransform(s, 0, 0, s, this.W / 2 - cx * s, this.H / 2 - cy * s);
+  }
+  save(){ this.T.save(); this.L.save(); }
+  restore(){ this.T.restore(); this.L.restore(); this.L.globalCompositeOperation = 'lighter'; }
+  clip(path){ this.T.clip(path); this.L.clip(path); }
+  /** Opaque tone fill; hides line work beneath. */
+  fill(path, b = 0, g = 0, r = 0){
+    this.T.globalCompositeOperation = 'source-over'; this.T.fillStyle = typeof b === 'string' || b instanceof CanvasGradient ? b : tone(b, g, r); this.T.fill(path);
+    this.L.globalCompositeOperation = 'source-over'; this.L.fillStyle = '#000'; this.L.fill(path); this.L.globalCompositeOperation = 'lighter';
+  }
+  /** Add ink to one or more tone channels without covering what is there. */
+  add(path, b = 0, g = 0, r = 0, alpha = 1){
+    this.T.globalCompositeOperation = 'lighter'; this.T.globalAlpha = alpha; this.T.fillStyle = tone(b, g, r); this.T.fill(path);
+    this.T.globalAlpha = 1; this.T.globalCompositeOperation = 'source-over';
+  }
+  /** Solid line work: a ribbon whose width (world units) may vary along it. */
+  line(pts, w, b = 1, g = 0, r = 0, closed = false){
+    this.L.fillStyle = tone(b, g, r);
+    ribbon(this.L, pts, typeof w === 'function' ? w : () => w, closed);
+  }
+  dot(x, y, rr, b = 1, g = 0, r = 0){ this.L.fillStyle = tone(b, g, r); this.L.beginPath(); this.L.arc(x, y, rr, 0, TAU); this.L.fill(); }
+  /** A hairline in px regardless of zoom. */
+  px(n){ return n / this.scale; }
+}
+function ribbon(ctx, pts, wOf, closed = false){
+  const n = pts.length; if (n < 2) return;
+  const Lp = [], Rp = [];
+  for (let i = 0; i < n; i++) {
+    const a = pts[closed ? (i - 1 + n) % n : Math.max(0, i - 1)], b = pts[closed ? (i + 1) % n : Math.min(n - 1, i + 1)];
+    let dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1; dx /= l; dy /= l;
+    const w = Math.max(0, wOf(i / (n - 1), i)) / 2;
+    Lp.push([pts[i][0] - dy * w, pts[i][1] + dx * w]); Rp.push([pts[i][0] + dy * w, pts[i][1] - dx * w]);
+  }
+  ctx.beginPath();
+  ctx.moveTo(...Lp[0]); for (let i = 1; i < n; i++) ctx.lineTo(...Lp[i]);
+  if (closed) { ctx.closePath(); ctx.moveTo(...Rp[n - 1]); for (let i = n - 2; i >= 0; i--) ctx.lineTo(...Rp[i]); ctx.closePath(); ctx.fill('evenodd'); return; }
+  for (let i = n - 1; i >= 0; i--) ctx.lineTo(...Rp[i]);
+  ctx.closePath(); ctx.fill();
+}
+const taper = (w, s = .25, e = .2) => (t) => w * Math.min(1, t / s + .1, (1 - t) / e + .1);
+const pathOf = (pts, close = true) => { const p = new Path2D(); p.moveTo(...pts[0]); for (let i = 1; i < pts.length; i++) p.lineTo(...pts[i]); if (close) p.closePath(); return p; };
+const circle = (x, y, r) => { const p = new Path2D(); p.arc(x, y, r, 0, TAU); return p; };
+const ellipse = (x, y, rx, ry, rot = 0) => { const p = new Path2D(); p.ellipse(x, y, rx, ry, rot, 0, TAU); return p; };
+const rect = (x, y, w, h) => { const p = new Path2D(); p.rect(x, y, w, h); return p; };
+function vgrad(P, y0, y1, stops){ const g = P.T.createLinearGradient(0, y0, 0, y1); for (const [o, c] of stops) g.addColorStop(o, tone(...c)); return g; }
+function rgrad(P, x, y, r0, r1, stops){ const g = P.T.createRadialGradient(x, y, r0, x, y, r1); for (const [o, c] of stops) g.addColorStop(o, tone(...c)); return g; }
+
+// ============================================================================
+// Plates with a reveal channel: r = time the pixel is drawn (0..1), g = applies here.
+class RevealPlates extends Plates {
+  constructor(){ super(); this.rc = document.createElement('canvas'); this.R = this.rc.getContext('2d'); this.revealT = 1; }
+  begin(W, H){
+    super.begin(W, H);
+    if (this.rc.width !== W) this.rc.width = W; if (this.rc.height !== H) this.rc.height = H;
+    this.R.setTransform(1, 0, 0, 1, 0, 0); this.R.globalCompositeOperation = 'source-over'; this.R.fillStyle = '#000'; this.R.fillRect(0, 0, W, H);
+    this.revealT = 1;
+  }
+  stage(cx, cy, z){ super.stage(cx, cy, z); const s = this.H * z; if (this.R) this.R.setTransform(s, 0, 0, s, this.W / 2 - cx * s, this.H / 2 - cy * s); }
+}
+
+// ============================================================================
+// Site artwork, separated back into its two inks.
+const ART_BASE = window.ART_BASE || '/images/site/series/';
+const ART = {};
+const PAPER_RGB = [235, 220, 178];
+async function loadArt(key, file, blur = 1.1){
+  const img = new Image();
+  img.src = ART_BASE + file;
+  await img.decode();
+  const w = img.naturalWidth, h = img.naturalHeight;
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const x = c.getContext('2d', { willReadFrequently: true });
+  x.filter = `blur(${blur}px)`;               // soften the source screen so ours does not beat against it
+  x.drawImage(img, 0, 0);
+  const d = x.getImageData(0, 0, w, h), px = d.data;
+  const cr = 26 / PAPER_RGB[0], cb = 152 / PAPER_RGB[2], gb = 63 / PAPER_RGB[2];
+  const cob = new Float32Array(w * h);
+  for (let i = 0; i < w * h; i++) {
+    const rr = Math.min(1, px[i * 4] / PAPER_RGB[0]), rb = Math.min(1, px[i * 4 + 2] / PAPER_RGB[2]);
+    const b = clamp01((1 - rr) / (1 - cr));
+    const g = clamp01((1 - rb / Math.max(.05, 1 - b * (1 - cb))) / (1 - gb));
+    cob[i] = b;
+    px[i * 4] = b * 255; px[i * 4 + 1] = g * 255; px[i * 4 + 2] = 0; px[i * 4 + 3] = 255;
+  }
+  x.filter = 'none';
+  x.putImageData(d, 0, 0);
+  ART[key] = { canvas: c, w, h, cob };
+  return ART[key];
+}
+
+/** Growth order along the drawing's own ink: a shortest-path time from an origin, ink is cheap. */
+function growthMap(art, origin, { grid = 420, inkCost = 1, paperCost = 14, threshold = .42 } = {}){
+  const gw = grid, gh = Math.round(grid * art.h / art.w);
+  const cost = new Float32Array(gw * gh), ink = new Float32Array(gw * gh);
+  for (let y = 0; y < gh; y++) for (let x = 0; x < gw; x++) {
+    let s = 0, n = 0;
+    const x0 = Math.floor(x / gw * art.w), y0 = Math.floor(y / gh * art.h), x1 = Math.floor((x + 1) / gw * art.w), y1 = Math.floor((y + 1) / gh * art.h);
+    for (let yy = y0; yy < y1; yy += 2) for (let xx = x0; xx < x1; xx += 2) { s += art.cob[yy * art.w + xx]; n++; }
+    const v = n ? s / n : 0;
+    ink[y * gw + x] = v;
+    cost[y * gw + x] = lerp(paperCost, inkCost, smooth((v - threshold + .15) / .3));
+  }
+  const dist = new Float64Array(gw * gh).fill(Infinity);   // 64-bit: float32 rounding makes nodes relax forever
+  const heap = [];
+  const push = (d, i) => { heap.push([d, i]); let k = heap.length - 1; while (k > 0) { const p = (k - 1) >> 1; if (heap[p][0] <= heap[k][0]) break; [heap[p], heap[k]] = [heap[k], heap[p]]; k = p; } };
+  const pop = () => { const top = heap[0], last = heap.pop(); if (heap.length) { heap[0] = last; let k = 0; for (;;) { const l = 2 * k + 1, r = l + 1; let m = k; if (l < heap.length && heap[l][0] < heap[m][0]) m = l; if (r < heap.length && heap[r][0] < heap[m][0]) m = r; if (m === k) break; [heap[m], heap[k]] = [heap[k], heap[m]]; k = m; } } return top; };
+  const o = Math.round(origin[1] * gh) * gw + Math.round(origin[0] * gw);
+  dist[o] = 0; push(0, o);
+  const nb = [[1, 0, 1], [-1, 0, 1], [0, 1, 1], [0, -1, 1], [1, 1, 1.414], [-1, 1, 1.414], [1, -1, 1.414], [-1, -1, 1.414]];
+  while (heap.length) {
+    const [d, i] = pop(); if (d > dist[i]) continue;
+    const x = i % gw, y = (i - x) / gw;
+    for (const [dx, dy, k] of nb) { const nx = x + dx, ny = y + dy; if (nx < 0 || ny < 0 || nx >= gw || ny >= gh) continue; const j = ny * gw + nx; const nd = d + k * (cost[i] + cost[j]) * .5; if (nd < dist[j]) { dist[j] = nd; push(nd, j); } }
+  }
+  // normalise by the time needed to reach the inked structure, not the empty paper
+  const reached = []; for (let i = 0; i < gw * gh; i++) if (ink[i] > threshold && isFinite(dist[i])) reached.push(dist[i]);
+  reached.sort((a, b) => a - b);
+  const maxD = reached[Math.floor(reached.length * .985)] || 1;
+  const c = document.createElement('canvas'); c.width = gw; c.height = gh;
+  const x = c.getContext('2d'); const img = x.createImageData(gw, gh);
+  for (let i = 0; i < gw * gh; i++) {
+    img.data[i * 4] = Math.round(clamp01(dist[i] / maxD) * 255);
+    img.data[i * 4 + 1] = Math.round(smooth((ink[i] - threshold + .12) / .24) * 255);   // only the drawing grows; the paper's texture is there from the start
+    img.data[i * 4 + 2] = 0; img.data[i * 4 + 3] = 255;
+  }
+  x.putImageData(img, 0, 0);
+  art.growth = c;
+  return c;
+}
+
+/** Frame a piece of art: (cx, cy) the image point at the band's centre, zoom 1 = image width fills the band. */
+function frameArt(P, art, cx, cy, zoom){
+  const A = P.A;
+  let s = A * zoom;
+  const ar = art.h / art.w;
+  s = Math.max(s, 1 / ar);                                  // never show past the top or bottom
+  const halfW = A / 2 / s, halfH = .5 / (s * ar);
+  cx = Math.max(halfW, Math.min(1 - halfW, cx)); cy = Math.max(halfH, Math.min(1 - halfH, cy));
+  const x0 = -cx * s, y0 = .5 - cy * s * ar;
+  return { s, ar, x0, y0, map: (u, v) => [x0 + u * s, y0 + v * s * ar], len: (v) => v * s };
+}
+function drawArt(P, art, F, { reveal = false, dim = 1 } = {}){
+  P.stage(0, .5, 1);
+  P.T.globalCompositeOperation = 'source-over';
+  P.T.globalAlpha = 1;
+  P.T.drawImage(art.canvas, F.x0, F.y0, F.s, F.s * F.ar);
+  if (dim < 1) { P.T.globalCompositeOperation = 'multiply'; P.T.fillStyle = `rgb(${dim * 255},${dim * 255},255)`; P.T.fillRect(F.x0, F.y0, F.s, F.s * F.ar); P.T.globalCompositeOperation = 'source-over'; }
+  P.L.globalCompositeOperation = 'source-over'; P.L.fillStyle = '#000'; P.L.fillRect(F.x0, F.y0, F.s, F.s * F.ar); P.L.globalCompositeOperation = 'lighter';
+  if (reveal && art.growth) { P.R.imageSmoothingEnabled = true; P.R.drawImage(art.growth, F.x0, F.y0, F.s, F.s * F.ar); }
+}
+
+// ink-blot wipe between shots, drawn on both plates: returns nothing, covers with cobalt then clears
+function inkWipe(P, k, seedN = 3){
+  if (k <= 0 || k >= 1) return;
+  const { A } = P;
+  P.stage(0, .5, 1);
+  const grow = Math.sin(k * Math.PI);                       // swells then recedes
+  const R = range(seedN * 101, 60);
+  const blot = new Path2D();
+  for (let i = 0; i < 9; i++) {
+    const cx = (R[i * 3] - .5) * A * 1.1, cy = R[i * 3 + 1] * 1.1 - .05, r = (.25 + R[i * 3 + 2] * .45) * grow * 1.5;
+    const pts = []; for (let j = 0; j < 28; j++) { const a = j / 28 * TAU; const rr = r * (1 + .18 * Math.sin(a * 3 + i) + .08 * Math.sin(a * 7 + i * 2)); pts.push([cx + Math.cos(a) * rr, cy + Math.sin(a) * rr]); }
+    blot.addPath(pathOf(pts));
+  }
+  P.fill(blot, .95, 0, .12);
+}
+
+// ============================================================================
+// Shots
+const SHOTS = [];
+const shot = (name, dur, draw) => SHOTS.push({ name, dur, draw });
+
+function goldSeed(P, x, y, s, rot, a = 1){ seedShape(P, x, y, s, rot, a); }
+function seedShape(P, x, y, s, rot, glow = 1){
+  const c = Math.cos(rot), sn = Math.sin(rot);
+  const pts = []; for (let i = 0; i < 16; i++) { const a = i / 16 * TAU; pts.push([x + (Math.cos(a) * s * 1.35) * c - (Math.sin(a) * s * .8) * sn, y + (Math.cos(a) * s * 1.35) * sn + (Math.sin(a) * s * .8) * c]); }
+  P.fill(pathOf(pts), .06, .95 * glow, .12 * glow);
+  if (s > P.px(3.2)) { P.line(pts, P.px(1), 1, 0, 0, true); P.line([[x - c * s, y - sn * s], [x + c * s, y + sn * s]], taper(P.px(1.1)), 1, 0, 0); }
+}
+function bird(P, x, y, s, dir, flap){
+  const w = Math.sin(flap);
+  const body = pathOf([[x - s * .5 * dir, y], [x, y - s * .12], [x + s * .45 * dir, y - s * .05], [x + s * .6 * dir, y - s * .02], [x + s * .45 * dir, y + s * .06], [x, y + s * .1]]);
+  P.fill(body, .92, 0, 0);
+  for (const k of [1, .8]) {
+    const tip = [x - s * .35 * dir * k, y - s * (.2 + .9 * w) * k];
+    P.fill(pathOf([[x + s * .12 * dir, y - s * .05], [x - s * .05 * dir, y - s * (.15 + .6 * w) * k], tip, [x - s * .15 * dir, y - s * .02]]), .92 * k, 0, 0);
+  }
+}
+
+// 1 — Open hands receive the seed (surrender-to-gods-will)
+shot('hands', 7, (P, t) => {
+  const art = ART.hands;
+  const F = frameArt(P, art, .47, lerp(.42, .52, easeInOut(t / 7)), lerp(1.05, 1.28, easeInOut(t / 7)));
+  drawArt(P, art, F);
+  const glow = F.map(.4, .1);
+  P.T.globalCompositeOperation = 'lighter';
+  const pulse = .75 + .25 * Math.sin(t * 2.2);
+  P.T.fillStyle = rgrad(P, glow[0], glow[1], 0, F.len(.18), [[0, [0, .6 * pulse, .3 * pulse]], [.5, [0, .25 * pulse, .1 * pulse]], [1, [0, 0, 0]]]);
+  P.T.fillRect(glow[0] - F.len(.2), glow[1] - F.len(.2), F.len(.4), F.len(.4));
+  P.T.globalCompositeOperation = 'source-over';
+  // seed falling out of the light into the cupped palms, some bouncing off the fingers
+  const R = range(515, 600);
+  for (let i = 0; i < 120; i++) {
+    const t0 = R[i * 4] * 7, life = 1.6 + R[i * 4 + 1] * .8;
+    const age = fract((t - t0) / life) * life;
+    const tx = lerp(.33, .62, R[i * 4 + 2]), ty = lerp(.5, .62, R[i * 4 + 3]);
+    const sx = .4 + (R[i * 4 + 2] - .5) * .08, sy = .12;
+    const u = age / life;
+    const x = lerp(sx, tx, u), y = sy + (ty - sy) * u * u;
+    const p = F.map(x, y);
+    goldSeed(P, p[0], p[1], F.len(.0055), age * 5 + i, clamp01(1 - (u - .85) / .15));
+  }
+});
+
+// 2 — The Harvest: tilt from the sun to the sower, seed falling from his hand
+shot('harvest', 9, (P, t) => {
+  const art = ART.harvest;
+  const tilt = easeInOut((t - .3) / 5.5), push = easeInOut((t - 4) / 5);
+  const F = frameArt(P, art, .5, lerp(.3, .62, tilt), lerp(1, 1.7, push));
+  drawArt(P, art, F);
+  // the sun breathes
+  const sc = F.map(.5, .47);
+  P.T.globalCompositeOperation = 'lighter';
+  P.T.fillStyle = rgrad(P, sc[0], sc[1], F.len(.1), F.len(.42), [[0, [0, .28 + .1 * Math.sin(t * 1.3), .18]], [1, [0, 0, 0]]]);
+  P.T.fill(circle(sc[0], sc[1], F.len(.42)));
+  P.T.globalCompositeOperation = 'source-over';
+  for (let i = 0; i < 36; i++) { const a = -Math.PI + i / 35 * Math.PI + Math.sin(t * .2) * .03; const r0 = F.len(.3), r1 = F.len(.3 + .12 + .08 * noise1(i + t * .5, 2)); P.line([[sc[0] + Math.cos(a) * r0, sc[1] + Math.sin(a) * r0], [sc[0] + Math.cos(a) * r1, sc[1] + Math.sin(a) * r1]], taper(P.px(1.8), .2, .6), 0, i % 3 ? .8 : 0, i % 3 ? 0 : .7); }
+  // light rolling across the furrows
+  const band = F.map(0, lerp(.52, 1, fract(t / 4.5)));
+  P.T.globalCompositeOperation = 'lighter';
+  P.T.fillStyle = vgrad(P, band[1] - F.len(.05), band[1] + F.len(.05), [[0, [0, 0, 0]], [.5, [0, .22, .08]], [1, [0, 0, 0]]]);
+  P.T.fillRect(F.x0, band[1] - F.len(.05), F.s, F.len(.1));
+  P.T.globalCompositeOperation = 'source-over';
+  // seed from the hand, a new handful every stride
+  const hand = [.536, .586];
+  const R = range(28, 900);
+  for (let i = 0; i < 70; i++) {
+    const t0 = R[i * 3] * 1.1, age = fract((t - t0) / 1.1) * 1.1;
+    const vx = (R[i * 3 + 1] - .3) * .05, vy = .02 + R[i * 3 + 2] * .03;
+    const x = hand[0] + vx * age, y = hand[1] + vy * age + .05 * age * age;
+    if (y > .7) continue;
+    const p = F.map(x, y);
+    goldSeed(P, p[0], p[1], F.len(.0022), age * 9 + i, 1);
+  }
+  // birds cross the sky early, then wheel down behind him
+  for (let i = 0; i < 5; i++) {
+    const u = fract((t * .09) + i * .17);
+    const p = F.map(lerp(-.1, 1.1, u), .18 + .05 * Math.sin(u * 6 + i) + i * .02);
+    bird(P, p[0], p[1], F.len(.03), 1, t * 11 + i * 1.7);
+  }
+});
+
+// 3 — Rooted: the seed goes down; roots find their way through the soil
+shot('rooted', 9, (P, t) => {
+  const art = ART.rooted;
+  const F = frameArt(P, art, .5, lerp(.2, .6, easeInOut(t / 9)), lerp(1.4, 1.05, easeInOut(t / 9)));
+  drawArt(P, art, F, { reveal: true });
+  P.revealT = lerp(-.02, 1.02, easeInOut((t - 1.2) / 6.3));
+  // the seed arriving at the root crown
+  const base = F.map(.51, .28);
+  if (t < 1.6) { const y = lerp(base[1] - F.len(.35), base[1], easeIn(t / 1.2)); goldSeed(P, base[0], y, F.len(.012), t * 3, 1); }
+  // sap: gold pulses running down the grown roots
+  P.sap = { t, strength: smooth((t - 4) / 2) };
+});
+
+// 4 — Kingdom: the plant rises through the ruins
+shot('kingdom', 8, (P, t) => {
+  const art = ART.kingdom;
+  const F = frameArt(P, art, lerp(.55, .6, t / 8), lerp(.75, .45, easeInOut(t / 8)), lerp(1.2, 1.5, easeInOut(t / 8)));
+  drawArt(P, art, F, { reveal: true });
+  P.revealT = lerp(-.02, 1.02, easeOut((t - .3) / 5.5));
+  // motes drifting in the light beam
+  const R = range(64, 300);
+  for (let i = 0; i < 60; i++) {
+    const u = fract(R[i * 2] + t * .03 * (1 + R[i * 2 + 1]));
+    const p = F.map(lerp(.62, .95, R[i * 2 + 1]) - u * .1, lerp(.9, 0, u));
+    P.T.fillStyle = tone(0, .9, .1); P.T.beginPath(); P.T.arc(p[0], p[1], P.px(1.6 + R[i * 2] * 2), 0, TAU); P.T.fill();
+  }
+});
+
+// 5 — What is the gospel: arms raised to the risen sun
+shot('gospel', 8.5, (P, t) => {
+  const art = ART.gospel;
+  const F = frameArt(P, art, .52, lerp(.46, .5, t / 8.5), lerp(1.0, 1.35, easeInOut(t / 8.5)));
+  drawArt(P, art, F);
+  const sc = F.map(.54, .38);
+  const burst = easeOut(t / 3);
+  P.T.globalCompositeOperation = 'lighter';
+  P.T.fillStyle = rgrad(P, sc[0], sc[1], F.len(.24), F.len(.42), [[0, [0, 0, 0]], [.12, [0, .1 * burst, .2 * burst]], [.5, [0, .06 * burst, .06 * burst]], [1, [0, 0, 0]]]);
+  P.T.fill(circle(sc[0], sc[1], F.len(.42)));
+  P.T.globalCompositeOperation = 'source-over';
+  for (let i = 0; i < 64; i++) {
+    const a = i / 64 * TAU + t * .05;
+    const r0 = F.len(.25), r1 = F.len(.25 + (.08 + .14 * noise1(i * .9 + t * .8, 7)) * burst);
+    const p0 = [sc[0] + Math.cos(a) * r0, sc[1] + Math.sin(a) * r0 * .9];
+    if (p0[1] > F.map(0, .62)[1]) continue;
+    P.line([p0, [sc[0] + Math.cos(a) * r1, sc[1] + Math.sin(a) * r1 * .9]], taper(P.px(2.2), .15, .6), 0, i % 2 ? .95 : 0, i % 2 ? 0 : .85);
+  }
+  // doves rising
+  for (let i = 0; i < 7; i++) {
+    const u = clamp01((t - 1 - i * .5) / 5);
+    if (u <= 0) continue;
+    const p = F.map(lerp(.48 + i * .015, .2 + i * .1, easeOut(u)), lerp(.5, .05, easeOut(u)));
+    bird(P, p[0], p[1], F.len(.025 + .01 * u), i % 2 ? 1 : -1, t * 12 + i);
+  }
+});
+
+const LOOP = SHOTS.reduce((a, s) => a + s.dur, 0);
+function frameAt(t){
+  let tt = ((t % LOOP) + LOOP) % LOOP;
+  for (let i = 0; i < SHOTS.length; i++) { if (tt < SHOTS[i].dur) return { shot: SHOTS[i], local: tt, index: i }; tt -= SHOTS[i].dur; }
+  return { shot: SHOTS[0], local: 0, index: 0 };
+}
+
+async function loadAll(){
+  await Promise.all([
+    loadArt('hands', 'surrender-to-gods-will.webp'),
+    loadArt('harvest', 'the-harvest.webp', .9),
+    loadArt('rooted', 'rooted.webp'),
+    loadArt('kingdom', 'kingdom.webp'),
+    loadArt('gospel', 'what-is-the-gospel.webp'),
+  ]);
+  growthMap(ART.rooted, [.51, .285], { threshold: .38 });
+  growthMap(ART.kingdom, [.585, .9], { threshold: .5, paperCost: 18 });
+}
+
+function createScene(canvas){
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+  if (!gl) return null;
+  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+  const prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG)); gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+  gl.useProgram(prog);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const u = (n) => gl.getUniformLocation(prog, n);
+  const tex = (unit) => { const tx = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx);
+    for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v); return tx; };
+  const toneTex = tex(0), lineTex = tex(1), revealTex = tex(2);
+  gl.uniform1i(u('u_tone'), 0); gl.uniform1i(u('u_line'), 1); gl.uniform1i(u('u_reveal'), 2);
+  const plates = new RevealPlates(), prev = new RevealPlates();
+  const DISSOLVE = 1.1;
+  return {
+    render(t, W, H){
+      plates.begin(W, H);
+      const { shot, local, index } = frameAt(t);
+      plates.sap = null;
+      shot.draw(plates, local);
+      if (local < DISSOLVE) {
+        // halftone dissolve: the last shot keeps running underneath and fades out dot by dot
+        const before = SHOTS[(index - 1 + SHOTS.length) % SHOTS.length];
+        prev.begin(W, H); prev.sap = null;
+        before.draw(prev, before.dur + local);
+        const k = 1 - smooth(local / DISSOLVE);
+        for (const [dst, src] of [[plates.T, prev.tc], [plates.L, prev.lc], [plates.R, prev.rc]]) {
+          dst.save(); dst.setTransform(1, 0, 0, 1, 0, 0); dst.globalCompositeOperation = 'source-over'; dst.globalAlpha = k; dst.drawImage(src, 0, 0); dst.restore();
+        }
+        if (k > .5) { plates.revealT = prev.revealT; plates.sap = prev.sap; }
+      }
+      for (const [tx, src, unit] of [[toneTex, plates.tc, 0], [lineTex, plates.lc, 1], [revealTex, plates.rc, 2]]) { gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, src); }
+      gl.viewport(0, 0, W, H);
+      gl.uniform1f(u('u_time'), t); gl.uniform2f(u('u_resolution'), W, H); gl.uniform1f(u('u_dot'), Math.max(4, W / 300));
+      gl.uniform1f(u('u_revealT'), plates.revealT);
+      gl.uniform2f(u('u_sap'), plates.sap ? plates.sap.t : 0, plates.sap ? plates.sap.strength : 0);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    },
+  };
+}
+
+const params = new URLSearchParams(location.search);
+(async () => {
+  await loadAll();
+  if (params.has('capture')) {
+    document.body.classList.add('capture');
+    const page = document.getElementById('page'); page.innerHTML = '';
+    const w = Number(params.get('w') || 1500), aspect = Number(params.get('aspect') || 3);
+    const c = document.createElement('canvas'); c.width = w; c.height = Math.round(w / aspect);
+    c.style.cssText = `width:${c.width}px;height:${c.height}px;display:block`; page.appendChild(c);
+    const scene = createScene(c);
+    window.__render = (t) => scene.render(t, c.width, c.height);
+    window.__loop = LOOP;
+    window.__ready = true;
+  } else {
+    const bands = [...document.querySelectorAll('.band')].map((el) => { el.style.aspectRatio = `${el.dataset.aspect} / 1`; const canvas = document.createElement('canvas'); el.appendChild(canvas); return { el, canvas, scene: createScene(canvas), time: 0 }; });
+    let last = 0;
+    const frame = (now) => {
+      requestAnimationFrame(frame);
+      if (now - last < 1000 / 30 - 1) return;
+      const dt = last ? Math.min(100, now - last) / 1000 : 0; last = now;
+      for (const b of bands) {
+        const dpr = Math.min(1.5, devicePixelRatio || 1);
+        const w = Math.round(b.el.clientWidth * dpr), h = Math.round(b.el.clientHeight * dpr);
+        if (b.canvas.width !== w) b.canvas.width = w; if (b.canvas.height !== h) b.canvas.height = h;
+        b.time += dt; b.scene.render(b.time, w, h);
+      }
+    };
+    requestAnimationFrame(frame);
+  }
+})();
+
+</script>
+</body>
+</html>

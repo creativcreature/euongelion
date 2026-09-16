@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Bread scene — Woodcut Dawn</title>
+<style>
+  html, body { margin: 0; background: #f3ead3; color: #1d2433; }
+  body { font: 16px/1.5 Georgia, 'Times New Roman', serif; padding: 24px 16px 64px; }
+  main { max-width: 1120px; margin: 0 auto; }
+  h1 { font-weight: 400; font-size: clamp(28px, 5vw, 48px); margin: 0 0 4px; }
+  .meta { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .band { position: relative; width: 100%; background: #ebdcb2; overflow: hidden; margin-top: 18px; }
+  .band canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .label { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; margin: 8px 0 28px; opacity: .75; }
+  .phone { width: 390px; max-width: 100%; }
+  body.capture { padding: 0; background: #000; }
+  body.capture main { max-width: none; }
+</style>
+</head>
+<body>
+<main id="page">
+  <div class="meta">Daily Bread · scene · version 5</div>
+  <h1>Woodcut Dawn</h1>
+  <div class="meta">Matthew 13:3–8 · carved in code · no images</div>
+  <div class="band" data-aspect="3"></div>
+  <div class="label">Front band (3:1)</div>
+  <div class="phone"><div class="band" data-aspect="2"></div><div class="label">Phone band (2:1)</div></div>
+</main>
+<script>
+/*
+ * Woodcut Dawn — the parable of the sower as a relief print.
+ *
+ * Three blocks, each a grayscale canvas (white = the block takes ink):
+ *   cobalt — the key block: night, earth, bird, thorns; carving it = paper
+ *   gold   — the only light: seeds, stars, the sun, the grain
+ *   crimson — heat: the scorching sun and what it withers
+ * Everything is drawn as masses and gouges: tapered cuts that follow the form.
+ * A shader prints the blocks on warm paper with uneven ink pickup, wood grain,
+ * paper tooth, ragged edges and slight misregistration.
+ *
+ * Story (24 s, cut on the beat): seeds fall like stars · the path, a crow takes the
+ * seed · rocky ground, a sun scorches the sprout · thorns close over it · good soil:
+ * the seed splits, a root tip forces a clod apart, a shoot rises · dawn, the field,
+ * grain thirty, sixty, a hundredfold. Hard cuts between carved close-ups and wides,
+ * blocks stamping in with the shudder of the press, two held breaths.
+ */
+const LOOP = 24;
+const SURF = .55;
+const ZONES = { path: 0, rock: 3, thorns: 6, good: 9 };
+
+// ============================================================================
+// Print shader: relief ink on paper
+const FRAG = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform sampler2D u_c;
+uniform sampler2D u_g;
+uniform sampler2D u_r;
+const vec3 PAPER = vec3(235., 220., 178.) / 255.;
+const vec3 COBALT = vec3(26., 77., 152.) / 255.;
+const vec3 GOLD = vec3(239., 188., 63.) / 255.;
+const vec3 CRIMSON = vec3(206., 52., 66.) / 255.;
+float hash(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+float vnoise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3. - 2. * f);
+  return mix(mix(hash(i), hash(i + vec2(1., 0.)), u.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), u.x), u.y); }
+float fbm(vec2 p){ float a = .5, s = 0.; for (int i = 0; i < 4; i++){ s += a * vnoise(p); p = p * 2.03 + 17.; a *= .5; } return s; }
+void main(){
+  vec2 R = u_resolution;
+  vec2 px = vec2(gl_FragCoord.x, R.y - gl_FragCoord.y);
+  float t = u_time;
+  float boil = floor(t * 12.);
+  float k = R.y / 500.;                                   // texture scale relative to a 500px band
+  // ragged, slightly boiling edges where ink meets paper
+  vec2 wob = (vec2(vnoise(px * .45 / k + boil), vnoise(px * .45 / k + 31. + boil)) - .5) * 1.5 * k;
+  float spring = exp(-5. * max(t - .45, 0.)) * cos(10. * max(t - .45, 0.));
+  vec2 offC = vec2(20., -12.) * k * spring;
+  vec2 offG = vec2(1.7, -1.1) * k;
+  vec2 offR = vec2(-1.3, 1.2) * k;
+  float c = texture2D(u_c, (px + wob + offC) / R).r;
+  float g = texture2D(u_g, (px + wob * .8 + offG) / R).r;
+  float r = texture2D(u_r, (px + wob * .8 + offR) / R).r;
+  // ink pickup: wood grain streaks, starved blotches, paper tooth
+  float grain = fbm(vec2(px.x * .0035 / k, px.y * .11 / k) + 3.);
+  float blotch = smoothstep(.62, .86, fbm(px * .012 / k + 9.));
+  float tooth = hash(floor(px / (1.3 * k)) + boil * .0);
+  float pick = (.86 + .14 * grain) * (1. - .2 * blotch) * (1. - .6 * step(.975, tooth));
+  float ribs = smoothstep(.55, .75, vnoise(vec2(px.x * .02 / k, px.y * .9 / k)));   // faint scrape lines
+  c *= pick * (1. - .12 * ribs);
+  g *= (.88 + .12 * grain) * (1. - .5 * step(.97, tooth));
+  r *= (.86 + .14 * grain) * (1. - .5 * step(.965, tooth));
+  // first play: the blocks come down one after another
+  float lay = fbm(px / (80. * k) + 7.);
+  c *= smoothstep(lay - .05, lay + .05, clamp((t - .45) / .6, 0., 1.) * 1.15 - .05);
+  g *= smoothstep(lay - .05, lay + .05, clamp(t / .5, 0., 1.) * 1.15 - .05);
+  r *= smoothstep(lay - .05, lay + .05, clamp((t - .2) / .5, 0., 1.) * 1.15 - .05);
+  float paperGrain = .95 + .05 * vnoise(px * .6 / k) + .025 * (fbm(px * vec2(.015, .25) / k) - .5);
+  vec3 col = PAPER * paperGrain;
+  col *= mix(vec3(1.), min(vec3(1.), GOLD / PAPER), g);
+  col *= mix(vec3(1.), CRIMSON / PAPER, r * .92);
+  col *= mix(vec3(1.), COBALT / PAPER * .96, c);
+  gl_FragColor = vec4(col, 1.);
+}`;
+const VERT = `attribute vec2 a_position; void main(){ gl_Position = vec4(a_position, 0., 1.); }`;
+
+// ============================================================================
+// Utilities
+const TAU = Math.PI * 2;
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+const easeOut = (x) => 1 - Math.pow(1 - clamp01(x), 3);
+const easeIn = (x) => Math.pow(clamp01(x), 3);
+const easeInOut = (x) => { x = clamp01(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const fract = (x) => x - Math.floor(x);
+function mulberry(seed){ let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function noise1(x, seed = 0){ const i = Math.floor(x), f = x - i; const h = (k) => fract(Math.sin((k + seed * 131.7) * 127.1) * 43758.5453); const u = f * f * (3 - 2 * f); return lerp(h(i), h(i + 1), u); }
+const keys = (list, t) => {                      // eased keyframes [[t, v...], ...]
+  if (t <= list[0][0]) return list[0].slice(1);
+  for (let i = 0; i < list.length - 1; i++) {
+    const a = list[i], b = list[i + 1];
+    if (t <= b[0]) { const u = easeInOut((t - a[0]) / (b[0] - a[0])); return a.slice(1).map((v, j) => lerp(v, b[j + 1], u)); }
+  }
+  return list[list.length - 1].slice(1);
+};
+const quad = (a, c, b, n = 10) => Array.from({ length: n + 1 }, (_, i) => { const t = i / n, u = 1 - t; return [u * u * a[0] + 2 * u * t * c[0] + t * t * b[0], u * u * a[1] + 2 * u * t * c[1] + t * t * b[1]]; });
+const cubic = (a, c1, c2, b, n = 14) => Array.from({ length: n + 1 }, (_, i) => { const t = i / n, u = 1 - t; return [u * u * u * a[0] + 3 * u * u * t * c1[0] + 3 * u * t * t * c2[0] + t * t * t * b[0], u * u * u * a[1] + 3 * u * u * t * c1[1] + 3 * u * t * t * c2[1] + t * t * t * b[1]]; });
+function polyPath(pts, path = new Path2D()){ path.moveTo(pts[0][0], pts[0][1]); for (let i = 1; i < pts.length; i++) path.lineTo(pts[i][0], pts[i][1]); path.closePath(); return path; }
+
+/** Add a variable-width ribbon (a gouge or a carved line) to a Path2D. */
+function ribbonTo(path, pts, wOf){
+  const n = pts.length; if (n < 2) return;
+  const L = [], R = [];
+  for (let i = 0; i < n; i++) {
+    const a = pts[Math.max(0, i - 1)], b = pts[Math.min(n - 1, i + 1)];
+    let dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1; dx /= l; dy /= l;
+    const w = Math.max(0, wOf(i / (n - 1), i)) / 2;
+    L.push([pts[i][0] - dy * w, pts[i][1] + dx * w]); R.push([pts[i][0] + dy * w, pts[i][1] - dx * w]);
+  }
+  path.moveTo(L[0][0], L[0][1]);
+  for (let i = 1; i < n; i++) path.lineTo(L[i][0], L[i][1]);
+  for (let i = n - 1; i >= 0; i--) path.lineTo(R[i][0], R[i][1]);
+  path.closePath();
+}
+/** A gouge profile: a sharp entry, a full body, a blunt lift-out. */
+const gougeW = (w, entry = .18, lift = .12) => (t) => w * Math.min(1, t / entry + .04) * Math.min(1, (1 - t) / lift + .35);
+/** Hand wobble along a polyline. */
+const wobble = (pts, amp, seed) => pts.map(([x, y], i) => [x + (noise1(i * .7, seed) - .5) * amp, y + (noise1(i * .7 + 40, seed) - .5) * amp]);
+/** Roughen a closed outline outward/inward. */
+function rough(pts, amp, seed){
+  const n = pts.length, out = [];
+  for (let i = 0; i < n; i++) {
+    const a = pts[(i - 1 + n) % n], b = pts[(i + 1) % n];
+    let dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1;
+    const d = (noise1(i * .9, seed) - .5) * 2 * amp + (noise1(i * 3.1, seed + 7) - .5) * amp * .6;
+    out.push([pts[i][0] - dy / l * d, pts[i][1] + dx / l * d]);
+  }
+  return out;
+}
+/** Resample a polyline to roughly even spacing. */
+function resample(pts, step){
+  const out = [pts[0]];
+  let carry = 0;
+  for (let i = 1; i < pts.length; i++) {
+    const a = pts[i - 1], b = pts[i]; const L = Math.hypot(b[0] - a[0], b[1] - a[1]);
+    let d = step - carry;
+    while (d <= L) { const u = d / L; out.push([lerp(a[0], b[0], u), lerp(a[1], b[1], u)]); d += step; }
+    carry = L - (d - step);
+  }
+  out.push(pts[pts.length - 1]);
+  return out;
+}
+
+// ============================================================================
+// Blocks
+class Blocks {
+  constructor(){
+    this.cv = {};
+    for (const k of ['c', 'g', 'r']) { const el = document.createElement('canvas'); this.cv[k] = { el, x: el.getContext('2d') }; }
+  }
+  begin(W, H){
+    this.W = W; this.H = H; this.A = W / H;
+    for (const k in this.cv) { const { el, x } = this.cv[k]; if (el.width !== W) el.width = W; if (el.height !== H) el.height = H; x.setTransform(1, 0, 0, 1, 0, 0); x.globalAlpha = 1; x.fillStyle = '#000'; x.fillRect(0, 0, W, H); }
+  }
+  cam(cx, cy, z){
+    this.cx = cx; this.cy = cy; this.z = z; this.s = this.H * z;
+    for (const k in this.cv) this.cv[k].x.setTransform(this.s, 0, 0, this.s, this.W / 2 - cx * this.s, this.H / 2 - cy * this.s);
+    const hw = this.W / 2 / this.s, hh = this.H / 2 / this.s;
+    this.view = { x0: cx - hw, x1: cx + hw, y0: cy - hh, y1: cy + hh, w: hw * 2, h: hh * 2 };
+  }
+  screen(){ for (const k in this.cv) this.cv[k].x.setTransform(1, 0, 0, 1, 0, 0); }
+  world(){ this.cam(this.cx, this.cy, this.z); }
+  px(n){ return n / this.s; }
+  /** Fill a path on a block: ink = true takes ink, false carves it away. */
+  fill(block, path, ink = true, alpha = 1){ const x = this.cv[block].x; x.globalAlpha = alpha; x.fillStyle = ink ? '#fff' : '#000'; x.fill(path); x.globalAlpha = 1; }
+  /** Light: carve the cobalt away and put gold in its place. */
+  light(path, alpha = 1){ this.fill('c', path, false, alpha); this.fill('g', path, true, alpha); }
+}
+
+// ============================================================================
+// The carved world, generated once
+const R = mulberry(2026);
+const rnd = () => R();
+const surf = (x) => {
+  let y = SURF + .010 * Math.sin(x * 2.1) + .006 * Math.sin(x * 5.3 + 1);
+  const dp = x - ZONES.path; if (Math.abs(dp) < 1.6) y += .01 * Math.exp(-((dp + .35) ** 2) / .003) + .01 * Math.exp(-((dp - .4) ** 2) / .003) - .004;  // cart ruts on the path
+  return y;
+};
+const hill = (x) => surf(x) - .03 - .055 * noise1(x * .9, 4) - .018 * noise1(x * 3.7, 9);
+const STARS = Array.from({ length: 40 }, () => [rnd(), rnd() * .55, .5 + rnd(), rnd() * 10]);
+
+const SOIL = [], ROCKS = [], CRUMBS = [];
+function genSoil(){
+  for (const [name, zx] of Object.entries(ZONES)) {
+    const x0 = zx - 1.8, x1 = zx + 1.8;
+    // strata: close and bright near the cut surface, sparse and fine deeper down
+    for (let row = 0, d = .016; d < 1.4; row++) {
+      const sp = d < .12 ? .018 : .05 + d * .05;
+      let x = x0 - rnd() * .2;
+      while (x < x1) {
+        const L = .1 + rnd() * (d < .12 ? .5 : .3), gap = .03 + rnd() * (d < .12 ? .1 : .35);
+        const pts = [];
+        for (let u = 0; u <= 1.0001; u += .1) { const xx = x + L * u; pts.push([xx, surf(xx) + d + .004 * Math.sin(xx * 7 + row) + (noise1(xx * 4, row) - .5) * .008]); }
+        let w = d < .12 ? (.0065 - d * .03) * (.6 + rnd() * .7) : (.0022 + rnd() * .002);
+        if (name === 'path' && d < .06) w *= .3;
+        if (name === 'good' && d > .12) w *= .8;
+        if (!(name === 'rock' && d > .06 && d < .38)) SOIL.push({ zone: name, pts, w, d, x0: x, x1: x + L });
+        x += L + gap;
+      }
+      d += sp;
+    }
+    if (name === 'rock') {
+      const Rk = mulberry(77);
+      for (let i = 0; i < 9; i++) {
+        const cx = zx - 1.3 + i * .36 + (Rk() - .5) * .12, cy = SURF + .08 + Rk() * .22, r = .06 + Rk() * .07;
+        const n = 6 + Math.floor(Rk() * 4); const pts = [];
+        for (let k = 0; k < n; k++) { const a = k / n * TAU + (Rk() - .5) * .6; const rr = r * (.7 + Rk() * .45); pts.push([cx + Math.cos(a) * rr * 1.3, cy + Math.sin(a) * rr]); }
+        const split = Rk() * Math.PI, facets = [];
+        for (const [ang, dens] of [[split + .4, .011], [split - .9, .026]]) {
+          const dx = Math.cos(ang), dy = Math.sin(ang);
+          for (let f = -r * 1.5; f < r * 1.5; f += dens + Rk() * dens * .6) {
+            const ox = cx - dy * f, oy = cy + dx * f;
+            const side = (ox - cx) * Math.cos(split) + (oy - cy) * Math.sin(split) > 0 ? 1 : -1;
+            if ((dens < .02) !== (side > 0)) continue;
+            facets.push({ pts: resample([[ox - dx * r * 1.7, oy - dy * r * 1.7], [ox + dx * r * 1.7, oy + dy * r * 1.7]], .03), w: .0025 + Rk() * .004 });
+          }
+        }
+        ROCKS.push({ pts, facets, cx, cy, r });
+      }
+    }
+    if (name === 'good') {
+      const Rg = mulberry(91);
+      for (let i = 0; i < 260; i++) {
+        const x = zx + (Rg() - .5) * 3.6, d = .03 + Math.pow(Rg(), 1.6) * 1.3, r = .005 + Rg() * .012;
+        CRUMBS.push({ x, y: surf(x) + d, r, a: Rg() * TAU, sweep: .9 + Rg() * 1.6, w: .0022 + Rg() * .003 });
+      }
+    }
+    if (name === 'thorns') {
+      const Rt = mulberry(55);
+      for (let i = 0; i < 60; i++) {
+        const x = zx + (Rt() - .5) * 3.2, d = .02 + Rt() * .2, L = .04 + Rt() * .09, a = (Rt() - .5) * 2.4;
+        SOIL.push({ zone: 'thorns', pts: quad([x, surf(x) + d], [x + Math.cos(a) * L * .6, surf(x) + d + Math.sin(a) * L * .5 - .02], [x + Math.cos(a) * L, surf(x) + d + Math.sin(a) * L], 6), w: .004, d, x0: x - L, x1: x + L });
+      }
+    }
+  }
+}
+genSoil();
+
+const ROOT_ORIGIN = [ZONES.good, SURF + .26];
+const ROOTS = [];
+function growRoot(p, ang, len, width, depth, t0, seed){
+  const Rr = mulberry(seed);
+  const pts = [p]; let a = ang, cur = p;
+  const steps = Math.max(4, Math.round(len / .011));
+  for (let i = 0; i < steps; i++) { a += (Rr() - .5) * .42; a = lerp(a, Math.PI / 2, depth === 0 ? .08 : .045); cur = [cur[0] + Math.cos(a) * len / steps, cur[1] + Math.sin(a) * len / steps]; pts.push(cur); }
+  ROOTS.push({ pts, width, t0, t1: t0 + len * 1.2, depth });
+  if (depth < 4) {
+    const kids = depth === 0 ? 7 : depth === 1 ? 4 : 3;
+    for (let k = 0; k < kids; k++) {
+      const u = .15 + (k / kids) * .75 + (Rr() - .5) * .06;
+      const i = Math.floor(u * (pts.length - 1));
+      const side = k % 2 ? 1 : -1;
+      const local = Math.atan2(pts[Math.min(pts.length - 1, i + 1)][1] - pts[i][1], pts[Math.min(pts.length - 1, i + 1)][0] - pts[i][0]);
+      growRoot(pts[i], local + side * (.45 + Rr() * .5), len * (.42 + Rr() * .22) * (depth === 0 ? 1.15 : 1), width * .6, depth + 1, t0 + len * 1.2 * u, seed * 7 + k + 1);
+    }
+  }
+}
+growRoot(ROOT_ORIGIN, Math.PI / 2, .6, .02, 0, 0, 11);
+const ROOT_T = Math.max(...ROOTS.map((b) => b.t1));
+
+const WHEAT = [];
+{
+  const Rw = mulberry(303);
+  for (let i = 0; i < 34; i++) {
+    const x = ZONES.good + (Rw() - .5) * 3.8;
+    if (Math.abs(x - ZONES.good) < .6) continue;
+    WHEAT.push({ x, h: .16 + Rw() * .14, lean: (Rw() - .5) * .04, ph: Rw() * TAU, delay: Rw() * .6 + Math.abs(x - ZONES.good) * .2, grains: 12 + Math.floor(Rw() * 6) });
+  }
+}
+const FIELD_TICKS = Array.from({ length: 120 }, () => ({ x: ZONES.good + (rnd() - .5) * 4.2, row: Math.floor(rnd() * 3), h: .02 + rnd() * .02, ph: rnd() * TAU }));
+const FEATURED = [
+  { x: ZONES.good - .36, h: .36, count: 30, ears: 1, delay: .2 },
+  { x: ZONES.good, h: .46, count: 100, ears: 3, delay: .5 },
+  { x: ZONES.good + .38, h: .4, count: 60, ears: 2, delay: .35 },
+];
+
+// ============================================================================
+// Carving helpers
+function carveStrokes(B, strokes, block = 'c', ink = false){
+  const p = new Path2D();
+  for (const s of strokes) ribbonTo(p, s.pts, s.wOf || gougeW(s.w));
+  B.fill(block, p, ink);
+}
+function inView(B, x0, x1, pad = .3){ return x1 > B.view.x0 - pad && x0 < B.view.x1 + pad; }
+function chipStar(path, x, y, s){
+  const pts = [];
+  for (let i = 0; i < 8; i++) { const a = i / 8 * TAU + .3; const r = i % 2 ? s * .25 : s; pts.push([x + Math.cos(a) * r, y + Math.sin(a) * r]); }
+  polyPath(pts, path);
+}
+function seedShape(x, y, s, rot){
+  const pts = [];
+  for (let i = 0; i < 16; i++) { const a = i / 16 * TAU; const r = 1 + .08 * Math.cos(a * 3); pts.push([x + Math.cos(rot) * Math.cos(a) * s * 1.4 * r - Math.sin(rot) * Math.sin(a) * s * .85, y + Math.sin(rot) * Math.cos(a) * s * 1.4 * r + Math.cos(rot) * Math.sin(a) * s * .85]); }
+  return pts;
+}
+/** A gold seed carved into the dark: a hole in the cobalt, gold in it, a gouge down its crease. */
+function drawSeed(B, x, y, s, rot, glow = 1, split = 0){
+  B.fill('c', polyPath(seedShape(x, y, s * 1.55, rot)), false);
+  if (split <= 0) {
+    B.fill('g', polyPath(seedShape(x, y, s, rot)), true, glow);
+    const crease = new Path2D();
+    ribbonTo(crease, [[x - Math.cos(rot) * s * 1.05, y - Math.sin(rot) * s * 1.05], [x + Math.sin(rot) * s * .12, y - Math.cos(rot) * s * .12], [x + Math.cos(rot) * s * 1.05, y + Math.sin(rot) * s * 1.05]], gougeW(s * .26));
+    B.fill('g', crease, false);
+    return;
+  }
+  // two halves opening along the crease
+  for (const side of [-1, 1]) {
+    const half = new Path2D();
+    const ox = -Math.sin(rot) * side * s * .45 * split, oy = Math.cos(rot) * side * s * .45 * split;
+    const pts = [];
+    for (let i = 0; i <= 10; i++) { const a = (side > 0 ? 0 : Math.PI) + i / 10 * Math.PI; pts.push([x + ox + Math.cos(rot) * Math.cos(a) * s * 1.4 - Math.sin(rot) * Math.sin(a) * s * .85, y + oy + Math.sin(rot) * Math.cos(a) * s * 1.4 + Math.cos(rot) * Math.sin(a) * s * .85]); }
+    polyPath(pts, half);
+    B.fill('c', half, false);
+    B.fill('g', half, true, glow);
+  }
+}
+
+// ============================================================================
+// Light and sky
+function lightLevel(t){
+  return keys([[0, .05], [1.05, .07], [2.05, .14], [2.9, .32], [5.5, .5], [6.4, .62], [7.9, .78], [9.7, .62], [11.6, .34], [14.3, .3], [14.95, .12], [17.4, .16], [18.6, .55], [20.3, 1], [24, 1]], t)[0];
+}
+/** Where the sky's light sits, in screen fractions, and how big its body is. */
+function lightCenter(t, B, dawnSun){
+  let [fx, fy] = keys([[0, .74, .3], [2.6, .74, .3], [5.6, .26, .24], [9.6, .26, .24], [11.4, .7, .3], [17.4, .7, .3], [24, .7, .3]], t);
+  if (dawnSun) {
+    const k = smooth((t - 18.4) / 1.0);
+    const sx = B.W / 2 + (dawnSun[0] - B.cx) * B.s, sy = B.H / 2 + (dawnSun[1] - B.cy) * B.s;
+    fx = lerp(fx, sx / B.W, k); fy = lerp(fy, sy / B.H, k);
+  }
+  return [fx * B.W, fy * B.H];
+}
+
+function drawSky(B, t, L, center, halos = []){
+  const { W, H } = B;
+  const k = H / 500;
+  B.screen();
+  const sky = new Path2D(); sky.rect(0, 0, W, H);
+  B.fill('c', sky, true);
+  const [cx, cy] = center;
+  const horizonY = H / 2 + (SURF - .04 - B.cy) * B.s;
+  // tone of the sky at a screen point: a glow along the horizon and round the light
+  const toneAt = (x, y) => {
+    const above = Math.max(0, horizonY - y);
+    const horizon = Math.exp(-above / (H * (.28 + .12 * L))) * (.78 - .25 * L);
+    const d = Math.hypot(x - cx, y - cy);
+    const halo = Math.exp(-Math.max(0, d - 30 * k) / (H * (.12 + .4 * L))) * (.35 + .4 * L);
+    let around = 0;
+    for (const h of halos) { const dd = Math.hypot(x - h.x, y - h.y); around = Math.max(around, h.s * Math.exp(-Math.max(0, dd - h.r * .55) / (h.r * .55))); }
+    return clamp01(.02 + .28 * L * L + horizon * (.75 + .5 * L) + halo + around);
+  };
+  // horizontal gouges whose width is the tone: the classic relief-print sky
+  const gap = 9 * k;
+  const cut = new Path2D();
+  const rows = Math.ceil(H / gap) + 1;
+  for (let row = 0; row < rows; row++) {
+    const Rr = mulberry(row * 733 + 5);
+    let x = -Rr() * 80 * k;
+    while (x < W) {
+      const len = (140 + Rr() * 380) * k, gapLen = (2 + Rr() * 7) * k;
+      const n = Math.max(3, Math.ceil(len / (12 * k)));
+      const pts = [], ws = [];
+      for (let i = 0; i <= n; i++) {
+        const px = x + len * i / n;
+        const py = row * gap + Math.sin(px * .006 / k + row * .9) * gap * .22 + (noise1(px / (70 * k), row) - .5) * gap * .3;
+        pts.push([px, py]); ws.push(toneAt(px, py));
+      }
+      const avg = ws.reduce((a, b) => a + b, 0) / ws.length;
+      if (avg > .03) ribbonTo(cut, pts, (u, i) => gap * lerp(0, .9, ws[i]) * Math.min(1, u / .06 + .05) * Math.min(1, (1 - u) / .05 + .3));
+      x += len + gapLen;
+    }
+  }
+  // rings cut round the light
+  const ringR = H * (.12 + .28 * L);
+  for (let ring = 0, r = 30 * k; r < ringR; ring++, r += gap * 1.05) {
+    const Rr = mulberry(ring * 977 + 13);
+    const fade = 1 - r / ringR;
+    const circ = TAU * r;
+    let s = Rr() * 30 * k;
+    while (s < circ) {
+      const len = (30 + Rr() * 90) * k, gapLen = (3 + Rr() * 10) * k;
+      const a0 = s / r, a1 = Math.min(circ, s + len) / r;
+      const n = Math.max(3, Math.ceil((a1 - a0) * r / (10 * k)));
+      const pts = [];
+      for (let i = 0; i <= n; i++) { const a = lerp(a0, a1, i / n); const rr = r + (noise1(a * r / (50 * k), ring) - .5) * gap * .3; pts.push([cx + Math.cos(a) * rr, cy + Math.sin(a) * rr]); }
+      ribbonTo(cut, pts, gougeW(gap * lerp(.25, .95, fade) * (.7 + .5 * Rr()), .2, .16));
+      s += len + gapLen;
+    }
+  }
+  B.fill('c', cut, false);
+  if (L > .25 && t > 22) {
+    const gx = B.cv.g.x;
+    const grad = gx.createRadialGradient(cx, cy, 20 * k, cx, cy, H * (.3 + .5 * L));
+    grad.addColorStop(0, `rgba(255,255,255,${.45 * L})`); grad.addColorStop(1, 'rgba(255,255,255,0)');
+    gx.fillStyle = grad; gx.fillRect(0, 0, W, H);
+  }
+  // stars, cut as chips with gold beneath
+  const starA = clamp01(1 - L * 3.5);
+  if (starA > .01) {
+    const stars = new Path2D();
+    for (const [sx, sy, sz, ph] of STARS) {
+      const px = sx * W, py = sy * H;
+      if (Math.hypot(px - cx, py - cy) < H * .18) continue;
+      chipStar(stars, px, py, 7 * k * sz * (.75 + .25 * Math.sin(t * 1.7 + ph)));
+    }
+    B.fill('c', stars, false, starA);
+    B.fill('g', stars, true, starA);
+  }
+  B.world();
+}
+
+function drawMoon(B, center, alpha, radius){
+  if (alpha <= .01) return;
+  const k = B.H / 500;
+  B.screen();
+  const [x, y] = center, r = radius || 22 * k;
+  const disc = new Path2D(); disc.arc(x, y, r * 1.2, 0, TAU);
+  B.fill('c', disc, false, alpha);
+  const crescent = new Path2D(); crescent.arc(x, y, r, 0, TAU); crescent.arc(x + r * .5, y - r * .25, r * .88, 0, TAU, true);
+  const cx2 = B.cv.g.x; cx2.globalAlpha = alpha; cx2.fillStyle = '#fff'; cx2.fill(crescent, 'evenodd'); cx2.globalAlpha = 1;
+  const dark = new Path2D(); dark.arc(x + r * .5, y - r * .25, r * .88, 0, TAU);
+  const c2 = B.cv.c.x; c2.save(); c2.clip(disc); c2.globalAlpha = alpha; c2.fillStyle = '#fff'; c2.fill(dark); c2.restore();
+  B.world();
+}
+
+function drawSun(B, x, y, r, t, rays, crimson = 0){
+  const halo = new Path2D(); halo.arc(x, y, r * 1.14, 0, TAU);
+  B.fill('c', halo, false);
+  const disc = new Path2D(); disc.arc(x, y, r, 0, TAU);
+  B.fill('g', disc, true);
+  const rings = new Path2D();
+  for (let kk = 1; kk <= 5; kk++) {
+    const rr = r * (.2 + kk * .14);
+    const pts = []; const a0 = -Math.PI * .95 + kk * .35, a1 = a0 + Math.PI * (.5 + .08 * kk);
+    for (let i = 0; i <= 18; i++) { const a = lerp(a0, a1, i / 18); pts.push([x + Math.cos(a) * rr, y + Math.sin(a) * rr]); }
+    ribbonTo(rings, pts, gougeW(r * .05, .25, .25));
+  }
+  B.fill('g', rings, false);
+  if (rays > 0) {
+    const ray = new Path2D(), heat = new Path2D();
+    for (let i = 0; i < 40; i++) {
+      const a = i / 40 * TAU + t * .05;
+      const len = r * rays * (.6 + .5 * noise1(i * 1.7 + t * .8, 5)) * (i % 2 ? .6 : 1);
+      const p0 = [x + Math.cos(a) * r * 1.3, y + Math.sin(a) * r * 1.3], p1 = [x + Math.cos(a) * (r * 1.3 + len), y + Math.sin(a) * (r * 1.3 + len)];
+      const pts = [p0, [lerp(p0[0], p1[0], .5), lerp(p0[1], p1[1], .5)], p1];
+      ribbonTo(ray, pts, (u) => r * .1 * (1 - u) * Math.min(1, u * 5 + .3));
+      if (crimson > 0 && i % 2 === 0) ribbonTo(heat, pts.map(([px, py]) => [px + Math.cos(a + 1.6) * r * .05, py + Math.sin(a + 1.6) * r * .05]), (u) => r * .07 * (1 - u));
+    }
+    B.fill('c', ray, false);
+    B.fill('g', ray, true, .9);
+    if (crimson > 0) B.fill('r', heat, true, crimson);
+  }
+}
+
+// ============================================================================
+// Earth
+function drawGround(B, t, L){
+  const { view } = B;
+  const x0 = view.x0 - .1, x1 = view.x1 + .1, step = (x1 - x0) / 140;
+  // distant hills, a ridge of light along their crest
+  const ridge = [];
+  for (let x = x0; x <= x1 + 1e-6; x += step) ridge.push([x, hill(x)]);
+  const hills = polyPath([...ridge, [x1, view.y1 + 1], [x0, view.y1 + 1]]);
+  B.fill('g', hills, false); B.fill('r', hills, false);          // the earth hides whatever light is below the horizon
+  B.fill('c', polyPath([...ridge, [x1, SURF + .2], [x0, SURF + .2]]), true);
+  const crest = new Path2D();
+  ribbonTo(crest, ridge.map(([x, y]) => [x, y + .004]), () => B.px(1.2) + .004 * L);
+  B.fill('c', crest, false);
+  const contours = new Path2D();
+  for (let c = 1; c <= 3; c++) {
+    let x = x0 + (c * .37) % .5;
+    while (x < x1) { const L2 = .15 + noise1(x * 3, c) * .35; const pts = []; for (let u = 0; u <= 1.0001; u += .125) { const xx = x + L2 * u; pts.push([xx, lerp(hill(xx), surf(xx), c * .22) + .004]); } ribbonTo(contours, pts, gougeW(.0022 * (.4 + L), .3, .3)); x += L2 + .06 + noise1(x, c + 4) * .2; }
+  }
+  B.fill('c', contours, false);
+  // the cut face of the field
+  const top = [];
+  for (let x = x0; x <= x1 + 1e-6; x += step) top.push([x, surf(x) + (noise1(x * 40, 3) - .5) * .003]);
+  const lipEdge = new Path2D(); ribbonTo(lipEdge, top.map(([x, y]) => [x, y - .004]), () => .009);
+  B.fill('c', lipEdge, false);
+  B.fill('c', polyPath([...top, [x1, view.y1 + 1], [x0, view.y1 + 1]]), true);
+  const strokes = SOIL.filter((s) => inView(B, s.x0, s.x1) && s.pts[0][1] < view.y1 + .05 && s.pts[0][1] > view.y0 - .05);
+  carveStrokes(B, strokes.map((s) => ({ pts: s.pts, w: s.w })));
+  for (const rk of ROCKS) {
+    if (!inView(B, rk.cx - rk.r * 1.5, rk.cx + rk.r * 1.5)) continue;
+    const outline = rough(resample([...rk.pts, rk.pts[0]], rk.r * .18).slice(0, -1), rk.r * .09, rk.cx * 10);
+    const ring = new Path2D(); ribbonTo(ring, [...outline, outline[0], outline[1]], () => .008);
+    B.fill('c', ring, false);
+    // the stone's face is cut back to paper; the shadow side keeps its ink in heavy bands
+    const face = polyPath(outline);
+    B.fill('c', face, false);
+    const fx = B.cv.c.x; fx.save(); fx.clip(face);
+    const inkBands = new Path2D();
+    const hatch = (ang, spacing, weight) => {
+      const dx = Math.cos(ang), dy = Math.sin(ang);
+      for (let f = -rk.r * 1.5; f < rk.r * 1.5; f += spacing) {
+        const ox = rk.cx - dy * f, oy = rk.cy + dx * f;
+        const pts = resample([[ox - dx * rk.r * 1.6, oy - dy * rk.r * 1.6], [ox + dx * rk.r * 1.6, oy + dy * rk.r * 1.6]], .012);
+        ribbonTo(inkBands, wobble(pts, .002, f * 50 + ang), (u, i) => { const [px, py] = pts[i]; const shade = clamp01(.15 + ((px - rk.cx) * .55 + (py - rk.cy) * .85) / rk.r * .75); return spacing * weight * shade; });
+      }
+    };
+    hatch(rk.cx * 5 % Math.PI, .016, 1.05);
+    hatch(rk.cx * 5 % Math.PI + 1.1, .021, .6);
+    const Rc = mulberry(Math.round(rk.cx * 1000));
+    for (let c = 0; c < 3; c++) {
+      const a = Rc() * TAU, p0 = [rk.cx + Math.cos(a) * rk.r * 1.2, rk.cy + Math.sin(a) * rk.r * .9];
+      const p2 = [rk.cx + (Rc() - .5) * rk.r * .6, rk.cy + (Rc() - .5) * rk.r * .5];
+      ribbonTo(inkBands, wobble(resample([p0, [lerp(p0[0], p2[0], .5) + (Rc() - .5) * .02, lerp(p0[1], p2[1], .5)], p2], .01), .004, c + rk.cx), gougeW(.006, .1, .6));
+    }
+    B.fill('c', inkBands, true);
+    fx.restore();
+    const rim = new Path2D(); ribbonTo(rim, [...outline, outline[0], outline[1]], () => .006);
+    B.fill('c', rim, true);
+  }
+  const crumbs = new Path2D();
+  for (const c of CRUMBS) {
+    if (c.x < view.x0 - .1 || c.x > view.x1 + .1 || c.y > view.y1 + .05) continue;
+    const pts = []; for (let i = 0; i <= 6; i++) { const a = c.a + c.sweep * i / 6; pts.push([c.x + Math.cos(a) * c.r, c.y + Math.sin(a) * c.r * .7]); }
+    ribbonTo(crumbs, pts, gougeW(c.w, .3, .3));
+  }
+  B.fill('c', crumbs, false);
+}
+
+// ============================================================================
+// Creatures and plants
+/**
+ * A crow cut in relief, side view, facing dir. s = body length.
+ * wing: 0 = fully down, 1 = fully raised; fold: 0 = open, 1 = folded on the back.
+ * head: 0 = level, 1 = dipped to peck.
+ */
+function drawBird(B, x, y, s, dir, wing, fold, seedHeld, head = 0){
+  const T = (bx, by) => [x + bx * s * dir, y + by * s];
+  const rot = (pts, ox, oy, a, sx = 1, sy = 1) => pts.map(([px, py]) => { const X = px * sx, Y = py * sy; return [ox + X * Math.cos(a) - Y * Math.sin(a), oy + X * Math.sin(a) + Y * Math.cos(a)]; });
+  // body (without head), tail fan
+  const body = [[.3, -.1], [.2, -.19], [0, -.2], [-.28, -.15], [-.5, -.08], [-.84, -.12], [-.9, -.04], [-.84, .05], [-.5, .07], [-.22, .16], [.08, .17], [.26, .09]];
+  // head and beak, dipping round the neck
+  const hd = head * .9;
+  const headPts = rot([[-.12, -.06], [-.06, -.16], [.04, -.2], [.13, -.17], [.19, -.1], [.46, -.05], [.2, -.02], [.17, .05], [.04, .1], [-.1, .09]], .3, -.08, hd);
+  // a wing pointing up and back from the shoulder, primaries fingered
+  const canon = [[.08, 0], [.12, -.28], [.08, -.56], [.02, -.8], [-.02, -1.02], [-.08, -.84], [-.12, -1.0], [-.16, -.8], [-.22, -.94], [-.25, -.74], [-.32, -.84], [-.33, -.64], [-.4, -.68], [-.36, -.48], [-.3, -.26], [-.18, -.04]];
+  const wingAngle = lerp(-2.5, -.3, wing);
+  const length = lerp(.75, 1.0, Math.abs(Math.sin(wingAngle + .2))) * lerp(1, .55, fold);
+  const shoulder = [.06, -.12];
+  const flat = fold > 0 ? lerp(wingAngle, -1.52, fold) : wingAngle;
+  const nearWing = rot(canon, shoulder[0], shoulder[1], flat, lerp(1, .38, fold), length);
+  const farWing = rot(canon, shoulder[0] - .06, shoulder[1] - .02, flat - .28 * (1 - fold), lerp(.9, .34, fold), length * .9);
+  const toW = (pts) => pts.map(([a, b]) => T(a, b));
+  const shapes = [[toW(farWing), .85], [toW(body), 1], [toW(headPts), 1], [toW(nearWing), 1]];
+  if (fold > .5) shapes.push(shapes.splice(3, 1)[0]);
+  // the far wing keeps its own paper edge; the body, head and near wing print as one mass
+  const roughed = shapes.map(([shape]) => rough(shape, s * .008, x * 3 + shape.length));
+  const farIdx = shapes.findIndex(([shape]) => shape.length === farWing.length && shape[0] === toW(farWing)[0]);
+  roughed.forEach((pts, i) => {
+    const edge = new Path2D(); ribbonTo(edge, [...pts, pts[0], pts[1]], () => s * .05);
+    B.fill('c', edge, false);
+    if (i === 0) B.fill('c', polyPath(pts), true);
+  });
+  roughed.forEach((pts, i) => { if (i > 0) B.fill('c', polyPath(pts), true); });
+  void farIdx;
+  // gouges: primaries along each wing, coverts, back scallops, tail, beak line
+  const cuts = new Path2D();
+  for (const [wingPts, k] of [[nearWing, 1], [farWing, .7]]) {
+    const base = wingPts[0];
+    for (const tip of [4, 6, 8, 10, 12]) {
+      const p = wingPts[tip];
+      const a = [lerp(base[0], p[0], .38), lerp(base[1], p[1], .38)], b = [lerp(base[0], p[0], .95), lerp(base[1], p[1], .95)];
+      ribbonTo(cuts, toW([a, [lerp(a[0], b[0], .5) + .01, lerp(a[1], b[1], .5)], b]), gougeW(s * .026 * k, .25, .12));
+    }
+    for (let i = 0; i < 6; i++) {
+      const u = .12 + i * .045;
+      const a = [lerp(wingPts[0][0], wingPts[3][0], u) + .02, lerp(wingPts[0][1], wingPts[3][1], u)];
+      const b = [lerp(wingPts[0][0], wingPts[13][0], u) - .02, lerp(wingPts[0][1], wingPts[13][1], u)];
+      ribbonTo(cuts, toW([a, [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + .03], b]), gougeW(s * .014 * k, .35, .35));
+    }
+  }
+  for (let r = 0; r < 2; r++) for (let i = 0; i < 5; i++) {
+    const cx = .12 - i * .12 - r * .06, cy = .02 + r * .06;
+    ribbonTo(cuts, toW([[cx + .04, cy - .02], [cx, cy + .025], [cx - .05, cy - .01]]), gougeW(s * .015, .4, .4));
+  }
+  for (let i = 0; i < 4; i++) ribbonTo(cuts, toW([[-.55, -.05 + i * .035], [-.74, -.08 + i * .05], [-.92, -.12 + i * .065]]), gougeW(s * .016, .2, .3));
+  const beakLine = rot([[.22, -.06], [.42, -.05]], .3, -.08, hd);
+  ribbonTo(cuts, toW(beakLine), gougeW(s * .012, .3, .3));
+  B.fill('c', cuts, false);
+  const eyeC = rot([[.07, -.11]], .3, -.08, hd)[0];
+  const eye = new Path2D(); eye.arc(...T(eyeC[0], eyeC[1]), s * .045, 0, TAU);
+  B.fill('c', eye, false);
+  const pupil = new Path2D(); pupil.arc(...T(eyeC[0] + .01, eyeC[1]), s * .02, 0, TAU);
+  B.fill('g', pupil, true);
+  if (seedHeld) { const bk = rot([[.36, -.045]], .3, -.08, hd)[0]; drawSeed(B, ...T(bk[0], bk[1]), s * .04, hd + .2); }
+}
+
+function drawSprout(B, x, base, h, bend, wither, heat, scale = 1){
+  if (h <= .002) return;
+  const top = [x + bend * h * .9, base - h * (1 - wither * .35)];
+  const stem = quad([x, base], [x + bend * h * .15, base - h * .6], top, 12);
+  const w = .012 * scale * Math.min(1, h / .08);
+  const edge = new Path2D(); ribbonTo(edge, stem, () => w + .014 * scale);
+  B.fill('c', edge, false);
+  const body = new Path2D(); ribbonTo(body, stem, (u) => w * (1 - u * .55));
+  const leaves = new Path2D(), leafEdge = new Path2D(), veins = new Path2D();
+  const at = stem[Math.floor(stem.length * .7)];
+  for (const side of [-1, 1]) {
+    const ang = -Math.PI / 2 + side * (.95 + wither * 1.25) + bend * .8;
+    const L = Math.min(.1, h * .55) * scale;
+    const tip = [at[0] + Math.cos(ang) * L, at[1] + Math.sin(ang) * L];
+    const n = [-Math.sin(ang) * L * .32, Math.cos(ang) * L * .32];
+    const outline = quad(at, [lerp(at[0], tip[0], .5) + n[0], lerp(at[1], tip[1], .5) + n[1]], tip, 8).concat(quad(tip, [lerp(at[0], tip[0], .5) - n[0] * .5, lerp(at[1], tip[1], .5) - n[1] * .5], at, 8));
+    polyPath(outline, leaves);
+    ribbonTo(leafEdge, [...outline, outline[0], outline[1]], () => .014 * scale);
+    ribbonTo(veins, [at, [lerp(at[0], tip[0], .55) + n[0] * .15, lerp(at[1], tip[1], .55) + n[1] * .15], tip], gougeW(.004 * scale, .15, .35));
+  }
+  B.fill('c', leafEdge, false);
+  B.fill('c', body, true);
+  B.fill('c', leaves, true);
+  B.fill('c', veins, false);
+  if (heat > 0) { B.fill('r', body, true, heat); B.fill('r', leaves, true, heat); }
+}
+
+/** Briars: stems that climb, hook inward and cross over the young plant. */
+const BRIARS = (() => {
+  const Rb = mulberry(4401), out = [];
+  for (let k = 0; k < 9; k++) {
+    const side = k % 2 ? 1 : -1;
+    const ox = side * (.12 + Rb() * .42);
+    const pts = [[ox, 0]];
+    let a = -Math.PI / 2 + side * (.15 + Rb() * .25), p = [ox, 0];
+    const L = .36 + Rb() * .22, steps = 30;
+    for (let i = 0; i < steps; i++) {
+      const u = i / steps;
+      const target = Math.atan2(-.15 - (Rb() - .5) * .1 - p[1], -side * .18 - p[0]);
+      a = lerp(a, target, .05 + u * .08) + (Rb() - .5) * .35;
+      if (i % 9 === 8) a += side * -.45;                 // a kink where a cane bends
+      p = [p[0] + Math.cos(a) * L / steps, p[1] + Math.sin(a) * L / steps];
+      pts.push(p);
+    }
+    const spikes = [];
+    for (let i = 3; i < pts.length - 2; i += 2 + Math.floor(Rb() * 2)) spikes.push({ i, side: Rb() < .5 ? 1 : -1, len: .03 + Rb() * .03 });
+    const twigs = [];
+    for (let i = 8; i < pts.length - 4; i += 7 + Math.floor(Rb() * 5)) twigs.push({ i, a: (Rb() < .5 ? 1 : -1) * (.7 + Rb() * .5), len: .06 + Rb() * .08 });
+    out.push({ pts, spikes, twigs, delay: Rb() * .35, width: .02 + Rb() * .012 });
+  }
+  return out;
+})();
+
+function drawThorns(B, zx, g, t){
+  const base = surf(zx);
+  const edge = new Path2D(), body = new Path2D(), spikes = new Path2D(), spikeEdge = new Path2D(), cuts = new Path2D();
+  const addCane = (pts, width) => {
+    ribbonTo(edge, pts, (u) => width * (1 - u * .6) + .016);
+    ribbonTo(body, pts, (u) => width * (1 - u * .65));
+    if (pts.length > 4) ribbonTo(cuts, pts.slice(1, -2).map(([x, y]) => [x - .003, y - .003]), gougeW(width * .16, .2, .3));
+  };
+  const spike = (p, q, side, len) => {
+    const dx = q[0] - p[0], dy = q[1] - p[1], l = Math.hypot(dx, dy) || 1;
+    const nx = -dy / l * side, ny = dx / l * side;
+    const tri = [[p[0] - dx / l * .012, p[1] - dy / l * .012], [p[0] + nx * len + dx / l * .022, p[1] + ny * len + dy / l * .022], [p[0] + dx / l * .012, p[1] + dy / l * .012]];
+    polyPath(tri, spikes); ribbonTo(spikeEdge, [...tri, tri[0], tri[1]], () => .01);
+  };
+  for (const br of BRIARS) {
+    const gg = clamp01((g - br.delay) / (1 - br.delay));
+    if (gg <= 0) continue;
+    const n = Math.max(2, Math.floor(br.pts.length * gg));
+    const sway = Math.sin(t * .8 + br.delay * 20) * .004;
+    const pts = br.pts.slice(0, n).map(([px, py], i) => [zx + px + sway * i / br.pts.length, base + py]);
+    addCane(pts, br.width);
+    for (const sp of br.spikes) if (sp.i < n - 1) spike(pts[sp.i], pts[sp.i + 1], sp.side, sp.len);
+    for (const tw of br.twigs) {
+      if (tw.i >= n - 1) continue;
+      const p = pts[tw.i], q = pts[tw.i + 1];
+      const a = Math.atan2(q[1] - p[1], q[0] - p[0]) + tw.a;
+      const grow = clamp01((n - tw.i) / 8);
+      const end = [p[0] + Math.cos(a) * tw.len * grow, p[1] + Math.sin(a) * tw.len * grow];
+      const twig = quad(p, [lerp(p[0], end[0], .5) + .01, lerp(p[1], end[1], .5) - .01], end, 5);
+      addCane(twig, br.width * .45);
+      spike(twig[2], twig[3], 1, .025);
+    }
+  }
+  B.fill('c', edge, false);
+  B.fill('c', spikeEdge, false);
+  B.fill('c', body, true);
+  B.fill('c', spikes, true);
+  B.fill('c', cuts, false);
+}
+
+function drawRoots(B, grow){
+  const cut = new Path2D(), tips = new Path2D(), hairs = new Path2D();
+  for (const br of ROOTS) {
+    const u = clamp01((grow * ROOT_T - br.t0) / (br.t1 - br.t0));
+    if (u <= 0) continue;
+    const n = Math.max(2, Math.ceil(br.pts.length * u));
+    const pts = br.pts.slice(0, n);
+    ribbonTo(cut, pts, (v) => br.width * (1 - v * .6) + .0025);
+    if (u < 1) { const p = pts[pts.length - 1], tr = br.width * .45 + .004; tips.moveTo(p[0] + tr, p[1]); tips.arc(p[0], p[1], tr, 0, TAU); }
+    if (br.depth >= 3 && u > .5) for (let i = 2; i < pts.length - 1; i += 3) {
+      const [x, y] = pts[i]; const a = (i * 2.3) % TAU;
+      ribbonTo(hairs, [[x, y], [x + Math.cos(a) * .012, y + Math.sin(a) * .012]], gougeW(.0018, .2, .5));
+    }
+  }
+  B.fill('c', cut, false);
+  B.fill('c', hairs, false);
+  B.fill('c', tips, false);
+  B.fill('g', tips, true);
+}
+
+function drawWheat(B, x, h, lean, sway, grains, scale, ripe, ears = 1, stemW = .006){
+  const base = [x, surf(x)];
+  const top = [x + lean + sway, base[1] - h];
+  const stem = quad(base, [x + (lean + sway) * .15, base[1] - h * .55], top, 14);
+  const edge = new Path2D(); ribbonTo(edge, stem, () => stemW + .01 * scale);
+  B.fill('c', edge, false);
+  const body = new Path2D(); ribbonTo(body, stem, (u) => stemW * (1 - u * .45));
+  B.fill('c', body, true);
+  const leaf = new Path2D(), leafEdge = new Path2D();
+  const at = stem[6], side = Math.sin(x * 37) > 0 ? 1 : -1;
+  const lpts = quad(at, [at[0] + side * .05 * scale, at[1] - .035 * scale], [at[0] + side * .1 * scale, at[1] + .02 * scale], 10);
+  ribbonTo(leafEdge, lpts, (u) => (.016 * scale) * Math.sin(Math.PI * u) + .008);
+  ribbonTo(leaf, lpts, (u) => (.011 * scale) * Math.sin(Math.PI * u));
+  B.fill('c', leafEdge, false);
+  B.fill('c', leaf, true);
+  const hole = new Path2D(), grainsPath = new Path2D(), grainCuts = new Path2D(), awns = new Path2D(), awnEdge = new Path2D();
+  let shown = 0;
+  const perEar = Math.round(grains / ears);
+  for (let e = 0; e < ears; e++) {
+    const spreadA = (e - (ears - 1) / 2) * .42;
+    const earAng = -Math.PI / 2 + spreadA + (lean + sway) * 1.5;
+    const eb = [top[0] + Math.cos(earAng) * .01 * scale, top[1] + Math.sin(earAng) * .01 * scale];
+    const earLen = (.03 + perEar * .0021) * scale;
+    const ax = Math.cos(earAng), ay = Math.sin(earAng);
+    for (let i = 0; i < perEar; i++) {
+      const u = (i + .5) / perEar;
+      const s2 = i % 2 ? 1 : -1;
+      const pu = (Math.floor(i / 2) + .5) / Math.ceil(perEar / 2);
+      const taperE = 1 - Math.pow(pu, 3) * .5;
+      const cx = eb[0] + ax * earLen * pu + (-ay) * s2 * .0038 * scale * taperE, cy = eb[1] + ay * earLen * pu + ax * s2 * .0038 * scale * taperE;
+      const gs = .0042 * scale * taperE;
+      polyPath(seedShape(cx, cy, gs * 1.45, earAng + s2 * .6), hole);
+      if (shown < ripe * grains) { polyPath(seedShape(cx, cy, gs, earAng + s2 * .6), grainsPath); shown++; }
+      else polyPath(seedShape(cx, cy, gs * .85, earAng + s2 * .6), grainCuts);
+      if (i % 2 === 0) {
+        const aw = [[cx, cy], [cx + ax * .05 * scale + (-ay) * s2 * .012 * scale, cy + ay * .05 * scale + ax * s2 * .012 * scale]];
+        ribbonTo(awnEdge, aw, () => .006 * scale);
+        ribbonTo(awns, aw, gougeW(.0022 * scale, .1, .5));
+      }
+    }
+  }
+  B.fill('c', awnEdge, false);
+  B.fill('c', hole, false);
+  B.fill('c', grainCuts, true);          // unripe grains stay dark ink until the light reaches them
+  B.fill('g', grainsPath, true);
+  B.fill('c', awns, true);
+}
+
+// ============================================================================
+// Macro blocks, cut to in close-up
+function screenMass(B){ const p = new Path2D(); p.rect(-10, -10, B.W + 20, B.H + 20); B.fill('c', p, true); return p; }
+
+/** Carved light across the frame, so a dark block can read against it. */
+function litGround(B, cx, cy, spread){
+  const { W, H } = B, k = H / 500;
+  screenMass(B);
+  const gap = 9 * k, cut = new Path2D();
+  for (let row = 0; row * gap < H + gap; row++) {
+    const y = (row + .5) * gap;
+    const Rr = mulberry(row * 733 + 5);
+    let x = -Rr() * 80 * k;
+    while (x < W) {
+      const len = (150 + Rr() * 360) * k, gapLen = (2 + Rr() * 7) * k;
+      const pts = [], ws = [];
+      const n = Math.max(3, Math.ceil(len / (12 * k)));
+      for (let i = 0; i <= n; i++) {
+        const px = x + len * i / n, py = y + Math.sin(px * .006 / k + row * .9) * gap * .22;
+        pts.push([px, py]);
+        ws.push(clamp01(.46 + .8 * Math.exp(-Math.hypot(px - cx, py - cy) / (H * spread))));
+      }
+      ribbonTo(cut, pts, (u, i) => gap * lerp(0, .95, ws[i]) * Math.min(1, u / .06 + .05) * Math.min(1, (1 - u) / .05 + .3));
+      x += len + gapLen;
+    }
+  }
+  B.fill('c', cut, false);
+}
+/** A dark carved block with a paper edge round it. */
+function blockMass(B, pts, edge = .03){
+  const { H } = B;
+  const e = new Path2D(); ribbonTo(e, [...pts, pts[0], pts[1]], () => H * edge);
+  B.fill('c', e, false);
+  B.fill('c', polyPath(pts), true);
+}
+
+/** The crow's eye, filling the frame: the head as one black block, the eye cut out of it. */
+function drawCrowEye(B, t, k){
+  const { W, H } = B, s = H;
+  B.screen();
+  litGround(B, W * .38, H * .46, .55);
+  const bob = Math.sin(t * 6) * s * .01;
+  const head = [[-.15, -.3], [.24, -.34], [.46, -.2], [.56, .02], [.58, .1], [.95, .13], [1.02, .2], [.56, .3], [.4, .52], [.1, .62], [-.15, .55]]
+    .map(([x, y]) => [W * .08 + x * s * 1.05, H * .1 + y * s + bob]);
+  blockMass(B, rough(head, s * .008, 3), .028);
+  const cut = new Path2D();
+  // feather gouges sweeping back over the crown and cheek
+  for (let i = 0; i < 16; i++) {
+    const u = i / 15;
+    const p0 = [W * .08 + (.2 - u * .3) * s, H * .1 + (-.24 + u * .5) * s + bob];
+    const p1 = [p0[0] - s * (.22 + .12 * noise1(i, 4)), p0[1] + s * .04];
+    ribbonTo(cut, [p0, [lerp(p0[0], p1[0], .5), lerp(p0[1], p1[1], .5) - s * .012], p1], gougeW(s * .016, .25, .3));
+  }
+  // the beak's cutting line and nostril
+  ribbonTo(cut, [[W * .08 + .58 * s, H * .1 + .14 * s + bob], [W * .08 + .96 * s, H * .1 + .16 * s + bob]], gougeW(s * .016, .2, .4));
+  const nostril = new Path2D(); chipStar(nostril, W * .08 + .63 * s, H * .1 + .08 * s + bob, s * .022);
+  B.fill('c', cut, false); B.fill('c', nostril, false);
+  // the eye: a socket cut to paper, a gold iris, a black pupil that tracks
+  const ex = W * .08 + .24 * s, ey = H * .1 + .02 * s + bob, r = s * .12;
+  const blink = k > .55 && k < .63 ? 1 : 0;
+  const socket = new Path2D(); socket.ellipse(ex, ey, r * 1.18, r * (1 - blink * .88), 0, 0, TAU);
+  B.fill('c', socket, false);
+  const look = Math.sin(t * 4.5) * r * .16;
+  const iris = new Path2D(); iris.ellipse(ex + look, ey, r * .82, r * .82 * (1 - blink * .92), 0, 0, TAU);
+  B.fill('g', iris, true);
+  const pupil = new Path2D(); pupil.ellipse(ex + look * 1.5, ey, r * .4, r * .4 * (1 - blink * .95), 0, 0, TAU);
+  B.fill('g', pupil, false); B.fill('c', pupil, true);
+  const glint = new Path2D(); chipStar(glint, ex + look + r * .34, ey - r * .34, r * .2 * (1 - blink));
+  B.fill('c', glint, false); B.fill('g', glint, true);
+  B.world();
+}
+
+/** The beak closing on the seed, and the gold flash as it takes it. */
+function drawBeakTake(B, t, k){
+  const { W, H } = B, s = H;
+  B.screen();
+  litGround(B, W * .6, H * .5, .5);
+  const open = Math.max(0, 1 - k / .45) * .3;
+  const gone = k > .45;
+  if (!gone) {
+    const sp = seedShape(W * .62, H * .52, s * .07, .25);
+    B.fill('c', polyPath(seedShape(W * .62, H * .52, s * .1, .25)), false);
+    B.fill('g', polyPath(sp), true);
+  } else {
+    const flash = new Path2D();
+    const q = (k - .45) / .55;
+    for (let i = 0; i < 30; i++) { const a = i / 30 * TAU; const r0 = s * (.1 + q * .4), r1 = r0 + s * (.1 + .26 * noise1(i, 7)) * (1 - q); ribbonTo(flash, [[W * .62 + Math.cos(a) * r0, H * .52 + Math.sin(a) * r0], [W * .62 + Math.cos(a) * r1, H * .52 + Math.sin(a) * r1]], (u) => s * .022 * (1 - u)); }
+    B.fill('c', flash, false); B.fill('g', flash, true);
+  }
+  for (const side of [-1, 1]) {
+    const y0 = H * .52 + side * (s * .08 + open * s);
+    const jaw = [[-.2, y0 / s - side * .4], [.36, y0 / s - side * .1], [.66, y0 / s - side * .002], [.34, y0 / s + side * .14], [-.2, y0 / s + side * .5]].map(([x, y]) => [W * .05 + x * s * 1.15, y * s]);
+    blockMass(B, rough(jaw, s * .006, side * 5), .026);
+    const cut = new Path2D();
+    ribbonTo(cut, [[W * .05, y0 - side * s * .2], [W * .05 + .5 * s, y0 - side * s * .05]], gougeW(s * .016, .2, .5));
+    B.fill('c', cut, false);
+  }
+  B.world();
+}
+
+/** Thorn canes crossing the frame, spikes stamping in. */
+function drawSpikeMacro(B, t, k){
+  const { W, H } = B, s = H;
+  B.screen();
+  litGround(B, W * .5, H * .45, .62);
+  const canes = [[-.1, .78, .9, .28], [-.05, .2, 1.05, .62]];
+  canes.forEach((c, ci) => {
+    const p0 = [c[0] * W, c[1] * H], p1 = [c[2] * W, c[3] * H];
+    const mid = [lerp(p0[0], p1[0], .5), lerp(p0[1], p1[1], .5) + (ci ? -1 : 1) * H * .16];
+    const pts = quad(p0, mid, p1, 22);
+    const edge = new Path2D(); ribbonTo(edge, pts, (u) => s * (.055 - u * .02));
+    B.fill('c', edge, false);
+    const body = new Path2D(); ribbonTo(body, pts, (u) => s * (.038 - u * .016));
+    B.fill('c', body, true);
+    const cut = new Path2D(); ribbonTo(cut, pts.slice(1, -2).map(([x, y]) => [x, y - s * .008]), gougeW(s * .006, .2, .3));
+    B.fill('c', cut, false);
+    const spikes = new Path2D(), spikeEdge = new Path2D();
+    for (let i = 2; i < pts.length - 2; i += 2) {
+      const appear = clamp01((k - (ci * .1 + i / pts.length * .55)) / .12);
+      if (appear <= 0) continue;
+      const [x, y] = pts[i], [x2, y2] = pts[i + 1];
+      const dx = x2 - x, dy = y2 - y, l = Math.hypot(dx, dy) || 1;
+      const side = (i / 2) % 2 ? 1 : -1;
+      const L = s * .1 * appear * stampScale(appear);
+      const tri = [[x - dx / l * s * .02, y - dy / l * s * .02], [x - dy / l * side * L + dx / l * s * .03, y + dx / l * side * L + dy / l * s * .03], [x + dx / l * s * .02, y + dy / l * s * .02]];
+      polyPath(tri, spikes); ribbonTo(spikeEdge, [...tri, tri[0], tri[1]], () => s * .02);
+    }
+    B.fill('c', spikeEdge, false);
+    B.fill('c', spikes, true);
+  });
+  B.world();
+}
+
+/** Grain multiplying: thirty, sixty, a hundredfold, as rings of carved grains. */
+function drawGrainRings(B, t, k){
+  const { W, H } = B, s = H;
+  B.screen();
+  screenMass(B);
+  const cx = W * .5, cy = H * .5;
+  const counts = [30, 60, 100], radii = [.17, .3, .43];
+  const guides = new Path2D();
+  for (let r = 0; r < 3; r++) {
+    const show = clamp01((k - r * .26) / .18);
+    if (show <= 0) continue;
+    const rr = s * radii[r];
+    const ring = []; for (let i = 0; i <= 60; i++) { const a = i / 60 * TAU; ring.push([cx + Math.cos(a) * rr * 1.06, cy + Math.sin(a) * rr * .92]); }
+    ribbonTo(guides, ring, gougeW(s * .004 * show, .02, .02));
+  }
+  B.fill('c', guides, false);
+  for (let r = 0; r < 3; r++) {
+    const show = clamp01((k - r * .26) / .22);
+    if (show <= 0) continue;
+    const n = counts[r], rr = s * radii[r];
+    const grains = new Path2D(), holes = new Path2D();
+    for (let i = 0; i < Math.round(n * show); i++) {
+      const a = i / n * TAU + t * .05 + r;
+      const wob = 1 + .03 * Math.sin(i * 3.1 + t * 2);
+      const gx = cx + Math.cos(a) * rr * wob, gy = cy + Math.sin(a) * rr * .92 * wob;
+      const gs = s * (.02 - r * .003);
+      polyPath(seedShape(gx, gy, gs * 1.5, a + 1.6), holes);
+      polyPath(seedShape(gx, gy, gs, a + 1.6), grains);
+    }
+    B.fill('c', holes, false); B.fill('g', grains, true);
+  }
+  B.world();
+}
+
+/** A root tip forcing a clod of earth apart. Underground the ink is the ground,
+ *  so the clods are cut back to paper and the root drives through as a dark wedge. */
+function drawClodSplit(B, cx, cy, k){
+  const open = easeOut(k) * .06;
+  for (const side of [-1, 1]) {
+    const pts = [];
+    for (let i = 0; i <= 12; i++) { const a = -Math.PI / 2 + side * (i / 12) * Math.PI; const r = .12 * (.7 + .34 * noise1(i * 1.7 + side, 4)); pts.push([cx + Math.cos(a) * r + side * open, cy + Math.sin(a) * r * 1.2]); }
+    const shape = rough(pts, .008, side * 3);
+    B.fill('c', polyPath(shape), false);                        // the clod, cut back to paper
+    const rim = new Path2D(); ribbonTo(rim, [...shape, shape[0], shape[1]], () => .007);
+    B.fill('c', rim, true);                                     // its inked edge
+    const grit = new Path2D();
+    for (let i = 0; i < 14; i++) {
+      const a = -Math.PI / 2 + side * (.12 + i * .2), r = .03 + .05 * noise1(i, side);
+      ribbonTo(grit, [[cx + Math.cos(a) * r + side * open, cy + Math.sin(a) * r * 1.15], [cx + Math.cos(a) * (r + .035) + side * open, cy + Math.sin(a) * (r + .035) * 1.15]], gougeW(.005, .2, .3));
+    }
+    B.fill('c', grit, true);                                    // grain of the broken face
+    if (k > .25) {
+      const chips = new Path2D();
+      for (let i = 0; i < 5; i++) {
+        const a = -Math.PI / 2 + side * (.4 + i * .3), d = .13 + easeOut((k - .25) / .6) * .09 * (.5 + noise1(i, side + 2));
+        const p = [cx + Math.cos(a) * d + side * open, cy + Math.sin(a) * d];
+        polyPath([[p[0] - .012, p[1]], [p[0], p[1] - .016], [p[0] + .012, p[1] + .004]], chips);
+      }
+      B.fill('c', chips, true);
+    }
+  }
+  const tipY = cy - .09 + .14 * easeOut(k);
+  const edge = new Path2D();
+  ribbonTo(edge, [[cx, cy - .24], [cx + .006, cy - .14], [cx, tipY]], (u) => .034 * (1 - u * .5));
+  B.fill('c', edge, false);
+  const tip = new Path2D();
+  ribbonTo(tip, [[cx, cy - .24], [cx + .006, cy - .14], [cx, tipY]], (u) => .02 * (1 - u * .55));
+  B.fill('c', tip, true);
+  const gold = new Path2D(); gold.arc(cx, tipY, .015, 0, TAU);
+  B.fill('c', gold, false); B.fill('g', gold, true);
+}
+
+// ============================================================================
+// The film: cut on the beat, with two held breaths
+const SHOT = (t, id, x, y, z, opt) => ({ t, id, cam: [x, y, z], opt: opt || {} });
+const CUTS = [
+  SHOT(0, 'skyWide', 0, -.45, 1),
+  SHOT(1.05, 'nightWide', 0, .42, 1.05),
+  SHOT(2.05, 'pathMacro', ZONES.path + .02, SURF - .03, 3.0),
+  SHOT(2.75, 'crowEye', 0, 0, 1),
+  SHOT(3.40, 'crowGlide', ZONES.path + .45, .3, 1.45),
+  SHOT(4.00, 'crowLand', ZONES.path + .14, SURF - .08, 2.1),
+  SHOT(4.50, 'beakTake', 0, 0, 1),
+  SHOT(5.00, 'crowAway', ZONES.path + .1, .42, 1.05),
+  SHOT(5.90, 'rockWide', ZONES.rock, .45, 1.4),
+  SHOT(7.10, 'sproutUp', ZONES.rock, SURF - .13, 2.3),
+  SHOT(7.85, 'sunStamp', 0, 0, 1),
+  SHOT(8.70, 'witherWide', ZONES.rock, .45, 1.5),
+  SHOT(9.75, 'deadWide', ZONES.rock + .02, SURF - .1, 1.9),     // breath one
+  SHOT(11.60, 'thornSprout', ZONES.thorns, SURF - .11, 2.2),
+  SHOT(12.40, 'spikeMacro', ZONES.thorns - .2, SURF - .12, 4.6),
+  SHOT(13.00, 'briarWide', ZONES.thorns, .45, 1.5),
+  SHOT(13.90, 'cageWide', ZONES.thorns, .46, 1.35),
+  SHOT(14.90, 'seedSplit', ZONES.good, SURF + .2, 4.2),
+  SHOT(15.75, 'clod', ZONES.good + .04, SURF + .46, 4.0),
+  SHOT(16.45, 'rootsWide', ZONES.good, SURF + .52, 1.65),
+  SHOT(17.50, 'shootUp', ZONES.good, SURF + .1, 2.1),
+  SHOT(18.50, 'dawnWide', ZONES.good, .42, 1.05),
+  SHOT(19.70, 'earMacro', ZONES.good, SURF - .42, 3.0),
+  SHOT(20.30, 'tillers', ZONES.good, .4, 1.2),
+  SHOT(21.40, 'dawnHero', ZONES.good, .38, 1),                  // breath two: the dawn lands slowly
+];
+/** Accents inside shots: a block stamps in, something strikes, snaps or floods. */
+const ACCENTS = [1.60, 3.60, 4.60, 6.60, 6.75, 9.30, 13.30, 20.50, 20.80, 21.10, 22.30, 23.20];
+const BEATS = [...CUTS.map((c) => c.t), ...ACCENTS].sort((a, b) => a - b);
+
+function cutAt(t){
+  let i = 0;
+  for (let k = 0; k < CUTS.length; k++) if (CUTS[k].t <= t) i = k;
+  return { cut: CUTS[i], since: t - CUTS[i].t, next: CUTS[i + 1] ? CUTS[i + 1].t : LOOP };
+}
+/** How hard the press has just come down: 1 at the beat, gone in about 60 ms. */
+function slamAt(t){
+  let s = 0;
+  for (const b of BEATS) if (t >= b && t - b < .3) s = Math.max(s, Math.exp(-(t - b) / .05));
+  return s;
+}
+const stampK = (t, t0, d = .16) => clamp01((t - t0) / d);
+const stampScale = (k) => 1 + .18 * (1 - easeOut(k));
+
+// story clocks
+const story = {
+  crow(t){
+    const s = .26, sy = surf(ZONES.path + .02) - .014, feet = sy - s * .16, bx = ZONES.path + .02 + s * .5;
+    if (t < 3.05 || t > 6.1) return null;
+    let x, y, wing, fold = 0, head = 0;
+    if (t < 4.12) { const k = clamp01((t - 3.05) / 1.07), e = easeInOut(k); x = lerp(bx + 1.5, bx, e); y = lerp(.14, feet, easeIn(k * .9 + .1)); wing = .5 + .5 * Math.sin(t * 14); }
+    else if (t < 4.75) { const k = (t - 4.12) / .63; x = bx; y = feet - Math.abs(Math.sin(k * Math.PI * 1.4)) * .008; wing = 1; fold = smooth(k / .28); head = smooth((k - .3) / .12) * (1 - smooth((k - .58) / .12)); }
+    else { const k = clamp01((t - 4.75) / 1.1); x = lerp(bx, bx - 1.7, easeIn(k)); y = lerp(feet, .12, Math.pow(k, .7)); wing = .5 + .5 * Math.sin((t - 4.75) * 17 + 1.6); fold = 1 - smooth(k / .09); }
+    return { x, y, s, wing, fold, head, taken: t > 4.58 };
+  },
+  sprout(t){ return { g: easeOut((t - 7.0) / .5), wither: smooth((t - 8.9) / .7), heat: smooth((t - 7.95) / .5) * (1 - smooth((t - 10.6) / .6)) }; },
+  thorn(t){ return { g: easeOut((t - 11.6) / .45), briar: smooth((t - 12.3) / 1.4), choke: smooth((t - 13.6) / .5) }; },
+  root(t){ return { split: easeOut((t - 15.3) / .45), grow: easeOut((t - 15.9) / 1.7), shoot: easeInOut((t - 17.35) / 1.1) }; },
+  dawn(t){ return { rise: easeOut((t - 18.5) / 1.1), field: (d) => easeOut((t - 18.95 - d) / .45), ripe: (d) => clamp01((t - 19.6 - d) / .45) }; },
+};
+
+function camera(t, A){
+  const { cut, since } = cutAt(t);
+  let [cx, cy, z] = cut.cam;
+  // inside a shot the block keeps working: slow push-ins, drifts, one long breath
+  if (cut.id === 'dawnHero') { const u = clamp01(since / 2.6); cy -= .02 * u; z *= 1 + .06 * u; }
+  else if (cut.id === 'deadWide') { const u = clamp01(since / 1.85); z *= 1 + .05 * u; cy += .006 * u; }
+  else if (cut.id === 'crowAway') cx += since * .3;
+  else if (cut.id === 'dawnWide') { cx += since * .12; z *= 1 + .03 * since; }
+  else if (cut.id === 'tillers') z *= 1 + .05 * since;
+  else if (cut.id === 'rootsWide') { cy += since * .05; z *= 1 - .03 * since; }
+  else if (cut.id === 'briarWide') z *= 1 + .06 * since;
+  else if (cut.id === 'rockWide') z *= 1 + .03 * since;
+  else z *= 1 + .012 * since;
+  const slam = slamAt(t);
+  cx += Math.sin(t * 150) * .0035 * slam;
+  cy += Math.cos(t * 190) * .0035 * slam;
+  z *= 1 + .045 * slam;
+  if (A < 2.5) { const dawnShot = (cut.id === 'dawnHero' || cut.id === 'tillers' || cut.id === 'dawnWide') ? 1 : 0; z *= lerp(1.1, .92, dawnShot); cy -= .05 * dawnShot; }
+  return [cx, cy, z];
+}
+
+function seedPath(t, i){
+  const t0 = .2 + i * .22, u = clamp01((t - t0) / 1.15);
+  const start = [-.9 + i * .4, -1.02 + i * .05], end = i === 0 ? [ZONES.path + .02, surf(ZONES.path) - .014] : [.9 + i * .45, SURF - .03];
+  const e = Math.pow(u, 1.6);
+  return [lerp(start[0], end[0], e), lerp(start[1], end[1], e), u];
+}
+
+function renderScene(B, tRaw){
+  const t = ((tRaw % LOOP) + LOOP) % LOOP;
+  const { cut, since } = cutAt(t);
+  const id = cut.id;
+  const [cx, cy, z] = camera(t, B.A);
+  B.cam(cx, cy, z);
+  const L = lightLevel(t);
+  const crow = story.crow(t), sprout = story.sprout(t), thorn = story.thorn(t), root = story.root(t), dawn = story.dawn(t);
+
+  // --- blocks that fill the frame
+  if (id === 'crowEye') { drawCrowEye(B, t, clamp01(since / .65)); return; }
+  if (id === 'beakTake') { drawBeakTake(B, t, clamp01(since / .5)); return; }
+  if (id === 'spikeMacro') { drawSpikeMacro(B, t, clamp01(since / .5)); return; }
+  if (id === 'sunStamp') {
+    const k = clamp01(since / .3);
+    B.screen();
+    screenMass(B);
+    const rows = new Path2D();
+    for (let row = 0; row < 46; row++) { const y = (row + .5) / 46 * B.H; const pts = []; for (let i = 0; i <= 12; i++) { const x = i / 12 * B.W; pts.push([x, y + Math.sin(x * .012 + row * .8) * 5]); } ribbonTo(rows, pts, gougeW(B.H / 46 * .85, .05, .05)); }
+    B.fill('c', rows, false);
+    const pulse = 1 + .07 * Math.sin(t * 11);
+    drawSun(B, B.W * .46, B.H * .45, B.H * .24 * lerp(.55, 1, easeOut(k)) * pulse, t * 3, 1.1 + 1.3 * clamp01(since / .5), .85);
+    B.world();
+    return;
+  }
+
+  // --- the carved world
+  const dawnSun = [ZONES.good + (B.A < 2.5 ? .55 : .8), lerp(SURF + .12, SURF - .3, dawn.rise)];
+  const showDawnSun = t > 18.3;
+  const center = lightCenter(t, B, showDawnSun ? dawnSun : null);
+  const toScreen = (wx, wy) => [B.W / 2 + (wx - B.cx) * B.s, B.H / 2 + (wy - B.cy) * B.s];
+  const halos = [];
+  if (crow) { const [hx, hy] = toScreen(crow.x - crow.s * .15, crow.y - crow.s * .25); halos.push({ x: hx, y: hy, r: crow.s * B.s * 1.3, s: .95 }); }
+  if (t > 11.5 && t < 14.9) { const [hx, hy] = toScreen(ZONES.thorns, surf(ZONES.thorns) - .13); halos.push({ x: hx, y: hy, r: .42 * B.s, s: .92 }); }
+  if (t > 17.3 && t < 18.6) { const [hx, hy] = toScreen(ZONES.good, surf(ZONES.good) - .06); halos.push({ x: hx, y: hy, r: .3 * B.s, s: .6 }); }
+  drawSky(B, t, L, center, halos);
+
+  const moonA = t < 5.4 ? clamp01(1 - L * 2.4) : (t > 11 && t < 18 ? clamp01(1 - L * 2.6) : 0);
+  drawMoon(B, center, Math.min(1, moonA));
+  if (showDawnSun) drawSun(B, dawnSun[0], dawnSun[1], .15, t, 2.1 * dawn.rise, 0);
+  if (t > 7.8 && t < 10.9) {
+    const up = easeOut((t - 7.86) / .3);
+    B.screen();
+    const [sx, sy] = center, k = B.H / 500;
+    drawSun(B, sx, sy, 34 * k * up * (1 + .07 * Math.sin(t * 11) * sprout.heat), t * 3, 1.1 + 1.1 * sprout.heat, sprout.heat);
+    B.world();
+  }
+
+  drawGround(B, t, L);
+
+  // the opening: seeds fall like stars, one strikes the path
+  if (t < 2.4) {
+    for (let i = 0; i < 5; i++) {
+      const [px, py, u] = seedPath(t, i);
+      if (u <= 0 || u >= 1) continue;
+      const back = seedPath(t - .18, i);
+      const trail = new Path2D(); ribbonTo(trail, [[back[0], back[1]], [lerp(back[0], px, .6), lerp(back[1], py, .6)], [px, py]], (v) => .034 * v * v);
+      B.fill('c', trail, false); B.fill('g', trail, true, .9);
+      drawSeed(B, px, py, .026, .4);
+    }
+    if (t > 1.58 && t < 2.4) {
+      const k = clamp01((t - 1.6) / .3);
+      const chips = new Path2D();
+      for (let i = 0; i < 12; i++) { const a = -Math.PI + i / 11 * Math.PI; const r = .02 + easeOut(k) * .11 * (.5 + noise1(i, 3)); ribbonTo(chips, [[ZONES.path + .02 + Math.cos(a) * .02, surf(ZONES.path) - .01], [ZONES.path + .02 + Math.cos(a) * r, surf(ZONES.path) - .01 + Math.sin(a) * r * .5]], gougeW(.007 * (1 - k), .2, .3)); }
+      B.fill('c', chips, false);
+    }
+  }
+  if (t > 1.6 && t < 4.6) drawSeed(B, ZONES.path + .02, surf(ZONES.path) - .014, .013, .2);
+  if (crow) drawBird(B, crow.x, crow.y, crow.s, -1, crow.wing, crow.fold, crow.taken, crow.head);
+
+  // rocky ground: the seed drops, stones stamp in, a sprout runs up and burns
+  if (t > 5.85 && t < 11.7) {
+    if (t < 6.5) { const u = easeIn(clamp01((t - 5.92) / .4)); drawSeed(B, ZONES.rock, lerp(SURF - .3, surf(ZONES.rock) - .014, u), .015, t * 5); }
+    if (sprout.g > 0) drawSprout(B, ZONES.rock, surf(ZONES.rock), .2 * sprout.g * stampScale(clamp01((t - 7.0) / .5)), sprout.wither * .95 + Math.sin(t * 2.4) * .01, sprout.wither, sprout.heat * .9);
+    if (sprout.heat > .05) {
+      const sh = new Path2D();
+      for (let i = 0; i < 9; i++) { const x = ZONES.rock - .55 + i * .14, pts = []; for (let kk = 0; kk <= 14; kk++) pts.push([x + Math.sin(kk * .9 + t * 8 + i) * .013, surf(ZONES.rock) - .03 - kk * .017]); ribbonTo(sh, pts, gougeW(.0042, .3, .3)); }
+      B.fill('r', sh, true, sprout.heat * .8);
+    }
+  }
+
+  // thorns
+  if (t > 11.5 && t < 15.0) {
+    if (thorn.g > 0) drawSprout(B, ZONES.thorns, surf(ZONES.thorns), .18 * thorn.g * (1 - thorn.choke * .35), -thorn.choke * .6, thorn.choke, 0);
+    if (thorn.briar > 0) drawThorns(B, ZONES.thorns, thorn.briar, t);
+  }
+
+  // good soil: the seed opens, a root tip forces a clod apart, the shoot climbs
+  if (t > 14.85) {
+    const [ox, oy] = ROOT_ORIGIN;
+    if (t < 15.35) { const u = easeInOut(clamp01((t - 14.9) / .38)); drawSeed(B, ox, lerp(SURF + .085, oy, u), .026, Math.PI / 2 * u + .3); }
+    else {
+      if (id === 'clod') drawClodSplit(B, ox + .04, SURF + .46, clamp01((t - 15.78) / .5));
+      drawRoots(B, root.grow);
+      if (root.shoot > 0) {
+        const topY = lerp(oy, surf(ox), root.shoot);
+        const shoot = new Path2D();
+        ribbonTo(shoot, quad([ox, oy - .01], [ox + .025, lerp(oy, topY, .5)], [ox, topY], 12), (u) => .016 * (1 - u * .35));
+        B.fill('c', shoot, false);
+        if (root.shoot < 1) { const tip = new Path2D(); tip.arc(ox, topY, .013, 0, TAU); B.fill('g', tip, true); }
+      }
+      drawSeed(B, ox, oy, .022, Math.PI / 2 + .3, 1 - smooth((t - 18) / 2) * .5, root.split);
+    }
+  }
+
+  // dawn: the field stamps up, grain ripens, thirty sixty a hundredfold
+  if (t > 18.45) {
+    const ticks = new Path2D(), tickGold = new Path2D();
+    for (const f of FIELD_TICKS) {
+      const g = dawn.field(f.row * .12 + .05);
+      if (g <= 0) continue;
+      const by = lerp(hill(f.x) + .02, surf(f.x) - .002, f.row / 2.5);
+      const sway = Math.sin(TAU * t / LOOP * 7 + f.ph) * .004;
+      const h = f.h * g * (1 + f.row * .4) * stampScale(g);
+      ribbonTo(ticks, [[f.x, by], [f.x + sway, by - h]], gougeW(.0035 * (1 + f.row * .3), .1, .4));
+      if (t > 19.6) { tickGold.moveTo(f.x + sway + .004, by - h); tickGold.arc(f.x + sway, by - h, .004 * (1 + f.row * .3), 0, TAU); }
+    }
+    B.fill('c', ticks, true);
+    B.fill('g', tickGold, true, smooth((t - 19.6) / .4));
+    for (const w of WHEAT) {
+      const g = dawn.field(w.delay * .25);
+      if (g <= 0) continue;
+      drawWheat(B, w.x, w.h * g * stampScale(g), w.lean, Math.sin(TAU * t / LOOP * 6 + w.ph + w.x * 2) * .012 * g, w.grains, 1.3, dawn.ripe(w.delay * .25), 1, .007);
+    }
+    FEATURED.forEach((f, fi) => {
+      const t0 = 20.5 + fi * .3;
+      const g = easeOut((t - t0) / .4);
+      if (g <= 0) return;
+      const ripe = clamp01((t - t0 - .25) / .5);
+      const sway = Math.sin(TAU * t / LOOP * 5 + f.x * 3) * .008;
+      if (ripe > .2) {
+        const glow = new Path2D(); const gx = f.x + sway, gy = surf(f.x) - f.h * g - .06 * f.ears;
+        const pulse = 1 + .12 * Math.sin(t * 3.4 + fi);
+        for (let i = 0; i < 20; i++) { const a = i / 20 * TAU + t * .3; const r0 = (.075 + f.ears * .025) * pulse, r1 = r0 + .045 + .022 * Math.sin(t * 4 + i); ribbonTo(glow, [[gx + Math.cos(a) * r0, gy + Math.sin(a) * r0], [gx + Math.cos(a) * r1, gy + Math.sin(a) * r1]], (u) => .008 * (1 - u)); }
+        const ga = smooth((ripe - .2) / .5);
+        B.fill('c', glow, false, ga); B.fill('g', glow, true, ga);
+      }
+      for (let e = 0; e < f.ears; e++) {
+        const spread = (e - (f.ears - 1) / 2) * .075;
+        const eg = g * stampScale(g);
+        drawWheat(B, f.x + spread * .25, f.h * eg * (1 - Math.abs(spread) * 1.2), spread, sway * (1 + e * .2), Math.round(f.count / f.ears), 1.8, ripe, 1, .011);
+      }
+    });
+    // late accents inside the long dawn breath: the light flares, then a flight of birds crosses
+    if (t > 22.25) {
+      const k = clamp01((t - 22.3) / .5);
+      const flare = new Path2D();
+      const [sx, sy] = [dawnSun[0], dawnSun[1]];
+      for (let i = 0; i < 26; i++) { const a = i / 26 * TAU + t * .1; const r0 = .16 + .05 * k, r1 = r0 + .1 * k * (.5 + noise1(i, 9)); ribbonTo(flare, [[sx + Math.cos(a) * r0, sy + Math.sin(a) * r0], [sx + Math.cos(a) * r1, sy + Math.sin(a) * r1]], (u) => .01 * (1 - u) * k); }
+      B.fill('c', flare, false); B.fill('g', flare, true, .85);
+    }
+    if (t > 23.15) {
+      const k = clamp01((t - 23.2) / .8);
+      for (let i = 0; i < 5; i++) {
+        const bx2 = lerp(ZONES.good - 1.6, ZONES.good + 1.3, easeInOut(k)) + i * .13;
+        const by2 = SURF - .34 - i * .035 + Math.sin(t * 3 + i) * .01;
+        const wing = Math.sin(t * 16 + i * 1.3);
+        const v = new Path2D();
+        ribbonTo(v, [[bx2 - .075, by2 + wing * .03], [bx2, by2 - .018], [bx2 + .075, by2 + wing * .03]], gougeW(.011, .2, .2));
+        B.fill('c', v, true);
+      }
+    }
+  }
+}
+// ============================================================================
+function createScene(canvas){
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+  if (!gl) return null;
+  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+  const prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG)); gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+  gl.useProgram(prog);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const u = (n) => gl.getUniformLocation(prog, n);
+  const tex = (unit) => { const tx = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx);
+    for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v); return tx; };
+  const texes = { c: tex(0), g: tex(1), r: tex(2) };
+  gl.uniform1i(u('u_c'), 0); gl.uniform1i(u('u_g'), 1); gl.uniform1i(u('u_r'), 2);
+  const B = new Blocks();
+  return {
+    render(t, W, H){
+      B.begin(W, H);
+      renderScene(B, t);
+      ['c', 'g', 'r'].forEach((k, i) => { gl.activeTexture(gl.TEXTURE0 + i); gl.bindTexture(gl.TEXTURE_2D, texes[k]); gl.texImage2D(gl.TEXTURE_2D, 0, gl.LUMINANCE, gl.LUMINANCE, gl.UNSIGNED_BYTE, B.cv[k].el); });
+      gl.viewport(0, 0, W, H);
+      gl.uniform1f(u('u_time'), t); gl.uniform2f(u('u_resolution'), W, H);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    },
+  };
+}
+
+const STILL_AT = 25.9;
+const params = new URLSearchParams(location.search);
+if (params.has('capture')) {
+  document.body.classList.add('capture');
+  const page = document.getElementById('page'); page.innerHTML = '';
+  const w = Number(params.get('w') || 1500), aspect = Number(params.get('aspect') || 3);
+  const c = document.createElement('canvas'); c.width = w; c.height = Math.round(w / aspect);
+  c.style.cssText = `width:${c.width}px;height:${c.height}px;display:block`; page.appendChild(c);
+  const scene = createScene(c);
+  window.__render = (t) => scene.render(t, c.width, c.height);
+  window.__loop = LOOP;
+  window.__ready = true;
+} else {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const bands = [...document.querySelectorAll('.band')].map((el) => { el.style.aspectRatio = `${el.dataset.aspect} / 1`; const canvas = document.createElement('canvas'); el.appendChild(canvas); return { el, canvas, scene: createScene(canvas), time: 0 }; });
+  let last = 0;
+  const frame = (now) => {
+    requestAnimationFrame(frame);
+    if (now - last < 1000 / 30 - 1) return;
+    const dt = last ? Math.min(100, now - last) / 1000 : 0; last = now;
+    for (const b of bands) {
+      const dpr = Math.min(1.5, devicePixelRatio || 1);
+      const w = Math.max(1, Math.round(b.el.clientWidth * dpr)), h = Math.max(1, Math.round(b.el.clientHeight * dpr));
+      if (b.canvas.width !== w) b.canvas.width = w; if (b.canvas.height !== h) b.canvas.height = h;
+      b.time = reduced.matches ? LOOP + STILL_AT : b.time + dt;
+      b.scene.render(b.time, w, h);
+    }
+  };
+  requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>

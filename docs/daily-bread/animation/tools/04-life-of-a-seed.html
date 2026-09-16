@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Bread scene test 04 — the life of a seed</title>
+<style>
+  html, body { margin: 0; background: #f3ead3; color: #1d2433; }
+  body { font: 16px/1.5 Georgia, 'Times New Roman', serif; padding: 24px 16px 64px; }
+  main { max-width: 1120px; margin: 0 auto; }
+  h1 { font-weight: 400; font-size: clamp(28px, 5vw, 48px); margin: 0 0 4px; }
+  .meta { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .band { position: relative; width: 100%; background: #ebdcb2; overflow: hidden; margin-top: 18px; }
+  .band canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .label { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; margin: 8px 0 28px; opacity: .75; }
+  .phone { width: 390px; max-width: 100%; }
+  body.capture { padding: 0; background: #000; }
+  body.capture main { max-width: none; }
+</style>
+</head>
+<body>
+<main id="page">
+  <div class="meta">Daily Bread · scene test 04</div>
+  <h1>A sower went out to sow</h1>
+  <div class="meta">Matthew 13:3–8 · every frame computed · no images</div>
+  <div class="band" data-aspect="3"></div>
+  <div class="label">Front band (3:1)</div>
+  <div class="phone"><div class="band" data-aspect="2"></div><div class="label">Phone band (2:1)</div></div>
+</main>
+<script>
+/*
+ * Daily Bread scene test 04 — the life of a seed (the parable of the sower).
+ *
+ * PRINT ENGINE. Each frame is painted by code onto two plates:
+ *   TONE  (r = cobalt, g = gold, b = crimson coverage) — screened as AM halftone,
+ *         each ink on its own angle;
+ *   LINE  (r = cobalt, g = gold, b = crimson) — solid engraved line work.
+ * A shader prints them on warm paper: inks multiply like a three-drum riso, so
+ * cobalt over gold gives green, gold over crimson orange, cobalt over crimson purple.
+ * Misregistration, ink density, grain and a print-in on first play.
+ *
+ * FILM. Six shots, 46.5 s, looping: dawn · the sower · the hand · four soils ·
+ * a hundredfold · harvest to night.
+ */
+const HOR = .62;
+
+// ============================================================================
+// Print shader
+const FRAG = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform float u_dot;
+uniform sampler2D u_tone;
+uniform sampler2D u_line;
+const float TAU = 6.2831853;
+const vec3 PAPER = vec3(235., 220., 178.) / 255.;
+const vec3 COBALT = vec3(26., 77., 152.) / 255.;
+const vec3 GOLD = vec3(239., 188., 63.) / 255.;
+const vec3 CRIMSON = vec3(206., 52., 66.) / 255.;
+float hash(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+float vnoise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3. - 2. * f);
+  return mix(mix(hash(i), hash(i + vec2(1., 0.)), u.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), u.x), u.y); }
+float fbm(vec2 p){ float a = .5, s = 0.; for (int i = 0; i < 4; i++){ s += a * vnoise(p); p = p * 2.03 + 17.; a *= .5; } return s; }
+float spotInk(vec2 px, float k, float ang, float cell, float boil){
+  float c = cos(ang), s = sin(ang);
+  vec2 q = mat2(c, -s, s, c) * px / cell;
+  float spot = .5 - .25 * (cos(TAU * q.x) + cos(TAU * q.y));
+  spot += (hash(floor(px) + boil) - .5) * .14;
+  float aa = 1.6 / cell;
+  return smoothstep(spot - aa, spot + aa, k) * smoothstep(0., .025, k);
+}
+void main(){
+  vec2 R = u_resolution;
+  vec2 px = vec2(gl_FragCoord.x, R.y - gl_FragCoord.y);
+  float t = u_time;
+  float boil = floor(t * 8.);
+  float cell = u_dot, unit = cell / 5.;
+  // print-in on first play: gold, crimson, then cobalt springs into register
+  float spring = exp(-5.5 * max(t - .4, 0.)) * cos(11. * max(t - .4, 0.));
+  vec2 offB = vec2(24., -16.) * unit * spring + vec2(.0, .0);
+  vec2 offG = vec2(1.2, -.8) * unit;
+  vec2 offR = vec2(-1., 1.1) * unit;
+  vec3 tB = texture2D(u_tone, (px + offB) / R).rgb;
+  vec3 tG = texture2D(u_tone, (px + offG) / R).rgb;
+  vec3 tR = texture2D(u_tone, (px + offR) / R).rgb;
+  vec3 lB = texture2D(u_line, (px + offB) / R).rgb;
+  vec3 lG = texture2D(u_line, (px + offG) / R).rgb;
+  vec3 lR = texture2D(u_line, (px + offR) / R).rgb;
+  float lay = fbm(px / 90. + 7.);
+  float inG = smoothstep(lay - .05, lay + .05, clamp(t / .6, 0., 1.) * 1.15 - .05);
+  float inR = smoothstep(lay - .05, lay + .05, clamp((t - .2) / .6, 0., 1.) * 1.15 - .05);
+  float inB = smoothstep(lay - .05, lay + .05, clamp((t - .4) / .6, 0., 1.) * 1.15 - .05);
+  float density = .84 + .16 * fbm(px / 160. + boil * .37);
+  float dB = spotInk(px, tB.r * inB, radians(15.), cell, boil) * density;
+  float dG = spotInk(px, tG.g * inG, radians(75.), cell, boil) * (.92 + .08 * density);
+  float dR = spotInk(px, tR.b * inR, radians(45.), cell, boil) * (.9 + .1 * density);
+  dB *= 1. - .5 * step(.97, hash(floor(px / 1.6) + boil * 1.3));
+  float lineB = lB.r * inB * (.88 + .12 * density), lineG = lG.g * inG, lineR = lR.b * inR;
+  float grain = .955 + .045 * vnoise(px * .75 + boil * 13.1) + .02 * (fbm(px * vec2(.02, .3)) - .5);
+  vec3 col = PAPER * grain;
+  col *= mix(vec3(1.), min(vec3(1.), GOLD / PAPER), max(dG, lineG));
+  col *= mix(vec3(1.), CRIMSON / PAPER, max(dR, lineR) * .95);
+  col *= mix(vec3(1.), COBALT / PAPER, dB);
+  col *= mix(vec3(1.), COBALT / PAPER * .9, lineB);
+  gl_FragColor = vec4(col, 1.);
+}`;
+const VERT = `attribute vec2 a_position; void main(){ gl_Position = vec4(a_position, 0., 1.); }`;
+
+// ============================================================================
+// Utilities
+const TAU = Math.PI * 2;
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+const easeOut = (x) => 1 - Math.pow(1 - clamp01(x), 3);
+const easeIn = (x) => Math.pow(clamp01(x), 3);
+const easeInOut = (x) => { x = clamp01(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const backOut = (x) => { x = clamp01(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const fract = (x) => x - Math.floor(x);
+const rad = (d) => d * Math.PI / 180;
+function mulberry(seed){ let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const range = (seed, n) => { const r = mulberry(seed); return Array.from({ length: n }, () => r()); };
+function noise1(x, seed = 0){ const i = Math.floor(x), f = x - i; const h = (k) => fract(Math.sin((k + seed * 131.7) * 127.1) * 43758.5453); const u = f * f * (3 - 2 * f); return lerp(h(i), h(i + 1), u); }
+const quadPts = (a, c, b, n = 10) => Array.from({ length: n + 1 }, (_, i) => { const t = i / n, u = 1 - t; return [u * u * a[0] + 2 * u * t * c[0] + t * t * b[0], u * u * a[1] + 2 * u * t * c[1] + t * t * b[1]]; });
+
+// ============================================================================
+// Plates. Colours are ink coverages: [cobalt, gold, crimson].
+const tone = (b = 0, g = 0, r = 0) => `rgb(${Math.round(clamp01(b) * 255)},${Math.round(clamp01(g) * 255)},${Math.round(clamp01(r) * 255)})`;
+class Plates {
+  constructor(){
+    this.tc = document.createElement('canvas'); this.T = this.tc.getContext('2d');
+    this.lc = document.createElement('canvas'); this.L = this.lc.getContext('2d');
+  }
+  begin(W, H){
+    for (const c of [this.tc, this.lc]) { if (c.width !== W) c.width = W; if (c.height !== H) c.height = H; }
+    this.W = W; this.H = H; this.A = W / H;
+    for (const x of [this.T, this.L]) { x.setTransform(1, 0, 0, 1, 0, 0); x.globalCompositeOperation = 'source-over'; x.globalAlpha = 1; x.fillStyle = '#000'; x.fillRect(0, 0, W, H); }
+    this.L.globalCompositeOperation = 'lighter';
+    this.stage(0, .5, 1);
+  }
+  /** Stage camera: world x centred, y 0..1 down; (cx, cy) is the view centre. */
+  stage(cx, cy, z){
+    const s = this.H * z;
+    this.scale = s;
+    for (const x of [this.T, this.L]) x.setTransform(s, 0, 0, s, this.W / 2 - cx * s, this.H / 2 - cy * s);
+  }
+  save(){ this.T.save(); this.L.save(); }
+  restore(){ this.T.restore(); this.L.restore(); this.L.globalCompositeOperation = 'lighter'; }
+  clip(path){ this.T.clip(path); this.L.clip(path); }
+  /** Opaque tone fill; hides line work beneath. */
+  fill(path, b = 0, g = 0, r = 0){
+    this.T.globalCompositeOperation = 'source-over'; this.T.fillStyle = typeof b === 'string' || b instanceof CanvasGradient ? b : tone(b, g, r); this.T.fill(path);
+    this.L.globalCompositeOperation = 'source-over'; this.L.fillStyle = '#000'; this.L.fill(path); this.L.globalCompositeOperation = 'lighter';
+  }
+  /** Add ink to one or more tone channels without covering what is there. */
+  add(path, b = 0, g = 0, r = 0, alpha = 1){
+    this.T.globalCompositeOperation = 'lighter'; this.T.globalAlpha = alpha; this.T.fillStyle = tone(b, g, r); this.T.fill(path);
+    this.T.globalAlpha = 1; this.T.globalCompositeOperation = 'source-over';
+  }
+  /** Solid line work: a ribbon whose width (world units) may vary along it. */
+  line(pts, w, b = 1, g = 0, r = 0, closed = false){
+    this.L.fillStyle = tone(b, g, r);
+    ribbon(this.L, pts, typeof w === 'function' ? w : () => w, closed);
+  }
+  dot(x, y, rr, b = 1, g = 0, r = 0){ this.L.fillStyle = tone(b, g, r); this.L.beginPath(); this.L.arc(x, y, rr, 0, TAU); this.L.fill(); }
+  /** A hairline in px regardless of zoom. */
+  px(n){ return n / this.scale; }
+}
+function ribbon(ctx, pts, wOf, closed = false){
+  const n = pts.length; if (n < 2) return;
+  const Lp = [], Rp = [];
+  for (let i = 0; i < n; i++) {
+    const a = pts[closed ? (i - 1 + n) % n : Math.max(0, i - 1)], b = pts[closed ? (i + 1) % n : Math.min(n - 1, i + 1)];
+    let dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1; dx /= l; dy /= l;
+    const w = Math.max(0, wOf(i / (n - 1), i)) / 2;
+    Lp.push([pts[i][0] - dy * w, pts[i][1] + dx * w]); Rp.push([pts[i][0] + dy * w, pts[i][1] - dx * w]);
+  }
+  ctx.beginPath();
+  ctx.moveTo(...Lp[0]); for (let i = 1; i < n; i++) ctx.lineTo(...Lp[i]);
+  if (closed) { ctx.closePath(); ctx.moveTo(...Rp[n - 1]); for (let i = n - 2; i >= 0; i--) ctx.lineTo(...Rp[i]); ctx.closePath(); ctx.fill('evenodd'); return; }
+  for (let i = n - 1; i >= 0; i--) ctx.lineTo(...Rp[i]);
+  ctx.closePath(); ctx.fill();
+}
+const taper = (w, s = .25, e = .2) => (t) => w * Math.min(1, t / s + .1, (1 - t) / e + .1);
+const pathOf = (pts, close = true) => { const p = new Path2D(); p.moveTo(...pts[0]); for (let i = 1; i < pts.length; i++) p.lineTo(...pts[i]); if (close) p.closePath(); return p; };
+const circle = (x, y, r) => { const p = new Path2D(); p.arc(x, y, r, 0, TAU); return p; };
+const ellipse = (x, y, rx, ry, rot = 0) => { const p = new Path2D(); p.ellipse(x, y, rx, ry, rot, 0, TAU); return p; };
+const rect = (x, y, w, h) => { const p = new Path2D(); p.rect(x, y, w, h); return p; };
+function vgrad(P, y0, y1, stops){ const g = P.T.createLinearGradient(0, y0, 0, y1); for (const [o, c] of stops) g.addColorStop(o, tone(...c)); return g; }
+function rgrad(P, x, y, r0, r1, stops){ const g = P.T.createRadialGradient(x, y, r0, x, y, r1); for (const [o, c] of stops) g.addColorStop(o, tone(...c)); return g; }
+
+// ============================================================================
+// Shared scenery
+const STARS = range(77, 240);
+function stars(P, A, alpha, t){
+  if (alpha <= .01) return;
+  for (let i = 0; i < 80; i++) {
+    const x = (STARS[i * 3] - .5) * A * 1.1, y = STARS[i * 3 + 1] * (HOR - .08), s = .002 + STARS[i * 3 + 2] * .004;
+    const tw = .6 + .4 * Math.sin(t * (2 + STARS[i * 3 + 2] * 3) + i);
+    P.T.globalCompositeOperation = 'source-over';
+    P.T.fillStyle = tone(0, .2 * alpha * tw, 0);
+    P.T.beginPath(); P.T.arc(x, y, s * alpha * tw + .001, 0, TAU); P.T.fill();
+    if (STARS[i * 3 + 2] > .8) { const L = s * 3 * alpha * tw; P.line([[x - L, y], [x + L, y]], P.px(1), 0, alpha * .9, 0); P.line([[x, y - L], [x, y + L]], P.px(1), 0, alpha * .9, 0); }
+  }
+}
+function sun(P, x, y, r, heat, t){
+  // corona: crimson bloom, gold core, engraved rays turning
+  P.add(circle(x, y, r * 2.4), 0, 0, 0);
+  P.T.globalCompositeOperation = 'lighter';
+  P.T.fillStyle = rgrad(P, x, y, r * .9, r * 2.6, [[0, [0, .55 * heat, .55 * heat]], [.4, [0, .18 * heat, .25 * heat]], [1, [0, 0, 0]]]);
+  P.T.fill(circle(x, y, r * 2.6));
+  P.T.globalCompositeOperation = 'source-over';
+  P.fill(circle(x, y, r), rgrad(P, x, y - r * .3, 0, r * 1.05, [[0, [0, .95, .0]], [.7, [0, .95, .25 * heat]], [1, [.05, .9, .55 * heat]]]));
+  for (let i = 0; i < 48; i++) {
+    const a = i / 48 * TAU + t * .03 * (i % 2 ? 1 : -1);
+    const len = r * (.25 + .35 * noise1(i * .7 + t * .4, 3)) * heat;
+    const p0 = [x + Math.cos(a) * r * 1.08, y + Math.sin(a) * r * 1.08], p1 = [x + Math.cos(a) * (r * 1.08 + len), y + Math.sin(a) * (r * 1.08 + len)];
+    P.line([p0, p1], taper(P.px(2.2), .1, .6), 0, i % 2 ? .95 : .0, i % 2 ? .0 : .85);
+  }
+  for (let k = 1; k <= 5; k++) P.line(circlePts(x, y, r * (1 - k * .12), 64), P.px(.9), 0, 0, .5 * heat, true);
+}
+const circlePts = (x, y, r, n = 48, a0 = 0, a1 = TAU) => Array.from({ length: n }, (_, i) => [x + Math.cos(a0 + (a1 - a0) * i / (n - (a1 - a0 >= TAU - 1e-6 ? 0 : 1))) * r, y + Math.sin(a0 + (a1 - a0) * i / (n - (a1 - a0 >= TAU - 1e-6 ? 0 : 1))) * r]);
+
+function field(P, A, vx, dayness, gold, cam = 0){
+  // ground below the horizon, furrows converging on the sun's vanishing point
+  const g = vgrad(P, HOR, 1.05, [[0, [.35 + .45 * (1 - dayness), .35 * gold, .15 * gold]], [.35, [.55 + .35 * (1 - dayness), .12 * gold, .08]], [1, [.8, .05, .04]]]);
+  P.fill(rect(-A, HOR, A * 2, 1), g);
+  for (let i = -30; i <= 30; i++) {
+    const bx = vx + i * .13 - cam * 1.0;
+    const pts = quadPts([vx, HOR], [lerp(vx, bx, .5), lerp(HOR, 1.1, .5)], [bx * 1.0 + (bx - vx) * 1.4, 1.12], 12);
+    P.line(pts, (t) => P.px(.6) + t * t * .006, 1, 0, 0);
+    // sunlit ridge beside each furrow
+    const lit = clamp01(1 - Math.abs(i) / 14) * gold;
+    if (lit > .05) P.line(pts.map(([x, y]) => [x + (y - HOR) * .02, y]), (t) => (P.px(.5) + t * t * .004) * lit, 0, .9, 0);
+  }
+  // clods in the near ground
+  const R = range(991, 300);
+  for (let i = 0; i < 100; i++) {
+    const y = HOR + .1 + R[i * 3] * .3, x = (R[i * 3 + 1] - .5) * A * 1.3 - cam * (y - HOR) * 3;
+    const s = (y - HOR) * .03 * (.5 + R[i * 3 + 2]);
+    P.line(quadPts([x - s, y], [x, y - s * .7], [x + s, y], 5), P.px(1) + s * .15, 1, 0, 0);
+  }
+}
+
+// ============================================================================
+// The sower (a silhouette with a gold rim) — the rig from test 02, simplified
+const SEG = { thigh: .245, shin: .240, heelBack: .03, toe: .085, ankleH: .04, spine: .285, upper: .185, fore: .16 };
+const CYCLE = 1.5;
+const bumpC = (f, c, w) => { const d = Math.abs(fract(f) - fract(c)); const dd = Math.min(d, 1 - d); return Math.exp(-(dd * dd) / (2 * w * w)); };
+function cyclicSpline(keys){
+  return (f) => { f = fract(f); const n = keys.length; let i = n - 1; for (let k = 0; k < n; k++) if (keys[k][0] <= f) i = k;
+    const k0 = keys[(i - 1 + n) % n], k1 = keys[i], k2 = keys[(i + 1) % n], k3 = keys[(i + 2) % n];
+    let span = k2[0] - k1[0]; if (span <= 0) span += 1; let local = f - k1[0]; if (local < 0) local += 1;
+    const u = local / span, u2 = u * u, u3 = u2 * u;
+    return .5 * ((2 * k1[1]) + (-k0[1] + k2[1]) * u + (2 * k0[1] - 5 * k1[1] + 4 * k2[1] - k3[1]) * u2 + (-k0[1] + 3 * k1[1] - 3 * k2[1] + k3[1]) * u3); };
+}
+const hipDeg = (f) => 8 + 26 * Math.cos(TAU * (f - .9));
+const kneeDeg = (f) => 5 + 16 * bumpC(f, .14, .06) + 62 * bumpC(f, .72, .11);
+const ankleDeg = (f) => -5 * bumpC(f, .07, .04) + 10 * bumpC(f, .45, .1) - 20 * bumpC(f, .63, .05) + 4 * bumpC(f, .85, .08);
+const shoulderDeg = cyclicSpline([[0, 8], [.2, -22], [.32, -52], [.46, 5], [.54, 40], [.66, 46], [.84, 20]]);
+const elbowDeg = cyclicSpline([[0, 36], [.2, 25], [.32, 20], [.46, 8], [.54, 12], [.66, 24], [.84, 30]]);
+const RELEASE = .52;
+function legPose(f){
+  const a = rad(hipDeg(f)), b = a - rad(kneeDeg(f));
+  const knee = [Math.sin(a) * SEG.thigh, -Math.cos(a) * SEG.thigh];
+  const ankle = [knee[0] + Math.sin(b) * SEG.shin, knee[1] - Math.cos(b) * SEG.shin];
+  const pitch = rad(ankleDeg(f)) - b; const dir = [Math.cos(pitch), Math.sin(pitch)];
+  const sole = [ankle[0], ankle[1] - SEG.ankleH];
+  return { knee, ankle, heel: [sole[0] - dir[0] * SEG.heelBack, sole[1] - dir[1] * SEG.heelBack], toe: [sole[0] + dir[0] * SEG.toe, sole[1] + dir[1] * SEG.toe] };
+}
+const SPEED = (() => { const x0 = legPose(.12).heel[0], x1 = legPose(.42).heel[0]; return (x0 - x1) / (.30 * CYCLE); })();
+function sowerPose(w){
+  const f = fract(w / CYCLE);
+  const near = legPose(f), far = legPose(f + .5);
+  const hipY = -Math.min(near.heel[1], near.toe[1], far.heel[1], far.toe[1]);
+  const lean = rad(10 + 1.5 * Math.sin(TAU * f * 2));
+  const L = (lx, ly) => [lx * Math.cos(lean) + ly * Math.sin(lean), hipY - lx * Math.sin(lean) + ly * Math.cos(lean)];
+  const shoulder = L(.005, SEG.spine), head = L(.03, .40);
+  const arm = (sh, el) => { const s = rad(sh), ha = s + rad(el); const elbow = [shoulder[0] + Math.sin(s) * SEG.upper, shoulder[1] - Math.cos(s) * SEG.upper]; return { elbow, wrist: [elbow[0] + Math.sin(ha) * SEG.fore, elbow[1] - Math.cos(ha) * SEG.fore], ha }; };
+  const shift = (q) => [q[0], hipY + q[1]];
+  const lagN = legPose(f - .07), lagF = legPose(f + .5 - .07);
+  return { f, lean, L, pelvis: [0, hipY], shoulder, head, near: arm(shoulderDeg(f), elbowDeg(f)), far: arm(4 + 3 * Math.sin(TAU * f), 30),
+    nl: { knee: shift(near.knee), ankle: shift(near.ankle), heel: shift(near.heel), toe: shift(near.toe) },
+    fl: { knee: shift(far.knee), ankle: shift(far.ankle), heel: shift(far.heel), toe: shift(far.toe) },
+    hem: [shift(lagN.knee), shift(lagF.knee)], open: bumpC(f, RELEASE + .02, .05) };
+}
+function limb(a, b, wa, wb, bulge = 0){
+  const dx = b[0] - a[0], dy = b[1] - a[1], len = Math.hypot(dx, dy) || 1e-6, n = [-dy / len, dx / len], ax = [dx / len, dy / len];
+  const pts = [];
+  for (let i = 0; i <= 8; i++) { const t = i / 8, w = lerp(wa, wb, t) / 2 + bulge * Math.exp(-((t - .35) ** 2) / .06); pts.push([a[0] + dx * t + n[0] * w, a[1] + dy * t + n[1] * w]); }
+  for (let i = 1; i < 8; i++) { const ang = Math.PI * i / 8, r = wb / 2; pts.push([b[0] + n[0] * r * Math.cos(ang) + ax[0] * r * Math.sin(ang), b[1] + n[1] * r * Math.cos(ang) + ax[1] * r * Math.sin(ang)]); }
+  for (let i = 8; i >= 0; i--) { const t = i / 8, w = lerp(wa, wb, t) / 2; pts.push([a[0] + dx * t - n[0] * w, a[1] + dy * t - n[1] * w]); }
+  for (let i = 1; i < 8; i++) { const ang = Math.PI * i / 8, r = wa / 2; pts.push([a[0] - n[0] * r * Math.cos(ang) - ax[0] * r * Math.sin(ang), a[1] - n[1] * r * Math.cos(ang) - ax[1] * r * Math.sin(ang)]); }
+  return pts;
+}
+/** Silhouette shapes of the sower in stage units, feet at (x, gy), height h. */
+function sowerShapes(pose, x, gy, h){
+  const P = (p) => [x + p[0] * h, gy - p[1] * h], S = (v) => v * h;
+  const fp = pose, shapes = [];
+  const add = (pts) => shapes.push(pts);
+  add(limb(P(fp.pelvis), P(fp.fl.knee), S(.1), S(.062)));
+  add(limb(P(fp.fl.knee), P(fp.fl.ankle), S(.064), S(.034), S(.012)));
+  add(footPts(P(fp.fl.heel), P(fp.fl.toe), P(fp.fl.ankle), S));
+  add(limb(P(fp.shoulder), P(fp.far.elbow), S(.056), S(.046)));
+  add(limb(P(fp.pelvis), P(fp.nl.knee), S(.104), S(.064)));
+  add(limb(P(fp.nl.knee), P(fp.nl.ankle), S(.066), S(.035), S(.013)));
+  add(footPts(P(fp.nl.heel), P(fp.nl.toe), P(fp.nl.ankle), S));
+  add(limb(P(fp.L(.012, .29)), P([fp.head[0] - .012, fp.head[1] - .06]), S(.058), S(.05)));
+  const kx = fp.hem.map((k) => k[0]); const hemY = Math.min(fp.hem[0][1], fp.hem[1][1]) + .03;
+  const front = Math.max(...kx) + .04, back = Math.min(...kx) - .04;
+  const tunic = [];
+  const Lp = (a, b) => P(fp.L(a, b));
+  const bez = (p0, c1, c2, p1, n = 10) => { for (let i = 1; i <= n; i++) { const t = i / n, u = 1 - t; tunic.push([u * u * u * p0[0] + 3 * u * u * t * c1[0] + 3 * u * t * t * c2[0] + t * t * t * p1[0], u * u * u * p0[1] + 3 * u * u * t * c1[1] + 3 * u * t * t * c2[1] + t * t * t * p1[1]]); } };
+  tunic.push(Lp(-.03, .318));
+  bez(Lp(-.03, .318), Lp(-.07, .30), Lp(-.078, .2), Lp(-.052, .1));
+  bez(Lp(-.052, .1), Lp(-.074, .055), P([back - .008, hemY + .12]), P([back, hemY]));
+  bez(P([back, hemY]), P([lerp(back, front, .3), hemY - .02]), P([lerp(back, front, .7), hemY + .01]), P([front, hemY]));
+  bez(P([front, hemY]), P([front + .004, hemY + .10]), Lp(.072, .03), Lp(.054, .1));
+  bez(Lp(.054, .1), Lp(.064, .15), Lp(.082, .225), Lp(.058, .275));
+  bez(Lp(.058, .275), Lp(.05, .3), Lp(.03, .318), Lp(.018, .318), 4);
+  add(tunic);
+  const bag = []; const b0 = Lp(.04, .12);
+  bag.push(b0); const bz = (p0, c1, c2, p1) => { for (let i = 1; i <= 10; i++) { const t = i / 10, u = 1 - t; bag.push([u * u * u * p0[0] + 3 * u * u * t * c1[0] + 3 * u * t * t * c2[0] + t * t * t * p1[0], u * u * u * p0[1] + 3 * u * u * t * c1[1] + 3 * u * t * t * c2[1] + t * t * t * p1[1]]); } };
+  bz(b0, Lp(.138, .132), Lp(.168, 0), Lp(.114, -.05)); bz(Lp(.114, -.05), Lp(.074, -.072), Lp(.036, -.018), b0);
+  add(bag);
+  // head: face profile with beard, head cloth
+  const H = fp.head, tilt = fp.lean * .4, hc = Math.cos(tilt), hs = Math.sin(tilt);
+  const HL = (a, b) => P([H[0] + a * hc + b * hs, H[1] - a * hs + b * hc]);
+  add([[-.024, .052], [.03, .064], [.056, .036], [.064, .02], [.061, .006], [.08, -.03], [.071, -.038], [.064, -.042], [.067, -.05], [.08, -.086], [.074, -.12], [.05, -.146], [.012, -.14], [-.012, -.1], [-.03, -.06], [-.024, 0]].map((p) => HL(...p)));
+  const tail = Math.sin(TAU * fp.f + .6) * .01;
+  add([[.054, .05], [.03, .098], [-.03, .092], [-.09, .075], [-.1, .01], [-.1 + tail, -.1], [-.07 + tail, -.16], [-.03, -.12], [-.03, 0], [-.006, .03], [.03, .048]].map((p) => HL(...p)));
+  // near arm and hand
+  add(limb(P(fp.shoulder), P(fp.near.elbow), S(.078), S(.07)));
+  add(limb(P(fp.near.elbow), P(fp.near.wrist), S(.046), S(.032), S(.008)));
+  const dir = [Math.sin(fp.near.ha), -Math.cos(fp.near.ha)], side = [-dir[1], dir[0]];
+  const w = fp.near.wrist, pe = [w[0] + dir[0] * .045, w[1] + dir[1] * .045];
+  add([P([w[0] + side[0] * .017, w[1] + side[1] * .017]), P([pe[0] + side[0] * .02, pe[1] + side[1] * .02]), P([pe[0] + dir[0] * .008, pe[1] + dir[1] * .008]), P([pe[0] - side[0] * .02, pe[1] - side[1] * .02]), P([w[0] - side[0] * .017, w[1] - side[1] * .017])]);
+  for (let i = 0; i < 4; i++) {
+    const a = fp.near.ha + (i - 1.5) * .22 * fp.open + (1 - fp.open) * .9;
+    const base = [pe[0] + side[0] * (i - 1.5) * .009, pe[1] + side[1] * (i - 1.5) * .009];
+    add(limb(P(base), P([base[0] + Math.sin(a) * .04, base[1] - Math.cos(a) * .04]), S(.011), S(.008)));
+  }
+  return shapes;
+}
+function footPts(heel, toe, ankle, S){
+  const dx = toe[0] - heel[0], dy = toe[1] - heel[1], len = Math.hypot(dx, dy) || 1, ux = dx / len, uy = dy / len;
+  return [[heel[0] + ux * S(.01), heel[1] + uy * S(.01)], [heel[0] - ux * S(.012), heel[1] - S(.02)], [ankle[0] - ux * S(.016), ankle[1] - uy * S(.016)], [ankle[0] + ux * S(.022), ankle[1] + uy * S(.022)], [toe[0] - ux * S(.03), toe[1] - S(.016)], [toe[0], toe[1] - S(.004)], [toe[0] - ux * S(.004), toe[1] + S(.004)]];
+}
+function drawSower(P, pose, x, gy, h, sunDir, rimGold = 1){
+  const shapes = sowerShapes(pose, x, gy, h);
+  // paper halo, the body, a gold rim where the light catches
+  const halo = new Path2D(); for (const s of shapes) halo.addPath(pathOf(s));
+  P.save(); P.T.lineWidth = P.px(3.5); P.T.strokeStyle = tone(0, 0, 0); P.T.stroke(halo); P.restore();
+  for (const s of shapes) P.fill(pathOf(s), .96, 0, 0);
+  if (rimGold > 0) for (const s of shapes) {
+    const n = s.length; let area = 0; for (let i = 0; i < n; i++) { const a = s[i], b = s[(i + 1) % n]; area += a[0] * b[1] - b[0] * a[1]; }
+    const sg = area > 0 ? 1 : -1;
+    P.L.fillStyle = tone(0, rimGold, 0);
+    ribbon(P.L, s, (t, i) => { const a = s[(i - 1 + n) % n], b = s[(i + 1) % n]; let dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1; const nx = -dy / l * sg, ny = dx / l * sg; const f = -(nx * sunDir[0] + ny * sunDir[1]); return P.px(2.6) * smooth((f - .2) / .6); }, true);
+  }
+  return shapes;
+}
+
+// ============================================================================
+// Seeds and birds
+function seedShape(P, x, y, s, rot, glow = 1){
+  const c = Math.cos(rot), sn = Math.sin(rot);
+  const pts = []; for (let i = 0; i < 18; i++) { const a = i / 18 * TAU; const r = 1 + .12 * Math.cos(a * 2); pts.push([x + (Math.cos(a) * s * 1.35 * r) * c - (Math.sin(a) * s * .8) * sn, y + (Math.cos(a) * s * 1.35 * r) * sn + (Math.sin(a) * s * .8) * c]); }
+  P.fill(pathOf(pts), .08, .95 * glow, .18 * glow);
+  if (s > P.px(3)) {
+    P.line(pts, P.px(1.1), 1, 0, 0, true);
+    P.line(quadPts([x - c * s * 1.1, y - sn * s * 1.1], [x + sn * s * .25, y - c * s * .25], [x + c * s * 1.1, y + sn * s * 1.1], 8), taper(P.px(1.2)), 1, 0, 0);
+    P.T.fillStyle = tone(0, 0, 0); P.T.beginPath(); P.T.ellipse(x - sn * s * .35, y + c * s * .35 - s * .2, s * .35, s * .15, rot, 0, TAU); P.T.fill();
+  }
+}
+
+// ============================================================================
+// Shots. Each draws the whole frame for its local time.
+const SHOTS = [];
+const shot = (name, dur, draw) => SHOTS.push({ name, dur, draw });
+
+// 1 — Dawn over the field
+shot('dawn', 6, (P, t, ctx) => {
+  const { A } = P;
+  const dawn = smooth((t - .6) / 4.2);
+  const rise = easeOut((t - .8) / 4.8);
+  P.stage(0, .5, 1 + .05 * easeInOut(t / 6));
+  P.fill(rect(-A, -.2, A * 2, HOR + .2), vgrad(P, -.1, HOR, [[0, [lerp(.98, .42, dawn), 0, lerp(.1, .05, dawn)]], [.55, [lerp(.9, .16, dawn), lerp(0, .25, dawn), lerp(.2, .35, dawn)]], [1, [lerp(.75, .0, dawn), lerp(.05, .8, dawn), lerp(.3, .6, dawn)]]]));
+  stars(P, A, 1 - dawn * 1.3, t);
+  const sx = ctx.sunX, sy = lerp(HOR + .38, HOR - .02, rise);
+  sun(P, sx, sy, .3, .4 + .6 * dawn, t);
+  // low mist streaks catching the first light
+  for (let i = 0; i < 7; i++) { const y = HOR - .01 - i * .018, w = A * (.25 + .15 * noise1(i, 4)); const x = (noise1(i * 3.1, 9) - .5) * A + (t * .02 * (i % 2 ? 1 : -1)); P.add(ellipse(x, y, w, .006), 0, .25 * dawn, .35 * dawn); }
+  field(P, A, sx, dawn, dawn, 0);
+});
+
+// 2 — The sower strides across, casting seed
+shot('sower', 8, (P, t, ctx) => {
+  const { A } = P;
+  const h = .56, gy = HOR + .34;
+  const sx0 = -A / 2 - .1, speed = SPEED * h;
+  const x = sx0 + speed * t;
+  const camX = lerp(-.15 * A, .05 * A, easeInOut(t / 8));
+  const push = easeIn((t - 6.6) / 1.4);
+  const pose = sowerPose(t + 1.1);
+  const hand = [x + (pose.near.wrist[0] + Math.sin(pose.near.ha) * .05) * h, gy - (pose.near.wrist[1] - Math.cos(pose.near.ha) * .05) * h];
+  const z = 1 + 2.2 * push;
+  const cx = lerp(camX, hand[0], push), cy = lerp(.5, hand[1], push);
+  // sky and sun do not travel with the camera
+  P.stage(camX * .15, .5, 1);
+  P.fill(rect(-A, -.2, A * 2, HOR + .2), vgrad(P, -.1, HOR, [[0, [.36, 0, .04]], [.6, [.12, .3, .3]], [1, [0, .85, .55]]]));
+  sun(P, ctx.sunX, HOR - .02, .3, 1, t + 6);
+  P.stage(cx, cy, z);
+  field(P, A, ctx.sunX, 1, 1, camX * .6);
+  // seed: gold arcs from each throw
+  const R = range(4242, 400);
+  for (let k = 0; k < 8; k++) {
+    const tr = (k + RELEASE) * CYCLE - 1.1;
+    const age = t - tr; if (age < 0 || age > 1.6) continue;
+    const p = sowerPose(tr + 1.1), px0 = sx0 + speed * tr;
+    const hx = px0 + (p.near.wrist[0] + Math.sin(p.near.ha) * .05) * h, hy = gy - (p.near.wrist[1] - Math.cos(p.near.ha) * .05) * h;
+    for (let i = 0; i < 18; i++) {
+      const vx = .15 + R[(k * 18 + i) * 2] * .45 + speed, vy = -(.05 + R[(k * 18 + i) * 2 + 1] * .3);
+      const yy = hy + vy * age + .95 * age * age; if (yy > gy + .04) continue;
+      seedShape(P, hx + vx * age, yy, .0055, age * 8 + i, 1);
+    }
+  }
+  const sunDir = [ctx.sunX - x, (HOR - .02) - (gy - h * .6)]; const l = Math.hypot(...sunDir);
+  drawSower(P, pose, x, gy, h, [-sunDir[0] / l, -sunDir[1] / l]);
+});
+
+// ============================================================================
+const LOOP = SHOTS.reduce((a, s) => a + s.dur, 0);
+function frameAt(t){
+  let tt = ((t % LOOP) + LOOP) % LOOP;
+  for (let i = 0; i < SHOTS.length; i++) { if (tt < SHOTS[i].dur) return { shot: SHOTS[i], local: tt, index: i }; tt -= SHOTS[i].dur; }
+  return { shot: SHOTS[0], local: 0, index: 0 };
+}
+
+function createScene(canvas){
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+  if (!gl) return null;
+  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+  const prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG)); gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+  gl.useProgram(prog);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const u = (n) => gl.getUniformLocation(prog, n);
+  const tex = (unit) => { const tx = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx);
+    for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v); return tx; };
+  const toneTex = tex(0), lineTex = tex(1);
+  gl.uniform1i(u('u_tone'), 0); gl.uniform1i(u('u_line'), 1);
+  const plates = new Plates();
+  let seed = 4242;
+  return {
+    setSeed(s){ seed = s; },
+    render(t, W, H){
+      plates.begin(W, H);
+      const { shot, local } = frameAt(t);
+      const ctx = { sunX: (fract(seed * .618 + .13) - .5) * Math.max(0, W / H - 1.4) * .35, seed };
+      shot.draw(plates, local, ctx);
+      for (const [tx, src, unit] of [[toneTex, plates.tc, 0], [lineTex, plates.lc, 1]]) { gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, src); }
+      gl.viewport(0, 0, W, H);
+      gl.uniform1f(u('u_time'), t); gl.uniform2f(u('u_resolution'), W, H); gl.uniform1f(u('u_dot'), Math.max(4, W / 300));
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    },
+  };
+}
+
+const params = new URLSearchParams(location.search);
+if (params.has('capture')) {
+  document.body.classList.add('capture');
+  const page = document.getElementById('page'); page.innerHTML = '';
+  const w = Number(params.get('w') || 1500), aspect = Number(params.get('aspect') || 3);
+  const c = document.createElement('canvas'); c.width = w; c.height = Math.round(w / aspect);
+  c.style.cssText = `width:${c.width}px;height:${c.height}px;display:block`; page.appendChild(c);
+  const scene = createScene(c); scene.setSeed(Number(params.get('seed') || 4242));
+  window.__render = (t) => scene.render(t, c.width, c.height);
+  window.__loop = LOOP;
+  window.__ready = true;
+} else {
+  const bands = [...document.querySelectorAll('.band')].map((el) => { el.style.aspectRatio = `${el.dataset.aspect} / 1`; const canvas = document.createElement('canvas'); el.appendChild(canvas); return { el, canvas, scene: createScene(canvas), time: 0 }; });
+  let last = 0;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  function frame(now){
+    requestAnimationFrame(frame);
+    if (now - last < 1000 / 30 - 1) return;
+    const dt = last ? Math.min(100, now - last) / 1000 : 0; last = now;
+    for (const b of bands) {
+      const dpr = Math.min(1.5, devicePixelRatio || 1);
+      const w = Math.round(b.el.clientWidth * dpr), h = Math.round(b.el.clientHeight * dpr);
+      if (b.canvas.width !== w) b.canvas.width = w; if (b.canvas.height !== h) b.canvas.height = h;
+      b.time = reduced.matches ? 12 : b.time + dt;
+      b.scene.render(b.time, w, h);
+    }
+  }
+  requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>

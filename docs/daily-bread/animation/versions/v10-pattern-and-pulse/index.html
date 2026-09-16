@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Bread scene test 10 — Pattern and Pulse</title>
+<style>
+  html, body { margin: 0; background: #f3ead3; color: #1d2433; }
+  body { font: 16px/1.5 Georgia, 'Times New Roman', serif; padding: 24px 16px 64px; }
+  main { max-width: 1120px; margin: 0 auto; }
+  h1 { font-weight: 400; font-size: clamp(28px, 5vw, 44px); margin: 0 0 4px; }
+  .meta { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .band { position: relative; width: 100%; background: #ebdcb2; overflow: hidden; margin-top: 18px; }
+  .band canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .label { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; margin: 8px 0 28px; opacity: .75; }
+  .phone { width: 390px; max-width: 100%; }
+  body.capture { padding: 0; background: #000; }
+  body.capture main { max-width: none; }
+</style>
+</head>
+<body>
+<main id="page">
+  <div class="meta">Daily Bread · scene test 10</div>
+  <h1>Pattern and Pulse</h1>
+  <div class="meta">Matthew 13:3–8 · every frame computed · no images</div>
+  <div class="band" data-aspect="3"></div>
+  <div class="label">Front band (3:1)</div>
+  <div class="phone"><div class="band" data-aspect="2"></div><div class="label">Phone band (2:1)</div></div>
+</main>
+<script>
+/*
+ * Daily Bread scene test 10 — "Pattern and Pulse".
+ *
+ * The whole picture is the print's own dot screen. A field of halftone dots and
+ * stripes swarms, locks into a formation (seed, bird, sprout, sun, thorns, wheat
+ * ear), then dissolves back into pattern. Rings pulse, moire sweeps, density waves
+ * travel. Everything is computed in one fragment shader: no images, no canvas art.
+ *
+ * Inks: cobalt, gold, crimson on warm paper, each sampled at its own slight
+ * misregistration, then printed with grain.
+ */
+const LOOP = 22;
+
+const FRAG = `
+precision highp float;
+uniform vec2 u_res;
+uniform float u_t;          // loop time
+uniform float u_cell;       // dot pitch in px
+uniform float u_shapeA, u_formA, u_scaleA, u_offA;
+uniform vec3 u_tintA, u_tintB;   // which drums each formation prints on
+uniform float u_shapeB, u_formB, u_scaleB, u_offB;
+uniform float u_lock;       // 1 = locked formation, 0 = loose swarm
+uniform float u_bend;       // stripes bending into furrows
+uniform float u_pat;        // 0 = stripes, 1 = open dot field
+uniform float u_flip;       // ink/paper reversal
+uniform float u_gold, u_heat;
+uniform float u_moire;      // second screen beating against the first
+uniform float u_drift;      // swarm drift across the band
+uniform vec3 u_ring1, u_ring2;   // x,y = centre, z = age (<0 = off)
+uniform vec2 u_spray;       // progress, strength
+uniform vec2 u_wave;        // phase, strength
+uniform vec2 u_count;       // how many grains, alpha
+uniform float u_band;       // hard path band
+uniform float u_shake;
+
+const vec3 PAPER = vec3(235., 220., 178.) / 255.;
+const vec3 COBALT = vec3(26., 77., 152.) / 255.;
+const vec3 GOLD = vec3(239., 188., 63.) / 255.;
+const vec3 CRIMSON = vec3(206., 52., 66.) / 255.;
+const float TAU = 6.2831853;
+
+float hash(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+vec2 hash2(vec2 p){ return vec2(hash(p), hash(p + 7.1)); }
+float vnoise(vec2 p){
+  vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3. - 2. * f);
+  return mix(mix(hash(i), hash(i + vec2(1., 0.)), u.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), u.x), u.y);
+}
+float fbm(vec2 p){ float a = .5, s = 0.; for (int i = 0; i < 4; i++){ s += a * vnoise(p); p = p * 2.03 + 17.; a *= .5; } return s; }
+
+float sdEllipse(vec2 p, vec2 r){ return (length(p / r) - 1.) * min(r.x, r.y); }
+float sdSeg(vec2 p, vec2 a, vec2 b, float r){
+  vec2 pa = p - a, ba = b - a; float h = clamp(dot(pa, ba) / dot(ba, ba), 0., 1.);
+  return length(pa - ba * h) - r;
+}
+float sdTri(vec2 p, vec2 a, vec2 b, vec2 c){
+  vec2 e0 = b - a, e1 = c - b, e2 = a - c, v0 = p - a, v1 = p - b, v2 = p - c;
+  vec2 p0 = v0 - e0 * clamp(dot(v0, e0) / dot(e0, e0), 0., 1.);
+  vec2 p1 = v1 - e1 * clamp(dot(v1, e1) / dot(e1, e1), 0., 1.);
+  vec2 p2 = v2 - e2 * clamp(dot(v2, e2) / dot(e2, e2), 0., 1.);
+  float s = sign(e0.x * e2.y - e0.y * e2.x);
+  vec2 d = min(min(vec2(dot(p0, p0), s * (v0.x * e0.y - v0.y * e0.x)), vec2(dot(p1, p1), s * (v1.x * e1.y - v1.y * e1.x))), vec2(dot(p2, p2), s * (v2.x * e2.y - v2.y * e2.x)));
+  return -sqrt(d.x) * sign(d.y);
+}
+float smin(float a, float b, float k){ float h = clamp(.5 + .5 * (b - a) / k, 0., 1.); return mix(b, a, h) - k * h * (1. - h); }
+
+// --- formations -------------------------------------------------------------
+float sdSeed(vec2 q){
+  float d = sdEllipse(q, vec2(.115, .175));
+  d = smin(d, sdTri(q, vec2(-.02, .17), vec2(.02, .17), vec2(0., .30)), .05);   // tip
+  return d;
+}
+float sdBird(vec2 q, float flap){
+  float d = sdEllipse(q - vec2(-.04, -.01), vec2(.19, .105));                     // body
+  d = smin(d, sdSeg(q, vec2(.06, .04), vec2(.15, .11), .035), .04);                // neck
+  d = smin(d, length(q - vec2(.18, .13)) - .075, .03);                             // head
+  d = smin(d, sdTri(q, vec2(.24, .15), vec2(.38, .115), vec2(.24, .085)), .01);    // beak
+  float up = .20 + flap * .22;
+  d = smin(d, sdTri(q, vec2(-.02, .05), vec2(-.10, up), vec2(-.17, up * .45)), .03);       // near wing
+  d = smin(d, sdTri(q, vec2(-.04, -.03), vec2(-.12, -.11 - flap * .10), vec2(-.19, -.02)), .03); // far wing
+  d = min(d, sdTri(q, vec2(-.18, .03), vec2(-.36, .09), vec2(-.19, -.04)));        // tail
+  d = min(d, sdSeg(q, vec2(.0, -.09), vec2(.01, -.15), .012));
+  d = min(d, sdSeg(q, vec2(-.08, -.09), vec2(-.09, -.15), .012));
+  return d;
+}
+float sdSprout(vec2 q, float grow){
+  float g = max(grow, .05);
+  float top = -.30 + .52 * g;
+  float d = sdSeg(q, vec2(0., -.30), vec2(.012 * g, top), .020);
+  float ly = top - .06;
+  d = smin(d, sdEllipse((q - vec2(-.105, ly)) * mat2(.87, .49, -.49, .87), vec2(.105, .034)), .02);
+  d = smin(d, sdEllipse((q - vec2(.105, ly + .05)) * mat2(.87, -.49, .49, .87), vec2(.105, .034)), .02);
+  return d;
+}
+float sdSun(vec2 q, float t){
+  vec2 p = q - vec2(0., .10);
+  float d = length(p) - .20;
+  float a = atan(p.y, p.x);
+  float spikes = length(p) - (.20 + .11 * pow(max(0., sin(a * 7. + t * .6)), .6));
+  return min(d, spikes);
+}
+float sdThorn(vec2 q, float grow, float close){
+  float d = 1e3;
+  for (int i = 0; i < 4; i++) {
+    float fi = float(i);
+    float side = mod(fi, 2.) < .5 ? 1. : -1.;
+    float lane = floor(fi * .5);                       // two briars each side
+    float x0 = side * (.62 - lane * .12);
+    float reach = grow * (1. - close * .55);
+    vec2 a = vec2(x0, -.34);
+    vec2 b = vec2(x0 * (.72 - close * .30), -.34 + .34 * grow + lane * .05);
+    vec2 c = vec2(x0 * (.18 - close * .16), -.02 + .26 * reach + lane * .04);
+    d = min(d, sdSeg(q, a, b, .020));
+    d = min(d, sdSeg(q, b, c, .015));
+    for (int j = 0; j < 5; j++) {
+      float u = (float(j) + .5) / 5.;
+      vec2 p = u < .5 ? mix(a, b, u * 2.) : mix(b, c, (u - .5) * 2.);
+      vec2 dir = normalize(u < .5 ? b - a : c - b);
+      vec2 nrm = vec2(-dir.y, dir.x) * (mod(float(j), 2.) < .5 ? 1. : -1.);
+      d = min(d, sdTri(q, p - dir * .028, p + dir * .028, p + nrm * .075));
+    }
+  }
+  return d;
+}
+float sdWheat(vec2 q, float ripe){
+  float d = sdSeg(q, vec2(0., -.40), vec2(0., .02), .016);
+  for (int i = 0; i < 5; i++) {
+    float fi = float(i);
+    float y = .02 + fi * .072;
+    float sc = 1. - fi * .13;
+    d = min(d, sdEllipse((q - vec2(-.060 * sc, y)) * mat2(.90, .43, -.43, .90), vec2(.058, .030) * sc));
+    d = min(d, sdEllipse((q - vec2(.060 * sc, y + .034)) * mat2(.90, -.43, .43, .90), vec2(.058, .030) * sc));
+  }
+  d = min(d, sdSeg(q, vec2(-.02, .34), vec2(-.10, .48), .005));   // awns
+  d = min(d, sdSeg(q, vec2(.02, .35), vec2(.10, .49), .005));
+  return d - ripe * .004;
+}
+float sdRock(vec2 q){
+  float d = sdTri(q, vec2(-.46, -.34), vec2(-.30, -.10), vec2(-.12, -.32));
+  d = min(d, sdTri(q, vec2(-.18, -.33), vec2(.02, -.06), vec2(.20, -.30)));
+  d = min(d, sdTri(q, vec2(.14, -.32), vec2(.34, -.14), vec2(.48, -.33)));
+  d = min(d, sdTri(q, vec2(-.05, -.34), vec2(.10, -.20), vec2(.26, -.34)));
+  return d - .012;
+}
+float shapeSDF(float id, vec2 q, float scale, float offx, float t){
+  vec2 p = vec2(q.x - offx, -q.y) / scale;      // shapes are drawn with y up
+  float d = 1e3;
+  if (id < 1.5) d = sdSeed(p);
+  else if (id < 2.5) d = sdBird(p, .5 + .5 * sin(t * 9.));
+  else if (id < 3.5) d = sdSprout(p, clamp(u_formA, 0., 1.));
+  else if (id < 4.5) d = sdSun(p, t);
+  else if (id < 5.5) d = sdThorn(p, clamp(u_formB, .2, 1.), u_lock);
+  else if (id < 6.5) d = sdWheat(p, u_gold);
+  else if (id < 7.5) d = sdRock(p);
+  return d * scale;
+}
+
+// --- the field --------------------------------------------------------------
+// coverage of the pattern itself (stripes bending into furrows, opening to dots)
+float patternCoverage(vec2 q, float t){
+  float bendy = q.y + u_bend * (q.x * q.x * 1.6 - .12);
+  float stripes = .5 + .5 * sin(bendy * 22. - t * .55 + sin(q.x * 3. + t * .2) * .6);
+  float open = .5 + .45 * sin(q.x * 6.5 + t * .35) * sin(q.y * 5.5 - t * .25);
+  float base = mix(stripes * stripes * .62 + .03, open * .22 + .06, u_pat);
+  // travelling density wave
+  float w = u_wave.y * (.5 + .5 * sin(q.x * 5.5 - u_wave.x * TAU));
+  return clamp(base * (1. - .35 * u_band) + w * .5, 0., 1.);
+}
+
+// seed thrown in arcs across the band
+float sprayCoverage(vec2 q, float t){
+  if (u_spray.y <= 0.) return 0.;
+  float c = 0.;
+  for (int i = 0; i < 5; i++) {
+    float fi = float(i);
+    float ph = clamp(u_spray.x * 1.5 - fi * .12, 0., 1.);
+    float x = mix(-.95, .95, ph);
+    float y = -.02 - sin(ph * 3.14159) * (.22 + fi * .03) + fi * .02;
+    c = max(c, smoothstep(.085, .0, length(q - vec2(x, y)) ) * step(.001, ph) * step(ph, .999));
+    // trail
+    float tx = mix(-.95, x, .6), ty = -.02 - sin(clamp(ph - .18, 0., 1.) * 3.14159) * (.22 + fi * .03) + fi * .02;
+    c = max(c, smoothstep(.055, .0, length(q - vec2(mix(tx, x, .5), mix(ty, y, .5)))) * .7);
+  }
+  return c * u_spray.y;
+}
+
+// thirty / sixty / a hundred grains, as an exact grid of dots
+float countCoverage(vec2 q){
+  if (u_count.y <= 0.) return 0.;
+  vec2 g = vec2(10., 10.);
+  vec2 cellq = vec2(1.36, .76) / g;
+  vec2 ij = floor((q + vec2(.68, .38)) / cellq);
+  if (ij.x < 0. || ij.y < 0. || ij.x > 9. || ij.y > 9.) return 0.;
+  float idx = ij.y * 10. + ij.x;
+  if (idx >= u_count.x) return 0.;
+  vec2 c = (ij + .5) * cellq - vec2(.68, .38);
+  return smoothstep(.032, .018, length(q - c)) * u_count.y;
+}
+
+float ringCoverage(vec2 q, vec3 r){
+  if (r.z < 0.) return 0.;
+  float rad = r.z * .85;
+  float d = abs(length(q - r.xy) - rad);
+  return smoothstep(.028, .0, d) * smoothstep(.9, .1, r.z);
+}
+
+// The ink field at a pixel: x = cobalt, y = gold, z = crimson.
+vec3 inkAt(vec2 px, float t){
+  float aspect = u_res.x / u_res.y;
+  vec2 shake = vec2(sin(t * 61.), cos(t * 47.)) * u_shake * u_cell * .35;
+  vec2 cell = vec2(u_cell);
+  vec2 cid = floor((px + shake) / cell);
+  vec2 jit = (hash2(cid) - .5) * (1. - u_lock) * .42;
+  jit += vec2(u_drift, 0.) * (1. - u_lock * .6);
+  vec2 centre = (cid + .5 + jit) * cell;
+  // cell centre in scene space: x centred, y in [-.5, .5]
+  vec2 q = vec2((centre.x - u_res.x * .5) / u_res.y, centre.y / u_res.y - .5);
+
+  float base = patternCoverage(q, t);
+  float spray = sprayCoverage(q, t);
+  float counts = countCoverage(q);
+
+  float dA = shapeSDF(u_shapeA, q, u_scaleA, u_offA, t);
+  float dB = shapeSDF(u_shapeB, q, u_scaleB, u_offB, t);
+  float inA = smoothstep(.012, -.012, dA) * u_formA;
+  float inB = smoothstep(.012, -.012, dB) * u_formB;
+  // paper halo: the field clears away from a formation so it reads instantly
+  float outA = step(0., dA) * smoothstep(.13, .0, dA) * u_formA;
+  float outB = step(0., dB) * smoothstep(.13, .0, dB) * u_formB;
+  base *= 1. - .92 * max(outA, outB);
+  base *= 1. - .30 * u_count.y;
+
+  float rings = max(ringCoverage(q, u_ring1), ringCoverage(q, u_ring2));
+  float band = u_band * smoothstep(.075, .05, abs(q.y - .20)) * (1. - .95 * max(outA, outB));
+  float heatField = u_heat * smoothstep(.55, .05, abs(q.y - .10)) * (.35 + .35 * sin(q.x * 7. + t * 2.));
+
+  // coverage per drum
+  float covC = base * (1. - .22 * u_gold) + inA * u_tintA.x + inB * u_tintB.x + band * .75 + rings * .35;
+  float covG = base * (.45 * u_gold) + inA * u_tintA.y + inB * u_tintB.y + counts + spray + rings * .8;
+  float covR = heatField + inA * u_tintA.z + inB * u_tintB.z + rings * .25;
+
+  // moire: a second screen at a small angle beating against the first
+  if (u_moire > 0.) {
+    float a = .12 + u_moire * .22;
+    vec2 r2 = mat2(cos(a), -sin(a), sin(a), cos(a)) * px / (u_cell * 1.06);
+    float m = .5 + .5 * cos(r2.x * TAU) * cos(r2.y * TAU);
+    covC = clamp(covC + (m - .5) * .40 * u_moire, 0., 1.);
+  }
+  if (u_flip > .5) { covC = 1. - covC * .9; covG *= .3; }
+
+  vec3 cov = clamp(vec3(covC, covG, covR), 0., 1.);
+  vec2 f = fract((px + shake) / cell) - .5 - jit;
+  float l = length(f);
+  float aa = 1.1 / u_cell;
+  vec3 r = sqrt(cov) * .70;
+  return vec3(
+    smoothstep(r.x + aa, r.x - aa, l),
+    smoothstep(r.y + aa, r.y - aa, l),
+    smoothstep(r.z + aa, r.z - aa, l));
+}
+
+void main(){
+  vec2 px = vec2(gl_FragCoord.x, u_res.y - gl_FragCoord.y);
+  float t = u_t;
+  float unit = u_cell / 5.;
+  float kB = inkAt(px + vec2(0., 0.), t).x;
+  float kG = inkAt(px + vec2(1.2, -.8) * unit, t).y;
+  float kR = inkAt(px + vec2(-1.1, 1.0) * unit, t).z;
+  float boil = floor(t * 10.);
+  float grain = .955 + .045 * vnoise(px * .75 + boil * 13.1) + .02 * (fbm(px * vec2(.02, .3)) - .5);
+  float density = .86 + .14 * fbm(px / 150. + boil * .3);
+  vec3 col = PAPER * grain;
+  col *= mix(vec3(1.), min(vec3(1.), GOLD / PAPER), kG * density);
+  col *= mix(vec3(1.), CRIMSON / PAPER, kR * density * .95);
+  col *= mix(vec3(1.), COBALT / PAPER, kB * density);
+  gl_FragColor = vec4(col, 1.);
+}`;
+const VERT = `attribute vec2 a_position; void main(){ gl_Position = vec4(a_position, 0., 1.); }`;
+
+// ---------------------------------------------------------------------------
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+const easeOut = (x) => 1 - Math.pow(1 - clamp01(x), 3);
+const easeIn = (x) => Math.pow(clamp01(x), 3);
+/** progress through a window */
+const P = (t, t0, d) => clamp01((t - t0) / d);
+/** a punch that fires at t0 and decays */
+const punch = (t, t0, d) => (t < t0 ? 0 : Math.exp(-(t - t0) / d));
+/** ring age 0..1 after t0, or -1 */
+const ring = (t, t0, d) => (t >= t0 && t < t0 + d ? (t - t0) / d : -1);
+
+const SHAPE = { none: 0, seed: 1, bird: 2, sprout: 3, sun: 4, thorn: 5, wheat: 6, rock: 7 };
+// which drums each formation prints on: [cobalt, gold, crimson]
+const TINT = {
+  0: [1, 0, 0],
+  1: [.04, 1, .06],    // seed: gold
+  2: [1, 0, 0],        // bird: cobalt
+  3: [.85, .45, 0],    // sprout: cobalt over gold = green
+  4: [.05, 1, .55],    // sun: gold with crimson heat
+  5: [.75, 0, .85],    // thorns: cobalt over crimson = purple
+  6: [.05, 1, .02],   // wheat: gold
+  7: [1, 0, 0],        // rock: cobalt
+};
+
+/** Every uniform for the frame. Beat times are listed in notes.md. */
+function state(t){
+  const s = {
+    shapeA: 0, formA: 0, scaleA: 1, offA: 0,
+    shapeB: 0, formB: 0, scaleB: 1, offB: 0,
+    lock: 0, bend: 0, pat: 0, flip: 0, gold: 0, heat: 0, moire: 0, drift: 0,
+    tintA: [1, 0, 0], tintB: [1, 0, 0],
+    ring1: [0, 0, -1], ring2: [0, 0, -1], spray: [0, 0], wave: [0, 0], count: [0, 0], band: 0, shake: 0,
+  };
+  // ---- 0.0–3.4 the field, and the sowing --------------------------------
+  if (t < 3.4) {
+    s.bend = smooth(P(t, 0.55, .9)) * .9;
+    s.pat = .05;
+    s.wave = [t * .55, .25 + .25 * Math.sin(t * 2)];
+    s.ring1 = [0, 0, ring(t, 0.02, 1.1)];
+    s.ring2 = [0, 0, ring(t, 1.05, 1.0)];
+    // seed locks in the centre
+    const lockIn = smooth(P(t, 1.35, .45)) * (1 - smooth(P(t, 2.05, .35)));
+    s.shapeA = SHAPE.seed; s.formA = lockIn; s.scaleA = 1.05 + punch(t, 1.35, .18) * .35; s.tintA = TINT[SHAPE.seed];
+    s.lock = lockIn * .95;
+    s.gold = .25 * lockIn;
+    // spray arcs
+    const sp = P(t, 2.05, 1.35);
+    s.spray = [sp, smooth(P(t, 2.05, .2)) * (1 - smooth(P(t, 3.15, .35)))];
+    s.shake = punch(t, 2.1, .12) * .5 + punch(t, 2.75, .12) * .4;
+    s.gold = Math.max(s.gold, .5 * s.spray[1]);
+  }
+  // ---- 3.4–7.0 the path: the birds come ---------------------------------
+  else if (t < 7.0) {
+    const u = t - 3.4;
+    s.pat = .35;
+    s.bend = .25;
+    s.band = smooth(P(u, .15, .35)) * (1 - smooth(P(u, 3.25, .3)));
+    s.wave = [t * .4, .15];
+    // a seed lands on the path
+    const seedIn = smooth(P(u, .75, .3)) * (1 - smooth(P(u, 2.0, .18)));
+    s.shapeB = SHAPE.seed; s.formB = seedIn; s.scaleB = .42; s.offB = .12; s.tintB = TINT[SHAPE.seed];
+    s.ring1 = [.12, -.18, ring(t, 4.2, .8)];
+    // the bird snaps in, pecks, and scatters
+    const birdIn = smooth(P(u, 1.35, .22));
+    const birdOut = smooth(P(u, 2.35, .45));
+    s.shapeA = SHAPE.bird; s.formA = birdIn * (1 - birdOut); s.tintA = TINT[SHAPE.bird];
+    s.scaleA = (1.15 + punch(t, 4.75, .12) * .5) * (1 + punch(t, 5.2, .1) * .25);
+    s.offA = lerp(-.62, -.06, easeOut(P(u, 1.3, .55))) + punch(t, 5.2, .09) * .18;
+    s.lock = s.formA * .92;
+    s.gold = .2 * seedIn + .35 * punch(t, 5.45, .18);
+    s.flip = (t > 5.44 && t < 5.56) ? 1 : 0;           // the snatch, one frame-burst
+    s.shake = punch(t, 5.2, .1) * .8 + punch(t, 5.45, .12) * .6;
+    s.drift = easeIn(P(u, 2.3, 1.0)) * .55;            // the swarm blows away
+    s.ring2 = [.18, -.1, ring(t, 5.45, .7)];
+    if (u > 2.9) { s.wave = [t * .9, .3]; }
+  }
+  // ---- 7.0–10.6 rocky ground, and the sun -------------------------------
+  else if (t < 10.6) {
+    const u = t - 7.0;
+    s.pat = .5;
+    s.bend = .1;
+    s.wave = [t * .5, .18];
+    s.shapeB = SHAPE.rock; s.formB = smooth(P(u, .1, .3)); s.scaleB = 1.0; s.tintB = TINT[SHAPE.rock];
+    const grow = smooth(P(u, .75, .55));
+    const wilt = smooth(P(u, 2.65, .6));
+    s.shapeA = SHAPE.sprout; s.formA = grow * (1 - wilt * .85);
+    s.tintA = wilt > .3 ? [.5, .25, .9] : TINT[SHAPE.sprout];    // green, then scorched
+    s.offA = -.18;
+    s.scaleA = (1 + punch(t, 7.8, .15) * .3) * (1 - wilt * .35);
+    s.lock = Math.max(s.formA, s.formB) * .9;
+    // the sun blooms and the heat comes up
+    const sunIn = smooth(P(u, 1.35, .35));
+    s.ring1 = [.42, .22, ring(t, 8.4, .9)];
+    s.ring2 = [.42, .22, ring(t, 9.0, .9)];
+    s.gold = sunIn * .8 * (1 - wilt * .5);
+    s.heat = smooth(P(u, 2.0, .7)) * (1 - smooth(P(u, 3.3, .4))) * .9;
+    s.moire = smooth(P(u, 1.95, .4)) * (1 - smooth(P(u, 3.1, .5)));
+    s.shake = punch(t, 9.4, .12) * .7 + punch(t, 9.7, .12) * .5;
+    s.drift = easeIn(P(u, 3.2, .8)) * .5;
+    if (u > 1.3) { s.shapeB = SHAPE.sun; s.formB = sunIn * (1 - smooth(P(u, 3.2, .5))); s.scaleB = .85 + punch(t, 8.4, .2) * .3; s.offB = .52; s.tintB = TINT[SHAPE.sun]; }
+  }
+  // ---- 10.6–13.8 thorns -------------------------------------------------
+  else if (t < 13.8) {
+    const u = t - 10.6;
+    s.pat = .3;
+    s.wave = [t * .45, .12];
+    const stab1 = smooth(P(u, .1, .18)), stab2 = smooth(P(u, .65, .18)), grow = smooth(P(u, 1.2, .5));
+    s.shapeB = SHAPE.thorn; s.tintB = TINT[SHAPE.thorn];
+    s.formB = Math.max(stab1 * .5, Math.max(stab2 * .75, grow));
+    s.scaleB = 1.15 + punch(t, 10.7, .1) * .25 + punch(t, 11.25, .1) * .2;
+    s.lockClose = 1;
+    const plant = smooth(P(u, 1.25, .3)) * (1 - smooth(P(u, 2.35, .4)));
+    s.shapeA = SHAPE.sprout; s.formA = plant; s.scaleA = 1.0 * (1 - smooth(P(u, 2.3, .5)) * .45); s.tintA = TINT[SHAPE.sprout];
+    s.lock = Math.max(s.formA, s.formB * .8);
+    s.heat = .25 * smooth(P(u, 1.7, .5));
+    s.shake = punch(t, 10.7, .1) * .8 + punch(t, 11.25, .1) * .7 + punch(t, 11.85, .12) * .9;
+    s.flip = (t > 12.28 && t < 12.40) ? 1 : 0;          // the squeeze
+    s.drift = easeIn(P(u, 2.8, .9)) * .4;
+    s.gold = .1 * plant;
+  }
+  // ---- 13.8–17.8 good soil ---------------------------------------------
+  else if (t < 17.8) {
+    const u = t - 13.8;
+    s.pat = 1 - smooth(P(u, .1, .4)) * .7;
+    s.bend = smooth(P(u, .1, .5)) * 1.1;
+    s.wave = [t * .5, .2];
+    s.gold = .25 + .35 * smooth(P(u, 1.9, .8));
+    // the seed goes down, roots ring out
+    const drop = P(u, .55, .5);
+    const seedIn = smooth(P(u, .5, .15)) * (1 - smooth(P(u, 1.5, .3)));
+    s.shapeB = SHAPE.seed; s.formB = seedIn; s.scaleB = .5; s.offB = 0; s.tintB = TINT[SHAPE.seed];
+    s.ring1 = [0, lerp(-.25, .12, easeOut(drop)), ring(t, 14.45, .9)];
+    s.ring2 = [0, .12, ring(t, 15.05, 1.0)];
+    // the shoot rises and the ear forms
+    const shoot = smooth(P(u, 1.55, .55));
+    const ear = smooth(P(u, 2.35, .6));
+    s.shapeA = ear > .02 ? SHAPE.wheat : SHAPE.sprout;
+    s.tintA = ear > .02 ? TINT[SHAPE.wheat] : TINT[SHAPE.sprout];
+    s.formA = Math.max(shoot * (1 - ear), ear);
+    s.scaleA = (ear > .02 ? 1.15 : .95) + punch(t, 16.15, .18) * .25;
+    s.lock = Math.max(s.formA, s.formB) * .95;
+    s.shake = punch(t, 14.45, .12) * .5 + punch(t, 16.15, .12) * .5;
+    if (u > 3.3) { s.wave = [t * 1.1, .3]; s.shake += punch(t, 17.4, .12) * .6; }
+  }
+  // ---- 17.8–20.6 a hundredfold -----------------------------------------
+  else if (t < 20.6) {
+    const u = t - 17.8;
+    s.pat = .25; s.bend = .5;
+    s.gold = .6;
+    s.wave = [t * 1.2, .25 + .25 * smooth(P(u, 1.4, .6))];
+    const n = u < .45 ? 30 : u < .9 ? 60 : 100;
+    s.count = [n, smooth(P(u, .05, .12)) * (1 - smooth(P(u, 2.1, .4)))];
+    s.lock = .85;
+    s.shapeA = SHAPE.wheat; s.tintA = TINT[SHAPE.wheat];
+    s.formA = (1 - smooth(P(u, .05, .3))) * .9;
+    s.scaleA = 1.15;
+    s.shake = punch(t, 17.9, .1) * .7 + punch(t, 18.3, .1) * .7 + punch(t, 18.75, .1) * .8;
+    s.heat = .18 * smooth(P(u, 1.35, .5)) * (1 - smooth(P(u, 2.2, .4)));
+    s.moire = smooth(P(u, 1.4, .4)) * (1 - smooth(P(u, 2.2, .4))) * .8;
+    // everything collapses back toward one seed
+    const collapse = smooth(P(u, 2.35, .45));
+    if (collapse > .01) {
+      s.shapeA = SHAPE.seed; s.tintA = TINT[SHAPE.seed]; s.formA = collapse; s.scaleA = lerp(2.6, 1.0, collapse); s.count = [100, (1 - collapse) * .8];
+      s.gold = .85 - .4 * collapse;
+    }
+  }
+  // ---- 20.6–22.0 back to the field --------------------------------------
+  else {
+    const u = t - 20.6;
+    s.pat = .10 - .05 * smooth(P(u, .35, .8));
+    s.bend = lerp(.5, .9, smooth(P(u, .2, 1.0)));
+    s.wave = [t * .55, .25];
+    s.shapeA = SHAPE.seed; s.tintA = TINT[SHAPE.seed];
+    s.formA = 1 - smooth(P(u, .05, .45));
+    s.scaleA = 1.0 + smooth(P(u, .05, .6)) * .5;
+    s.lock = s.formA * .9;
+    s.gold = .45 * s.formA;
+    s.ring1 = [0, 0, ring(t, 21.0, 1.0)];
+    s.drift = 0;
+  }
+  return s;
+}
+
+function createScene(canvas){
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+  if (!gl) return null;
+  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+  const prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG)); gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+  gl.useProgram(prog);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const u = {};
+  for (const n of ['u_res', 'u_t', 'u_cell', 'u_shapeA', 'u_formA', 'u_scaleA', 'u_offA', 'u_shapeB', 'u_formB', 'u_scaleB', 'u_offB', 'u_lock', 'u_bend', 'u_pat', 'u_flip', 'u_gold', 'u_heat', 'u_moire', 'u_drift', 'u_tintA', 'u_tintB', 'u_ring1', 'u_ring2', 'u_spray', 'u_wave', 'u_count', 'u_band', 'u_shake']) u[n] = gl.getUniformLocation(prog, n);
+  return {
+    render(time, W, H){
+      const t = ((time % LOOP) + LOOP) % LOOP;
+      const s = state(t);
+      gl.viewport(0, 0, W, H);
+      gl.uniform2f(u.u_res, W, H);
+      gl.uniform1f(u.u_t, t);
+      gl.uniform1f(u.u_cell, Math.max(5, W / 210));
+      for (const [k, n] of [['shapeA', 'u_shapeA'], ['formA', 'u_formA'], ['scaleA', 'u_scaleA'], ['offA', 'u_offA'], ['shapeB', 'u_shapeB'], ['formB', 'u_formB'], ['scaleB', 'u_scaleB'], ['offB', 'u_offB'], ['lock', 'u_lock'], ['bend', 'u_bend'], ['pat', 'u_pat'], ['flip', 'u_flip'], ['gold', 'u_gold'], ['heat', 'u_heat'], ['moire', 'u_moire'], ['drift', 'u_drift'], ['band', 'u_band'], ['shake', 'u_shake']]) gl.uniform1f(u[n], s[k]);
+      gl.uniform3f(u.u_tintA, ...s.tintA);
+      gl.uniform3f(u.u_tintB, ...s.tintB);
+      gl.uniform3f(u.u_ring1, ...s.ring1);
+      gl.uniform3f(u.u_ring2, ...s.ring2);
+      gl.uniform2f(u.u_spray, ...s.spray);
+      gl.uniform2f(u.u_wave, ...s.wave);
+      gl.uniform2f(u.u_count, ...s.count);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    },
+  };
+}
+
+const params = new URLSearchParams(location.search);
+if (params.has('capture')) {
+  document.body.classList.add('capture');
+  const page = document.getElementById('page'); page.innerHTML = '';
+  const w = Number(params.get('w') || 1500), aspect = Number(params.get('aspect') || 3);
+  const c = document.createElement('canvas'); c.width = w; c.height = Math.round(w / aspect);
+  c.style.cssText = `width:${c.width}px;height:${c.height}px;display:block`; page.appendChild(c);
+  const scene = createScene(c);
+  window.__render = (t) => scene.render(t, c.width, c.height);
+  window.__loop = LOOP;
+  window.__ready = true;
+} else {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const bands = [...document.querySelectorAll('.band')].map((el) => {
+    el.style.aspectRatio = `${el.dataset.aspect} / 1`;
+    const canvas = document.createElement('canvas'); el.appendChild(canvas);
+    return { el, canvas, scene: createScene(canvas), time: 0 };
+  });
+  let last = 0;
+  const frame = (now) => {
+    requestAnimationFrame(frame);
+    if (now - last < 1000 / 30 - 1) return;
+    const dt = last ? Math.min(100, now - last) / 1000 : 0; last = now;
+    for (const b of bands) {
+      const dpr = Math.min(1.5, devicePixelRatio || 1);
+      const w = Math.round(b.el.clientWidth * dpr), h = Math.round(b.el.clientHeight * dpr);
+      if (b.canvas.width !== w) b.canvas.width = w;
+      if (b.canvas.height !== h) b.canvas.height = h;
+      b.time = reduced.matches ? 16.2 : b.time + dt;
+      b.scene.render(b.time, w, h);
+    }
+  };
+  requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>

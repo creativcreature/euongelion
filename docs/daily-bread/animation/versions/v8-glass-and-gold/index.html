@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Bread scene test 08 — Glass and Gold</title>
+<style>
+  html, body { margin: 0; background: #f3ead3; color: #1d2433; }
+  body { font: 16px/1.5 Georgia, 'Times New Roman', serif; padding: 24px 16px 64px; }
+  main { max-width: 1120px; margin: 0 auto; }
+  h1 { font-weight: 400; font-size: clamp(28px, 5vw, 48px); margin: 0 0 4px; }
+  .meta { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .band { position: relative; width: 100%; background: #ebdcb2; overflow: hidden; margin-top: 18px; }
+  .band canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .label { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; margin: 8px 0 28px; opacity: .75; }
+  .phone { width: 390px; max-width: 100%; }
+  body.capture { padding: 0; background: #000; }
+  body.capture main { max-width: none; }
+</style>
+</head>
+<body>
+<main id="page">
+  <div class="meta">Daily Bread · scene test 08</div>
+  <h1>A sower went out to sow</h1>
+  <div class="meta">Matthew 13:3–8 · glass and gold · every frame computed, no images</div>
+  <div class="band" data-aspect="3"></div>
+  <div class="label">Front band (3:1)</div>
+  <div class="phone"><div class="band" data-aspect="2"></div><div class="label">Phone band (2:1)</div></div>
+</main>
+<script>
+/*
+ * Daily Bread scene test 08 — "Glass and Gold".
+ *
+ * The parable told as an illuminated page: a leaded window drawn on cream paper,
+ * four lancet panels for the four soils and a rose medallion for the hundredfold.
+ * Glass is saturated ink; the lead cames are cobalt over crimson, so they print
+ * near black; light is gold washing across the panes and igniting them on beats.
+ *
+ * PRINT ENGINE (from test 04): two plates — TONE (r cobalt, g gold, b crimson)
+ * screened as a fine halftone, and LINE (solid ink) for cames and ornament —
+ * printed on warm paper with misregistration, ink density, grain and a print-in.
+ * Glass adds streak (striation) modulation and a small backlit bloom.
+ */
+
+// ============================================================================
+// Print shader (test 04, adapted for glass)
+const FRAG = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform float u_dot;
+uniform sampler2D u_tone;
+uniform sampler2D u_line;
+const float TAU = 6.2831853;
+const vec3 PAPER = vec3(235., 220., 178.) / 255.;
+const vec3 COBALT = vec3(26., 77., 152.) / 255.;
+const vec3 GOLD = vec3(239., 188., 63.) / 255.;
+const vec3 CRIMSON = vec3(206., 52., 66.) / 255.;
+float hash(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+float vnoise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3. - 2. * f);
+  return mix(mix(hash(i), hash(i + vec2(1., 0.)), u.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), u.x), u.y); }
+float fbm(vec2 p){ float a = .5, s = 0.; for (int i = 0; i < 4; i++){ s += a * vnoise(p); p = p * 2.03 + 17.; a *= .5; } return s; }
+float spotInk(vec2 px, float k, float ang, float cell, float boil){
+  float c = cos(ang), s = sin(ang);
+  vec2 q = mat2(c, -s, s, c) * px / cell;
+  float spot = .5 - .25 * (cos(TAU * q.x) + cos(TAU * q.y));
+  spot += (hash(floor(px) + boil) - .5) * .14;
+  float aa = 1.6 / cell;
+  return smoothstep(spot - aa, spot + aa, k) * smoothstep(0., .025, k);
+}
+void main(){
+  vec2 R = u_resolution;
+  vec2 px = vec2(gl_FragCoord.x, R.y - gl_FragCoord.y);
+  float t = u_time;
+  float boil = floor(t * 8.);
+  float cell = u_dot, unit = cell / 4.;
+  float spring = exp(-5.5 * max(t - .4, 0.)) * cos(11. * max(t - .4, 0.));
+  vec2 offB = vec2(24., -16.) * unit * spring;
+  vec2 offG = vec2(1.1, -.7) * unit;
+  vec2 offR = vec2(-.9, 1.) * unit;
+  vec3 tB = texture2D(u_tone, (px + offB) / R).rgb;
+  vec3 tG = texture2D(u_tone, (px + offG) / R).rgb;
+  vec3 tR = texture2D(u_tone, (px + offR) / R).rgb;
+  vec3 lB = texture2D(u_line, (px + offB) / R).rgb;
+  vec3 lG = texture2D(u_line, (px + offG) / R).rgb;
+  vec3 lR = texture2D(u_line, (px + offR) / R).rgb;
+  // glass: long streaks in the pour, plus seedy bubbles
+  float streak = .90 + .16 * vnoise(vec2(px.x * .012, px.y * .9) + 3.7) - .06 * vnoise(vec2(px.x * .35, px.y * .05));
+  float bubbles = 1. - .25 * step(.982, hash(floor(px / 2.2) + 11.));
+  float lay = fbm(px / 90. + 7.);
+  float inG = smoothstep(lay - .05, lay + .05, clamp(t / .6, 0., 1.) * 1.15 - .05);
+  float inR = smoothstep(lay - .05, lay + .05, clamp((t - .2) / .6, 0., 1.) * 1.15 - .05);
+  float inB = smoothstep(lay - .05, lay + .05, clamp((t - .4) / .6, 0., 1.) * 1.15 - .05);
+  float density = .86 + .14 * fbm(px / 160. + boil * .37);
+  float dB = spotInk(px, tB.r * streak * bubbles * inB, radians(15.), cell, boil) * density;
+  float dG = spotInk(px, tG.g * streak * inG, radians(75.), cell, boil) * (.93 + .07 * density);
+  float dR = spotInk(px, tR.b * streak * inR, radians(45.), cell, boil) * (.9 + .1 * density);
+  dB *= 1. - .45 * step(.975, hash(floor(px / 1.7) + boil * 1.3));
+  float lineB = lB.r * inB * (.9 + .1 * density), lineG = lG.g * inG, lineR = lR.b * inR;
+  float grain = .955 + .045 * vnoise(px * .75 + boil * 13.1) + .02 * (fbm(px * vec2(.02, .3)) - .5);
+  vec3 col = PAPER * grain;
+  col *= mix(vec3(1.), min(vec3(1.), GOLD / PAPER), max(dG, lineG));
+  col *= mix(vec3(1.), CRIMSON / PAPER, max(dR, lineR) * .96);
+  col *= mix(vec3(1.), COBALT / PAPER, dB);
+  col *= mix(vec3(1.), COBALT / PAPER * .78, lineB);
+  // backlit glass: lit gold panes bloom a little, as glass does against the light
+  col = min(vec3(1.), col + GOLD * pow(dG, 2.) * .07);
+  gl_FragColor = vec4(col, 1.);
+}`;
+const VERT = `attribute vec2 a_position; void main(){ gl_Position = vec4(a_position, 0., 1.); }`;
+
+// ============================================================================
+// Utilities (shared engine)
+const TAU = Math.PI * 2;
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+const easeOut = (x) => 1 - Math.pow(1 - clamp01(x), 3);
+const easeIn = (x) => Math.pow(clamp01(x), 3);
+const easeInOut = (x) => { x = clamp01(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const backOut = (x) => { x = clamp01(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const fract = (x) => x - Math.floor(x);
+const rad = (d) => d * Math.PI / 180;
+function mulberry(seed){ let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const range = (seed, n) => { const r = mulberry(seed); return Array.from({ length: n }, () => r()); };
+function noise1(x, seed = 0){ const i = Math.floor(x), f = x - i; const h = (k) => fract(Math.sin((k + seed * 131.7) * 127.1) * 43758.5453); const u = f * f * (3 - 2 * f); return lerp(h(i), h(i + 1), u); }
+const quadPts = (a, c, b, n = 10) => Array.from({ length: n + 1 }, (_, i) => { const t = i / n, u = 1 - t; return [u * u * a[0] + 2 * u * t * c[0] + t * t * b[0], u * u * a[1] + 2 * u * t * c[1] + t * t * b[1]]; });
+
+const tone = (b = 0, g = 0, r = 0) => `rgb(${Math.round(clamp01(b) * 255)},${Math.round(clamp01(g) * 255)},${Math.round(clamp01(r) * 255)})`;
+class Plates {
+  constructor(){
+    this.tc = document.createElement('canvas'); this.T = this.tc.getContext('2d');
+    this.lc = document.createElement('canvas'); this.L = this.lc.getContext('2d');
+  }
+  begin(W, H){
+    for (const c of [this.tc, this.lc]) { if (c.width !== W) c.width = W; if (c.height !== H) c.height = H; }
+    this.W = W; this.H = H; this.A = W / H;
+    for (const x of [this.T, this.L]) { x.setTransform(1, 0, 0, 1, 0, 0); x.globalCompositeOperation = 'source-over'; x.globalAlpha = 1; x.fillStyle = '#000'; x.fillRect(0, 0, W, H); }
+    this.L.globalCompositeOperation = 'lighter';
+    this.stage(0, .5, 1);
+  }
+  stage(cx, cy, z){
+    const s = this.H * z;
+    this.scale = s;
+    for (const x of [this.T, this.L]) x.setTransform(s, 0, 0, s, this.W / 2 - cx * s, this.H / 2 - cy * s);
+  }
+  save(){ this.T.save(); this.L.save(); }
+  restore(){ this.T.restore(); this.L.restore(); this.L.globalCompositeOperation = 'lighter'; }
+  clip(path){ this.T.clip(path); this.L.clip(path); }
+  fill(path, b = 0, g = 0, r = 0){
+    this.T.globalCompositeOperation = 'source-over'; this.T.fillStyle = typeof b === 'string' || b instanceof CanvasGradient ? b : tone(b, g, r); this.T.fill(path);
+    this.L.globalCompositeOperation = 'source-over'; this.L.fillStyle = '#000'; this.L.fill(path); this.L.globalCompositeOperation = 'lighter';
+  }
+  add(path, b = 0, g = 0, r = 0, alpha = 1){
+    this.T.globalCompositeOperation = 'lighter'; this.T.globalAlpha = alpha; this.T.fillStyle = tone(b, g, r); this.T.fill(path);
+    this.T.globalAlpha = 1; this.T.globalCompositeOperation = 'source-over';
+  }
+  line(pts, w, b = 1, g = 0, r = 0, closed = false){
+    this.L.fillStyle = tone(b, g, r);
+    ribbon(this.L, pts, typeof w === 'function' ? w : () => w, closed);
+  }
+  dot(x, y, rr, b = 1, g = 0, r = 0){ this.L.fillStyle = tone(b, g, r); this.L.beginPath(); this.L.arc(x, y, rr, 0, TAU); this.L.fill(); }
+  px(n){ return n / this.scale; }
+}
+function ribbon(ctx, pts, wOf, closed = false){
+  const n = pts.length; if (n < 2) return;
+  const Lp = [], Rp = [];
+  for (let i = 0; i < n; i++) {
+    const a = pts[closed ? (i - 1 + n) % n : Math.max(0, i - 1)], b = pts[closed ? (i + 1) % n : Math.min(n - 1, i + 1)];
+    let dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1; dx /= l; dy /= l;
+    const w = Math.max(0, wOf(i / (n - 1), i)) / 2;
+    Lp.push([pts[i][0] - dy * w, pts[i][1] + dx * w]); Rp.push([pts[i][0] + dy * w, pts[i][1] - dx * w]);
+  }
+  ctx.beginPath();
+  ctx.moveTo(...Lp[0]); for (let i = 1; i < n; i++) ctx.lineTo(...Lp[i]);
+  if (closed) { ctx.closePath(); ctx.moveTo(...Rp[n - 1]); for (let i = n - 2; i >= 0; i--) ctx.lineTo(...Rp[i]); ctx.closePath(); ctx.fill('evenodd'); return; }
+  for (let i = n - 1; i >= 0; i--) ctx.lineTo(...Rp[i]);
+  ctx.closePath(); ctx.fill();
+}
+const taper = (w, s = .25, e = .2) => (t) => w * Math.min(1, t / s + .1, (1 - t) / e + .1);
+const pathOf = (pts, close = true) => { const p = new Path2D(); p.moveTo(...pts[0]); for (let i = 1; i < pts.length; i++) p.lineTo(...pts[i]); if (close) p.closePath(); return p; };
+const circle = (x, y, r) => { const p = new Path2D(); p.arc(x, y, r, 0, TAU); return p; };
+const ellipse = (x, y, rx, ry, rot = 0) => { const p = new Path2D(); p.ellipse(x, y, rx, ry, rot, 0, TAU); return p; };
+const rect = (x, y, w, h) => { const p = new Path2D(); p.rect(x, y, w, h); return p; };
+
+// ============================================================================
+// Glass helpers
+const CAME = [1, 0, .82];                 // cobalt over crimson prints near black
+const DARK_GLASS = [.95, 0, .12];         // an unlit pane
+/** Glass colour at a given light level: dark cobalt when unlit, its own hue when lit. */
+const glass = (col, lit) => [lerp(DARK_GLASS[0], col[0], lit), lerp(DARK_GLASS[1], col[1], lit), lerp(DARK_GLASS[2], col[2], lit)];
+
+/** A pane: saturated glass, streaks of light in the pour, a lead came round it. */
+function pane(P, pts, col, lit, opts = {}){
+  const p = pathOf(pts);
+  const c = glass(col, lit);
+  P.fill(p, c[0], c[1], c[2]);
+  if (lit > .05) {
+    P.save(); P.clip(p);
+    const r = range(opts.seed || 3, 12);
+    for (let i = 0; i < 3; i++) {
+      const y0 = pts.reduce((m, q) => Math.min(m, q[1]), 9), y1 = pts.reduce((m, q) => Math.max(m, q[1]), -9);
+      const x0 = pts.reduce((m, q) => Math.min(m, q[0]), 9), x1 = pts.reduce((m, q) => Math.max(m, q[0]), -9);
+      const yy = lerp(y0, y1, .18 + r[i] * .7), h = (y1 - y0) * (.03 + r[i + 3] * .05);
+      P.add(rect(x0, yy, x1 - x0, h), 0, .16 * lit, .04 * lit);
+    }
+    P.restore();
+  }
+  if (opts.glow) P.add(p, 0, .22 * opts.glow, .06 * opts.glow);
+  if (opts.came !== false) came(P, pts, opts.cameW || P.px(4.5), true);
+}
+/** Lead came: a dark ribbon with a bead at each joint. */
+function came(P, pts, w, closed = false){
+  P.line(pts, w, CAME[0], CAME[1], CAME[2], closed);
+  for (let i = 0; i < pts.length; i += Math.max(1, Math.floor(pts.length / 6))) P.dot(pts[i][0], pts[i][1], w * .62, CAME[0], CAME[1], CAME[2]);
+}
+/** Pointed (equilateral) arch panel outline. */
+function lancetPts(cx, top, w, h, n = 12){
+  const spring = top + .866 * w, hw = w / 2;
+  const pts = [[cx - hw, top + h], [cx - hw, spring]];
+  for (let i = 0; i <= n; i++) { const a = lerp(Math.PI, Math.PI * 4 / 3, i / n); pts.push([cx + hw + Math.cos(a) * w, spring + Math.sin(a) * w]); }
+  for (let i = 0; i <= n; i++) { const a = lerp(Math.PI * 5 / 3, TAU, i / n); pts.push([cx - hw + Math.cos(a) * w, spring + Math.sin(a) * w]); }
+  pts.push([cx + hw, top + h]);
+  return pts;
+}
+/** A petal (pointed oval) of the rose, pointing outward from the centre. */
+function petalPts(cx, cy, a, r0, r1, wide, n = 10){
+  const ca = Math.cos(a), sa = Math.sin(a);
+  const P0 = [cx + ca * r0, cy + sa * r0], P1 = [cx + ca * r1, cy + sa * r1];
+  const nx = -sa, ny = ca, mid = (r0 + r1) / 2;
+  const out = [];
+  for (let i = 0; i <= n; i++) { const t = i / n; const x = lerp(P0[0], P1[0], t), y = lerp(P0[1], P1[1], t); const s = Math.sin(t * Math.PI) * wide; out.push([x + nx * s, y + ny * s]); }
+  for (let i = n; i >= 0; i--) { const t = i / n; const x = lerp(P0[0], P1[0], t), y = lerp(P0[1], P1[1], t); const s = Math.sin(t * Math.PI) * wide; out.push([x - nx * s, y - ny * s]); }
+  return out;
+}
+
+/** Light travelling across the window: each pane brightens as the beam reaches it. */
+function beamAt(t){ return { u: fract(t / 5.2), period: 5.2 }; }
+function beamBoost(P, x, t){
+  const cx = lerp(-P.A / 2 - .6, P.A / 2 + .6, beamAt(t).u);
+  const d = (x - cx) / .45;
+  return Math.exp(-d * d) * .34;
+}
+/** Glazing: a panel filled with small leaded panes, coloured by a callback. */
+function leadGrid(P, pn, t, lit, colorAt, opts = {}){
+  const cols = opts.cols || 5, rows = opts.rows || 9, jit = opts.jit ?? .55;
+  const r = range(opts.seed || 1, (cols + 2) * (rows + 2) * 2 + 8);
+  const vx = (i, j) => {
+    const k = (j * (cols + 1) + i) * 2;
+    const edge = i === 0 || i === cols || j === 0 || j === rows;
+    const jx = edge ? 0 : (r[k % r.length] - .5) * jit / cols * .55;
+    const jy = edge ? 0 : (r[(k + 1) % r.length] - .5) * jit / rows * .55;
+    return pn.full(i / cols + jx, j / rows + jy);
+  };
+  for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+    const c = colorAt((i + .5) / cols, (j + .5) / rows, i, j);
+    if (!c) continue;
+    const quad = [vx(i, j), vx(i + 1, j), vx(i + 1, j + 1), vx(i, j + 1)];
+    const l = clamp01(lit * (c[3] ?? 1) + beamBoost(P, quad[0][0], t) * lit);
+    pane(P, quad, c, l, { cameW: P.px(3.2), seed: (opts.seed || 1) + i * 7 + j * 13 });
+  }
+}
+
+// ============================================================================
+// Layout
+function layout(A){
+  const outer = Math.min(1.16, A / 2 - .22);
+  const inner = outer * .555;
+  const w = Math.min(.44, (outer - inner) * .80);
+  const top = .12, h = .78;
+  const rose = { x: 0, y: .44, r: Math.max(.16, Math.min(.27, inner - w / 2 - .06)) };
+  const panels = [-outer, -inner, inner, outer].map((x, i) => ({
+    x, top, w, h, i,
+    mid: [x, top + h * .55],
+    pts: lancetPts(x, top, w, h),
+    loc: (u, v) => [x + (u - .5) * w * .9, top + v * h],
+    // the glazing area, stretched past the panel so the arch is always covered
+    full: (u, v) => [x + (u - .5) * w * 1.2, top - h * .14 + v * h * 1.18],
+  }));
+  return { panels, rose, outer, inner, w, top, h };
+}
+
+// ============================================================================
+// Timeline
+const LOOP = 22;
+const T = {
+  medallion: .35,
+  petal0: .62, petalStep: .075,      // 8 petals
+  ring0: 1.22, ringStep: .035,       // 12 outer panes
+  seeds: 1.70,
+  camPath: 2.15, pathSeed: 2.55, bird: 2.95, birdTake: 3.5, birdOut: 3.85,
+  camRock: 4.25, rockSeed: 4.5, rockSprout: 4.8, rockSun: 5.25, rockHeat: 5.7, rockWilt: 6.1, rockCrack: 6.55,
+  camThorn: 6.95, thornSeed: 7.2, thornSprout: 7.45, vine0: 7.85, vineStep: .16, thornClose: 8.75, thornDark: 9.15,
+  camWide1: 9.5,
+  camGood: 10.05, goodSeed: 10.3, root0: 10.65, rootStep: .12, shoot: 11.35, leaf0: 11.85, leafStep: .18, ear: 12.5, earGold: 13.15,
+  camWide2: 13.75, wave1: 14.15, wave2: 14.95, wave3: 15.75,
+  camRose: 16.35, roseFill: 16.6, allLight0: 17.2, allLightStep: .13, border: 17.65,
+  camHold: 18.4,
+  fade0: 20.0, fadeStep: .18, dark: 21.5,
+};
+/** Camera: each key snaps in over its own transition; `want` is the visible world width. */
+function camera(P, t){
+  const L = layout(P.A), A = P.A;
+  const keys = [
+    { t: 0, cx: 0, cy: .5, want: A, tr: .01 },
+    { t: T.camPath, cx: L.panels[0].loc(.5, .58)[0], cy: L.panels[0].loc(.5, .58)[1], want: 1.15, tr: .18 },
+    { t: T.bird, cx: L.panels[0].loc(.5, .42)[0], cy: L.panels[0].loc(.5, .42)[1], want: .92, tr: .14 },
+    { t: T.camRock, cx: L.panels[1].loc(.5, .52)[0], cy: L.panels[1].loc(.5, .52)[1], want: 1.2, tr: .16 },
+    { t: T.rockSun, cx: L.panels[1].loc(.5, .38)[0], cy: L.panels[1].loc(.5, .38)[1], want: 1.0, tr: .5 },
+    { t: T.camThorn, cx: L.panels[2].loc(.5, .55)[0], cy: L.panels[2].loc(.5, .55)[1], want: 1.15, tr: .16 },
+    { t: T.thornClose, cx: L.panels[2].loc(.5, .58)[0], cy: L.panels[2].loc(.5, .58)[1], want: .88, tr: .3 },
+    { t: T.camWide1, cx: 0, cy: .5, want: A, tr: .22 },
+    { t: T.camGood, cx: L.panels[3].loc(.5, .62)[0], cy: L.panels[3].loc(.5, .62)[1], want: 1.15, tr: .16 },
+    { t: T.shoot, cx: L.panels[3].loc(.5, .46)[0], cy: L.panels[3].loc(.5, .46)[1], want: 1.1, tr: .5 },
+    { t: T.ear, cx: L.panels[3].loc(.5, .3)[0], cy: L.panels[3].loc(.5, .3)[1], want: .82, tr: .35 },
+    { t: T.camWide2, cx: 0, cy: .5, want: A, tr: .3 },
+    { t: T.camRose, cx: L.rose.x, cy: L.rose.y, want: Math.min(A, L.rose.r * 2.9), tr: .26 },
+    { t: T.camHold, cx: 0, cy: .5, want: A, tr: .38 },
+  ];
+  let k = 0; for (let i = 0; i < keys.length; i++) if (t >= keys[i].t) k = i;
+  const cur = keys[k], prev = keys[Math.max(0, k - 1)];
+  const u = easeOut((t - cur.t) / cur.tr);
+  const want = lerp(prev.want, cur.want, u);
+  return { cx: lerp(prev.cx, cur.cx, u), cy: lerp(prev.cy, cur.cy, u), z: Math.max(1, A / want) };
+}
+
+// ============================================================================
+// Icon vocabulary (flat, mediaeval)
+/** A mediaeval bird: a dark body, three feather panes for the wing, a gold beak. */
+function birdShape(P, x, y, s, flap, lit, dir = 1){
+  const w = Math.sin(flap);
+  const D = (dx, dy) => [x + dx * s * dir, y + dy * s];
+  // tail: three feathers fanning back
+  for (let i = -1; i <= 1; i++) {
+    const a = Math.atan2(i * .18, -1) + (dir < 0 ? Math.PI : 0);
+    const base = D(-.42, .04);
+    pane(P, petalPts(base[0], base[1], dir > 0 ? Math.PI + i * .2 : -i * .2, 0, s * (.62 - Math.abs(i) * .08), s * .1, 7), [.9, .1, .35], lit, { cameW: P.px(2.6), seed: 200 + i });
+  }
+  // body and head
+  pane(P, [D(-.5, -.02), D(-.15, -.3), D(.3, -.32), D(.55, -.16), D(.42, .12), D(-.05, .26), D(-.42, .16)], [.95, .05, .18], lit, { cameW: P.px(3.6), seed: 210 });
+  pane(P, [D(.28, -.3), D(.52, -.38), D(.68, -.22), D(.55, -.08), D(.34, -.12)], [.92, .12, .3], lit, { cameW: P.px(3), seed: 211 });
+  // three wing feathers, hinged at the shoulder and fanning with the flap
+  const sh = D(-.06, -.16);
+  for (let i = 0; i < 3; i++) {
+    let a = rad(-158 - i * 15) + w * rad(26);
+    if (dir < 0) a = Math.PI - a;
+    const len = s * (.95 - i * .12);
+    pane(P, petalPts(sh[0], sh[1], a, s * .05, len, s * .14, 9), i === 1 ? [.35, .82, .12] : [.9, .16, .38], lit, { cameW: P.px(2.8), seed: 220 + i });
+  }
+  // beak and eye
+  pane(P, [D(.62, -.28), D(1.0, -.2), D(.62, -.13)], [.05, .96, .3], lit, { cameW: P.px(2.4), seed: 230 });
+  P.dot(x + dir * s * .46, y - s * .26, s * .075, CAME[0], CAME[1], CAME[2]);
+}
+function sproutShape(P, x, yBase, h, grow, lean, col, lit){
+  if (grow <= .01) return;
+  const g = easeOut(grow), hh = h * g;
+  const tip = [x + lean * hh, yBase - hh];
+  const stem = quadPts([x, yBase], [x + lean * hh * .3, yBase - hh * .55], tip, 10);
+  P.line(stem, (t) => P.px(9) * (1 - t * .4), CAME[0], CAME[1], CAME[2]);
+  P.line(stem, (t) => P.px(6) * (1 - t * .4), col[0], col[1], col[2]);
+  // (leaded stem: dark came under a coloured core)
+  for (const side of [-1, 1]) {
+    const lg = clamp01((g - (side < 0 ? .35 : .5)) / .4);
+    if (lg <= 0) continue;
+    const base = stem[Math.floor(stem.length * (side < 0 ? .45 : .62))];
+    const len = hh * .42 * easeOut(lg);
+    const pts = petalPts(base[0], base[1], side < 0 ? rad(190) : rad(-10), 0, len, len * .3, 8);
+    pane(P, pts, [.74, .96, .0], Math.max(lit, .9), { cameW: P.px(3), seed: 11 + side });
+  }
+  return tip;
+}
+function sunMedallion(P, x, y, r, lit, rayGrow, t){
+  for (let i = 0; i < 16; i++) {
+    const a = i / 16 * TAU + t * .04;
+    const wob = .8 + .35 * noise1(i * .8 + t * 1.1, 2);
+    const r1 = r * (1.18 + (.55 + .5 * easeOut(rayGrow)) * wob);
+    P.line([[x + Math.cos(a) * r * 1.04, y + Math.sin(a) * r * 1.04], [x + Math.cos(a) * r1, y + Math.sin(a) * r1]],
+      taper(P.px(7), .15, .55), 0, i % 2 ? .97 : .05, i % 2 ? .12 : .92);
+  }
+  const ring = Array.from({ length: 28 }, (_, i) => [x + Math.cos(i / 28 * TAU) * r, y + Math.sin(i / 28 * TAU) * r]);
+  P.line(ring, P.px(9), .3, .1, .95, true);                  // crimson rim
+  pane(P, ring.map(([px2, py]) => [x + (px2 - x) * .9, y + (py - y) * .9]), [.03, .98, .16], lit, { cameW: P.px(4), glow: lit, seed: 5 });
+}
+function thornVine(P, pts, grow, w){
+  if (grow <= .01) return;
+  const n = Math.max(2, Math.floor(pts.length * clamp01(grow)));
+  const sub = pts.slice(0, n);
+  P.line(sub, (t) => w * 1.3 * (1 - t * .3), CAME[0], CAME[1], CAME[2]);
+  P.line(sub, (t) => w * .78 * (1 - t * .3), .8, 0, .82);
+  for (let i = 1; i < sub.length - 1; i += 2) {
+    const a = sub[i - 1], b = sub[i + 1];
+    const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1;
+    const nx = -dy / l, ny = dx / l, side = i % 4 < 2 ? 1 : -1;
+    const tip = [sub[i][0] + nx * side * w * 2.4, sub[i][1] + ny * side * w * 2.4];
+    P.line([sub[i], tip], taper(w * 1.5, .08, .55), .35, 0, .97);
+  }
+}
+function wheatEar(P, x, yBase, h, grow, gold){
+  const g = easeOut(grow); if (g <= .01) return;
+  const top = yBase - h * g;
+  P.line([[x, yBase], [x, top]], (t) => P.px(5) * (1 - t * .3), .55, .55, 0);
+  const rows = 6;
+  for (let i = 0; i < rows; i++) {
+    const f = i / (rows - 1);
+    const gg = clamp01((g - .25 - f * .5) / .35); if (gg <= 0) continue;
+    const y = lerp(yBase - h * .22, top + h * .04, f);
+    for (const side of [-1, 1]) {
+      const len = h * .155 * easeOut(gg);
+      const pts = petalPts(x + side * h * .012, y + h * .02, side < 0 ? rad(228) : rad(-48), 0, len, len * .62, 9);
+      pane(P, pts, gold ? [.06, .99, .52] : [.6, .9, .02], gold ? 1 : .9, { cameW: P.px(3.8), seed: 20 + i });
+      P.line([[x + side * h * .05, y - h * .01], [x + side * h * .17, y - h * .14]], taper(P.px(1.8), .2, .5), .15, .92, 0);
+    }
+  }
+}
+function seedBead(P, x, y, r, lit = 1){
+  const pts = Array.from({ length: 12 }, (_, i) => { const a = i / 12 * TAU; return [x + Math.cos(a) * r * 1.25, y + Math.sin(a) * r * .85]; });
+  pane(P, pts, [.02, .98, .18], lit, { cameW: P.px(2.4), glow: lit * .7, seed: 31 });
+}
+
+// ============================================================================
+// Panel scenes
+function panelPath(P, pn, t, lit){
+  const L = pn.loc;
+  // sky above, the beaten path across the middle, field below — all in small panes
+  leadGrid(P, pn, t, lit, (u, v, i, j) => {
+    if (v < .48) return (i + j) % 3 ? [.1, .93, .04] : [.16, .88, .1];
+    if (v < .62) return (i + j) % 2 ? [.88, .08, .55] : [.82, .14, .6];
+    return (i + j) % 3 ? [.72, .34, .1] : [.8, .26, .14];
+  }, { cols: 5, rows: 10, seed: 41 });
+  const seedY = .585, sx = L(.5, seedY)[0], sy = L(.5, seedY)[1];
+  const landed = t > T.pathSeed;
+  const taken = t > T.birdTake;
+  if (landed && !taken) {
+    const bounce = Math.abs(Math.sin(clamp01((t - T.pathSeed) / .5) * Math.PI * 2)) * (1 - clamp01((t - T.pathSeed) / .5));
+    seedBead(P, sx, sy - bounce * pn.h * .06, pn.w * .06, lit);
+  }
+  // the bird: sweeps in, takes the seed, leaves with it
+  if (t > T.bird - .3 && t < T.birdOut + .9) {
+    const u = clamp01((t - (T.bird - .3)) / (T.birdTake - T.bird + .3));
+    const out = clamp01((t - T.birdTake) / .85);
+    const bx = lerp(L(-.25, .1)[0], sx, easeOut(u)) + out * pn.w * 1.5;
+    const by = lerp(L(0, .05)[1], sy - pn.h * .05, easeOut(u)) - out * pn.h * .55;
+    birdShape(P, bx, by, pn.w * .34, t * 14, lit);
+    if (taken) seedBead(P, bx + pn.w * .3, by - pn.h * .035, pn.w * .05, lit);
+  }
+}
+function panelRock(P, pn, t, lit){
+  const L = pn.loc;
+  const heat = clamp01((t - T.rockHeat) / .5);
+  // sky panes redden from the top down as the heat rises; broken stone below
+  leadGrid(P, pn, t, lit, (u, v, i, j) => {
+    if (v < .58) {
+      const h = heat * clamp01(1.25 - v * 1.6);
+      return [lerp(.1, .06, h), lerp(.92, .55, h), lerp(.05, .95, h), 1];
+    }
+    return (i + j) % 2 ? [.88, .12, .26] : [.8, .2, .34];
+  }, { cols: 5, rows: 10, jit: .8, seed: 51 });
+  const grow = clamp01((t - T.rockSprout) / .55);
+  const wilt = clamp01((t - T.rockWilt) / .5);
+  const col = wilt > 0 ? [lerp(.55, .3, wilt), lerp(.8, .55, wilt), lerp(.05, .85, wilt)] : [.55, .8, .05];
+  sproutShape(P, L(.5, .74)[0], L(.5, .74)[1], pn.h * .3 * (1 - wilt * .45), grow, wilt * .9, col, lit);
+  if (t > T.rockSun - .2) sunMedallion(P, L(.5, .26)[0], L(.5, .26)[1], pn.w * .17, clamp01((t - T.rockSun) / .4), clamp01((t - T.rockSun) / .8) * (1 + heat), t);
+  if (heat > 0) {
+    for (let i = 0; i < 4; i++) {
+      const y = L(0, .42 + i * .05)[1], phase = t * 2.2 + i;
+      const pts = Array.from({ length: 14 }, (_, j) => { const u = j / 13; return [L(u, 0)[0], y + Math.sin(u * 7 + phase) * pn.h * .012]; });
+      P.line(pts, P.px(2.6) * heat, .1, .3, .95);
+    }
+  }
+  if (t > T.rockCrack) {
+    const c = clamp01((t - T.rockCrack) / .4);
+    for (const s of [-1, 1]) P.line(quadPts(L(.5, .74), L(.5 + s * .1, .86), L(.5 + s * .22, 1)).slice(0, Math.max(2, Math.floor(11 * c))), P.px(3), .2, 0, .95);
+  }
+}
+function panelThorns(P, pn, t, lit){
+  const L = pn.loc;
+  const close = clamp01((t - T.vine0) / 1.6);
+  // the bramble mass creeps in from both edges, pane by pane
+  leadGrid(P, pn, t, lit, (u, v, i, j) => {
+    const edge = Math.min(u, 1 - u);
+    const taken = edge < close * .42 + .04 && v > .3;
+    if (taken) return (i + j) % 2 ? [.86, .06, .7] : [.78, .12, .8];
+    if (v < .55) return (i + j) % 3 ? [.3, .6, .42] : [.38, .52, .5];
+    return (i + j) % 2 ? [.86, .12, .48] : [.8, .18, .55];
+  }, { cols: 5, rows: 10, seed: 71 });
+  const grow = clamp01((t - T.thornSprout) / .5);
+  const choke = clamp01((t - T.thornClose) / .5);
+  sproutShape(P, L(.5, .72)[0], L(.5, .72)[1], pn.h * .26 * (1 - choke * .3), grow, 0, [lerp(.55, .8, choke), lerp(.8, .25, choke), .05], lit);
+  for (let i = 0; i < 8; i++) {
+    const g = clamp01((t - (T.vine0 + i * T.vineStep)) / .5);
+    if (g <= 0) continue;
+    const side = i % 2 ? 1 : -1, row = Math.floor(i / 2);
+    const y0 = .82 - row * .12;
+    const a = L(side < 0 ? -.1 : 1.1, y0), b = L(.5 + side * .06, y0 - .16 - row * .04);
+    const c = L(.5 + side * .34, y0 - .04);
+    thornVine(P, quadPts(a, c, b, 14), g, P.px(9));
+  }
+}
+function panelGood(P, pn, t, lit){
+  const L = pn.loc;
+  const ripe = clamp01((t - T.earGold) / .8);
+  leadGrid(P, pn, t, lit, (u, v, i, j) => {
+    if (v < .3) return (i + j) % 3 ? [.42, .93, .02] : [.5, .88, .04];
+    if (v < .52) return (i + j) % 3 ? [.06, .96, .03 + ripe * .18] : [.12, .9, .08 + ripe * .2];
+    return (i + j) % 2 ? [.92, .22, .22] : [.86, .3, .3];
+  }, { cols: 5, rows: 10, seed: 81 });
+  const sx = L(.5, .58)[0], sy = L(.5, .58)[1];
+  if (t > T.goodSeed && t < T.shoot + .4) seedBead(P, sx, sy + pn.h * .02, pn.w * .055, lit);
+  // roots branch down
+  for (let i = 0; i < 6; i++) {
+    const g = clamp01((t - (T.root0 + i * T.rootStep)) / .5);
+    if (g <= 0) continue;
+    const side = i % 2 ? 1 : -1, d = Math.floor(i / 2);
+    const end = L(.5 + side * (.14 + d * .12), .74 + d * .09);
+    const pts = quadPts([sx, sy + pn.h * .03], L(.5 + side * .05, .66 + d * .06), end, 10);
+    P.line(pts.slice(0, Math.max(2, Math.floor(11 * easeOut(g)))), (u) => P.px(4) * (1 - u * .55), .1, .85, .05);
+  }
+  const grow = clamp01((t - T.shoot) / .7);
+  if (grow > 0) {
+    const st = quadPts([sx, sy], [sx, sy - pn.h * .18], [sx, sy - pn.h * .34 * easeOut(grow)], 8);
+    P.line(st, (u) => P.px(10) * (1 - u * .3), CAME[0], CAME[1], CAME[2]);
+    P.line(st, (u) => P.px(6.5) * (1 - u * .3), .74, .96, .0);
+    for (let i = 0; i < 3; i++) {
+      const g = clamp01((t - (T.leaf0 + i * T.leafStep)) / .4);
+      if (g <= 0) continue;
+      const side = i % 2 ? 1 : -1;
+      const y = .52 - i * .06;
+      const len = pn.h * .10 * easeOut(g);
+      pane(P, petalPts(sx, L(.5, y)[1], side < 0 ? rad(202) : rad(-22), 0, len, len * .34, 8), [.74, .96, .0], Math.max(lit, .92), { cameW: P.px(3), seed: 90 + i });
+    }
+  }
+  wheatEar(P, sx, L(.5, .47)[1], pn.h * .26, clamp01((t - T.ear) / .8), t > T.earGold);
+}
+
+// ============================================================================
+// The rose window
+function rose(P, L, t, lit){
+  const { x, y, r } = L.rose;
+  // outer ring of small panes
+  for (let i = 0; i < 12; i++) {
+    const g = clamp01((t - (T.ring0 + i * T.ringStep)) / .35) * lit;
+    const a = i / 12 * TAU - Math.PI / 2;
+    const cx = x + Math.cos(a) * r * .8, cy = y + Math.sin(a) * r * .8;
+    const pts = Array.from({ length: 10 }, (_, j) => { const b = j / 10 * TAU; return [cx + Math.cos(b) * r * .16, cy + Math.sin(b) * r * .16]; });
+    pane(P, pts, i % 2 ? [.1, .9, .1] : [.15, .2, .92], g, { cameW: P.px(3.4), seed: 100 + i });
+  }
+  // eight petals
+  for (let i = 0; i < 8; i++) {
+    const g = clamp01((t - (T.petal0 + i * T.petalStep)) / .3) * lit;
+    const a = i / 8 * TAU - Math.PI / 2;
+    const pts = petalPts(x, y, a, r * .26, r * .66, r * .17, 9);
+    pane(P, pts, i % 2 ? [.2, .88, .06] : [.88, .18, .45], g, { cameW: P.px(4), seed: 120 + i });
+  }
+  // the medallion at the heart
+  const med = clamp01((t - T.medallion) / .45) * lit;
+  const ring = Array.from({ length: 24 }, (_, i) => [x + Math.cos(i / 24 * TAU) * r * .23, y + Math.sin(i / 24 * TAU) * r * .23]);
+  pane(P, ring, [.04, .97, .3], med, { cameW: P.px(4.5), glow: med, seed: 140 });
+  // grains gathering in the medallion at the hundredfold
+  const fillG = clamp01((t - T.roseFill) / 1.1);
+  if (fillG > 0) {
+    const n = Math.floor(fillG * 26);
+    const rr = range(55, 80);
+    for (let i = 0; i < n; i++) {
+      const a = rr[i] * TAU, rad2 = Math.sqrt(rr[i + 26]) * r * .19;
+      seedBead(P, x + Math.cos(a) * rad2, y + Math.sin(a) * rad2, r * .035, 1);
+    }
+  }
+  // tracery: the stone circle around the rose, drawn as ink on paper
+  const outerRing = Array.from({ length: 48 }, (_, i) => [x + Math.cos(i / 48 * TAU) * r, y + Math.sin(i / 48 * TAU) * r]);
+  came(P, outerRing, P.px(6), true);
+  for (let i = 0; i < 8; i++) {
+    const a = i / 8 * TAU - Math.PI / 2;
+    came(P, [[x + Math.cos(a) * r * .23, y + Math.sin(a) * r * .23], [x + Math.cos(a) * r, y + Math.sin(a) * r]], P.px(4));
+  }
+}
+
+// ============================================================================
+// Ornament: an illuminated vine border that grows along the page edges
+function border(P, A, t){
+  const g = clamp01((t - T.border) / 1.6);
+  if (g <= 0) return;
+  for (const [y, dir] of [[.045, 1], [.955, -1]]) {
+    const n = Math.floor(28 * easeOut(g));
+    const pts = Array.from({ length: Math.max(2, n) }, (_, i) => { const u = i / 27; return [lerp(-A / 2 + .05, A / 2 - .05, u), y + Math.sin(u * 22) * .012 * dir]; });
+    P.line(pts, P.px(3.4), .1, .95, .05);
+    for (let i = 2; i < pts.length; i += 3) {
+      const leaf = petalPts(pts[i][0], pts[i][1], dir > 0 ? rad(-75) : rad(75), 0, .035, .014, 6);
+      P.fill(pathOf(leaf), .1, .92, .08);
+      came(P, leaf, P.px(2), true);
+    }
+  }
+}
+
+// ============================================================================
+// Light: a wash of gold that crosses the window, and motes in the beam
+function lightSweep(P, A, t, strength){
+  const period = 5.2, u = fract(t / period);
+  const cx = lerp(-A / 2 - .5, A / 2 + .5, u);
+  const w = .5;
+  for (let i = 0; i < 5; i++) {
+    const o = (i - 2) * .12;
+    P.add(pathOf([[cx + o - w / 2, -.1], [cx + o + w / 2 - .25, -.1], [cx + o + w / 2 + .1, 1.1], [cx + o - w / 2 + .35, 1.1]]), 0, .05 * strength, .012 * strength, .7);
+  }
+  const r = range(17, 120);
+  for (let i = 0; i < 40; i++) {
+    const x = cx + (r[i] - .5) * w * 2.2, y = fract(r[i + 40] + t * .02 * (.4 + r[i + 80])) * 1.05 - .02;
+    P.dot(x, y, P.px(1.2 + r[i] * 2), 0, .9 * strength, .1);
+  }
+}
+
+// ============================================================================
+// Frame
+function draw(P, t){
+  const A = P.A, L = layout(A);
+  const cam = camera(P, t);
+  P.stage(cam.cx, cam.cy, cam.z);
+
+  // how lit each panel is, and when it goes dark again
+  const panelLit = L.panels.map((pn, i) => {
+    const on = [T.camPath - .25, T.camRock - .25, T.camThorn - .25, T.camGood - .25][i];
+    const all = clamp01((t - (T.allLight0 + i * T.allLightStep)) / .3);
+    const dim = i === 2 ? clamp01((t - T.thornDark) / .6) * .55 : 0;
+    const fade = clamp01((t - (T.fade0 + (3 - i) * T.fadeStep)) / .5);
+    return clamp01(Math.max(clamp01((t - on) / .35) * (1 - dim), all) * (1 - fade));
+  });
+  const roseLit = clamp01(1 - clamp01((t - (T.fade0 + 4 * T.fadeStep)) / .6));
+
+  // the window's stone ground: paper, with ink tracery
+  for (const pn of L.panels) {
+    P.save();
+    P.clip(pathOf(pn.pts));
+    [panelPath, panelRock, panelThorns, panelGood][pn.i](P, pn, t, panelLit[pn.i]);
+    P.restore();
+    came(P, pn.pts, P.px(7), true);
+    // sill
+    P.line([[pn.x - pn.w * .62, pn.top + pn.h], [pn.x + pn.w * .62, pn.top + pn.h]], P.px(7), .95, .15, .3);
+  }
+  rose(P, L, t, roseLit);
+
+  // seeds leaving the rose for the four panels
+  if (t > T.seeds && t < T.camRock) {
+    for (let i = 0; i < 4; i++) {
+      const u = clamp01((t - (T.seeds + i * .06)) / .9);
+      if (u <= 0 || u >= 1) continue;
+      const target = L.panels[i].loc(.5, .5);
+      const x = lerp(L.rose.x, target[0], easeOut(u)), y = lerp(L.rose.y, target[1], u * u * .6 + u * .4);
+      seedBead(P, x, y, L.rose.r * .06, 1);
+    }
+  }
+  // the hundredfold: waves of grain flying out of the good panel across the window
+  for (const [t0, count, spread] of [[T.wave1, 12, .5], [T.wave2, 22, .85], [T.wave3, 40, 1.25]]) {
+    const u = clamp01((t - t0) / 1.5);
+    if (u <= 0 || u >= 1) continue;
+    const src = L.panels[3].loc(.5, .4);
+    const r = range(Math.round(t0 * 100), count * 3);
+    for (let i = 0; i < count; i++) {
+      const a = lerp(Math.PI * 1.15, Math.PI * 1.95, r[i]) + r[i + count] * .3;
+      const d = spread * (.35 + r[i + count * 2] * .9) * easeOut(u);
+      const x = src[0] + Math.cos(a) * d, y = src[1] + Math.sin(a) * d * .8 + u * u * .12;
+      seedBead(P, x, y, L.rose.r * (.05 - u * .012), 1 - easeIn(u) * .7);
+    }
+  }
+  border(P, A, t);
+  lightSweep(P, A, t, .6 + .4 * Math.sin(t * .8) + (t > T.allLight0 && t < T.fade0 ? .5 : 0));
+}
+
+// ============================================================================
+function createScene(canvas){
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+  if (!gl) return null;
+  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+  const prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG)); gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+  gl.useProgram(prog);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const u = (n) => gl.getUniformLocation(prog, n);
+  const tex = (unit) => { const tx = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx);
+    for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v); return tx; };
+  const toneTex = tex(0), lineTex = tex(1);
+  gl.uniform1i(u('u_tone'), 0); gl.uniform1i(u('u_line'), 1);
+  const plates = new Plates();
+  return {
+    render(t, W, H){
+      plates.begin(W, H);
+      draw(plates, ((t % LOOP) + LOOP) % LOOP);
+      for (const [tx, src, unit] of [[toneTex, plates.tc, 0], [lineTex, plates.lc, 1]]) { gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, src); }
+      gl.viewport(0, 0, W, H);
+      gl.uniform1f(u('u_time'), t); gl.uniform2f(u('u_resolution'), W, H); gl.uniform1f(u('u_dot'), Math.max(3.2, W / 380));
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    },
+  };
+}
+
+const params = new URLSearchParams(location.search);
+if (params.has('capture')) {
+  document.body.classList.add('capture');
+  const page = document.getElementById('page'); page.innerHTML = '';
+  const w = Number(params.get('w') || 1500), aspect = Number(params.get('aspect') || 3);
+  const c = document.createElement('canvas'); c.width = w; c.height = Math.round(w / aspect);
+  c.style.cssText = `width:${c.width}px;height:${c.height}px;display:block`; page.appendChild(c);
+  const scene = createScene(c);
+  window.__render = (t) => scene.render(t, c.width, c.height);
+  window.__loop = LOOP;
+  window.__ready = true;
+} else {
+  const bands = [...document.querySelectorAll('.band')].map((el) => { el.style.aspectRatio = `${el.dataset.aspect} / 1`; const canvas = document.createElement('canvas'); el.appendChild(canvas); return { el, canvas, scene: createScene(canvas), time: 0 }; });
+  let last = 0;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  function frame(now){
+    requestAnimationFrame(frame);
+    if (now - last < 1000 / 30 - 1) return;
+    const dt = last ? Math.min(100, now - last) / 1000 : 0; last = now;
+    for (const b of bands) {
+      const dpr = Math.min(1.5, devicePixelRatio || 1);
+      const w = Math.round(b.el.clientWidth * dpr), h = Math.round(b.el.clientHeight * dpr);
+      if (b.canvas.width !== w) b.canvas.width = w; if (b.canvas.height !== h) b.canvas.height = h;
+      b.time = reduced.matches ? 18.9 : b.time + dt;
+      b.scene.render(b.time, w, h);
+    }
+  }
+  requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>

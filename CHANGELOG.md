@@ -610,6 +610,23 @@ corrected in order, earliest first.
     key. Zen is pay-as-you-go: $2/$10 per million input/output tokens for Sonnet 5,
     $5/$25 for Opus 5. It reloads $20 when the balance falls below $5. Anthropic and
     OpenAI requests are retained for 30 days.
+- **Scene style directions built and pitched (founder request, 2026-09-15).** Ten
+  complete animation directions for the Daily Bread scene band, each telling the
+  parable of the sower, each drawn frame by frame in code with no images: a specimen
+  plate, riso seed cards, a Vox-style explainer, a mid-century cartoon, a moving
+  linocut, paper theatre, a Saul Bass title sequence, stained glass, a patent drawing
+  and op-art halftone kinetics. Plus test 05, which reprints and animates the site's
+  own series art.
+  - **Pace measured, not guessed.** The founder's reference films change something on
+    screen every 0.21–0.29 s; the first attempts changed every 4–6 s. All ten now run
+    1.5–2.7 events per second with bursts at the peaks and two breaths per loop.
+  - **Pitched for one decision:** `https://euangelion.app/admin/pitches/daily-bread-sower-five-directions`
+    (21 moving and still previews, each version's weakest moment named).
+  - **Handover written** at `docs/daily-bread/animation/HANDBOOK.md`, with all ten
+    sources, the print engine, the capture tooling, the measured pace spec, the
+    publishing constraints and the traps that cost time. Previews live in the
+    `edition-assets` bucket, not the repo.
+  - **Not in the site, not deployed.** Phone performance is UNVERIFIED.
 - **New items found while correcting (added to the list):** 41: the procedural shader
   animations (founder: "The shader animations are not great"). 40: a local reader
   request hung for 7.6 minutes on a Supabase fetch. Reader reads have no request

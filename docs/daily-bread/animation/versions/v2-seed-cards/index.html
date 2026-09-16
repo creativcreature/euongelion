@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Bread · version 2 — Seed Cards</title>
+<style>
+  html, body { margin: 0; background: #f3ead3; color: #1d2433; }
+  body { font: 16px/1.5 Georgia, 'Times New Roman', serif; padding: 24px 16px 64px; }
+  main { max-width: 1120px; margin: 0 auto; }
+  h1 { font-weight: 400; font-size: clamp(28px, 5vw, 48px); margin: 0 0 4px; }
+  .meta { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .band { position: relative; width: 100%; background: #ebdcb2; overflow: hidden; margin-top: 18px; }
+  .band canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .label { font: 12px/1.4 ui-sans-serif, system-ui, sans-serif; margin: 8px 0 28px; opacity: .75; }
+  .phone { width: 390px; max-width: 100%; }
+  body.capture { padding: 0; background: #000; }
+  body.capture main { max-width: none; }
+</style>
+</head>
+<body>
+<main id="page">
+  <div class="meta">Daily Bread · version 2 · Seed Cards</div>
+  <h1>A sower went out to sow</h1>
+  <div class="meta">Matthew 13:3–8 · riso cards · every frame computed · no images</div>
+  <div class="band" data-aspect="3"></div>
+  <div class="label">Front band (3:1)</div>
+  <div class="phone"><div class="band" data-aspect="2"></div><div class="label">Phone band (2:1)</div></div>
+</main>
+<script>
+/*
+ * Version 2 — Seed Cards.
+ *
+ * The parable dealt as a hand of riso-printed cards, one bold iconic idea on each:
+ * the seed sack flings its seed; a triangle-and-circle bird snaps it off the path;
+ * a sprout pops up between stones and wilts under an overprinted sun; zigzag thorns
+ * close in; in good soil a stem rises and bursts into thirty, sixty, a hundred specks.
+ * Then the cards flip, gather, and lift away, and the hand is dealt again.
+ *
+ * Print: three inks (cobalt, gold, crimson) laid down as flat riso fills with
+ * stochastic grain, speckle voids, uneven density, roller streaks, wobbly edges and
+ * misregistration. Overlapping inks overprint (gold + cobalt = green, gold + crimson =
+ * orange, crimson + cobalt = purple). Nothing is loaded; every frame is drawn by code.
+ */
+// ============================================================================
+// Riso print shader
+const FRAG = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform sampler2D u_tone;
+uniform sampler2D u_line;
+const vec3 PAPER = vec3(235., 220., 178.) / 255.;
+const vec3 COBALT = vec3(26., 77., 152.) / 255.;
+const vec3 GOLD = vec3(239., 188., 63.) / 255.;
+const vec3 CRIMSON = vec3(206., 52., 66.) / 255.;
+float hash(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+float vnoise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3. - 2. * f);
+  return mix(mix(hash(i), hash(i + vec2(1., 0.)), u.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), u.x), u.y); }
+float fbm(vec2 p){ float a = .5, s = 0.; for (int i = 0; i < 4; i++){ s += a * vnoise(p); p = p * 2.03 + 17.; a *= .5; } return s; }
+// A riso drum: coverage k becomes grain (mid tones) or a solid with speckle voids.
+float riso(vec2 px, float k, float s, float unit, float boil){
+  if (k < .004) return 0.;
+  vec2 q = px / unit;
+  float g = hash(floor(q / 1.15) + s * 17. + boil);
+  float clump = vnoise(q * .21 + s * 31. + boil * .13);
+  float thr = mix(g, clump, .5) * .94 + .03;
+  float ink = smoothstep(thr - .05, thr + .05, k);
+  float holes = step(.962, hash(floor(q / 2.2) + s * 5.3 + boil * .7));
+  float blotch = smoothstep(.55, .95, fbm(q * .012 + s * 9.));
+  float solid = smoothstep(.55, .8, k);
+  ink *= 1. - (.85 * holes + .1 * blotch) * solid;
+  return clamp(ink, 0., 1.);
+}
+void main(){
+  vec2 R = u_resolution;
+  vec2 px = vec2(gl_FragCoord.x, R.y - gl_FragCoord.y);
+  float unit = R.y / 500.;
+  float boil = floor(u_time * 8.);
+  vec2 q = px / unit;
+  vec2 wob = (vec2(vnoise(q * .08), vnoise(q * .08 + 13.)) - .5) * 1.8 * unit;
+  vec2 drift = vec2(sin(u_time * .21), cos(u_time * .17)) * .4 * unit;
+  vec2 offB = vec2(1.3, -.8) * unit + wob + drift;
+  vec2 offG = vec2(-1.0, .9) * unit + wob.yx;
+  vec2 offR = vec2(.7, 1.4) * unit - wob - drift;
+  float kB = texture2D(u_tone, (px + offB) / R).r;
+  float kG = texture2D(u_tone, (px + offG) / R).g;
+  float kR = texture2D(u_tone, (px + offR) / R).b;
+  float lB = texture2D(u_line, (px + offB) / R).r;
+  float lG = texture2D(u_line, (px + offG) / R).g;
+  float lR = texture2D(u_line, (px + offR) / R).b;
+  float dens = .8 + .2 * fbm(q / 240. + 3.);
+  float streak = .93 + .07 * vnoise(vec2(q.y * .011, 3.));
+  float dB = max(riso(px, kB, 1., unit, boil), lB * (1. - .5 * step(.97, hash(floor(q / 1.6) + boil)))) * dens * streak;
+  float dG = max(riso(px, kG, 2., unit, boil), lG) * (.9 + .1 * dens);
+  float dR = max(riso(px, kR, 3., unit, boil), lR) * (.88 + .12 * dens) * streak;
+  float grain = .955 + .045 * vnoise(px * .75 + boil * 13.1) + .025 * (fbm(q * vec2(.02, .3)) - .5);
+  vec3 col = PAPER * grain;
+  col *= mix(vec3(1.), min(vec3(1.), GOLD / PAPER), dG * .96);
+  col *= mix(vec3(1.), CRIMSON / PAPER, dR * .9);
+  col *= mix(vec3(1.), COBALT / PAPER, dB * .92);
+  gl_FragColor = vec4(col, 1.);
+}`;
+const VERT = `attribute vec2 a_position; void main(){ gl_Position = vec4(a_position, 0., 1.); }`;
+
+// ============================================================================
+// Utilities
+const TAU = Math.PI * 2;
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (x) => { x = clamp01(x); return x * x * (3 - 2 * x); };
+const easeOut = (x) => 1 - Math.pow(1 - clamp01(x), 3);
+const easeIn = (x) => Math.pow(clamp01(x), 3);
+const easeInOut = (x) => { x = clamp01(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const backOut = (x, s = 1.9) => { x = clamp01(x); const c3 = s + 1; return 1 + c3 * Math.pow(x - 1, 3) + s * Math.pow(x - 1, 2); };
+const elasticOut = (x) => { x = clamp01(x); if (x === 0 || x === 1) return x; return Math.pow(2, -9 * x) * Math.sin((x * 10 - .75) * (TAU / 3)) + 1; };
+const pulse = (t, at, w) => Math.exp(-(((t - at) / w) ** 2));
+const fract = (x) => x - Math.floor(x);
+function mulberry(seed){ let a = seed >>> 0; return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const range = (seed, n) => { const r = mulberry(seed); return Array.from({ length: n }, () => r()); };
+const tone = (b = 0, g = 0, r = 0) => `rgb(${Math.round(clamp01(b) * 255)},${Math.round(clamp01(g) * 255)},${Math.round(clamp01(r) * 255)})`;
+const quadPts = (a, c, b, n = 12) => Array.from({ length: n + 1 }, (_, i) => { const t = i / n, u = 1 - t; return [u * u * a[0] + 2 * u * t * c[0] + t * t * b[0], u * u * a[1] + 2 * u * t * c[1] + t * t * b[1]]; });
+function ribbon(ctx, pts, wOf){
+  const n = pts.length; if (n < 2) return;
+  const Lp = [], Rp = [];
+  for (let i = 0; i < n; i++) {
+    const a = pts[Math.max(0, i - 1)], b = pts[Math.min(n - 1, i + 1)];
+    let dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1; dx /= l; dy /= l;
+    const w = Math.max(0, wOf(i / (n - 1), i)) / 2;
+    Lp.push([pts[i][0] - dy * w, pts[i][1] + dx * w]); Rp.push([pts[i][0] + dy * w, pts[i][1] - dx * w]);
+  }
+  ctx.beginPath(); ctx.moveTo(...Lp[0]); for (let i = 1; i < n; i++) ctx.lineTo(...Lp[i]);
+  for (let i = n - 1; i >= 0; i--) ctx.lineTo(...Rp[i]); ctx.closePath(); ctx.fill();
+}
+const taper = (w, s = .2, e = .25) => (t) => w * Math.min(1, t / s + .15, (1 - t) / e + .15);
+const pathOf = (pts) => { const p = new Path2D(); p.moveTo(...pts[0]); for (let i = 1; i < pts.length; i++) p.lineTo(...pts[i]); p.closePath(); return p; };
+const circle = (x, y, r) => { const p = new Path2D(); p.arc(x, y, Math.max(0, r), 0, TAU); return p; };
+const ellipse = (x, y, rx, ry, rot = 0) => { const p = new Path2D(); p.ellipse(x, y, Math.max(0, rx), Math.max(0, ry), rot, 0, TAU); return p; };
+const rrect = (x, y, w, h, r) => { const p = new Path2D(); p.roundRect(x, y, w, h, r); return p; };
+/** A shape given in local coordinates, placed at (x, y), rotated, scaled. */
+function placed(pts, x, y, rot = 0, sx = 1, sy = sx){ const c = Math.cos(rot), s = Math.sin(rot); return pts.map(([px, py]) => [x + (px * sx) * c - (py * sy) * s, y + (px * sx) * s + (py * sy) * c]); }
+const blob = (n, seed, wob = .12) => { const R = range(seed, n); return Array.from({ length: n }, (_, i) => { const a = i / n * TAU, r = 1 + (R[i] - .5) * wob; return [Math.cos(a) * r, Math.sin(a) * r]; }); };
+
+// ============================================================================
+// Drawing on the two plates. Inks ADD, so overlapping shapes overprint like riso drums.
+class Ink {
+  constructor(W, H){
+    this.tc = document.createElement('canvas'); this.T = this.tc.getContext('2d');
+    this.lc = document.createElement('canvas'); this.L = this.lc.getContext('2d');
+    this.stack = [];
+  }
+  begin(W, H){
+    for (const c of [this.tc, this.lc]) { if (c.width !== W) c.width = W; if (c.height !== H) c.height = H; }
+    this.W = W; this.H = H; this.A = W / H;
+    for (const x of [this.T, this.L]) { x.setTransform(1, 0, 0, 1, 0, 0); x.globalCompositeOperation = 'source-over'; x.globalAlpha = 1; x.fillStyle = '#000'; x.fillRect(0, 0, W, H); }
+    // stage: x centred, y 0 (top) … 1 (bottom), one unit = band height
+    for (const x of [this.T, this.L]) x.setTransform(H, 0, 0, H, W / 2, 0);
+    this.k = H; this.stack = [];
+  }
+  push(tx, ty, rot = 0, sx = 1, sy = sx){
+    for (const c of [this.T, this.L]) { c.save(); c.translate(tx, ty); c.rotate(rot); c.scale(sx, sy); }
+    this.stack.push(this.k); this.k *= Math.max(1e-4, Math.min(Math.abs(sx), Math.abs(sy)));
+  }
+  pop(){ this.T.restore(); this.L.restore(); this.k = this.stack.pop(); }
+  clip(path){ this.T.clip(path); this.L.clip(path); }
+  px(n){ return n / this.k; }
+  ink(path, b = 0, g = 0, r = 0, alpha = 1){ const T = this.T; T.globalCompositeOperation = 'lighter'; T.globalAlpha = alpha; T.fillStyle = tone(b, g, r); T.fill(path); T.globalAlpha = 1; }
+  paper(path){
+    this.T.globalCompositeOperation = 'source-over'; this.T.fillStyle = '#000'; this.T.fill(path);
+    this.L.globalCompositeOperation = 'source-over'; this.L.fillStyle = '#000'; this.L.fill(path);
+  }
+  line(pts, w, b = 0, g = 0, r = 0){ this.L.globalCompositeOperation = 'lighter'; this.L.fillStyle = tone(b, g, r); ribbon(this.L, pts, typeof w === 'function' ? w : () => w); }
+  dot(x, y, rad, b = 0, g = 0, r = 0){ this.ink(circle(x, y, rad), b, g, r); }
+}
+
+// ============================================================================
+// Inks as named mixes
+const COB = [.92, 0, 0], GLD = [0, .95, 0], CRM = [0, 0, .9];
+const GREEN = [.5, .95, 0], ORANGE = [0, .95, .62], PURPLE = [.62, 0, .85], BROWN = [.35, .8, .6];
+
+// Card size (local units): width 1, height CH, origin at centre.
+const CH = 4 / 3;
+const cardPath = () => rrect(-.5, -CH / 2, 1, CH, .045);
+
+function seedIcon(D, x, y, s, rot){
+  const pts = placed(blob(14, 9, .02).map(([a, b]) => [a * 1.35, b * .82]), x, y, rot, s);
+  D.ink(pathOf(pts), 0, .95, .15);
+  if (s * D.k > 3.5) D.line(quadPts(placed([[-1.05, 0]], x, y, rot, s)[0], placed([[0, -.25]], x, y, rot, s)[0], placed([[1.05, 0]], x, y, rot, s)[0], 8), taper(D.px(1.3)), .9, 0, 0);
+}
+
+// ---- Card faces -------------------------------------------------------------
+// Every face runs on the film's own clock: ev holds absolute beat times, and ev.sp
+// speeds the whole action up for the fast recaps late in the loop.
+
+function faceSower(D, t, ev){
+  const thr = ev.throw, sp = ev.sp || 1;
+  const anticip = pulse(t, ev.wind, .17), fling = smooth((t - thr) / .1) * (1 - smooth((t - thr - .45) / .45));
+  const tilt = -.42 * anticip + .55 * fling;
+  const breathe = 1 + .035 * Math.sin(t * 3.1) * (1 - fling);
+  const refillOn = ev.refill !== undefined && t > ev.refill - .1;
+  const deflate = lerp(1, .8, smooth((t - thr - .08) / .35)) * (refillOn ? lerp(1, 1.25, smooth((t - ev.refill) / .45)) : 1);
+  D.ink(ellipse(0, .4, .42, .05), 0, 0, .35);
+  D.push(-.02, .38, tilt, deflate * breathe * (1 + .08 * pulse(t, ev.refill === undefined ? -9 : ev.refill, .1)), (2 - deflate) * breathe * (1 - .1 * pulse(t, ev.refill === undefined ? -9 : ev.refill, .1)));
+  D.push(0, 0, 0, 1.25);
+  const body = [];
+  for (let i = 0; i <= 20; i++) { const u = i / 20, a = Math.PI * u; body.push([-Math.cos(a) * (.31 + .02 * Math.sin(u * 9)), -Math.sin(a) * .06]); }
+  const sackPts = [[-.31, 0], [-.33, -.12], [-.27, -.26], [-.14, -.34], [-.08, -.38], [-.2, -.48], [-.12, -.5], [-.06, -.46], [0, -.52], [.06, -.46], [.13, -.51], [.21, -.47], [.09, -.38], [.15, -.34], [.28, -.26], [.33, -.12], [.31, 0], ...body.slice().reverse().map(([x, y]) => [x, -y * .6])];
+  D.ink(pathOf(sackPts), 0, .95, 0);
+  D.ink(pathOf([[-.31, 0], [-.33, -.12], [-.27, -.26], [-.14, -.34], [-.1, -.2], [-.13, -.04], [-.18, .03]]), 0, 0, .55);
+  D.ink(ellipse(0, -.45, .12, .035), 0, .4, .5);
+  for (let i = 0; i < 6; i++) seedIcon(D, -.09 + i * .036, -.47 + (i % 2) * .018, .02, i * 1.3);
+  D.ink(rrect(-.11, -.4, .22, .05, .02), .92, 0, 0);
+  D.ink(ellipse(-.1, -.39, .07, .03, .5), .92, 0, 0);
+  D.ink(ellipse(-.12, -.34, .025, .06, -.3), .92, 0, 0);
+  D.paper(ellipse(-.105, -.39, .03, .01, .5));
+  D.line(quadPts([-.2, -.28], [-.15, -.14], [-.2, -.02]), taper(D.px(2.2)), .85, 0, 0);
+  D.line(quadPts([.05, -.33], [.09, -.18], [.04, -.03]), taper(D.px(2.2)), .85, 0, 0);
+  D.line(quadPts([.2, -.25], [.25, -.14], [.21, -.05]), taper(D.px(1.8)), .85, 0, 0);
+  D.ink(rrect(.1, -.2, .12, .1, .015), 0, 0, .9);
+  for (let i = 0; i < 4; i++) D.line([[.11 + i * .033, -.21], [.11 + i * .033, -.19]], D.px(1.4), .85, 0, 0);
+  D.pop(); D.pop();
+  // the wind-up shows as a crouch and two crimson tension marks
+  if (anticip > .15) for (let i = 0; i < 2; i++) D.line([[-.42 - i * .05, -.2 + i * .12], [-.3 - i * .05, -.16 + i * .12]], taper(D.px(3.4) * anticip), 0, 0, .9);
+  // the fling: a swoosh out of the mouth, sweeping up and to the right
+  const reveal = easeOut((t - thr) / .24), fade = 1 - smooth((t - thr - .3) / .4);
+  if (reveal > 0 && fade > 0) {
+    const cx = .24, cy = -.26, r = .3;
+    const a0 = Math.PI, a1 = lerp(a0, Math.PI * 1.85, reveal);
+    const tail = lerp(a0, a1, smooth((t - thr - .1) / .35));
+    const pts = Array.from({ length: 24 }, (_, i) => { const a = lerp(tail, a1, i / 23); return [cx + Math.cos(a) * r, cy + Math.sin(a) * r * 1.2]; });
+    D.T.globalCompositeOperation = 'lighter'; D.T.fillStyle = tone(0, 0, .9 * fade); ribbon(D.T, pts, taper(.13 * fade, .7, .12));
+    D.T.fillStyle = tone(0, .9 * fade, 0); ribbon(D.T, pts, taper(.05 * fade, .7, .15));
+    for (let i = 0; i < 3; i++) { const a = a1 - .15 - i * .2; const r0 = r + .11 + i * .02; D.line([[cx + Math.cos(a) * r0, cy + Math.sin(a) * r0 * 1.2], [cx + Math.cos(a) * (r0 + .12), cy + Math.sin(a) * (r0 + .12) * 1.2]], taper(D.px(3.4) * fade), .9, 0, 0); }
+  }
+  // seed pattering back onto the card
+  if (t > thr && t < thr + 1.2) {
+    const R = range(611, 80);
+    for (let i = 0; i < 14; i++) {
+      const age = t - thr - R[i * 4] * .07; if (age < 0) continue;
+      const x = -.02 + (.1 + R[i * 4 + 1] * .35) * age, y = -.3 + (-(.4 + R[i * 4 + 2] * .5)) * age + 1.9 * age * age;
+      if (y > .42 || x > .55) continue;
+      seedIcon(D, x, y, .026 + R[i * 4 + 3] * .012, age * 12 + i);
+    }
+  }
+  if (refillOn) for (let i = 0; i < 12; i++) {
+    const u = (t - ev.refill + .5 - i * .035) / .5; if (u < 0 || u > 1) continue;
+    seedIcon(D, lerp(-.45 + i * .06, -.02, u), lerp(-.7, -.3, u * u), .032, u * 6 + i);
+  }
+}
+
+function facePath(D, t, ev){
+  const sa = ev.seed, b0 = ev.bird, sp = ev.sp || 1, S = (o) => b0 + o / sp;
+  D.ink(pathOf([[-.5, .08], [.5, -.02], [.5, .34], [-.5, .44]]), 0, .92, 0);
+  for (let i = 0; i < 6; i++) { const x = -.45 + i * .18; D.ink(rrect(x, lerp(.27, .17, (x + .5)), .1, .028, .014), .85, 0, 0); }
+  for (let i = 0; i < 14; i++) { const R = range(300 + i, 3); D.dot(-.46 + R[0] * .92, lerp(.1, .4, R[1]) - (R[0] - .5) * .08, .008 + R[2] * .01, .7, 0, 0); }
+  const eaten = S(.5);
+  if (t >= sa && t < eaten) { const land = t - sa; const hop = Math.abs(Math.sin(Math.min(land, .5) * 12)) * Math.exp(-land * 8) * .09; seedIcon(D, .02, .19 - hop, .034, .4 + land * 3 * Math.exp(-land * 5)); }
+  if (t > S(-.25)) {
+    const walk = clamp01((t - S(-.25)) / (.55 / sp));
+    let bx = lerp(.95, .26, easeOut(walk));
+    const hopPhase = fract(walk * 2);
+    let by = .06 - (walk < 1 ? Math.sin(hopPhase * Math.PI) * .12 : 0);
+    const landSq = walk < 1 ? pulse(hopPhase, 0, .09) + pulse(hopPhase, 1, .09) : pulse(t, S(.3), .06);
+    let rot = 0, sx = 1 + .16 * landSq, sy = 1 - .18 * landSq, wing = 0, head = 0, beakOpen = 0;
+    head = .34 * pulse(t, S(.34), .07) - .3 * pulse(t, S(.44), .05);
+    const peck = pulse(t, S(.5), .05);
+    rot = -.85 * peck; beakOpen = pulse(t, S(.46), .045);
+    const gulp = pulse(t, S(.62), .05);
+    const wig = t > S(.7) && t < S(1.05) ? Math.sin((t - S(.7)) * 34 * sp) * .22 * (1 - (t - S(.7)) / (.35 / sp)) : 0;
+    rot += wig;
+    const fly = clamp01((t - S(1.05)) / (.5 / sp));
+    if (fly > 0) { bx -= easeIn(fly) * 1.1; by -= easeIn(fly) * 1.2; wing = Math.sin(t * 34); rot -= .35 * fly; }
+    else wing = .25 * pulse(t, S(.9), .12);
+    D.push(bx, by - .04, rot, -sx * 1.3, sy * 1.3);
+    D.paper(ellipse(0, .1, .165 * (1 + gulp * .1), .135)); D.paper(circle(.14, -.07 + head * .04, .09 * (1 + gulp * .35))); D.paper(pathOf([[-.2, .1], [-.34, .02], [-.32, .16]]));
+    D.ink(ellipse(0, .1, .16 * (1 + gulp * .1), .13), .72, 0, 0);
+    D.ink(pathOf([[-.2, .1], [-.34, .02], [-.32, .16]]), .9, 0, 0);
+    D.ink(pathOf(placed([[0, 0], [-.17, -.02 - wing * .3], [-.13, .07]], .02, .12, 0)), 0, .95, 0);
+    D.push(.14, -.07 + head * .04, head);
+    D.ink(circle(0, 0, .085 * (1 + gulp * .35)), .72, 0, 0);
+    D.ink(pathOf([[.07, -.03], [.2 + .02 * beakOpen, -.005 - .04 * beakOpen], [.08, .02]]), 0, 0, .95);
+    D.ink(pathOf([[.07, .02], [.19, .02 + .04 * beakOpen], [.08, .04]]), 0, 0, .95);
+    D.paper(circle(.02, -.02, .026)); D.dot(.027, -.022, .012, .95, 0, 0);
+    D.pop();
+    if (fly === 0) for (const lx of [-.03, .05]) D.line([[lx, .22], [lx - .01, .33]], D.px(2.4), .9, 0, 0);
+    D.pop();
+    // the snatch: three crimson flick marks
+    if (peck > .25) for (let i = 0; i < 3; i++) D.line([[.1 + i * .05, .05 - i * .04], [.2 + i * .05, -.02 - i * .04]], taper(D.px(3.4) * peck), 0, 0, .9);
+  }
+  const fu = (t - S(1.15)) / (1.4 / sp);
+  if (fu > 0) {
+    const e = Math.min(1, fu);
+    const fx = lerp(.1, -.18, e) + Math.sin(fu * 7) * .08 * (1 - e), fy = lerp(-.5, .26, easeOut(e));
+    D.push(fx, fy, Math.sin(fu * 7) * .6 * (1 - e) + .9 * e);
+    D.ink(ellipse(0, 0, .07, .022), 0, .95, 0);
+    D.line([[-.08, 0], [.08, 0]], D.px(1.6), .9, 0, 0);
+    D.pop();
+  }
+}
+
+function faceRock(D, t, ev){
+  const sa = ev.seed, g0 = ev.grow, sp = ev.sp || 1, S = (o) => g0 + o / sp;
+  const sunIn = backOut((t - S(.4)) / (.32 / sp), 2.4);
+  const slam = pulse(t, S(.68), .06);
+  const heat = smooth((t - S(.75)) / (.3 / sp));
+  const sunY = lerp(-1.25, -.4, sunIn) + .012 * Math.sin(t * 5) * heat;
+  const sunR = .22 * (1 + .07 * Math.sin(t * 6) * heat + .3 * slam);
+  if (sunIn > 0) {
+    D.ink(circle(0, sunY, sunR), 0, .95, 0);
+    D.ink(circle(.05, sunY + .03, sunR * .92), 0, 0, .35 + .35 * heat);
+    for (let i = 0; i < 3; i++) {
+      const y0 = sunY + sunR + .05 + i * .055;
+      const pts = Array.from({ length: 16 }, (_, j) => { const x = -.25 + j / 15 * .5; return [x, y0 + Math.sin(x * 22 - t * 11 + i) * .014]; });
+      D.line(pts, taper(D.px(3.4) * heat, .2, .2), 0, 0, .95);
+    }
+  }
+  const shake = slam * .02;
+  D.push(shake * Math.sin(t * 60), shake * Math.cos(t * 70), 0);
+  const stones = [[-.3, .26, .34, .24, -.2, COB], [.1, .33, .38, .22, .1, COB], [.36, .2, .24, .28, .25, PURPLE], [-.08, .5, .56, .22, 0, COB], [-.42, .5, .22, .2, .3, PURPLE]];
+  for (const [x, y, w, h, r, c] of stones) { D.push(x, y, r); D.ink(rrect(-w / 2, -h / 2, w, h, .06), c[0] * .85, c[1], c[2]); D.pop(); }
+  D.ink(ellipse(-.1, .15, .1, .034), 0, .7, .55);
+  const pop = backOut((t - S(.08)) / (.3 / sp), 3);
+  const wilt = smooth((t - S(1.0)) / (.45 / sp));
+  if (t >= sa && pop <= .02) { const land = t - sa; const hop = Math.abs(Math.sin(Math.min(land, .5) * 12)) * Math.exp(-land * 8) * .08; seedIcon(D, -.1, .13 - hop, .036, .3); }
+  if (pop > .02) {
+    const h = .3 * pop * (1 - .45 * wilt);
+    const bend = .34 * wilt;
+    const base = [-.1, .15], tip = [-.1 + bend * .95, .15 - h + bend * .24];
+    const ctrl = [-.1 + bend * .15, .15 - h * .7];
+    const stemC = [lerp(GREEN[0], BROWN[0], wilt), lerp(GREEN[1], BROWN[1], wilt), lerp(GREEN[2], BROWN[2], wilt)];
+    D.T.globalCompositeOperation = 'lighter'; D.T.fillStyle = tone(...stemC); ribbon(D.T, quadPts(base, ctrl, tip, 14), (u) => lerp(.05, .028, u));
+    for (const side of [-1, 1]) {
+      const leaf = placed(blob(14, 5, .02).map(([a, b]) => [a * .12 + .12, b * .055]), tip[0], tip[1], side < 0 ? Math.PI + .5 - wilt * 1.2 : -.5 + wilt * 1.2, pop * (1 - .3 * wilt));
+      D.ink(pathOf(leaf), ...stemC);
+    }
+    // a puff of dust as it gives up
+    const puff = pulse(t, S(1.12), .1);
+    if (puff > .05) for (let i = 0; i < 7; i++) { const a = Math.PI + i / 6 * Math.PI; D.dot(tip[0] + Math.cos(a) * .12 * puff, .17 + Math.sin(a) * .05 * puff, .014 * puff, .3, .7, .4); }
+  }
+  D.pop();
+}
+
+function faceThorns(D, t, ev){
+  const sa = ev.seed, g0 = ev.grow, sp = ev.sp || 1, S = (o) => g0 + o / sp;
+  D.ink(pathOf([[-.5, .32], [-.2, .26], [.2, .27], [.5, .31], [.5, .7], [-.5, .7]]), 0, .9, .55);
+  for (let i = 0; i < 12; i++) { const R = range(700 + i, 3); D.dot(-.44 + R[0] * .88, .38 + R[1] * .24, .012 + R[2] * .01, .8, 0, 0); }
+  const pop = backOut((t - S(.08)) / (.3 / sp), 2.8);
+  const choke = smooth((t - S(1.15)) / (.4 / sp));
+  if (t >= sa && pop <= .02) { const land = t - sa; const hop = Math.abs(Math.sin(Math.min(land, .5) * 12)) * Math.exp(-land * 8) * .08; seedIcon(D, 0, .24 - hop, .034, -.2); }
+  if (pop > .02) {
+    const grow = easeOut((t - S(.08)) / (.6 / sp));
+    const h = .42 * grow * (1 - .72 * choke);
+    const sx = 1 - .6 * choke;
+    D.push(0, .26, 0, sx, 1);
+    const stemC = [lerp(GREEN[0], .85, choke), lerp(GREEN[1], .3, choke), lerp(0, .3, choke)];
+    D.T.globalCompositeOperation = 'lighter'; D.T.fillStyle = tone(...stemC); ribbon(D.T, quadPts([0, 0], [.03, -h * .5], [0, -h], 12), (u) => lerp(.05, .03, u));
+    for (let i = 0; i < 2; i++) {
+      const y = -h * (.55 + i * .35), side = i % 2 ? 1 : -1;
+      const leaf = placed(blob(14, 6 + i, .02).map(([a, b]) => [a * .1 + .1, b * .045]), 0, y, side < 0 ? Math.PI + .45 + choke * 1.1 : -.45 - choke * 1.1, pop);
+      D.ink(pathOf(leaf), ...stemC);
+    }
+    D.pop();
+  }
+  // four thorn vines, each whipping in on its own beat
+  const vines = [[[-.55, .45], [-.02, -.18]], [[.55, .4], [.04, -.26]], [[-.55, -.2], [0, .1]], [[.55, -.35], [-.02, .02]]];
+  vines.forEach(([a, b], vi) => {
+    const reach = backOut((t - S(.3 + vi * .22)) / (.22 / sp), 1.6);
+    if (reach <= 0) return;
+    const n = 7, pts = [];
+    const len = Math.hypot(b[0] - a[0], b[1] - a[1]);
+    const nx = -(b[1] - a[1]) / len, ny = (b[0] - a[0]) / len;
+    for (let i = 0; i <= n; i++) {
+      const u = i / n * Math.min(1, reach);
+      const zz = (i % 2 ? 1 : -1) * .06 * (1 + .4 * Math.sin(t * 2 + vi)) * (i === 0 ? 0 : 1);
+      pts.push([lerp(a[0], b[0], u) + nx * zz, lerp(a[1], b[1], u) + ny * zz]);
+    }
+    D.line(pts, .045, .7, 0, .9);
+    for (let i = 1; i < pts.length; i++) {
+      const p = pts[i], q = pts[i - 1];
+      const dx = p[0] - q[0], dy = p[1] - q[1], l = Math.hypot(dx, dy) || 1;
+      const s = (i % 2 ? 1 : -1);
+      D.ink(pathOf([[p[0] - dy / l * .012, p[1] + dx / l * .012], [p[0] + (-dy / l) * .06 * s + dx / l * .02, p[1] + (dx / l) * .06 * s + dy / l * .02], [p[0] + dy / l * .012, p[1] - dx / l * .012]]), .75, 0, .9);
+    }
+  });
+}
+
+function faceGood(D, t, ev){
+  const sa = ev.seed, g0 = ev.grow, sp = ev.sp || 1, S = (o) => g0 + o / sp;
+  D.ink(ellipse(0, .62, .62, .34), .7, 0, .55);
+  for (let i = 0; i < 26; i++) { const R = range(900 + i, 3); const a = R[0] * Math.PI, r = R[1] * .9; D.dot(Math.cos(a) * .55 * r, .62 - Math.sin(a) * .3 * r, .008 + R[2] * .012, 0, .95, 0); }
+  const rise = easeOut((t - S(.18)) / (.7 / sp));
+  if (t >= sa && rise <= 0) { const land = t - sa; const hop = Math.abs(Math.sin(Math.min(land, .5) * 12)) * Math.exp(-land * 8) * .08; seedIcon(D, 0, .3 - hop, .036, 0); D.ink(circle(0, .3, .085 * (1 + .35 * Math.sin(t * 9))), 0, .3, 0); }
+  const roots = smooth((t - S(.02)) / (.35 / sp));
+  if (roots > 0) for (let i = 0; i < 5; i++) { const len = .2 * roots * (1 - Math.abs(i - 2) * .12); D.line(quadPts([0, .3], [(i - 2) * .02, .3 + len * .6], [(i - 2) * .09 * roots, .3 + len], 8), taper(D.px(3), .1, .6), 0, .9, 0); }
+  const sway = Math.sin(t * 1.9) * .02 * rise;
+  const h = .6 * rise;
+  const top = [sway, .3 - h];
+  if (rise > 0) {
+    D.T.globalCompositeOperation = 'lighter'; D.T.fillStyle = tone(...GREEN);
+    ribbon(D.T, quadPts([0, .3], [sway * .3, .3 - h * .5], top, 16), (u) => lerp(.05, .028, u));
+    const leaves = [[.25, -1, .5], [.45, 1, .62], [.62, -1, .74], [.78, 1, .86]];
+    for (const [f, side, at] of leaves) {
+      const p = backOut((t - S(at)) / (.22 / sp), 2.6); if (p <= 0 || f > rise + .02) continue;
+      const y = .3 - h * f, x = sway * f;
+      const leaf = placed(blob(16, 20 + at * 30, .02).map(([a, b]) => [a * .13 + .13, b * .05]), x, y, side < 0 ? Math.PI + .55 : -.55, p);
+      D.ink(pathOf(leaf), ...GREEN);
+      D.line([[x, y], placed([[.22, 0]], x, y, side < 0 ? Math.PI + .55 : -.55, p)[0]], taper(D.px(1.4)), 0, .95, 0);
+    }
+  }
+  const ear = backOut((t - S(1.0)) / (.35 / sp), 2.2);
+  if (ear > 0) {
+    for (let i = 0; i < 6; i++) for (const side of [-1, 1]) {
+      const p = clamp01((ear - i * .08) * 2);
+      if (p <= 0) continue;
+      const y = top[1] - i * .055 * p, x = top[0] + side * .035 * p;
+      D.ink(ellipse(x, y, .034 * p, .026 * p, side * .6), 0, .95, .28);
+      D.line([[x + side * .02, y - .01], [x + side * .1 * p, y - .08 * p]], taper(D.px(1.3)), .8, 0, 0);
+    }
+  }
+  const waves = [[30, .2, 1.5], [60, .33, 1.85], [100, .5, 2.2]];
+  let seed = 4000;
+  for (const [n, rad, at] of waves) {
+    const R = range(seed += 17, n * 4);
+    const w0 = S(at);
+    for (let i = 0; i < n; i++) {
+      const p = backOut((t - w0 - i * .004) / (.35 / sp), 2.8); if (p <= 0) continue;
+      const a = R[i * 4] * TAU, rr = rad * (.55 + R[i * 4 + 1] * .45);
+      const ox = top[0] + .01, oy = top[1] - .1;
+      const x = lerp(ox, ox + Math.cos(a) * rr, p), y = lerp(oy, oy + Math.sin(a) * rr * 1.15, p);
+      const spill = ev.spill ? smooth((t - ev.spill - R[i * 4 + 2] * .5) / .6) : 0;
+      if (spill >= 1 && n === 100) continue;
+      const tw = 1 + .18 * Math.sin(t * 7 + i);
+      const sz = (.018 + R[i * 4 + 3] * .016) * tw * (n === 100 ? 1 - spill : 1);
+      const c = R[i * 4 + 2];
+      if (c < .62) D.dot(x, y, sz, 0, .95, 0); else if (c < .85) D.dot(x, y, sz, 0, 0, .9); else D.dot(x, y, sz, .85, 0, 0);
+    }
+  }
+}
+
+function faceBack(D){
+  D.ink(rrect(-.5, -CH / 2, 1, CH, .045), 0, .9, 0);
+  for (const [a, b] of [[[-.42, -.6], [.42, -.6]], [[.42, -.6], [.42, .6]], [[.42, .6], [-.42, .6]], [[-.42, .6], [-.42, -.6]]]) D.line([a, b], D.px(2.2), .85, 0, 0);
+  for (let i = 0; i < 4; i++) for (let j = 0; j < 5; j++) { if ((i + j) % 2 || (j === 2 && (i === 1 || i === 2))) continue; seedIcon(D, -.3 + i * .2, -.48 + j * .24, .035, (i + j) * .7); }
+  seedIcon(D, 0, 0, .1, -.5);
+  D.line(Array.from({ length: 25 }, (_, i) => [Math.cos(i / 24 * TAU) * .2, Math.sin(i / 24 * TAU) * .2]), D.px(2), .85, 0, 0);
+}
+
+const FACES = { sower: faceSower, path: facePath, rock: faceRock, thorns: faceThorns, good: faceGood };
+const SEED_SPOT = { path: [.02, .19], rock: [-.1, .13], thorns: [0, .24], good: [0, .3] };
+const CARDS = ['sower', 'path', 'rock', 'thorns', 'good'];
+
+// ============================================================================
+// The cut. Beats drive everything: entries, punches, camera and transitions.
+const LOOP = 22;
+const BEATS = [
+  [0.00, 'deal: five cards drop in, staggered'], [0.16, 'deal'], [0.32, 'deal'], [0.48, 'deal'], [0.64, 'deal'],
+  [1.05, 'wind-up: the sack crouches back'],
+  [1.35, 'THROW: swoosh and a spray of seed across the whole band'],
+  [1.75, 'seed lands on the path'], [2.15, 'seed lands in the rocks and the thorns'], [2.35, 'seed lands in good soil'],
+  [2.70, 'punch in: the path'],
+  [3.00, 'the bird whips in'],
+  [3.50, 'peck'], [3.62, 'gulp'], [3.75, 'wiggle'],
+  [4.05, 'the bird is gone; a feather flicks loose'],
+  [4.50, 'iris to the rocks'],
+  [4.90, 'the sprout pops'],
+  [5.25, 'the sun slams down'], [5.45, 'heat waves'],
+  [5.80, 'the sprout wilts over'], [5.95, 'dust puff'],
+  [6.50, 'whip to the thorns'],
+  [6.85, 'the sprout pops'],
+  [7.10, 'thorn'], [7.30, 'thorn'], [7.50, 'thorn'], [7.70, 'thorn'],
+  [7.95, 'choked out'],
+  [8.60, 'iris to good soil'],
+  [9.05, 'the stem shoots up'],
+  [9.55, 'leaves pop'], [9.75, 'leaves pop'],
+  [10.05, 'the ear stacks up'],
+  [10.55, 'thirty'], [10.90, 'sixty'], [11.25, 'a hundred'],
+  [12.80, 'pull back: all five'],
+  [13.40, 'the harvest sweeps back across the band'],
+  [14.00, 'the sack plumps up'],
+  [14.60, 'the cards flip'], [14.72, 'flip'], [14.84, 'flip'],
+  [15.35, 'fan'], [15.65, 'stack'],
+  [16.05, 'recap: the path'], [16.65, 'recap: the rocks'], [17.25, 'recap: the thorns'], [17.85, 'recap: good soil'],
+  [18.95, 'pull back: all five'],
+  [19.35, 'seed rain over the table'],
+  [19.85, 'the faces turn back'],
+  [21.15, 'the cards lift away'],
+  [21.60, 'one seed drops for the next hand'],
+];
+const KEYS = [
+  { t: 0, mode: 'row' },
+  { t: 2.70, mode: 'solo', focus: 'path' },
+  { t: 4.50, mode: 'solo', focus: 'rock', iris: true },
+  { t: 6.50, mode: 'solo', focus: 'thorns' },
+  { t: 8.60, mode: 'solo', focus: 'good', iris: true },
+  { t: 12.80, mode: 'row' },
+  { t: 15.35, mode: 'fan' },
+  { t: 15.65, mode: 'stack' },
+  { t: 16.05, mode: 'solo', focus: 'path', iris: true },
+  { t: 16.65, mode: 'solo', focus: 'rock', iris: true },
+  { t: 17.25, mode: 'solo', focus: 'thorns', iris: true },
+  { t: 17.85, mode: 'solo', focus: 'good', iris: true },
+  { t: 18.95, mode: 'row' },
+  { t: 21.15, mode: 'exit' },
+];
+// first pass, then the fast recap
+const EV1 = {
+  sower: { wind: 1.05, throw: 1.35, sp: 1, refill: 14.0 },
+  path: { seed: 1.75, bird: 3.0, sp: 1 },
+  rock: { seed: 1.95, grow: 4.8, sp: 1 },
+  thorns: { seed: 2.15, grow: 6.85, sp: 1 },
+  good: { seed: 2.35, grow: 8.95, sp: .85, spill: 13.4 },
+};
+const EV2 = {
+  sower: { wind: 19.2, throw: 19.35, sp: 2.4 },
+  path: { seed: 16.03, bird: 16.2, sp: 2.6 },
+  rock: { seed: 16.6, grow: 16.67, sp: 2.8 },
+  thorns: { seed: 17.2, grow: 17.25, sp: 2.8 },
+  good: { seed: 17.8, grow: 17.85, sp: 2.6 },
+};
+const evFor = (kind, t) => (t >= (EV2[kind].seed ?? EV2[kind].wind) - .12 ? EV2[kind] : EV1[kind]);
+const FLIP_AT = { sower: 14.6, path: 14.72, rock: 14.84, thorns: 14.96, good: 15.08 };
+const BACK_UNTIL = { path: 15.87, rock: 16.47, thorns: 17.07, good: 17.67, sower: 19.75 };
+
+function slotLayout(A, i, n){
+  // wide bands lay the cards out in a row; a phone holds them as an overlapping hand
+  const wide = A >= 2.5;
+  const h = wide ? .7 : .48, w = h / CH;
+  const gap = Math.max(.022, Math.min(.12, (A - (wide ? .2 : .08) - n * w) / Math.max(1, n - 1)));
+  const total = n * w + (n - 1) * gap;
+  const rot = wide ? 0 : (i - (n - 1) / 2) * .045;
+  return { x: -total / 2 + w / 2 + i * (w + gap), y: .52 + (wide ? 0 : Math.abs(i - (n - 1) / 2) * .012), h, rot };
+}
+function layoutAt(key, A, i, kind){
+  const n = CARDS.length;
+  if (key.mode === 'row') return slotLayout(A, i, n);
+  if (key.mode === 'solo') {
+    const fi = CARDS.indexOf(key.focus);
+    if (kind === key.focus) return { x: 0, y: .5, h: .94, rot: 0 };
+    // the neighbours stay in shot, cropped at the edges, so the wide band never empties
+    const d = i - fi, side = d < 0 ? -1 : 1;
+    const step = Math.abs(d);
+    return { x: side * (.78 + (step - 1) * .46), y: .53 + step * .02, h: .66 - step * .05, rot: side * (.06 + step * .04) };
+  }
+  if (key.mode === 'fan') { const a = (i - (n - 1) / 2) * .28; return { x: Math.sin(a) * .95, y: .56 - Math.cos(a) * .06, h: .6, rot: a }; }
+  if (key.mode === 'stack') return { x: (i - (n - 1) / 2) * .015, y: .52 - i * .012, h: .62, rot: (i - 2) * .03 };
+  return { x: (i - (n - 1) / 2) * .015, y: -1.4, h: .62, rot: (i - 2) * .25 };   // exit
+}
+
+function cardsAt(D, A, t){
+  let ki = 0; for (let k = 0; k < KEYS.length; k++) if (t >= KEYS[k].t) ki = k;
+  const key = KEYS[ki], prev = KEYS[Math.max(0, ki - 1)];
+  const dur = key.iris ? .16 : .2;
+  const u = ki === 0 ? 1 : clamp01((t - key.t) / dur);
+  const e = backOut(u, 1.1);
+  return CARDS.map((kind, i) => {
+    const to = layoutAt(key, A, i, kind), from = layoutAt(prev, A, i, kind);
+    let x = lerp(from.x, to.x, e), y = lerp(from.y, to.y, e), h = lerp(from.h, to.h, e), rot = lerp(from.rot, to.rot, e);
+    // the deal: each card drops in on its own beat
+    const deal = BEATS[i][0];
+    if (t < deal + .55) { const d = backOut((t - deal) / .55, 1.5); y = lerp(-1.1, y, d); rot = lerp((i % 2 ? 1 : -1) * .9, rot, easeOut(d)); if (t < deal) y = -2; }
+    // a beat punch on the focused card, and micro-life everywhere
+    let punch = 0;
+    for (const [bt] of BEATS) { if (Math.abs(t - bt) < .2) punch = Math.max(punch, pulse(t, bt, .06)); }
+    const focused = key.mode !== 'solo' || kind === key.focus;
+    const s = 1 + (focused ? .055 : .015) * punch + .006 * Math.sin(t * 4.7 + i);
+    rot += .007 * Math.sin(t * 6.3 + i * 2.1);
+    const back = t >= FLIP_AT[kind] && t < BACK_UNTIL[kind];
+    const fl = clamp01((t - FLIP_AT[kind]) / .28), fl2 = clamp01((t - BACK_UNTIL[kind]) / .28);
+    const flip = Math.abs(Math.cos(fl * Math.PI)) * (fl2 > 0 ? Math.abs(Math.cos(fl2 * Math.PI)) : 1);
+    const w = h / CH;
+    return { kind, i, x, y, w, h, rot, sx: Math.max(.03, (fl < 1 || fl2 < 1 ? flip : 1)) * s, sy: s, back, rest: slotLayout(A, i, CARDS.length) };
+  });
+}
+
+function drawCard(D, card, t){
+  if (card.y < -1.2) return;
+  D.push(card.x, card.y, card.rot, card.w * card.sx, card.w * card.sy);
+  D.push(.035 / card.sx, .055, 0); D.ink(cardPath(), 0, 0, .8); D.pop();
+  D.paper(cardPath());
+  D.T.save(); D.L.save(); D.clip(cardPath());
+  if (card.back) faceBack(D);
+  else {
+    FACES[card.kind](D, t, evFor(card.kind, t));
+    D.line([[-.14, -.57], [.14, -.57]], D.px(1.6), .85, 0, 0);
+    D.line([[-.09, -.54], [.09, -.54]], D.px(1), .85, 0, 0);
+  }
+  D.T.restore(); D.L.restore();
+  D.pop();
+}
+
+function toStage(card, p){ const c = Math.cos(card.rot), s = Math.sin(card.rot); const lx = p[0] * card.w, ly = p[1] * card.w; return [card.x + lx * c - ly * s, card.y + lx * s + ly * c]; }
+
+function drawFrame(D, t){
+  const A = D.A;
+  const lt = ((t % LOOP) + LOOP) % LOOP;
+  D.ink(rrect(-A, -1, A * 2, 3, 0), .86, 0, 0);
+  // dust always drifting over the table, so nothing is ever completely still
+  const R = range(4242, 200);
+  for (let i = 0; i < 40; i++) {
+    const x = ((R[i * 3] + lt * (.02 + R[i * 3 + 1] * .03)) % 1.2 - .1) * A - A / 2;
+    const y = R[i * 3 + 1] * 1.05 + Math.sin(lt * .7 + i) * .012;
+    D.dot(x, y, .004 + R[i * 3 + 2] * .005, 0, .5, .2);
+  }
+  const cards = cardsAt(D, A, lt);
+  const key = KEYS.reduce((a, k) => (lt >= k.t ? k : a), KEYS[0]);
+  const irisU = key.iris ? clamp01((lt - key.t) / .22) : 1;
+  if (irisU < 1) {
+    const f = cards.find((c) => c.kind === key.focus);
+    D.T.save(); D.L.save();
+    const r = lerp(.02, A * 1.3, easeOut(irisU));
+    D.clip(circle(f.x, f.y, r));
+  }
+  const order = key.mode === 'solo' ? [...cards].sort((a, b) => (a.kind === key.focus ? 1 : 0) - (b.kind === key.focus ? 1 : 0)) : cards;
+  for (const card of order) drawCard(D, card, lt);
+  if (irisU < 1) { D.T.restore(); D.L.restore(); }
+
+  // the throw: seed sprays out of the sack, crosses the whole band, and lands on each soil
+  const sower = cards.find((c) => c.kind === 'sower');
+  if (lt > 1.3 && lt < 2.9 && sower) {
+    const from = toStage(sower, [-.02, -.3]);
+    const S = range(77, 200);
+    for (let i = 0; i < 44; i++) {
+      const age = lt - 1.35 - S[i * 4] * .12; if (age < 0 || age > 1.5) continue;
+      const vx = (.9 + S[i * 4 + 1] * 1.9), vy = -(.5 + S[i * 4 + 2] * .9);
+      const x = from[0] + vx * age, y = from[1] + vy * age + 1.5 * age * age;
+      if (x > A / 2 + .2 || y > 1.1) continue;
+      seedIcon(D, x, y, .016 + S[i * 4 + 3] * .012, age * 10 + i);
+    }
+  }
+  // the four seeds that find their soil
+  for (const card of cards) {
+    if (card.kind === 'sower') continue;
+    const ev = EV1[card.kind];
+    const target = toStage(card, SEED_SPOT[card.kind]);
+    const from = sower ? toStage(sower, [-.02, -.3]) : [0, -.3];
+    const u = (lt - 1.38) / (ev.seed - 1.38);
+    if (u <= 0 || u >= 1) continue;
+    const x = lerp(from[0], target[0], u), y = lerp(from[1], target[1], u) - .55 * 4 * u * (1 - u);
+    seedIcon(D, x, y, card.w * .05, u * 12 + card.i);
+  }
+  // the harvest sweeping back across the band into the sack
+  const good = cards.find((c) => c.kind === 'good');
+  if (good && sower && lt > 13.4 && lt < 15.2) {
+    const S = range(88, 260);
+    const to = toStage(sower, [-.02, -.32]);
+    for (let i = 0; i < 64; i++) {
+      const u = (lt - 13.4 - S[i * 4] * .5) / 1.1; if (u <= 0 || u >= 1) continue;
+      const a = S[i * 4 + 1] * TAU, rr = .5 * (.55 + S[i * 4 + 2] * .45);
+      const f = toStage(good, [Math.cos(a) * rr, -.2 + Math.sin(a) * rr * 1.15]);
+      const x = lerp(f[0], to[0], easeInOut(u)), y = lerp(f[1], to[1], easeInOut(u)) - .4 * Math.sin(u * Math.PI) * (1 + S[i * 4 + 3]);
+      seedIcon(D, x, y, good.w * .026, u * 10 + i);
+    }
+  }
+  // seed rain over the whole table before the faces turn back
+  if (lt > 19.35 && lt < 20.5) {
+    const S = range(31, 200);
+    for (let i = 0; i < 40; i++) {
+      const u = (lt - 19.35 - S[i * 3] * .5) / .8; if (u <= 0 || u >= 1) continue;
+      const x = (S[i * 3 + 1] - .5) * A * 1.05;
+      const y = lerp(-.15, 1.05, easeIn(u));
+      seedIcon(D, x, y, .018 + S[i * 3 + 2] * .012, u * 14 + i);
+    }
+  }
+  // the last seed of the loop drops in the middle and bounces
+  if (lt > 21.6) {
+    const u = (lt - 21.6) / .45;
+    const y = lerp(-.2, .55, easeIn(Math.min(1, u))) - (u > 1 ? Math.abs(Math.sin((u - 1) * 6)) * .12 * Math.exp(-(u - 1) * 5) : 0);
+    seedIcon(D, 0, y, .03, u * 9);
+  }
+}
+
+// ============================================================================
+function createScene(canvas){
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+  if (!gl) return null;
+  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
+  const prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG)); gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+  gl.useProgram(prog);
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position'); gl.enableVertexAttribArray(pos); gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const u = (n) => gl.getUniformLocation(prog, n);
+  const tex = (unit) => { const tx = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx);
+    for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v); return tx; };
+  const toneTex = tex(0), lineTex = tex(1);
+  gl.uniform1i(u('u_tone'), 0); gl.uniform1i(u('u_line'), 1);
+  const D = new Ink();
+  return {
+    render(t, W, H){
+      D.begin(W, H);
+      drawFrame(D, t);
+      for (const [tx, src, unit] of [[toneTex, D.tc, 0], [lineTex, D.lc, 1]]) { gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, src); }
+      gl.viewport(0, 0, W, H);
+      gl.uniform1f(u('u_time'), t); gl.uniform2f(u('u_resolution'), W, H);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    },
+  };
+}
+
+const stillAt = () => 11.9;   // the fullest frame: the hundredfold burst
+const params = new URLSearchParams(location.search);
+if (params.has('capture')) {
+  document.body.classList.add('capture');
+  const page = document.getElementById('page'); page.innerHTML = '';
+  const w = Number(params.get('w') || 1500), aspect = Number(params.get('aspect') || 3);
+  const c = document.createElement('canvas'); c.width = w; c.height = Math.round(w / aspect);
+  c.style.cssText = `width:${c.width}px;height:${c.height}px;display:block`; page.appendChild(c);
+  const scene = createScene(c);
+  window.__render = (t) => scene.render(t, c.width, c.height);
+  window.__loop = LOOP;
+  window.__ready = true;
+} else {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const bands = [...document.querySelectorAll('.band')].map((el) => { el.style.aspectRatio = `${el.dataset.aspect} / 1`; const canvas = document.createElement('canvas'); el.appendChild(canvas); return { el, canvas, scene: createScene(canvas), time: 0, visible: true }; });
+  const io = new IntersectionObserver((es) => { for (const e of es) { const b = bands.find((x) => x.el === e.target); if (b) b.visible = e.isIntersecting; } });
+  bands.forEach((b) => io.observe(b.el));
+  let last = 0;
+  const frame = (now) => {
+    requestAnimationFrame(frame);
+    if (now - last < 1000 / 30 - 1) return;
+    const dt = last ? Math.min(100, now - last) / 1000 : 0; last = now;
+    for (const b of bands) {
+      if (!b.scene || !b.visible) continue;
+      const dpr = Math.min(1.5, devicePixelRatio || 1);
+      const w = Math.max(1, Math.round(b.el.clientWidth * dpr)), h = Math.max(1, Math.round(b.el.clientHeight * dpr));
+      if (b.canvas.width !== w) b.canvas.width = w; if (b.canvas.height !== h) b.canvas.height = h;
+      b.time = reduced.matches ? stillAt() : b.time + dt;
+      b.scene.render(b.time, w, h);
+    }
+  };
+  requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,806 @@
+// ============================================================================
+// VERSION 1 — Specimen Plate. The life of one wheat seed, Matthew 13:3–8, drawn as a
+// natural-history plate: engraved contours, cross-contour hatching, stipple, construction
+// circles and callout rules that draw themselves on and off. No people, no words.
+// ============================================================================
+
+const LOOP = 24;
+const LIGHT = [.55, -.83];          // light from the upper right
+
+// ---------------------------------------------------------------------------
+// Drawing helpers (stage units)
+function lenOf(pts){ let L = 0; for (let i = 1; i < pts.length; i++) L += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); return L; }
+/** The first k (0..1) of a polyline by length. */
+function partial(pts, k){
+  if (k >= 1) return pts;
+  if (k <= 0) return [];
+  const total = lenOf(pts) * k; const out = [pts[0]]; let acc = 0;
+  for (let i = 1; i < pts.length; i++) {
+    const d = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
+    if (acc + d >= total) { const u = (total - acc) / (d || 1); out.push([lerp(pts[i - 1][0], pts[i][0], u), lerp(pts[i - 1][1], pts[i][1], u)]); return out; }
+    acc += d; out.push(pts[i]);
+  }
+  return out;
+}
+function inside(pts, x, y){ let c = false; for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) { const a = pts[i], b = pts[j]; if ((a[1] > y) !== (b[1] > y) && x < (b[0] - a[0]) * (y - a[1]) / (b[1] - a[1] + 1e-12) + a[0]) c = !c; } return c; }
+function bbox(pts){ let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity; for (const [x, y] of pts) { if (x < x0) x0 = x; if (y < y0) y0 = y; if (x > x1) x1 = x; if (y > y1) y1 = y; } return [x0, y0, x1, y1]; }
+function xf(pts, cx, cy, s, rot = 0, sx = 1){ const c = Math.cos(rot), n = Math.sin(rot); return pts.map(([x, y]) => [cx + (x * sx * c - y * n) * s, cy + (x * sx * n + y * c) * s]); }
+const cubicPts = (a, c1, c2, b, n = 16) => Array.from({ length: n + 1 }, (_, i) => { const t = i / n, u = 1 - t; return [u * u * u * a[0] + 3 * u * u * t * c1[0] + 3 * u * t * t * c2[0] + t * t * t * b[0], u * u * u * a[1] + 3 * u * u * t * c1[1] + 3 * u * t * t * c2[1] + t * t * t * b[1]]; });
+
+/** Engraved contour: heavier where the edge turns from the light. */
+function contour(P, pts, w, closed = true, ink = [1, 0, 0], light = LIGHT){
+  if (pts.length < 2) return;
+  let area = 0; for (let i = 0; i < pts.length; i++) { const a = pts[i], b = pts[(i + 1) % pts.length]; area += a[0] * b[1] - b[0] * a[1]; }
+  const sg = area > 0 ? 1 : -1;
+  const n = pts.length;
+  P.L.fillStyle = tone(...ink);
+  ribbon(P.L, pts, (t, i) => {
+    const a = pts[closed ? (i - 1 + n) % n : Math.max(0, i - 1)], b = pts[closed ? (i + 1) % n : Math.min(n - 1, i + 1)];
+    let dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1;
+    const nx = -dy / l * sg, ny = dx / l * sg;
+    const away = -(nx * light[0] + ny * light[1]);
+    const end = closed ? 1 : Math.min(1, t * 6 + .2, (1 - t) * 6 + .2);
+    return w * (.5 + .85 * clamp01(away + .3)) * end;
+  }, closed);
+}
+/** Hatching clipped to a polygon; line width follows toneAt(x, y). */
+function hatchIn(P, pts, angle, spacing, maxW, toneAt, wobble = 0){
+  const [x0, y0, x1, y1] = bbox(pts);
+  const d = [Math.cos(angle), Math.sin(angle)], nr = [-d[1], d[0]];
+  const cs = [[x0, y0], [x1, y0], [x0, y1], [x1, y1]];
+  const pr = (p, v) => p[0] * v[0] + p[1] * v[1];
+  const sMin = Math.min(...cs.map((p) => pr(p, nr))), sMax = Math.max(...cs.map((p) => pr(p, nr)));
+  const tMin = Math.min(...cs.map((p) => pr(p, d))), tMax = Math.max(...cs.map((p) => pr(p, d)));
+  const seg = Math.max(spacing * 1.4, (tMax - tMin) / 24);
+  P.L.save(); P.L.clip(pathOf(pts)); P.L.fillStyle = tone(1, 0, 0);
+  let k = 0;
+  for (let s = sMin + spacing * .5; s < sMax; s += spacing, k++) {
+    const line = [];
+    for (let t = tMin; t <= tMax + seg; t += seg) { const wv = wobble ? Math.sin(t * 40 + k * 1.7) * wobble : 0; line.push([d[0] * t + nr[0] * (s + wv), d[1] * t + nr[1] * (s + wv)]); }
+    ribbon(P.L, line, (tt, i) => maxW * clamp01(toneAt(line[i][0], line[i][1])));
+  }
+  P.L.restore(); P.L.globalCompositeOperation = 'lighter';
+}
+/** Stipple dots inside a polygon; density follows densityAt(x, y). */
+function stippleIn(P, pts, count, seed, densityAt, r, ink = [1, 0, 0]){
+  const [x0, y0, x1, y1] = bbox(pts);
+  const R = range(seed, count * 3);
+  P.L.fillStyle = tone(...ink);
+  for (let i = 0; i < count; i++) {
+    const x = lerp(x0, x1, R[i * 3]), y = lerp(y0, y1, R[i * 3 + 1]);
+    if (R[i * 3 + 2] > densityAt(x, y) || !inside(pts, x, y)) continue;
+    P.L.beginPath(); P.L.arc(x, y, r * (.6 + .6 * R[(i * 7) % R.length]), 0, TAU); P.L.fill();
+  }
+}
+/** A thin draft-line circle that draws itself on from a0, with ticks. */
+function construction(P, cx, cy, r, k, a0 = -Math.PI / 2, ticks = 24, dash = false){
+  if (k <= 0) return;
+  const pts = circlePtsOpen(cx, cy, r, 96, a0, a0 + TAU * clamp01(k));
+  if (dash) { for (let i = 0; i < pts.length - 1; i += 2) P.line([pts[i], pts[i + 1]], P.px(.9), .75, 0, 0); }
+  else P.line(pts, P.px(.9), .75, 0, 0);
+  for (let i = 0; i < ticks; i++) { const a = a0 + i / ticks * TAU; if ((i / ticks) > k) break; const l = i % 6 === 0 ? r * .06 : r * .03; P.line([[cx + Math.cos(a) * r, cy + Math.sin(a) * r], [cx + Math.cos(a) * (r + l), cy + Math.sin(a) * (r + l)]], P.px(.9), .75, 0, 0); }
+}
+const circlePtsOpen = (x, y, r, n, a0, a1) => Array.from({ length: n + 1 }, (_, i) => [x + Math.cos(lerp(a0, a1, i / n)) * r, y + Math.sin(lerp(a0, a1, i / n)) * r]);
+/** A callout rule: a dot at the part, an elbow, a short shelf where a label would sit. */
+function callout(P, from, elbow, to, k){
+  if (k <= 0) return;
+  const pts = [from, elbow, to];
+  const drawn = partial(pts, easeOut(k));
+  P.line(drawn, P.px(.9), .9, 0, 0);
+  P.dot(from[0], from[1], P.px(2.2) * smooth(k * 4), 1, 0, 0);
+  if (k > .85) { const u = smooth((k - .85) / .15); const dir = Math.sign(to[0] - elbow[0]) || 1; P.line([to, [to[0] + dir * .05 * u, to[1]]], P.px(2.2), .9, 0, 0); P.line([[to[0], to[1] + .012], [to[0] + dir * .035 * u, to[1] + .012]], P.px(.8), .6, 0, 0); }
+}
+function fillTone(P, pts, b, g = 0, r = 0){ P.fill(pathOf(pts), b, g, r); }
+function gradFill(P, pts, from, to, c0, c1){
+  const g = P.T.createLinearGradient(from[0], from[1], to[0], to[1]); g.addColorStop(0, tone(...c0)); g.addColorStop(1, tone(...c1));
+  P.fill(pathOf(pts), g);
+}
+
+// ---------------------------------------------------------------------------
+// The wheat grain
+function grainOutline(n = 64){
+  // local: long axis vertical, brush end up (y = -1), germ end down (y = +1)
+  const pts = [];
+  for (let i = 0; i < n; i++) {
+    const th = i / n * TAU;
+    const y = -Math.cos(th);
+    const w = .6 * Math.sin(th) * (1 + .1 * Math.cos(th)) * (1 - .1 * Math.pow(Math.max(0, -Math.cos(th)), 6));
+    const bias = .06 * Math.sin(th) * Math.max(0, Math.cos(th)) ** 3;
+    pts.push([w + bias, y * (1 - .04 * Math.sin(th * 2))]);
+  }
+  return pts;
+}
+const GRAIN = grainOutline();
+/** One engraved grain. detail 0..1 scales the amount of line work; cut 0..1 opens the cross-section. */
+function drawGrain(P, cx, cy, s, rot, { detail = 1, cut = 0, gold = .55, split = 0 } = {}){
+  const px = P.px(1) / s;                       // one pixel in grain units
+  const halves = split > 0 ? [[-1, -split * .35, -split * .5], [1, split * .35, split * .5]] : [[0, 0, 0]];
+  for (const [side, dx, drot] of halves) {
+    const local = side === 0 ? GRAIN : GRAIN.filter(([x]) => x * side >= -.01).concat(side < 0 ? [[0, 1], [0, -1]] : [[0, -1], [0, 1]]);
+    const out = xf(local, cx + dx * s, cy, s, rot + drot);
+    // body tone: lit from the upper right, gold catching the light
+    const small = s < P.px(14);
+    gradFill(P, out, [cx + s * .5, cy - s * .8], [cx - s * .6, cy + s * .9], small ? [.02, .95, 0] : [.08, gold * 1.1, 0], small ? [.3, .8, .05] : [.5, gold * .6, .05]);
+    if (s > P.px(10)) {
+      const shade = (x, y) => { const lx = (x - cx) / s, ly = (y - cy) / s; return clamp01(.15 + .55 * (-lx * LIGHT[0] - ly * LIGHT[1])) * detail; };
+      // cross-contour: bowed lines across the grain
+      P.L.save(); P.L.clip(pathOf(out));
+      for (let i = 1; i < 18; i++) {
+        const yy = -1 + i / 9;
+        const arc = xf([[-.7, yy], [0, yy + .12], [.7, yy]], cx + dx * s, cy, s, rot + drot);
+        const q = quadPts(arc[0], arc[1], arc[2], 14);
+        P.L.fillStyle = tone(1, 0, 0);
+        ribbon(P.L, q, (t, k) => P.px(1.5) * shade(q[k][0], q[k][1]) * Math.min(1, t * 4, (1 - t) * 4));
+      }
+      P.L.restore(); P.L.globalCompositeOperation = 'lighter';
+      stippleIn(P, out, Math.floor(160 * detail), 91 + side * 7, (x, y) => shade(x, y) * .9, P.px(.9));
+      // the crease down the belly
+      const crease = xf([[.02, -.86], [-.05, -.2], [.05, .4], [-.01, .84]], cx + dx * s, cy, s, rot + drot);
+      if (side === 0) { const c = cubicPts(crease[0], crease[1], crease[2], crease[3], 20); P.line(c, taper(P.px(2.4), .2, .2), 1, 0, 0); P.line(c.map(([x, y]) => [x + P.px(2.5), y]), taper(P.px(.8), .2, .2), 0, .8, 0); }
+      // brush hairs at the tip
+      for (let i = 0; i < 9; i++) { const a = -Math.PI / 2 + (i - 4) * .16; const base = xf([[Math.cos(a) * .08, -.97]], cx + dx * s, cy, s, rot + drot)[0]; const tip = xf([[Math.cos(a) * .25, -.97 + Math.sin(a) * .22]], cx + dx * s, cy, s, rot + drot)[0]; P.line([base, tip], taper(P.px(1.1), .1, .5), 1, 0, 0); }
+      // germ at the base
+      const germ = xf([[-.28, .72], [-.05, .62], [.12, .7], [.2, .86], [.05, 1.0], [-.2, .95]], cx + dx * s, cy, s, rot + drot);
+      const gp = cubicPts(germ[0], germ[1], germ[3], germ[4], 12).concat(cubicPts(germ[4], germ[5], germ[5], germ[0], 8));
+      if (side <= 0) { fillTone(P, gp, .55, .2, .05); hatchIn(P, gp, rad(60) + rot, Math.max(P.px(2.2), s * .045), P.px(1.3), () => .9); contour(P, gp, P.px(1.4), true); }
+    }
+    contour(P, out, P.px(2.2) * (s > P.px(40) ? 1 : s > P.px(12) ? .7 : .45), true);
+    if (P.gold && s > P.px(30)) P.line(partial(out.slice(4, 20), 1), taper(P.px(1.6), .3, .3), 0, .95, 0);
+  }
+  if (cut > 0 && s > P.px(40)) drawSection(P, cx, cy, s, rot, cut);
+}
+/** The cross-section face: bran, aleurone, endosperm cells, embryo and scutellum. */
+function drawSection(P, cx, cy, s, rot, k){
+  const e = easeInOut(k);
+  // the right half opens: a section face cut through the long axis
+  const face = xf(GRAIN.filter(([x]) => x >= 0).concat([[0, 1], [0, -1]]), cx + s * .02, cy, s, rot);
+  const faceK = xf(GRAIN.filter(([x]) => x >= 0).map(([x, y]) => [x * e, y]).concat([[0, 1], [0, -1]]), cx + s * .02, cy, s, rot);
+  fillTone(P, faceK, .04, .78, .02);
+  // bran: a dark ring just inside the skin
+  const bran = xf(GRAIN.filter(([x]) => x >= 0).map(([x, y]) => [x * e * .92, y * .96]), cx + s * .02, cy, s, rot);
+  P.line(bran, P.px(3.2) * e, .8, 0, .15);
+  P.line(xf(GRAIN.filter(([x]) => x >= 0).map(([x, y]) => [x * e * .86, y * .92]), cx + s * .02, cy, s, rot), P.px(.9) * e, .9, 0, 0);
+  // endosperm: irregular cells packed toward the centre
+  const R = range(313, 900);
+  for (let i = 0; i < 150; i++) {
+    const u = R[i * 4], v = R[i * 4 + 1] * 2 - 1;
+    const maxX = .6 * Math.sqrt(Math.max(0, 1 - v * v)) * .8;
+    const lx = u * maxX * e, ly = v * .85;
+    if (ly > .55) continue;
+    const r = .035 + .03 * R[i * 4 + 2];
+    const cell = xf(Array.from({ length: 7 }, (_, j) => { const a = j / 7 * TAU + R[i * 4 + 3]; return [lx + Math.cos(a) * r * (1 + .25 * Math.sin(a * 3 + i)), ly + Math.sin(a) * r * .8]; }), cx + s * .02, cy, s, rot);
+    P.line(cell, P.px(.7) * e, .7, 0, 0, true);
+  }
+  // embryo and scutellum at the base
+  const emb = xf([[.02, .6], [.25, .56], [.36, .72], [.3, .9], [.12, .98], [.02, .95]].map(([x, y]) => [x * e, y]), cx + s * .02, cy, s, rot);
+  const ep = cubicPts(emb[0], emb[1], emb[2], emb[3], 10).concat(cubicPts(emb[3], emb[4], emb[5], emb[0], 10));
+  fillTone(P, ep, .62, .15, .25);
+  hatchIn(P, ep, rad(-35) + rot, Math.max(P.px(2), s * .035), P.px(1.2), () => .8);
+  contour(P, ep, P.px(1.6), true);
+  P.line(quadPts(xf([[.04 * e, .56]], cx, cy, s, rot)[0], xf([[.2 * e, .5]], cx, cy, s, rot)[0], xf([[.34 * e, .66]], cx, cy, s, rot)[0], 10), P.px(1.1), .9, 0, 0);
+  contour(P, faceK, P.px(1.8), true);
+}
+
+// ---------------------------------------------------------------------------
+// Vignette contents
+function soilBand(P, cx, cy, r, top, dense, seed){
+  // a cross-section of ground inside the circle, below y = top
+  const pts = [];
+  for (let i = 0; i <= 40; i++) { const x = cx - r * 1.05 + i / 40 * r * 2.1; pts.push([x, top + Math.sin(i * .9 + seed) * r * .012 + noise1(i * .4, seed) * r * .02]); }
+  pts.push([cx + r * 1.1, cy + r * 1.1], [cx - r * 1.1, cy + r * 1.1]);
+  gradFill(P, pts, [cx, top], [cx, cy + r], [.18 * dense + .08, .05, .02], [.55 * dense + .15, .02, .05]);
+  stippleIn(P, pts, Math.floor(700 * dense + 200), seed * 13 + 5, (x, y) => .25 + .6 * clamp01((y - top) / r), P.px(1));
+  hatchIn(P, pts, rad(8), Math.max(P.px(3), r * .045), P.px(1.3), (x, y) => clamp01((y - top) / (r * .9)) * dense);
+  P.line(pts.slice(0, 41), P.px(1.6), 1, 0, 0);
+  return pts;
+}
+function pebble(P, x, y, r, rot, seed){
+  const R = range(seed, 12);
+  const pts = Array.from({ length: 12 }, (_, i) => { const a = i / 12 * TAU; const rr = r * (.75 + .35 * R[i]); return [x + Math.cos(a + rot) * rr * 1.25, y + Math.sin(a + rot) * rr * .8]; });
+  gradFill(P, pts, [x + r, y - r], [x - r, y + r], [.2, .08, 0], [.7, 0, .05]);
+  hatchIn(P, pts, rot + 1, Math.max(P.px(2.4), r * .22), P.px(1.3), (px, py) => clamp01(.2 + (-(px - x) * LIGHT[0] - (py - y) * LIGHT[1]) / r));
+  contour(P, pts, P.px(1.5), true);
+  P.line(pts.slice(8, 12).concat([pts[0], pts[1]]), taper(P.px(1.4), .3, .3), 0, .9, 0);
+}
+/** A seedling: stem bending by `bend` (-1 wilt .. 1 upright), height h, colour health 1 green .. 0 scorched. */
+function sprout(P, x, y, h, bend, health, leafK){
+  const topX = x + h * .55 * (1 - bend) * .8, topY = y - h * (.45 + .55 * Math.max(0, bend));
+  const stem = cubicPts([x, y], [x, y - h * .5], [x + (topX - x) * .3, topY + h * .2], [topX, topY], 18);
+  const g = [lerp(.1, .45, health), lerp(.85, .7, health), lerp(.55, .02, health)];
+  P.line(stem, (t) => h * .07 * (1 - t * .55), g[0], g[1], g[2]);
+  P.line(stem.map(([a, b]) => [a + h * .02, b]), (t) => P.px(1.3) * (1 - t), 1, 0, 0);
+  // two blades unfurling from the top
+  for (const side of [-1, 1]) {
+    const k = easeOut(leafK) * (side < 0 ? 1 : .85);
+    if (k <= 0) continue;
+    const droop = (1 - health) * .9;
+    const tip = [topX + side * h * .5 * k, topY - h * .25 * k + h * droop * .7 * k];
+    const blade = quadPts([topX, topY], [topX + side * h * .25 * k, topY - h * .35 * k], tip, 12);
+    const back = quadPts(tip, [topX + side * h * .18 * k, topY - h * .12 * k], [topX, topY + h * .04], 12);
+    const leaf = blade.concat(back);
+    fillTone(P, leaf, g[0], g[1], g[2]);
+    P.line(quadPts([topX, topY], [topX + side * h * .22 * k, topY - h * .24 * k], tip, 10), taper(P.px(.9), .2, .4), 1, 0, 0);
+    contour(P, leaf, P.px(1.3), true);
+  }
+}
+/** A sparrow's head in profile, facing dir; mouth opens 0..1. */
+/** A house sparrow in profile, engraved. (x, y): the feet on the ground; s: body length; dir ±1 faces;
+ *  pose: { peck 0..1, wing 0..1 open, flap angle, hop lift, carry seed } */
+function sparrow(P, x, y, s, dir, pose){
+  const { peck = 0, wing = 0, flap = 0, lift = 0, carry = false, legs = true } = pose;
+  const body = (pts) => xf(pts.map(([a, b]) => [a * dir, b]), x, y - lift * s, s, 0);
+  const tilt = peck * .75;
+  // body local frame: origin at the hip, forward +x, up -y
+  const B = (pts) => xf(pts.map(([a, b]) => { const c = Math.cos(tilt), n = Math.sin(tilt); return [(a * c - b * n) * dir, a * n + b * c]; }), x, y - lift * s - s * .38, s, 0);
+  const smoothLoop = (pts, n = 5) => { const out = []; for (let i = 0; i < pts.length; i++) { const p0 = pts[(i - 1 + pts.length) % pts.length], p1 = pts[i], p2 = pts[(i + 1) % pts.length], p3 = pts[(i + 2) % pts.length]; for (let k = 0; k < n; k++) { const t = k / n, t2 = t * t, t3 = t2 * t; out.push([.5 * (2 * p1[0] + (-p0[0] + p2[0]) * t + (2 * p0[0] - 5 * p1[0] + 4 * p2[0] - p3[0]) * t2 + (-p0[0] + 3 * p1[0] - 3 * p2[0] + p3[0]) * t3), .5 * (2 * p1[1] + (-p0[1] + p2[1]) * t + (2 * p0[1] - 5 * p1[1] + 4 * p2[1] - p3[1]) * t2 + (-p0[1] + 3 * p1[1] - 3 * p2[1] + p3[1]) * t3)]); } } return out; };
+  const lw = Math.max(P.px(1.2), s * .018), hw = Math.max(P.px(.9), s * .01);
+  // legs
+  if (legs) {
+    for (const [lx, k] of [[-.02, .8], [.1, 1]]) {
+      const hip = B([[lx, .02]])[0], foot = [x + lx * s * dir * .6, y - lift * s];
+      P.line([hip, [lerp(hip[0], foot[0], .5) - s * .05 * dir, lerp(hip[1], foot[1], .5)], foot], Math.max(P.px(1.2), s * .025), .7 * k, .3, .2);
+      for (const ta of [-.18, .05, .22]) P.line([foot, [foot[0] + ta * s * dir, foot[1] + s * .015]], Math.max(P.px(1), s * .018), .7 * k, .3, .2);
+    }
+  }
+  // tail
+  const tail = smoothLoop(B([[-.42, -.12], [-.95, -.28], [-1.02, -.18], [-.95, -.08], [-.45, .06]]), 4);
+  fillTone(P, tail, .62, .25, .12);
+  for (let i = 0; i < 4; i++) P.line(B([[-.45, -.08 + i * .04], [-.98, -.24 + i * .045]]), taper(hw, .2, .2), 1, 0, 0);
+  contour(P, tail, lw * .9, true);
+  // body
+  const bodyPts = smoothLoop(B([[.42, -.46], [.18, -.56], [-.18, -.46], [-.46, -.18], [-.44, .02], [-.12, .1], [.22, .06], [.42, -.1], [.52, -.28]]), 5);
+  gradFill(P, bodyPts, B([[.3, -.5]])[0], B([[-.2, .1]])[0], [.18, .38, .08], [.5, .12, .12]);
+  // pale belly, stippled
+  const belly = smoothLoop(B([[.42, -.1], [.2, .05], [-.12, .08], [-.3, -.02], [-.1, -.12], [.25, -.2]]), 4);
+  fillTone(P, belly, .05, .12, 0);
+  stippleIn(P, belly, 220, 17, () => .35, Math.max(P.px(.7), s * .006));
+  // back streaks: short dark dashes
+  const R = range(606, 120);
+  for (let i = 0; i < 26; i++) { const u = R[i * 2], v = R[i * 2 + 1]; const p = B([[lerp(-.3, .3, u), lerp(-.5, -.25, v)]])[0]; const q = B([[lerp(-.3, .3, u) - .08, lerp(-.5, -.25, v) + .03]])[0]; P.line([p, q], taper(hw * 1.6, .3, .3), 1, 0, 0); }
+  contour(P, bodyPts, lw, true);
+  // head
+  const headC = B([[.5, -.5]])[0];
+  const head = smoothLoop(B([[.36, -.58], [.5, -.72], [.68, -.7], [.78, -.56], [.74, -.42], [.58, -.34], [.42, -.4]]), 5);
+  gradFill(P, head, B([[.6, -.72]])[0], B([[.5, -.35]])[0], [.35, .2, .1], [.7, .1, .12]);
+  const cap = smoothLoop(B([[.38, -.58], [.5, -.71], [.68, -.69], [.76, -.58], [.6, -.6], [.48, -.56]]), 4);
+  fillTone(P, cap, .55, .05, .35);
+  hatchIn(P, cap, rad(15) * dir, Math.max(P.px(2), s * .025), hw, () => .9);
+  const cheek = smoothLoop(B([[.54, -.5], [.66, -.52], [.7, -.44], [.6, -.39], [.5, -.43]]), 4);
+  fillTone(P, cheek, .05, .1, 0);
+  contour(P, head, lw, true);
+  // beak: short and conical
+  const beakTop = B([[.76, -.56], [.93, -.5], [.76, -.48]]);
+  const open = pose.open || 0;
+  const beakBot = B([[.75, -.48], [.9, -.47 + open * .08], [.74, -.43]]);
+  fillTone(P, beakTop, .5, .55, 0); contour(P, beakTop, lw * .8, true);
+  fillTone(P, beakBot, .35, .6, 0); contour(P, beakBot, lw * .7, true);
+  if (carry) drawGrain(P, ...B([[.94, -.48 + open * .04]])[0], s * .07, 1.4 * dir, { detail: .7 });
+  // eye with a catch-light and an eye-stripe
+  const eye = B([[.64, -.57]])[0];
+  P.line(B([[.56, -.6], [.74, -.58]]), taper(hw * 2.2, .3, .3), 1, 0, 0);
+  P.fill(circle(eye[0], eye[1], s * .035), .95, 0, 0);
+  P.dot(eye[0] + s * .01 * dir, eye[1] - s * .01, Math.max(P.px(.8), s * .01), 0, .9, 0);
+  // wing: folded coverts with pale bars, or open and beating
+  if (wing <= .05) {
+    const w = smoothLoop(B([[.3, -.46], [.05, -.52], [-.3, -.38], [-.55, -.2], [-.2, -.16], [.15, -.2]]), 5);
+    gradFill(P, w, B([[.2, -.5]])[0], B([[-.4, -.2]])[0], [.35, .35, .12], [.65, .2, .18]);
+    for (let i = 0; i < 5; i++) P.line(B([[.15 - i * .09, -.44 + i * .03], [-.1 - i * .09, -.22 + i * .01]]), taper(hw * 1.3, .2, .3), 1, 0, 0);
+    P.line(B([[.2, -.36], [-.15, -.3]]), taper(hw * 2, .3, .3), 0, .95, 0);
+    contour(P, w, lw * .9, true);
+  } else {
+    for (const [off, k] of [[-.06, .75], [0, 1]]) {
+      const lift2 = Math.sin(flap) * wing;
+      const root = [.1 + off, -.45];
+      const tip = [-.25 + off - .2 * wing, -.5 - 1.1 * lift2];
+      const w = smoothLoop(B([root, [.2 + off, -.55 - .5 * lift2], [tip[0] + .1, tip[1] - .05], tip, [tip[0] - .05, tip[1] + .15], [-.2 + off, -.3 - .3 * lift2], [-.1 + off, -.35]]), 4);
+      gradFill(P, w, B([root])[0], B([tip])[0], [.3 * k, .3, .1], [.8 * k, .1, .15]);
+      for (let i = 0; i < 6; i++) { const u = (i + 1) / 7; P.line([B([[lerp(root[0], -.2 + off, u), lerp(root[1], -.33 - .3 * lift2, u)]])[0], B([[lerp(tip[0], -.2 + off, u * .6), lerp(tip[1], -.33 - .3 * lift2, u * .6)]])[0]], taper(hw * 1.2, .2, .4), 1, 0, 0); }
+      contour(P, w, lw * .9, true);
+    }
+  }
+}
+
+function sunGlyph(P, x, y, r, heat, t){
+  P.fill(circle(x, y, r), rgrad(P, x, y - r * .3, 0, r, [[0, [0, .95, .05 * heat]], [1, [.05, .9, .55 * heat]]]));
+  hatchIn(P, circlePts(x, y, r, 40), rad(0), Math.max(P.px(2.2), r * .12), P.px(1.4), (px, py) => clamp01(((py - y) / r) * .9 + .1));
+  P.line(circlePts(x, y, r, 40), P.px(1.8), 1, 0, 0, true);
+  for (let i = 0; i < 16; i++) { const a = i / 16 * TAU + t * .4; const l = r * (.35 + .35 * heat + .12 * Math.sin(t * 5 + i)); P.line([[x + Math.cos(a) * r * 1.2, y + Math.sin(a) * r * 1.2], [x + Math.cos(a) * (r * 1.2 + l), y + Math.sin(a) * (r * 1.2 + l)]], taper(P.px(2), .2, .5), i % 2 ? 1 : 0, i % 2 ? 0 : .9, 0); }
+}
+function heatWaves(P, x, y, w, h, k, t){
+  for (let j = 0; j < 4; j++) {
+    const yy = y + j * h / 4;
+    const pts = Array.from({ length: 30 }, (_, i) => [x - w / 2 + i / 29 * w, yy + Math.sin(i * .6 + t * 4 + j) * h * .05]);
+    P.line(partial(pts, k), taper(P.px(1.4), .2, .2), 0, 0, .9);
+  }
+}
+function thornStem(P, x0, y0, cx, cy, turns, r0, k, dir, seed){
+  const pts = [];
+  const N = 60;
+  for (let i = 0; i <= N; i++) {
+    const u = i / N;
+    const a = Math.atan2(y0 - cy, x0 - cx) + dir * u * turns * TAU;
+    const rr = lerp(Math.hypot(x0 - cx, y0 - cy), r0, easeOut(u));
+    pts.push([cx + Math.cos(a) * rr, cy + Math.sin(a) * rr + (1 - u) * 0]);
+  }
+  const drawn = partial(pts, k);
+  if (drawn.length < 2) return;
+  P.line(drawn, (t) => P.px(8) * (1 - t * .6), .55, 0, .75);
+  P.line(drawn.map(([a, b]) => [a + P.px(1.6), b - P.px(1)]), (t) => P.px(1.2) * (1 - t * .5), 1, 0, 0);
+  for (let i = 3; i < drawn.length - 1; i += 3) {
+    const a = drawn[i - 1], b = drawn[i + 1]; const dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1;
+    const side = i % 6 ? 1 : -1; const nx = -dy / l * side, ny = dx / l * side;
+    const L = P.px(11) * (1 - i / drawn.length * .4);
+    const th = [[drawn[i][0] - dx / l * L * .35, drawn[i][1] - dy / l * L * .35], [drawn[i][0] + nx * L + dx / l * L * .4, drawn[i][1] + ny * L + dy / l * L * .4], [drawn[i][0] + dx / l * L * .35, drawn[i][1] + dy / l * L * .35]];
+    fillTone(P, th, .6, 0, .7); contour(P, th, P.px(1), true);
+  }
+}
+/** A root system that grows with k: a main tap root, laterals, and root hairs near the tips. */
+const ROOTS = (() => {
+  const R = mulberry(2718);
+  const segs = [];
+  const grow = (x, y, a, len, depth, t0) => {
+    if (depth > 5 || len < .015) return;
+    const steps = 6; let px = x, py = y, ang = a;
+    for (let i = 0; i < steps; i++) {
+      ang += (R() - .5) * .5;
+      const nx = px + Math.cos(ang) * len / steps, ny = py + Math.sin(ang) * len / steps;
+      const ts = t0 + (i / steps) * .22 * (1 + depth * .3);
+      segs.push({ a: [px, py], b: [nx, ny], t: ts, w: (4 - depth) * .006 + .002, depth });
+      if (i === 1 || i === 3 || i === 5) grow(nx, ny, ang + (i % 4 === 1 ? -1 : 1) * (.55 + R() * .5), len * .58, depth + 1, ts + .04);
+      px = nx; py = ny;
+    }
+  };
+  grow(0, 0, Math.PI / 2, .7, 0, 0);
+  const maxT = Math.max(...segs.map((s) => s.t));
+  segs.forEach((s) => { s.t /= maxT; });
+  return segs;
+})();
+function roots(P, x, y, s, k){
+  for (const sg of ROOTS) {
+    const u = clamp01((k - sg.t) / .08);
+    if (u <= 0) continue;
+    const a = [x + sg.a[0] * s, y + sg.a[1] * s], b = [x + lerp(sg.a[0], sg.b[0], u) * s, y + lerp(sg.a[1], sg.b[1], u) * s];
+    P.line([a, b], Math.max(P.px(.9), sg.w * s), .95, .1, 0);
+    if (sg.depth >= 2 && u >= 1) { const dx = b[0] - a[0], dy = b[1] - a[1]; const l = Math.hypot(dx, dy) || 1; for (const sd of [-1, 1]) P.line([b, [b[0] - dy / l * sd * s * .018, b[1] + dx / l * sd * s * .018]], P.px(.7), .8, 0, 0); }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// The ear of wheat
+function ear(P, x, y, s, ripe, grow, sway, t, { hideGrains = 0 } = {}){
+  const ang = -Math.PI / 2 + sway;
+  const ax = [Math.cos(ang), Math.sin(ang)], nr = [-ax[1], ax[0]];
+  const at = (u, off = 0) => [x + ax[0] * s * u + nr[0] * off * s, y + ax[1] * s * u + nr[1] * off * s];
+  const stalkC = [lerp(.35, .12, ripe), lerp(.7, .85, ripe), lerp(0, .12, ripe)];
+  const stalk = cubicPts([x - sway * s * .6, y + s * 1.2], [x, y + s * .6], [x, y + s * .3], at(0), 14);
+  P.line(stalk, (tt) => s * .045 * (1 - tt * .35), ...stalkC);
+  P.line(stalk.map(([a2, b2]) => [a2 + s * .012, b2]), (tt) => P.px(1.2), 1, 0, 0);
+  P.line(stalk.map(([a2, b2]) => [a2 - s * .015, b2]), (tt) => P.px(1.4), 0, .9, 0);
+  const N = 12;
+  const grains = [];
+  // back row first, front row over it
+  for (const row of [0, 1]) for (let i = N - 1; i >= 0; i--) {
+    const u = (i + .5) / N * .95;
+    if (u > grow) continue;
+    const side = (i + row) % 2 ? 1 : -1;
+    const local = clamp01((grow - u) / .18);
+    const taperU = 1 - u * .45;
+    const pos = at(u, side * .055 * local * taperU);
+    const rotG = ang + Math.PI / 2 + side * (.42 + .06 * Math.sin(t * 2 + i));
+    const size = s * .07 * taperU * backOut(local);
+    const ripeLocal = clamp01(ripe * 1.35 - u * .35);
+    if (row === 1) grains.push({ pos, rotG, size, side, u });
+    if (hideGrains > 0 && row === 1 && ((N - 1 - i) / N) < hideGrains) continue;
+    const dark = row === 0 ? .25 : 0;
+    // the husk: a pointed spoon shape, keel down the middle
+    const husk = xf([[0, -1.15], [.42, -.72], [.58, -.1], [.46, .6], [0, 1], [-.46, .6], [-.58, -.1], [-.42, -.72]], pos[0], pos[1], size, rotG);
+    const hp = cubicPts(husk[0], husk[1], husk[2], husk[3], 6).concat(cubicPts(husk[3], husk[4], husk[4], husk[5], 6), cubicPts(husk[5], husk[6], husk[7], husk[0], 6));
+    const lit = [pos[0] + LIGHT[0] * size, pos[1] + LIGHT[1] * size];
+    gradFill(P, hp, lit, [pos[0] - LIGHT[0] * size, pos[1] - LIGHT[1] * size], [lerp(.3, .04, ripeLocal) + dark, lerp(.7, .95, ripeLocal), lerp(0, .12, ripeLocal)], [lerp(.6, .35, ripeLocal) + dark, lerp(.55, .6, ripeLocal), lerp(0, .2, ripeLocal)]);
+    if (size > P.px(6)) {
+      hatchIn(P, hp, rotG + Math.PI / 2 + side * .2, Math.max(P.px(2.2), size * .16), P.px(1.1), (px, py) => clamp01(.15 + ((px - pos[0]) * -LIGHT[0] + (py - pos[1]) * -LIGHT[1]) / size * .9));
+      const keel = xf([[0, -1.05], [.08, 0], [0, .9]], pos[0], pos[1], size, rotG);
+      P.line(quadPts(keel[0], keel[1], keel[2], 10), taper(P.px(1.3), .2, .3), 1, 0, 0);
+      P.line(quadPts(keel[0], keel[1], keel[2], 10).map(([a2, b2]) => [a2 + P.px(1.6), b2 - P.px(1)]), taper(P.px(.9), .3, .3), 0, .95, 0);
+    }
+    contour(P, hp, P.px(1.6), true);
+    // awn: long bristle up and out, with a slight bend
+    const tip = xf([[0, -1.15]], pos[0], pos[1], size, rotG)[0];
+    const awnEnd = [tip[0] + Math.cos(ang + side * .22) * s * .6 * local, tip[1] + Math.sin(ang + side * .22) * s * .6 * local + Math.sin(t * 1.7 + i) * s * .01];
+    P.line(quadPts(tip, [lerp(tip[0], awnEnd[0], .5) + side * s * .03, lerp(tip[1], awnEnd[1], .5)], awnEnd, 10), taper(P.px(1.2), .05, .7), .9, .25 * ripeLocal, 0);
+  }
+  return grains;
+}
+// ---------------------------------------------------------------------------
+// Layouts
+function layout(A){
+  const wide = A >= 2.4;
+  const r = wide ? Math.min(.36, A / 4 * .42) : .225;
+  const cols = wide ? 4 : 2;
+  const spots = [];
+  for (let i = 0; i < 4; i++) {
+    if (wide) spots.push([(-1.5 + i) * (A / 4) * .92, .52]);
+    else spots.push([(i % 2 ? .5 : -.5) * A * .3, i < 2 ? .265 : .745]);
+  }
+  return { wide, r, spots };
+}
+
+// ---------------------------------------------------------------------------
+// The film — cut for energy: about two visual events a second on average, bursts of
+// three at the strike, the scorch and the hundredfold, two deliberate breaths, and
+// nothing ever fully still.
+const T = {
+  // Specimen (0–4.7)
+  grainIn: 0, ring1: .40, cross: .55, cut: .95, call: 1.35, lensL: 2.0, lensR: 2.12,
+  flip: 2.7, punchEmb: 3.05, embFlash: 3.2, flipBack: 3.45, pullBack: 3.6,
+  callOff: 4.0, lensOff: 4.08, close: 4.2, spin: 4.35, split: 4.55,
+  // Four soils (4.7–15.7): punch in, tell it, cut out — 2.2 s each, then a breath in good soil
+  soils: 4.7, arrive: [4.8, 4.88, 4.96, 5.04],
+  lens: [5.45, 7.65, 9.85, 12.05],
+  punchIn: [5.3, 7.5, 9.7, 11.9], punchOut: [7.3, 9.5, 11.7, 15.15],
+  compare: 15.3, iris: 15.7,
+  // The ear (15.9–19.6)
+  ear: 15.9, leaves: 16.15, spikelets: 16.4, awns: 17.5, ripen: 17.9,
+  halo: 18.5, earPunch: 18.6, gust: 18.9, earOut: 19.3,
+  // A hundredfold (19.6–24)
+  fold: 19.6, rings: [20.0, 20.7, 21.4], ringPunch: [20.25, 20.95, 21.65],
+  ringOut: 22.1, pulses: [22.2, 22.35, 22.5], spin2: 22.65, collapse: 22.9, hero: 23.2,
+};
+const LENS_ORDER = [0, 1, 2, 3];
+
+/** Camera: snap in fast, settle with a touch of overshoot. */
+function camAt(t, keys){
+  let i = 0;
+  for (let k = 0; k < keys.length; k++) if (t >= keys[k].t) i = k;
+  const cur = keys[i], prev = keys[Math.max(0, i - 1)];
+  const u = clamp01((t - cur.t) / (cur.d || .22));
+  const e = backOut(u);
+  return { x: lerp(prev.x, cur.x, e), y: lerp(prev.y, cur.y, e), z: Math.exp(lerp(Math.log(prev.z), Math.log(cur.z), e)) };
+}
+function cameraKeys(L, A){
+  const { r, spots } = L;
+  const z = .46 / r;
+  const k = [{ t: -1, x: 0, y: .5, z: 1 }, { t: T.grainIn, x: 0, y: .5, z: 1 }];
+  k.push({ t: T.punchEmb, x: .06, y: .5 + .31 * .55, z: 2.5, d: .16 });
+  k.push({ t: T.pullBack, x: 0, y: .5, z: 1, d: .18 });
+  LENS_ORDER.forEach((i) => {
+    k.push({ t: T.punchIn[i], x: spots[i][0], y: spots[i][1], z, d: .17 });
+    k.push({ t: T.punchOut[i], x: 0, y: .5, z: 1, d: .2 });
+  });
+  k.push({ t: T.iris, x: spots[3][0], y: spots[3][1], z, d: .26 });
+  k.push({ t: T.ear, x: 0, y: .5, z: 1.1, d: .3 });
+  k.push({ t: T.earPunch, x: 0, y: .38, z: 2.1, d: .16 });
+  k.push({ t: T.earOut, x: 0, y: .5, z: 1, d: .2 });
+  T.ringPunch.forEach((tp, i) => k.push({ t: tp, x: foldCentres(A)[i][0], y: .52, z: 1.9, d: .15 }));
+  k.push({ t: T.ringOut, x: 0, y: .5, z: 1, d: .2 });
+  k.push({ t: T.hero, x: 0, y: .5, z: 1, d: .25 });
+  return k.sort((a, b) => a.t - b.t);
+}
+const foldCentres = (A) => [[-A * .3, .52], [0, .52], [A * .3, .52]];
+
+/** Always-on life: drifting motes, a boiling plate rule, slowly turning draft lines. */
+function ambience(P, t, camZ){
+  const { A } = P;
+  const m = .035, boil = Math.floor(t * 8) % 3 * .0007;     // one shared wobble: the plate stays square
+  const edge = clamp01((1.35 - camZ) / .25);                 // the rule fades away when the camera punches in
+  if (edge > .02) {
+    const b = boil;
+    P.line([[-A / 2 + m + b, m + b], [A / 2 - m + b, m + b], [A / 2 - m + b, 1 - m + b], [-A / 2 + m + b, 1 - m + b], [-A / 2 + m + b, m + b]], P.px(1.2) * edge, .8, 0, 0);
+    P.line([[-A / 2 + m * 1.5 + b, m * 1.5 + b], [A / 2 - m * 1.5 + b, m * 1.5 + b], [A / 2 - m * 1.5 + b, 1 - m * 1.5 + b], [-A / 2 + m * 1.5 + b, 1 - m * 1.5 + b], [-A / 2 + m * 1.5 + b, m * 1.5 + b]], P.px(.7) * edge, .5, 0, 0);
+  }
+  const R = range(1212, 120);
+  for (let i = 0; i < 26; i++) {
+    const u = fract(R[i * 3] + t * (.012 + R[i * 3 + 1] * .02));
+    const x = -A / 2 + u * A, y = .08 + R[i * 3 + 2] * .84 + Math.sin(t * .7 + i) * .012;
+    P.T.fillStyle = tone(0, .85, .1); P.T.beginPath(); P.T.arc(x, y, P.px(1 + R[i * 3 + 1] * 1.6), 0, TAU); P.T.fill();
+  }
+}
+
+function drawFrame(P, t){
+  const { A } = P;
+  const L = layout(A);
+  P.gold = true;
+  const cam = camAt(t, cameraKeys(L, A));
+  P.stage(cam.x, cam.y, cam.z);
+  ambience(P, t, cam.z);
+  if (t < T.soils) specimen(P, t, L);
+  else if (t < T.ear) soils(P, t, L);
+  else if (t < T.fold) earShot(P, t, L);
+  else hundredfold(P, t, L);
+}
+
+// 1 — the specimen, built in fast beats and struck just as fast
+function specimen(P, t, L){
+  const { A } = P;
+  const s = .31 * backOut(clamp01((t - T.grainIn) / .3));
+  const cx = 0, cy = .5;
+  const spin = t > T.spin ? easeIn((t - T.spin) / .3) : 0;
+  const shrink = t > T.spin ? 1 - easeIn((t - T.spin) / .45) * .55 : 1;
+  const flip = smooth((t - T.flip) / .22) * (1 - smooth((t - T.flipBack) / .2));
+  const off = smooth((t - T.callOff) / .35);
+  const k = easeOut((t - T.ring1) / .3) * (1 - off);
+  const turn = t * .12;
+  construction(P, cx, cy, s * 1.3, k, -Math.PI / 2 + turn, 48);
+  construction(P, cx, cy, s * 1.1, easeOut((t - T.ring1 - .08) / .3) * (1 - off), Math.PI / 2 - turn, 0, true);
+  const ck = easeOut((t - T.cross) / .18) * (1 - off);
+  if (ck > 0) { P.line(partial([[cx, cy - s * 1.5], [cx, cy + s * 1.5]], ck), P.px(.8), .6, 0, 0); P.line(partial([[cx - s * 1.5, cy], [cx + s * 1.5, cy]], ck), P.px(.8), .6, 0, 0); }
+  const cut = smooth((t - T.cut) / .35) * (1 - smooth((t - T.close) / .2));
+  const bob = Math.sin(t * 3.1) * .005;
+  const emb = bumpC(clamp01((t - T.embFlash) / .5) * .5, .1, .06);
+  drawGrain(P, cx, cy + bob, s * shrink, flip * Math.PI + spin * 9, { cut, gold: .55 + emb * .3 });
+  if (emb > .02) { const e = [cx + s * .18, cy + s * .55]; P.T.globalCompositeOperation = 'lighter'; P.T.fillStyle = rgrad(P, e[0], e[1], 0, s * .5, [[0, [0, .5 * emb, .8 * emb]], [1, [0, 0, 0]]]); P.T.fill(circle(e[0], e[1], s * .5)); P.T.globalCompositeOperation = 'source-over'; }
+  const side = Math.min(A / 2 - .22, s * 3.2);
+  const cs = [
+    [[cx + s * .05, cy - s * .95], [cx + s * .5, cy - s * 1.2], [cx + side, cy - s * 1.2]],
+    [[cx - s * .02, cy - s * .3], [cx - s * .9, cy - s * .75], [cx - side, cy - s * .75]],
+    [[cx + s * .52, cy - s * .2], [cx + s * 1.1, cy - s * .35], [cx + side, cy - s * .35]],
+    [[cx + s * .2, cy + s * .1], [cx + s * 1.05, cy + s * .45], [cx + side, cy + s * .45]],
+    [[cx + s * .15, cy + s * .8], [cx - s * .8, cy + s * 1.15], [cx - side, cy + s * 1.15]],
+  ];
+  cs.forEach((c, i) => callout(P, c[0], c[1], c[2], easeOut((t - T.call - i * .1) / .25) * (1 - smooth((t - T.callOff - i * .05) / .25))));
+  if (A >= 1.9) {
+    const ir = Math.min(.2, (A / 2 - s * 1.6) * .42);
+    const lx = -A / 2 + ir * 1.9, rx = A / 2 - ir * 1.9;
+    const kl = backOut(clamp01((t - T.lensL) / .22)) * (1 - smooth((t - T.lensOff) / .2));
+    const kr = backOut(clamp01((t - T.lensR) / .22)) * (1 - smooth((t - T.lensOff - .07) / .2));
+    if (kl > .02) inset(P, lx, cy, ir * kl, [cx - s * .55, cy - s * .1], 'bran', t);
+    if (kr > .02) inset(P, rx, cy, ir * kr, [cx + s * .25, cy - s * .05], 'cells', t);
+  }
+  // the grain divides: four copies spin out toward the soils
+  if (t >= T.split) {
+    const u = clamp01((t - T.split) / .2);
+    L.spots.forEach(([x, y], i) => { const e = easeIn(u); drawGrain(P, lerp(cx, x, e * .25), lerp(cy, y, e * .25), s * .5 * shrink, i * 1.6 + t * 6, { detail: .6 }); });
+  }
+}
+
+function inset(P, x, y, r, from, kind, t){
+  // leader lines from the grain to the lens
+  P.line([from, [x + (from[0] > x ? r : -r) * .7, y - r * .7]], P.px(.8), .6, 0, 0);
+  P.line([from, [x + (from[0] > x ? r : -r) * .7, y + r * .7]], P.px(.8), .6, 0, 0);
+  P.dot(from[0], from[1], P.px(2.2), 1, 0, 0);
+  P.save();
+  const lens = circle(x, y, r);
+  P.fill(lens, 0, .08, 0);
+  P.clip(lens);
+  if (kind === 'bran') {
+    // stacked layers of the seed coat, each with its own hatching
+    const bands = [[.0, .08, .7, .3], [.08, .22, .15, .8], [.22, .3, .55, .1], [.3, .62, .05, .72], [.62, 1.0, .12, .55]];
+    bands.forEach(([a, b, blue, gold], i) => {
+      const top = y - r + a * 2 * r, bot = y - r + b * 2 * r;
+      const wave = (yy, ph) => Array.from({ length: 30 }, (_, j) => [x - r + j / 29 * 2 * r, yy + Math.sin(j * .7 + ph + t * .6) * r * .02]);
+      const pts = wave(top, i).concat(wave(bot, i + 1).reverse());
+      fillTone(P, pts, blue, gold, i === 2 ? .3 : 0);
+      if (i === 1) for (let j = 0; j < 14; j++) { const cxj = x - r + (j + .5) / 14 * 2 * r; P.line([[cxj, top + r * .02], [cxj + r * .02, bot - r * .02]], P.px(1.1), 1, 0, 0); }
+      if (i === 3) for (let j = 0; j < 8; j++) { const cxj = x - r + (j + .5) / 8 * 2 * r; const cell = circlePts(cxj, (top + bot) / 2, r * .1, 16).map(([a2, b2]) => [a2, (top + bot) / 2 + (b2 - (top + bot) / 2) * 1.4]); P.line(cell, P.px(1), 1, 0, 0, true); P.dot(cxj, (top + bot) / 2, P.px(1.6), 1, 0, 0); }
+      if (i === 4) stippleIn(P, pts, 260, 71, () => .7, P.px(1.1));
+      hatchIn(P, pts, rad(20 + i * 30), Math.max(P.px(2.4), r * .05), P.px(1), () => blue * .9 + .1);
+      P.line(wave(bot, i + 1), P.px(1.4), 1, 0, 0);
+    });
+  } else {
+    // endosperm: packed cells with starch granules
+    const R = range(808, 400);
+    for (let i = 0; i < 26; i++) {
+      const a = R[i * 3] * TAU, d = Math.sqrt(R[i * 3 + 1]) * r * 1.05;
+      const cxi = x + Math.cos(a) * d, cyi = y + Math.sin(a) * d, cr = r * (.16 + .08 * R[i * 3 + 2]);
+      const cell = Array.from({ length: 9 }, (_, j) => { const aa = j / 9 * TAU + i; return [cxi + Math.cos(aa) * cr * (1 + .12 * Math.sin(aa * 3 + i)), cyi + Math.sin(aa) * cr * (1 + .12 * Math.cos(aa * 2 + i))]; });
+      fillTone(P, cell, .06, .72, .04);
+      contour(P, cell, P.px(1.4), true);
+      for (let g = 0; g < 7; g++) { const ga = R[(i * 5 + g) % 400] * TAU, gd = R[(i * 7 + g) % 400] * cr * .6; const gx = cxi + Math.cos(ga) * gd, gy = cyi + Math.sin(ga) * gd; const gr = cr * (.12 + .1 * R[(i + g * 3) % 400]); P.line(circlePts(gx, gy, gr, 12), P.px(.9), 1, 0, 0, true); P.T.fillStyle = tone(0, .95, .1); P.T.beginPath(); P.T.arc(gx - gr * .3, gy - gr * .3, gr * .45, 0, TAU); P.T.fill(); }
+    }
+  }
+  P.restore();
+  P.line(circlePts(x, y, r, 64), P.px(2.6), 1, 0, 0, true);
+  P.line(circlePts(x, y, r * 1.06, 64), P.px(.8), .7, 0, 0, true);
+  for (let j = 0; j < 48; j++) { const a = j / 48 * TAU; const l = j % 12 === 0 ? r * .08 : r * .035; P.line([[x + Math.cos(a) * r * 1.06, y + Math.sin(a) * r * 1.06], [x + Math.cos(a) * (r * 1.06 + l), y + Math.sin(a) * (r * 1.06 + l)]], P.px(.8), .7, 0, 0); }
+}
+
+// 2 — four soils, each punched into and cut away from
+function soils(P, t, L){
+  const { r, spots } = L;
+  spots.forEach(([x, y], i) => {
+    const arrive = clamp01((t - T.arrive[i]) / .45);
+    if (arrive <= 0) return;
+    const ringK = backOut(clamp01((t - T.arrive[i]) / .3));
+    const dying = i < 3 ? smooth((t - T.compare - i * .08) / .28) : 0;
+    const R = r * (1 + .02 * Math.sin(t * 2.4 + i)) * (1 - dying * .9);
+    if (R <= r * .12) return;
+    P.save();
+    const clip = circle(x, y, R);
+    P.fill(clip, 0, 0, 0);
+    P.clip(clip);
+    const top = y + R * .1;
+    const tl = t - T.lens[i];
+    for (let k = 0; k < 16; k++) {
+      const yy = y - R + (k + .5) / 16 * (R * 1.1);
+      const w = P.px(1.6) * clamp01(1 - (k / 16) * 1.25) * [1, .8, 1.2, .7][i];
+      if (w <= P.px(.2)) continue;
+      const seg = Array.from({ length: 24 }, (_, j) => [x - R + j / 23 * 2 * R, yy + Math.sin(j * .5 + k + t * .8) * P.px(.7)]);
+      P.line(seg, (tt) => w * (.4 + .6 * noise1(tt * 6 + k * 3.1 + Math.floor(t * 8) * .05, i)), 1, 0, 0);
+    }
+    if (i === 3) { const R2 = range(444, 120); for (let k = 0; k < 40; k++) { const fx = x - R + R2[k * 2] * 2 * R, fy = y - R + fract(R2[k * 2 + 1] + t * 1.1) * (top - y + R); P.line([[fx, fy], [fx - R * .03, fy + R * .09]], taper(P.px(1.4), .3, .3), .8, 0, 0); } }
+    if (i === 0) pathSoil(P, x, y, R, top, tl);
+    if (i === 1) rockSoil(P, x, y, R, top, tl, t);
+    if (i === 2) thornSoil(P, x, y, R, top, tl);
+    if (i === 3) goodSoil(P, x, y, R, top, tl);
+    P.restore();
+    const a0 = -Math.PI / 2 - i * .4 + t * .08;
+    P.line(circlePtsOpen(x, y, R, 96, a0, a0 + TAU * ringK), P.px(2.4), 1, 0, 0);
+    P.line(circlePtsOpen(x, y, R * 1.05, 96, -Math.PI / 2 - t * .06, -Math.PI / 2 - t * .06 + TAU * ringK), P.px(.8), .7, 0, 0);
+    for (let j = 0; j < 36; j++) { const a = a0 + j / 36 * TAU; if (j / 36 > ringK) break; const l = j % 9 === 0 ? R * .07 : R * .03; P.line([[x + Math.cos(a) * R * 1.05, y + Math.sin(a) * R * 1.05], [x + Math.cos(a) * (R * 1.05 + l), y + Math.sin(a) * (R * 1.05 + l)]], P.px(.8), .7, 0, 0); }
+    if (dying > 0) { const cross = easeOut(dying); P.line(partial([[x - R, y - R], [x + R, y + R]], cross), P.px(2), .9, 0, .5); P.line(partial([[x + R, y - R], [x - R, y + R]], cross), P.px(2), .9, 0, .5); }
+    // the grain flying in
+    if (arrive < 1) {
+      const p0 = [0, .5], p1 = [x, y - R * .55];
+      const e = easeOut(arrive);
+      const hx = lerp(p0[0], p1[0], e), hy = lerp(p0[1], p1[1], e) - Math.sin(e * Math.PI) * .2;
+      drawGrain(P, hx, hy, lerp(.16, R * .16, e), t * 7 * (i % 2 ? 1 : -1), { detail: .7 });
+      P.line(partial(quadPts(p0, [lerp(p0[0], p1[0], .5), Math.min(p0[1], p1[1]) - .2], p1, 20), e), P.px(.9), .55, 0, 0);
+    }
+  });
+}
+function fallIn(tl, y0, y1){ const u = clamp01(tl / .3); return y0 + (y1 - y0) * (u * u); }
+
+function pathSoil(P, x, y, R, top, tl){
+  soilBand(P, x, y, R, top, .35, 3);
+  const track = [[x - R * 1.1, top + R * .12], [x + R * 1.1, top + R * .12], [x + R * 1.1, top + R * .3], [x - R * 1.1, top + R * .3]];
+  stippleIn(P, track, 500, 29, () => .6, P.px(1.1));
+  P.line([[x - R * 1.1, top + R * .12], [x + R * 1.1, top + R * .12]], P.px(.8), .6, 0, 0);
+  const seedX = x + R * .12, seedY = fallIn(tl, y - R * .6, top);
+  const b = tl - .25;                       // the sparrow's beat
+  const hop = (u) => Math.abs(Math.sin(u * Math.PI * 3)) * (1 - u);
+  let bx = x + R * 1.5, lift = 0, peck = 0, wing = 0, flap = 0, carry = false, fly = 0, open = 0;
+  if (b > 0) {
+    const inU = clamp01(b / .5);
+    bx = lerp(x + R * 1.45, seedX + R * .5, easeOut(inU));
+    lift = hop(inU) * .4;
+    const pk = b - .55;
+    if (pk > 0) { peck = Math.max(bumpC(clamp01(pk / .6) * .5, .08, .035), bumpC(clamp01(pk / .6) * .5, .32, .045)); open = peck > .5 ? .6 : 0; }
+    if (pk > .42) carry = true;
+    fly = clamp01((b - .95) / .6);
+    if (fly > 0) { wing = 1; flap = tl * 34; bx += -easeIn(fly) * R * 1.6; lift += easeIn(fly) * 3.4 + Math.sin(fly * 11) * .09; }
+  }
+  if (!carry && tl > -.1) drawGrain(P, seedX, seedY - R * .05, R * .12, .4 + Math.min(1, tl * 3) * 1.2, { detail: 1 });
+  if (b > 0) {
+    if (fly > 0) P.line(partial(quadPts([seedX + R * .5, top - R * .05], [seedX, top - R * .8], [seedX - R * 1.3, top - R * 1.5], 20), fly), P.px(.9), .6, 0, 0);
+    sparrow(P, bx, top + R * .02, R * .55, -1, { peck, wing, flap, lift, carry, open, legs: fly < .2 });
+  }
+  if (tl > 1.5) { const u = clamp01((tl - 1.5) / 1.6); const fx = x + R * .05 + Math.sin(u * 11) * R * .14, fy = lerp(top - R * .7, top - R * .02, u); const fp = quadPts([fx - R * .09, fy], [fx, fy - R * .05], [fx + R * .09, fy], 8).concat(quadPts([fx + R * .09, fy], [fx, fy + R * .025], [fx - R * .09, fy], 8)); fillTone(P, fp, .35, .2, 0); hatchIn(P, fp, rad(70), P.px(2), P.px(.9), () => .8); contour(P, fp, P.px(1.1), true); }
+}
+function rockSoil(P, x, y, R, top, tl, t){
+  soilBand(P, x, y, R, top, .5, 7);
+  pebble(P, x - R * .55, top + R * .22, R * .26, .3, 11);
+  pebble(P, x + R * .45, top + R * .28, R * .3, -.4, 12);
+  pebble(P, x - R * .05, top + R * .55, R * .34, .1, 13);
+  pebble(P, x + R * .7, top + R * .05, R * .18, .8, 14);
+  const seedY = fallIn(tl, y - R * .6, top + R * .02);
+  const grow = backOut(clamp01((tl - .3) / .45));
+  const heat = smooth((tl - .5) / .45);
+  const wilt = smooth((tl - 1.0) / .6);
+  sunGlyph(P, x + R * .15, y - R * .62, R * (.18 + .08 * heat + .02 * Math.sin(t * 6)), heat, t);
+  if (heat > 0) heatWaves(P, x, top - R * .55, R * 1.1, R * .3, heat, t);
+  if (tl > -.1 && grow <= .02) drawGrain(P, x - R * .1, seedY - R * .05, R * .12, .4, { detail: 1 });
+  if (grow > .02) sprout(P, x - R * .1, top + R * .03, R * .72 * grow, 1 - wilt * 1.8, 1 - wilt, clamp01((tl - .45) / .35));
+}
+function thornSoil(P, x, y, R, top, tl){
+  soilBand(P, x, y, R, top, .6, 9);
+  const seedY = fallIn(tl, y - R * .6, top + R * .02);
+  const grow = backOut(clamp01((tl - .3) / .45));
+  const choke = smooth((tl - .95) / .7);
+  if (tl > -.1 && grow <= .02) drawGrain(P, x, seedY - R * .05, R * .12, -.3, { detail: 1 });
+  if (grow > .02) sprout(P, x, top + R * .03, R * .7 * grow, 1 - choke * 1.4, 1 - choke * .9, clamp01((tl - .45) / .35));
+  thornStem(P, x - R * .95, top + R * .15, x, top - R * .3, 2.1, R * .06, easeOut((tl - .55) / .5), 1, 1);
+  thornStem(P, x + R * .95, top + R * .25, x + R * .02, top - R * .2, 1.8, R * .05, easeOut((tl - .7) / .5), -1, 2);
+  thornStem(P, x - R * .4, top + R * .5, x - R * .02, top - R * .05, 1.3, R * .08, easeOut((tl - .85) / .5), -1, 3);
+}
+function goodSoil(P, x, y, R, top, tl){
+  soilBand(P, x, y, R, top, 1, 5);
+  const seedY = fallIn(tl, y - R * .6, top + R * .1);
+  const split = smooth((tl - .35) / .3);
+  const rootK = smooth((tl - .5) / 1.5);
+  const grow = easeOut(clamp01((tl - .8) / 1.1));
+  if (tl > -.1) drawGrain(P, x, seedY, R * .12, .1, { detail: 1, split: split * .7 });
+  if (rootK > 0) roots(P, x, top + R * .14, R * 1.25, rootK);
+  if (grow > 0) { sprout(P, x, top + R * .1, R * .95 * grow, 1, 1, clamp01((tl - 1.2) / .6)); sprout(P, x + R * .02, top + R * .1, R * .6 * grow, .7, 1, clamp01((tl - 1.5) / .6)); }
+  const wu = fract(tl / 3.2);
+  const wx = x - R * 1.1 + wu * R * 2.2, wy = top + R * .5;
+  const worm = Array.from({ length: 12 }, (_, i) => [wx - i * R * .025, wy + Math.sin(i * .8 - tl * 7) * R * .02]);
+  P.line(worm, (tt) => R * .035 * Math.min(1, tt * 5 + .3, (1 - tt) * 5 + .3), .3, .3, .6);
+}
+
+// 3 — the ear builds spikelet by spikelet, then ripens in a sweep
+function earShot(P, t, L){
+  const { A } = P;
+  const s = .52;
+  const tl = t - T.ear;
+  P.T.globalCompositeOperation = 'lighter';
+  const halo = .28 + .12 * Math.sin(t * 2.2) + bumpC(clamp01((t - T.halo) / 1.2) * .5, .06, .04) * .5;
+  P.T.fillStyle = rgrad(P, 0, .35, 0, .55, [[0, [0, halo, .06]], [1, [0, 0, 0]]]);
+  P.T.fillRect(-A, -1, A * 2, 3);
+  P.T.globalCompositeOperation = 'source-over';
+  const dk = easeOut(tl / .5) * (1 - smooth((tl - 3.3) / .4));
+  construction(P, 0, .44, .36, dk, -Math.PI / 2 + t * .15, 36);
+  P.line(partial([[0, .95], [0, .03]], easeOut(tl / .3) * (1 - smooth((tl - 3.3) / .4))), P.px(.8), .6, 0, 0);
+  for (let i = 0; i < 5; i++) { const k = easeOut((tl - .15 - i * .07) / .3) * (1 - smooth((tl - 3.3) / .4)); if (k > 0) P.line(partial(circlePtsOpen(0, .44, .08 + i * .05, 40, Math.PI * .2 + i + t * .1, Math.PI * 1.1 + i + t * .1), k), P.px(.8), .5, 0, 0); }
+  const gust = bumpC(clamp01((t - T.gust) / 1.4) * .5, .08, .05);
+  const sway = Math.sin(t * 2.1) * .035 + gust * .09;
+  const grow = easeOut(clamp01((t - T.spikelets) / 1.0));
+  const ripe = smooth((t - T.ripen) / .7);
+  for (const side of [-1, 1]) {
+    const k = backOut(clamp01((t - T.leaves - (side > 0 ? .1 : 0)) / .3));
+    if (k <= .02) continue;
+    const fl = Math.sin(t * 1.7 + side) * .02 + gust * .04 * side;
+    const b = [0, .98], tip = [side * .55 * k, .66 + (side > 0 ? .12 : 0) + fl];
+    const lf = quadPts(b, [side * .15 * k, .6], tip, 14).concat(quadPts(tip, [side * .14 * k, .78], [0, .95], 14));
+    gradFill(P, lf, [side * .2, .6], [side * .3, .9], [.25, .8, 0], [.7, .55, .05]);
+    for (let v = 1; v < 5; v++) P.line(quadPts([0, .97 - v * .004], [side * .15 * k, .64 + v * .025], [lerp(0, tip[0], .92), lerp(.97, tip[1], .92) + v * .004], 12), taper(P.px(.9), .1, .5), 1, 0, 0);
+    P.line(quadPts(b, [side * .15 * k, .68], tip, 14), taper(P.px(1.6), .1, .6), 1, 0, 0);
+    contour(P, lf, P.px(1.6), true);
+  }
+  ear(P, 0, .74, s, ripe, grow, sway, t);
+}
+
+// 4 — thirty, sixty, a hundredfold; the rings pulse, then gather to one grain
+function phyllo(n, r){ const out = []; for (let i = 0; i < n; i++) { const a = i * 2.39996; const rr = r * Math.sqrt((i + .5) / n); out.push([Math.cos(a) * rr, Math.sin(a) * rr]); } return out; }
+const FOLDS = [30, 60, 100];
+function hundredfold(P, t, L){
+  const { A } = P;
+  const wide = A >= 2.4;
+  const centres = foldCentres(A);
+  const radii = FOLDS.map((n) => (wide ? .15 : .13) * Math.sqrt(n / 100) * 1.05);
+  const sEar = .52;
+  const src = [];
+  const earFade = 1 - smooth((t - T.fold) / .5);
+  const burst = clamp01((t - T.fold) / .6);
+  if (earFade > .02) { const g = ear(P, 0, .74, sEar, 1, 1, Math.sin(t * 2.1) * .03, t, { hideGrains: burst }); g.forEach((q) => src.push(q)); }
+  if (!src.length) { const N = 12; for (let i = 0; i < N; i++) src.push({ pos: [(i % 2 ? 1 : -1) * .055 * sEar, .74 - sEar * (i + .5) / N * .95], size: sEar * .07 }); }
+  const collapse = easeInOut((t - T.collapse) / .35);
+  const heroK = backOut(clamp01((t - T.hero) / .45));
+  let n = 0;
+  FOLDS.forEach((count, ci) => {
+    const [cx, cy] = centres[ci];
+    const pulse = 1 + .14 * bumpC(clamp01((t - T.pulses[ci]) / .8) * .5, .06, .035);
+    const r = radii[ci] * pulse;
+    const ringK = easeOut((t - T.rings[ci]) / .35) * (1 - smooth((t - T.collapse) / .3));
+    construction(P, cx, cy, r * 1.25, ringK, -Math.PI / 2 + t * .2, 24);
+    if (ringK > 0) construction(P, cx, cy, r * 1.45, ringK * .8, Math.PI / 2 - t * .15, 0, true);
+    phyllo(count, r).forEach(([dx, dy], j) => {
+      const delay = (j / count) * .45;
+      const u = easeOut(clamp01((t - T.rings[ci] - delay) / .4));
+      if (u <= 0) return;
+      const from = src[(n + j * 7) % src.length];
+      const bx = lerp(from.pos[0], cx + dx, u), by = lerp(from.pos[1], cy + dy, u) - Math.sin(u * Math.PI) * .1;
+      const spin = t > T.spin2 ? (t - T.spin2) * 9 : 0;
+      const hero = j === 0 && ci === 1;
+      const small = lerp(from.size * .8, r * 1.9 / Math.sqrt(count) * .55, u) * pulse;
+      const gx = lerp(bx, hero ? 0 : cx, collapse * (hero ? 1 : .35)), gy = lerp(by, hero ? .5 : cy, collapse * (hero ? 1 : .35));
+      const size = hero ? Math.max(small, .31 * heroK) : small * (1 - collapse);
+      if (size <= P.px(.6)) return;
+      drawGrain(P, gx, gy, size, hero ? spin * (1 - easeOut(collapse)) : spin + j * 2.4 * (1 - collapse), { detail: hero && heroK > .3 ? 1 : .5, gold: .55 });
+    });
+    n += count;
+  });
+}
+
+// Beat sheet — the times a new visual event lands (used to check the cut's pace).
+const BEATS = [
+  // specimen: grain lands, draft circle, section opens, callouts, two lenses, flip,
+  // punch to the embryo, pull back, everything struck off, the grain divides
+  0, .40, .95, 1.35, 2.0, 2.7, 3.05, 3.6, 4.0, 4.55,
+  // the four grains arrive and the lenses snap open
+  4.8,
+  // path: punch in, hop in, the snatch, cut out
+  5.3, 5.85, 6.55, 7.3,
+  // rocky: punch in, the spring up, the scorch, cut out
+  7.5, 8.05, 8.75, 9.5,
+  // thorns: punch in, the spring up, the thorns close, cut out
+  9.7, 10.25, 10.95, 11.7,
+  // good soil: punch in, the split, roots, the shoot, leaves, [breath], cut out
+  11.9, 12.45, 12.95, 13.45, 13.95, 15.15,
+  // the three failures struck out, the fourth opens
+  15.3, 15.7,
+  // the ear: stalk, leaves, spikelets build, awns, the ripening sweep, halo punch,
+  // punch in, the gust, [breath], cut out
+  15.9, 16.15, 16.4, 17.5, 17.9, 18.5, 18.9, 19.3,
+  // a hundredfold: the burst, three rings with a punch on each, pulses, spin, gather, the one grain
+  19.6, 20.0, 20.25, 20.7, 20.95, 21.4, 21.65, 22.2, 22.65, 23.2, 23.6,
+];
